@@ -1,0 +1,5242 @@
+__CollectEventCallbacks
+__CollectEventCallbacks()
+
+
+__CollectGameEventCallbacks
+__CollectGameEventCallbacks()
+
+
+__DumpScope
+__DumpScope()
+
+
+__ReplaceClosures
+__ReplaceClosures()
+
+
+__RunEventCallbacks
+__RunEventCallbacks()
+
+
+__RunGameEventCallbacks
+__RunGameEventCallbacks()
+
+
+__VScriptServerDebugHook
+__VScriptServerDebugHook()
+
+
+abs
+abs(num)
+
+
+acos
+acos(num)
+
+
+AddThinkToEnt
+void AddThinkToEnt(handle, string)
+Adds a late bound think function to the C++ think tables for the obj
+
+AddToScriptHelp
+AddToScriptHelp()
+
+
+AllowThirdPersonCamera
+bool AllowThirdPersonCamera()
+
+
+ArePlayersInHell
+bool ArePlayersInHell()
+
+
+array
+array(num)
+
+
+asin
+asin(num)
+
+
+assert
+assert()
+
+
+Assert
+Assert()
+
+
+atan
+atan(num)
+
+
+atan2
+atan2(num, num)
+
+
+BeginScriptDebug
+BeginScriptDebug()
+
+
+callee
+callee()
+
+
+ceil
+ceil(num)
+
+
+ClearGameEventCallbacks
+ClearGameEventCallbacks()
+
+
+ClientPrint
+void ClientPrint(handle, int, string)
+Print a client message
+
+collectgarbage
+collectgarbage()
+
+
+compilestring
+compilestring(string, string)
+
+
+cos
+cos(num)
+
+
+CreateProp
+handle CreateProp(string, Vector, string, int)
+Create a physics prop
+
+CreateSceneEntity
+handle CreateSceneEntity(string)
+Create a scene entity to play the specified scene.
+
+DebugDrawBox
+void DebugDrawBox(Vector, Vector, int, int, int, int, float)
+Draw a debug overlay box
+
+DebugDrawBoxAngles
+void DebugDrawBoxAngles(Vector, Vector, Vector, QAngle, Vector, float, float)
+Draw a debug oriented box (cent, min, max, angles(p,y,r), vRgb, a, duration)
+
+DebugDrawBoxDirection
+void DebugDrawBoxDirection(Vector, Vector, Vector, Vector, Vector, float, float)
+Draw a debug forward box (cent, min, max, forward, vRgb, a, duration)
+
+DebugDrawCircle
+void DebugDrawCircle(Vector, Vector, float, float, bool, float)
+Draw a debug circle (center, rad, vRgb, a, ztest, duration)
+
+DebugDrawClear
+void DebugDrawClear()
+Try to clear all the debug overlay info
+
+DebugDrawLine
+void DebugDrawLine(Vector, Vector, int, int, int, bool, float)
+Draw a debug overlay line
+
+DebugDrawLine_vCol
+void DebugDrawLine_vCol(Vector, Vector, Vector, bool, float)
+Draw a debug line using color vec (start, end, vRgb, a, ztest, duration)
+
+DebugDrawScreenTextLine
+void DebugDrawScreenTextLine(float, float, int, string, int, int, int, int, float)
+Draw text with a line offset
+
+DebugDrawText
+void DebugDrawText(Vector, string, bool, float)
+Draw text in 3d (origin, text, bViewCheck, duration)
+
+developer
+developer()
+
+
+DispatchParticleEffect
+void DispatchParticleEffect(string, Vector, Vector)
+Dispatches a one-off particle system
+
+Document
+Document()
+
+
+DoEntFire
+DoEntFire(string, string, string, num, Vector, Vector)
+
+
+DoIncludeScript
+bool DoIncludeScript(string, handle)
+Execute a script (internal)
+
+DoUniqueString
+DoUniqueString(string)
+
+
+dummy
+dummy()
+
+
+DumpObject
+DumpObject()
+
+
+EmitAmbientSoundOn
+void EmitAmbientSoundOn(string, float, int, int, handle)
+Play named ambient sound on an entity.
+
+EmitSoundOn
+void EmitSoundOn(string, handle)
+Play named sound on Entity
+
+EmitSoundOnClient
+void EmitSoundOnClient(string, handle)
+Play named sound only on the client for the passed in player
+
+enabledebuginfo
+enabledebuginfo()
+
+
+EndScriptDebug
+EndScriptDebug()
+
+
+EntFire
+function EntFire(target, action, value, delay, activator)
+Generate and entity i/o event
+
+EntFireByHandle
+void EntFireByHandle(handle, string, string, float, handle, handle)
+Generate and entity i/o event. First parameter is an entity instance.
+
+EntIndexToHScript
+handle EntIndexToHScript(int)
+Turn an entity index integer to an HScript representing that entity's script instance.
+
+error
+error()
+
+
+exp
+exp(num)
+
+
+fabs
+fabs(num)
+
+
+FileToString
+string FileToString(string)
+Reads a string from a file to send to script
+
+FindCircularReference
+FindCircularReference()
+
+
+FindCircularReferences
+FindCircularReferences()
+
+
+FireGameEvent
+bool FireGameEvent(string, handle)
+Fire a game event to a listening callback function in script. Parameters are passed in a squirrel table.
+
+FireScriptEvent
+FireScriptEvent()
+
+
+FlagsMayBeCapped
+bool FlagsMayBeCapped()
+May a flag be captured?
+
+floor
+floor(num)
+
+
+format
+format(string)
+
+
+FrameTime
+float FrameTime()
+Get the time spent on the server in the last frame
+
+GameModeUsesCurrency
+bool GameModeUsesCurrency()
+Does the current gamemode have currency?
+
+GameModeUsesMiniBosses
+bool GameModeUsesMiniBosses()
+Does the current gamemode have minibosses?
+
+GameModeUsesUpgrades
+bool GameModeUsesUpgrades()
+Does the current gamemode have upgrades?
+
+GetClassLimit
+int GetClassLimit(int)
+Get class limit for class. Indices:
+
+getconsttable
+getconsttable()
+
+
+GetDeveloperLevel
+int GetDeveloperLevel()
+Gets the level of 'developer'
+
+GetFrameCount
+int GetFrameCount()
+Returns the engines current frame count
+
+GetFriction
+float GetFriction(handle)
+Returns the Friction on a player entity, meaningless if not a player
+
+GetFunctionSignature
+GetFunctionSignature()
+
+
+GetGravityMultiplier
+float GetGravityMultiplier()
+
+
+GetListenServerHost
+handle GetListenServerHost()
+Get the local player on a listen server.
+
+GetMannVsMachineAlarmStatus
+bool GetMannVsMachineAlarmStatus()
+
+
+GetMapName
+string GetMapName()
+Get the name of the map.
+
+GetModelIndex
+int GetModelIndex(string)
+Returns the index of the named model.
+
+GetOvertimeAllowedForCTF
+bool GetOvertimeAllowedForCTF()
+
+
+GetPhysAngularVelocity
+Vector GetPhysAngularVelocity(handle)
+Get Angular Velocity for VPHYS or normal object
+
+GetPhysVelocity
+Vector GetPhysVelocity(handle)
+Get Velocity for VPHYS or normal object
+
+GetPlayerFromUserID
+handle GetPlayerFromUserID(int)
+Given a user id, return the entity, or null
+
+getroottable
+getroottable()
+
+
+GetRoundState
+int GetRoundState()
+Get current round state. Indices:
+
+GetSoundDuration
+float GetSoundDuration(string, string)
+Returns float duration of the sound. Takes soundname and optional actormodelname.
+
+getstackinfos
+getstackinfos(num)
+
+
+GetStopWatchState
+int GetStopWatchState()
+Get the current stopwatch state. Indices:
+
+GetWinningTeam
+int GetWinningTeam()
+Who won!
+
+HaveStopWatchWinner
+bool HaveStopWatchWinner()
+
+
+IncludeScript
+IncludeScript()
+
+
+InMatchStartCountdown
+bool InMatchStartCountdown()
+Are we in the pre-match state?
+
+InOvertime
+bool InOvertime()
+Currently in overtime?
+
+IsAttackDefenseMode
+bool IsAttackDefenseMode()
+
+
+IsBirthday
+bool IsBirthday()
+Are we in birthday mode?
+
+IsCompetitiveMode
+bool IsCompetitiveMode()
+Playing competitive?
+
+IsDedicatedServer
+bool IsDedicatedServer()
+Returns true if this server is a dedicated server.
+
+IsDefaultGameMode
+bool IsDefaultGameMode()
+The absence of arena, mvm, tournament mode, etc
+
+IsHolidayActive
+bool IsHolidayActive(int)
+Is the given holiday active? Indices:
+
+IsHolidayMap
+bool IsHolidayMap(int)
+Playing a holiday map? Indices:
+
+IsInArenaMode
+bool IsInArenaMode()
+Playing arena mode?
+
+IsInKothMode
+bool IsInKothMode()
+Playing king of the hill mode?
+
+IsInMedievalMode
+bool IsInMedievalMode()
+Playing medieval mode?
+
+IsInWaitingForPlayers
+bool IsInWaitingForPlayers()
+Are we waiting for some stragglers?
+
+IsMannVsMachineMode
+bool IsMannVsMachineMode()
+Playing MvM? Beep boop
+
+IsMannVsMachineRespecEnabled
+bool IsMannVsMachineRespecEnabled()
+Are players allowed to refund their upgrades?
+
+IsMatchTypeCasual
+bool IsMatchTypeCasual()
+Playing casual?
+
+IsMatchTypeCompetitive
+bool IsMatchTypeCompetitive()
+Playing competitive?
+
+IsModelPrecached
+bool IsModelPrecached(string)
+Checks if the modelname is precached.
+
+IsPasstimeMode
+bool IsPasstimeMode()
+No ball games.
+
+IsPlayerABot
+bool IsPlayerABot(handle)
+Is this player/entity a bot
+
+IsPowerupMode
+bool IsPowerupMode()
+Playing powerup mode? Not compatible with MvM
+
+IsPVEModeActive
+bool IsPVEModeActive()
+
+
+IsQuickBuildTime
+bool IsQuickBuildTime()
+If an engie places a building, will it immediately upgrade? Eg. MvM pre-round etc.
+
+IsSoundPrecached
+bool IsSoundPrecached(string)
+Takes a sound name
+
+IsTruceActive
+bool IsTruceActive()
+
+
+IsUsingGrapplingHook
+bool IsUsingGrapplingHook()
+
+
+IsUsingSpells
+bool IsUsingSpells()
+
+
+IsWeakref
+IsWeakref()
+
+
+LocalTime
+void LocalTime(handle)
+Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)
+
+log
+log(num)
+
+
+log10
+log10(num)
+
+
+lstrip
+lstrip(string)
+
+
+MakeNamespace
+MakeNamespace()
+
+
+MapHasMatchSummaryStage
+bool MapHasMatchSummaryStage()
+
+
+MatchmakingShouldUseStopwatchMode
+bool MatchmakingShouldUseStopwatchMode()
+
+
+Msg
+Msg()
+
+
+newthread
+newthread(Vector)
+
+
+PickupObject
+void PickupObject(handle, handle)
+Have a player pickup a nearby named entity
+
+PlayerInstanceFromIndex
+handle PlayerInstanceFromIndex(int)
+Get a script instance of a player by index.
+
+PlayerReadyStatus_ArePlayersOnTeamReady
+bool PlayerReadyStatus_ArePlayersOnTeamReady(int)
+
+
+PlayerReadyStatus_HaveMinPlayersToEnable
+bool PlayerReadyStatus_HaveMinPlayersToEnable()
+
+
+PlayerReadyStatus_ResetState
+void PlayerReadyStatus_ResetState()
+
+
+PlayersAreOnMatchSummaryStage
+bool PlayersAreOnMatchSummaryStage()
+
+
+PointsMayBeCaptured
+bool PointsMayBeCaptured()
+Are points able to be captured?
+
+pow
+pow(num, num)
+
+
+PrecacheEntityFromTable
+bool PrecacheEntityFromTable(handle)
+Precache an entity from KeyValues in table
+
+PrecacheModel
+void PrecacheModel(string)
+Precache a model.
+
+PrecacheSound
+void PrecacheSound(string)
+Precache a sound.
+
+print
+print()
+
+
+PrintHelp
+PrintHelp()
+
+
+printl
+printl()
+
+
+rand
+rand()
+
+
+RandomFloat
+float RandomFloat(float, float)
+Generate a random floating point number within a range, inclusive
+
+RandomInt
+int RandomInt(int, int)
+Generate a random integer within a range, inclusive
+
+realPrint
+realPrint()
+
+
+RegisterFunctionDocumentation
+RegisterFunctionDocumentation()
+
+
+RegisterScriptGameEventListener
+void RegisterScriptGameEventListener(string)
+Register as a listener for a game event from script.
+
+resurrectunreachable
+resurrectunreachable()
+
+
+RetrieveNativeSignature
+RetrieveNativeSignature()
+
+
+RotateOrientation
+QAngle RotateOrientation(QAngle, QAngle)
+Rotate a QAngle by another QAngle.
+
+RotatePosition
+Vector RotatePosition(Vector, QAngle, Vector)
+Rotate a Vector around a point.
+
+rstrip
+rstrip(string)
+
+
+Say
+void Say(handle, string, bool)
+Have Entity say string, and teamOnly or not
+
+ScreenFade
+void ScreenFade(handle, int, int, int, int, float, float, int)
+Start a screenfade with the following parameters. player, red, green, blue, alpha, flFadeTime, flFadeHold, flags
+
+ScreenShake
+void ScreenShake(Vector, float, float, float, float, int, bool)
+Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake
+
+ScriptDebugAddTextFilter
+ScriptDebugAddTextFilter()
+
+
+ScriptDebugAddTrace
+ScriptDebugAddTrace()
+
+
+ScriptDebugAddWatch
+ScriptDebugAddWatch()
+
+
+ScriptDebugAddWatches
+ScriptDebugAddWatches()
+
+
+ScriptDebugAddWatchPattern
+ScriptDebugAddWatchPattern()
+
+
+ScriptDebugClearTraces
+ScriptDebugClearTraces()
+
+
+ScriptDebugClearWatches
+ScriptDebugClearWatches()
+
+
+ScriptDebugDefaultWatchColor
+ScriptDebugDefaultWatchColor()
+
+
+ScriptDebugDraw
+ScriptDebugDraw()
+
+
+ScriptDebugDrawWatches
+ScriptDebugDrawWatches()
+
+
+ScriptDebugDumpKeys
+ScriptDebugDumpKeys()
+
+
+ScriptDebugHook
+ScriptDebugHook()
+
+
+ScriptDebugIterateKeys
+ScriptDebugIterateKeys()
+
+
+ScriptDebugIterateKeysRecursive
+ScriptDebugIterateKeysRecursive()
+
+
+ScriptDebugRemoveTextFilter
+ScriptDebugRemoveTextFilter()
+
+
+ScriptDebugRemoveTrace
+ScriptDebugRemoveTrace()
+
+
+ScriptDebugRemoveWatch
+ScriptDebugRemoveWatch()
+
+
+ScriptDebugRemoveWatches
+ScriptDebugRemoveWatches()
+
+
+ScriptDebugRemoveWatchPattern
+ScriptDebugRemoveWatchPattern()
+
+
+ScriptDebugText
+ScriptDebugText()
+
+
+ScriptDebugTextDraw
+ScriptDebugTextDraw()
+
+
+ScriptDebugTextPrint
+ScriptDebugTextPrint()
+
+
+ScriptDebugTextTrace
+ScriptDebugTextTrace()
+
+
+ScriptDebugTraceAll
+ScriptDebugTraceAll()
+
+
+ScriptDebugWatches
+ScriptDebugWatches()
+
+
+SendToConsole
+void SendToConsole(string)
+Send a string to the console as a command
+
+SendToConsoleServer
+void SendToConsoleServer(string)
+Copy of SendToServerConsole with another name for compat.
+
+SendToServerConsole
+void SendToServerConsole(string)
+Send a string that gets executed on the server as a ServerCommand
+
+setconsttable
+setconsttable()
+
+
+setdebughook
+setdebughook()
+
+
+seterrorhandler
+seterrorhandler()
+
+
+SetFakeClientConVarValue
+void SetFakeClientConVarValue(handle, string, string)
+Sets a USERINFO client ConVar for a fakeclient
+
+SetGravityMultiplier
+void SetGravityMultiplier(float)
+
+
+SetMannVsMachineAlarmStatus
+void SetMannVsMachineAlarmStatus(bool)
+
+
+SetOvertimeAllowedForCTF
+void SetOvertimeAllowedForCTF(bool)
+
+
+SetPlayersInHell
+void SetPlayersInHell(bool)
+
+
+setroottable
+setroottable()
+
+
+SetUsingSpells
+void SetUsingSpells(bool)
+
+
+ShowMessage
+void ShowMessage(string)
+Print a hud message on all clients
+
+sin
+sin(num)
+
+
+SpawnEntityFromTable
+handle SpawnEntityFromTable(string, handle)
+Spawn entity from KeyValues in table - 'name' is entity name, rest are KeyValues for spawn.
+
+SpawnEntityGroupFromTable
+bool SpawnEntityGroupFromTable(handle)
+Hierarchically spawn an entity group from a set of spawn tables.
+
+split
+split(string, string)
+
+
+sqrt
+sqrt(num)
+
+
+srand
+srand(num)
+
+
+StopAmbientSoundOn
+void StopAmbientSoundOn(string, handle)
+Stop named ambient sound on an entity.
+
+StopSoundOn
+void StopSoundOn(string, handle)
+Stop named sound on Entity
+
+StringToFile
+bool StringToFile(string, string)
+Store a string to a file for later reading
+
+strip
+strip(string)
+
+
+suspend
+suspend()
+
+
+tan
+tan(num)
+
+
+Time
+float Time()
+Get the current server time
+
+TraceLine
+float TraceLine(Vector, Vector, handle)
+given 2 points & ent to ignore, return fraction along line that hits world or models
+
+TraceLineEx
+bool TraceLineEx(handle)
+Pass table - Inputs: start, end, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid
+
+TraceLinePlayersIncluded
+float TraceLinePlayersIncluded(Vector, Vector, handle)
+given 2 points & ent to ignore, return fraction along line that hits world, models, players or npcs
+
+type
+type()
+
+
+UniqueString
+function UniqueString(string)
+Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.
+
+UsePlayerReadyStatusMode
+bool UsePlayerReadyStatusMode()
+
+
+VSquirrel_OnCreateScope
+VSquirrel_OnCreateScope()
+
+
+VSquirrel_OnReleaseScope
+VSquirrel_OnReleaseScope()
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+void ApplyAbsVelocityImpulse(Vector)
+Apply a Velocity Impulse
+
+ApplyLocalAngularVelocityImpulse
+void ApplyLocalAngularVelocityImpulse(Vector)
+Apply an Ang Velocity Impulse
+
+ConnectOutput
+void ConnectOutput(string, string)
+Adds an I/O connection that will call the named function when the specified output fires
+
+Destroy
+void Destroy()
+
+
+DisableDraw
+void DisableDraw()
+Enable drawing (removes EF_NODRAW)
+
+DisconnectOutput
+void DisconnectOutput(string, string)
+Removes a connected script function from an I/O event.
+
+DispatchSpawn
+void DispatchSpawn()
+Alternative dispatch spawn, same as the one in CEntities, for convenience.
+
+EmitSound
+void EmitSound(string)
+Plays a sound from this entity.
+
+EnableDraw
+void EnableDraw()
+Disable drawing (sets EF_NODRAW)
+
+entindex
+int entindex()
+
+
+EyePosition
+Vector EyePosition()
+Get vector to eye position - absolute coords
+
+FirstMoveChild
+handle FirstMoveChild()
+
+
+GetAbsAngles
+QAngle GetAbsAngles()
+Get entity pitch, yaw, roll as QAngles
+
+GetAngles
+Vector GetAngles()
+!!!LEGACY FOR COMPAT!!! DO NOT USE ME. Get entity pitch, yaw, roll as a vector
+
+GetAngularVelocity
+Vector GetAngularVelocity()
+Get the local angular velocity - returns a vector of pitch,yaw,roll
+
+GetBaseVelocity
+Vector GetBaseVelocity()
+Get Base? velocity
+
+GetBoundingMaxs
+Vector GetBoundingMaxs()
+Get a vector containing max bounds, centered on object
+
+GetBoundingMaxsOriented
+Vector GetBoundingMaxsOriented()
+Get a vector containing max bounds, centered on object, taking the object's orientation into account
+
+GetBoundingMins
+Vector GetBoundingMins()
+Get a vector containing min bounds, centered on object
+
+GetBoundingMinsOriented
+Vector GetBoundingMinsOriented()
+Get a vector containing min bounds, centered on object, taking the object's orientation into account
+
+GetCenter
+Vector GetCenter()
+Get vector to center of object - absolute coords
+
+GetClassname
+string GetClassname()
+
+
+GetEntityHandle
+<unknown> GetEntityHandle()
+Get the entity as an EHANDLE
+
+GetEntityIndex
+int GetEntityIndex()
+
+
+GetForwardVector
+Vector GetForwardVector()
+Get the forward vector of the entity
+
+GetFriction
+float GetFriction()
+Get PLAYER friction, ignored for objects
+
+GetHealth
+int GetHealth()
+
+
+GetLeftVector
+Vector GetLeftVector()
+!!!LEGACY FOR COMPAT!!! Get the **right** vector of the entity. This is purely for compatibility. DO NOT USE ME. Use GetRightVector!
+
+GetLocalAngles
+QAngle GetLocalAngles()
+
+
+GetLocalOrigin
+Vector GetLocalOrigin()
+
+
+GetLocalVelocity
+Vector GetLocalVelocity()
+Get Entity relative velocity
+
+GetMaxHealth
+int GetMaxHealth()
+
+
+GetModelKeyValues
+handle GetModelKeyValues()
+Get a KeyValue class instance on this entity's model
+
+GetModelName
+string GetModelName()
+Returns the name of the model
+
+GetMoveParent
+handle GetMoveParent()
+If in hierarchy, retrieves the entity's parent
+
+GetName
+string GetName()
+
+
+GetOrigin
+Vector GetOrigin()
+This is GetAbsOrigin with a funny script name for some reason. Not changing it for legacy compat though.
+
+GetOwner
+handle GetOwner()
+Gets this entity's owner
+
+GetPreTemplateName
+string GetPreTemplateName()
+Get the entity name stripped of template unique decoration
+
+GetRightVector
+Vector GetRightVector()
+Get the right vector of the entity
+
+GetRootMoveParent
+handle GetRootMoveParent()
+If in hierarchy, walks up the hierarchy to find the root parent
+
+GetScriptId
+string GetScriptId()
+Retrieve the unique identifier used to refer to the entity within the scripting system
+
+GetScriptScope
+handle GetScriptScope()
+Retrieve the script-side data associated with an entity
+
+GetSoundDuration
+float GetSoundDuration(string, string)
+Returns float duration of the sound. Takes soundname and optional actormodelname.
+
+GetTeam
+int GetTeam()
+
+
+GetUpVector
+Vector GetUpVector()
+Get the up vector of the entity
+
+GetVelocity
+Vector GetVelocity()
+
+
+IsPlayer
+bool IsPlayer()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+bool KeyValueFromFloat(string, float)
+Executes KeyValue with a float
+
+KeyValueFromInt
+bool KeyValueFromInt(string, int)
+Executes KeyValue with an int
+
+KeyValueFromString
+bool KeyValueFromString(string, string)
+Executes KeyValue with a string
+
+KeyValueFromVector
+bool KeyValueFromVector(string, Vector)
+Executes KeyValue with a vector
+
+Kill
+void Kill()
+
+
+NextMovePeer
+handle NextMovePeer()
+
+
+PrecacheModel
+void PrecacheModel(string)
+
+
+PrecacheScriptSound
+void PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+void PrecacheSoundScript(string)
+Precache a sound for later playing.
+
+SetAbsAngles
+void SetAbsAngles(QAngle)
+Set entity pitch, yaw, roll as QAngles
+
+SetAbsOrigin
+void SetAbsOrigin(Vector)
+SetAbsOrigin
+
+SetAngles
+void SetAngles(float, float, float)
+!!!LEGACY FOR COMPAT!!! DO NOT USE ME. Set entity pitch, yaw, roll
+
+SetAngularVelocity
+void SetAngularVelocity(float, float, float)
+Set the local angular velocity - takes float pitch,yaw,roll velocities
+
+SetDrawEnabled
+void SetDrawEnabled(bool)
+Enables drawing if you pass true, disables drawing if you pass false.
+
+SetForwardVector
+void SetForwardVector(Vector)
+Set the orientation of the entity to have this forward vector
+
+SetFriction
+void SetFriction(float)
+Set PLAYER friction, ignored for objects
+
+SetGravity
+void SetGravity(float)
+Set PLAYER gravity, ignored for objects
+
+SetHealth
+void SetHealth(int)
+
+
+SetLocalAngles
+void SetLocalAngles(QAngle)
+
+
+SetLocalOrigin
+void SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+void SetMaxHealth(int)
+
+
+SetModel
+void SetModel(string)
+Set a model for this entity
+
+SetOrigin
+void SetOrigin(Vector)
+THIS DOESNT CALL SetAbsOrigin IT CALLS Teleport
+
+SetOwner
+void SetOwner(handle)
+Sets this entity's owner
+
+SetSize
+void SetSize(Vector, Vector)
+
+
+SetTeam
+void SetTeam(int)
+
+
+SetVelocity
+void SetVelocity(Vector)
+
+
+StopSound
+void StopSound(string)
+Stops a sound on this entity.
+
+TakeDamage
+void TakeDamage(float, int, handle)
+(flDamage, nDamageType, hAttacker)
+
+TakeDamageEx
+void TakeDamageEx(handle, handle, handle, Vector, Vector, float, int)
+(hInflictor, hAttacker, hWeapon, vecDamageForce, vecDamagePosition, flDamage, nDamageType)
+
+ValidateScriptScope
+bool ValidateScriptScope()
+Ensure that an entity's script scope has been created
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FindBodygroupByName
+int FindBodygroupByName(string)
+Find a bodygroup id by name
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetAttachmentAngles
+QAngle GetAttachmentAngles(int)
+Get the attachement id's angles as a p,y,r vector
+
+GetAttachmentBone
+int GetAttachmentBone(int)
+Get the named attachement's parent bone index
+
+GetAttachmentOrigin
+Vector GetAttachmentOrigin(int)
+Get the attachement id's origin vector
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBodygroup
+int GetBodygroup(int)
+Get a bodygroup by id
+
+GetBodygroupName
+string GetBodygroupName(int)
+Get the bodygroup id's name
+
+GetBodygroupPartName
+string GetBodygroupPartName(int, int)
+Get name by group and part
+
+GetBoneAngles
+QAngle GetBoneAngles(int)
+Get the bone id's angles as a p,y,r vector
+
+GetBoneOrigin
+Vector GetBoneOrigin(int)
+Get the bone id's origin vector
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetModelScale
+float GetModelScale()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSequence
+int GetSequence()
+Get the current sequence id
+
+GetSequenceActivityName
+string GetSequenceActivityName(int)
+Get the activity name for a sequence by id
+
+GetSequenceDuration
+float GetSequenceDuration(int)
+Get a sequence duration by id
+
+GetSequenceName
+string GetSequenceName(int)
+Get a sequence name by id
+
+GetSkin
+int GetSkin()
+Gets the current skin index.
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsPlayer
+IsPlayer()
+
+
+IsSequenceFinished
+bool IsSequenceFinished()
+Ask whether the main sequence is done playing
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+LookupActivity
+int LookupActivity(string)
+Get the named activity index
+
+LookupAttachment
+int LookupAttachment(string)
+Get the named attachement id
+
+LookupBone
+int LookupBone(string)
+Get the named bone index
+
+LookupSequence
+int LookupSequence(string)
+Looks up a sequence by sequence name or activity name
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+ResetSequence
+void ResetSequence(int)
+Reset a sequence by id. If the id is different than the current sequence, switch to the new sequence
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetBodygroup
+void SetBodygroup(int, int)
+Sets a bodygroup
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetModelScale
+void SetModelScale(float, float)
+(scale, change_duration) Changes a model's scale over time
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetPoseParameter
+float SetPoseParameter(int, float)
+(id, value) Sets a pose parameter value
+
+SetSequence
+void SetSequence(int)
+Set a sequence by id
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetSkin
+void SetSkin(int)
+Sets the skin.
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FindBodygroupByName
+FindBodygroupByName(string)
+
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetAttachmentAngles
+GetAttachmentAngles(num)
+
+
+GetAttachmentBone
+GetAttachmentBone(num)
+
+
+GetAttachmentOrigin
+GetAttachmentOrigin(num)
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBodygroup
+GetBodygroup(num)
+
+
+GetBodygroupName
+GetBodygroupName(num)
+
+
+GetBodygroupPartName
+GetBodygroupPartName(num, num)
+
+
+GetBoneAngles
+GetBoneAngles(num)
+
+
+GetBoneOrigin
+GetBoneOrigin(num)
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetModelScale
+GetModelScale()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSequence
+GetSequence()
+
+
+GetSequenceActivityName
+GetSequenceActivityName(num)
+
+
+GetSequenceDuration
+GetSequenceDuration(num)
+
+
+GetSequenceName
+GetSequenceName(num)
+
+
+GetSkin
+GetSkin()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsNoclipping
+IsNoclipping()
+
+
+IsPlayer
+IsPlayer()
+
+
+IsSequenceFinished
+IsSequenceFinished()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+LookupActivity
+LookupActivity(string)
+
+
+LookupAttachment
+LookupAttachment(string)
+
+
+LookupBone
+LookupBone(string)
+
+
+LookupSequence
+LookupSequence(string)
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+ResetSequence
+ResetSequence(num)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetBodygroup
+SetBodygroup(num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetModelScale
+SetModelScale(num, num)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetPoseParameter
+SetPoseParameter(num, num)
+
+
+SetSequence
+SetSequence(num)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetSkin
+SetSkin(num)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FindBodygroupByName
+FindBodygroupByName(string)
+
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetAttachmentAngles
+GetAttachmentAngles(num)
+
+
+GetAttachmentBone
+GetAttachmentBone(num)
+
+
+GetAttachmentOrigin
+GetAttachmentOrigin(num)
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBodygroup
+GetBodygroup(num)
+
+
+GetBodygroupName
+GetBodygroupName(num)
+
+
+GetBodygroupPartName
+GetBodygroupPartName(num, num)
+
+
+GetBoneAngles
+GetBoneAngles(num)
+
+
+GetBoneOrigin
+GetBoneOrigin(num)
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetModelScale
+GetModelScale()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSequence
+GetSequence()
+
+
+GetSequenceActivityName
+GetSequenceActivityName(num)
+
+
+GetSequenceDuration
+GetSequenceDuration(num)
+
+
+GetSequenceName
+GetSequenceName(num)
+
+
+GetSkin
+GetSkin()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsNoclipping
+bool IsNoclipping()
+Returns true if the player is in noclip mode.
+
+IsPlayer
+IsPlayer()
+
+
+IsSequenceFinished
+IsSequenceFinished()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+LookupActivity
+LookupActivity(string)
+
+
+LookupAttachment
+LookupAttachment(string)
+
+
+LookupBone
+LookupBone(string)
+
+
+LookupSequence
+LookupSequence(string)
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+ResetSequence
+ResetSequence(num)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetBodygroup
+SetBodygroup(num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetModelScale
+SetModelScale(num, num)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetPoseParameter
+SetPoseParameter(num, num)
+
+
+SetSequence
+SetSequence(num)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetSkin
+SetSkin(num)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+Call
+Call()
+
+
+chains
+chains()
+
+
+constructor
+constructor()
+
+
+PostScriptExecute
+PostScriptExecute()
+
+
+prefix
+prefix()
+
+
+scope
+scope()
+
+
+CreateByClassname
+handle CreateByClassname(string)
+Creates an entity by classname
+
+DispatchSpawn
+void DispatchSpawn(handle)
+Dispatches spawn of an entity!
+
+FindByClassname
+handle FindByClassname(handle, string)
+Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindByClassnameNearest
+handle FindByClassnameNearest(string, Vector, float)
+Find entities by class name nearest to a point.
+
+FindByClassnameWithin
+handle FindByClassnameWithin(handle, string, Vector, float)
+Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindByModel
+handle FindByModel(handle, string)
+Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindByName
+handle FindByName(handle, string)
+Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindByNameNearest
+handle FindByNameNearest(string, Vector, float)
+Find entities by name nearest to a point.
+
+FindByNameWithin
+handle FindByNameWithin(handle, string, Vector, float)
+Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindByTarget
+handle FindByTarget(handle, string)
+Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+FindInSphere
+handle FindInSphere(handle, Vector, float)
+Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+
+First
+handle First()
+Begin an iteration over the list of entities
+
+IsValid
+IsValid()
+
+
+Next
+handle Next(handle)
+Continue an iteration over the list of entities, providing reference to a previously found entity
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsPlayer
+IsPlayer()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+SpawnEntity
+void SpawnEntity()
+Create an entity at the location of the maker
+
+SpawnEntityAtEntityOrigin
+void SpawnEntityAtEntityOrigin(handle)
+Create an entity at the location of a specified entity instance
+
+SpawnEntityAtLocation
+void SpawnEntityAtLocation(Vector, Vector)
+Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)
+
+SpawnEntityAtNamedEntityOrigin
+void SpawnEntityAtNamedEntityOrigin(string)
+Create an entity at the location of a named entity
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetFuturePosition
+Vector GetFuturePosition(float, float)
+Get a position on the track x seconds in the future
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsPlayer
+IsPlayer()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+ValidateScriptScope
+ValidateScriptScope()
+
+
+GetPropArraySize
+int GetPropArraySize(handle, string)
+Arguments: ( entity, propertyName )
+
+GetPropEntity
+handle GetPropEntity(handle, string)
+Arguments: ( entity, propertyName ) - returns an entity
+
+GetPropEntityArray
+handle GetPropEntityArray(handle, string, int)
+Arguments: ( entity, propertyName, arrayElement ) - returns an entity
+
+GetPropFloat
+float GetPropFloat(handle, string)
+Arguments: ( entity, propertyName )
+
+GetPropFloatArray
+float GetPropFloatArray(handle, string, int)
+Arguments: ( entity, propertyName, arrayElement )
+
+GetPropInt
+int GetPropInt(handle, string)
+Arguments: ( entity, propertyName )
+
+GetPropIntArray
+int GetPropIntArray(handle, string, int)
+Arguments: ( entity, propertyName, arrayElement )
+
+GetPropString
+string GetPropString(handle, string)
+Arguments: ( entity, propertyName )
+
+GetPropStringArray
+string GetPropStringArray(handle, string, int)
+Arguments: ( entity, propertyName, arrayElement )
+
+GetPropType
+string GetPropType(handle, string)
+Arguments: ( entity, propertyName ) - return the prop type as a string
+
+GetPropVector
+Vector GetPropVector(handle, string)
+Arguments: ( entity, propertyName )
+
+GetPropVectorArray
+Vector GetPropVectorArray(handle, string, int)
+Arguments: ( entity, propertyName, arrayElement )
+
+HasProp
+bool HasProp(handle, string)
+Arguments: ( entity, propertyName )
+
+IsValid
+IsValid()
+
+
+SetPropEntity
+void SetPropEntity(handle, string, handle)
+Arguments: ( entity, propertyName, value )
+
+SetPropEntityArray
+void SetPropEntityArray(handle, string, handle, int)
+Arguments: ( entity, propertyName, value, arrayElement )
+
+SetPropFloat
+void SetPropFloat(handle, string, float)
+Arguments: ( entity, propertyName, value )
+
+SetPropFloatArray
+void SetPropFloatArray(handle, string, float, int)
+Arguments: ( entity, propertyName, value, arrayElement )
+
+SetPropInt
+void SetPropInt(handle, string, int)
+Arguments: ( entity, propertyName, value )
+
+SetPropIntArray
+void SetPropIntArray(handle, string, int, int)
+Arguments: ( entity, propertyName, value, arrayElement )
+
+SetPropString
+void SetPropString(handle, string, string)
+Arguments: ( entity, propertyName, value )
+
+SetPropStringArray
+void SetPropStringArray(handle, string, string, int)
+Arguments: ( entity, propertyName, value, arrayElement )
+
+SetPropVector
+void SetPropVector(handle, string, Vector)
+Arguments: ( entity, propertyName, value )
+
+SetPropVectorArray
+void SetPropVectorArray(handle, string, Vector, int)
+Arguments: ( entity, propertyName, value, arrayElement )
+
+GetClientConvarValue
+string GetClientConvarValue(string, int)
+GetClientConvarValue(name) : returns the convar value for the entindex as a string.
+
+GetFloat
+<unknown> GetFloat(string)
+GetFloat(name) : returns the convar as a float. May return null if no such convar.
+
+GetStr
+<unknown> GetStr(string)
+GetFloat(name) : returns the convar as a string. May return null if no such convar.
+
+IsValid
+IsValid()
+
+
+SetValue
+void SetValue(string, <unknown>)
+SetValue(name, value) : sets the value of the convar. Supported types are bool, int, float, string.
+
+GetPlayerSpeechDuration
+float GetPlayerSpeechDuration(int)
+Returns the number of seconds the player has been continuously speaking.
+
+IsPlayerSpeaking
+bool IsPlayerSpeaking(int)
+Returns whether the player specified is speaking.
+
+IsValid
+IsValid()
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+AddTemplate
+void AddTemplate(string, handle)
+Add an entity to the template spawner
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsPlayer
+IsPlayer()
+
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetGroupSpawnTables
+void SetGroupSpawnTables(handle, handle)
+Cache the group spawn tables
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+AddBroadcastTeamTarget
+void AddBroadcastTeamTarget(int)
+Adds a team (by index) to the broadcast list
+
+ApplyAbsVelocityImpulse
+ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EstimateLength
+float EstimateLength()
+Returns length of this scene in seconds.
+
+EyePosition
+EyePosition()
+
+
+FindNamedEntity
+handle FindNamedEntity(string)
+given an entity reference, such as !target, get actual entity from scene object
+
+FirstMoveChild
+FirstMoveChild()
+
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassname
+GetClassname()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetHealth
+GetHealth()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetTeam
+GetTeam()
+
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+IsPaused
+bool IsPaused()
+If this scene is currently paused.
+
+IsPlayer
+IsPlayer()
+
+
+IsPlayingBack
+bool IsPlayingBack()
+If this scene is currently playing.
+
+IsValid
+IsValid()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+LoadSceneFromString
+bool LoadSceneFromString(string, string)
+given a dummy scene name and a vcd string, load the scene
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+RemoveBroadcastTeamTarget
+void RemoveBroadcastTeamTarget(int)
+Removes a team (by index) from the broadcast list
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+AddOutput
+void AddOutput(handle, string, string, string, string, float, int)
+Arguments: ( entity, outputName, targetName, inputName, parameter, delay, timesToFire ) - add a new output to the entity
+
+GetNumElements
+int GetNumElements(handle, string)
+Arguments: ( entity, outputName ) - returns the number of array elements
+
+GetOutputTable
+void GetOutputTable(handle, string, handle, int)
+Arguments: ( entity, outputName, table, arrayElement ) - returns a table of output information
+
+HasAction
+bool HasAction(handle, string)
+Arguments: ( entity, outputName ) - returns true if an action exists for the output
+
+HasOutput
+bool HasOutput(handle, string)
+Arguments: ( entity, outputName ) - returns true if the output exists
+
+IsValid
+IsValid()
+
+
+RemoveOutput
+void RemoveOutput(handle, string, string, string, string)
+Arguments: ( entity, outputName, targetName, inputName, parameter ) - remove an output from the entity
+
+constructor
+constructor()
+
+
+FindKey
+handle FindKey(string)
+Given a KeyValues object and a key name, find a KeyValues object associated with the key name
+
+GetFirstSubKey
+handle GetFirstSubKey()
+Given a KeyValues object, return the first sub key object
+
+GetKeyBool
+bool GetKeyBool(string)
+Given a KeyValues object and a key name, return associated bool value
+
+GetKeyFloat
+float GetKeyFloat(string)
+Given a KeyValues object and a key name, return associated float value
+
+GetKeyInt
+int GetKeyInt(string)
+Given a KeyValues object and a key name, return associated integer value
+
+GetKeyString
+string GetKeyString(string)
+Given a KeyValues object and a key name, return associated string value
+
+GetNextKey
+handle GetNextKey()
+Given a KeyValues object, return the next key object in a sub key group
+
+IsKeyEmpty
+bool IsKeyEmpty(string)
+Given a KeyValues object and a key name, return true if key name has no value
+
+IsValid
+IsValid()
+
+
+ReleaseKeyValues
+void ReleaseKeyValues()
+Given a root KeyValues object, release its contents
+
+Call
+Call()
+
+
+chain
+chain()
+
+
+constructor
+constructor()
+
+
+PostScriptExecute
+PostScriptExecute()
+
+
+prefix
+prefix()
+
+
+scope
+scope()
+
+
+__KeyValueFromFloat
+__KeyValueFromFloat(string, num)
+
+
+__KeyValueFromInt
+__KeyValueFromInt(string, num)
+
+
+__KeyValueFromString
+__KeyValueFromString(string, string)
+
+
+__KeyValueFromVector
+__KeyValueFromVector(string, Vector)
+
+
+AddCond
+void AddCond(string)
+
+
+AddCondEx
+void AddCondEx(string, float, handle)
+
+
+AddCustomAttribute
+void AddCustomAttribute(string, float, float)
+Add a custom attribute to the player
+
+ApplyAbsVelocityImpulse
+void ApplyAbsVelocityImpulse(Vector)
+
+
+ApplyLocalAngularVelocityImpulse
+ApplyLocalAngularVelocityImpulse(Vector)
+
+
+ApplyPunchImpulseX
+bool ApplyPunchImpulseX(float)
+
+
+CanAirDash
+bool CanAirDash()
+
+
+CanBeDebuffed
+bool CanBeDebuffed()
+
+
+CanBreatheUnderwater
+bool CanBreatheUnderwater()
+
+
+CanDuck
+bool CanDuck()
+Can the player duck?
+
+CanGetWet
+bool CanGetWet()
+
+
+CanJump
+bool CanJump()
+Can the player jump?
+
+CanPlayerMove
+bool CanPlayerMove()
+Can the player move?
+
+ConnectOutput
+ConnectOutput(string, string)
+
+
+Destroy
+Destroy()
+
+
+DisableDraw
+DisableDraw()
+
+
+DisconnectOutput
+DisconnectOutput(string, string)
+
+
+DispatchSpawn
+DispatchSpawn()
+
+
+DropFlag
+void DropFlag(bool)
+Force player to drop the flag.
+
+DropRune
+void DropRune(bool, int)
+Force player to drop the rune.
+
+EmitSound
+EmitSound(string)
+
+
+EnableDraw
+EnableDraw()
+
+
+entindex
+entindex()
+
+
+EyePosition
+EyePosition()
+
+
+FindBodygroupByName
+FindBodygroupByName(string)
+
+
+FiringTalk
+void FiringTalk()
+Makes eg. a heavy go AAAAAAAAAAaAaa like they are firing their minigun.
+
+FirstMoveChild
+FirstMoveChild()
+
+
+ForceChangeTeam
+void ForceChangeTeam(int, bool)
+Force player to change their team.
+
+GetAbsAngles
+GetAbsAngles()
+
+
+GetAngles
+GetAngles()
+
+
+GetAngularVelocity
+GetAngularVelocity()
+
+
+GetAttachmentAngles
+GetAttachmentAngles(num)
+
+
+GetAttachmentBone
+GetAttachmentBone(num)
+
+
+GetAttachmentOrigin
+GetAttachmentOrigin(num)
+
+
+GetBackstabs
+int GetBackstabs()
+
+
+GetBaseVelocity
+GetBaseVelocity()
+
+
+GetBodygroup
+GetBodygroup(num)
+
+
+GetBodygroupName
+GetBodygroupName(num)
+
+
+GetBodygroupPartName
+GetBodygroupPartName(num, num)
+
+
+GetBoneAngles
+GetBoneAngles(num)
+
+
+GetBoneOrigin
+GetBoneOrigin(num)
+
+
+GetBonusPoints
+int GetBonusPoints()
+
+
+GetBoundingMaxs
+GetBoundingMaxs()
+
+
+GetBoundingMaxsOriented
+GetBoundingMaxsOriented()
+
+
+GetBoundingMins
+GetBoundingMins()
+
+
+GetBoundingMinsOriented
+GetBoundingMinsOriented()
+
+
+GetBuildingsDestroyed
+int GetBuildingsDestroyed()
+
+
+GetCaptures
+int GetCaptures()
+
+
+GetCenter
+GetCenter()
+
+
+GetClassEyeHeight
+Vector GetClassEyeHeight()
+Gets the eye height of the player
+
+GetClassname
+GetClassname()
+
+
+GetCondDuration
+float GetCondDuration(string)
+
+
+GetCurrentTauntMoveSpeed
+float GetCurrentTauntMoveSpeed()
+
+
+GetDefenses
+int GetDefenses()
+
+
+GetDisguiseAmmoCount
+int GetDisguiseAmmoCount()
+
+
+GetDisguiseTarget
+handle GetDisguiseTarget()
+
+
+GetDisguiseTeam
+int GetDisguiseTeam()
+
+
+GetDominations
+int GetDominations()
+
+
+GetEntityHandle
+GetEntityHandle()
+
+
+GetEntityIndex
+GetEntityIndex()
+
+
+GetForwardVector
+GetForwardVector()
+
+
+GetFriction
+GetFriction()
+
+
+GetGrapplingHookTarget
+handle GetGrapplingHookTarget()
+What entity is the player grappling?
+
+GetHeadshots
+int GetHeadshots()
+
+
+GetHealPoints
+int GetHealPoints()
+
+
+GetHealTarget
+handle GetHealTarget()
+Who is the medic healing?
+
+GetHealth
+GetHealth()
+
+
+GetInvulns
+int GetInvulns()
+
+
+GetKillAssists
+int GetKillAssists()
+
+
+GetLeftVector
+GetLeftVector()
+
+
+GetLocalAngles
+GetLocalAngles()
+
+
+GetLocalOrigin
+GetLocalOrigin()
+
+
+GetLocalVelocity
+GetLocalVelocity()
+
+
+GetMaxHealth
+GetMaxHealth()
+
+
+GetModelKeyValues
+GetModelKeyValues()
+
+
+GetModelName
+GetModelName()
+
+
+GetModelScale
+GetModelScale()
+
+
+GetMoveParent
+GetMoveParent()
+
+
+GetName
+GetName()
+
+
+GetNextChangeClassTime
+float GetNextChangeClassTime()
+Get next change class time.
+
+GetNextChangeTeamTime
+float GetNextChangeTeamTime()
+Get next change team time.
+
+GetNextRegenTime
+float GetNextRegenTime()
+Get next health regen time.
+
+GetOrigin
+GetOrigin()
+
+
+GetOwner
+GetOwner()
+
+
+GetPreTemplateName
+GetPreTemplateName()
+
+
+GetRageMeter
+float GetRageMeter()
+
+
+GetResupplyPoints
+int GetResupplyPoints()
+
+
+GetRevenge
+int GetRevenge()
+
+
+GetRightVector
+GetRightVector()
+
+
+GetRootMoveParent
+GetRootMoveParent()
+
+
+GetScoutHypeMeter
+float GetScoutHypeMeter()
+
+
+GetScriptId
+GetScriptId()
+
+
+GetScriptScope
+GetScriptScope()
+
+
+GetSequence
+GetSequence()
+
+
+GetSequenceActivityName
+GetSequenceActivityName(num)
+
+
+GetSequenceDuration
+GetSequenceDuration(num)
+
+
+GetSequenceName
+GetSequenceName(num)
+
+
+GetSkin
+GetSkin()
+
+
+GetSoundDuration
+GetSoundDuration(string, string)
+
+
+GetSpyCloakMeter
+float GetSpyCloakMeter()
+
+
+GetTeam
+GetTeam()
+
+
+GetTeleports
+int GetTeleports()
+
+
+GetTimeSinceCalledForMedic
+float GetTimeSinceCalledForMedic()
+When did the player last call medic
+
+GetUpVector
+GetUpVector()
+
+
+GetVelocity
+GetVelocity()
+
+
+HasItem
+bool HasItem()
+Currently holding an item? Eg. capture flag
+
+InAirDueToExplosion
+bool InAirDueToExplosion()
+
+
+InAirDueToKnockback
+bool InAirDueToKnockback()
+
+
+InCond
+bool InCond(string)
+
+
+IsAirDashing
+bool IsAirDashing()
+
+
+IsAllowedToTaunt
+bool IsAllowedToTaunt()
+
+
+IsCallingForMedic
+bool IsCallingForMedic()
+Is this player calling for medic?
+
+IsCarryingRune
+bool IsCarryingRune()
+
+
+IsControlStunned
+bool IsControlStunned()
+
+
+IsCritBoosted
+bool IsCritBoosted()
+
+
+IsFireproof
+bool IsFireproof()
+
+
+IsFullyInvisible
+bool IsFullyInvisible()
+
+
+IsHypeBuffed
+bool IsHypeBuffed()
+
+
+IsImmuneToPushback
+bool IsImmuneToPushback()
+
+
+IsInspecting
+bool IsInspecting()
+
+
+IsInvulnerable
+bool IsInvulnerable()
+
+
+IsJumping
+bool IsJumping()
+
+
+IsMiniBoss
+bool IsMiniBoss()
+Is this player an MvM mini-boss?
+
+IsNoclipping
+IsNoclipping()
+
+
+IsParachuteEquipped
+bool IsParachuteEquipped()
+
+
+IsPlacingSapper
+bool IsPlacingSapper()
+Returns true if we placed a sapper in the last few moments
+
+IsPlayer
+IsPlayer()
+
+
+IsRageDraining
+bool IsRageDraining()
+
+
+IsRegenerating
+bool IsRegenerating()
+
+
+IsSapping
+bool IsSapping()
+Returns true if we are currently sapping
+
+IsSequenceFinished
+IsSequenceFinished()
+
+
+IsSnared
+bool IsSnared()
+
+
+IsStealthed
+bool IsStealthed()
+
+
+IsUsingActionSlot
+bool IsUsingActionSlot()
+
+
+IsValid
+IsValid()
+
+
+IsViewingCYOAPDA
+bool IsViewingCYOAPDA()
+
+
+KeyValueFromFloat
+KeyValueFromFloat(string, num)
+
+
+KeyValueFromInt
+KeyValueFromInt(string, num)
+
+
+KeyValueFromString
+KeyValueFromString(string, string)
+
+
+KeyValueFromVector
+KeyValueFromVector(string, Vector)
+
+
+Kill
+Kill()
+
+
+LookupActivity
+LookupActivity(string)
+
+
+LookupAttachment
+LookupAttachment(string)
+
+
+LookupBone
+LookupBone(string)
+
+
+LookupSequence
+LookupSequence(string)
+
+
+NextMovePeer
+NextMovePeer()
+
+
+PrecacheModel
+PrecacheModel(string)
+
+
+PrecacheScriptSound
+PrecacheScriptSound(string)
+
+
+PrecacheSoundScript
+PrecacheSoundScript(string)
+
+
+RemoveAllCond
+void RemoveAllCond()
+
+
+RemoveAllObjects
+void RemoveAllObjects(bool)
+Remove all player objects. Eg. dispensers/sentries.
+
+RemoveCond
+void RemoveCond(string)
+
+
+RemoveCondEx
+void RemoveCondEx(string, bool)
+
+
+RemoveCustomAttribute
+void RemoveCustomAttribute(string)
+Remove a custom attribute to the player
+
+RemoveDisguise
+void RemoveDisguise()
+Undisguise a spy.
+
+RemoveInvisibility
+void RemoveInvisibility()
+Un-invisible a spy.
+
+ResetScores
+void ResetScores()
+
+
+ResetSequence
+ResetSequence(num)
+
+
+SetAbsAngles
+SetAbsAngles(Vector)
+
+
+SetAbsOrigin
+SetAbsOrigin(Vector)
+
+
+SetAngles
+SetAngles(num, num, num)
+
+
+SetAngularVelocity
+SetAngularVelocity(num, num, num)
+
+
+SetBodygroup
+SetBodygroup(num, num)
+
+
+SetCondDuration
+void SetCondDuration(string, float)
+
+
+SetCurrentTauntMoveSpeed
+void SetCurrentTauntMoveSpeed(float)
+
+
+SetDisguiseAmmoCount
+void SetDisguiseAmmoCount(int)
+
+
+SetDrawEnabled
+SetDrawEnabled(bool)
+
+
+SetForwardVector
+SetForwardVector(Vector)
+
+
+SetFriction
+SetFriction(num)
+
+
+SetGrapplingHookTarget
+void SetGrapplingHookTarget(handle, bool)
+Set the player's target grapple entity
+
+SetGravity
+SetGravity(num)
+
+
+SetHealth
+SetHealth(num)
+
+
+SetIsMiniBoss
+void SetIsMiniBoss(bool)
+Make this player an MvM mini-boss.
+
+SetLocalAngles
+SetLocalAngles(Vector)
+
+
+SetLocalOrigin
+SetLocalOrigin(Vector)
+
+
+SetMaxHealth
+SetMaxHealth(num)
+
+
+SetModel
+SetModel(string)
+
+
+SetModelScale
+SetModelScale(num, num)
+
+
+SetNextChangeClassTime
+void SetNextChangeClassTime(float)
+Set next change class time.
+
+SetNextChangeTeamTime
+void SetNextChangeTeamTime(float)
+Set next change team time.
+
+SetNextRegenTime
+void SetNextRegenTime(float)
+Set next health regen time.
+
+SetOrigin
+SetOrigin(Vector)
+
+
+SetOwner
+SetOwner(Vector)
+
+
+SetPoseParameter
+SetPoseParameter(num, num)
+
+
+SetRageMeter
+void SetRageMeter(float)
+
+
+SetScoutHypeMeter
+void SetScoutHypeMeter(float)
+
+
+SetSequence
+SetSequence(num)
+
+
+SetSize
+SetSize(Vector, Vector)
+
+
+SetSkin
+SetSkin(num)
+
+
+SetSpyCloakMeter
+void SetSpyCloakMeter(float)
+
+
+SetTeam
+SetTeam(num)
+
+
+SetUseBossHealthBar
+void SetUseBossHealthBar(bool)
+
+
+SetVelocity
+SetVelocity(Vector)
+
+
+StopSound
+StopSound(string)
+
+
+TakeDamage
+TakeDamage(num, num, Vector)
+
+
+TakeDamageEx
+TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)
+
+
+TryToPickupBuilding
+bool TryToPickupBuilding()
+Make the player attempt to pick up a building in front of them
+
+ValidateScriptScope
+ValidateScriptScope()
+
+
+WasInCond
+bool WasInCond(string)
+
+
+Begin
+Begin()
+
+
+End
+End()
+
+
+EstablishDelegation
+EstablishDelegation()
+
+
+HookRootMetamethod
+HookRootMetamethod()
+
+
+Log
+Log()
+
+
+m_bindNamesStack
+m_bindNamesStack()
+
+
+m_fixupSet
+m_fixupSet()
+
+
+m_targetTable
+m_targetTable()
+
+
+RemoveDelegation
+RemoveDelegation()
+
+
+Resolve
+Resolve()
+
+
+UnhookRootMetamethod
+UnhookRootMetamethod()
+
+
+constructor
+constructor()
+
+
+Forward
+Forward()
+
+
+Left
+Left()
+
+
+Pitch
+Pitch()
+
+
+Roll
+Roll()
+
+
+ToKVString
+ToKVString()
+
+
+ToQuat
+ToQuat()
+
+
+Up
+Up()
+
+
+Yaw
+Yaw()
+
+
+constructor
+constructor()
+
+
+Dot
+Dot()
+
+
+Invert
+Invert()
+
+
+Norm
+Norm()
+
+
+SetPitchYawRoll
+SetPitchYawRoll(num, num, num)
+
+
+ToKVString
+ToKVString()
+
+
+ToQAngle
+ToQAngle()
+
+
+capture
+capture(string, num)
+
+
+constructor
+constructor(string)
+
+
+match
+match(string)
+
+
+search
+search(string, num)
+
+
+subexpcount
+subexpcount()
+
+
+constructor
+constructor()
+
+
+Cross
+Cross()
+
+
+Dot
+Dot()
+
+
+Length
+Length()
+
+
+Length2D
+Length2D()
+
+
+Length2DSqr
+Length2DSqr()
+
+
+LengthSqr
+LengthSqr()
+
+
+Norm
+Norm()
+
+
+Scale
+Scale()
+
+
+ToKVString
+ToKVString()
+
+
+tostring
+tostring()
+
+
+constructor
+constructor()
+
+
+Dot
+Dot()
+
+
+Length
+Length()
+
+
+LengthSqr
+LengthSqr()
+
+
+Norm
+Norm()
+
+
+ToKVString
+ToKVString()
+
+
+constructor
+constructor()
+
+
+Dot
+Dot()
+
+
+Length
+Length()
+
+
+LengthSqr
+LengthSqr()
+
+
+Norm
+Norm()
+
+
+ToKVString
+ToKVString()

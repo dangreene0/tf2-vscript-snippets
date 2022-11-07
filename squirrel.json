@@ -1,0 +1,3707 @@
+{
+    ///// BEGIN TF2 VScript Snippets /////
+    "void AddBroadcastTeamTarget(int)": {
+        "prefix": "AddBroadcastTeamTarget",
+        "body": [
+            "AddBroadcastTeamTarget(${1:int})$0"
+        ],
+        "description": "Adds a team (by index) to the broadcast list"
+    },
+    "void AddCond(string)": {
+        "prefix": "AddCond",
+        "body": [
+            "AddCond(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "void AddCondEx(string, float, handle)": {
+        "prefix": "AddCondEx",
+        "body": [
+            "AddCondEx(${1:string}, ${2:float}, ${3:handle})$0"
+        ],
+        "description": ""
+    },
+    "void AddCustomAttribute(string, float, float)": {
+        "prefix": "AddCustomAttribute",
+        "body": [
+            "AddCustomAttribute(${1:string}, ${2:float}, ${3:float})$0"
+        ],
+        "description": "Add a custom attribute to the player"
+    },
+    "void AddOutput(handle, string, string, string, string, float, int)": {
+        "prefix": "AddOutput",
+        "body": [
+            "AddOutput(${1:handle}, ${2:string}, ${3:string}, ${4:string}, ${5:string}, ${6:float}, ${7:int})$0"
+        ],
+        "description": "Arguments: ( entity, outputName, targetName, inputName, parameter, delay, timesToFire ) - add a new output to the entity"
+    },
+    "void AddTemplate(string, handle)": {
+        "prefix": "AddTemplate",
+        "body": [
+            "AddTemplate(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Add an entity to the template spawner"
+    },
+    "void AddThinkToEnt(handle, string)": {
+        "prefix": "AddThinkToEnt",
+        "body": [
+            "AddThinkToEnt(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Adds a late bound think function to the C++ think tables for the obj"
+    },
+    "AddToScriptHelp()": {
+        "prefix": "AddToScriptHelp",
+        "body": [
+            "AddToScriptHelp()$0"
+        ],
+        "description": ""
+    },
+    "bool AllowThirdPersonCamera()": {
+        "prefix": "AllowThirdPersonCamera",
+        "body": [
+            "AllowThirdPersonCamera()$0"
+        ],
+        "description": ""
+    },
+    "void ApplyAbsVelocityImpulse(Vector)": {
+        "prefix": "ApplyAbsVelocityImpulse",
+        "body": [
+            "ApplyAbsVelocityImpulse(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "ApplyLocalAngularVelocityImpulse(Vector)": {
+        "prefix": "ApplyLocalAngularVelocityImpulse",
+        "body": [
+            "ApplyLocalAngularVelocityImpulse(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "bool ApplyPunchImpulseX(float)": {
+        "prefix": "ApplyPunchImpulseX",
+        "body": [
+            "ApplyPunchImpulseX(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "bool ArePlayersInHell()": {
+        "prefix": "ArePlayersInHell",
+        "body": [
+            "ArePlayersInHell()$0"
+        ],
+        "description": ""
+    },
+    "Assert()": {
+        "prefix": "Assert",
+        "body": [
+            "Assert()$0"
+        ],
+        "description": ""
+    },
+    "Begin()": {
+        "prefix": "Begin",
+        "body": [
+            "Begin()$0"
+        ],
+        "description": ""
+    },
+    "BeginScriptDebug()": {
+        "prefix": "BeginScriptDebug",
+        "body": [
+            "BeginScriptDebug()$0"
+        ],
+        "description": ""
+    },
+    "Call()": {
+        "prefix": "Call",
+        "body": [
+            "Call()$0"
+        ],
+        "description": ""
+    },
+    "bool CanAirDash()": {
+        "prefix": "CanAirDash",
+        "body": [
+            "CanAirDash()$0"
+        ],
+        "description": ""
+    },
+    "bool CanBeDebuffed()": {
+        "prefix": "CanBeDebuffed",
+        "body": [
+            "CanBeDebuffed()$0"
+        ],
+        "description": ""
+    },
+    "bool CanBreatheUnderwater()": {
+        "prefix": "CanBreatheUnderwater",
+        "body": [
+            "CanBreatheUnderwater()$0"
+        ],
+        "description": ""
+    },
+    "bool CanDuck()": {
+        "prefix": "CanDuck",
+        "body": [
+            "CanDuck()$0"
+        ],
+        "description": "Can the player duck?"
+    },
+    "bool CanGetWet()": {
+        "prefix": "CanGetWet",
+        "body": [
+            "CanGetWet()$0"
+        ],
+        "description": ""
+    },
+    "bool CanJump()": {
+        "prefix": "CanJump",
+        "body": [
+            "CanJump()$0"
+        ],
+        "description": "Can the player jump?"
+    },
+    "bool CanPlayerMove()": {
+        "prefix": "CanPlayerMove",
+        "body": [
+            "CanPlayerMove()$0"
+        ],
+        "description": "Can the player move?"
+    },
+    "ClearGameEventCallbacks()": {
+        "prefix": "ClearGameEventCallbacks",
+        "body": [
+            "ClearGameEventCallbacks()$0"
+        ],
+        "description": ""
+    },
+    "void ClientPrint(handle, int, string)": {
+        "prefix": "ClientPrint",
+        "body": [
+            "ClientPrint(${1:handle}, ${2:int}, ${3:string})$0"
+        ],
+        "description": "Print a client message"
+    },
+    "ConnectOutput(string, string)": {
+        "prefix": "ConnectOutput",
+        "body": [
+            "ConnectOutput(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "handle CreateByClassname(string)": {
+        "prefix": "CreateByClassname",
+        "body": [
+            "CreateByClassname(${1:string})$0"
+        ],
+        "description": "Creates an entity by classname"
+    },
+    "handle CreateProp(string, Vector, string, int)": {
+        "prefix": "CreateProp",
+        "body": [
+            "CreateProp(${1:string}, ${2:Vector}, ${3:string}, ${4:int})$0"
+        ],
+        "description": "Create a physics prop"
+    },
+    "handle CreateSceneEntity(string)": {
+        "prefix": "CreateSceneEntity",
+        "body": [
+            "CreateSceneEntity(${1:string})$0"
+        ],
+        "description": "Create a scene entity to play the specified scene."
+    },
+    "Cross()": {
+        "prefix": "Cross",
+        "body": [
+            "Cross()$0"
+        ],
+        "description": ""
+    },
+    "void DebugDrawBox(Vector, Vector, int, int, int, int, float)": {
+        "prefix": "DebugDrawBox",
+        "body": [
+            "DebugDrawBox(${1:Vector}, ${2:Vector}, ${3:int}, ${4:int}, ${5:int}, ${6:int}, ${7:float})$0"
+        ],
+        "description": "Draw a debug overlay box"
+    },
+    "void DebugDrawBoxAngles(Vector, Vector, Vector, QAngle, Vector, float, float)": {
+        "prefix": "DebugDrawBoxAngles",
+        "body": [
+            "DebugDrawBoxAngles(${1:Vector}, ${2:Vector}, ${3:Vector}, ${4:QAngle}, ${5:Vector}, ${6:float}, ${7:float})$0"
+        ],
+        "description": "Draw a debug oriented box (cent, min, max, angles(p,y,r), vRgb, a, duration)"
+    },
+    "void DebugDrawBoxDirection(Vector, Vector, Vector, Vector, Vector, float, float)": {
+        "prefix": "DebugDrawBoxDirection",
+        "body": [
+            "DebugDrawBoxDirection(${1:Vector}, ${2:Vector}, ${3:Vector}, ${4:Vector}, ${5:Vector}, ${6:float}, ${7:float})$0"
+        ],
+        "description": "Draw a debug forward box (cent, min, max, forward, vRgb, a, duration)"
+    },
+    "void DebugDrawCircle(Vector, Vector, float, float, bool, float)": {
+        "prefix": "DebugDrawCircle",
+        "body": [
+            "DebugDrawCircle(${1:Vector}, ${2:Vector}, ${3:float}, ${4:float}, ${5:bool}, ${6:float})$0"
+        ],
+        "description": "Draw a debug circle (center, rad, vRgb, a, ztest, duration)"
+    },
+    "void DebugDrawClear()": {
+        "prefix": "DebugDrawClear",
+        "body": [
+            "DebugDrawClear()$0"
+        ],
+        "description": "Try to clear all the debug overlay info"
+    },
+    "void DebugDrawLine(Vector, Vector, int, int, int, bool, float)": {
+        "prefix": "DebugDrawLine",
+        "body": [
+            "DebugDrawLine(${1:Vector}, ${2:Vector}, ${3:int}, ${4:int}, ${5:int}, ${6:bool}, ${7:float})$0"
+        ],
+        "description": "Draw a debug overlay line"
+    },
+    "void DebugDrawLine_vCol(Vector, Vector, Vector, bool, float)": {
+        "prefix": "DebugDrawLine_vCol",
+        "body": [
+            "DebugDrawLine_vCol(${1:Vector}, ${2:Vector}, ${3:Vector}, ${4:bool}, ${5:float})$0"
+        ],
+        "description": "Draw a debug line using color vec (start, end, vRgb, a, ztest, duration)"
+    },
+    "void DebugDrawScreenTextLine(float, float, int, string, int, int, int, int, float)": {
+        "prefix": "DebugDrawScreenTextLine",
+        "body": [
+            "DebugDrawScreenTextLine(${1:float}, ${2:float}, ${3:int}, ${4:string}, ${5:int}, ${6:int}, ${7:int}, ${8:int}, ${9:float})$0"
+        ],
+        "description": "Draw text with a line offset"
+    },
+    "void DebugDrawText(Vector, string, bool, float)": {
+        "prefix": "DebugDrawText",
+        "body": [
+            "DebugDrawText(${1:Vector}, ${2:string}, ${3:bool}, ${4:float})$0"
+        ],
+        "description": "Draw text in 3d (origin, text, bViewCheck, duration)"
+    },
+    "Destroy()": {
+        "prefix": "Destroy",
+        "body": [
+            "Destroy()$0"
+        ],
+        "description": ""
+    },
+    "DisableDraw()": {
+        "prefix": "DisableDraw",
+        "body": [
+            "DisableDraw()$0"
+        ],
+        "description": ""
+    },
+    "DisconnectOutput(string, string)": {
+        "prefix": "DisconnectOutput",
+        "body": [
+            "DisconnectOutput(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "void DispatchParticleEffect(string, Vector, Vector)": {
+        "prefix": "DispatchParticleEffect",
+        "body": [
+            "DispatchParticleEffect(${1:string}, ${2:Vector}, ${3:Vector})$0"
+        ],
+        "description": "Dispatches a one-off particle system"
+    },
+    "DispatchSpawn()": {
+        "prefix": "DispatchSpawn",
+        "body": [
+            "DispatchSpawn()$0"
+        ],
+        "description": ""
+    },
+    "DoEntFire(string, string, string, num, Vector, Vector)": {
+        "prefix": "DoEntFire",
+        "body": [
+            "DoEntFire(${1:string}, ${2:string}, ${3:string}, ${4:num}, ${5:Vector}, ${6:Vector})$0"
+        ],
+        "description": ""
+    },
+    "bool DoIncludeScript(string, handle)": {
+        "prefix": "DoIncludeScript",
+        "body": [
+            "DoIncludeScript(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Execute a script (internal)"
+    },
+    "DoUniqueString(string)": {
+        "prefix": "DoUniqueString",
+        "body": [
+            "DoUniqueString(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "Document()": {
+        "prefix": "Document",
+        "body": [
+            "Document()$0"
+        ],
+        "description": ""
+    },
+    "Dot()": {
+        "prefix": "Dot",
+        "body": [
+            "Dot()$0"
+        ],
+        "description": ""
+    },
+    "void DropFlag(bool)": {
+        "prefix": "DropFlag",
+        "body": [
+            "DropFlag(${1:bool})$0"
+        ],
+        "description": "Force player to drop the flag."
+    },
+    "void DropRune(bool, int)": {
+        "prefix": "DropRune",
+        "body": [
+            "DropRune(${1:bool}, ${2:int})$0"
+        ],
+        "description": "Force player to drop the rune."
+    },
+    "DumpObject()": {
+        "prefix": "DumpObject",
+        "body": [
+            "DumpObject()$0"
+        ],
+        "description": ""
+    },
+    "void EmitAmbientSoundOn(string, float, int, int, handle)": {
+        "prefix": "EmitAmbientSoundOn",
+        "body": [
+            "EmitAmbientSoundOn(${1:string}, ${2:float}, ${3:int}, ${4:int}, ${5:handle})$0"
+        ],
+        "description": "Play named ambient sound on an entity."
+    },
+    "EmitSound(string)": {
+        "prefix": "EmitSound",
+        "body": [
+            "EmitSound(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "void EmitSoundOn(string, handle)": {
+        "prefix": "EmitSoundOn",
+        "body": [
+            "EmitSoundOn(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Play named sound on Entity"
+    },
+    "void EmitSoundOnClient(string, handle)": {
+        "prefix": "EmitSoundOnClient",
+        "body": [
+            "EmitSoundOnClient(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Play named sound only on the client for the passed in player"
+    },
+    "EnableDraw()": {
+        "prefix": "EnableDraw",
+        "body": [
+            "EnableDraw()$0"
+        ],
+        "description": ""
+    },
+    "End()": {
+        "prefix": "End",
+        "body": [
+            "End()$0"
+        ],
+        "description": ""
+    },
+    "EndScriptDebug()": {
+        "prefix": "EndScriptDebug",
+        "body": [
+            "EndScriptDebug()$0"
+        ],
+        "description": ""
+    },
+    "function EntFire(target, action, value, delay, activator)": {
+        "prefix": "EntFire",
+        "body": [
+            "EntFire(${1:target}, ${2:action}, ${3:value}, ${4:delay}, ${5:activator})$0"
+        ],
+        "description": "Generate and entity i/o event"
+    },
+    "void EntFireByHandle(handle, string, string, float, handle, handle)": {
+        "prefix": "EntFireByHandle",
+        "body": [
+            "EntFireByHandle(${1:handle}, ${2:string}, ${3:string}, ${4:float}, ${5:handle}, ${6:handle})$0"
+        ],
+        "description": "Generate and entity i/o event. First parameter is an entity instance."
+    },
+    "handle EntIndexToHScript(int)": {
+        "prefix": "EntIndexToHScript",
+        "body": [
+            "EntIndexToHScript(${1:int})$0"
+        ],
+        "description": "Turn an entity index integer to an HScript representing that entity's script instance."
+    },
+    "EstablishDelegation()": {
+        "prefix": "EstablishDelegation",
+        "body": [
+            "EstablishDelegation()$0"
+        ],
+        "description": ""
+    },
+    "float EstimateLength()": {
+        "prefix": "EstimateLength",
+        "body": [
+            "EstimateLength()$0"
+        ],
+        "description": "Returns length of this scene in seconds."
+    },
+    "EyePosition()": {
+        "prefix": "EyePosition",
+        "body": [
+            "EyePosition()$0"
+        ],
+        "description": ""
+    },
+    "string FileToString(string)": {
+        "prefix": "FileToString",
+        "body": [
+            "FileToString(${1:string})$0"
+        ],
+        "description": "Reads a string from a file to send to script"
+    },
+    "FindBodygroupByName(string)": {
+        "prefix": "FindBodygroupByName",
+        "body": [
+            "FindBodygroupByName(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "handle FindByClassname(handle, string)": {
+        "prefix": "FindByClassname",
+        "body": [
+            "FindByClassname(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindByClassnameNearest(string, Vector, float)": {
+        "prefix": "FindByClassnameNearest",
+        "body": [
+            "FindByClassnameNearest(${1:string}, ${2:Vector}, ${3:float})$0"
+        ],
+        "description": "Find entities by class name nearest to a point."
+    },
+    "handle FindByClassnameWithin(handle, string, Vector, float)": {
+        "prefix": "FindByClassnameWithin",
+        "body": [
+            "FindByClassnameWithin(${1:handle}, ${2:string}, ${3:Vector}, ${4:float})$0"
+        ],
+        "description": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindByModel(handle, string)": {
+        "prefix": "FindByModel",
+        "body": [
+            "FindByModel(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindByName(handle, string)": {
+        "prefix": "FindByName",
+        "body": [
+            "FindByName(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindByNameNearest(string, Vector, float)": {
+        "prefix": "FindByNameNearest",
+        "body": [
+            "FindByNameNearest(${1:string}, ${2:Vector}, ${3:float})$0"
+        ],
+        "description": "Find entities by name nearest to a point."
+    },
+    "handle FindByNameWithin(handle, string, Vector, float)": {
+        "prefix": "FindByNameWithin",
+        "body": [
+            "FindByNameWithin(${1:handle}, ${2:string}, ${3:Vector}, ${4:float})$0"
+        ],
+        "description": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindByTarget(handle, string)": {
+        "prefix": "FindByTarget",
+        "body": [
+            "FindByTarget(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "FindCircularReference()": {
+        "prefix": "FindCircularReference",
+        "body": [
+            "FindCircularReference()$0"
+        ],
+        "description": ""
+    },
+    "FindCircularReferences()": {
+        "prefix": "FindCircularReferences",
+        "body": [
+            "FindCircularReferences()$0"
+        ],
+        "description": ""
+    },
+    "handle FindInSphere(handle, Vector, float)": {
+        "prefix": "FindInSphere",
+        "body": [
+            "FindInSphere(${1:handle}, ${2:Vector}, ${3:float})$0"
+        ],
+        "description": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search"
+    },
+    "handle FindKey(string)": {
+        "prefix": "FindKey",
+        "body": [
+            "FindKey(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, find a KeyValues object associated with the key name"
+    },
+    "handle FindNamedEntity(string)": {
+        "prefix": "FindNamedEntity",
+        "body": [
+            "FindNamedEntity(${1:string})$0"
+        ],
+        "description": "given an entity reference, such as !target, get actual entity from scene object"
+    },
+    "bool FireGameEvent(string, handle)": {
+        "prefix": "FireGameEvent",
+        "body": [
+            "FireGameEvent(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Fire a game event to a listening callback function in script. Parameters are passed in a squirrel table."
+    },
+    "FireScriptEvent()": {
+        "prefix": "FireScriptEvent",
+        "body": [
+            "FireScriptEvent()$0"
+        ],
+        "description": ""
+    },
+    "void FiringTalk()": {
+        "prefix": "FiringTalk",
+        "body": [
+            "FiringTalk()$0"
+        ],
+        "description": "Makes eg. a heavy go AAAAAAAAAAaAaa like they are firing their minigun."
+    },
+    "handle First()": {
+        "prefix": "First",
+        "body": [
+            "First()$0"
+        ],
+        "description": "Begin an iteration over the list of entities"
+    },
+    "FirstMoveChild()": {
+        "prefix": "FirstMoveChild",
+        "body": [
+            "FirstMoveChild()$0"
+        ],
+        "description": ""
+    },
+    "bool FlagsMayBeCapped()": {
+        "prefix": "FlagsMayBeCapped",
+        "body": [
+            "FlagsMayBeCapped()$0"
+        ],
+        "description": "May a flag be captured?"
+    },
+    "void ForceChangeTeam(int, bool)": {
+        "prefix": "ForceChangeTeam",
+        "body": [
+            "ForceChangeTeam(${1:int}, ${2:bool})$0"
+        ],
+        "description": "Force player to change their team."
+    },
+    "Forward()": {
+        "prefix": "Forward",
+        "body": [
+            "Forward()$0"
+        ],
+        "description": ""
+    },
+    "float FrameTime()": {
+        "prefix": "FrameTime",
+        "body": [
+            "FrameTime()$0"
+        ],
+        "description": "Get the time spent on the server in the last frame"
+    },
+    "bool GameModeUsesCurrency()": {
+        "prefix": "GameModeUsesCurrency",
+        "body": [
+            "GameModeUsesCurrency()$0"
+        ],
+        "description": "Does the current gamemode have currency?"
+    },
+    "bool GameModeUsesMiniBosses()": {
+        "prefix": "GameModeUsesMiniBosses",
+        "body": [
+            "GameModeUsesMiniBosses()$0"
+        ],
+        "description": "Does the current gamemode have minibosses?"
+    },
+    "bool GameModeUsesUpgrades()": {
+        "prefix": "GameModeUsesUpgrades",
+        "body": [
+            "GameModeUsesUpgrades()$0"
+        ],
+        "description": "Does the current gamemode have upgrades?"
+    },
+    "GetAbsAngles()": {
+        "prefix": "GetAbsAngles",
+        "body": [
+            "GetAbsAngles()$0"
+        ],
+        "description": ""
+    },
+    "GetAngles()": {
+        "prefix": "GetAngles",
+        "body": [
+            "GetAngles()$0"
+        ],
+        "description": ""
+    },
+    "GetAngularVelocity()": {
+        "prefix": "GetAngularVelocity",
+        "body": [
+            "GetAngularVelocity()$0"
+        ],
+        "description": ""
+    },
+    "GetAttachmentAngles(num)": {
+        "prefix": "GetAttachmentAngles",
+        "body": [
+            "GetAttachmentAngles(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetAttachmentBone(num)": {
+        "prefix": "GetAttachmentBone",
+        "body": [
+            "GetAttachmentBone(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetAttachmentOrigin(num)": {
+        "prefix": "GetAttachmentOrigin",
+        "body": [
+            "GetAttachmentOrigin(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "int GetBackstabs()": {
+        "prefix": "GetBackstabs",
+        "body": [
+            "GetBackstabs()$0"
+        ],
+        "description": ""
+    },
+    "GetBaseVelocity()": {
+        "prefix": "GetBaseVelocity",
+        "body": [
+            "GetBaseVelocity()$0"
+        ],
+        "description": ""
+    },
+    "GetBodygroup(num)": {
+        "prefix": "GetBodygroup",
+        "body": [
+            "GetBodygroup(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetBodygroupName(num)": {
+        "prefix": "GetBodygroupName",
+        "body": [
+            "GetBodygroupName(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetBodygroupPartName(num, num)": {
+        "prefix": "GetBodygroupPartName",
+        "body": [
+            "GetBodygroupPartName(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "GetBoneAngles(num)": {
+        "prefix": "GetBoneAngles",
+        "body": [
+            "GetBoneAngles(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetBoneOrigin(num)": {
+        "prefix": "GetBoneOrigin",
+        "body": [
+            "GetBoneOrigin(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "int GetBonusPoints()": {
+        "prefix": "GetBonusPoints",
+        "body": [
+            "GetBonusPoints()$0"
+        ],
+        "description": ""
+    },
+    "GetBoundingMaxs()": {
+        "prefix": "GetBoundingMaxs",
+        "body": [
+            "GetBoundingMaxs()$0"
+        ],
+        "description": ""
+    },
+    "GetBoundingMaxsOriented()": {
+        "prefix": "GetBoundingMaxsOriented",
+        "body": [
+            "GetBoundingMaxsOriented()$0"
+        ],
+        "description": ""
+    },
+    "GetBoundingMins()": {
+        "prefix": "GetBoundingMins",
+        "body": [
+            "GetBoundingMins()$0"
+        ],
+        "description": ""
+    },
+    "GetBoundingMinsOriented()": {
+        "prefix": "GetBoundingMinsOriented",
+        "body": [
+            "GetBoundingMinsOriented()$0"
+        ],
+        "description": ""
+    },
+    "int GetBuildingsDestroyed()": {
+        "prefix": "GetBuildingsDestroyed",
+        "body": [
+            "GetBuildingsDestroyed()$0"
+        ],
+        "description": ""
+    },
+    "int GetCaptures()": {
+        "prefix": "GetCaptures",
+        "body": [
+            "GetCaptures()$0"
+        ],
+        "description": ""
+    },
+    "GetCenter()": {
+        "prefix": "GetCenter",
+        "body": [
+            "GetCenter()$0"
+        ],
+        "description": ""
+    },
+    "Vector GetClassEyeHeight()": {
+        "prefix": "GetClassEyeHeight",
+        "body": [
+            "GetClassEyeHeight()$0"
+        ],
+        "description": "Gets the eye height of the player"
+    },
+    "int GetClassLimit(int)": {
+        "prefix": "GetClassLimit",
+        "body": [
+            "GetClassLimit(${1:int})$0"
+        ],
+        "description": "Get class limit for class. Indices:"
+    },
+    "GetClassname()": {
+        "prefix": "GetClassname",
+        "body": [
+            "GetClassname()$0"
+        ],
+        "description": ""
+    },
+    "string GetClientConvarValue(string, int)": {
+        "prefix": "GetClientConvarValue",
+        "body": [
+            "GetClientConvarValue(${1:string}, ${2:int})$0"
+        ],
+        "description": "GetClientConvarValue(name) : returns the convar value for the entindex as a string."
+    },
+    "float GetCondDuration(string)": {
+        "prefix": "GetCondDuration",
+        "body": [
+            "GetCondDuration(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "float GetCurrentTauntMoveSpeed()": {
+        "prefix": "GetCurrentTauntMoveSpeed",
+        "body": [
+            "GetCurrentTauntMoveSpeed()$0"
+        ],
+        "description": ""
+    },
+    "int GetDefenses()": {
+        "prefix": "GetDefenses",
+        "body": [
+            "GetDefenses()$0"
+        ],
+        "description": ""
+    },
+    "int GetDeveloperLevel()": {
+        "prefix": "GetDeveloperLevel",
+        "body": [
+            "GetDeveloperLevel()$0"
+        ],
+        "description": "Gets the level of 'developer'"
+    },
+    "int GetDisguiseAmmoCount()": {
+        "prefix": "GetDisguiseAmmoCount",
+        "body": [
+            "GetDisguiseAmmoCount()$0"
+        ],
+        "description": ""
+    },
+    "handle GetDisguiseTarget()": {
+        "prefix": "GetDisguiseTarget",
+        "body": [
+            "GetDisguiseTarget()$0"
+        ],
+        "description": ""
+    },
+    "int GetDisguiseTeam()": {
+        "prefix": "GetDisguiseTeam",
+        "body": [
+            "GetDisguiseTeam()$0"
+        ],
+        "description": ""
+    },
+    "int GetDominations()": {
+        "prefix": "GetDominations",
+        "body": [
+            "GetDominations()$0"
+        ],
+        "description": ""
+    },
+    "GetEntityHandle()": {
+        "prefix": "GetEntityHandle",
+        "body": [
+            "GetEntityHandle()$0"
+        ],
+        "description": ""
+    },
+    "GetEntityIndex()": {
+        "prefix": "GetEntityIndex",
+        "body": [
+            "GetEntityIndex()$0"
+        ],
+        "description": ""
+    },
+    "handle GetFirstSubKey()": {
+        "prefix": "GetFirstSubKey",
+        "body": [
+            "GetFirstSubKey()$0"
+        ],
+        "description": "Given a KeyValues object, return the first sub key object"
+    },
+    "<unknown> GetFloat(string)": {
+        "prefix": "GetFloat",
+        "body": [
+            "GetFloat(${1:string})$0"
+        ],
+        "description": "GetFloat(name) : returns the convar as a float. May return null if no such convar."
+    },
+    "GetForwardVector()": {
+        "prefix": "GetForwardVector",
+        "body": [
+            "GetForwardVector()$0"
+        ],
+        "description": ""
+    },
+    "int GetFrameCount()": {
+        "prefix": "GetFrameCount",
+        "body": [
+            "GetFrameCount()$0"
+        ],
+        "description": "Returns the engines current frame count"
+    },
+    "GetFriction()": {
+        "prefix": "GetFriction",
+        "body": [
+            "GetFriction()$0"
+        ],
+        "description": ""
+    },
+    "GetFunctionSignature()": {
+        "prefix": "GetFunctionSignature",
+        "body": [
+            "GetFunctionSignature()$0"
+        ],
+        "description": ""
+    },
+    "Vector GetFuturePosition(float, float)": {
+        "prefix": "GetFuturePosition",
+        "body": [
+            "GetFuturePosition(${1:float}, ${2:float})$0"
+        ],
+        "description": "Get a position on the track x seconds in the future"
+    },
+    "handle GetGrapplingHookTarget()": {
+        "prefix": "GetGrapplingHookTarget",
+        "body": [
+            "GetGrapplingHookTarget()$0"
+        ],
+        "description": "What entity is the player grappling?"
+    },
+    "float GetGravityMultiplier()": {
+        "prefix": "GetGravityMultiplier",
+        "body": [
+            "GetGravityMultiplier()$0"
+        ],
+        "description": ""
+    },
+    "int GetHeadshots()": {
+        "prefix": "GetHeadshots",
+        "body": [
+            "GetHeadshots()$0"
+        ],
+        "description": ""
+    },
+    "int GetHealPoints()": {
+        "prefix": "GetHealPoints",
+        "body": [
+            "GetHealPoints()$0"
+        ],
+        "description": ""
+    },
+    "handle GetHealTarget()": {
+        "prefix": "GetHealTarget",
+        "body": [
+            "GetHealTarget()$0"
+        ],
+        "description": "Who is the medic healing?"
+    },
+    "GetHealth()": {
+        "prefix": "GetHealth",
+        "body": [
+            "GetHealth()$0"
+        ],
+        "description": ""
+    },
+    "int GetInvulns()": {
+        "prefix": "GetInvulns",
+        "body": [
+            "GetInvulns()$0"
+        ],
+        "description": ""
+    },
+    "bool GetKeyBool(string)": {
+        "prefix": "GetKeyBool",
+        "body": [
+            "GetKeyBool(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, return associated bool value"
+    },
+    "float GetKeyFloat(string)": {
+        "prefix": "GetKeyFloat",
+        "body": [
+            "GetKeyFloat(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, return associated float value"
+    },
+    "int GetKeyInt(string)": {
+        "prefix": "GetKeyInt",
+        "body": [
+            "GetKeyInt(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, return associated integer value"
+    },
+    "string GetKeyString(string)": {
+        "prefix": "GetKeyString",
+        "body": [
+            "GetKeyString(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, return associated string value"
+    },
+    "int GetKillAssists()": {
+        "prefix": "GetKillAssists",
+        "body": [
+            "GetKillAssists()$0"
+        ],
+        "description": ""
+    },
+    "GetLeftVector()": {
+        "prefix": "GetLeftVector",
+        "body": [
+            "GetLeftVector()$0"
+        ],
+        "description": ""
+    },
+    "handle GetListenServerHost()": {
+        "prefix": "GetListenServerHost",
+        "body": [
+            "GetListenServerHost()$0"
+        ],
+        "description": "Get the local player on a listen server."
+    },
+    "GetLocalAngles()": {
+        "prefix": "GetLocalAngles",
+        "body": [
+            "GetLocalAngles()$0"
+        ],
+        "description": ""
+    },
+    "GetLocalOrigin()": {
+        "prefix": "GetLocalOrigin",
+        "body": [
+            "GetLocalOrigin()$0"
+        ],
+        "description": ""
+    },
+    "GetLocalVelocity()": {
+        "prefix": "GetLocalVelocity",
+        "body": [
+            "GetLocalVelocity()$0"
+        ],
+        "description": ""
+    },
+    "bool GetMannVsMachineAlarmStatus()": {
+        "prefix": "GetMannVsMachineAlarmStatus",
+        "body": [
+            "GetMannVsMachineAlarmStatus()$0"
+        ],
+        "description": ""
+    },
+    "string GetMapName()": {
+        "prefix": "GetMapName",
+        "body": [
+            "GetMapName()$0"
+        ],
+        "description": "Get the name of the map."
+    },
+    "GetMaxHealth()": {
+        "prefix": "GetMaxHealth",
+        "body": [
+            "GetMaxHealth()$0"
+        ],
+        "description": ""
+    },
+    "int GetModelIndex(string)": {
+        "prefix": "GetModelIndex",
+        "body": [
+            "GetModelIndex(${1:string})$0"
+        ],
+        "description": "Returns the index of the named model."
+    },
+    "GetModelKeyValues()": {
+        "prefix": "GetModelKeyValues",
+        "body": [
+            "GetModelKeyValues()$0"
+        ],
+        "description": ""
+    },
+    "GetModelName()": {
+        "prefix": "GetModelName",
+        "body": [
+            "GetModelName()$0"
+        ],
+        "description": ""
+    },
+    "GetModelScale()": {
+        "prefix": "GetModelScale",
+        "body": [
+            "GetModelScale()$0"
+        ],
+        "description": ""
+    },
+    "GetMoveParent()": {
+        "prefix": "GetMoveParent",
+        "body": [
+            "GetMoveParent()$0"
+        ],
+        "description": ""
+    },
+    "GetName()": {
+        "prefix": "GetName",
+        "body": [
+            "GetName()$0"
+        ],
+        "description": ""
+    },
+    "float GetNextChangeClassTime()": {
+        "prefix": "GetNextChangeClassTime",
+        "body": [
+            "GetNextChangeClassTime()$0"
+        ],
+        "description": "Get next change class time."
+    },
+    "float GetNextChangeTeamTime()": {
+        "prefix": "GetNextChangeTeamTime",
+        "body": [
+            "GetNextChangeTeamTime()$0"
+        ],
+        "description": "Get next change team time."
+    },
+    "handle GetNextKey()": {
+        "prefix": "GetNextKey",
+        "body": [
+            "GetNextKey()$0"
+        ],
+        "description": "Given a KeyValues object, return the next key object in a sub key group"
+    },
+    "float GetNextRegenTime()": {
+        "prefix": "GetNextRegenTime",
+        "body": [
+            "GetNextRegenTime()$0"
+        ],
+        "description": "Get next health regen time."
+    },
+    "int GetNumElements(handle, string)": {
+        "prefix": "GetNumElements",
+        "body": [
+            "GetNumElements(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, outputName ) - returns the number of array elements"
+    },
+    "GetOrigin()": {
+        "prefix": "GetOrigin",
+        "body": [
+            "GetOrigin()$0"
+        ],
+        "description": ""
+    },
+    "void GetOutputTable(handle, string, handle, int)": {
+        "prefix": "GetOutputTable",
+        "body": [
+            "GetOutputTable(${1:handle}, ${2:string}, ${3:handle}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, outputName, table, arrayElement ) - returns a table of output information"
+    },
+    "bool GetOvertimeAllowedForCTF()": {
+        "prefix": "GetOvertimeAllowedForCTF",
+        "body": [
+            "GetOvertimeAllowedForCTF()$0"
+        ],
+        "description": ""
+    },
+    "GetOwner()": {
+        "prefix": "GetOwner",
+        "body": [
+            "GetOwner()$0"
+        ],
+        "description": ""
+    },
+    "Vector GetPhysAngularVelocity(handle)": {
+        "prefix": "GetPhysAngularVelocity",
+        "body": [
+            "GetPhysAngularVelocity(${1:handle})$0"
+        ],
+        "description": "Get Angular Velocity for VPHYS or normal object"
+    },
+    "Vector GetPhysVelocity(handle)": {
+        "prefix": "GetPhysVelocity",
+        "body": [
+            "GetPhysVelocity(${1:handle})$0"
+        ],
+        "description": "Get Velocity for VPHYS or normal object"
+    },
+    "handle GetPlayerFromUserID(int)": {
+        "prefix": "GetPlayerFromUserID",
+        "body": [
+            "GetPlayerFromUserID(${1:int})$0"
+        ],
+        "description": "Given a user id, return the entity, or null"
+    },
+    "float GetPlayerSpeechDuration(int)": {
+        "prefix": "GetPlayerSpeechDuration",
+        "body": [
+            "GetPlayerSpeechDuration(${1:int})$0"
+        ],
+        "description": "Returns the number of seconds the player has been continuously speaking."
+    },
+    "GetPreTemplateName()": {
+        "prefix": "GetPreTemplateName",
+        "body": [
+            "GetPreTemplateName()$0"
+        ],
+        "description": ""
+    },
+    "int GetPropArraySize(handle, string)": {
+        "prefix": "GetPropArraySize",
+        "body": [
+            "GetPropArraySize(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "handle GetPropEntity(handle, string)": {
+        "prefix": "GetPropEntity",
+        "body": [
+            "GetPropEntity(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName ) - returns an entity"
+    },
+    "handle GetPropEntityArray(handle, string, int)": {
+        "prefix": "GetPropEntityArray",
+        "body": [
+            "GetPropEntityArray(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, arrayElement ) - returns an entity"
+    },
+    "float GetPropFloat(handle, string)": {
+        "prefix": "GetPropFloat",
+        "body": [
+            "GetPropFloat(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "float GetPropFloatArray(handle, string, int)": {
+        "prefix": "GetPropFloatArray",
+        "body": [
+            "GetPropFloatArray(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, arrayElement )"
+    },
+    "int GetPropInt(handle, string)": {
+        "prefix": "GetPropInt",
+        "body": [
+            "GetPropInt(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "int GetPropIntArray(handle, string, int)": {
+        "prefix": "GetPropIntArray",
+        "body": [
+            "GetPropIntArray(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, arrayElement )"
+    },
+    "string GetPropString(handle, string)": {
+        "prefix": "GetPropString",
+        "body": [
+            "GetPropString(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "string GetPropStringArray(handle, string, int)": {
+        "prefix": "GetPropStringArray",
+        "body": [
+            "GetPropStringArray(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, arrayElement )"
+    },
+    "string GetPropType(handle, string)": {
+        "prefix": "GetPropType",
+        "body": [
+            "GetPropType(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName ) - return the prop type as a string"
+    },
+    "Vector GetPropVector(handle, string)": {
+        "prefix": "GetPropVector",
+        "body": [
+            "GetPropVector(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "Vector GetPropVectorArray(handle, string, int)": {
+        "prefix": "GetPropVectorArray",
+        "body": [
+            "GetPropVectorArray(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, arrayElement )"
+    },
+    "float GetRageMeter()": {
+        "prefix": "GetRageMeter",
+        "body": [
+            "GetRageMeter()$0"
+        ],
+        "description": ""
+    },
+    "int GetResupplyPoints()": {
+        "prefix": "GetResupplyPoints",
+        "body": [
+            "GetResupplyPoints()$0"
+        ],
+        "description": ""
+    },
+    "int GetRevenge()": {
+        "prefix": "GetRevenge",
+        "body": [
+            "GetRevenge()$0"
+        ],
+        "description": ""
+    },
+    "GetRightVector()": {
+        "prefix": "GetRightVector",
+        "body": [
+            "GetRightVector()$0"
+        ],
+        "description": ""
+    },
+    "GetRootMoveParent()": {
+        "prefix": "GetRootMoveParent",
+        "body": [
+            "GetRootMoveParent()$0"
+        ],
+        "description": ""
+    },
+    "int GetRoundState()": {
+        "prefix": "GetRoundState",
+        "body": [
+            "GetRoundState()$0"
+        ],
+        "description": "Get current round state. Indices:"
+    },
+    "float GetScoutHypeMeter()": {
+        "prefix": "GetScoutHypeMeter",
+        "body": [
+            "GetScoutHypeMeter()$0"
+        ],
+        "description": ""
+    },
+    "GetScriptId()": {
+        "prefix": "GetScriptId",
+        "body": [
+            "GetScriptId()$0"
+        ],
+        "description": ""
+    },
+    "GetScriptScope()": {
+        "prefix": "GetScriptScope",
+        "body": [
+            "GetScriptScope()$0"
+        ],
+        "description": ""
+    },
+    "GetSequence()": {
+        "prefix": "GetSequence",
+        "body": [
+            "GetSequence()$0"
+        ],
+        "description": ""
+    },
+    "GetSequenceActivityName(num)": {
+        "prefix": "GetSequenceActivityName",
+        "body": [
+            "GetSequenceActivityName(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetSequenceDuration(num)": {
+        "prefix": "GetSequenceDuration",
+        "body": [
+            "GetSequenceDuration(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetSequenceName(num)": {
+        "prefix": "GetSequenceName",
+        "body": [
+            "GetSequenceName(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "GetSkin()": {
+        "prefix": "GetSkin",
+        "body": [
+            "GetSkin()$0"
+        ],
+        "description": ""
+    },
+    "GetSoundDuration(string, string)": {
+        "prefix": "GetSoundDuration",
+        "body": [
+            "GetSoundDuration(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "float GetSpyCloakMeter()": {
+        "prefix": "GetSpyCloakMeter",
+        "body": [
+            "GetSpyCloakMeter()$0"
+        ],
+        "description": ""
+    },
+    "int GetStopWatchState()": {
+        "prefix": "GetStopWatchState",
+        "body": [
+            "GetStopWatchState()$0"
+        ],
+        "description": "Get the current stopwatch state. Indices:"
+    },
+    "<unknown> GetStr(string)": {
+        "prefix": "GetStr",
+        "body": [
+            "GetStr(${1:string})$0"
+        ],
+        "description": "GetFloat(name) : returns the convar as a string. May return null if no such convar."
+    },
+    "GetTeam()": {
+        "prefix": "GetTeam",
+        "body": [
+            "GetTeam()$0"
+        ],
+        "description": ""
+    },
+    "int GetTeleports()": {
+        "prefix": "GetTeleports",
+        "body": [
+            "GetTeleports()$0"
+        ],
+        "description": ""
+    },
+    "float GetTimeSinceCalledForMedic()": {
+        "prefix": "GetTimeSinceCalledForMedic",
+        "body": [
+            "GetTimeSinceCalledForMedic()$0"
+        ],
+        "description": "When did the player last call medic"
+    },
+    "GetUpVector()": {
+        "prefix": "GetUpVector",
+        "body": [
+            "GetUpVector()$0"
+        ],
+        "description": ""
+    },
+    "GetVelocity()": {
+        "prefix": "GetVelocity",
+        "body": [
+            "GetVelocity()$0"
+        ],
+        "description": ""
+    },
+    "int GetWinningTeam()": {
+        "prefix": "GetWinningTeam",
+        "body": [
+            "GetWinningTeam()$0"
+        ],
+        "description": "Who won!"
+    },
+    "bool HasAction(handle, string)": {
+        "prefix": "HasAction",
+        "body": [
+            "HasAction(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, outputName ) - returns true if an action exists for the output"
+    },
+    "bool HasItem()": {
+        "prefix": "HasItem",
+        "body": [
+            "HasItem()$0"
+        ],
+        "description": "Currently holding an item? Eg. capture flag"
+    },
+    "bool HasOutput(handle, string)": {
+        "prefix": "HasOutput",
+        "body": [
+            "HasOutput(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, outputName ) - returns true if the output exists"
+    },
+    "bool HasProp(handle, string)": {
+        "prefix": "HasProp",
+        "body": [
+            "HasProp(${1:handle}, ${2:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName )"
+    },
+    "bool HaveStopWatchWinner()": {
+        "prefix": "HaveStopWatchWinner",
+        "body": [
+            "HaveStopWatchWinner()$0"
+        ],
+        "description": ""
+    },
+    "HookRootMetamethod()": {
+        "prefix": "HookRootMetamethod",
+        "body": [
+            "HookRootMetamethod()$0"
+        ],
+        "description": ""
+    },
+    "bool InAirDueToExplosion()": {
+        "prefix": "InAirDueToExplosion",
+        "body": [
+            "InAirDueToExplosion()$0"
+        ],
+        "description": ""
+    },
+    "bool InAirDueToKnockback()": {
+        "prefix": "InAirDueToKnockback",
+        "body": [
+            "InAirDueToKnockback()$0"
+        ],
+        "description": ""
+    },
+    "bool InCond(string)": {
+        "prefix": "InCond",
+        "body": [
+            "InCond(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "bool InMatchStartCountdown()": {
+        "prefix": "InMatchStartCountdown",
+        "body": [
+            "InMatchStartCountdown()$0"
+        ],
+        "description": "Are we in the pre-match state?"
+    },
+    "bool InOvertime()": {
+        "prefix": "InOvertime",
+        "body": [
+            "InOvertime()$0"
+        ],
+        "description": "Currently in overtime?"
+    },
+    "IncludeScript()": {
+        "prefix": "IncludeScript",
+        "body": [
+            "IncludeScript()$0"
+        ],
+        "description": ""
+    },
+    "Invert()": {
+        "prefix": "Invert",
+        "body": [
+            "Invert()$0"
+        ],
+        "description": ""
+    },
+    "bool IsAirDashing()": {
+        "prefix": "IsAirDashing",
+        "body": [
+            "IsAirDashing()$0"
+        ],
+        "description": ""
+    },
+    "bool IsAllowedToTaunt()": {
+        "prefix": "IsAllowedToTaunt",
+        "body": [
+            "IsAllowedToTaunt()$0"
+        ],
+        "description": ""
+    },
+    "bool IsAttackDefenseMode()": {
+        "prefix": "IsAttackDefenseMode",
+        "body": [
+            "IsAttackDefenseMode()$0"
+        ],
+        "description": ""
+    },
+    "bool IsBirthday()": {
+        "prefix": "IsBirthday",
+        "body": [
+            "IsBirthday()$0"
+        ],
+        "description": "Are we in birthday mode?"
+    },
+    "bool IsCallingForMedic()": {
+        "prefix": "IsCallingForMedic",
+        "body": [
+            "IsCallingForMedic()$0"
+        ],
+        "description": "Is this player calling for medic?"
+    },
+    "bool IsCarryingRune()": {
+        "prefix": "IsCarryingRune",
+        "body": [
+            "IsCarryingRune()$0"
+        ],
+        "description": ""
+    },
+    "bool IsCompetitiveMode()": {
+        "prefix": "IsCompetitiveMode",
+        "body": [
+            "IsCompetitiveMode()$0"
+        ],
+        "description": "Playing competitive?"
+    },
+    "bool IsControlStunned()": {
+        "prefix": "IsControlStunned",
+        "body": [
+            "IsControlStunned()$0"
+        ],
+        "description": ""
+    },
+    "bool IsCritBoosted()": {
+        "prefix": "IsCritBoosted",
+        "body": [
+            "IsCritBoosted()$0"
+        ],
+        "description": ""
+    },
+    "bool IsDedicatedServer()": {
+        "prefix": "IsDedicatedServer",
+        "body": [
+            "IsDedicatedServer()$0"
+        ],
+        "description": "Returns true if this server is a dedicated server."
+    },
+    "bool IsDefaultGameMode()": {
+        "prefix": "IsDefaultGameMode",
+        "body": [
+            "IsDefaultGameMode()$0"
+        ],
+        "description": "The absence of arena, mvm, tournament mode, etc"
+    },
+    "bool IsFireproof()": {
+        "prefix": "IsFireproof",
+        "body": [
+            "IsFireproof()$0"
+        ],
+        "description": ""
+    },
+    "bool IsFullyInvisible()": {
+        "prefix": "IsFullyInvisible",
+        "body": [
+            "IsFullyInvisible()$0"
+        ],
+        "description": ""
+    },
+    "bool IsHolidayActive(int)": {
+        "prefix": "IsHolidayActive",
+        "body": [
+            "IsHolidayActive(${1:int})$0"
+        ],
+        "description": "Is the given holiday active? Indices:"
+    },
+    "bool IsHolidayMap(int)": {
+        "prefix": "IsHolidayMap",
+        "body": [
+            "IsHolidayMap(${1:int})$0"
+        ],
+        "description": "Playing a holiday map? Indices:"
+    },
+    "bool IsHypeBuffed()": {
+        "prefix": "IsHypeBuffed",
+        "body": [
+            "IsHypeBuffed()$0"
+        ],
+        "description": ""
+    },
+    "bool IsImmuneToPushback()": {
+        "prefix": "IsImmuneToPushback",
+        "body": [
+            "IsImmuneToPushback()$0"
+        ],
+        "description": ""
+    },
+    "bool IsInArenaMode()": {
+        "prefix": "IsInArenaMode",
+        "body": [
+            "IsInArenaMode()$0"
+        ],
+        "description": "Playing arena mode?"
+    },
+    "bool IsInKothMode()": {
+        "prefix": "IsInKothMode",
+        "body": [
+            "IsInKothMode()$0"
+        ],
+        "description": "Playing king of the hill mode?"
+    },
+    "bool IsInMedievalMode()": {
+        "prefix": "IsInMedievalMode",
+        "body": [
+            "IsInMedievalMode()$0"
+        ],
+        "description": "Playing medieval mode?"
+    },
+    "bool IsInWaitingForPlayers()": {
+        "prefix": "IsInWaitingForPlayers",
+        "body": [
+            "IsInWaitingForPlayers()$0"
+        ],
+        "description": "Are we waiting for some stragglers?"
+    },
+    "bool IsInspecting()": {
+        "prefix": "IsInspecting",
+        "body": [
+            "IsInspecting()$0"
+        ],
+        "description": ""
+    },
+    "bool IsInvulnerable()": {
+        "prefix": "IsInvulnerable",
+        "body": [
+            "IsInvulnerable()$0"
+        ],
+        "description": ""
+    },
+    "bool IsJumping()": {
+        "prefix": "IsJumping",
+        "body": [
+            "IsJumping()$0"
+        ],
+        "description": ""
+    },
+    "bool IsKeyEmpty(string)": {
+        "prefix": "IsKeyEmpty",
+        "body": [
+            "IsKeyEmpty(${1:string})$0"
+        ],
+        "description": "Given a KeyValues object and a key name, return true if key name has no value"
+    },
+    "bool IsMannVsMachineMode()": {
+        "prefix": "IsMannVsMachineMode",
+        "body": [
+            "IsMannVsMachineMode()$0"
+        ],
+        "description": "Playing MvM? Beep boop"
+    },
+    "bool IsMannVsMachineRespecEnabled()": {
+        "prefix": "IsMannVsMachineRespecEnabled",
+        "body": [
+            "IsMannVsMachineRespecEnabled()$0"
+        ],
+        "description": "Are players allowed to refund their upgrades?"
+    },
+    "bool IsMatchTypeCasual()": {
+        "prefix": "IsMatchTypeCasual",
+        "body": [
+            "IsMatchTypeCasual()$0"
+        ],
+        "description": "Playing casual?"
+    },
+    "bool IsMatchTypeCompetitive()": {
+        "prefix": "IsMatchTypeCompetitive",
+        "body": [
+            "IsMatchTypeCompetitive()$0"
+        ],
+        "description": "Playing competitive?"
+    },
+    "bool IsMiniBoss()": {
+        "prefix": "IsMiniBoss",
+        "body": [
+            "IsMiniBoss()$0"
+        ],
+        "description": "Is this player an MvM mini-boss?"
+    },
+    "bool IsModelPrecached(string)": {
+        "prefix": "IsModelPrecached",
+        "body": [
+            "IsModelPrecached(${1:string})$0"
+        ],
+        "description": "Checks if the modelname is precached."
+    },
+    "IsNoclipping()": {
+        "prefix": "IsNoclipping",
+        "body": [
+            "IsNoclipping()$0"
+        ],
+        "description": ""
+    },
+    "bool IsPVEModeActive()": {
+        "prefix": "IsPVEModeActive",
+        "body": [
+            "IsPVEModeActive()$0"
+        ],
+        "description": ""
+    },
+    "bool IsParachuteEquipped()": {
+        "prefix": "IsParachuteEquipped",
+        "body": [
+            "IsParachuteEquipped()$0"
+        ],
+        "description": ""
+    },
+    "bool IsPasstimeMode()": {
+        "prefix": "IsPasstimeMode",
+        "body": [
+            "IsPasstimeMode()$0"
+        ],
+        "description": "No ball games."
+    },
+    "bool IsPaused()": {
+        "prefix": "IsPaused",
+        "body": [
+            "IsPaused()$0"
+        ],
+        "description": "If this scene is currently paused."
+    },
+    "bool IsPlacingSapper()": {
+        "prefix": "IsPlacingSapper",
+        "body": [
+            "IsPlacingSapper()$0"
+        ],
+        "description": "Returns true if we placed a sapper in the last few moments"
+    },
+    "IsPlayer()": {
+        "prefix": "IsPlayer",
+        "body": [
+            "IsPlayer()$0"
+        ],
+        "description": ""
+    },
+    "bool IsPlayerABot(handle)": {
+        "prefix": "IsPlayerABot",
+        "body": [
+            "IsPlayerABot(${1:handle})$0"
+        ],
+        "description": "Is this player/entity a bot"
+    },
+    "bool IsPlayerSpeaking(int)": {
+        "prefix": "IsPlayerSpeaking",
+        "body": [
+            "IsPlayerSpeaking(${1:int})$0"
+        ],
+        "description": "Returns whether the player specified is speaking."
+    },
+    "bool IsPlayingBack()": {
+        "prefix": "IsPlayingBack",
+        "body": [
+            "IsPlayingBack()$0"
+        ],
+        "description": "If this scene is currently playing."
+    },
+    "bool IsPowerupMode()": {
+        "prefix": "IsPowerupMode",
+        "body": [
+            "IsPowerupMode()$0"
+        ],
+        "description": "Playing powerup mode? Not compatible with MvM"
+    },
+    "bool IsQuickBuildTime()": {
+        "prefix": "IsQuickBuildTime",
+        "body": [
+            "IsQuickBuildTime()$0"
+        ],
+        "description": "If an engie places a building, will it immediately upgrade? Eg. MvM pre-round etc."
+    },
+    "bool IsRageDraining()": {
+        "prefix": "IsRageDraining",
+        "body": [
+            "IsRageDraining()$0"
+        ],
+        "description": ""
+    },
+    "bool IsRegenerating()": {
+        "prefix": "IsRegenerating",
+        "body": [
+            "IsRegenerating()$0"
+        ],
+        "description": ""
+    },
+    "bool IsSapping()": {
+        "prefix": "IsSapping",
+        "body": [
+            "IsSapping()$0"
+        ],
+        "description": "Returns true if we are currently sapping"
+    },
+    "IsSequenceFinished()": {
+        "prefix": "IsSequenceFinished",
+        "body": [
+            "IsSequenceFinished()$0"
+        ],
+        "description": ""
+    },
+    "bool IsSnared()": {
+        "prefix": "IsSnared",
+        "body": [
+            "IsSnared()$0"
+        ],
+        "description": ""
+    },
+    "bool IsSoundPrecached(string)": {
+        "prefix": "IsSoundPrecached",
+        "body": [
+            "IsSoundPrecached(${1:string})$0"
+        ],
+        "description": "Takes a sound name"
+    },
+    "bool IsStealthed()": {
+        "prefix": "IsStealthed",
+        "body": [
+            "IsStealthed()$0"
+        ],
+        "description": ""
+    },
+    "bool IsTruceActive()": {
+        "prefix": "IsTruceActive",
+        "body": [
+            "IsTruceActive()$0"
+        ],
+        "description": ""
+    },
+    "bool IsUsingActionSlot()": {
+        "prefix": "IsUsingActionSlot",
+        "body": [
+            "IsUsingActionSlot()$0"
+        ],
+        "description": ""
+    },
+    "bool IsUsingGrapplingHook()": {
+        "prefix": "IsUsingGrapplingHook",
+        "body": [
+            "IsUsingGrapplingHook()$0"
+        ],
+        "description": ""
+    },
+    "bool IsUsingSpells()": {
+        "prefix": "IsUsingSpells",
+        "body": [
+            "IsUsingSpells()$0"
+        ],
+        "description": ""
+    },
+    "IsValid()": {
+        "prefix": "IsValid",
+        "body": [
+            "IsValid()$0"
+        ],
+        "description": ""
+    },
+    "bool IsViewingCYOAPDA()": {
+        "prefix": "IsViewingCYOAPDA",
+        "body": [
+            "IsViewingCYOAPDA()$0"
+        ],
+        "description": ""
+    },
+    "IsWeakref()": {
+        "prefix": "IsWeakref",
+        "body": [
+            "IsWeakref()$0"
+        ],
+        "description": ""
+    },
+    "KeyValueFromFloat(string, num)": {
+        "prefix": "KeyValueFromFloat",
+        "body": [
+            "KeyValueFromFloat(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "KeyValueFromInt(string, num)": {
+        "prefix": "KeyValueFromInt",
+        "body": [
+            "KeyValueFromInt(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "KeyValueFromString(string, string)": {
+        "prefix": "KeyValueFromString",
+        "body": [
+            "KeyValueFromString(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "KeyValueFromVector(string, Vector)": {
+        "prefix": "KeyValueFromVector",
+        "body": [
+            "KeyValueFromVector(${1:string}, ${2:Vector})$0"
+        ],
+        "description": ""
+    },
+    "Kill()": {
+        "prefix": "Kill",
+        "body": [
+            "Kill()$0"
+        ],
+        "description": ""
+    },
+    "Left()": {
+        "prefix": "Left",
+        "body": [
+            "Left()$0"
+        ],
+        "description": ""
+    },
+    "Length()": {
+        "prefix": "Length",
+        "body": [
+            "Length()$0"
+        ],
+        "description": ""
+    },
+    "Length2D()": {
+        "prefix": "Length2D",
+        "body": [
+            "Length2D()$0"
+        ],
+        "description": ""
+    },
+    "Length2DSqr()": {
+        "prefix": "Length2DSqr",
+        "body": [
+            "Length2DSqr()$0"
+        ],
+        "description": ""
+    },
+    "LengthSqr()": {
+        "prefix": "LengthSqr",
+        "body": [
+            "LengthSqr()$0"
+        ],
+        "description": ""
+    },
+    "bool LoadSceneFromString(string, string)": {
+        "prefix": "LoadSceneFromString",
+        "body": [
+            "LoadSceneFromString(${1:string}, ${2:string})$0"
+        ],
+        "description": "given a dummy scene name and a vcd string, load the scene"
+    },
+    "void LocalTime(handle)": {
+        "prefix": "LocalTime",
+        "body": [
+            "LocalTime(${1:handle})$0"
+        ],
+        "description": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)"
+    },
+    "Log()": {
+        "prefix": "Log",
+        "body": [
+            "Log()$0"
+        ],
+        "description": ""
+    },
+    "LookupActivity(string)": {
+        "prefix": "LookupActivity",
+        "body": [
+            "LookupActivity(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "LookupAttachment(string)": {
+        "prefix": "LookupAttachment",
+        "body": [
+            "LookupAttachment(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "LookupBone(string)": {
+        "prefix": "LookupBone",
+        "body": [
+            "LookupBone(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "LookupSequence(string)": {
+        "prefix": "LookupSequence",
+        "body": [
+            "LookupSequence(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "MakeNamespace()": {
+        "prefix": "MakeNamespace",
+        "body": [
+            "MakeNamespace()$0"
+        ],
+        "description": ""
+    },
+    "bool MapHasMatchSummaryStage()": {
+        "prefix": "MapHasMatchSummaryStage",
+        "body": [
+            "MapHasMatchSummaryStage()$0"
+        ],
+        "description": ""
+    },
+    "bool MatchmakingShouldUseStopwatchMode()": {
+        "prefix": "MatchmakingShouldUseStopwatchMode",
+        "body": [
+            "MatchmakingShouldUseStopwatchMode()$0"
+        ],
+        "description": ""
+    },
+    "Msg()": {
+        "prefix": "Msg",
+        "body": [
+            "Msg()$0"
+        ],
+        "description": ""
+    },
+    "handle Next(handle)": {
+        "prefix": "Next",
+        "body": [
+            "Next(${1:handle})$0"
+        ],
+        "description": "Continue an iteration over the list of entities, providing reference to a previously found entity"
+    },
+    "NextMovePeer()": {
+        "prefix": "NextMovePeer",
+        "body": [
+            "NextMovePeer()$0"
+        ],
+        "description": ""
+    },
+    "Norm()": {
+        "prefix": "Norm",
+        "body": [
+            "Norm()$0"
+        ],
+        "description": ""
+    },
+    "void PickupObject(handle, handle)": {
+        "prefix": "PickupObject",
+        "body": [
+            "PickupObject(${1:handle}, ${2:handle})$0"
+        ],
+        "description": "Have a player pickup a nearby named entity"
+    },
+    "Pitch()": {
+        "prefix": "Pitch",
+        "body": [
+            "Pitch()$0"
+        ],
+        "description": ""
+    },
+    "handle PlayerInstanceFromIndex(int)": {
+        "prefix": "PlayerInstanceFromIndex",
+        "body": [
+            "PlayerInstanceFromIndex(${1:int})$0"
+        ],
+        "description": "Get a script instance of a player by index."
+    },
+    "bool PlayerReadyStatus_ArePlayersOnTeamReady(int)": {
+        "prefix": "PlayerReadyStatus_ArePlayersOnTeamReady",
+        "body": [
+            "PlayerReadyStatus_ArePlayersOnTeamReady(${1:int})$0"
+        ],
+        "description": ""
+    },
+    "bool PlayerReadyStatus_HaveMinPlayersToEnable()": {
+        "prefix": "PlayerReadyStatus_HaveMinPlayersToEnable",
+        "body": [
+            "PlayerReadyStatus_HaveMinPlayersToEnable()$0"
+        ],
+        "description": ""
+    },
+    "void PlayerReadyStatus_ResetState()": {
+        "prefix": "PlayerReadyStatus_ResetState",
+        "body": [
+            "PlayerReadyStatus_ResetState()$0"
+        ],
+        "description": ""
+    },
+    "bool PlayersAreOnMatchSummaryStage()": {
+        "prefix": "PlayersAreOnMatchSummaryStage",
+        "body": [
+            "PlayersAreOnMatchSummaryStage()$0"
+        ],
+        "description": ""
+    },
+    "bool PointsMayBeCaptured()": {
+        "prefix": "PointsMayBeCaptured",
+        "body": [
+            "PointsMayBeCaptured()$0"
+        ],
+        "description": "Are points able to be captured?"
+    },
+    "PostScriptExecute()": {
+        "prefix": "PostScriptExecute",
+        "body": [
+            "PostScriptExecute()$0"
+        ],
+        "description": ""
+    },
+    "bool PrecacheEntityFromTable(handle)": {
+        "prefix": "PrecacheEntityFromTable",
+        "body": [
+            "PrecacheEntityFromTable(${1:handle})$0"
+        ],
+        "description": "Precache an entity from KeyValues in table"
+    },
+    "PrecacheModel(string)": {
+        "prefix": "PrecacheModel",
+        "body": [
+            "PrecacheModel(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "PrecacheScriptSound(string)": {
+        "prefix": "PrecacheScriptSound",
+        "body": [
+            "PrecacheScriptSound(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "void PrecacheSound(string)": {
+        "prefix": "PrecacheSound",
+        "body": [
+            "PrecacheSound(${1:string})$0"
+        ],
+        "description": "Precache a sound."
+    },
+    "PrecacheSoundScript(string)": {
+        "prefix": "PrecacheSoundScript",
+        "body": [
+            "PrecacheSoundScript(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "PrintHelp()": {
+        "prefix": "PrintHelp",
+        "body": [
+            "PrintHelp()$0"
+        ],
+        "description": ""
+    },
+    "float RandomFloat(float, float)": {
+        "prefix": "RandomFloat",
+        "body": [
+            "RandomFloat(${1:float}, ${2:float})$0"
+        ],
+        "description": "Generate a random floating point number within a range, inclusive"
+    },
+    "int RandomInt(int, int)": {
+        "prefix": "RandomInt",
+        "body": [
+            "RandomInt(${1:int}, ${2:int})$0"
+        ],
+        "description": "Generate a random integer within a range, inclusive"
+    },
+    "RegisterFunctionDocumentation()": {
+        "prefix": "RegisterFunctionDocumentation",
+        "body": [
+            "RegisterFunctionDocumentation()$0"
+        ],
+        "description": ""
+    },
+    "void RegisterScriptGameEventListener(string)": {
+        "prefix": "RegisterScriptGameEventListener",
+        "body": [
+            "RegisterScriptGameEventListener(${1:string})$0"
+        ],
+        "description": "Register as a listener for a game event from script."
+    },
+    "void ReleaseKeyValues()": {
+        "prefix": "ReleaseKeyValues",
+        "body": [
+            "ReleaseKeyValues()$0"
+        ],
+        "description": "Given a root KeyValues object, release its contents"
+    },
+    "void RemoveAllCond()": {
+        "prefix": "RemoveAllCond",
+        "body": [
+            "RemoveAllCond()$0"
+        ],
+        "description": ""
+    },
+    "void RemoveAllObjects(bool)": {
+        "prefix": "RemoveAllObjects",
+        "body": [
+            "RemoveAllObjects(${1:bool})$0"
+        ],
+        "description": "Remove all player objects. Eg. dispensers/sentries."
+    },
+    "void RemoveBroadcastTeamTarget(int)": {
+        "prefix": "RemoveBroadcastTeamTarget",
+        "body": [
+            "RemoveBroadcastTeamTarget(${1:int})$0"
+        ],
+        "description": "Removes a team (by index) from the broadcast list"
+    },
+    "void RemoveCond(string)": {
+        "prefix": "RemoveCond",
+        "body": [
+            "RemoveCond(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "void RemoveCondEx(string, bool)": {
+        "prefix": "RemoveCondEx",
+        "body": [
+            "RemoveCondEx(${1:string}, ${2:bool})$0"
+        ],
+        "description": ""
+    },
+    "void RemoveCustomAttribute(string)": {
+        "prefix": "RemoveCustomAttribute",
+        "body": [
+            "RemoveCustomAttribute(${1:string})$0"
+        ],
+        "description": "Remove a custom attribute to the player"
+    },
+    "RemoveDelegation()": {
+        "prefix": "RemoveDelegation",
+        "body": [
+            "RemoveDelegation()$0"
+        ],
+        "description": ""
+    },
+    "void RemoveDisguise()": {
+        "prefix": "RemoveDisguise",
+        "body": [
+            "RemoveDisguise()$0"
+        ],
+        "description": "Undisguise a spy."
+    },
+    "void RemoveInvisibility()": {
+        "prefix": "RemoveInvisibility",
+        "body": [
+            "RemoveInvisibility()$0"
+        ],
+        "description": "Un-invisible a spy."
+    },
+    "void RemoveOutput(handle, string, string, string, string)": {
+        "prefix": "RemoveOutput",
+        "body": [
+            "RemoveOutput(${1:handle}, ${2:string}, ${3:string}, ${4:string}, ${5:string})$0"
+        ],
+        "description": "Arguments: ( entity, outputName, targetName, inputName, parameter ) - remove an output from the entity"
+    },
+    "void ResetScores()": {
+        "prefix": "ResetScores",
+        "body": [
+            "ResetScores()$0"
+        ],
+        "description": ""
+    },
+    "ResetSequence(num)": {
+        "prefix": "ResetSequence",
+        "body": [
+            "ResetSequence(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "Resolve()": {
+        "prefix": "Resolve",
+        "body": [
+            "Resolve()$0"
+        ],
+        "description": ""
+    },
+    "RetrieveNativeSignature()": {
+        "prefix": "RetrieveNativeSignature",
+        "body": [
+            "RetrieveNativeSignature()$0"
+        ],
+        "description": ""
+    },
+    "Roll()": {
+        "prefix": "Roll",
+        "body": [
+            "Roll()$0"
+        ],
+        "description": ""
+    },
+    "QAngle RotateOrientation(QAngle, QAngle)": {
+        "prefix": "RotateOrientation",
+        "body": [
+            "RotateOrientation(${1:QAngle}, ${2:QAngle})$0"
+        ],
+        "description": "Rotate a QAngle by another QAngle."
+    },
+    "Vector RotatePosition(Vector, QAngle, Vector)": {
+        "prefix": "RotatePosition",
+        "body": [
+            "RotatePosition(${1:Vector}, ${2:QAngle}, ${3:Vector})$0"
+        ],
+        "description": "Rotate a Vector around a point."
+    },
+    "void Say(handle, string, bool)": {
+        "prefix": "Say",
+        "body": [
+            "Say(${1:handle}, ${2:string}, ${3:bool})$0"
+        ],
+        "description": "Have Entity say string, and teamOnly or not"
+    },
+    "Scale()": {
+        "prefix": "Scale",
+        "body": [
+            "Scale()$0"
+        ],
+        "description": ""
+    },
+    "void ScreenFade(handle, int, int, int, int, float, float, int)": {
+        "prefix": "ScreenFade",
+        "body": [
+            "ScreenFade(${1:handle}, ${2:int}, ${3:int}, ${4:int}, ${5:int}, ${6:float}, ${7:float}, ${8:int})$0"
+        ],
+        "description": "Start a screenfade with the following parameters. player, red, green, blue, alpha, flFadeTime, flFadeHold, flags"
+    },
+    "void ScreenShake(Vector, float, float, float, float, int, bool)": {
+        "prefix": "ScreenShake",
+        "body": [
+            "ScreenShake(${1:Vector}, ${2:float}, ${3:float}, ${4:float}, ${5:float}, ${6:int}, ${7:bool})$0"
+        ],
+        "description": "Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake"
+    },
+    "ScriptDebugAddTextFilter()": {
+        "prefix": "ScriptDebugAddTextFilter",
+        "body": [
+            "ScriptDebugAddTextFilter()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugAddTrace()": {
+        "prefix": "ScriptDebugAddTrace",
+        "body": [
+            "ScriptDebugAddTrace()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugAddWatch()": {
+        "prefix": "ScriptDebugAddWatch",
+        "body": [
+            "ScriptDebugAddWatch()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugAddWatchPattern()": {
+        "prefix": "ScriptDebugAddWatchPattern",
+        "body": [
+            "ScriptDebugAddWatchPattern()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugAddWatches()": {
+        "prefix": "ScriptDebugAddWatches",
+        "body": [
+            "ScriptDebugAddWatches()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugClearTraces()": {
+        "prefix": "ScriptDebugClearTraces",
+        "body": [
+            "ScriptDebugClearTraces()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugClearWatches()": {
+        "prefix": "ScriptDebugClearWatches",
+        "body": [
+            "ScriptDebugClearWatches()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugDefaultWatchColor()": {
+        "prefix": "ScriptDebugDefaultWatchColor",
+        "body": [
+            "ScriptDebugDefaultWatchColor()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugDraw()": {
+        "prefix": "ScriptDebugDraw",
+        "body": [
+            "ScriptDebugDraw()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugDrawWatches()": {
+        "prefix": "ScriptDebugDrawWatches",
+        "body": [
+            "ScriptDebugDrawWatches()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugDumpKeys()": {
+        "prefix": "ScriptDebugDumpKeys",
+        "body": [
+            "ScriptDebugDumpKeys()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugHook()": {
+        "prefix": "ScriptDebugHook",
+        "body": [
+            "ScriptDebugHook()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugIterateKeys()": {
+        "prefix": "ScriptDebugIterateKeys",
+        "body": [
+            "ScriptDebugIterateKeys()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugIterateKeysRecursive()": {
+        "prefix": "ScriptDebugIterateKeysRecursive",
+        "body": [
+            "ScriptDebugIterateKeysRecursive()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugRemoveTextFilter()": {
+        "prefix": "ScriptDebugRemoveTextFilter",
+        "body": [
+            "ScriptDebugRemoveTextFilter()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugRemoveTrace()": {
+        "prefix": "ScriptDebugRemoveTrace",
+        "body": [
+            "ScriptDebugRemoveTrace()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugRemoveWatch()": {
+        "prefix": "ScriptDebugRemoveWatch",
+        "body": [
+            "ScriptDebugRemoveWatch()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugRemoveWatchPattern()": {
+        "prefix": "ScriptDebugRemoveWatchPattern",
+        "body": [
+            "ScriptDebugRemoveWatchPattern()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugRemoveWatches()": {
+        "prefix": "ScriptDebugRemoveWatches",
+        "body": [
+            "ScriptDebugRemoveWatches()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugText()": {
+        "prefix": "ScriptDebugText",
+        "body": [
+            "ScriptDebugText()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugTextDraw()": {
+        "prefix": "ScriptDebugTextDraw",
+        "body": [
+            "ScriptDebugTextDraw()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugTextPrint()": {
+        "prefix": "ScriptDebugTextPrint",
+        "body": [
+            "ScriptDebugTextPrint()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugTextTrace()": {
+        "prefix": "ScriptDebugTextTrace",
+        "body": [
+            "ScriptDebugTextTrace()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugTraceAll()": {
+        "prefix": "ScriptDebugTraceAll",
+        "body": [
+            "ScriptDebugTraceAll()$0"
+        ],
+        "description": ""
+    },
+    "ScriptDebugWatches()": {
+        "prefix": "ScriptDebugWatches",
+        "body": [
+            "ScriptDebugWatches()$0"
+        ],
+        "description": ""
+    },
+    "void SendToConsole(string)": {
+        "prefix": "SendToConsole",
+        "body": [
+            "SendToConsole(${1:string})$0"
+        ],
+        "description": "Send a string to the console as a command"
+    },
+    "void SendToConsoleServer(string)": {
+        "prefix": "SendToConsoleServer",
+        "body": [
+            "SendToConsoleServer(${1:string})$0"
+        ],
+        "description": "Copy of SendToServerConsole with another name for compat."
+    },
+    "void SendToServerConsole(string)": {
+        "prefix": "SendToServerConsole",
+        "body": [
+            "SendToServerConsole(${1:string})$0"
+        ],
+        "description": "Send a string that gets executed on the server as a ServerCommand"
+    },
+    "SetAbsAngles(Vector)": {
+        "prefix": "SetAbsAngles",
+        "body": [
+            "SetAbsAngles(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetAbsOrigin(Vector)": {
+        "prefix": "SetAbsOrigin",
+        "body": [
+            "SetAbsOrigin(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetAngles(num, num, num)": {
+        "prefix": "SetAngles",
+        "body": [
+            "SetAngles(${1:num}, ${2:num}, ${3:num})$0"
+        ],
+        "description": ""
+    },
+    "SetAngularVelocity(num, num, num)": {
+        "prefix": "SetAngularVelocity",
+        "body": [
+            "SetAngularVelocity(${1:num}, ${2:num}, ${3:num})$0"
+        ],
+        "description": ""
+    },
+    "SetBodygroup(num, num)": {
+        "prefix": "SetBodygroup",
+        "body": [
+            "SetBodygroup(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetCondDuration(string, float)": {
+        "prefix": "SetCondDuration",
+        "body": [
+            "SetCondDuration(${1:string}, ${2:float})$0"
+        ],
+        "description": ""
+    },
+    "void SetCurrentTauntMoveSpeed(float)": {
+        "prefix": "SetCurrentTauntMoveSpeed",
+        "body": [
+            "SetCurrentTauntMoveSpeed(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "void SetDisguiseAmmoCount(int)": {
+        "prefix": "SetDisguiseAmmoCount",
+        "body": [
+            "SetDisguiseAmmoCount(${1:int})$0"
+        ],
+        "description": ""
+    },
+    "SetDrawEnabled(bool)": {
+        "prefix": "SetDrawEnabled",
+        "body": [
+            "SetDrawEnabled(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "void SetFakeClientConVarValue(handle, string, string)": {
+        "prefix": "SetFakeClientConVarValue",
+        "body": [
+            "SetFakeClientConVarValue(${1:handle}, ${2:string}, ${3:string})$0"
+        ],
+        "description": "Sets a USERINFO client ConVar for a fakeclient"
+    },
+    "SetForwardVector(Vector)": {
+        "prefix": "SetForwardVector",
+        "body": [
+            "SetForwardVector(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetFriction(num)": {
+        "prefix": "SetFriction",
+        "body": [
+            "SetFriction(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetGrapplingHookTarget(handle, bool)": {
+        "prefix": "SetGrapplingHookTarget",
+        "body": [
+            "SetGrapplingHookTarget(${1:handle}, ${2:bool})$0"
+        ],
+        "description": "Set the player's target grapple entity"
+    },
+    "SetGravity(num)": {
+        "prefix": "SetGravity",
+        "body": [
+            "SetGravity(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetGravityMultiplier(float)": {
+        "prefix": "SetGravityMultiplier",
+        "body": [
+            "SetGravityMultiplier(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "void SetGroupSpawnTables(handle, handle)": {
+        "prefix": "SetGroupSpawnTables",
+        "body": [
+            "SetGroupSpawnTables(${1:handle}, ${2:handle})$0"
+        ],
+        "description": "Cache the group spawn tables"
+    },
+    "SetHealth(num)": {
+        "prefix": "SetHealth",
+        "body": [
+            "SetHealth(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetIsMiniBoss(bool)": {
+        "prefix": "SetIsMiniBoss",
+        "body": [
+            "SetIsMiniBoss(${1:bool})$0"
+        ],
+        "description": "Make this player an MvM mini-boss."
+    },
+    "SetLocalAngles(Vector)": {
+        "prefix": "SetLocalAngles",
+        "body": [
+            "SetLocalAngles(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetLocalOrigin(Vector)": {
+        "prefix": "SetLocalOrigin",
+        "body": [
+            "SetLocalOrigin(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "void SetMannVsMachineAlarmStatus(bool)": {
+        "prefix": "SetMannVsMachineAlarmStatus",
+        "body": [
+            "SetMannVsMachineAlarmStatus(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "SetMaxHealth(num)": {
+        "prefix": "SetMaxHealth",
+        "body": [
+            "SetMaxHealth(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "SetModel(string)": {
+        "prefix": "SetModel",
+        "body": [
+            "SetModel(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "SetModelScale(num, num)": {
+        "prefix": "SetModelScale",
+        "body": [
+            "SetModelScale(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetNextChangeClassTime(float)": {
+        "prefix": "SetNextChangeClassTime",
+        "body": [
+            "SetNextChangeClassTime(${1:float})$0"
+        ],
+        "description": "Set next change class time."
+    },
+    "void SetNextChangeTeamTime(float)": {
+        "prefix": "SetNextChangeTeamTime",
+        "body": [
+            "SetNextChangeTeamTime(${1:float})$0"
+        ],
+        "description": "Set next change team time."
+    },
+    "void SetNextRegenTime(float)": {
+        "prefix": "SetNextRegenTime",
+        "body": [
+            "SetNextRegenTime(${1:float})$0"
+        ],
+        "description": "Set next health regen time."
+    },
+    "SetOrigin(Vector)": {
+        "prefix": "SetOrigin",
+        "body": [
+            "SetOrigin(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "void SetOvertimeAllowedForCTF(bool)": {
+        "prefix": "SetOvertimeAllowedForCTF",
+        "body": [
+            "SetOvertimeAllowedForCTF(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "SetOwner(Vector)": {
+        "prefix": "SetOwner",
+        "body": [
+            "SetOwner(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetPitchYawRoll(num, num, num)": {
+        "prefix": "SetPitchYawRoll",
+        "body": [
+            "SetPitchYawRoll(${1:num}, ${2:num}, ${3:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetPlayersInHell(bool)": {
+        "prefix": "SetPlayersInHell",
+        "body": [
+            "SetPlayersInHell(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "SetPoseParameter(num, num)": {
+        "prefix": "SetPoseParameter",
+        "body": [
+            "SetPoseParameter(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetPropEntity(handle, string, handle)": {
+        "prefix": "SetPropEntity",
+        "body": [
+            "SetPropEntity(${1:handle}, ${2:string}, ${3:handle})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value )"
+    },
+    "void SetPropEntityArray(handle, string, handle, int)": {
+        "prefix": "SetPropEntityArray",
+        "body": [
+            "SetPropEntityArray(${1:handle}, ${2:string}, ${3:handle}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value, arrayElement )"
+    },
+    "void SetPropFloat(handle, string, float)": {
+        "prefix": "SetPropFloat",
+        "body": [
+            "SetPropFloat(${1:handle}, ${2:string}, ${3:float})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value )"
+    },
+    "void SetPropFloatArray(handle, string, float, int)": {
+        "prefix": "SetPropFloatArray",
+        "body": [
+            "SetPropFloatArray(${1:handle}, ${2:string}, ${3:float}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value, arrayElement )"
+    },
+    "void SetPropInt(handle, string, int)": {
+        "prefix": "SetPropInt",
+        "body": [
+            "SetPropInt(${1:handle}, ${2:string}, ${3:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value )"
+    },
+    "void SetPropIntArray(handle, string, int, int)": {
+        "prefix": "SetPropIntArray",
+        "body": [
+            "SetPropIntArray(${1:handle}, ${2:string}, ${3:int}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value, arrayElement )"
+    },
+    "void SetPropString(handle, string, string)": {
+        "prefix": "SetPropString",
+        "body": [
+            "SetPropString(${1:handle}, ${2:string}, ${3:string})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value )"
+    },
+    "void SetPropStringArray(handle, string, string, int)": {
+        "prefix": "SetPropStringArray",
+        "body": [
+            "SetPropStringArray(${1:handle}, ${2:string}, ${3:string}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value, arrayElement )"
+    },
+    "void SetPropVector(handle, string, Vector)": {
+        "prefix": "SetPropVector",
+        "body": [
+            "SetPropVector(${1:handle}, ${2:string}, ${3:Vector})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value )"
+    },
+    "void SetPropVectorArray(handle, string, Vector, int)": {
+        "prefix": "SetPropVectorArray",
+        "body": [
+            "SetPropVectorArray(${1:handle}, ${2:string}, ${3:Vector}, ${4:int})$0"
+        ],
+        "description": "Arguments: ( entity, propertyName, value, arrayElement )"
+    },
+    "void SetRageMeter(float)": {
+        "prefix": "SetRageMeter",
+        "body": [
+            "SetRageMeter(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "void SetScoutHypeMeter(float)": {
+        "prefix": "SetScoutHypeMeter",
+        "body": [
+            "SetScoutHypeMeter(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "SetSequence(num)": {
+        "prefix": "SetSequence",
+        "body": [
+            "SetSequence(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "SetSize(Vector, Vector)": {
+        "prefix": "SetSize",
+        "body": [
+            "SetSize(${1:Vector}, ${2:Vector})$0"
+        ],
+        "description": ""
+    },
+    "SetSkin(num)": {
+        "prefix": "SetSkin",
+        "body": [
+            "SetSkin(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetSpyCloakMeter(float)": {
+        "prefix": "SetSpyCloakMeter",
+        "body": [
+            "SetSpyCloakMeter(${1:float})$0"
+        ],
+        "description": ""
+    },
+    "SetTeam(num)": {
+        "prefix": "SetTeam",
+        "body": [
+            "SetTeam(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "void SetUseBossHealthBar(bool)": {
+        "prefix": "SetUseBossHealthBar",
+        "body": [
+            "SetUseBossHealthBar(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "void SetUsingSpells(bool)": {
+        "prefix": "SetUsingSpells",
+        "body": [
+            "SetUsingSpells(${1:bool})$0"
+        ],
+        "description": ""
+    },
+    "void SetValue(string, <unknown>)": {
+        "prefix": "SetValue",
+        "body": [
+            "SetValue(${1:string}, ${2:<unknown>})$0"
+        ],
+        "description": "SetValue(name, value) : sets the value of the convar. Supported types are bool, int, float, string."
+    },
+    "SetVelocity(Vector)": {
+        "prefix": "SetVelocity",
+        "body": [
+            "SetVelocity(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "void ShowMessage(string)": {
+        "prefix": "ShowMessage",
+        "body": [
+            "ShowMessage(${1:string})$0"
+        ],
+        "description": "Print a hud message on all clients"
+    },
+    "void SpawnEntity()": {
+        "prefix": "SpawnEntity",
+        "body": [
+            "SpawnEntity()$0"
+        ],
+        "description": "Create an entity at the location of the maker"
+    },
+    "void SpawnEntityAtEntityOrigin(handle)": {
+        "prefix": "SpawnEntityAtEntityOrigin",
+        "body": [
+            "SpawnEntityAtEntityOrigin(${1:handle})$0"
+        ],
+        "description": "Create an entity at the location of a specified entity instance"
+    },
+    "void SpawnEntityAtLocation(Vector, Vector)": {
+        "prefix": "SpawnEntityAtLocation",
+        "body": [
+            "SpawnEntityAtLocation(${1:Vector}, ${2:Vector})$0"
+        ],
+        "description": "Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)"
+    },
+    "void SpawnEntityAtNamedEntityOrigin(string)": {
+        "prefix": "SpawnEntityAtNamedEntityOrigin",
+        "body": [
+            "SpawnEntityAtNamedEntityOrigin(${1:string})$0"
+        ],
+        "description": "Create an entity at the location of a named entity"
+    },
+    "handle SpawnEntityFromTable(string, handle)": {
+        "prefix": "SpawnEntityFromTable",
+        "body": [
+            "SpawnEntityFromTable(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Spawn entity from KeyValues in table - 'name' is entity name, rest are KeyValues for spawn."
+    },
+    "bool SpawnEntityGroupFromTable(handle)": {
+        "prefix": "SpawnEntityGroupFromTable",
+        "body": [
+            "SpawnEntityGroupFromTable(${1:handle})$0"
+        ],
+        "description": "Hierarchically spawn an entity group from a set of spawn tables."
+    },
+    "void StopAmbientSoundOn(string, handle)": {
+        "prefix": "StopAmbientSoundOn",
+        "body": [
+            "StopAmbientSoundOn(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Stop named ambient sound on an entity."
+    },
+    "StopSound(string)": {
+        "prefix": "StopSound",
+        "body": [
+            "StopSound(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "void StopSoundOn(string, handle)": {
+        "prefix": "StopSoundOn",
+        "body": [
+            "StopSoundOn(${1:string}, ${2:handle})$0"
+        ],
+        "description": "Stop named sound on Entity"
+    },
+    "bool StringToFile(string, string)": {
+        "prefix": "StringToFile",
+        "body": [
+            "StringToFile(${1:string}, ${2:string})$0"
+        ],
+        "description": "Store a string to a file for later reading"
+    },
+    "TakeDamage(num, num, Vector)": {
+        "prefix": "TakeDamage",
+        "body": [
+            "TakeDamage(${1:num}, ${2:num}, ${3:Vector})$0"
+        ],
+        "description": ""
+    },
+    "TakeDamageEx(Vector, Vector, Vector, Vector, Vector, num, num)": {
+        "prefix": "TakeDamageEx",
+        "body": [
+            "TakeDamageEx(${1:Vector}, ${2:Vector}, ${3:Vector}, ${4:Vector}, ${5:Vector}, ${6:num}, ${7:num})$0"
+        ],
+        "description": ""
+    },
+    "float Time()": {
+        "prefix": "Time",
+        "body": [
+            "Time()$0"
+        ],
+        "description": "Get the current server time"
+    },
+    "ToKVString()": {
+        "prefix": "ToKVString",
+        "body": [
+            "ToKVString()$0"
+        ],
+        "description": ""
+    },
+    "ToQAngle()": {
+        "prefix": "ToQAngle",
+        "body": [
+            "ToQAngle()$0"
+        ],
+        "description": ""
+    },
+    "ToQuat()": {
+        "prefix": "ToQuat",
+        "body": [
+            "ToQuat()$0"
+        ],
+        "description": ""
+    },
+    "float TraceLine(Vector, Vector, handle)": {
+        "prefix": "TraceLine",
+        "body": [
+            "TraceLine(${1:Vector}, ${2:Vector}, ${3:handle})$0"
+        ],
+        "description": "given 2 points & ent to ignore, return fraction along line that hits world or models"
+    },
+    "bool TraceLineEx(handle)": {
+        "prefix": "TraceLineEx",
+        "body": [
+            "TraceLineEx(${1:handle})$0"
+        ],
+        "description": "Pass table - Inputs: start, end, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid"
+    },
+    "float TraceLinePlayersIncluded(Vector, Vector, handle)": {
+        "prefix": "TraceLinePlayersIncluded",
+        "body": [
+            "TraceLinePlayersIncluded(${1:Vector}, ${2:Vector}, ${3:handle})$0"
+        ],
+        "description": "given 2 points & ent to ignore, return fraction along line that hits world, models, players or npcs"
+    },
+    "bool TryToPickupBuilding()": {
+        "prefix": "TryToPickupBuilding",
+        "body": [
+            "TryToPickupBuilding()$0"
+        ],
+        "description": "Make the player attempt to pick up a building in front of them"
+    },
+    "UnhookRootMetamethod()": {
+        "prefix": "UnhookRootMetamethod",
+        "body": [
+            "UnhookRootMetamethod()$0"
+        ],
+        "description": ""
+    },
+    "function UniqueString(string)": {
+        "prefix": "UniqueString",
+        "body": [
+            "UniqueString(${1:string})$0"
+        ],
+        "description": "Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table."
+    },
+    "Up()": {
+        "prefix": "Up",
+        "body": [
+            "Up()$0"
+        ],
+        "description": ""
+    },
+    "bool UsePlayerReadyStatusMode()": {
+        "prefix": "UsePlayerReadyStatusMode",
+        "body": [
+            "UsePlayerReadyStatusMode()$0"
+        ],
+        "description": ""
+    },
+    "VSquirrel_OnCreateScope()": {
+        "prefix": "VSquirrel_OnCreateScope",
+        "body": [
+            "VSquirrel_OnCreateScope()$0"
+        ],
+        "description": ""
+    },
+    "VSquirrel_OnReleaseScope()": {
+        "prefix": "VSquirrel_OnReleaseScope",
+        "body": [
+            "VSquirrel_OnReleaseScope()$0"
+        ],
+        "description": ""
+    },
+    "ValidateScriptScope()": {
+        "prefix": "ValidateScriptScope",
+        "body": [
+            "ValidateScriptScope()$0"
+        ],
+        "description": ""
+    },
+    "bool WasInCond(string)": {
+        "prefix": "WasInCond",
+        "body": [
+            "WasInCond(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "Yaw()": {
+        "prefix": "Yaw",
+        "body": [
+            "Yaw()$0"
+        ],
+        "description": ""
+    },
+    "__CollectEventCallbacks()": {
+        "prefix": "__CollectEventCallbacks",
+        "body": [
+            "__CollectEventCallbacks()$0"
+        ],
+        "description": ""
+    },
+    "__CollectGameEventCallbacks()": {
+        "prefix": "__CollectGameEventCallbacks",
+        "body": [
+            "__CollectGameEventCallbacks()$0"
+        ],
+        "description": ""
+    },
+    "__DumpScope()": {
+        "prefix": "__DumpScope",
+        "body": [
+            "__DumpScope()$0"
+        ],
+        "description": ""
+    },
+    "__KeyValueFromFloat(string, num)": {
+        "prefix": "__KeyValueFromFloat",
+        "body": [
+            "__KeyValueFromFloat(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "__KeyValueFromInt(string, num)": {
+        "prefix": "__KeyValueFromInt",
+        "body": [
+            "__KeyValueFromInt(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "__KeyValueFromString(string, string)": {
+        "prefix": "__KeyValueFromString",
+        "body": [
+            "__KeyValueFromString(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "__KeyValueFromVector(string, Vector)": {
+        "prefix": "__KeyValueFromVector",
+        "body": [
+            "__KeyValueFromVector(${1:string}, ${2:Vector})$0"
+        ],
+        "description": ""
+    },
+    "__ReplaceClosures()": {
+        "prefix": "__ReplaceClosures",
+        "body": [
+            "__ReplaceClosures()$0"
+        ],
+        "description": ""
+    },
+    "__RunEventCallbacks()": {
+        "prefix": "__RunEventCallbacks",
+        "body": [
+            "__RunEventCallbacks()$0"
+        ],
+        "description": ""
+    },
+    "__RunGameEventCallbacks()": {
+        "prefix": "__RunGameEventCallbacks",
+        "body": [
+            "__RunGameEventCallbacks()$0"
+        ],
+        "description": ""
+    },
+    "__VScriptServerDebugHook()": {
+        "prefix": "__VScriptServerDebugHook",
+        "body": [
+            "__VScriptServerDebugHook()$0"
+        ],
+        "description": ""
+    },
+    "abs(num)": {
+        "prefix": "abs",
+        "body": [
+            "abs(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "acos(num)": {
+        "prefix": "acos",
+        "body": [
+            "acos(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "array(num)": {
+        "prefix": "array",
+        "body": [
+            "array(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "asin(num)": {
+        "prefix": "asin",
+        "body": [
+            "asin(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "assert()": {
+        "prefix": "assert",
+        "body": [
+            "assert()$0"
+        ],
+        "description": ""
+    },
+    "atan(num)": {
+        "prefix": "atan",
+        "body": [
+            "atan(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "atan2(num, num)": {
+        "prefix": "atan2",
+        "body": [
+            "atan2(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "callee()": {
+        "prefix": "callee",
+        "body": [
+            "callee()$0"
+        ],
+        "description": ""
+    },
+    "capture(string, num)": {
+        "prefix": "capture",
+        "body": [
+            "capture(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "ceil(num)": {
+        "prefix": "ceil",
+        "body": [
+            "ceil(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "chain()": {
+        "prefix": "chain",
+        "body": [
+            "chain()$0"
+        ],
+        "description": ""
+    },
+    "chains()": {
+        "prefix": "chains",
+        "body": [
+            "chains()$0"
+        ],
+        "description": ""
+    },
+    "collectgarbage()": {
+        "prefix": "collectgarbage",
+        "body": [
+            "collectgarbage()$0"
+        ],
+        "description": ""
+    },
+    "compilestring(string, string)": {
+        "prefix": "compilestring",
+        "body": [
+            "compilestring(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "constructor()": {
+        "prefix": "constructor",
+        "body": [
+            "constructor()$0"
+        ],
+        "description": ""
+    },
+    "cos(num)": {
+        "prefix": "cos",
+        "body": [
+            "cos(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "developer()": {
+        "prefix": "developer",
+        "body": [
+            "developer()$0"
+        ],
+        "description": ""
+    },
+    "dummy()": {
+        "prefix": "dummy",
+        "body": [
+            "dummy()$0"
+        ],
+        "description": ""
+    },
+    "enabledebuginfo()": {
+        "prefix": "enabledebuginfo",
+        "body": [
+            "enabledebuginfo()$0"
+        ],
+        "description": ""
+    },
+    "entindex()": {
+        "prefix": "entindex",
+        "body": [
+            "entindex()$0"
+        ],
+        "description": ""
+    },
+    "error()": {
+        "prefix": "error",
+        "body": [
+            "error()$0"
+        ],
+        "description": ""
+    },
+    "exp(num)": {
+        "prefix": "exp",
+        "body": [
+            "exp(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "fabs(num)": {
+        "prefix": "fabs",
+        "body": [
+            "fabs(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "floor(num)": {
+        "prefix": "floor",
+        "body": [
+            "floor(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "format(string)": {
+        "prefix": "format",
+        "body": [
+            "format(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "getconsttable()": {
+        "prefix": "getconsttable",
+        "body": [
+            "getconsttable()$0"
+        ],
+        "description": ""
+    },
+    "getroottable()": {
+        "prefix": "getroottable",
+        "body": [
+            "getroottable()$0"
+        ],
+        "description": ""
+    },
+    "getstackinfos(num)": {
+        "prefix": "getstackinfos",
+        "body": [
+            "getstackinfos(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "log(num)": {
+        "prefix": "log",
+        "body": [
+            "log(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "log10(num)": {
+        "prefix": "log10",
+        "body": [
+            "log10(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "lstrip(string)": {
+        "prefix": "lstrip",
+        "body": [
+            "lstrip(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "m_bindNamesStack()": {
+        "prefix": "m_bindNamesStack",
+        "body": [
+            "m_bindNamesStack()$0"
+        ],
+        "description": ""
+    },
+    "m_fixupSet()": {
+        "prefix": "m_fixupSet",
+        "body": [
+            "m_fixupSet()$0"
+        ],
+        "description": ""
+    },
+    "m_targetTable()": {
+        "prefix": "m_targetTable",
+        "body": [
+            "m_targetTable()$0"
+        ],
+        "description": ""
+    },
+    "match(string)": {
+        "prefix": "match",
+        "body": [
+            "match(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "newthread(Vector)": {
+        "prefix": "newthread",
+        "body": [
+            "newthread(${1:Vector})$0"
+        ],
+        "description": ""
+    },
+    "pow(num, num)": {
+        "prefix": "pow",
+        "body": [
+            "pow(${1:num}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "prefix()": {
+        "prefix": "prefix",
+        "body": [
+            "prefix()$0"
+        ],
+        "description": ""
+    },
+    "print()": {
+        "prefix": "print",
+        "body": [
+            "print()$0"
+        ],
+        "description": ""
+    },
+    "printl()": {
+        "prefix": "printl",
+        "body": [
+            "printl()$0"
+        ],
+        "description": ""
+    },
+    "rand()": {
+        "prefix": "rand",
+        "body": [
+            "rand()$0"
+        ],
+        "description": ""
+    },
+    "realPrint()": {
+        "prefix": "realPrint",
+        "body": [
+            "realPrint()$0"
+        ],
+        "description": ""
+    },
+    "resurrectunreachable()": {
+        "prefix": "resurrectunreachable",
+        "body": [
+            "resurrectunreachable()$0"
+        ],
+        "description": ""
+    },
+    "rstrip(string)": {
+        "prefix": "rstrip",
+        "body": [
+            "rstrip(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "scope()": {
+        "prefix": "scope",
+        "body": [
+            "scope()$0"
+        ],
+        "description": ""
+    },
+    "search(string, num)": {
+        "prefix": "search",
+        "body": [
+            "search(${1:string}, ${2:num})$0"
+        ],
+        "description": ""
+    },
+    "setconsttable()": {
+        "prefix": "setconsttable",
+        "body": [
+            "setconsttable()$0"
+        ],
+        "description": ""
+    },
+    "setdebughook()": {
+        "prefix": "setdebughook",
+        "body": [
+            "setdebughook()$0"
+        ],
+        "description": ""
+    },
+    "seterrorhandler()": {
+        "prefix": "seterrorhandler",
+        "body": [
+            "seterrorhandler()$0"
+        ],
+        "description": ""
+    },
+    "setroottable()": {
+        "prefix": "setroottable",
+        "body": [
+            "setroottable()$0"
+        ],
+        "description": ""
+    },
+    "sin(num)": {
+        "prefix": "sin",
+        "body": [
+            "sin(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "split(string, string)": {
+        "prefix": "split",
+        "body": [
+            "split(${1:string}, ${2:string})$0"
+        ],
+        "description": ""
+    },
+    "sqrt(num)": {
+        "prefix": "sqrt",
+        "body": [
+            "sqrt(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "srand(num)": {
+        "prefix": "srand",
+        "body": [
+            "srand(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "strip(string)": {
+        "prefix": "strip",
+        "body": [
+            "strip(${1:string})$0"
+        ],
+        "description": ""
+    },
+    "subexpcount()": {
+        "prefix": "subexpcount",
+        "body": [
+            "subexpcount()$0"
+        ],
+        "description": ""
+    },
+    "suspend()": {
+        "prefix": "suspend",
+        "body": [
+            "suspend()$0"
+        ],
+        "description": ""
+    },
+    "tan(num)": {
+        "prefix": "tan",
+        "body": [
+            "tan(${1:num})$0"
+        ],
+        "description": ""
+    },
+    "tostring()": {
+        "prefix": "tostring",
+        "body": [
+            "tostring()$0"
+        ],
+        "description": ""
+    },
+    "type()": {
+        "prefix": "type",
+        "body": [
+            "type()$0"
+        ],
+        "description": ""
+    }
+    ///// END TF2 VScript Snippets /////
+}
