@@ -1,5 +1,4 @@
 {
-    ///// BEGIN TF2 VScript Snippets /////
     "void AddBroadcastTeamTarget(int)": {
         "prefix": "AddBroadcastTeamTarget",
         "body": [
@@ -3703,5 +3702,4 @@
         ],
         "description": ""
     }
-    ///// END TF2 VScript Snippets /////
 }
