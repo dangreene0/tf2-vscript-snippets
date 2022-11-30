@@ -1,5 +1,47 @@
 {
 	///// BEGIN TF2 VScript Snippets /////
+	"AGGRESSIVE": {
+		"prefix": "AGGRESSIVE",
+		"body": [
+			"AGGRESSIVE$0"
+		],
+		"description": "2"
+	},
+	"AIR_CHARGE_ONLY": {
+		"prefix": "AIR_CHARGE_ONLY",
+		"body": [
+			"AIR_CHARGE_ONLY$0"
+		],
+		"description": "524288"
+	},
+	"ALL_VISIBLE_CONTENTS": {
+		"prefix": "ALL_VISIBLE_CONTENTS",
+		"body": [
+			"ALL_VISIBLE_CONTENTS$0"
+		],
+		"description": "255"
+	},
+	"ALWAYS_CRIT": {
+		"prefix": "ALWAYS_CRIT",
+		"body": [
+			"ALWAYS_CRIT$0"
+		],
+		"description": "512"
+	},
+	"ALWAYS_FIRE_WEAPON": {
+		"prefix": "ALWAYS_FIRE_WEAPON",
+		"body": [
+			"ALWAYS_FIRE_WEAPON$0"
+		],
+		"description": "8192"
+	},
+	"AUTO_JUMP": {
+		"prefix": "AUTO_JUMP",
+		"body": [
+			"AUTO_JUMP$0"
+		],
+		"description": "262144"
+	},
 	"void AddAttribute(string, float, float)": {
 		"prefix": "AddAttribute",
 		"body": [
@@ -161,6 +203,34 @@
 		],
 		"description": "Test value and if not true, throws exception, optionally with message."
 	},
+	"BACKWARD": {
+		"prefix": "BACKWARD",
+		"body": [
+			"BACKWARD$0"
+		],
+		"description": "2"
+	},
+	"BECOME_SPECTATOR_ON_DEATH": {
+		"prefix": "BECOME_SPECTATOR_ON_DEATH",
+		"body": [
+			"BECOME_SPECTATOR_ON_DEATH$0"
+		],
+		"description": "32"
+	},
+	"BLAST_IMMUNE": {
+		"prefix": "BLAST_IMMUNE",
+		"body": [
+			"BLAST_IMMUNE$0"
+		],
+		"description": "16777216"
+	},
+	"BULLET_IMMUNE": {
+		"prefix": "BULLET_IMMUNE",
+		"body": [
+			"BULLET_IMMUNE$0"
+		],
+		"description": "8388608"
+	},
 	"bool BecomeRagdollOnClient(Vector)": {
 		"prefix": "BecomeRagdollOnClient",
 		"body": [
@@ -195,6 +265,391 @@
 			"BleedPlayerEx(${1:float}, ${2:int}, ${3:bool}, ${4:int})$0"
 		],
 		"description": ""
+	},
+	"COLLISION_GROUP_BREAKABLE_GLASS": {
+		"prefix": "COLLISION_GROUP_BREAKABLE_GLASS",
+		"body": [
+			"COLLISION_GROUP_BREAKABLE_GLASS$0"
+		],
+		"description": "6"
+	},
+	"COLLISION_GROUP_DEBRIS": {
+		"prefix": "COLLISION_GROUP_DEBRIS",
+		"body": [
+			"COLLISION_GROUP_DEBRIS$0"
+		],
+		"description": "1"
+	},
+	"COLLISION_GROUP_DEBRIS_TRIGGER": {
+		"prefix": "COLLISION_GROUP_DEBRIS_TRIGGER",
+		"body": [
+			"COLLISION_GROUP_DEBRIS_TRIGGER$0"
+		],
+		"description": "2"
+	},
+	"COLLISION_GROUP_DISSOLVING": {
+		"prefix": "COLLISION_GROUP_DISSOLVING",
+		"body": [
+			"COLLISION_GROUP_DISSOLVING$0"
+		],
+		"description": "16"
+	},
+	"COLLISION_GROUP_DOOR_BLOCKER": {
+		"prefix": "COLLISION_GROUP_DOOR_BLOCKER",
+		"body": [
+			"COLLISION_GROUP_DOOR_BLOCKER$0"
+		],
+		"description": "14"
+	},
+	"COLLISION_GROUP_INTERACTIVE": {
+		"prefix": "COLLISION_GROUP_INTERACTIVE",
+		"body": [
+			"COLLISION_GROUP_INTERACTIVE$0"
+		],
+		"description": "4"
+	},
+	"COLLISION_GROUP_INTERACTIVE_DEBRIS": {
+		"prefix": "COLLISION_GROUP_INTERACTIVE_DEBRIS",
+		"body": [
+			"COLLISION_GROUP_INTERACTIVE_DEBRIS$0"
+		],
+		"description": "3"
+	},
+	"COLLISION_GROUP_IN_VEHICLE": {
+		"prefix": "COLLISION_GROUP_IN_VEHICLE",
+		"body": [
+			"COLLISION_GROUP_IN_VEHICLE$0"
+		],
+		"description": "10"
+	},
+	"COLLISION_GROUP_NONE": {
+		"prefix": "COLLISION_GROUP_NONE",
+		"body": [
+			"COLLISION_GROUP_NONE$0"
+		],
+		"description": "0"
+	},
+	"COLLISION_GROUP_NPC": {
+		"prefix": "COLLISION_GROUP_NPC",
+		"body": [
+			"COLLISION_GROUP_NPC$0"
+		],
+		"description": "9"
+	},
+	"COLLISION_GROUP_NPC_ACTOR": {
+		"prefix": "COLLISION_GROUP_NPC_ACTOR",
+		"body": [
+			"COLLISION_GROUP_NPC_ACTOR$0"
+		],
+		"description": "18"
+	},
+	"COLLISION_GROUP_NPC_SCRIPTED": {
+		"prefix": "COLLISION_GROUP_NPC_SCRIPTED",
+		"body": [
+			"COLLISION_GROUP_NPC_SCRIPTED$0"
+		],
+		"description": "19"
+	},
+	"COLLISION_GROUP_PASSABLE_DOOR": {
+		"prefix": "COLLISION_GROUP_PASSABLE_DOOR",
+		"body": [
+			"COLLISION_GROUP_PASSABLE_DOOR$0"
+		],
+		"description": "15"
+	},
+	"COLLISION_GROUP_PLAYER": {
+		"prefix": "COLLISION_GROUP_PLAYER",
+		"body": [
+			"COLLISION_GROUP_PLAYER$0"
+		],
+		"description": "5"
+	},
+	"COLLISION_GROUP_PLAYER_MOVEMENT": {
+		"prefix": "COLLISION_GROUP_PLAYER_MOVEMENT",
+		"body": [
+			"COLLISION_GROUP_PLAYER_MOVEMENT$0"
+		],
+		"description": "8"
+	},
+	"COLLISION_GROUP_PROJECTILE": {
+		"prefix": "COLLISION_GROUP_PROJECTILE",
+		"body": [
+			"COLLISION_GROUP_PROJECTILE$0"
+		],
+		"description": "13"
+	},
+	"COLLISION_GROUP_PUSHAWAY": {
+		"prefix": "COLLISION_GROUP_PUSHAWAY",
+		"body": [
+			"COLLISION_GROUP_PUSHAWAY$0"
+		],
+		"description": "17"
+	},
+	"COLLISION_GROUP_VEHICLE": {
+		"prefix": "COLLISION_GROUP_VEHICLE",
+		"body": [
+			"COLLISION_GROUP_VEHICLE$0"
+		],
+		"description": "7"
+	},
+	"COLLISION_GROUP_VEHICLE_CLIP": {
+		"prefix": "COLLISION_GROUP_VEHICLE_CLIP",
+		"body": [
+			"COLLISION_GROUP_VEHICLE_CLIP$0"
+		],
+		"description": "12"
+	},
+	"COLLISION_GROUP_WEAPON": {
+		"prefix": "COLLISION_GROUP_WEAPON",
+		"body": [
+			"COLLISION_GROUP_WEAPON$0"
+		],
+		"description": "11"
+	},
+	"CONTENTS_AREAPORTAL": {
+		"prefix": "CONTENTS_AREAPORTAL",
+		"body": [
+			"CONTENTS_AREAPORTAL$0"
+		],
+		"description": "32768"
+	},
+	"CONTENTS_AUX": {
+		"prefix": "CONTENTS_AUX",
+		"body": [
+			"CONTENTS_AUX$0"
+		],
+		"description": "4"
+	},
+	"CONTENTS_BLOCKLOS": {
+		"prefix": "CONTENTS_BLOCKLOS",
+		"body": [
+			"CONTENTS_BLOCKLOS$0"
+		],
+		"description": "64"
+	},
+	"CONTENTS_CURRENT_0": {
+		"prefix": "CONTENTS_CURRENT_0",
+		"body": [
+			"CONTENTS_CURRENT_0$0"
+		],
+		"description": "262144"
+	},
+	"CONTENTS_CURRENT_180": {
+		"prefix": "CONTENTS_CURRENT_180",
+		"body": [
+			"CONTENTS_CURRENT_180$0"
+		],
+		"description": "1048576"
+	},
+	"CONTENTS_CURRENT_270": {
+		"prefix": "CONTENTS_CURRENT_270",
+		"body": [
+			"CONTENTS_CURRENT_270$0"
+		],
+		"description": "2097152"
+	},
+	"CONTENTS_CURRENT_90": {
+		"prefix": "CONTENTS_CURRENT_90",
+		"body": [
+			"CONTENTS_CURRENT_90$0"
+		],
+		"description": "524288"
+	},
+	"CONTENTS_CURRENT_DOWN": {
+		"prefix": "CONTENTS_CURRENT_DOWN",
+		"body": [
+			"CONTENTS_CURRENT_DOWN$0"
+		],
+		"description": "8388608"
+	},
+	"CONTENTS_CURRENT_UP": {
+		"prefix": "CONTENTS_CURRENT_UP",
+		"body": [
+			"CONTENTS_CURRENT_UP$0"
+		],
+		"description": "4194304"
+	},
+	"CONTENTS_DEBRIS": {
+		"prefix": "CONTENTS_DEBRIS",
+		"body": [
+			"CONTENTS_DEBRIS$0"
+		],
+		"description": "67108864"
+	},
+	"CONTENTS_DETAIL": {
+		"prefix": "CONTENTS_DETAIL",
+		"body": [
+			"CONTENTS_DETAIL$0"
+		],
+		"description": "134217728"
+	},
+	"CONTENTS_EMPTY": {
+		"prefix": "CONTENTS_EMPTY",
+		"body": [
+			"CONTENTS_EMPTY$0"
+		],
+		"description": "0"
+	},
+	"CONTENTS_GRATE": {
+		"prefix": "CONTENTS_GRATE",
+		"body": [
+			"CONTENTS_GRATE$0"
+		],
+		"description": "8"
+	},
+	"CONTENTS_HITBOX": {
+		"prefix": "CONTENTS_HITBOX",
+		"body": [
+			"CONTENTS_HITBOX$0"
+		],
+		"description": "1073741824"
+	},
+	"CONTENTS_IGNORE_NODRAW_OPAQUE": {
+		"prefix": "CONTENTS_IGNORE_NODRAW_OPAQUE",
+		"body": [
+			"CONTENTS_IGNORE_NODRAW_OPAQUE$0"
+		],
+		"description": "8192"
+	},
+	"CONTENTS_LADDER": {
+		"prefix": "CONTENTS_LADDER",
+		"body": [
+			"CONTENTS_LADDER$0"
+		],
+		"description": "536870912"
+	},
+	"CONTENTS_MONSTER": {
+		"prefix": "CONTENTS_MONSTER",
+		"body": [
+			"CONTENTS_MONSTER$0"
+		],
+		"description": "33554432"
+	},
+	"CONTENTS_MONSTERCLIP": {
+		"prefix": "CONTENTS_MONSTERCLIP",
+		"body": [
+			"CONTENTS_MONSTERCLIP$0"
+		],
+		"description": "131072"
+	},
+	"CONTENTS_MOVEABLE": {
+		"prefix": "CONTENTS_MOVEABLE",
+		"body": [
+			"CONTENTS_MOVEABLE$0"
+		],
+		"description": "16384"
+	},
+	"CONTENTS_OPAQUE": {
+		"prefix": "CONTENTS_OPAQUE",
+		"body": [
+			"CONTENTS_OPAQUE$0"
+		],
+		"description": "128"
+	},
+	"CONTENTS_ORIGIN": {
+		"prefix": "CONTENTS_ORIGIN",
+		"body": [
+			"CONTENTS_ORIGIN$0"
+		],
+		"description": "16777216"
+	},
+	"CONTENTS_PLAYERCLIP": {
+		"prefix": "CONTENTS_PLAYERCLIP",
+		"body": [
+			"CONTENTS_PLAYERCLIP$0"
+		],
+		"description": "65536"
+	},
+	"CONTENTS_SLIME": {
+		"prefix": "CONTENTS_SLIME",
+		"body": [
+			"CONTENTS_SLIME$0"
+		],
+		"description": "16"
+	},
+	"CONTENTS_SOLID": {
+		"prefix": "CONTENTS_SOLID",
+		"body": [
+			"CONTENTS_SOLID$0"
+		],
+		"description": "1"
+	},
+	"CONTENTS_TEAM1": {
+		"prefix": "CONTENTS_TEAM1",
+		"body": [
+			"CONTENTS_TEAM1$0"
+		],
+		"description": "2048"
+	},
+	"CONTENTS_TEAM2": {
+		"prefix": "CONTENTS_TEAM2",
+		"body": [
+			"CONTENTS_TEAM2$0"
+		],
+		"description": "4096"
+	},
+	"CONTENTS_TESTFOGVOLUME": {
+		"prefix": "CONTENTS_TESTFOGVOLUME",
+		"body": [
+			"CONTENTS_TESTFOGVOLUME$0"
+		],
+		"description": "256"
+	},
+	"CONTENTS_TRANSLUCENT": {
+		"prefix": "CONTENTS_TRANSLUCENT",
+		"body": [
+			"CONTENTS_TRANSLUCENT$0"
+		],
+		"description": "268435456"
+	},
+	"CONTENTS_UNUSED": {
+		"prefix": "CONTENTS_UNUSED",
+		"body": [
+			"CONTENTS_UNUSED$0"
+		],
+		"description": "512"
+	},
+	"CONTENTS_UNUSED6": {
+		"prefix": "CONTENTS_UNUSED6",
+		"body": [
+			"CONTENTS_UNUSED6$0"
+		],
+		"description": "1024"
+	},
+	"CONTENTS_WATER": {
+		"prefix": "CONTENTS_WATER",
+		"body": [
+			"CONTENTS_WATER$0"
+		],
+		"description": "32"
+	},
+	"CONTENTS_WINDOW": {
+		"prefix": "CONTENTS_WINDOW",
+		"body": [
+			"CONTENTS_WINDOW$0"
+		],
+		"description": "2"
+	},
+	"CRIT_FULL": {
+		"prefix": "CRIT_FULL",
+		"body": [
+			"CRIT_FULL$0"
+		],
+		"description": "2"
+	},
+	"CRIT_MINI": {
+		"prefix": "CRIT_MINI",
+		"body": [
+			"CRIT_MINI$0"
+		],
+		"description": "1"
+	},
+	"CRIT_NONE": {
+		"prefix": "CRIT_NONE",
+		"body": [
+			"CRIT_NONE$0"
+		],
+		"description": "0"
 	},
 	"Call()": {
 		"prefix": "Call",
@@ -406,6 +861,13 @@
 		],
 		"description": "Connect this area to given area in given direction"
 	},
+	"ConstantNamingConvention": {
+		"prefix": "ConstantNamingConvention",
+		"body": [
+			"ConstantNamingConvention$0"
+		],
+		"description": "Constants are named as follows: F -> flags, E -> enums, (nothing) -> random values/constants"
+	},
 	"bool Contains(handle area)": {
 		"prefix": "Contains",
 		"body": [
@@ -447,6 +909,237 @@
 			"Cross(${1:Vector factor})$0"
 		],
 		"description": "The vector product of two vectors. Returns a vector orthogonal to the input vectors."
+	},
+	"DISABLE_DODGE": {
+		"prefix": "DISABLE_DODGE",
+		"body": [
+			"DISABLE_DODGE$0"
+		],
+		"description": "16"
+	},
+	"DMG_ACID": {
+		"prefix": "DMG_ACID",
+		"body": [
+			"DMG_ACID$0"
+		],
+		"description": "1048576"
+	},
+	"DMG_AIRBOAT": {
+		"prefix": "DMG_AIRBOAT",
+		"body": [
+			"DMG_AIRBOAT$0"
+		],
+		"description": "33554432"
+	},
+	"DMG_ALWAYSGIB": {
+		"prefix": "DMG_ALWAYSGIB",
+		"body": [
+			"DMG_ALWAYSGIB$0"
+		],
+		"description": "8192"
+	},
+	"DMG_BLAST": {
+		"prefix": "DMG_BLAST",
+		"body": [
+			"DMG_BLAST$0"
+		],
+		"description": "64"
+	},
+	"DMG_BLAST_SURFACE": {
+		"prefix": "DMG_BLAST_SURFACE",
+		"body": [
+			"DMG_BLAST_SURFACE$0"
+		],
+		"description": "134217728"
+	},
+	"DMG_BUCKSHOT": {
+		"prefix": "DMG_BUCKSHOT",
+		"body": [
+			"DMG_BUCKSHOT$0"
+		],
+		"description": "536870912"
+	},
+	"DMG_BULLET": {
+		"prefix": "DMG_BULLET",
+		"body": [
+			"DMG_BULLET$0"
+		],
+		"description": "2"
+	},
+	"DMG_BURN": {
+		"prefix": "DMG_BURN",
+		"body": [
+			"DMG_BURN$0"
+		],
+		"description": "8"
+	},
+	"DMG_CLUB": {
+		"prefix": "DMG_CLUB",
+		"body": [
+			"DMG_CLUB$0"
+		],
+		"description": "128"
+	},
+	"DMG_CRUSH": {
+		"prefix": "DMG_CRUSH",
+		"body": [
+			"DMG_CRUSH$0"
+		],
+		"description": "1"
+	},
+	"DMG_DIRECT": {
+		"prefix": "DMG_DIRECT",
+		"body": [
+			"DMG_DIRECT$0"
+		],
+		"description": "268435456"
+	},
+	"DMG_DISSOLVE": {
+		"prefix": "DMG_DISSOLVE",
+		"body": [
+			"DMG_DISSOLVE$0"
+		],
+		"description": "67108864"
+	},
+	"DMG_DROWN": {
+		"prefix": "DMG_DROWN",
+		"body": [
+			"DMG_DROWN$0"
+		],
+		"description": "16384"
+	},
+	"DMG_DROWNRECOVER": {
+		"prefix": "DMG_DROWNRECOVER",
+		"body": [
+			"DMG_DROWNRECOVER$0"
+		],
+		"description": "524288"
+	},
+	"DMG_ENERGYBEAM": {
+		"prefix": "DMG_ENERGYBEAM",
+		"body": [
+			"DMG_ENERGYBEAM$0"
+		],
+		"description": "1024"
+	},
+	"DMG_FALL": {
+		"prefix": "DMG_FALL",
+		"body": [
+			"DMG_FALL$0"
+		],
+		"description": "32"
+	},
+	"DMG_GENERIC": {
+		"prefix": "DMG_GENERIC",
+		"body": [
+			"DMG_GENERIC$0"
+		],
+		"description": "0"
+	},
+	"DMG_NERVEGAS": {
+		"prefix": "DMG_NERVEGAS",
+		"body": [
+			"DMG_NERVEGAS$0"
+		],
+		"description": "65536"
+	},
+	"DMG_NEVERGIB": {
+		"prefix": "DMG_NEVERGIB",
+		"body": [
+			"DMG_NEVERGIB$0"
+		],
+		"description": "4096"
+	},
+	"DMG_PARALYZE": {
+		"prefix": "DMG_PARALYZE",
+		"body": [
+			"DMG_PARALYZE$0"
+		],
+		"description": "32768"
+	},
+	"DMG_PHYSGUN": {
+		"prefix": "DMG_PHYSGUN",
+		"body": [
+			"DMG_PHYSGUN$0"
+		],
+		"description": "8388608"
+	},
+	"DMG_PLASMA": {
+		"prefix": "DMG_PLASMA",
+		"body": [
+			"DMG_PLASMA$0"
+		],
+		"description": "16777216"
+	},
+	"DMG_POISON": {
+		"prefix": "DMG_POISON",
+		"body": [
+			"DMG_POISON$0"
+		],
+		"description": "131072"
+	},
+	"DMG_PREVENT_PHYSICS_FORCE": {
+		"prefix": "DMG_PREVENT_PHYSICS_FORCE",
+		"body": [
+			"DMG_PREVENT_PHYSICS_FORCE$0"
+		],
+		"description": "2048"
+	},
+	"DMG_RADIATION": {
+		"prefix": "DMG_RADIATION",
+		"body": [
+			"DMG_RADIATION$0"
+		],
+		"description": "262144"
+	},
+	"DMG_REMOVENORAGDOLL": {
+		"prefix": "DMG_REMOVENORAGDOLL",
+		"body": [
+			"DMG_REMOVENORAGDOLL$0"
+		],
+		"description": "4194304"
+	},
+	"DMG_SHOCK": {
+		"prefix": "DMG_SHOCK",
+		"body": [
+			"DMG_SHOCK$0"
+		],
+		"description": "256"
+	},
+	"DMG_SLASH": {
+		"prefix": "DMG_SLASH",
+		"body": [
+			"DMG_SLASH$0"
+		],
+		"description": "4"
+	},
+	"DMG_SLOWBURN": {
+		"prefix": "DMG_SLOWBURN",
+		"body": [
+			"DMG_SLOWBURN$0"
+		],
+		"description": "2097152"
+	},
+	"DMG_SONIC": {
+		"prefix": "DMG_SONIC",
+		"body": [
+			"DMG_SONIC$0"
+		],
+		"description": "512"
+	},
+	"DMG_VEHICLE": {
+		"prefix": "DMG_VEHICLE",
+		"body": [
+			"DMG_VEHICLE$0"
+		],
+		"description": "16"
+	},
+	"DOWN": {
+		"prefix": "DOWN",
+		"body": [
+			"DOWN$0"
+		],
+		"description": "5"
 	},
 	"void DebugDrawBox(Vector origin, vector min, vector max, int r, int g, int b, int alpha, float duration)": {
 		"prefix": "DebugDrawBox",
@@ -644,6 +1337,342 @@
 		],
 		"description": "Dumps information about a class or instance."
 	},
+	"E": {
+		"prefix": "E",
+		"body": [
+			"E$0"
+		],
+		"description": "2.71828"
+	},
+	"EAST": {
+		"prefix": "EAST",
+		"body": [
+			"EAST$0"
+		],
+		"description": "1"
+	},
+	"EASY": {
+		"prefix": "EASY",
+		"body": [
+			"EASY$0"
+		],
+		"description": "0"
+	},
+	"EFL_BOT_FROZEN": {
+		"prefix": "EFL_BOT_FROZEN",
+		"body": [
+			"EFL_BOT_FROZEN$0"
+		],
+		"description": "256"
+	},
+	"EFL_CHECK_UNTOUCH": {
+		"prefix": "EFL_CHECK_UNTOUCH",
+		"body": [
+			"EFL_CHECK_UNTOUCH$0"
+		],
+		"description": "16777216"
+	},
+	"EFL_DIRTY_ABSANGVELOCITY": {
+		"prefix": "EFL_DIRTY_ABSANGVELOCITY",
+		"body": [
+			"EFL_DIRTY_ABSANGVELOCITY$0"
+		],
+		"description": "8192"
+	},
+	"EFL_DIRTY_ABSTRANSFORM": {
+		"prefix": "EFL_DIRTY_ABSTRANSFORM",
+		"body": [
+			"EFL_DIRTY_ABSTRANSFORM$0"
+		],
+		"description": "2048"
+	},
+	"EFL_DIRTY_ABSVELOCITY": {
+		"prefix": "EFL_DIRTY_ABSVELOCITY",
+		"body": [
+			"EFL_DIRTY_ABSVELOCITY$0"
+		],
+		"description": "4096"
+	},
+	"EFL_DIRTY_SHADOWUPDATE": {
+		"prefix": "EFL_DIRTY_SHADOWUPDATE",
+		"body": [
+			"EFL_DIRTY_SHADOWUPDATE$0"
+		],
+		"description": "32"
+	},
+	"EFL_DIRTY_SPATIAL_PARTITION": {
+		"prefix": "EFL_DIRTY_SPATIAL_PARTITION",
+		"body": [
+			"EFL_DIRTY_SPATIAL_PARTITION$0"
+		],
+		"description": "32768"
+	},
+	"EFL_DIRTY_SURROUNDING_COLLISION_BOUNDS": {
+		"prefix": "EFL_DIRTY_SURROUNDING_COLLISION_BOUNDS",
+		"body": [
+			"EFL_DIRTY_SURROUNDING_COLLISION_BOUNDS$0"
+		],
+		"description": "16384"
+	},
+	"EFL_DONTBLOCKLOS": {
+		"prefix": "EFL_DONTBLOCKLOS",
+		"body": [
+			"EFL_DONTBLOCKLOS$0"
+		],
+		"description": "33554432"
+	},
+	"EFL_DONTWALKON": {
+		"prefix": "EFL_DONTWALKON",
+		"body": [
+			"EFL_DONTWALKON$0"
+		],
+		"description": "67108864"
+	},
+	"EFL_DORMANT": {
+		"prefix": "EFL_DORMANT",
+		"body": [
+			"EFL_DORMANT$0"
+		],
+		"description": "2"
+	},
+	"EFL_FORCE_ALLOW_MOVEPARENT": {
+		"prefix": "EFL_FORCE_ALLOW_MOVEPARENT",
+		"body": [
+			"EFL_FORCE_ALLOW_MOVEPARENT$0"
+		],
+		"description": "65536"
+	},
+	"EFL_FORCE_CHECK_TRANSMIT": {
+		"prefix": "EFL_FORCE_CHECK_TRANSMIT",
+		"body": [
+			"EFL_FORCE_CHECK_TRANSMIT$0"
+		],
+		"description": "128"
+	},
+	"EFL_HAS_PLAYER_CHILD": {
+		"prefix": "EFL_HAS_PLAYER_CHILD",
+		"body": [
+			"EFL_HAS_PLAYER_CHILD$0"
+		],
+		"description": "16"
+	},
+	"EFL_IN_SKYBOX": {
+		"prefix": "EFL_IN_SKYBOX",
+		"body": [
+			"EFL_IN_SKYBOX$0"
+		],
+		"description": "131072"
+	},
+	"EFL_IS_BEING_LIFTED_BY_BARNACLE": {
+		"prefix": "EFL_IS_BEING_LIFTED_BY_BARNACLE",
+		"body": [
+			"EFL_IS_BEING_LIFTED_BY_BARNACLE$0"
+		],
+		"description": "1048576"
+	},
+	"EFL_KEEP_ON_RECREATE_ENTITIES": {
+		"prefix": "EFL_KEEP_ON_RECREATE_ENTITIES",
+		"body": [
+			"EFL_KEEP_ON_RECREATE_ENTITIES$0"
+		],
+		"description": "16"
+	},
+	"EFL_KILLME": {
+		"prefix": "EFL_KILLME",
+		"body": [
+			"EFL_KILLME$0"
+		],
+		"description": "1"
+	},
+	"EFL_NOCLIP_ACTIVE": {
+		"prefix": "EFL_NOCLIP_ACTIVE",
+		"body": [
+			"EFL_NOCLIP_ACTIVE$0"
+		],
+		"description": "4"
+	},
+	"EFL_NOTIFY": {
+		"prefix": "EFL_NOTIFY",
+		"body": [
+			"EFL_NOTIFY$0"
+		],
+		"description": "64"
+	},
+	"EFL_NO_AUTO_EDICT_ATTACH": {
+		"prefix": "EFL_NO_AUTO_EDICT_ATTACH",
+		"body": [
+			"EFL_NO_AUTO_EDICT_ATTACH$0"
+		],
+		"description": "1024"
+	},
+	"EFL_NO_DAMAGE_FORCES": {
+		"prefix": "EFL_NO_DAMAGE_FORCES",
+		"body": [
+			"EFL_NO_DAMAGE_FORCES$0"
+		],
+		"description": "2147483648"
+	},
+	"EFL_NO_DISSOLVE": {
+		"prefix": "EFL_NO_DISSOLVE",
+		"body": [
+			"EFL_NO_DISSOLVE$0"
+		],
+		"description": "134217728"
+	},
+	"EFL_NO_GAME_PHYSICS_SIMULATION": {
+		"prefix": "EFL_NO_GAME_PHYSICS_SIMULATION",
+		"body": [
+			"EFL_NO_GAME_PHYSICS_SIMULATION$0"
+		],
+		"description": "8388608"
+	},
+	"EFL_NO_MEGAPHYSCANNON_RAGDOLL": {
+		"prefix": "EFL_NO_MEGAPHYSCANNON_RAGDOLL",
+		"body": [
+			"EFL_NO_MEGAPHYSCANNON_RAGDOLL$0"
+		],
+		"description": "268435456"
+	},
+	"EFL_NO_PHYSCANNON_INTERACTION": {
+		"prefix": "EFL_NO_PHYSCANNON_INTERACTION",
+		"body": [
+			"EFL_NO_PHYSCANNON_INTERACTION$0"
+		],
+		"description": "1073741824"
+	},
+	"EFL_NO_ROTORWASH_PUSH": {
+		"prefix": "EFL_NO_ROTORWASH_PUSH",
+		"body": [
+			"EFL_NO_ROTORWASH_PUSH$0"
+		],
+		"description": "2097152"
+	},
+	"EFL_NO_THINK_FUNCTION": {
+		"prefix": "EFL_NO_THINK_FUNCTION",
+		"body": [
+			"EFL_NO_THINK_FUNCTION$0"
+		],
+		"description": "4194304"
+	},
+	"EFL_NO_WATER_VELOCITY_CHANGE": {
+		"prefix": "EFL_NO_WATER_VELOCITY_CHANGE",
+		"body": [
+			"EFL_NO_WATER_VELOCITY_CHANGE$0"
+		],
+		"description": "536870912"
+	},
+	"EFL_SERVER_ONLY": {
+		"prefix": "EFL_SERVER_ONLY",
+		"body": [
+			"EFL_SERVER_ONLY$0"
+		],
+		"description": "512"
+	},
+	"EFL_SETTING_UP_BONES": {
+		"prefix": "EFL_SETTING_UP_BONES",
+		"body": [
+			"EFL_SETTING_UP_BONES$0"
+		],
+		"description": "8"
+	},
+	"EFL_TOUCHING_FLUID": {
+		"prefix": "EFL_TOUCHING_FLUID",
+		"body": [
+			"EFL_TOUCHING_FLUID$0"
+		],
+		"description": "524288"
+	},
+	"EFL_USE_PARTITION_WHEN_NOT_SOLID": {
+		"prefix": "EFL_USE_PARTITION_WHEN_NOT_SOLID",
+		"body": [
+			"EFL_USE_PARTITION_WHEN_NOT_SOLID$0"
+		],
+		"description": "262144"
+	},
+	"EF_BONEMERGE": {
+		"prefix": "EF_BONEMERGE",
+		"body": [
+			"EF_BONEMERGE$0"
+		],
+		"description": "1"
+	},
+	"EF_BONEMERGE_FASTCULL": {
+		"prefix": "EF_BONEMERGE_FASTCULL",
+		"body": [
+			"EF_BONEMERGE_FASTCULL$0"
+		],
+		"description": "128"
+	},
+	"EF_BRIGHTLIGHT": {
+		"prefix": "EF_BRIGHTLIGHT",
+		"body": [
+			"EF_BRIGHTLIGHT$0"
+		],
+		"description": "2"
+	},
+	"EF_DIMLIGHT": {
+		"prefix": "EF_DIMLIGHT",
+		"body": [
+			"EF_DIMLIGHT$0"
+		],
+		"description": "4"
+	},
+	"EF_ITEM_BLINK": {
+		"prefix": "EF_ITEM_BLINK",
+		"body": [
+			"EF_ITEM_BLINK$0"
+		],
+		"description": "256"
+	},
+	"EF_MAX_BITS": {
+		"prefix": "EF_MAX_BITS",
+		"body": [
+			"EF_MAX_BITS$0"
+		],
+		"description": "10"
+	},
+	"EF_NODRAW": {
+		"prefix": "EF_NODRAW",
+		"body": [
+			"EF_NODRAW$0"
+		],
+		"description": "32"
+	},
+	"EF_NOINTERP": {
+		"prefix": "EF_NOINTERP",
+		"body": [
+			"EF_NOINTERP$0"
+		],
+		"description": "8"
+	},
+	"EF_NORECEIVESHADOW": {
+		"prefix": "EF_NORECEIVESHADOW",
+		"body": [
+			"EF_NORECEIVESHADOW$0"
+		],
+		"description": "64"
+	},
+	"EF_NOSHADOW": {
+		"prefix": "EF_NOSHADOW",
+		"body": [
+			"EF_NOSHADOW$0"
+		],
+		"description": "16"
+	},
+	"EF_PARENT_ANIMATES": {
+		"prefix": "EF_PARENT_ANIMATES",
+		"body": [
+			"EF_PARENT_ANIMATES$0"
+		],
+		"description": "512"
+	},
+	"EXPERT": {
+		"prefix": "EXPERT",
+		"body": [
+			"EXPERT$0"
+		],
+		"description": "3"
+	},
 	"void EmitAmbientSoundOn(string soundName, float volume, int soundlevel, int pitch, handle entity)": {
 		"prefix": "EmitAmbientSoundOn",
 		"body": [
@@ -714,6 +1743,13 @@
 		],
 		"description": "Turn an entity index integer to an HScript representing that entity's script instance."
 	},
+	"Epsilon": {
+		"prefix": "Epsilon",
+		"body": [
+			"Epsilon$0"
+		],
+		"description": "1.19209e-07"
+	},
 	"EstablishDelegation()": {
 		"prefix": "EstablishDelegation",
 		"body": [
@@ -748,6 +1784,321 @@
 			"EyePosition()$0"
 		],
 		"description": "Get vector to eye position - absolute coords"
+	},
+	"FIRE_IMMUNE": {
+		"prefix": "FIRE_IMMUNE",
+		"body": [
+			"FIRE_IMMUNE$0"
+		],
+		"description": "33554432"
+	},
+	"FL_AIMTARGET": {
+		"prefix": "FL_AIMTARGET",
+		"body": [
+			"FL_AIMTARGET$0"
+		],
+		"description": "131072"
+	},
+	"FL_ANIMDUCKING": {
+		"prefix": "FL_ANIMDUCKING",
+		"body": [
+			"FL_ANIMDUCKING$0"
+		],
+		"description": "4"
+	},
+	"FL_ATCONTROLS": {
+		"prefix": "FL_ATCONTROLS",
+		"body": [
+			"FL_ATCONTROLS$0"
+		],
+		"description": "128"
+	},
+	"FL_BASEVELOCITY": {
+		"prefix": "FL_BASEVELOCITY",
+		"body": [
+			"FL_BASEVELOCITY$0"
+		],
+		"description": "16777216"
+	},
+	"FL_CLIENT": {
+		"prefix": "FL_CLIENT",
+		"body": [
+			"FL_CLIENT$0"
+		],
+		"description": "256"
+	},
+	"FL_CONVEYOR": {
+		"prefix": "FL_CONVEYOR",
+		"body": [
+			"FL_CONVEYOR$0"
+		],
+		"description": "8192"
+	},
+	"FL_DISSOLVING": {
+		"prefix": "FL_DISSOLVING",
+		"body": [
+			"FL_DISSOLVING$0"
+		],
+		"description": "536870912"
+	},
+	"FL_DONTTOUCH": {
+		"prefix": "FL_DONTTOUCH",
+		"body": [
+			"FL_DONTTOUCH$0"
+		],
+		"description": "8388608"
+	},
+	"FL_DUCKING": {
+		"prefix": "FL_DUCKING",
+		"body": [
+			"FL_DUCKING$0"
+		],
+		"description": "2"
+	},
+	"FL_FAKECLIENT": {
+		"prefix": "FL_FAKECLIENT",
+		"body": [
+			"FL_FAKECLIENT$0"
+		],
+		"description": "512"
+	},
+	"FL_FLY": {
+		"prefix": "FL_FLY",
+		"body": [
+			"FL_FLY$0"
+		],
+		"description": "2048"
+	},
+	"FL_FROZEN": {
+		"prefix": "FL_FROZEN",
+		"body": [
+			"FL_FROZEN$0"
+		],
+		"description": "64"
+	},
+	"FL_GODMODE": {
+		"prefix": "FL_GODMODE",
+		"body": [
+			"FL_GODMODE$0"
+		],
+		"description": "32768"
+	},
+	"FL_GRAPHED": {
+		"prefix": "FL_GRAPHED",
+		"body": [
+			"FL_GRAPHED$0"
+		],
+		"description": "1048576"
+	},
+	"FL_GRENADE": {
+		"prefix": "FL_GRENADE",
+		"body": [
+			"FL_GRENADE$0"
+		],
+		"description": "2097152"
+	},
+	"FL_INRAIN": {
+		"prefix": "FL_INRAIN",
+		"body": [
+			"FL_INRAIN$0"
+		],
+		"description": "32"
+	},
+	"FL_INWATER": {
+		"prefix": "FL_INWATER",
+		"body": [
+			"FL_INWATER$0"
+		],
+		"description": "1024"
+	},
+	"FL_KILLME": {
+		"prefix": "FL_KILLME",
+		"body": [
+			"FL_KILLME$0"
+		],
+		"description": "134217728"
+	},
+	"FL_NOTARGET": {
+		"prefix": "FL_NOTARGET",
+		"body": [
+			"FL_NOTARGET$0"
+		],
+		"description": "65536"
+	},
+	"FL_NPC": {
+		"prefix": "FL_NPC",
+		"body": [
+			"FL_NPC$0"
+		],
+		"description": "16384"
+	},
+	"FL_OBJECT": {
+		"prefix": "FL_OBJECT",
+		"body": [
+			"FL_OBJECT$0"
+		],
+		"description": "67108864"
+	},
+	"FL_ONFIRE": {
+		"prefix": "FL_ONFIRE",
+		"body": [
+			"FL_ONFIRE$0"
+		],
+		"description": "268435456"
+	},
+	"FL_ONGROUND": {
+		"prefix": "FL_ONGROUND",
+		"body": [
+			"FL_ONGROUND$0"
+		],
+		"description": "1"
+	},
+	"FL_ONTRAIN": {
+		"prefix": "FL_ONTRAIN",
+		"body": [
+			"FL_ONTRAIN$0"
+		],
+		"description": "16"
+	},
+	"FL_PARTIALGROUND": {
+		"prefix": "FL_PARTIALGROUND",
+		"body": [
+			"FL_PARTIALGROUND$0"
+		],
+		"description": "262144"
+	},
+	"FL_STATICPROP": {
+		"prefix": "FL_STATICPROP",
+		"body": [
+			"FL_STATICPROP$0"
+		],
+		"description": "524288"
+	},
+	"FL_STEPMOVEMENT": {
+		"prefix": "FL_STEPMOVEMENT",
+		"body": [
+			"FL_STEPMOVEMENT$0"
+		],
+		"description": "4194304"
+	},
+	"FL_SWIM": {
+		"prefix": "FL_SWIM",
+		"body": [
+			"FL_SWIM$0"
+		],
+		"description": "4096"
+	},
+	"FL_TRANSRAGDOLL": {
+		"prefix": "FL_TRANSRAGDOLL",
+		"body": [
+			"FL_TRANSRAGDOLL$0"
+		],
+		"description": "1073741824"
+	},
+	"FL_UNBLOCKABLE_BY_PLAYER": {
+		"prefix": "FL_UNBLOCKABLE_BY_PLAYER",
+		"body": [
+			"FL_UNBLOCKABLE_BY_PLAYER$0"
+		],
+		"description": "2147483648"
+	},
+	"FL_WATERJUMP": {
+		"prefix": "FL_WATERJUMP",
+		"body": [
+			"FL_WATERJUMP$0"
+		],
+		"description": "8"
+	},
+	"FL_WORLDBRUSH": {
+		"prefix": "FL_WORLDBRUSH",
+		"body": [
+			"FL_WORLDBRUSH$0"
+		],
+		"description": "33554432"
+	},
+	"FORWARD": {
+		"prefix": "FORWARD",
+		"body": [
+			"FORWARD$0"
+		],
+		"description": "0"
+	},
+	"FSOLID_CUSTOMBOXTEST": {
+		"prefix": "FSOLID_CUSTOMBOXTEST",
+		"body": [
+			"FSOLID_CUSTOMBOXTEST$0"
+		],
+		"description": "2"
+	},
+	"FSOLID_CUSTOMRAYTEST": {
+		"prefix": "FSOLID_CUSTOMRAYTEST",
+		"body": [
+			"FSOLID_CUSTOMRAYTEST$0"
+		],
+		"description": "1"
+	},
+	"FSOLID_FORCE_WORLD_ALIGNED": {
+		"prefix": "FSOLID_FORCE_WORLD_ALIGNED",
+		"body": [
+			"FSOLID_FORCE_WORLD_ALIGNED$0"
+		],
+		"description": "64"
+	},
+	"FSOLID_MAX_BITS": {
+		"prefix": "FSOLID_MAX_BITS",
+		"body": [
+			"FSOLID_MAX_BITS$0"
+		],
+		"description": "10"
+	},
+	"FSOLID_NOT_SOLID": {
+		"prefix": "FSOLID_NOT_SOLID",
+		"body": [
+			"FSOLID_NOT_SOLID$0"
+		],
+		"description": "4"
+	},
+	"FSOLID_NOT_STANDABLE": {
+		"prefix": "FSOLID_NOT_STANDABLE",
+		"body": [
+			"FSOLID_NOT_STANDABLE$0"
+		],
+		"description": "16"
+	},
+	"FSOLID_ROOT_PARENT_ALIGNED": {
+		"prefix": "FSOLID_ROOT_PARENT_ALIGNED",
+		"body": [
+			"FSOLID_ROOT_PARENT_ALIGNED$0"
+		],
+		"description": "256"
+	},
+	"FSOLID_TRIGGER": {
+		"prefix": "FSOLID_TRIGGER",
+		"body": [
+			"FSOLID_TRIGGER$0"
+		],
+		"description": "8"
+	},
+	"FSOLID_TRIGGER_TOUCH_DEBRIS": {
+		"prefix": "FSOLID_TRIGGER_TOUCH_DEBRIS",
+		"body": [
+			"FSOLID_TRIGGER_TOUCH_DEBRIS$0"
+		],
+		"description": "512"
+	},
+	"FSOLID_USE_TRIGGER_BOUNDS": {
+		"prefix": "FSOLID_USE_TRIGGER_BOUNDS",
+		"body": [
+			"FSOLID_USE_TRIGGER_BOUNDS$0"
+		],
+		"description": "128"
+	},
+	"FSOLID_VOLUME_CONTENTS": {
+		"prefix": "FSOLID_VOLUME_CONTENTS",
+		"body": [
+			"FSOLID_VOLUME_CONTENTS$0"
+		],
+		"description": "32"
 	},
 	"void FaceTowards(Vector)": {
 		"prefix": "FaceTowards",
@@ -1000,6 +2351,139 @@
 			"FrameTime()$0"
 		],
 		"description": "Get the time spent on the server in the last frame"
+	},
+	"GO_EAST": {
+		"prefix": "GO_EAST",
+		"body": [
+			"GO_EAST$0"
+		],
+		"description": "1"
+	},
+	"GO_ELEVATOR_DOWN": {
+		"prefix": "GO_ELEVATOR_DOWN",
+		"body": [
+			"GO_ELEVATOR_DOWN$0"
+		],
+		"description": "8"
+	},
+	"GO_ELEVATOR_UP": {
+		"prefix": "GO_ELEVATOR_UP",
+		"body": [
+			"GO_ELEVATOR_UP$0"
+		],
+		"description": "7"
+	},
+	"GO_JUMP": {
+		"prefix": "GO_JUMP",
+		"body": [
+			"GO_JUMP$0"
+		],
+		"description": "6"
+	},
+	"GO_LADDER_DOWN": {
+		"prefix": "GO_LADDER_DOWN",
+		"body": [
+			"GO_LADDER_DOWN$0"
+		],
+		"description": "5"
+	},
+	"GO_LADDER_UP": {
+		"prefix": "GO_LADDER_UP",
+		"body": [
+			"GO_LADDER_UP$0"
+		],
+		"description": "4"
+	},
+	"GO_NORTH": {
+		"prefix": "GO_NORTH",
+		"body": [
+			"GO_NORTH$0"
+		],
+		"description": "0"
+	},
+	"GO_SOUTH": {
+		"prefix": "GO_SOUTH",
+		"body": [
+			"GO_SOUTH$0"
+		],
+		"description": "2"
+	},
+	"GO_WEST": {
+		"prefix": "GO_WEST",
+		"body": [
+			"GO_WEST$0"
+		],
+		"description": "3"
+	},
+	"GR_NUM_ROUND_STATES": {
+		"prefix": "GR_NUM_ROUND_STATES",
+		"body": [
+			"GR_NUM_ROUND_STATES$0"
+		],
+		"description": "11"
+	},
+	"GR_STATE_GAME_OVER": {
+		"prefix": "GR_STATE_GAME_OVER",
+		"body": [
+			"GR_STATE_GAME_OVER$0"
+		],
+		"description": "8"
+	},
+	"GR_STATE_INIT": {
+		"prefix": "GR_STATE_INIT",
+		"body": [
+			"GR_STATE_INIT$0"
+		],
+		"description": "0"
+	},
+	"GR_STATE_PREGAME": {
+		"prefix": "GR_STATE_PREGAME",
+		"body": [
+			"GR_STATE_PREGAME$0"
+		],
+		"description": "1"
+	},
+	"GR_STATE_PREROUND": {
+		"prefix": "GR_STATE_PREROUND",
+		"body": [
+			"GR_STATE_PREROUND$0"
+		],
+		"description": "3"
+	},
+	"GR_STATE_RESTART": {
+		"prefix": "GR_STATE_RESTART",
+		"body": [
+			"GR_STATE_RESTART$0"
+		],
+		"description": "6"
+	},
+	"GR_STATE_RND_RUNNING": {
+		"prefix": "GR_STATE_RND_RUNNING",
+		"body": [
+			"GR_STATE_RND_RUNNING$0"
+		],
+		"description": "4"
+	},
+	"GR_STATE_STALEMATE": {
+		"prefix": "GR_STATE_STALEMATE",
+		"body": [
+			"GR_STATE_STALEMATE$0"
+		],
+		"description": "7"
+	},
+	"GR_STATE_STARTGAME": {
+		"prefix": "GR_STATE_STARTGAME",
+		"body": [
+			"GR_STATE_STARTGAME$0"
+		],
+		"description": "2"
+	},
+	"GR_STATE_TEAM_WIN": {
+		"prefix": "GR_STATE_TEAM_WIN",
+		"body": [
+			"GR_STATE_TEAM_WIN$0"
+		],
+		"description": "5"
 	},
 	"bool GameModeUsesCurrency()": {
 		"prefix": "GameModeUsesCurrency",
@@ -2583,6 +4067,209 @@
 		],
 		"description": "Return Z of area at (x,y) of 'pos'"
 	},
+	"GoldenRatio": {
+		"prefix": "GoldenRatio",
+		"body": [
+			"GoldenRatio$0"
+		],
+		"description": "1.61803"
+	},
+	"HARD": {
+		"prefix": "HARD",
+		"body": [
+			"HARD$0"
+		],
+		"description": "2"
+	},
+	"HIDEHUD_ALL": {
+		"prefix": "HIDEHUD_ALL",
+		"body": [
+			"HIDEHUD_ALL$0"
+		],
+		"description": "4"
+	},
+	"HIDEHUD_BITCOUNT": {
+		"prefix": "HIDEHUD_BITCOUNT",
+		"body": [
+			"HIDEHUD_BITCOUNT$0"
+		],
+		"description": "12"
+	},
+	"HIDEHUD_BONUS_PROGRESS": {
+		"prefix": "HIDEHUD_BONUS_PROGRESS",
+		"body": [
+			"HIDEHUD_BONUS_PROGRESS$0"
+		],
+		"description": "2048"
+	},
+	"HIDEHUD_CHAT": {
+		"prefix": "HIDEHUD_CHAT",
+		"body": [
+			"HIDEHUD_CHAT$0"
+		],
+		"description": "128"
+	},
+	"HIDEHUD_CROSSHAIR": {
+		"prefix": "HIDEHUD_CROSSHAIR",
+		"body": [
+			"HIDEHUD_CROSSHAIR$0"
+		],
+		"description": "256"
+	},
+	"HIDEHUD_FLASHLIGHT": {
+		"prefix": "HIDEHUD_FLASHLIGHT",
+		"body": [
+			"HIDEHUD_FLASHLIGHT$0"
+		],
+		"description": "2"
+	},
+	"HIDEHUD_HEALTH": {
+		"prefix": "HIDEHUD_HEALTH",
+		"body": [
+			"HIDEHUD_HEALTH$0"
+		],
+		"description": "8"
+	},
+	"HIDEHUD_INVEHICLE": {
+		"prefix": "HIDEHUD_INVEHICLE",
+		"body": [
+			"HIDEHUD_INVEHICLE$0"
+		],
+		"description": "1024"
+	},
+	"HIDEHUD_MISCSTATUS": {
+		"prefix": "HIDEHUD_MISCSTATUS",
+		"body": [
+			"HIDEHUD_MISCSTATUS$0"
+		],
+		"description": "64"
+	},
+	"HIDEHUD_NEEDSUIT": {
+		"prefix": "HIDEHUD_NEEDSUIT",
+		"body": [
+			"HIDEHUD_NEEDSUIT$0"
+		],
+		"description": "32"
+	},
+	"HIDEHUD_PLAYERDEAD": {
+		"prefix": "HIDEHUD_PLAYERDEAD",
+		"body": [
+			"HIDEHUD_PLAYERDEAD$0"
+		],
+		"description": "16"
+	},
+	"HIDEHUD_VEHICLE_CROSSHAIR": {
+		"prefix": "HIDEHUD_VEHICLE_CROSSHAIR",
+		"body": [
+			"HIDEHUD_VEHICLE_CROSSHAIR$0"
+		],
+		"description": "512"
+	},
+	"HIDEHUD_WEAPONSELECTION": {
+		"prefix": "HIDEHUD_WEAPONSELECTION",
+		"body": [
+			"HIDEHUD_WEAPONSELECTION$0"
+		],
+		"description": "1"
+	},
+	"HITGROUP_CHEST": {
+		"prefix": "HITGROUP_CHEST",
+		"body": [
+			"HITGROUP_CHEST$0"
+		],
+		"description": "2"
+	},
+	"HITGROUP_GEAR": {
+		"prefix": "HITGROUP_GEAR",
+		"body": [
+			"HITGROUP_GEAR$0"
+		],
+		"description": "10"
+	},
+	"HITGROUP_GENERIC": {
+		"prefix": "HITGROUP_GENERIC",
+		"body": [
+			"HITGROUP_GENERIC$0"
+		],
+		"description": "0"
+	},
+	"HITGROUP_HEAD": {
+		"prefix": "HITGROUP_HEAD",
+		"body": [
+			"HITGROUP_HEAD$0"
+		],
+		"description": "1"
+	},
+	"HITGROUP_LEFTARM": {
+		"prefix": "HITGROUP_LEFTARM",
+		"body": [
+			"HITGROUP_LEFTARM$0"
+		],
+		"description": "4"
+	},
+	"HITGROUP_LEFTLEG": {
+		"prefix": "HITGROUP_LEFTLEG",
+		"body": [
+			"HITGROUP_LEFTLEG$0"
+		],
+		"description": "6"
+	},
+	"HITGROUP_RIGHTARM": {
+		"prefix": "HITGROUP_RIGHTARM",
+		"body": [
+			"HITGROUP_RIGHTARM$0"
+		],
+		"description": "5"
+	},
+	"HITGROUP_RIGHTLEG": {
+		"prefix": "HITGROUP_RIGHTLEG",
+		"body": [
+			"HITGROUP_RIGHTLEG$0"
+		],
+		"description": "7"
+	},
+	"HITGROUP_STOMACH": {
+		"prefix": "HITGROUP_STOMACH",
+		"body": [
+			"HITGROUP_STOMACH$0"
+		],
+		"description": "3"
+	},
+	"HOLD_FIRE_UNTIL_FULL_RELOAD": {
+		"prefix": "HOLD_FIRE_UNTIL_FULL_RELOAD",
+		"body": [
+			"HOLD_FIRE_UNTIL_FULL_RELOAD$0"
+		],
+		"description": "2048"
+	},
+	"HUD_PRINTCENTER": {
+		"prefix": "HUD_PRINTCENTER",
+		"body": [
+			"HUD_PRINTCENTER$0"
+		],
+		"description": "4"
+	},
+	"HUD_PRINTCONSOLE": {
+		"prefix": "HUD_PRINTCONSOLE",
+		"body": [
+			"HUD_PRINTCONSOLE$0"
+		],
+		"description": "2"
+	},
+	"HUD_PRINTNOTIFY": {
+		"prefix": "HUD_PRINTNOTIFY",
+		"body": [
+			"HUD_PRINTNOTIFY$0"
+		],
+		"description": "1"
+	},
+	"HUD_PRINTTALK": {
+		"prefix": "HUD_PRINTTALK",
+		"body": [
+			"HUD_PRINTTALK$0"
+		],
+		"description": "3"
+	},
 	"bool HasAction(handle entity, string outputName)": {
 		"prefix": "HasAction",
 		"body": [
@@ -2694,6 +4381,209 @@
 			"HookRootMetamethod()$0"
 		],
 		"description": ""
+	},
+	"IGNORE_ENEMIES": {
+		"prefix": "IGNORE_ENEMIES",
+		"body": [
+			"IGNORE_ENEMIES$0"
+		],
+		"description": "1024"
+	},
+	"IGNORE_FLAG": {
+		"prefix": "IGNORE_FLAG",
+		"body": [
+			"IGNORE_FLAG$0"
+		],
+		"description": "131072"
+	},
+	"IN_ALT1": {
+		"prefix": "IN_ALT1",
+		"body": [
+			"IN_ALT1$0"
+		],
+		"description": "16384"
+	},
+	"IN_ALT2": {
+		"prefix": "IN_ALT2",
+		"body": [
+			"IN_ALT2$0"
+		],
+		"description": "32768"
+	},
+	"IN_ATTACK": {
+		"prefix": "IN_ATTACK",
+		"body": [
+			"IN_ATTACK$0"
+		],
+		"description": "1"
+	},
+	"IN_ATTACK2": {
+		"prefix": "IN_ATTACK2",
+		"body": [
+			"IN_ATTACK2$0"
+		],
+		"description": "2048"
+	},
+	"IN_ATTACK3": {
+		"prefix": "IN_ATTACK3",
+		"body": [
+			"IN_ATTACK3$0"
+		],
+		"description": "33554432"
+	},
+	"IN_BACK": {
+		"prefix": "IN_BACK",
+		"body": [
+			"IN_BACK$0"
+		],
+		"description": "16"
+	},
+	"IN_BULLRUSH": {
+		"prefix": "IN_BULLRUSH",
+		"body": [
+			"IN_BULLRUSH$0"
+		],
+		"description": "4194304"
+	},
+	"IN_CANCEL": {
+		"prefix": "IN_CANCEL",
+		"body": [
+			"IN_CANCEL$0"
+		],
+		"description": "64"
+	},
+	"IN_DUCK": {
+		"prefix": "IN_DUCK",
+		"body": [
+			"IN_DUCK$0"
+		],
+		"description": "4"
+	},
+	"IN_FORWARD": {
+		"prefix": "IN_FORWARD",
+		"body": [
+			"IN_FORWARD$0"
+		],
+		"description": "8"
+	},
+	"IN_GRENADE1": {
+		"prefix": "IN_GRENADE1",
+		"body": [
+			"IN_GRENADE1$0"
+		],
+		"description": "8388608"
+	},
+	"IN_GRENADE2": {
+		"prefix": "IN_GRENADE2",
+		"body": [
+			"IN_GRENADE2$0"
+		],
+		"description": "16777216"
+	},
+	"IN_JUMP": {
+		"prefix": "IN_JUMP",
+		"body": [
+			"IN_JUMP$0"
+		],
+		"description": "2"
+	},
+	"IN_LEFT": {
+		"prefix": "IN_LEFT",
+		"body": [
+			"IN_LEFT$0"
+		],
+		"description": "128"
+	},
+	"IN_MOVELEFT": {
+		"prefix": "IN_MOVELEFT",
+		"body": [
+			"IN_MOVELEFT$0"
+		],
+		"description": "512"
+	},
+	"IN_MOVERIGHT": {
+		"prefix": "IN_MOVERIGHT",
+		"body": [
+			"IN_MOVERIGHT$0"
+		],
+		"description": "1024"
+	},
+	"IN_RELOAD": {
+		"prefix": "IN_RELOAD",
+		"body": [
+			"IN_RELOAD$0"
+		],
+		"description": "8192"
+	},
+	"IN_RIGHT": {
+		"prefix": "IN_RIGHT",
+		"body": [
+			"IN_RIGHT$0"
+		],
+		"description": "256"
+	},
+	"IN_RUN": {
+		"prefix": "IN_RUN",
+		"body": [
+			"IN_RUN$0"
+		],
+		"description": "4096"
+	},
+	"IN_SCORE": {
+		"prefix": "IN_SCORE",
+		"body": [
+			"IN_SCORE$0"
+		],
+		"description": "65536"
+	},
+	"IN_SPEED": {
+		"prefix": "IN_SPEED",
+		"body": [
+			"IN_SPEED$0"
+		],
+		"description": "131072"
+	},
+	"IN_USE": {
+		"prefix": "IN_USE",
+		"body": [
+			"IN_USE$0"
+		],
+		"description": "32"
+	},
+	"IN_WALK": {
+		"prefix": "IN_WALK",
+		"body": [
+			"IN_WALK$0"
+		],
+		"description": "262144"
+	},
+	"IN_WEAPON1": {
+		"prefix": "IN_WEAPON1",
+		"body": [
+			"IN_WEAPON1$0"
+		],
+		"description": "1048576"
+	},
+	"IN_WEAPON2": {
+		"prefix": "IN_WEAPON2",
+		"body": [
+			"IN_WEAPON2$0"
+		],
+		"description": "2097152"
+	},
+	"IN_ZOOM": {
+		"prefix": "IN_ZOOM",
+		"body": [
+			"IN_ZOOM$0"
+		],
+		"description": "524288"
+	},
+	"IS_NPC": {
+		"prefix": "IS_NPC",
+		"body": [
+			"IS_NPC$0"
+		],
+		"description": "4"
 	},
 	"void IgnitePlayer()": {
 		"prefix": "IgnitePlayer",
@@ -3542,6 +5432,27 @@
 		],
 		"description": ""
 	},
+	"LAST_SHARED_COLLISION_GROUP": {
+		"prefix": "LAST_SHARED_COLLISION_GROUP",
+		"body": [
+			"LAST_SHARED_COLLISION_GROUP$0"
+		],
+		"description": "20"
+	},
+	"LAST_VISIBLE_CONTENTS": {
+		"prefix": "LAST_VISIBLE_CONTENTS",
+		"body": [
+			"LAST_VISIBLE_CONTENTS$0"
+		],
+		"description": "128"
+	},
+	"LEFT": {
+		"prefix": "LEFT",
+		"body": [
+			"LEFT$0"
+		],
+		"description": "3"
+	},
 	"void LeaveSquad()": {
 		"prefix": "LeaveSquad",
 		"body": [
@@ -3647,6 +5558,160 @@
 		],
 		"description": "Looks up a sequence by sequence name or activity name"
 	},
+	"MAX_EDICTS": {
+		"prefix": "MAX_EDICTS",
+		"body": [
+			"MAX_EDICTS$0"
+		],
+		"description": "2048"
+	},
+	"MAX_PLAYERS": {
+		"prefix": "MAX_PLAYERS",
+		"body": [
+			"MAX_PLAYERS$0"
+		],
+		"description": "33"
+	},
+	"MINIBOSS": {
+		"prefix": "MINIBOSS",
+		"body": [
+			"MINIBOSS$0"
+		],
+		"description": "32768"
+	},
+	"MOVECOLLIDE_COUNT": {
+		"prefix": "MOVECOLLIDE_COUNT",
+		"body": [
+			"MOVECOLLIDE_COUNT$0"
+		],
+		"description": "4"
+	},
+	"MOVECOLLIDE_DEFAULT": {
+		"prefix": "MOVECOLLIDE_DEFAULT",
+		"body": [
+			"MOVECOLLIDE_DEFAULT$0"
+		],
+		"description": "0"
+	},
+	"MOVECOLLIDE_FLY_BOUNCE": {
+		"prefix": "MOVECOLLIDE_FLY_BOUNCE",
+		"body": [
+			"MOVECOLLIDE_FLY_BOUNCE$0"
+		],
+		"description": "1"
+	},
+	"MOVECOLLIDE_FLY_CUSTOM": {
+		"prefix": "MOVECOLLIDE_FLY_CUSTOM",
+		"body": [
+			"MOVECOLLIDE_FLY_CUSTOM$0"
+		],
+		"description": "2"
+	},
+	"MOVECOLLIDE_FLY_SLIDE": {
+		"prefix": "MOVECOLLIDE_FLY_SLIDE",
+		"body": [
+			"MOVECOLLIDE_FLY_SLIDE$0"
+		],
+		"description": "3"
+	},
+	"MOVECOLLIDE_MAX_BITS": {
+		"prefix": "MOVECOLLIDE_MAX_BITS",
+		"body": [
+			"MOVECOLLIDE_MAX_BITS$0"
+		],
+		"description": "3"
+	},
+	"MOVETYPE_CUSTOM": {
+		"prefix": "MOVETYPE_CUSTOM",
+		"body": [
+			"MOVETYPE_CUSTOM$0"
+		],
+		"description": "11"
+	},
+	"MOVETYPE_FLY": {
+		"prefix": "MOVETYPE_FLY",
+		"body": [
+			"MOVETYPE_FLY$0"
+		],
+		"description": "4"
+	},
+	"MOVETYPE_FLYGRAVITY": {
+		"prefix": "MOVETYPE_FLYGRAVITY",
+		"body": [
+			"MOVETYPE_FLYGRAVITY$0"
+		],
+		"description": "5"
+	},
+	"MOVETYPE_ISOMETRIC": {
+		"prefix": "MOVETYPE_ISOMETRIC",
+		"body": [
+			"MOVETYPE_ISOMETRIC$0"
+		],
+		"description": "1"
+	},
+	"MOVETYPE_LADDER": {
+		"prefix": "MOVETYPE_LADDER",
+		"body": [
+			"MOVETYPE_LADDER$0"
+		],
+		"description": "9"
+	},
+	"MOVETYPE_LAST": {
+		"prefix": "MOVETYPE_LAST",
+		"body": [
+			"MOVETYPE_LAST$0"
+		],
+		"description": "11"
+	},
+	"MOVETYPE_NOCLIP": {
+		"prefix": "MOVETYPE_NOCLIP",
+		"body": [
+			"MOVETYPE_NOCLIP$0"
+		],
+		"description": "8"
+	},
+	"MOVETYPE_NONE": {
+		"prefix": "MOVETYPE_NONE",
+		"body": [
+			"MOVETYPE_NONE$0"
+		],
+		"description": "0"
+	},
+	"MOVETYPE_OBSERVER": {
+		"prefix": "MOVETYPE_OBSERVER",
+		"body": [
+			"MOVETYPE_OBSERVER$0"
+		],
+		"description": "10"
+	},
+	"MOVETYPE_PUSH": {
+		"prefix": "MOVETYPE_PUSH",
+		"body": [
+			"MOVETYPE_PUSH$0"
+		],
+		"description": "7"
+	},
+	"MOVETYPE_STEP": {
+		"prefix": "MOVETYPE_STEP",
+		"body": [
+			"MOVETYPE_STEP$0"
+		],
+		"description": "3"
+	},
+	"MOVETYPE_VPHYSICS": {
+		"prefix": "MOVETYPE_VPHYSICS",
+		"body": [
+			"MOVETYPE_VPHYSICS$0"
+		],
+		"description": "6"
+	},
+	"MOVETYPE_WALK": {
+		"prefix": "MOVETYPE_WALK",
+		"body": [
+			"MOVETYPE_WALK$0"
+		],
+		"description": "2"
+	},
 	"MakeNamespace()": {
 		"prefix": "MakeNamespace",
 		"body": [
@@ -3696,6 +5761,230 @@
 		],
 		"description": "Prints message to console without any line feed after."
 	},
+	"NAV_MESH_AVOID": {
+		"prefix": "NAV_MESH_AVOID",
+		"body": [
+			"NAV_MESH_AVOID$0"
+		],
+		"description": "128"
+	},
+	"NAV_MESH_CLIFF": {
+		"prefix": "NAV_MESH_CLIFF",
+		"body": [
+			"NAV_MESH_CLIFF$0"
+		],
+		"description": "32768"
+	},
+	"NAV_MESH_CROUCH": {
+		"prefix": "NAV_MESH_CROUCH",
+		"body": [
+			"NAV_MESH_CROUCH$0"
+		],
+		"description": "1"
+	},
+	"NAV_MESH_DONT_HIDE": {
+		"prefix": "NAV_MESH_DONT_HIDE",
+		"body": [
+			"NAV_MESH_DONT_HIDE$0"
+		],
+		"description": "512"
+	},
+	"NAV_MESH_FIRST_CUSTOM": {
+		"prefix": "NAV_MESH_FIRST_CUSTOM",
+		"body": [
+			"NAV_MESH_FIRST_CUSTOM$0"
+		],
+		"description": "65536"
+	},
+	"NAV_MESH_FUNC_COST": {
+		"prefix": "NAV_MESH_FUNC_COST",
+		"body": [
+			"NAV_MESH_FUNC_COST$0"
+		],
+		"description": "536870912"
+	},
+	"NAV_MESH_HAS_ELEVATOR": {
+		"prefix": "NAV_MESH_HAS_ELEVATOR",
+		"body": [
+			"NAV_MESH_HAS_ELEVATOR$0"
+		],
+		"description": "1073741824"
+	},
+	"NAV_MESH_INVALID": {
+		"prefix": "NAV_MESH_INVALID",
+		"body": [
+			"NAV_MESH_INVALID$0"
+		],
+		"description": "0"
+	},
+	"NAV_MESH_JUMP": {
+		"prefix": "NAV_MESH_JUMP",
+		"body": [
+			"NAV_MESH_JUMP$0"
+		],
+		"description": "2"
+	},
+	"NAV_MESH_LAST_CUSTOM": {
+		"prefix": "NAV_MESH_LAST_CUSTOM",
+		"body": [
+			"NAV_MESH_LAST_CUSTOM$0"
+		],
+		"description": "67108864"
+	},
+	"NAV_MESH_NAV_BLOCKER": {
+		"prefix": "NAV_MESH_NAV_BLOCKER",
+		"body": [
+			"NAV_MESH_NAV_BLOCKER$0"
+		],
+		"description": "2147483648"
+	},
+	"NAV_MESH_NO_HOSTAGES": {
+		"prefix": "NAV_MESH_NO_HOSTAGES",
+		"body": [
+			"NAV_MESH_NO_HOSTAGES$0"
+		],
+		"description": "2048"
+	},
+	"NAV_MESH_NO_JUMP": {
+		"prefix": "NAV_MESH_NO_JUMP",
+		"body": [
+			"NAV_MESH_NO_JUMP$0"
+		],
+		"description": "8"
+	},
+	"NAV_MESH_NO_MERGE": {
+		"prefix": "NAV_MESH_NO_MERGE",
+		"body": [
+			"NAV_MESH_NO_MERGE$0"
+		],
+		"description": "8192"
+	},
+	"NAV_MESH_OBSTACLE_TOP": {
+		"prefix": "NAV_MESH_OBSTACLE_TOP",
+		"body": [
+			"NAV_MESH_OBSTACLE_TOP$0"
+		],
+		"description": "16384"
+	},
+	"NAV_MESH_PRECISE": {
+		"prefix": "NAV_MESH_PRECISE",
+		"body": [
+			"NAV_MESH_PRECISE$0"
+		],
+		"description": "4"
+	},
+	"NAV_MESH_RUN": {
+		"prefix": "NAV_MESH_RUN",
+		"body": [
+			"NAV_MESH_RUN$0"
+		],
+		"description": "32"
+	},
+	"NAV_MESH_STAIRS": {
+		"prefix": "NAV_MESH_STAIRS",
+		"body": [
+			"NAV_MESH_STAIRS$0"
+		],
+		"description": "4096"
+	},
+	"NAV_MESH_STAND": {
+		"prefix": "NAV_MESH_STAND",
+		"body": [
+			"NAV_MESH_STAND$0"
+		],
+		"description": "1024"
+	},
+	"NAV_MESH_STOP": {
+		"prefix": "NAV_MESH_STOP",
+		"body": [
+			"NAV_MESH_STOP$0"
+		],
+		"description": "16"
+	},
+	"NAV_MESH_TRANSIENT": {
+		"prefix": "NAV_MESH_TRANSIENT",
+		"body": [
+			"NAV_MESH_TRANSIENT$0"
+		],
+		"description": "256"
+	},
+	"NAV_MESH_WALK": {
+		"prefix": "NAV_MESH_WALK",
+		"body": [
+			"NAV_MESH_WALK$0"
+		],
+		"description": "64"
+	},
+	"NORMAL": {
+		"prefix": "NORMAL",
+		"body": [
+			"NORMAL$0"
+		],
+		"description": "1"
+	},
+	"NORTH": {
+		"prefix": "NORTH",
+		"body": [
+			"NORTH$0"
+		],
+		"description": "0"
+	},
+	"NORTH_EAST": {
+		"prefix": "NORTH_EAST",
+		"body": [
+			"NORTH_EAST$0"
+		],
+		"description": "1"
+	},
+	"NORTH_WEST": {
+		"prefix": "NORTH_WEST",
+		"body": [
+			"NORTH_WEST$0"
+		],
+		"description": "0"
+	},
+	"NUM_CORNERS": {
+		"prefix": "NUM_CORNERS",
+		"body": [
+			"NUM_CORNERS$0"
+		],
+		"description": "4"
+	},
+	"NUM_DIFFICULTY_LEVELS": {
+		"prefix": "NUM_DIFFICULTY_LEVELS",
+		"body": [
+			"NUM_DIFFICULTY_LEVELS$0"
+		],
+		"description": "4"
+	},
+	"NUM_DIRECTIONS": {
+		"prefix": "NUM_DIRECTIONS",
+		"body": [
+			"NUM_DIRECTIONS$0"
+		],
+		"description": "4"
+	},
+	"NUM_OBSERVER_MODES": {
+		"prefix": "NUM_OBSERVER_MODES",
+		"body": [
+			"NUM_OBSERVER_MODES$0"
+		],
+		"description": "8"
+	},
+	"NUM_RELATIVE_DIRECTIONS": {
+		"prefix": "NUM_RELATIVE_DIRECTIONS",
+		"body": [
+			"NUM_RELATIVE_DIRECTIONS$0"
+		],
+		"description": "6"
+	},
+	"NUM_TRAVERSE_TYPES": {
+		"prefix": "NUM_TRAVERSE_TYPES",
+		"body": [
+			"NUM_TRAVERSE_TYPES$0"
+		],
+		"description": "9"
+	},
 	"bool NavAreaBuildPath(CTFNavArea startArea, CTFNavArea endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers)": {
 		"prefix": "NavAreaBuildPath",
 		"body": [
@@ -3731,6 +6020,62 @@
 		],
 		"description": "Normalizes the 4D vector length."
 	},
+	"OBS_MODE_CHASE": {
+		"prefix": "OBS_MODE_CHASE",
+		"body": [
+			"OBS_MODE_CHASE$0"
+		],
+		"description": "5"
+	},
+	"OBS_MODE_DEATHCAM": {
+		"prefix": "OBS_MODE_DEATHCAM",
+		"body": [
+			"OBS_MODE_DEATHCAM$0"
+		],
+		"description": "1"
+	},
+	"OBS_MODE_FIXED": {
+		"prefix": "OBS_MODE_FIXED",
+		"body": [
+			"OBS_MODE_FIXED$0"
+		],
+		"description": "3"
+	},
+	"OBS_MODE_FREEZECAM": {
+		"prefix": "OBS_MODE_FREEZECAM",
+		"body": [
+			"OBS_MODE_FREEZECAM$0"
+		],
+		"description": "2"
+	},
+	"OBS_MODE_IN_EYE": {
+		"prefix": "OBS_MODE_IN_EYE",
+		"body": [
+			"OBS_MODE_IN_EYE$0"
+		],
+		"description": "4"
+	},
+	"OBS_MODE_NONE": {
+		"prefix": "OBS_MODE_NONE",
+		"body": [
+			"OBS_MODE_NONE$0"
+		],
+		"description": "0"
+	},
+	"OBS_MODE_POI": {
+		"prefix": "OBS_MODE_POI",
+		"body": [
+			"OBS_MODE_POI$0"
+		],
+		"description": "6"
+	},
+	"OBS_MODE_ROAMING": {
+		"prefix": "OBS_MODE_ROAMING",
+		"body": [
+			"OBS_MODE_ROAMING$0"
+		],
+		"description": "7"
+	},
 	"void OnLandOnGround(handle)": {
 		"prefix": "OnLandOnGround",
 		"body": [
@@ -3745,12 +6090,75 @@
 		],
 		"description": "Manually run the OnLeaveGround callback. Typically invoked when bot leaves ground for any reason"
 	},
+	"One": {
+		"prefix": "One",
+		"body": [
+			"One$0"
+		],
+		"description": "1"
+	},
+	"PARACHUTE": {
+		"prefix": "PARACHUTE",
+		"body": [
+			"PARACHUTE$0"
+		],
+		"description": "67108864"
+	},
 	"PI": {
 		"prefix": "PI",
 		"body": [
-			""
+			"PI$0"
 		],
 		"description": ""
+	},
+	"PLAYER_FLAG_BITS": {
+		"prefix": "PLAYER_FLAG_BITS",
+		"body": [
+			"PLAYER_FLAG_BITS$0"
+		],
+		"description": "11"
+	},
+	"PREFER_VACCINATOR_BLAST": {
+		"prefix": "PREFER_VACCINATOR_BLAST",
+		"body": [
+			"PREFER_VACCINATOR_BLAST$0"
+		],
+		"description": "2097152"
+	},
+	"PREFER_VACCINATOR_BULLETS": {
+		"prefix": "PREFER_VACCINATOR_BULLETS",
+		"body": [
+			"PREFER_VACCINATOR_BULLETS$0"
+		],
+		"description": "1048576"
+	},
+	"PREFER_VACCINATOR_FIRE": {
+		"prefix": "PREFER_VACCINATOR_FIRE",
+		"body": [
+			"PREFER_VACCINATOR_FIRE$0"
+		],
+		"description": "4194304"
+	},
+	"PRIORITIZE_DEFENSE": {
+		"prefix": "PRIORITIZE_DEFENSE",
+		"body": [
+			"PRIORITIZE_DEFENSE$0"
+		],
+		"description": "4096"
+	},
+	"PROJECTILE_SHIELD": {
+		"prefix": "PROJECTILE_SHIELD",
+		"body": [
+			"PROJECTILE_SHIELD$0"
+		],
+		"description": "134217728"
+	},
+	"Pi": {
+		"prefix": "Pi",
+		"body": [
+			"Pi$0"
+		],
+		"description": "3.14159"
 	},
 	"void PickupObject(handle player, handle entity)": {
 		"prefix": "PickupObject",
@@ -3892,6 +6300,13 @@
 		],
 		"description": ""
 	},
+	"QUOTA_MANANGED": {
+		"prefix": "QUOTA_MANANGED",
+		"body": [
+			"QUOTA_MANANGED$0"
+		],
+		"description": "64"
+	},
 	"Quaternion(float x, float y, float z, float w)": {
 		"prefix": "Quaternion",
 		"body": [
@@ -3902,9 +6317,30 @@
 	"RAND_MAX": {
 		"prefix": "RAND_MAX",
 		"body": [
-			""
+			"RAND_MAX$0"
 		],
 		"description": ""
+	},
+	"REMOVE_ON_DEATH": {
+		"prefix": "REMOVE_ON_DEATH",
+		"body": [
+			"REMOVE_ON_DEATH$0"
+		],
+		"description": "1"
+	},
+	"RETAIN_BUILDINGS": {
+		"prefix": "RETAIN_BUILDINGS",
+		"body": [
+			"RETAIN_BUILDINGS$0"
+		],
+		"description": "128"
+	},
+	"RIGHT": {
+		"prefix": "RIGHT",
+		"body": [
+			"RIGHT$0"
+		],
+		"description": "1"
 	},
 	"float RandomFloat(float min, float max)": {
 		"prefix": "RandomFloat",
@@ -4179,6 +6615,230 @@
 		],
 		"description": "Set desired movement speed to running"
 	},
+	"SOLID_BBOX": {
+		"prefix": "SOLID_BBOX",
+		"body": [
+			"SOLID_BBOX$0"
+		],
+		"description": "2"
+	},
+	"SOLID_BSP": {
+		"prefix": "SOLID_BSP",
+		"body": [
+			"SOLID_BSP$0"
+		],
+		"description": "1"
+	},
+	"SOLID_CUSTOM": {
+		"prefix": "SOLID_CUSTOM",
+		"body": [
+			"SOLID_CUSTOM$0"
+		],
+		"description": "5"
+	},
+	"SOLID_LAST": {
+		"prefix": "SOLID_LAST",
+		"body": [
+			"SOLID_LAST$0"
+		],
+		"description": "7"
+	},
+	"SOLID_NONE": {
+		"prefix": "SOLID_NONE",
+		"body": [
+			"SOLID_NONE$0"
+		],
+		"description": "0"
+	},
+	"SOLID_OBB": {
+		"prefix": "SOLID_OBB",
+		"body": [
+			"SOLID_OBB$0"
+		],
+		"description": "3"
+	},
+	"SOLID_OBB_YAW": {
+		"prefix": "SOLID_OBB_YAW",
+		"body": [
+			"SOLID_OBB_YAW$0"
+		],
+		"description": "4"
+	},
+	"SOLID_VPHYSICS": {
+		"prefix": "SOLID_VPHYSICS",
+		"body": [
+			"SOLID_VPHYSICS$0"
+		],
+		"description": "6"
+	},
+	"SOUTH": {
+		"prefix": "SOUTH",
+		"body": [
+			"SOUTH$0"
+		],
+		"description": "2"
+	},
+	"SOUTH_EAST": {
+		"prefix": "SOUTH_EAST",
+		"body": [
+			"SOUTH_EAST$0"
+		],
+		"description": "2"
+	},
+	"SOUTH_WEST": {
+		"prefix": "SOUTH_WEST",
+		"body": [
+			"SOUTH_WEST$0"
+		],
+		"description": "3"
+	},
+	"SPAWN_WITH_FULL_CHARGE": {
+		"prefix": "SPAWN_WITH_FULL_CHARGE",
+		"body": [
+			"SPAWN_WITH_FULL_CHARGE$0"
+		],
+		"description": "256"
+	},
+	"STOPWATCH_CAPTURE_TIME_NOT_SET": {
+		"prefix": "STOPWATCH_CAPTURE_TIME_NOT_SET",
+		"body": [
+			"STOPWATCH_CAPTURE_TIME_NOT_SET$0"
+		],
+		"description": "0"
+	},
+	"STOPWATCH_OVERTIME": {
+		"prefix": "STOPWATCH_OVERTIME",
+		"body": [
+			"STOPWATCH_OVERTIME$0"
+		],
+		"description": "2"
+	},
+	"STOPWATCH_RUNNING": {
+		"prefix": "STOPWATCH_RUNNING",
+		"body": [
+			"STOPWATCH_RUNNING$0"
+		],
+		"description": "1"
+	},
+	"SUPPRESS_FIRE": {
+		"prefix": "SUPPRESS_FIRE",
+		"body": [
+			"SUPPRESS_FIRE$0"
+		],
+		"description": "8"
+	},
+	"SURF_BUMPLIGHT": {
+		"prefix": "SURF_BUMPLIGHT",
+		"body": [
+			"SURF_BUMPLIGHT$0"
+		],
+		"description": "2048"
+	},
+	"SURF_HINT": {
+		"prefix": "SURF_HINT",
+		"body": [
+			"SURF_HINT$0"
+		],
+		"description": "256"
+	},
+	"SURF_HITBOX": {
+		"prefix": "SURF_HITBOX",
+		"body": [
+			"SURF_HITBOX$0"
+		],
+		"description": "32768"
+	},
+	"SURF_LIGHT": {
+		"prefix": "SURF_LIGHT",
+		"body": [
+			"SURF_LIGHT$0"
+		],
+		"description": "1"
+	},
+	"SURF_NOCHOP": {
+		"prefix": "SURF_NOCHOP",
+		"body": [
+			"SURF_NOCHOP$0"
+		],
+		"description": "16384"
+	},
+	"SURF_NODECALS": {
+		"prefix": "SURF_NODECALS",
+		"body": [
+			"SURF_NODECALS$0"
+		],
+		"description": "8192"
+	},
+	"SURF_NODRAW": {
+		"prefix": "SURF_NODRAW",
+		"body": [
+			"SURF_NODRAW$0"
+		],
+		"description": "128"
+	},
+	"SURF_NOLIGHT": {
+		"prefix": "SURF_NOLIGHT",
+		"body": [
+			"SURF_NOLIGHT$0"
+		],
+		"description": "1024"
+	},
+	"SURF_NOPORTAL": {
+		"prefix": "SURF_NOPORTAL",
+		"body": [
+			"SURF_NOPORTAL$0"
+		],
+		"description": "32"
+	},
+	"SURF_NOSHADOWS": {
+		"prefix": "SURF_NOSHADOWS",
+		"body": [
+			"SURF_NOSHADOWS$0"
+		],
+		"description": "4096"
+	},
+	"SURF_SKIP": {
+		"prefix": "SURF_SKIP",
+		"body": [
+			"SURF_SKIP$0"
+		],
+		"description": "512"
+	},
+	"SURF_SKY": {
+		"prefix": "SURF_SKY",
+		"body": [
+			"SURF_SKY$0"
+		],
+		"description": "4"
+	},
+	"SURF_SKY2D": {
+		"prefix": "SURF_SKY2D",
+		"body": [
+			"SURF_SKY2D$0"
+		],
+		"description": "2"
+	},
+	"SURF_TRANS": {
+		"prefix": "SURF_TRANS",
+		"body": [
+			"SURF_TRANS$0"
+		],
+		"description": "16"
+	},
+	"SURF_TRIGGER": {
+		"prefix": "SURF_TRIGGER",
+		"body": [
+			"SURF_TRIGGER$0"
+		],
+		"description": "64"
+	},
+	"SURF_WARP": {
+		"prefix": "SURF_WARP",
+		"body": [
+			"SURF_WARP$0"
+		],
+		"description": "8"
+	},
 	"void Say(CBasePlayer player, string message, bool teamOnly)": {
 		"prefix": "Say",
 		"body": [
@@ -4273,7 +6933,7 @@
 	"ScriptDebugDrawTextEnabled": {
 		"prefix": "ScriptDebugDrawTextEnabled",
 		"body": [
-			""
+			"ScriptDebugDrawTextEnabled$0"
 		],
 		"description": ""
 	},
@@ -4287,7 +6947,7 @@
 	"ScriptDebugDrawWatchesEnabled": {
 		"prefix": "ScriptDebugDrawWatchesEnabled",
 		"body": [
-			""
+			"ScriptDebugDrawWatchesEnabled$0"
 		],
 		"description": ""
 	},
@@ -4308,7 +6968,7 @@
 	"ScriptDebugInDebugDraw": {
 		"prefix": "ScriptDebugInDebugDraw",
 		"body": [
-			""
+			"ScriptDebugInDebugDraw$0"
 		],
 		"description": ""
 	},
@@ -4378,14 +7038,14 @@
 	"ScriptDebugTextFilters": {
 		"prefix": "ScriptDebugTextFilters",
 		"body": [
-			""
+			"ScriptDebugTextFilters$0"
 		],
 		"description": ""
 	},
 	"ScriptDebugTextIndent": {
 		"prefix": "ScriptDebugTextIndent",
 		"body": [
-			""
+			"ScriptDebugTextIndent$0"
 		],
 		"description": ""
 	},
@@ -4413,14 +7073,14 @@
 	"ScriptDebugTraceAllOn": {
 		"prefix": "ScriptDebugTraceAllOn",
 		"body": [
-			""
+			"ScriptDebugTraceAllOn$0"
 		],
 		"description": ""
 	},
 	"ScriptDebugTraces": {
 		"prefix": "ScriptDebugTraces",
 		"body": [
-			""
+			"ScriptDebugTraces$0"
 		],
 		"description": ""
 	},
@@ -5236,6 +7896,20 @@
 		],
 		"description": "Hierarchically spawn an entity group from a set of spawn tables. See L4D2_EMS/Appendix:_Spawning."
 	},
+	"Sqrt2": {
+		"prefix": "Sqrt2",
+		"body": [
+			"Sqrt2$0"
+		],
+		"description": "1.41421"
+	},
+	"Sqrt3": {
+		"prefix": "Sqrt3",
+		"body": [
+			"Sqrt3$0"
+		],
+		"description": "1.73205"
+	},
 	"void Stop()": {
 		"prefix": "Stop",
 		"body": [
@@ -5292,12 +7966,1909 @@
 		],
 		"description": "Advance animation frame to some time in the future with a manual interval"
 	},
+	"TEAM_ANY": {
+		"prefix": "TEAM_ANY",
+		"body": [
+			"TEAM_ANY$0"
+		],
+		"description": "-1"
+	},
+	"TEAM_INVALID": {
+		"prefix": "TEAM_INVALID",
+		"body": [
+			"TEAM_INVALID$0"
+		],
+		"description": "-1"
+	},
+	"TEAM_SPECTATOR": {
+		"prefix": "TEAM_SPECTATOR",
+		"body": [
+			"TEAM_SPECTATOR$0"
+		],
+		"description": "1"
+	},
+	"TEAM_UNASSIGNED": {
+		"prefix": "TEAM_UNASSIGNED",
+		"body": [
+			"TEAM_UNASSIGNED$0"
+		],
+		"description": "0"
+	},
+	"TELEPORT_TO_HINT": {
+		"prefix": "TELEPORT_TO_HINT",
+		"body": [
+			"TELEPORT_TO_HINT$0"
+		],
+		"description": "16384"
+	},
 	"void TFMark()": {
 		"prefix": "TFMark",
 		"body": [
 			"TFMark()$0"
 		],
 		"description": "Mark this nav area with the current marking scope."
+	},
+	"TF_CLASS_CIVILIAN": {
+		"prefix": "TF_CLASS_CIVILIAN",
+		"body": [
+			"TF_CLASS_CIVILIAN$0"
+		],
+		"description": "10"
+	},
+	"TF_CLASS_COUNT_ALL": {
+		"prefix": "TF_CLASS_COUNT_ALL",
+		"body": [
+			"TF_CLASS_COUNT_ALL$0"
+		],
+		"description": "11"
+	},
+	"TF_CLASS_DEMOMAN": {
+		"prefix": "TF_CLASS_DEMOMAN",
+		"body": [
+			"TF_CLASS_DEMOMAN$0"
+		],
+		"description": "4"
+	},
+	"TF_CLASS_ENGINEER": {
+		"prefix": "TF_CLASS_ENGINEER",
+		"body": [
+			"TF_CLASS_ENGINEER$0"
+		],
+		"description": "9"
+	},
+	"TF_CLASS_HEAVYWEAPONS": {
+		"prefix": "TF_CLASS_HEAVYWEAPONS",
+		"body": [
+			"TF_CLASS_HEAVYWEAPONS$0"
+		],
+		"description": "6"
+	},
+	"TF_CLASS_MEDIC": {
+		"prefix": "TF_CLASS_MEDIC",
+		"body": [
+			"TF_CLASS_MEDIC$0"
+		],
+		"description": "5"
+	},
+	"TF_CLASS_PYRO": {
+		"prefix": "TF_CLASS_PYRO",
+		"body": [
+			"TF_CLASS_PYRO$0"
+		],
+		"description": "7"
+	},
+	"TF_CLASS_RANDOM": {
+		"prefix": "TF_CLASS_RANDOM",
+		"body": [
+			"TF_CLASS_RANDOM$0"
+		],
+		"description": "12"
+	},
+	"TF_CLASS_SCOUT": {
+		"prefix": "TF_CLASS_SCOUT",
+		"body": [
+			"TF_CLASS_SCOUT$0"
+		],
+		"description": "1"
+	},
+	"TF_CLASS_SNIPER": {
+		"prefix": "TF_CLASS_SNIPER",
+		"body": [
+			"TF_CLASS_SNIPER$0"
+		],
+		"description": "2"
+	},
+	"TF_CLASS_SOLDIER": {
+		"prefix": "TF_CLASS_SOLDIER",
+		"body": [
+			"TF_CLASS_SOLDIER$0"
+		],
+		"description": "3"
+	},
+	"TF_CLASS_SPY": {
+		"prefix": "TF_CLASS_SPY",
+		"body": [
+			"TF_CLASS_SPY$0"
+		],
+		"description": "8"
+	},
+	"TF_CLASS_UNDEFINED": {
+		"prefix": "TF_CLASS_UNDEFINED",
+		"body": [
+			"TF_CLASS_UNDEFINED$0"
+		],
+		"description": "0"
+	},
+	"TF_COND_AFTERBURN_IMMUNE": {
+		"prefix": "TF_COND_AFTERBURN_IMMUNE",
+		"body": [
+			"TF_COND_AFTERBURN_IMMUNE$0"
+		],
+		"description": "102"
+	},
+	"TF_COND_AIMING": {
+		"prefix": "TF_COND_AIMING",
+		"body": [
+			"TF_COND_AIMING$0"
+		],
+		"description": "0"
+	},
+	"TF_COND_AIR_CURRENT": {
+		"prefix": "TF_COND_AIR_CURRENT",
+		"body": [
+			"TF_COND_AIR_CURRENT$0"
+		],
+		"description": "127"
+	},
+	"TF_COND_BALLOON_HEAD": {
+		"prefix": "TF_COND_BALLOON_HEAD",
+		"body": [
+			"TF_COND_BALLOON_HEAD$0"
+		],
+		"description": "84"
+	},
+	"TF_COND_BLASTJUMPING": {
+		"prefix": "TF_COND_BLASTJUMPING",
+		"body": [
+			"TF_COND_BLASTJUMPING$0"
+		],
+		"description": "81"
+	},
+	"TF_COND_BLAST_IMMUNE": {
+		"prefix": "TF_COND_BLAST_IMMUNE",
+		"body": [
+			"TF_COND_BLAST_IMMUNE$0"
+		],
+		"description": "68"
+	},
+	"TF_COND_BLEEDING": {
+		"prefix": "TF_COND_BLEEDING",
+		"body": [
+			"TF_COND_BLEEDING$0"
+		],
+		"description": "25"
+	},
+	"TF_COND_BULLET_IMMUNE": {
+		"prefix": "TF_COND_BULLET_IMMUNE",
+		"body": [
+			"TF_COND_BULLET_IMMUNE$0"
+		],
+		"description": "67"
+	},
+	"TF_COND_BURNING": {
+		"prefix": "TF_COND_BURNING",
+		"body": [
+			"TF_COND_BURNING$0"
+		],
+		"description": "22"
+	},
+	"TF_COND_BURNING_PYRO": {
+		"prefix": "TF_COND_BURNING_PYRO",
+		"body": [
+			"TF_COND_BURNING_PYRO$0"
+		],
+		"description": "124"
+	},
+	"TF_COND_CANNOT_SWITCH_FROM_MELEE": {
+		"prefix": "TF_COND_CANNOT_SWITCH_FROM_MELEE",
+		"body": [
+			"TF_COND_CANNOT_SWITCH_FROM_MELEE$0"
+		],
+		"description": "41"
+	},
+	"TF_COND_COMPETITIVE_LOSER": {
+		"prefix": "TF_COND_COMPETITIVE_LOSER",
+		"body": [
+			"TF_COND_COMPETITIVE_LOSER$0"
+		],
+		"description": "117"
+	},
+	"TF_COND_COMPETITIVE_WINNER": {
+		"prefix": "TF_COND_COMPETITIVE_WINNER",
+		"body": [
+			"TF_COND_COMPETITIVE_WINNER$0"
+		],
+		"description": "116"
+	},
+	"TF_COND_CRITBOOSTED": {
+		"prefix": "TF_COND_CRITBOOSTED",
+		"body": [
+			"TF_COND_CRITBOOSTED$0"
+		],
+		"description": "11"
+	},
+	"TF_COND_CRITBOOSTED_BONUS_TIME": {
+		"prefix": "TF_COND_CRITBOOSTED_BONUS_TIME",
+		"body": [
+			"TF_COND_CRITBOOSTED_BONUS_TIME$0"
+		],
+		"description": "38"
+	},
+	"TF_COND_CRITBOOSTED_CARD_EFFECT": {
+		"prefix": "TF_COND_CRITBOOSTED_CARD_EFFECT",
+		"body": [
+			"TF_COND_CRITBOOSTED_CARD_EFFECT$0"
+		],
+		"description": "56"
+	},
+	"TF_COND_CRITBOOSTED_CTF_CAPTURE": {
+		"prefix": "TF_COND_CRITBOOSTED_CTF_CAPTURE",
+		"body": [
+			"TF_COND_CRITBOOSTED_CTF_CAPTURE$0"
+		],
+		"description": "39"
+	},
+	"TF_COND_CRITBOOSTED_DEMO_CHARGE": {
+		"prefix": "TF_COND_CRITBOOSTED_DEMO_CHARGE",
+		"body": [
+			"TF_COND_CRITBOOSTED_DEMO_CHARGE$0"
+		],
+		"description": "35"
+	},
+	"TF_COND_CRITBOOSTED_FIRST_BLOOD": {
+		"prefix": "TF_COND_CRITBOOSTED_FIRST_BLOOD",
+		"body": [
+			"TF_COND_CRITBOOSTED_FIRST_BLOOD$0"
+		],
+		"description": "37"
+	},
+	"TF_COND_CRITBOOSTED_ON_KILL": {
+		"prefix": "TF_COND_CRITBOOSTED_ON_KILL",
+		"body": [
+			"TF_COND_CRITBOOSTED_ON_KILL$0"
+		],
+		"description": "40"
+	},
+	"TF_COND_CRITBOOSTED_PUMPKIN": {
+		"prefix": "TF_COND_CRITBOOSTED_PUMPKIN",
+		"body": [
+			"TF_COND_CRITBOOSTED_PUMPKIN$0"
+		],
+		"description": "33"
+	},
+	"TF_COND_CRITBOOSTED_RAGE_BUFF": {
+		"prefix": "TF_COND_CRITBOOSTED_RAGE_BUFF",
+		"body": [
+			"TF_COND_CRITBOOSTED_RAGE_BUFF$0"
+		],
+		"description": "44"
+	},
+	"TF_COND_CRITBOOSTED_RUNE_TEMP": {
+		"prefix": "TF_COND_CRITBOOSTED_RUNE_TEMP",
+		"body": [
+			"TF_COND_CRITBOOSTED_RUNE_TEMP$0"
+		],
+		"description": "105"
+	},
+	"TF_COND_CRITBOOSTED_USER_BUFF": {
+		"prefix": "TF_COND_CRITBOOSTED_USER_BUFF",
+		"body": [
+			"TF_COND_CRITBOOSTED_USER_BUFF$0"
+		],
+		"description": "34"
+	},
+	"TF_COND_DEFENSEBUFF": {
+		"prefix": "TF_COND_DEFENSEBUFF",
+		"body": [
+			"TF_COND_DEFENSEBUFF$0"
+		],
+		"description": "26"
+	},
+	"TF_COND_DEFENSEBUFF_HIGH": {
+		"prefix": "TF_COND_DEFENSEBUFF_HIGH",
+		"body": [
+			"TF_COND_DEFENSEBUFF_HIGH$0"
+		],
+		"description": "45"
+	},
+	"TF_COND_DEFENSEBUFF_NO_CRIT_BLOCK": {
+		"prefix": "TF_COND_DEFENSEBUFF_NO_CRIT_BLOCK",
+		"body": [
+			"TF_COND_DEFENSEBUFF_NO_CRIT_BLOCK$0"
+		],
+		"description": "42"
+	},
+	"TF_COND_DEMO_BUFF": {
+		"prefix": "TF_COND_DEMO_BUFF",
+		"body": [
+			"TF_COND_DEMO_BUFF$0"
+		],
+		"description": "18"
+	},
+	"TF_COND_DISGUISED": {
+		"prefix": "TF_COND_DISGUISED",
+		"body": [
+			"TF_COND_DISGUISED$0"
+		],
+		"description": "3"
+	},
+	"TF_COND_DISGUISED_AS_DISPENSER": {
+		"prefix": "TF_COND_DISGUISED_AS_DISPENSER",
+		"body": [
+			"TF_COND_DISGUISED_AS_DISPENSER$0"
+		],
+		"description": "49"
+	},
+	"TF_COND_DISGUISE_WEARINGOFF": {
+		"prefix": "TF_COND_DISGUISE_WEARINGOFF",
+		"body": [
+			"TF_COND_DISGUISE_WEARINGOFF$0"
+		],
+		"description": "47"
+	},
+	"TF_COND_DISGUISING": {
+		"prefix": "TF_COND_DISGUISING",
+		"body": [
+			"TF_COND_DISGUISING$0"
+		],
+		"description": "2"
+	},
+	"TF_COND_DONOTUSE_0": {
+		"prefix": "TF_COND_DONOTUSE_0",
+		"body": [
+			"TF_COND_DONOTUSE_0$0"
+		],
+		"description": "89"
+	},
+	"TF_COND_ENERGY_BUFF": {
+		"prefix": "TF_COND_ENERGY_BUFF",
+		"body": [
+			"TF_COND_ENERGY_BUFF$0"
+		],
+		"description": "19"
+	},
+	"TF_COND_FEIGN_DEATH": {
+		"prefix": "TF_COND_FEIGN_DEATH",
+		"body": [
+			"TF_COND_FEIGN_DEATH$0"
+		],
+		"description": "13"
+	},
+	"TF_COND_FIRE_IMMUNE": {
+		"prefix": "TF_COND_FIRE_IMMUNE",
+		"body": [
+			"TF_COND_FIRE_IMMUNE$0"
+		],
+		"description": "69"
+	},
+	"TF_COND_FREEZE_INPUT": {
+		"prefix": "TF_COND_FREEZE_INPUT",
+		"body": [
+			"TF_COND_FREEZE_INPUT$0"
+		],
+		"description": "87"
+	},
+	"TF_COND_GAS": {
+		"prefix": "TF_COND_GAS",
+		"body": [
+			"TF_COND_GAS$0"
+		],
+		"description": "123"
+	},
+	"TF_COND_GRAPPLED_BY_PLAYER": {
+		"prefix": "TF_COND_GRAPPLED_BY_PLAYER",
+		"body": [
+			"TF_COND_GRAPPLED_BY_PLAYER$0"
+		],
+		"description": "121"
+	},
+	"TF_COND_GRAPPLED_TO_PLAYER": {
+		"prefix": "TF_COND_GRAPPLED_TO_PLAYER",
+		"body": [
+			"TF_COND_GRAPPLED_TO_PLAYER$0"
+		],
+		"description": "120"
+	},
+	"TF_COND_GRAPPLINGHOOK": {
+		"prefix": "TF_COND_GRAPPLINGHOOK",
+		"body": [
+			"TF_COND_GRAPPLINGHOOK$0"
+		],
+		"description": "98"
+	},
+	"TF_COND_GRAPPLINGHOOK_BLEEDING": {
+		"prefix": "TF_COND_GRAPPLINGHOOK_BLEEDING",
+		"body": [
+			"TF_COND_GRAPPLINGHOOK_BLEEDING$0"
+		],
+		"description": "101"
+	},
+	"TF_COND_GRAPPLINGHOOK_LATCHED": {
+		"prefix": "TF_COND_GRAPPLINGHOOK_LATCHED",
+		"body": [
+			"TF_COND_GRAPPLINGHOOK_LATCHED$0"
+		],
+		"description": "100"
+	},
+	"TF_COND_GRAPPLINGHOOK_SAFEFALL": {
+		"prefix": "TF_COND_GRAPPLINGHOOK_SAFEFALL",
+		"body": [
+			"TF_COND_GRAPPLINGHOOK_SAFEFALL$0"
+		],
+		"description": "99"
+	},
+	"TF_COND_HALLOWEEN_BOMB_HEAD": {
+		"prefix": "TF_COND_HALLOWEEN_BOMB_HEAD",
+		"body": [
+			"TF_COND_HALLOWEEN_BOMB_HEAD$0"
+		],
+		"description": "53"
+	},
+	"TF_COND_HALLOWEEN_GHOST_MODE": {
+		"prefix": "TF_COND_HALLOWEEN_GHOST_MODE",
+		"body": [
+			"TF_COND_HALLOWEEN_GHOST_MODE$0"
+		],
+		"description": "77"
+	},
+	"TF_COND_HALLOWEEN_GIANT": {
+		"prefix": "TF_COND_HALLOWEEN_GIANT",
+		"body": [
+			"TF_COND_HALLOWEEN_GIANT$0"
+		],
+		"description": "74"
+	},
+	"TF_COND_HALLOWEEN_HELL_HEAL": {
+		"prefix": "TF_COND_HALLOWEEN_HELL_HEAL",
+		"body": [
+			"TF_COND_HALLOWEEN_HELL_HEAL$0"
+		],
+		"description": "128"
+	},
+	"TF_COND_HALLOWEEN_IN_HELL": {
+		"prefix": "TF_COND_HALLOWEEN_IN_HELL",
+		"body": [
+			"TF_COND_HALLOWEEN_IN_HELL$0"
+		],
+		"description": "76"
+	},
+	"TF_COND_HALLOWEEN_KART": {
+		"prefix": "TF_COND_HALLOWEEN_KART",
+		"body": [
+			"TF_COND_HALLOWEEN_KART$0"
+		],
+		"description": "82"
+	},
+	"TF_COND_HALLOWEEN_KART_CAGE": {
+		"prefix": "TF_COND_HALLOWEEN_KART_CAGE",
+		"body": [
+			"TF_COND_HALLOWEEN_KART_CAGE$0"
+		],
+		"description": "88"
+	},
+	"TF_COND_HALLOWEEN_KART_DASH": {
+		"prefix": "TF_COND_HALLOWEEN_KART_DASH",
+		"body": [
+			"TF_COND_HALLOWEEN_KART_DASH$0"
+		],
+		"description": "83"
+	},
+	"TF_COND_HALLOWEEN_QUICK_HEAL": {
+		"prefix": "TF_COND_HALLOWEEN_QUICK_HEAL",
+		"body": [
+			"TF_COND_HALLOWEEN_QUICK_HEAL$0"
+		],
+		"description": "73"
+	},
+	"TF_COND_HALLOWEEN_SPEED_BOOST": {
+		"prefix": "TF_COND_HALLOWEEN_SPEED_BOOST",
+		"body": [
+			"TF_COND_HALLOWEEN_SPEED_BOOST$0"
+		],
+		"description": "72"
+	},
+	"TF_COND_HALLOWEEN_THRILLER": {
+		"prefix": "TF_COND_HALLOWEEN_THRILLER",
+		"body": [
+			"TF_COND_HALLOWEEN_THRILLER$0"
+		],
+		"description": "54"
+	},
+	"TF_COND_HALLOWEEN_TINY": {
+		"prefix": "TF_COND_HALLOWEEN_TINY",
+		"body": [
+			"TF_COND_HALLOWEEN_TINY$0"
+		],
+		"description": "75"
+	},
+	"TF_COND_HEALING_DEBUFF": {
+		"prefix": "TF_COND_HEALING_DEBUFF",
+		"body": [
+			"TF_COND_HEALING_DEBUFF$0"
+		],
+		"description": "118"
+	},
+	"TF_COND_HEALTH_BUFF": {
+		"prefix": "TF_COND_HEALTH_BUFF",
+		"body": [
+			"TF_COND_HEALTH_BUFF$0"
+		],
+		"description": "21"
+	},
+	"TF_COND_HEALTH_OVERHEALED": {
+		"prefix": "TF_COND_HEALTH_OVERHEALED",
+		"body": [
+			"TF_COND_HEALTH_OVERHEALED$0"
+		],
+		"description": "23"
+	},
+	"TF_COND_INVALID": {
+		"prefix": "TF_COND_INVALID",
+		"body": [
+			"TF_COND_INVALID$0"
+		],
+		"description": "-1"
+	},
+	"TF_COND_INVULNERABLE": {
+		"prefix": "TF_COND_INVULNERABLE",
+		"body": [
+			"TF_COND_INVULNERABLE$0"
+		],
+		"description": "5"
+	},
+	"TF_COND_INVULNERABLE_CARD_EFFECT": {
+		"prefix": "TF_COND_INVULNERABLE_CARD_EFFECT",
+		"body": [
+			"TF_COND_INVULNERABLE_CARD_EFFECT$0"
+		],
+		"description": "57"
+	},
+	"TF_COND_INVULNERABLE_HIDE_UNLESS_DAMAGED": {
+		"prefix": "TF_COND_INVULNERABLE_HIDE_UNLESS_DAMAGED",
+		"body": [
+			"TF_COND_INVULNERABLE_HIDE_UNLESS_DAMAGED$0"
+		],
+		"description": "51"
+	},
+	"TF_COND_INVULNERABLE_USER_BUFF": {
+		"prefix": "TF_COND_INVULNERABLE_USER_BUFF",
+		"body": [
+			"TF_COND_INVULNERABLE_USER_BUFF$0"
+		],
+		"description": "52"
+	},
+	"TF_COND_INVULNERABLE_WEARINGOFF": {
+		"prefix": "TF_COND_INVULNERABLE_WEARINGOFF",
+		"body": [
+			"TF_COND_INVULNERABLE_WEARINGOFF$0"
+		],
+		"description": "8"
+	},
+	"TF_COND_KING_BUFFED": {
+		"prefix": "TF_COND_KING_BUFFED",
+		"body": [
+			"TF_COND_KING_BUFFED$0"
+		],
+		"description": "113"
+	},
+	"TF_COND_KNOCKED_INTO_AIR": {
+		"prefix": "TF_COND_KNOCKED_INTO_AIR",
+		"body": [
+			"TF_COND_KNOCKED_INTO_AIR$0"
+		],
+		"description": "115"
+	},
+	"TF_COND_LOST_FOOTING": {
+		"prefix": "TF_COND_LOST_FOOTING",
+		"body": [
+			"TF_COND_LOST_FOOTING$0"
+		],
+		"description": "126"
+	},
+	"TF_COND_MAD_MILK": {
+		"prefix": "TF_COND_MAD_MILK",
+		"body": [
+			"TF_COND_MAD_MILK$0"
+		],
+		"description": "27"
+	},
+	"TF_COND_MARKEDFORDEATH": {
+		"prefix": "TF_COND_MARKEDFORDEATH",
+		"body": [
+			"TF_COND_MARKEDFORDEATH$0"
+		],
+		"description": "30"
+	},
+	"TF_COND_MARKEDFORDEATH_SILENT": {
+		"prefix": "TF_COND_MARKEDFORDEATH_SILENT",
+		"body": [
+			"TF_COND_MARKEDFORDEATH_SILENT$0"
+		],
+		"description": "48"
+	},
+	"TF_COND_MEDIGUN_DEBUFF": {
+		"prefix": "TF_COND_MEDIGUN_DEBUFF",
+		"body": [
+			"TF_COND_MEDIGUN_DEBUFF$0"
+		],
+		"description": "65"
+	},
+	"TF_COND_MEDIGUN_SMALL_BLAST_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_SMALL_BLAST_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_SMALL_BLAST_RESIST$0"
+		],
+		"description": "62"
+	},
+	"TF_COND_MEDIGUN_SMALL_BULLET_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_SMALL_BULLET_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_SMALL_BULLET_RESIST$0"
+		],
+		"description": "61"
+	},
+	"TF_COND_MEDIGUN_SMALL_FIRE_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_SMALL_FIRE_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_SMALL_FIRE_RESIST$0"
+		],
+		"description": "63"
+	},
+	"TF_COND_MEDIGUN_UBER_BLAST_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_UBER_BLAST_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_UBER_BLAST_RESIST$0"
+		],
+		"description": "59"
+	},
+	"TF_COND_MEDIGUN_UBER_BULLET_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_UBER_BULLET_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_UBER_BULLET_RESIST$0"
+		],
+		"description": "58"
+	},
+	"TF_COND_MEDIGUN_UBER_FIRE_RESIST": {
+		"prefix": "TF_COND_MEDIGUN_UBER_FIRE_RESIST",
+		"body": [
+			"TF_COND_MEDIGUN_UBER_FIRE_RESIST$0"
+		],
+		"description": "60"
+	},
+	"TF_COND_MEGAHEAL": {
+		"prefix": "TF_COND_MEGAHEAL",
+		"body": [
+			"TF_COND_MEGAHEAL$0"
+		],
+		"description": "28"
+	},
+	"TF_COND_MELEE_ONLY": {
+		"prefix": "TF_COND_MELEE_ONLY",
+		"body": [
+			"TF_COND_MELEE_ONLY$0"
+		],
+		"description": "85"
+	},
+	"TF_COND_MINICRITBOOSTED_ON_KILL": {
+		"prefix": "TF_COND_MINICRITBOOSTED_ON_KILL",
+		"body": [
+			"TF_COND_MINICRITBOOSTED_ON_KILL$0"
+		],
+		"description": "78"
+	},
+	"TF_COND_MVM_BOT_STUN_RADIOWAVE": {
+		"prefix": "TF_COND_MVM_BOT_STUN_RADIOWAVE",
+		"body": [
+			"TF_COND_MVM_BOT_STUN_RADIOWAVE$0"
+		],
+		"description": "71"
+	},
+	"TF_COND_NOHEALINGDAMAGEBUFF": {
+		"prefix": "TF_COND_NOHEALINGDAMAGEBUFF",
+		"body": [
+			"TF_COND_NOHEALINGDAMAGEBUFF$0"
+		],
+		"description": "31"
+	},
+	"TF_COND_OBSCURED_SMOKE": {
+		"prefix": "TF_COND_OBSCURED_SMOKE",
+		"body": [
+			"TF_COND_OBSCURED_SMOKE$0"
+		],
+		"description": "79"
+	},
+	"TF_COND_OFFENSEBUFF": {
+		"prefix": "TF_COND_OFFENSEBUFF",
+		"body": [
+			"TF_COND_OFFENSEBUFF$0"
+		],
+		"description": "16"
+	},
+	"TF_COND_PARACHUTE_ACTIVE": {
+		"prefix": "TF_COND_PARACHUTE_ACTIVE",
+		"body": [
+			"TF_COND_PARACHUTE_ACTIVE$0"
+		],
+		"description": "80"
+	},
+	"TF_COND_PARACHUTE_DEPLOYED": {
+		"prefix": "TF_COND_PARACHUTE_DEPLOYED",
+		"body": [
+			"TF_COND_PARACHUTE_DEPLOYED$0"
+		],
+		"description": "122"
+	},
+	"TF_COND_PASSTIME_INTERCEPTION": {
+		"prefix": "TF_COND_PASSTIME_INTERCEPTION",
+		"body": [
+			"TF_COND_PASSTIME_INTERCEPTION$0"
+		],
+		"description": "106"
+	},
+	"TF_COND_PASSTIME_PENALTY_DEBUFF": {
+		"prefix": "TF_COND_PASSTIME_PENALTY_DEBUFF",
+		"body": [
+			"TF_COND_PASSTIME_PENALTY_DEBUFF$0"
+		],
+		"description": "119"
+	},
+	"TF_COND_PHASE": {
+		"prefix": "TF_COND_PHASE",
+		"body": [
+			"TF_COND_PHASE$0"
+		],
+		"description": "14"
+	},
+	"TF_COND_PLAGUE": {
+		"prefix": "TF_COND_PLAGUE",
+		"body": [
+			"TF_COND_PLAGUE$0"
+		],
+		"description": "112"
+	},
+	"TF_COND_POWERUPMODE_DOMINANT": {
+		"prefix": "TF_COND_POWERUPMODE_DOMINANT",
+		"body": [
+			"TF_COND_POWERUPMODE_DOMINANT$0"
+		],
+		"description": "129"
+	},
+	"TF_COND_PREVENT_DEATH": {
+		"prefix": "TF_COND_PREVENT_DEATH",
+		"body": [
+			"TF_COND_PREVENT_DEATH$0"
+		],
+		"description": "70"
+	},
+	"TF_COND_PURGATORY": {
+		"prefix": "TF_COND_PURGATORY",
+		"body": [
+			"TF_COND_PURGATORY$0"
+		],
+		"description": "108"
+	},
+	"TF_COND_RADIUSHEAL": {
+		"prefix": "TF_COND_RADIUSHEAL",
+		"body": [
+			"TF_COND_RADIUSHEAL$0"
+		],
+		"description": "20"
+	},
+	"TF_COND_RADIUSHEAL_ON_DAMAGE": {
+		"prefix": "TF_COND_RADIUSHEAL_ON_DAMAGE",
+		"body": [
+			"TF_COND_RADIUSHEAL_ON_DAMAGE$0"
+		],
+		"description": "55"
+	},
+	"TF_COND_REGENONDAMAGEBUFF": {
+		"prefix": "TF_COND_REGENONDAMAGEBUFF",
+		"body": [
+			"TF_COND_REGENONDAMAGEBUFF$0"
+		],
+		"description": "29"
+	},
+	"TF_COND_REPROGRAMMED": {
+		"prefix": "TF_COND_REPROGRAMMED",
+		"body": [
+			"TF_COND_REPROGRAMMED$0"
+		],
+		"description": "43"
+	},
+	"TF_COND_ROCKETPACK": {
+		"prefix": "TF_COND_ROCKETPACK",
+		"body": [
+			"TF_COND_ROCKETPACK$0"
+		],
+		"description": "125"
+	},
+	"TF_COND_RUNE_AGILITY": {
+		"prefix": "TF_COND_RUNE_AGILITY",
+		"body": [
+			"TF_COND_RUNE_AGILITY$0"
+		],
+		"description": "97"
+	},
+	"TF_COND_RUNE_HASTE": {
+		"prefix": "TF_COND_RUNE_HASTE",
+		"body": [
+			"TF_COND_RUNE_HASTE$0"
+		],
+		"description": "91"
+	},
+	"TF_COND_RUNE_IMBALANCE": {
+		"prefix": "TF_COND_RUNE_IMBALANCE",
+		"body": [
+			"TF_COND_RUNE_IMBALANCE$0"
+		],
+		"description": "104"
+	},
+	"TF_COND_RUNE_KING": {
+		"prefix": "TF_COND_RUNE_KING",
+		"body": [
+			"TF_COND_RUNE_KING$0"
+		],
+		"description": "109"
+	},
+	"TF_COND_RUNE_KNOCKOUT": {
+		"prefix": "TF_COND_RUNE_KNOCKOUT",
+		"body": [
+			"TF_COND_RUNE_KNOCKOUT$0"
+		],
+		"description": "103"
+	},
+	"TF_COND_RUNE_PLAGUE": {
+		"prefix": "TF_COND_RUNE_PLAGUE",
+		"body": [
+			"TF_COND_RUNE_PLAGUE$0"
+		],
+		"description": "110"
+	},
+	"TF_COND_RUNE_PRECISION": {
+		"prefix": "TF_COND_RUNE_PRECISION",
+		"body": [
+			"TF_COND_RUNE_PRECISION$0"
+		],
+		"description": "96"
+	},
+	"TF_COND_RUNE_REFLECT": {
+		"prefix": "TF_COND_RUNE_REFLECT",
+		"body": [
+			"TF_COND_RUNE_REFLECT$0"
+		],
+		"description": "95"
+	},
+	"TF_COND_RUNE_REGEN": {
+		"prefix": "TF_COND_RUNE_REGEN",
+		"body": [
+			"TF_COND_RUNE_REGEN$0"
+		],
+		"description": "92"
+	},
+	"TF_COND_RUNE_RESIST": {
+		"prefix": "TF_COND_RUNE_RESIST",
+		"body": [
+			"TF_COND_RUNE_RESIST$0"
+		],
+		"description": "93"
+	},
+	"TF_COND_RUNE_STRENGTH": {
+		"prefix": "TF_COND_RUNE_STRENGTH",
+		"body": [
+			"TF_COND_RUNE_STRENGTH$0"
+		],
+		"description": "90"
+	},
+	"TF_COND_RUNE_SUPERNOVA": {
+		"prefix": "TF_COND_RUNE_SUPERNOVA",
+		"body": [
+			"TF_COND_RUNE_SUPERNOVA$0"
+		],
+		"description": "111"
+	},
+	"TF_COND_RUNE_VAMPIRE": {
+		"prefix": "TF_COND_RUNE_VAMPIRE",
+		"body": [
+			"TF_COND_RUNE_VAMPIRE$0"
+		],
+		"description": "94"
+	},
+	"TF_COND_SAPPED": {
+		"prefix": "TF_COND_SAPPED",
+		"body": [
+			"TF_COND_SAPPED$0"
+		],
+		"description": "50"
+	},
+	"TF_COND_SELECTED_TO_TELEPORT": {
+		"prefix": "TF_COND_SELECTED_TO_TELEPORT",
+		"body": [
+			"TF_COND_SELECTED_TO_TELEPORT$0"
+		],
+		"description": "10"
+	},
+	"TF_COND_SHIELD_CHARGE": {
+		"prefix": "TF_COND_SHIELD_CHARGE",
+		"body": [
+			"TF_COND_SHIELD_CHARGE$0"
+		],
+		"description": "17"
+	},
+	"TF_COND_SNIPERCHARGE_RAGE_BUFF": {
+		"prefix": "TF_COND_SNIPERCHARGE_RAGE_BUFF",
+		"body": [
+			"TF_COND_SNIPERCHARGE_RAGE_BUFF$0"
+		],
+		"description": "46"
+	},
+	"TF_COND_SODAPOPPER_HYPE": {
+		"prefix": "TF_COND_SODAPOPPER_HYPE",
+		"body": [
+			"TF_COND_SODAPOPPER_HYPE$0"
+		],
+		"description": "36"
+	},
+	"TF_COND_SPEED_BOOST": {
+		"prefix": "TF_COND_SPEED_BOOST",
+		"body": [
+			"TF_COND_SPEED_BOOST$0"
+		],
+		"description": "32"
+	},
+	"TF_COND_STEALTHED": {
+		"prefix": "TF_COND_STEALTHED",
+		"body": [
+			"TF_COND_STEALTHED$0"
+		],
+		"description": "4"
+	},
+	"TF_COND_STEALTHED_BLINK": {
+		"prefix": "TF_COND_STEALTHED_BLINK",
+		"body": [
+			"TF_COND_STEALTHED_BLINK$0"
+		],
+		"description": "9"
+	},
+	"TF_COND_STEALTHED_USER_BUFF": {
+		"prefix": "TF_COND_STEALTHED_USER_BUFF",
+		"body": [
+			"TF_COND_STEALTHED_USER_BUFF$0"
+		],
+		"description": "64"
+	},
+	"TF_COND_STEALTHED_USER_BUFF_FADING": {
+		"prefix": "TF_COND_STEALTHED_USER_BUFF_FADING",
+		"body": [
+			"TF_COND_STEALTHED_USER_BUFF_FADING$0"
+		],
+		"description": "66"
+	},
+	"TF_COND_STUNNED": {
+		"prefix": "TF_COND_STUNNED",
+		"body": [
+			"TF_COND_STUNNED$0"
+		],
+		"description": "15"
+	},
+	"TF_COND_SWIMMING_CURSE": {
+		"prefix": "TF_COND_SWIMMING_CURSE",
+		"body": [
+			"TF_COND_SWIMMING_CURSE$0"
+		],
+		"description": "86"
+	},
+	"TF_COND_SWIMMING_NO_EFFECTS": {
+		"prefix": "TF_COND_SWIMMING_NO_EFFECTS",
+		"body": [
+			"TF_COND_SWIMMING_NO_EFFECTS$0"
+		],
+		"description": "107"
+	},
+	"TF_COND_TAUNTING": {
+		"prefix": "TF_COND_TAUNTING",
+		"body": [
+			"TF_COND_TAUNTING$0"
+		],
+		"description": "7"
+	},
+	"TF_COND_TEAM_GLOWS": {
+		"prefix": "TF_COND_TEAM_GLOWS",
+		"body": [
+			"TF_COND_TEAM_GLOWS$0"
+		],
+		"description": "114"
+	},
+	"TF_COND_TELEPORTED": {
+		"prefix": "TF_COND_TELEPORTED",
+		"body": [
+			"TF_COND_TELEPORTED$0"
+		],
+		"description": "6"
+	},
+	"TF_COND_TMPDAMAGEBONUS": {
+		"prefix": "TF_COND_TMPDAMAGEBONUS",
+		"body": [
+			"TF_COND_TMPDAMAGEBONUS$0"
+		],
+		"description": "12"
+	},
+	"TF_COND_URINE": {
+		"prefix": "TF_COND_URINE",
+		"body": [
+			"TF_COND_URINE$0"
+		],
+		"description": "24"
+	},
+	"TF_COND_ZOOMED": {
+		"prefix": "TF_COND_ZOOMED",
+		"body": [
+			"TF_COND_ZOOMED$0"
+		],
+		"description": "1"
+	},
+	"TF_DMG_CUSTOM_AEGIS_ROUND": {
+		"prefix": "TF_DMG_CUSTOM_AEGIS_ROUND",
+		"body": [
+			"TF_DMG_CUSTOM_AEGIS_ROUND$0"
+		],
+		"description": "43"
+	},
+	"TF_DMG_CUSTOM_AIR_STICKY_BURST": {
+		"prefix": "TF_DMG_CUSTOM_AIR_STICKY_BURST",
+		"body": [
+			"TF_DMG_CUSTOM_AIR_STICKY_BURST$0"
+		],
+		"description": "25"
+	},
+	"TF_DMG_CUSTOM_AXTINGUISHER_BOOSTED": {
+		"prefix": "TF_DMG_CUSTOM_AXTINGUISHER_BOOSTED",
+		"body": [
+			"TF_DMG_CUSTOM_AXTINGUISHER_BOOSTED$0"
+		],
+		"description": "83"
+	},
+	"TF_DMG_CUSTOM_BACKSTAB": {
+		"prefix": "TF_DMG_CUSTOM_BACKSTAB",
+		"body": [
+			"TF_DMG_CUSTOM_BACKSTAB$0"
+		],
+		"description": "2"
+	},
+	"TF_DMG_CUSTOM_BASEBALL": {
+		"prefix": "TF_DMG_CUSTOM_BASEBALL",
+		"body": [
+			"TF_DMG_CUSTOM_BASEBALL$0"
+		],
+		"description": "22"
+	},
+	"TF_DMG_CUSTOM_BLEEDING": {
+		"prefix": "TF_DMG_CUSTOM_BLEEDING",
+		"body": [
+			"TF_DMG_CUSTOM_BLEEDING$0"
+		],
+		"description": "34"
+	},
+	"TF_DMG_CUSTOM_BOOTS_STOMP": {
+		"prefix": "TF_DMG_CUSTOM_BOOTS_STOMP",
+		"body": [
+			"TF_DMG_CUSTOM_BOOTS_STOMP$0"
+		],
+		"description": "45"
+	},
+	"TF_DMG_CUSTOM_BURNING": {
+		"prefix": "TF_DMG_CUSTOM_BURNING",
+		"body": [
+			"TF_DMG_CUSTOM_BURNING$0"
+		],
+		"description": "3"
+	},
+	"TF_DMG_CUSTOM_BURNING_ARROW": {
+		"prefix": "TF_DMG_CUSTOM_BURNING_ARROW",
+		"body": [
+			"TF_DMG_CUSTOM_BURNING_ARROW$0"
+		],
+		"description": "17"
+	},
+	"TF_DMG_CUSTOM_BURNING_FLARE": {
+		"prefix": "TF_DMG_CUSTOM_BURNING_FLARE",
+		"body": [
+			"TF_DMG_CUSTOM_BURNING_FLARE$0"
+		],
+		"description": "8"
+	},
+	"TF_DMG_CUSTOM_CANNONBALL_PUSH": {
+		"prefix": "TF_DMG_CUSTOM_CANNONBALL_PUSH",
+		"body": [
+			"TF_DMG_CUSTOM_CANNONBALL_PUSH$0"
+		],
+		"description": "61"
+	},
+	"TF_DMG_CUSTOM_CARRIED_BUILDING": {
+		"prefix": "TF_DMG_CUSTOM_CARRIED_BUILDING",
+		"body": [
+			"TF_DMG_CUSTOM_CARRIED_BUILDING$0"
+		],
+		"description": "36"
+	},
+	"TF_DMG_CUSTOM_CHARGE_IMPACT": {
+		"prefix": "TF_DMG_CUSTOM_CHARGE_IMPACT",
+		"body": [
+			"TF_DMG_CUSTOM_CHARGE_IMPACT$0"
+		],
+		"description": "23"
+	},
+	"TF_DMG_CUSTOM_CLEAVER": {
+		"prefix": "TF_DMG_CUSTOM_CLEAVER",
+		"body": [
+			"TF_DMG_CUSTOM_CLEAVER$0"
+		],
+		"description": "54"
+	},
+	"TF_DMG_CUSTOM_CLEAVER_CRIT": {
+		"prefix": "TF_DMG_CUSTOM_CLEAVER_CRIT",
+		"body": [
+			"TF_DMG_CUSTOM_CLEAVER_CRIT$0"
+		],
+		"description": "55"
+	},
+	"TF_DMG_CUSTOM_COMBO_PUNCH": {
+		"prefix": "TF_DMG_CUSTOM_COMBO_PUNCH",
+		"body": [
+			"TF_DMG_CUSTOM_COMBO_PUNCH$0"
+		],
+		"description": "37"
+	},
+	"TF_DMG_CUSTOM_CROC": {
+		"prefix": "TF_DMG_CUSTOM_CROC",
+		"body": [
+			"TF_DMG_CUSTOM_CROC$0"
+		],
+		"description": "81"
+	},
+	"TF_DMG_CUSTOM_DECAPITATION": {
+		"prefix": "TF_DMG_CUSTOM_DECAPITATION",
+		"body": [
+			"TF_DMG_CUSTOM_DECAPITATION$0"
+		],
+		"description": "20"
+	},
+	"TF_DMG_CUSTOM_DECAPITATION_BOSS": {
+		"prefix": "TF_DMG_CUSTOM_DECAPITATION_BOSS",
+		"body": [
+			"TF_DMG_CUSTOM_DECAPITATION_BOSS$0"
+		],
+		"description": "41"
+	},
+	"TF_DMG_CUSTOM_DEFENSIVE_STICKY": {
+		"prefix": "TF_DMG_CUSTOM_DEFENSIVE_STICKY",
+		"body": [
+			"TF_DMG_CUSTOM_DEFENSIVE_STICKY$0"
+		],
+		"description": "26"
+	},
+	"TF_DMG_CUSTOM_DRAGONS_FURY_BONUS_BURNING": {
+		"prefix": "TF_DMG_CUSTOM_DRAGONS_FURY_BONUS_BURNING",
+		"body": [
+			"TF_DMG_CUSTOM_DRAGONS_FURY_BONUS_BURNING$0"
+		],
+		"description": "79"
+	},
+	"TF_DMG_CUSTOM_DRAGONS_FURY_IGNITE": {
+		"prefix": "TF_DMG_CUSTOM_DRAGONS_FURY_IGNITE",
+		"body": [
+			"TF_DMG_CUSTOM_DRAGONS_FURY_IGNITE$0"
+		],
+		"description": "78"
+	},
+	"TF_DMG_CUSTOM_END": {
+		"prefix": "TF_DMG_CUSTOM_END",
+		"body": [
+			"TF_DMG_CUSTOM_END$0"
+		],
+		"description": "84"
+	},
+	"TF_DMG_CUSTOM_EYEBALL_ROCKET": {
+		"prefix": "TF_DMG_CUSTOM_EYEBALL_ROCKET",
+		"body": [
+			"TF_DMG_CUSTOM_EYEBALL_ROCKET$0"
+		],
+		"description": "50"
+	},
+	"TF_DMG_CUSTOM_FISH_KILL": {
+		"prefix": "TF_DMG_CUSTOM_FISH_KILL",
+		"body": [
+			"TF_DMG_CUSTOM_FISH_KILL$0"
+		],
+		"description": "39"
+	},
+	"TF_DMG_CUSTOM_FLARE_EXPLOSION": {
+		"prefix": "TF_DMG_CUSTOM_FLARE_EXPLOSION",
+		"body": [
+			"TF_DMG_CUSTOM_FLARE_EXPLOSION$0"
+		],
+		"description": "44"
+	},
+	"TF_DMG_CUSTOM_FLARE_PELLET": {
+		"prefix": "TF_DMG_CUSTOM_FLARE_PELLET",
+		"body": [
+			"TF_DMG_CUSTOM_FLARE_PELLET$0"
+		],
+		"description": "53"
+	},
+	"TF_DMG_CUSTOM_FLYINGBURN": {
+		"prefix": "TF_DMG_CUSTOM_FLYINGBURN",
+		"body": [
+			"TF_DMG_CUSTOM_FLYINGBURN$0"
+		],
+		"description": "18"
+	},
+	"TF_DMG_CUSTOM_GIANT_HAMMER": {
+		"prefix": "TF_DMG_CUSTOM_GIANT_HAMMER",
+		"body": [
+			"TF_DMG_CUSTOM_GIANT_HAMMER$0"
+		],
+		"description": "76"
+	},
+	"TF_DMG_CUSTOM_GOLD_WRENCH": {
+		"prefix": "TF_DMG_CUSTOM_GOLD_WRENCH",
+		"body": [
+			"TF_DMG_CUSTOM_GOLD_WRENCH$0"
+		],
+		"description": "35"
+	},
+	"TF_DMG_CUSTOM_HEADSHOT": {
+		"prefix": "TF_DMG_CUSTOM_HEADSHOT",
+		"body": [
+			"TF_DMG_CUSTOM_HEADSHOT$0"
+		],
+		"description": "1"
+	},
+	"TF_DMG_CUSTOM_HEADSHOT_DECAPITATION": {
+		"prefix": "TF_DMG_CUSTOM_HEADSHOT_DECAPITATION",
+		"body": [
+			"TF_DMG_CUSTOM_HEADSHOT_DECAPITATION$0"
+		],
+		"description": "51"
+	},
+	"TF_DMG_CUSTOM_KART": {
+		"prefix": "TF_DMG_CUSTOM_KART",
+		"body": [
+			"TF_DMG_CUSTOM_KART$0"
+		],
+		"description": "75"
+	},
+	"TF_DMG_CUSTOM_MERASMUS_DECAPITATION": {
+		"prefix": "TF_DMG_CUSTOM_MERASMUS_DECAPITATION",
+		"body": [
+			"TF_DMG_CUSTOM_MERASMUS_DECAPITATION$0"
+		],
+		"description": "60"
+	},
+	"TF_DMG_CUSTOM_MERASMUS_GRENADE": {
+		"prefix": "TF_DMG_CUSTOM_MERASMUS_GRENADE",
+		"body": [
+			"TF_DMG_CUSTOM_MERASMUS_GRENADE$0"
+		],
+		"description": "58"
+	},
+	"TF_DMG_CUSTOM_MERASMUS_PLAYER_BOMB": {
+		"prefix": "TF_DMG_CUSTOM_MERASMUS_PLAYER_BOMB",
+		"body": [
+			"TF_DMG_CUSTOM_MERASMUS_PLAYER_BOMB$0"
+		],
+		"description": "57"
+	},
+	"TF_DMG_CUSTOM_MERASMUS_ZAP": {
+		"prefix": "TF_DMG_CUSTOM_MERASMUS_ZAP",
+		"body": [
+			"TF_DMG_CUSTOM_MERASMUS_ZAP$0"
+		],
+		"description": "59"
+	},
+	"TF_DMG_CUSTOM_MINIGUN": {
+		"prefix": "TF_DMG_CUSTOM_MINIGUN",
+		"body": [
+			"TF_DMG_CUSTOM_MINIGUN$0"
+		],
+		"description": "5"
+	},
+	"TF_DMG_CUSTOM_NONE": {
+		"prefix": "TF_DMG_CUSTOM_NONE",
+		"body": [
+			"TF_DMG_CUSTOM_NONE$0"
+		],
+		"description": "0"
+	},
+	"TF_DMG_CUSTOM_PENETRATE_ALL_PLAYERS": {
+		"prefix": "TF_DMG_CUSTOM_PENETRATE_ALL_PLAYERS",
+		"body": [
+			"TF_DMG_CUSTOM_PENETRATE_ALL_PLAYERS$0"
+		],
+		"description": "12"
+	},
+	"TF_DMG_CUSTOM_PENETRATE_MY_TEAM": {
+		"prefix": "TF_DMG_CUSTOM_PENETRATE_MY_TEAM",
+		"body": [
+			"TF_DMG_CUSTOM_PENETRATE_MY_TEAM$0"
+		],
+		"description": "11"
+	},
+	"TF_DMG_CUSTOM_PENETRATE_NONBURNING_TEAMMATE": {
+		"prefix": "TF_DMG_CUSTOM_PENETRATE_NONBURNING_TEAMMATE",
+		"body": [
+			"TF_DMG_CUSTOM_PENETRATE_NONBURNING_TEAMMATE$0"
+		],
+		"description": "14"
+	},
+	"TF_DMG_CUSTOM_PICKAXE": {
+		"prefix": "TF_DMG_CUSTOM_PICKAXE",
+		"body": [
+			"TF_DMG_CUSTOM_PICKAXE$0"
+		],
+		"description": "27"
+	},
+	"TF_DMG_CUSTOM_PLASMA": {
+		"prefix": "TF_DMG_CUSTOM_PLASMA",
+		"body": [
+			"TF_DMG_CUSTOM_PLASMA$0"
+		],
+		"description": "46"
+	},
+	"TF_DMG_CUSTOM_PLASMA_CHARGED": {
+		"prefix": "TF_DMG_CUSTOM_PLASMA_CHARGED",
+		"body": [
+			"TF_DMG_CUSTOM_PLASMA_CHARGED$0"
+		],
+		"description": "47"
+	},
+	"TF_DMG_CUSTOM_PLASMA_GIB": {
+		"prefix": "TF_DMG_CUSTOM_PLASMA_GIB",
+		"body": [
+			"TF_DMG_CUSTOM_PLASMA_GIB$0"
+		],
+		"description": "48"
+	},
+	"TF_DMG_CUSTOM_PLAYER_SENTRY": {
+		"prefix": "TF_DMG_CUSTOM_PLAYER_SENTRY",
+		"body": [
+			"TF_DMG_CUSTOM_PLAYER_SENTRY$0"
+		],
+		"description": "30"
+	},
+	"TF_DMG_CUSTOM_PRACTICE_STICKY": {
+		"prefix": "TF_DMG_CUSTOM_PRACTICE_STICKY",
+		"body": [
+			"TF_DMG_CUSTOM_PRACTICE_STICKY$0"
+		],
+		"description": "49"
+	},
+	"TF_DMG_CUSTOM_PUMPKIN_BOMB": {
+		"prefix": "TF_DMG_CUSTOM_PUMPKIN_BOMB",
+		"body": [
+			"TF_DMG_CUSTOM_PUMPKIN_BOMB$0"
+		],
+		"description": "19"
+	},
+	"TF_DMG_CUSTOM_ROCKET_DIRECTHIT": {
+		"prefix": "TF_DMG_CUSTOM_ROCKET_DIRECTHIT",
+		"body": [
+			"TF_DMG_CUSTOM_ROCKET_DIRECTHIT$0"
+		],
+		"description": "28"
+	},
+	"TF_DMG_CUSTOM_RUNE_REFLECT": {
+		"prefix": "TF_DMG_CUSTOM_RUNE_REFLECT",
+		"body": [
+			"TF_DMG_CUSTOM_RUNE_REFLECT$0"
+		],
+		"description": "77"
+	},
+	"TF_DMG_CUSTOM_SAPPER_RECORDER_DEATH": {
+		"prefix": "TF_DMG_CUSTOM_SAPPER_RECORDER_DEATH",
+		"body": [
+			"TF_DMG_CUSTOM_SAPPER_RECORDER_DEATH$0"
+		],
+		"description": "56"
+	},
+	"TF_DMG_CUSTOM_SHOTGUN_REVENGE_CRIT": {
+		"prefix": "TF_DMG_CUSTOM_SHOTGUN_REVENGE_CRIT",
+		"body": [
+			"TF_DMG_CUSTOM_SHOTGUN_REVENGE_CRIT$0"
+		],
+		"description": "32"
+	},
+	"TF_DMG_CUSTOM_SLAP_KILL": {
+		"prefix": "TF_DMG_CUSTOM_SLAP_KILL",
+		"body": [
+			"TF_DMG_CUSTOM_SLAP_KILL$0"
+		],
+		"description": "80"
+	},
+	"TF_DMG_CUSTOM_SPELL_BATS": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_BATS",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_BATS$0"
+		],
+		"description": "73"
+	},
+	"TF_DMG_CUSTOM_SPELL_BLASTJUMP": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_BLASTJUMP",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_BLASTJUMP$0"
+		],
+		"description": "72"
+	},
+	"TF_DMG_CUSTOM_SPELL_FIREBALL": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_FIREBALL",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_FIREBALL$0"
+		],
+		"description": "70"
+	},
+	"TF_DMG_CUSTOM_SPELL_LIGHTNING": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_LIGHTNING",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_LIGHTNING$0"
+		],
+		"description": "69"
+	},
+	"TF_DMG_CUSTOM_SPELL_METEOR": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_METEOR",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_METEOR$0"
+		],
+		"description": "68"
+	},
+	"TF_DMG_CUSTOM_SPELL_MIRV": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_MIRV",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_MIRV$0"
+		],
+		"description": "67"
+	},
+	"TF_DMG_CUSTOM_SPELL_MONOCULUS": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_MONOCULUS",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_MONOCULUS$0"
+		],
+		"description": "71"
+	},
+	"TF_DMG_CUSTOM_SPELL_SKELETON": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_SKELETON",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_SKELETON$0"
+		],
+		"description": "66"
+	},
+	"TF_DMG_CUSTOM_SPELL_TELEPORT": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_TELEPORT",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_TELEPORT$0"
+		],
+		"description": "65"
+	},
+	"TF_DMG_CUSTOM_SPELL_TINY": {
+		"prefix": "TF_DMG_CUSTOM_SPELL_TINY",
+		"body": [
+			"TF_DMG_CUSTOM_SPELL_TINY$0"
+		],
+		"description": "74"
+	},
+	"TF_DMG_CUSTOM_STANDARD_STICKY": {
+		"prefix": "TF_DMG_CUSTOM_STANDARD_STICKY",
+		"body": [
+			"TF_DMG_CUSTOM_STANDARD_STICKY$0"
+		],
+		"description": "31"
+	},
+	"TF_DMG_CUSTOM_STICKBOMB_EXPLOSION": {
+		"prefix": "TF_DMG_CUSTOM_STICKBOMB_EXPLOSION",
+		"body": [
+			"TF_DMG_CUSTOM_STICKBOMB_EXPLOSION$0"
+		],
+		"description": "42"
+	},
+	"TF_DMG_CUSTOM_SUICIDE": {
+		"prefix": "TF_DMG_CUSTOM_SUICIDE",
+		"body": [
+			"TF_DMG_CUSTOM_SUICIDE$0"
+		],
+		"description": "6"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_ALLCLASS_GUITAR_RIFF": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_ALLCLASS_GUITAR_RIFF",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_ALLCLASS_GUITAR_RIFF$0"
+		],
+		"description": "62"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_ARMAGEDDON": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_ARMAGEDDON",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_ARMAGEDDON$0"
+		],
+		"description": "52"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_ARROW_STAB": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_ARROW_STAB",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_ARROW_STAB$0"
+		],
+		"description": "15"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_BARBARIAN_SWING": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_BARBARIAN_SWING",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_BARBARIAN_SWING$0"
+		],
+		"description": "24"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_ENGINEER_ARM_KILL": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_ENGINEER_ARM_KILL",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_ENGINEER_ARM_KILL$0"
+		],
+		"description": "38"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_ENGINEER_GUITAR_SMASH": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_ENGINEER_GUITAR_SMASH",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_ENGINEER_GUITAR_SMASH$0"
+		],
+		"description": "33"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_FENCING": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_FENCING",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_FENCING$0"
+		],
+		"description": "13"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_GASBLAST": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_GASBLAST",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_GASBLAST$0"
+		],
+		"description": "82"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_GRAND_SLAM": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_GRAND_SLAM",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_GRAND_SLAM$0"
+		],
+		"description": "10"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_GRENADE": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_GRENADE",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_GRENADE$0"
+		],
+		"description": "21"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_HADOUKEN": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_HADOUKEN",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_HADOUKEN$0"
+		],
+		"description": "7"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_HIGH_NOON": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_HIGH_NOON",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_HIGH_NOON$0"
+		],
+		"description": "9"
+	},
+	"TF_DMG_CUSTOM_TAUNTATK_UBERSLICE": {
+		"prefix": "TF_DMG_CUSTOM_TAUNTATK_UBERSLICE",
+		"body": [
+			"TF_DMG_CUSTOM_TAUNTATK_UBERSLICE$0"
+		],
+		"description": "29"
+	},
+	"TF_DMG_CUSTOM_TELEFRAG": {
+		"prefix": "TF_DMG_CUSTOM_TELEFRAG",
+		"body": [
+			"TF_DMG_CUSTOM_TELEFRAG$0"
+		],
+		"description": "16"
+	},
+	"TF_DMG_CUSTOM_THROWABLE": {
+		"prefix": "TF_DMG_CUSTOM_THROWABLE",
+		"body": [
+			"TF_DMG_CUSTOM_THROWABLE$0"
+		],
+		"description": "63"
+	},
+	"TF_DMG_CUSTOM_THROWABLE_KILL": {
+		"prefix": "TF_DMG_CUSTOM_THROWABLE_KILL",
+		"body": [
+			"TF_DMG_CUSTOM_THROWABLE_KILL$0"
+		],
+		"description": "64"
+	},
+	"TF_DMG_CUSTOM_TRIGGER_HURT": {
+		"prefix": "TF_DMG_CUSTOM_TRIGGER_HURT",
+		"body": [
+			"TF_DMG_CUSTOM_TRIGGER_HURT$0"
+		],
+		"description": "40"
+	},
+	"TF_DMG_WRENCH_FIX": {
+		"prefix": "TF_DMG_WRENCH_FIX",
+		"body": [
+			"TF_DMG_WRENCH_FIX$0"
+		],
+		"description": "4"
+	},
+	"TF_NAV_BLOCKED": {
+		"prefix": "TF_NAV_BLOCKED",
+		"body": [
+			"TF_NAV_BLOCKED$0"
+		],
+		"description": "1"
+	},
+	"TF_NAV_BLOCKED_AFTER_POINT_CAPTURE": {
+		"prefix": "TF_NAV_BLOCKED_AFTER_POINT_CAPTURE",
+		"body": [
+			"TF_NAV_BLOCKED_AFTER_POINT_CAPTURE$0"
+		],
+		"description": "8192"
+	},
+	"TF_NAV_BLOCKED_UNTIL_POINT_CAPTURE": {
+		"prefix": "TF_NAV_BLOCKED_UNTIL_POINT_CAPTURE",
+		"body": [
+			"TF_NAV_BLOCKED_UNTIL_POINT_CAPTURE$0"
+		],
+		"description": "16384"
+	},
+	"TF_NAV_BLUE_ONE_WAY_DOOR": {
+		"prefix": "TF_NAV_BLUE_ONE_WAY_DOOR",
+		"body": [
+			"TF_NAV_BLUE_ONE_WAY_DOOR$0"
+		],
+		"description": "32768"
+	},
+	"TF_NAV_BLUE_SENTRY_DANGER": {
+		"prefix": "TF_NAV_BLUE_SENTRY_DANGER",
+		"body": [
+			"TF_NAV_BLUE_SENTRY_DANGER$0"
+		],
+		"description": "128"
+	},
+	"TF_NAV_BLUE_SETUP_GATE": {
+		"prefix": "TF_NAV_BLUE_SETUP_GATE",
+		"body": [
+			"TF_NAV_BLUE_SETUP_GATE$0"
+		],
+		"description": "2048"
+	},
+	"TF_NAV_BOMB_CAN_DROP_HERE": {
+		"prefix": "TF_NAV_BOMB_CAN_DROP_HERE",
+		"body": [
+			"TF_NAV_BOMB_CAN_DROP_HERE$0"
+		],
+		"description": "134217728"
+	},
+	"TF_NAV_CONTROL_POINT": {
+		"prefix": "TF_NAV_CONTROL_POINT",
+		"body": [
+			"TF_NAV_CONTROL_POINT$0"
+		],
+		"description": "64"
+	},
+	"TF_NAV_DOOR_ALWAYS_BLOCKS": {
+		"prefix": "TF_NAV_DOOR_ALWAYS_BLOCKS",
+		"body": [
+			"TF_NAV_DOOR_ALWAYS_BLOCKS$0"
+		],
+		"description": "536870912"
+	},
+	"TF_NAV_DOOR_NEVER_BLOCKS": {
+		"prefix": "TF_NAV_DOOR_NEVER_BLOCKS",
+		"body": [
+			"TF_NAV_DOOR_NEVER_BLOCKS$0"
+		],
+		"description": "268435456"
+	},
+	"TF_NAV_ESCAPE_ROUTE": {
+		"prefix": "TF_NAV_ESCAPE_ROUTE",
+		"body": [
+			"TF_NAV_ESCAPE_ROUTE$0"
+		],
+		"description": "8388608"
+	},
+	"TF_NAV_ESCAPE_ROUTE_VISIBLE": {
+		"prefix": "TF_NAV_ESCAPE_ROUTE_VISIBLE",
+		"body": [
+			"TF_NAV_ESCAPE_ROUTE_VISIBLE$0"
+		],
+		"description": "16777216"
+	},
+	"TF_NAV_HAS_AMMO": {
+		"prefix": "TF_NAV_HAS_AMMO",
+		"body": [
+			"TF_NAV_HAS_AMMO$0"
+		],
+		"description": "16"
+	},
+	"TF_NAV_HAS_HEALTH": {
+		"prefix": "TF_NAV_HAS_HEALTH",
+		"body": [
+			"TF_NAV_HAS_HEALTH$0"
+		],
+		"description": "32"
+	},
+	"TF_NAV_INVALID": {
+		"prefix": "TF_NAV_INVALID",
+		"body": [
+			"TF_NAV_INVALID$0"
+		],
+		"description": "0"
+	},
+	"TF_NAV_NO_SPAWNING": {
+		"prefix": "TF_NAV_NO_SPAWNING",
+		"body": [
+			"TF_NAV_NO_SPAWNING$0"
+		],
+		"description": "33554432"
+	},
+	"TF_NAV_PERSISTENT_ATTRIBUTES": {
+		"prefix": "TF_NAV_PERSISTENT_ATTRIBUTES",
+		"body": [
+			"TF_NAV_PERSISTENT_ATTRIBUTES$0"
+		],
+		"description": "1988098048"
+	},
+	"TF_NAV_RED_ONE_WAY_DOOR": {
+		"prefix": "TF_NAV_RED_ONE_WAY_DOOR",
+		"body": [
+			"TF_NAV_RED_ONE_WAY_DOOR$0"
+		],
+		"description": "65536"
+	},
+	"TF_NAV_RED_SENTRY_DANGER": {
+		"prefix": "TF_NAV_RED_SENTRY_DANGER",
+		"body": [
+			"TF_NAV_RED_SENTRY_DANGER$0"
+		],
+		"description": "256"
+	},
+	"TF_NAV_RED_SETUP_GATE": {
+		"prefix": "TF_NAV_RED_SETUP_GATE",
+		"body": [
+			"TF_NAV_RED_SETUP_GATE$0"
+		],
+		"description": "4096"
+	},
+	"TF_NAV_RESCUE_CLOSET": {
+		"prefix": "TF_NAV_RESCUE_CLOSET",
+		"body": [
+			"TF_NAV_RESCUE_CLOSET$0"
+		],
+		"description": "67108864"
+	},
+	"TF_NAV_SENTRY_SPOT": {
+		"prefix": "TF_NAV_SENTRY_SPOT",
+		"body": [
+			"TF_NAV_SENTRY_SPOT$0"
+		],
+		"description": "4194304"
+	},
+	"TF_NAV_SNIPER_SPOT": {
+		"prefix": "TF_NAV_SNIPER_SPOT",
+		"body": [
+			"TF_NAV_SNIPER_SPOT$0"
+		],
+		"description": "2097152"
+	},
+	"TF_NAV_SPAWN_ROOM_BLUE": {
+		"prefix": "TF_NAV_SPAWN_ROOM_BLUE",
+		"body": [
+			"TF_NAV_SPAWN_ROOM_BLUE$0"
+		],
+		"description": "4"
+	},
+	"TF_NAV_SPAWN_ROOM_EXIT": {
+		"prefix": "TF_NAV_SPAWN_ROOM_EXIT",
+		"body": [
+			"TF_NAV_SPAWN_ROOM_EXIT$0"
+		],
+		"description": "8"
+	},
+	"TF_NAV_SPAWN_ROOM_RED": {
+		"prefix": "TF_NAV_SPAWN_ROOM_RED",
+		"body": [
+			"TF_NAV_SPAWN_ROOM_RED$0"
+		],
+		"description": "2"
+	},
+	"TF_NAV_UNBLOCKABLE": {
+		"prefix": "TF_NAV_UNBLOCKABLE",
+		"body": [
+			"TF_NAV_UNBLOCKABLE$0"
+		],
+		"description": "1073741824"
+	},
+	"TF_NAV_WITH_FIFTH_POINT": {
+		"prefix": "TF_NAV_WITH_FIFTH_POINT",
+		"body": [
+			"TF_NAV_WITH_FIFTH_POINT$0"
+		],
+		"description": "1048576"
+	},
+	"TF_NAV_WITH_FOURTH_POINT": {
+		"prefix": "TF_NAV_WITH_FOURTH_POINT",
+		"body": [
+			"TF_NAV_WITH_FOURTH_POINT$0"
+		],
+		"description": "524288"
+	},
+	"TF_NAV_WITH_SECOND_POINT": {
+		"prefix": "TF_NAV_WITH_SECOND_POINT",
+		"body": [
+			"TF_NAV_WITH_SECOND_POINT$0"
+		],
+		"description": "131072"
+	},
+	"TF_NAV_WITH_THIRD_POINT": {
+		"prefix": "TF_NAV_WITH_THIRD_POINT",
+		"body": [
+			"TF_NAV_WITH_THIRD_POINT$0"
+		],
+		"description": "262144"
+	},
+	"TF_TEAM_BLUE": {
+		"prefix": "TF_TEAM_BLUE",
+		"body": [
+			"TF_TEAM_BLUE$0"
+		],
+		"description": "3"
+	},
+	"TF_TEAM_COUNT": {
+		"prefix": "TF_TEAM_COUNT",
+		"body": [
+			"TF_TEAM_COUNT$0"
+		],
+		"description": "4"
+	},
+	"TF_TEAM_PVE_DEFENDERS": {
+		"prefix": "TF_TEAM_PVE_DEFENDERS",
+		"body": [
+			"TF_TEAM_PVE_DEFENDERS$0"
+		],
+		"description": "2"
+	},
+	"TF_TEAM_PVE_INVADERS": {
+		"prefix": "TF_TEAM_PVE_INVADERS",
+		"body": [
+			"TF_TEAM_PVE_INVADERS$0"
+		],
+		"description": "3"
+	},
+	"TF_TEAM_PVE_INVADERS_GIANTS": {
+		"prefix": "TF_TEAM_PVE_INVADERS_GIANTS",
+		"body": [
+			"TF_TEAM_PVE_INVADERS_GIANTS$0"
+		],
+		"description": "4"
+	},
+	"TF_TEAM_RED": {
+		"prefix": "TF_TEAM_RED",
+		"body": [
+			"TF_TEAM_RED$0"
+		],
+		"description": "2"
 	},
 	"void TakeDamage(float flDamage, int nDamageType, handle hAttacker)": {
 		"prefix": "TakeDamage",
@@ -5319,6 +9890,13 @@
 			"TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType})$0"
 		],
 		"description": ""
+	},
+	"Tau": {
+		"prefix": "Tau",
+		"body": [
+			"Tau$0"
+		],
+		"description": "6.28319"
 	},
 	"void Teleport(bool, Vector, bool, QAngle, bool, Vector)": {
 		"prefix": "Teleport",
@@ -5403,6 +9981,27 @@
 			"TryToPickupBuilding()$0"
 		],
 		"description": "Make the player attempt to pick up a building in front of them"
+	},
+	"UNDEFINED": {
+		"prefix": "UNDEFINED",
+		"body": [
+			"UNDEFINED$0"
+		],
+		"description": "-1"
+	},
+	"UP": {
+		"prefix": "UP",
+		"body": [
+			"UP$0"
+		],
+		"description": "4"
+	},
+	"USE_BOSS_HEALTH_BAR": {
+		"prefix": "USE_BOSS_HEALTH_BAR",
+		"body": [
+			"USE_BOSS_HEALTH_BAR$0"
+		],
+		"description": "65536"
 	},
 	"void UnblockArea()": {
 		"prefix": "UnblockArea",
@@ -5537,6 +10136,13 @@
 		],
 		"description": "Is this weapon visible in weapon selection"
 	},
+	"WEST": {
+		"prefix": "WEST",
+		"body": [
+			"WEST$0"
+		],
+		"description": "3"
+	},
 	"void Walk()": {
 		"prefix": "Walk",
 		"body": [
@@ -5557,6 +10163,13 @@
 			"Yaw()$0"
 		],
 		"description": ""
+	},
+	"Zero": {
+		"prefix": "Zero",
+		"body": [
+			"Zero$0"
+		],
+		"description": "0"
 	},
 	"void __CollectEventCallbacks(scope, prefix, globalTableName, regFunc)": {
 		"prefix": "__CollectEventCallbacks",
@@ -5645,35 +10258,35 @@
 	"_charsize_": {
 		"prefix": "_charsize_",
 		"body": [
-			""
+			"_charsize_$0"
 		],
 		"description": ""
 	},
 	"_floatsize_": {
 		"prefix": "_floatsize_",
 		"body": [
-			""
+			"_floatsize_$0"
 		],
 		"description": ""
 	},
 	"_intsize_": {
 		"prefix": "_intsize_",
 		"body": [
-			""
+			"_intsize_$0"
 		],
 		"description": ""
 	},
 	"_version_": {
 		"prefix": "_version_",
 		"body": [
-			""
+			"_version_$0"
 		],
 		"description": ""
 	},
 	"_versionnumber_": {
 		"prefix": "_versionnumber_",
 		"body": [
-			""
+			"_versionnumber_$0"
 		],
 		"description": ""
 	},
@@ -5872,6 +10485,370 @@
 			"getstackinfos(${1:int stacklevel})$0"
 		],
 		"description": "Returns the stack frame informations at the given stack level (0 is the current function 1 is the caller and so on). If the stack level doesn't exist the function returns null."
+	},
+	"kHolidayCount": {
+		"prefix": "kHolidayCount",
+		"body": [
+			"kHolidayCount$0"
+		],
+		"description": "13"
+	},
+	"kHoliday_AprilFools": {
+		"prefix": "kHoliday_AprilFools",
+		"body": [
+			"kHoliday_AprilFools$0"
+		],
+		"description": "11"
+	},
+	"kHoliday_Christmas": {
+		"prefix": "kHoliday_Christmas",
+		"body": [
+			"kHoliday_Christmas$0"
+		],
+		"description": "3"
+	},
+	"kHoliday_CommunityUpdate": {
+		"prefix": "kHoliday_CommunityUpdate",
+		"body": [
+			"kHoliday_CommunityUpdate$0"
+		],
+		"description": "4"
+	},
+	"kHoliday_EOTL": {
+		"prefix": "kHoliday_EOTL",
+		"body": [
+			"kHoliday_EOTL$0"
+		],
+		"description": "5"
+	},
+	"kHoliday_FullMoon": {
+		"prefix": "kHoliday_FullMoon",
+		"body": [
+			"kHoliday_FullMoon$0"
+		],
+		"description": "8"
+	},
+	"kHoliday_Halloween": {
+		"prefix": "kHoliday_Halloween",
+		"body": [
+			"kHoliday_Halloween$0"
+		],
+		"description": "2"
+	},
+	"kHoliday_HalloweenOrFullMoon": {
+		"prefix": "kHoliday_HalloweenOrFullMoon",
+		"body": [
+			"kHoliday_HalloweenOrFullMoon$0"
+		],
+		"description": "9"
+	},
+	"kHoliday_HalloweenOrFullMoonOrValentines": {
+		"prefix": "kHoliday_HalloweenOrFullMoonOrValentines",
+		"body": [
+			"kHoliday_HalloweenOrFullMoonOrValentines$0"
+		],
+		"description": "10"
+	},
+	"kHoliday_MeetThePyro": {
+		"prefix": "kHoliday_MeetThePyro",
+		"body": [
+			"kHoliday_MeetThePyro$0"
+		],
+		"description": "7"
+	},
+	"kHoliday_None": {
+		"prefix": "kHoliday_None",
+		"body": [
+			"kHoliday_None$0"
+		],
+		"description": "0"
+	},
+	"kHoliday_Soldier": {
+		"prefix": "kHoliday_Soldier",
+		"body": [
+			"kHoliday_Soldier$0"
+		],
+		"description": "12"
+	},
+	"kHoliday_TFBirthday": {
+		"prefix": "kHoliday_TFBirthday",
+		"body": [
+			"kHoliday_TFBirthday$0"
+		],
+		"description": "1"
+	},
+	"kHoliday_Valentines": {
+		"prefix": "kHoliday_Valentines",
+		"body": [
+			"kHoliday_Valentines$0"
+		],
+		"description": "6"
+	},
+	"kRenderEnvironmental": {
+		"prefix": "kRenderEnvironmental",
+		"body": [
+			"kRenderEnvironmental$0"
+		],
+		"description": "6"
+	},
+	"kRenderFxClampMinScale": {
+		"prefix": "kRenderFxClampMinScale",
+		"body": [
+			"kRenderFxClampMinScale$0"
+		],
+		"description": "19"
+	},
+	"kRenderFxDistort": {
+		"prefix": "kRenderFxDistort",
+		"body": [
+			"kRenderFxDistort$0"
+		],
+		"description": "15"
+	},
+	"kRenderFxEnvRain": {
+		"prefix": "kRenderFxEnvRain",
+		"body": [
+			"kRenderFxEnvRain$0"
+		],
+		"description": "20"
+	},
+	"kRenderFxEnvSnow": {
+		"prefix": "kRenderFxEnvSnow",
+		"body": [
+			"kRenderFxEnvSnow$0"
+		],
+		"description": "21"
+	},
+	"kRenderFxExplode": {
+		"prefix": "kRenderFxExplode",
+		"body": [
+			"kRenderFxExplode$0"
+		],
+		"description": "17"
+	},
+	"kRenderFxFadeFast": {
+		"prefix": "kRenderFxFadeFast",
+		"body": [
+			"kRenderFxFadeFast$0"
+		],
+		"description": "6"
+	},
+	"kRenderFxFadeSlow": {
+		"prefix": "kRenderFxFadeSlow",
+		"body": [
+			"kRenderFxFadeSlow$0"
+		],
+		"description": "5"
+	},
+	"kRenderFxFlickerFast": {
+		"prefix": "kRenderFxFlickerFast",
+		"body": [
+			"kRenderFxFlickerFast$0"
+		],
+		"description": "13"
+	},
+	"kRenderFxFlickerSlow": {
+		"prefix": "kRenderFxFlickerSlow",
+		"body": [
+			"kRenderFxFlickerSlow$0"
+		],
+		"description": "12"
+	},
+	"kRenderFxGlowShell": {
+		"prefix": "kRenderFxGlowShell",
+		"body": [
+			"kRenderFxGlowShell$0"
+		],
+		"description": "18"
+	},
+	"kRenderFxHologram": {
+		"prefix": "kRenderFxHologram",
+		"body": [
+			"kRenderFxHologram$0"
+		],
+		"description": "16"
+	},
+	"kRenderFxMax": {
+		"prefix": "kRenderFxMax",
+		"body": [
+			"kRenderFxMax$0"
+		],
+		"description": "25"
+	},
+	"kRenderFxNoDissipation": {
+		"prefix": "kRenderFxNoDissipation",
+		"body": [
+			"kRenderFxNoDissipation$0"
+		],
+		"description": "14"
+	},
+	"kRenderFxNone": {
+		"prefix": "kRenderFxNone",
+		"body": [
+			"kRenderFxNone$0"
+		],
+		"description": "0"
+	},
+	"kRenderFxPulseFast": {
+		"prefix": "kRenderFxPulseFast",
+		"body": [
+			"kRenderFxPulseFast$0"
+		],
+		"description": "2"
+	},
+	"kRenderFxPulseFastWide": {
+		"prefix": "kRenderFxPulseFastWide",
+		"body": [
+			"kRenderFxPulseFastWide$0"
+		],
+		"description": "4"
+	},
+	"kRenderFxPulseFastWider": {
+		"prefix": "kRenderFxPulseFastWider",
+		"body": [
+			"kRenderFxPulseFastWider$0"
+		],
+		"description": "24"
+	},
+	"kRenderFxPulseSlow": {
+		"prefix": "kRenderFxPulseSlow",
+		"body": [
+			"kRenderFxPulseSlow$0"
+		],
+		"description": "1"
+	},
+	"kRenderFxPulseSlowWide": {
+		"prefix": "kRenderFxPulseSlowWide",
+		"body": [
+			"kRenderFxPulseSlowWide$0"
+		],
+		"description": "3"
+	},
+	"kRenderFxRagdoll": {
+		"prefix": "kRenderFxRagdoll",
+		"body": [
+			"kRenderFxRagdoll$0"
+		],
+		"description": "23"
+	},
+	"kRenderFxSolidFast": {
+		"prefix": "kRenderFxSolidFast",
+		"body": [
+			"kRenderFxSolidFast$0"
+		],
+		"description": "8"
+	},
+	"kRenderFxSolidSlow": {
+		"prefix": "kRenderFxSolidSlow",
+		"body": [
+			"kRenderFxSolidSlow$0"
+		],
+		"description": "7"
+	},
+	"kRenderFxSpotlight": {
+		"prefix": "kRenderFxSpotlight",
+		"body": [
+			"kRenderFxSpotlight$0"
+		],
+		"description": "22"
+	},
+	"kRenderFxStrobeFast": {
+		"prefix": "kRenderFxStrobeFast",
+		"body": [
+			"kRenderFxStrobeFast$0"
+		],
+		"description": "10"
+	},
+	"kRenderFxStrobeFaster": {
+		"prefix": "kRenderFxStrobeFaster",
+		"body": [
+			"kRenderFxStrobeFaster$0"
+		],
+		"description": "11"
+	},
+	"kRenderFxStrobeSlow": {
+		"prefix": "kRenderFxStrobeSlow",
+		"body": [
+			"kRenderFxStrobeSlow$0"
+		],
+		"description": "9"
+	},
+	"kRenderGlow": {
+		"prefix": "kRenderGlow",
+		"body": [
+			"kRenderGlow$0"
+		],
+		"description": "3"
+	},
+	"kRenderModeCount": {
+		"prefix": "kRenderModeCount",
+		"body": [
+			"kRenderModeCount$0"
+		],
+		"description": "11"
+	},
+	"kRenderNone": {
+		"prefix": "kRenderNone",
+		"body": [
+			"kRenderNone$0"
+		],
+		"description": "10"
+	},
+	"kRenderNormal": {
+		"prefix": "kRenderNormal",
+		"body": [
+			"kRenderNormal$0"
+		],
+		"description": "0"
+	},
+	"kRenderTransAdd": {
+		"prefix": "kRenderTransAdd",
+		"body": [
+			"kRenderTransAdd$0"
+		],
+		"description": "5"
+	},
+	"kRenderTransAddFrameBlend": {
+		"prefix": "kRenderTransAddFrameBlend",
+		"body": [
+			"kRenderTransAddFrameBlend$0"
+		],
+		"description": "7"
+	},
+	"kRenderTransAlpha": {
+		"prefix": "kRenderTransAlpha",
+		"body": [
+			"kRenderTransAlpha$0"
+		],
+		"description": "4"
+	},
+	"kRenderTransAlphaAdd": {
+		"prefix": "kRenderTransAlphaAdd",
+		"body": [
+			"kRenderTransAlphaAdd$0"
+		],
+		"description": "8"
+	},
+	"kRenderTransColor": {
+		"prefix": "kRenderTransColor",
+		"body": [
+			"kRenderTransColor$0"
+		],
+		"description": "1"
+	},
+	"kRenderTransTexture": {
+		"prefix": "kRenderTransTexture",
+		"body": [
+			"kRenderTransTexture$0"
+		],
+		"description": "2"
+	},
+	"kRenderWorldGlow": {
+		"prefix": "kRenderWorldGlow",
+		"body": [
+			"kRenderWorldGlow$0"
+		],
+		"description": "9"
 	},
 	"log(num x)": {
 		"prefix": "log",

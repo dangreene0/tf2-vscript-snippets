@@ -1,4 +1,5 @@
-lines = open("defs.txt", "r").readlines()
+defs = open("defs.txt", "r")
+lines = defs.readlines()
 functions = {}
 i = 0
 mostRecentFunction = ""
@@ -17,6 +18,7 @@ for line in lines:
                 functions[mostRecentFunction]["description"] = text.replace("\"", "\\\"")
 
     i += 1
+defs.close()
 
 outputString = "{\n\t///// BEGIN TF2 VScript Snippets /////\n"
 sortedKeys = sorted(list(functions.keys()))
@@ -39,7 +41,8 @@ for key in sortedKeys:
                 i += 1
         body += ")$0"
     else:
-        prefix = baseSignature
+        # This is a constant
+        prefix, body = baseSignature, baseSignature + "$0"
 
     outputString += ("\t\"" + baseSignature + "\": {\n\t\t\"prefix\": \"" + prefix + "\",\n\t\t\"body\": [\n\t\t\t\"" + body + "\"\n\t\t],\n\t\t\"description\": \"" + functions[key]["description"] + "\"\n\t},\n")
 outputString = outputString[:len(outputString)-2] + "\n\t///// END TF2 VScript Snippets /////\n}"
