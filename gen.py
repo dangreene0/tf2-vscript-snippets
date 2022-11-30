@@ -14,10 +14,11 @@ for line in lines:
                 functions[mostRecentFunction]["signature"] = text
         case "description":
             if (functions[mostRecentFunction]["description"] == ""):
-                functions[mostRecentFunction]["description"] = text
+                functions[mostRecentFunction]["description"] = text.replace("\"", "\\\"")
 
     i += 1
 
+outputString = "{\n\t///// BEGIN TF2 VScript Snippets /////\n"
 sortedKeys = sorted(list(functions.keys()))
 for key in sortedKeys:
 
@@ -40,4 +41,6 @@ for key in sortedKeys:
     else:
         prefix = baseSignature
 
-    print("\"" + baseSignature + "\": {\n\t\"prefix\": \"" + prefix + "\",\n\t\"body\": [\n\t\t\"" + body + "\"\n\t],\n\t\"description\": \"" + functions[key]["description"] + "\"\n},\n", end="")
+    outputString += ("\t\"" + baseSignature + "\": {\n\t\t\"prefix\": \"" + prefix + "\",\n\t\t\"body\": [\n\t\t\t\"" + body + "\"\n\t\t],\n\t\t\"description\": \"" + functions[key]["description"] + "\"\n\t},\n")
+outputString = outputString[:len(outputString)-2] + "\n\t///// END TF2 VScript Snippets /////\n}"
+print(outputString, end="")
