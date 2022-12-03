@@ -7,3 +7,7 @@ Source pages: [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script
 1. `Ctrl+Shift+P` to open command palette. Run `Snippets: Configure User Snippets`.
 2. Select the `squirrel` option.
 3. Replace the new document's text with the text of this repo's `squirrel.json`.
+
+## Contributors
+- Zachary Talis
+- treacherousfiend
