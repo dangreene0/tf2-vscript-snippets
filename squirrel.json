@@ -3185,6 +3185,13 @@
 		],
 		"description": "Return the last nav area occupied - NULL if unknown"
 	},
+	"GetLastWeapon()": {
+		"prefix": "GetLastWeapon",
+		"body": [
+			"GetLastWeapon()$0"
+		],
+		"description": ""
+	},
 	"Vector GetLeftVector()": {
 		"prefix": "GetLeftVector",
 		"body": [
@@ -4633,6 +4640,13 @@
 			"IncludeScript(${1:string file}, ${2:handle scope = null})$0"
 		],
 		"description": "Wrapper for DoIncludeScript"
+	},
+	"bool Input[InputName]()": {
+		"prefix": "Input[InputName]",
+		"body": [
+			"Input[InputName]()$0"
+		],
+		"description": "Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to beInputfollowed by the name of the input with the same casing (PascalCase). E.g. for the FireUser1 input, it would beInputFireUser1. When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variablesactivatorandcaller. The function needs to return a boolean value; Returningtrueprocesses the input, whilefalsecancels it."
 	},
 	"Quaternion Invert()": {
 		"prefix": "Invert",
@@ -6090,6 +6104,20 @@
 		],
 		"description": "Manually run the OnLeaveGround callback. Typically invoked when bot leaves ground for any reason"
 	},
+	"void OnPostSpawn()": {
+		"prefix": "OnPostSpawn",
+		"body": [
+			"OnPostSpawn()$0"
+		],
+		"description": "Called after the entity spawns, which is after scripts and players have loaded. This could be used to have an entity register itself with a master script, or adjusting the entity parameters in a programmatic way."
+	},
+	"void OnTakeDamage(handle params)": {
+		"prefix": "OnTakeDamage",
+		"body": [
+			"OnTakeDamage(${1:handle params})$0"
+		],
+		"description": "Called each time an entity takes damage. The script can modify the table entries not suffixed with const, and these will be sent back to the game code"
+	},
 	"One": {
 		"prefix": "One",
 		"body": [
@@ -6230,6 +6258,27 @@
 		],
 		"description": ""
 	},
+	"void PostSpawn(table entities)": {
+		"prefix": "PostSpawn",
+		"body": [
+			"PostSpawn(${1:table entities})$0"
+		],
+		"description": "Called after the entities are spawned. A table with the handles of the spawned entities indexed by name is passed to the function. Could use this to connect outputs or do whatever needs to be done after the entity was created."
+	},
+	"table PreSpawnInstance(string entityClass, string entityName)": {
+		"prefix": "PreSpawnInstance",
+		"body": [
+			"PreSpawnInstance(${1:string entityClass}, ${2:string entityName})$0"
+		],
+		"description": "If this is defined, it will be called right before the entity is created, and any keyvalues returned will be assigned to the entity."
+	},
+	"void Precache()": {
+		"prefix": "Precache",
+		"body": [
+			"Precache()$0"
+		],
+		"description": "Called after the script executes. Can be used to call precache functions for models and sounds on map load."
+	},
 	"bool PrecacheEntityFromTable(table keyvalues)": {
 		"prefix": "PrecacheEntityFromTable",
 		"body": [
@@ -6355,6 +6404,13 @@
 			"RandomInt(${1:int min}, ${2:int max})$0"
 		],
 		"description": "Generate a random integer within a range, inclusive."
+	},
+	"void ReapplyProvision()": {
+		"prefix": "ReapplyProvision",
+		"body": [
+			"ReapplyProvision()$0"
+		],
+		"description": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player"
 	},
 	"void Regenerate(bool)": {
 		"prefix": "Regenerate",
@@ -10157,6 +10213,55 @@
 		],
 		"description": ""
 	},
+	"bool Weapon_CanUse(handle weapon)": {
+		"prefix": "Weapon_CanUse",
+		"body": [
+			"Weapon_CanUse(${1:handle weapon})$0"
+		],
+		"description": ""
+	},
+	"void Weapon_Drop(handle weapon)": {
+		"prefix": "Weapon_Drop",
+		"body": [
+			"Weapon_Drop(${1:handle weapon})$0"
+		],
+		"description": ""
+	},
+	"void Weapon_Drop(handle weapon, Vector target, Vector velocity)": {
+		"prefix": "Weapon_Drop",
+		"body": [
+			"Weapon_Drop(${1:handle weapon}, ${2:Vector target}, ${3:Vector velocity})$0"
+		],
+		"description": ""
+	},
+	"void Weapon_Equip(handle weapon)": {
+		"prefix": "Weapon_Equip",
+		"body": [
+			"Weapon_Equip(${1:handle weapon})$0"
+		],
+		"description": ""
+	},
+	"void Weapon_SetLast(handle weapon)": {
+		"prefix": "Weapon_SetLast",
+		"body": [
+			"Weapon_SetLast(${1:handle weapon})$0"
+		],
+		"description": ""
+	},
+	"vector Weapon_ShootPosition()": {
+		"prefix": "Weapon_ShootPosition",
+		"body": [
+			"Weapon_ShootPosition()$0"
+		],
+		"description": ""
+	},
+	"void Weapon_Switch(handle weapon)": {
+		"prefix": "Weapon_Switch",
+		"body": [
+			"Weapon_Switch(${1:handle weapon})$0"
+		],
+		"description": ""
+	},
 	"Yaw()": {
 		"prefix": "Yaw",
 		"body": [
@@ -10339,6 +10444,13 @@
 		],
 		"description": "Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (−PI, PI]. Note the order of the parameters x and y!"
 	},
+	"blob(int initSize = 0)": {
+		"prefix": "blob",
+		"body": [
+			"blob(${1:int initSize = 0})$0"
+		],
+		"description": ""
+	},
 	"function callee()": {
 		"prefix": "callee",
 		"body": [
@@ -10430,6 +10542,13 @@
 		],
 		"description": ""
 	},
+	"int eos()": {
+		"prefix": "eos",
+		"body": [
+			"eos()$0"
+		],
+		"description": ""
+	},
 	"void error(string x)": {
 		"prefix": "error",
 		"body": [
@@ -10457,6 +10576,13 @@
 			"floor(${1:num x})$0"
 		],
 		"description": "Returns the largest integer that is x"
+	},
+	"flush()": {
+		"prefix": "flush",
+		"body": [
+			"flush()$0"
+		],
+		"description": ""
 	},
 	"format(string, args...)": {
 		"prefix": "format",
@@ -10850,6 +10976,13 @@
 		],
 		"description": "9"
 	},
+	"int len()": {
+		"prefix": "len",
+		"body": [
+			"len()$0"
+		],
+		"description": ""
+	},
 	"log(num x)": {
 		"prefix": "log",
 		"body": [
@@ -10941,6 +11074,20 @@
 		],
 		"description": "Returns a random integer with 0 <= rand() <= RAND_MAX"
 	},
+	"blob readblob(int numberOfBytes)": {
+		"prefix": "readblob",
+		"body": [
+			"readblob(${1:int numberOfBytes})$0"
+		],
+		"description": ""
+	},
+	"any readn(char dataType)": {
+		"prefix": "readn",
+		"body": [
+			"readn(${1:char dataType})$0"
+		],
+		"description": ""
+	},
 	"void realPrint(string message)": {
 		"prefix": "realPrint",
 		"body": [
@@ -10952,6 +11099,13 @@
 		"prefix": "regexp",
 		"body": [
 			"regexp()$0"
+		],
+		"description": ""
+	},
+	"void resize(int newSize)": {
+		"prefix": "resize",
+		"body": [
+			"resize(${1:int newSize})$0"
 		],
 		"description": ""
 	},
@@ -10982,6 +11136,13 @@
 			"search(${1:str}, ${2:start})$0"
 		],
 		"description": "Returns a table containing two indexes (\"begin\" and \"end\") of the first match of the regular expression in the string st, otherwise if no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
+	},
+	"int seek(int offset, int offsetBasis)": {
+		"prefix": "seek",
+		"body": [
+			"seek(${1:int offset}, ${2:int offsetBasis})$0"
+		],
+		"description": ""
 	},
 	"table setconsttable(table consttable)": {
 		"prefix": "setconsttable",
@@ -11060,12 +11221,40 @@
 		],
 		"description": "Suspends the coroutine that called this function."
 	},
+	"void swap2()": {
+		"prefix": "swap2",
+		"body": [
+			"swap2()$0"
+		],
+		"description": ""
+	},
+	"void swap4()": {
+		"prefix": "swap4",
+		"body": [
+			"swap4()$0"
+		],
+		"description": ""
+	},
+	"float swapfloat(float value)": {
+		"prefix": "swapfloat",
+		"body": [
+			"swapfloat(${1:float value})$0"
+		],
+		"description": "Reverse byte order of the four bytes"
+	},
 	"tan(num x)": {
 		"prefix": "tan",
 		"body": [
 			"tan(${1:num x})$0"
 		],
 		"description": "Returns tan(x)"
+	},
+	"int tell()": {
+		"prefix": "tell",
+		"body": [
+			"tell()$0"
+		],
+		"description": ""
 	},
 	"string tostring()": {
 		"prefix": "tostring",
@@ -11080,6 +11269,20 @@
 			"type(${1:var})$0"
 		],
 		"description": "Returns var._typeof(), i.e. the type of the given parameter as a string"
+	},
+	"void writeblob (blob blob)": {
+		"prefix": "",
+		"body": [
+			"(${1:blob blob})$0"
+		],
+		"description": ""
+	},
+	"void writen(num value, char dataType)": {
+		"prefix": "writen",
+		"body": [
+			"writen(${1:num value}, ${2:char dataType})$0"
+		],
+		"description": ""
 	}
 	///// END TF2 VScript Snippets /////
 }
