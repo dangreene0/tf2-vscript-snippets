@@ -566,6 +566,22 @@ ValidateScriptScope
 bool ValidateScriptScope()
 Ensure that an entity's script scope has been created
 
+Input[InputName]
+bool Input[InputName]()
+Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to beInputfollowed by the name of the input with the same casing (PascalCase). E.g. for the FireUser1 input, it would beInputFireUser1. When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variablesactivatorandcaller. The function needs to return a boolean value; Returningtrueprocesses the input, whilefalsecancels it.
+
+OnPostSpawn
+void OnPostSpawn()
+Called after the entity spawns, which is after scripts and players have loaded. This could be used to have an entity register itself with a master script, or adjusting the entity parameters in a programmatic way.
+
+Precache
+void Precache()
+Called after the script executes. Can be used to call precache functions for models and sounds on map load.
+
+OnTakeDamage
+void OnTakeDamage(handle params)
+Called each time an entity takes damage. The script can modify the table entries not suffixed with const, and these will be sent back to the game code
+
 DispatchAnimEvents
 void DispatchAnimEvents(handle)
 Dispatch animation events to a CBaseAnimating
@@ -902,6 +918,10 @@ RemoveAttribute
 void RemoveAttribute(string)
 Remove an attribute to the entity
 
+ReapplyProvision
+void ReapplyProvision()
+Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player
+
 AddCond
 void AddCond(ETFCond cond)
 
@@ -1074,6 +1094,10 @@ GetKillAssists
 int GetKillAssists()
 
 
+GetLastWeapon
+GetLastWeapon()
+
+
 GetNextChangeClassTime
 float GetNextChangeClassTime()
 Get next change class time.
@@ -1234,10 +1258,6 @@ IsViewingCYOAPDA
 bool IsViewingCYOAPDA()
 
 
-IsViewingCYOAPDA
-bool IsViewingCYOAPDA()
-
-
 Regenerate
 void Regenerate(bool)
 Resupplies a player. If regen health/ammo is set, clears negative conds, gives back player health/ammo
@@ -1376,6 +1396,34 @@ Make the player attempt to pick up a building in front of them
 
 WasInCond
 bool WasInCond(ETFCond cond)
+
+
+Weapon_CanUse
+bool Weapon_CanUse(handle weapon)
+
+
+Weapon_Drop
+void Weapon_Drop(handle weapon)
+
+
+Weapon_DropEx
+void Weapon_Drop(handle weapon, Vector target, Vector velocity)
+
+
+Weapon_Equip
+void Weapon_Equip(handle weapon)
+
+
+Weapon_SetLast
+void Weapon_SetLast(handle weapon)
+
+
+Weapon_ShootPosition
+vector Weapon_ShootPosition()
+
+
+Weapon_Switch
+void Weapon_Switch(handle weapon)
 
 
 AddBotAttribute
@@ -2153,6 +2201,14 @@ Create an entity at a specified location and orientaton, orientation is Euler an
 SpawnEntityAtNamedEntityOrigin
 void SpawnEntityAtNamedEntityOrigin(string)
 Create an entity at the location of a named entity
+
+PreSpawnInstance
+table PreSpawnInstance(string entityClass, string entityName)
+If this is defined, it will be called right before the entity is created, and any keyvalues returned will be assigned to the entity.
+
+PostSpawn
+void PostSpawn(table entities)
+Called after the entities are spawned. A table with the handles of the spawned entities indexed by name is passed to the function. Could use this to connect outputs or do whatever needs to be done after the entity was created.
 
 GetFuturePosition
 Vector GetFuturePosition(float, float)
@@ -3426,9 +3482,73 @@ suspend
 void suspend(any ret)
 Suspends the coroutine that called this function.
 
+swap2
+int swap2(int value)
+Swaps bytes 1 and 2 of the integer
+
+swap4
+int swap4(int value)
+Reverse byte order of the four bytes
+
+swapfloat
+float swapfloat(float value)
+Reverse byte order of the four bytes
+
 type
 type(var)
 Returns var._typeof(), i.e. the type of the given parameter as a string
+
+blob
+blob(int initSize = 0)
+
+
+eos
+int eos()
+
+
+flush
+flush()
+
+
+len
+int len()
+
+
+readblob
+blob readblob(int numberOfBytes)
+
+
+readn
+any readn(char dataType)
+
+
+resize
+void resize(int newSize)
+
+
+seek
+int seek(int offset, int offsetBasis)
+
+
+swap2
+void swap2()
+
+
+swap4
+void swap4()
+
+
+tell
+int tell()
+
+
+writeblob
+void writeblob (blob blob)
+
+
+writen
+void writen(num value, char dataType)
+
 
 abs
 abs(num x)
