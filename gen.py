@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 defs = open("defs.txt", "r")
 lines = defs.readlines()
 functions = {}

@@ -8,6 +8,12 @@ Source pages: [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script
 2. Select the `squirrel` option.
 3. Replace the new document's text with the text of this repo's `squirrel.json`.
 
+## Installing snippets into Sublime Editor
+Sublime Editor support exists in this repo, but should be considered unmaintained.
+1. `Ctrl+Shift+P` to open command palette. Run `Preferences: Browse Packages`.
+2. In `User`, make a new folder called `tf2-snippets` containing the empty document `tf2-snippets.sublime-completions`.
+3. Replace the new document's text with the text of this repo's `tf2-snippets.sublime-completions`.
+
 ## Contributors
 - Zachary Talis
 - treacherousfiend
