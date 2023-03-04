@@ -17,3 +17,4 @@ Sublime Text support exists in this repo, but should be considered unmaintained.
 ## Contributors
 - Zachary Talis
 - treacherousfiend
+- xChillax

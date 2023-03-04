@@ -2253,7 +2253,7 @@
 			"annotation": "bool FireScriptHook(string, handle)",
 			"contents": "FireScriptHook(${1:string}, ${2:handle})$0",
 			"kind": "keyword",
-			"details": "Fire a script hoook to a listening callback function in script. Parameters are passed in a squirrel table."
+			"details": "Fire a script hook to a listening callback function in script. Parameters are passed in a squirrel table."
 		},
 		{
 			"trigger": "FiringTalk",
