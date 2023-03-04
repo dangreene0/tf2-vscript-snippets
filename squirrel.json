@@ -2252,7 +2252,7 @@
 		"body": [
 			"FireScriptHook(${1:string}, ${2:handle})$0"
 		],
-		"description": "Fire a script hoook to a listening callback function in script. Parameters are passed in a squirrel table."
+		"description": "Fire a script hook to a listening callback function in script. Parameters are passed in a squirrel table."
 	},
 	"void FiringTalk()": {
 		"prefix": "FiringTalk",
