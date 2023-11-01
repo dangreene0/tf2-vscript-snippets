@@ -42,31 +42,31 @@
 		],
 		"description": "262144"
 	},
-	"void AddAttribute(string, float, float)": {
+	"void AddAttribute(string name, float value, float duration)": {
 		"prefix": "AddAttribute",
 		"body": [
-			"AddAttribute(${1:string}, ${2:float}, ${3:float})$0"
+			"AddAttribute(${1:string name}, ${2:float value}, ${3:float duration})$0"
 		],
-		"description": "Add an attribute to the entity"
+		"description": "Add an attribute to the entity. Set duration to -1 for the attribute to be applied forever."
 	},
-	"void AddBotAttribute(int)": {
+	"void AddBotAttribute(int attribute)": {
 		"prefix": "AddBotAttribute",
 		"body": [
-			"AddBotAttribute(${1:int})$0"
+			"AddBotAttribute(${1:int attribute})$0"
 		],
 		"description": "Sets attribute flags on this TFBot"
 	},
-	"void AddBotTag(string)": {
+	"void AddBotTag(string tag)": {
 		"prefix": "AddBotTag",
 		"body": [
-			"AddBotTag(${1:string})$0"
+			"AddBotTag(${1:string tag})$0"
 		],
 		"description": "Adds a bot tag"
 	},
-	"void AddBroadcastTeamTarget(int)": {
+	"void AddBroadcastTeamTarget(int index)": {
 		"prefix": "AddBroadcastTeamTarget",
 		"body": [
-			"AddBroadcastTeamTarget(${1:int})$0"
+			"AddBroadcastTeamTarget(${1:int index})$0"
 		],
 		"description": "Adds a team (by index) to the broadcast list"
 	},
@@ -84,26 +84,40 @@
 		],
 		"description": ""
 	},
-	"void AddCustomAttribute(string, float, float)": {
+	"void AddCurrency(int amount)": {
+		"prefix": "AddCurrency",
+		"body": [
+			"AddCurrency(${1:int amount})$0"
+		],
+		"description": "Kaching! Give the player some cash for game modes with upgrades, ie. MvM"
+	},
+	"void AddCustomAttribute(string name, float value, float duration)": {
 		"prefix": "AddCustomAttribute",
 		"body": [
-			"AddCustomAttribute(${1:string}, ${2:float}, ${3:float})$0"
+			"AddCustomAttribute(${1:string name}, ${2:float value}, ${3:float duration})$0"
 		],
-		"description": "Add a custom attribute to the player"
+		"description": "Add a custom attribute to the player. Set duration to -1 for the attribute to be applied forever."
 	},
-	"AddEFlags(int)": {
+	"void AddEFlags(int flags)": {
 		"prefix": "AddEFlags",
 		"body": [
-			"AddEFlags(${1:int})$0"
+			"AddEFlags(${1:int flags})$0"
 		],
-		"description": ""
+		"description": "Adds the supplied flags to the Entity Flags in the entity. (m_iEFlags datamap). See Constants.FEntityEFlags."
 	},
-	"AddFlag(int)": {
+	"void AddFlag(int flags)": {
 		"prefix": "AddFlag",
 		"body": [
-			"AddFlag(${1:int})$0"
+			"AddFlag(${1:int flags})$0"
 		],
-		"description": ""
+		"description": "Adds the supplied flags to another separate player-related entity flags system in the entity. (m_fFlags datamap). See Constants.FPlayer."
+	},
+	"void AddHudHideFlags(int flags)": {
+		"prefix": "AddHudHideFlags",
+		"body": [
+			"AddHudHideFlags(${1:int flags})$0"
+		],
+		"description": "Hides a hud element based on Constants.FHideHUD"
 	},
 	"void AddIncomingConnection(handle area, int dir)": {
 		"prefix": "AddIncomingConnection",
@@ -119,17 +133,17 @@
 		],
 		"description": "Adds a new output to the entity."
 	},
-	"AddSolidFlags(int)": {
+	"void AddSolidFlags(int flags)": {
 		"prefix": "AddSolidFlags",
 		"body": [
-			"AddSolidFlags(${1:int})$0"
+			"AddSolidFlags(${1:int flags})$0"
 		],
-		"description": ""
+		"description": "Adds the supplied flags to the Solid Flags in the entity. (m_Collision.m_usSolidFlags datamap). See Constants.FSolid."
 	},
-	"void AddTemplate(string, handle)": {
+	"void AddTemplate(string, table)": {
 		"prefix": "AddTemplate",
 		"body": [
-			"AddTemplate(${1:string}, ${2:handle})$0"
+			"AddTemplate(${1:string}, ${2:table})$0"
 		],
 		"description": "Add an entity to the template spawner"
 	},
@@ -138,7 +152,7 @@
 		"body": [
 			"AddThinkToEnt(${1:handle entity}, ${2:string FuncName})$0"
 		],
-		"description": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function."
+		"description": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function"
 	},
 	"AddToScriptHelp()": {
 		"prefix": "AddToScriptHelp",
@@ -147,10 +161,10 @@
 		],
 		"description": ""
 	},
-	"void AddWeaponRestriction(int)": {
+	"void AddWeaponRestriction(int flags)": {
 		"prefix": "AddWeaponRestriction",
 		"body": [
-			"AddWeaponRestriction(${1:int})$0"
+			"AddWeaponRestriction(${1:int flags})$0"
 		],
 		"description": "Adds weapon restriction flags"
 	},
@@ -161,33 +175,33 @@
 		],
 		"description": ""
 	},
-	"void ApplyAbsVelocityImpulse(Vector)": {
+	"void ApplyAbsVelocityImpulse(Vector impulse)": {
 		"prefix": "ApplyAbsVelocityImpulse",
 		"body": [
-			"ApplyAbsVelocityImpulse(${1:Vector})$0"
+			"ApplyAbsVelocityImpulse(${1:Vector impulse})$0"
 		],
-		"description": "Apply a Velocity Impulse"
+		"description": "Apply a Velocity Impulse as a world space impulse vector. Works for most physics-based objects including dropped weapons and even dropped Sandviches."
 	},
-	"void ApplyLocalAngularVelocityImpulse(Vector)": {
+	"void ApplyLocalAngularVelocityImpulse(Vector impulse)": {
 		"prefix": "ApplyLocalAngularVelocityImpulse",
 		"body": [
-			"ApplyLocalAngularVelocityImpulse(${1:Vector})$0"
+			"ApplyLocalAngularVelocityImpulse(${1:Vector impulse})$0"
 		],
-		"description": "Apply an Ang Velocity Impulse"
+		"description": "Apply an Angular Velocity Impulse in entity local space. The direction of the input vector is the rotation axis, and the length is the magnitude of the impulse."
 	},
-	"bool ApplyPunchImpulseX(float)": {
+	"bool ApplyPunchImpulseX(float impulse)": {
 		"prefix": "ApplyPunchImpulseX",
 		"body": [
-			"ApplyPunchImpulseX(${1:float})$0"
+			"ApplyPunchImpulseX(${1:float impulse})$0"
 		],
-		"description": ""
+		"description": "Apply a view punch along the pitch angle. Used to flinch players when hit. If the player is a fully charged scoped-in sniper and the weapon has the aiming_no_flinch attribute, the punch will not apply. Returns true if the punch was applied."
 	},
-	"void Approach(Vector, float)": {
+	"void Approach(Vector goal, float goalWeight)": {
 		"prefix": "Approach",
 		"body": [
-			"Approach(${1:Vector}, ${2:float})$0"
+			"Approach(${1:Vector goal}, ${2:float goalWeight})$0"
 		],
-		"description": "The primary locomotive method. Sets the goal destination for the bot"
+		"description": "The primary locomotive method. Goal determines the destination position to move towards. goalWeight determines the priority of this path, you can set this to 1.0 generally speaking."
 	},
 	"bool ArePlayersInHell()": {
 		"prefix": "ArePlayersInHell",
@@ -196,10 +210,10 @@
 		],
 		"description": ""
 	},
-	"void Assert(bool value, string optional message)": {
+	"void Assert(bool value, string optional_message)": {
 		"prefix": "Assert",
 		"body": [
-			"Assert(${1:bool value}, ${2:string optional message})$0"
+			"Assert(${1:bool value}, ${2:string optional_message})$0"
 		],
 		"description": "Test value and if not true, throws exception, optionally with message."
 	},
@@ -231,12 +245,12 @@
 		],
 		"description": "8388608"
 	},
-	"bool BecomeRagdollOnClient(Vector)": {
+	"bool BecomeRagdollOnClient(Vector impulse)": {
 		"prefix": "BecomeRagdollOnClient",
 		"body": [
-			"BecomeRagdollOnClient(${1:Vector})$0"
+			"BecomeRagdollOnClient(${1:Vector impulse})$0"
 		],
-		"description": "Becomes a ragdoll with a force"
+		"description": "Acts like the BecomeRagdoll input, with the required impulse value applied as a force on the ragdoll. Does NOT spawn a prop_ragdoll or any other entity."
 	},
 	"Begin()": {
 		"prefix": "Begin",
@@ -245,26 +259,33 @@
 		],
 		"description": ""
 	},
-	"BeginScriptDebug()": {
+	"void BeginScriptDebug()": {
 		"prefix": "BeginScriptDebug",
 		"body": [
 			"BeginScriptDebug()$0"
 		],
 		"description": ""
 	},
-	"void BleedPlayer(float)": {
+	"void BleedPlayer(float duration)": {
 		"prefix": "BleedPlayer",
 		"body": [
-			"BleedPlayer(${1:float})$0"
+			"BleedPlayer(${1:float duration})$0"
 		],
-		"description": ""
+		"description": "Make a player bleed for a set duration of time."
 	},
-	"void BleedPlayerEx(float, int, bool, int)": {
+	"void BleedPlayerEx(float duration, int damage, bool endless, int nCustomDamageType)": {
 		"prefix": "BleedPlayerEx",
 		"body": [
-			"BleedPlayerEx(${1:float}, ${2:int}, ${3:bool}, ${4:int})$0"
+			"BleedPlayerEx(${1:float duration}, ${2:int damage}, ${3:bool endless}, ${4:int nCustomDamageType})$0"
 		],
-		"description": ""
+		"description": "Make a player bleed for a set duration of time, or forever, with specific damage per tick and damage_custom index."
+	},
+	"CCallChainer(string functionPrefix, table scope = null)": {
+		"prefix": "CCallChainer",
+		"body": [
+			"CCallChainer(${1:string functionPrefix}, ${2:table scope = null})$0"
+		],
+		"description": "Creates a CCallChainer object that'll collect functions that have a matching prefix in the given scope."
 	},
 	"COLLISION_GROUP_BREAKABLE_GLASS": {
 		"prefix": "COLLISION_GROUP_BREAKABLE_GLASS",
@@ -651,19 +672,26 @@
 		],
 		"description": "0"
 	},
-	"Call()": {
+	"CSimpleCallChainer(string functionPrefix, table scope = null, exactMatch = false)": {
+		"prefix": "CSimpleCallChainer",
+		"body": [
+			"CSimpleCallChainer(${1:string functionPrefix}, ${2:table scope = null}, ${3:exactMatch = false})$0"
+		],
+		"description": "Creates a CSimpleCallChainer object that'll collect functions that have a matching prefix in the given scope, unless it seek for an exact name match."
+	},
+	"bool Call(any ...)": {
 		"prefix": "Call",
 		"body": [
-			"Call()$0"
+			"Call(${1:any ...})$0"
 		],
-		"description": ""
+		"description": "Call all functions inside the chain array with the given arguments."
 	},
 	"bool CanAirDash()": {
 		"prefix": "CanAirDash",
 		"body": [
 			"CanAirDash()$0"
 		],
-		"description": ""
+		"description": "Can the player air dash/double jump?"
 	},
 	"bool CanBeDebuffed()": {
 		"prefix": "CanBeDebuffed",
@@ -698,7 +726,7 @@
 		"body": [
 			"CanGetWet()$0"
 		],
-		"description": ""
+		"description": "Can the player get wet by jarate/milk?"
 	},
 	"bool CanJump()": {
 		"prefix": "CanJump",
@@ -713,6 +741,13 @@
 			"CanPlayerMove()$0"
 		],
 		"description": "Can the player move?"
+	},
+	"void CancelTaunt()": {
+		"prefix": "CancelTaunt",
+		"body": [
+			"CancelTaunt()$0"
+		],
+		"description": "Cancels any taunt in progress"
 	},
 	"void ClearAllBotAttributes()": {
 		"prefix": "ClearAllBotAttributes",
@@ -742,12 +777,12 @@
 		],
 		"description": "Clear current focus"
 	},
-	"void ClearAttributeTF(int)": {
+	"void ClearAttributeTF(int bits)": {
 		"prefix": "ClearAttributeTF",
 		"body": [
-			"ClearAttributeTF(${1:int})$0"
+			"ClearAttributeTF(${1:int bits})$0"
 		],
-		"description": "Clear TF-specific area attribute bits"
+		"description": "Clear TF-specific area attribute bits."
 	},
 	"void ClearCustomModelRotation()": {
 		"prefix": "ClearCustomModelRotation",
@@ -756,12 +791,12 @@
 		],
 		"description": ""
 	},
-	"ClearFlags()": {
+	"void ClearFlags()": {
 		"prefix": "ClearFlags",
 		"body": [
 			"ClearFlags()$0"
 		],
-		"description": ""
+		"description": "Sets the player-related entity flags to 0 on an entity, clearing them."
 	},
 	"void ClearGameEventCallbacks()": {
 		"prefix": "ClearGameEventCallbacks",
@@ -777,12 +812,12 @@
 		],
 		"description": "Clear immobile status"
 	},
-	"ClearSolidFlags()": {
+	"void ClearSolidFlags()": {
 		"prefix": "ClearSolidFlags",
 		"body": [
 			"ClearSolidFlags()$0"
 		],
-		"description": ""
+		"description": "Sets Solid Flags to 0 on an entity, clearing them."
 	},
 	"void ClearSpells()": {
 		"prefix": "ClearSpells",
@@ -791,24 +826,31 @@
 		],
 		"description": ""
 	},
-	"void ClearStuckStatus(string)": {
+	"void ClearStuckStatus(string reason)": {
 		"prefix": "ClearStuckStatus",
 		"body": [
-			"ClearStuckStatus(${1:string})$0"
+			"ClearStuckStatus(${1:string reason})$0"
 		],
-		"description": "Reset stuck status to un-stuck"
+		"description": "Reset stuck status to un-stuck. Reason message is shown when debugging nextbots."
 	},
-	"void ClientPrint(CBasePlayer player, int destination, string message)": {
+	"void ClearTauntAttack()": {
+		"prefix": "ClearTauntAttack",
+		"body": [
+			"ClearTauntAttack()$0"
+		],
+		"description": "Stops active taunt from damaging or cancels Rock-Paper-Scissors result"
+	},
+	"void ClientPrint(CBasePlayer player, EHudNotify destination, string message)": {
 		"prefix": "ClientPrint",
 		"body": [
-			"ClientPrint(${1:CBasePlayer player}, ${2:int destination}, ${3:string message})$0"
+			"ClientPrint(${1:CBasePlayer player}, ${2:EHudNotify destination}, ${3:string message})$0"
 		],
-		"description": "Print a client message. If you pass null instead of a valid player, the message will be sent to all clients."
+		"description": "Print a client message. If you pass null instead of a valid player, the message will be sent to all clients. When printing to chat (HUD_PRINTTALK), the color of the text can be changed by inserting this sequence: \\x07RRGGBB where RR GG BB is the hexadecimal format of the color. Transparency can be specified by a different sequence: \\x08RRGGBBAA, where RR GG BB AA is the hexadecimal format of the color + alpha. All text following this sequence will be colored. Multiple sequences can be used in combination. If using color sequences, there MUST be a color sequence at the beginning of the string, or color codes won't work!."
 	},
-	"bool ClimbUpToLedge(Vector, Vector, handle)": {
+	"bool ClimbUpToLedge(Vector goalPos, vector goalForward, handle obstacle)": {
 		"prefix": "ClimbUpToLedge",
 		"body": [
-			"ClimbUpToLedge(${1:Vector}, ${2:Vector}, ${3:handle})$0"
+			"ClimbUpToLedge(${1:Vector goalPos}, ${2:vector goalForward}, ${3:handle obstacle})$0"
 		],
 		"description": "Initiate a jump to an adjacent high ledge, return false if climb can't start"
 	},
@@ -826,10 +868,10 @@
 		],
 		"description": "Current ammo in clip2"
 	},
-	"Vector ComputeClosestPointInPortal(handle, int, Vector)": {
+	"Vector ComputeClosestPointInPortal(handle to, ENavDirType dir, Vector closePos)": {
 		"prefix": "ComputeClosestPointInPortal",
 		"body": [
-			"ComputeClosestPointInPortal(${1:handle}, ${2:int}, ${3:Vector})$0"
+			"ComputeClosestPointInPortal(${1:handle to}, ${2:ENavDirType dir}, ${3:Vector closePos})$0"
 		],
 		"description": "Compute closest point within the portal between to adjacent areas."
 	},
@@ -838,7 +880,7 @@
 		"body": [
 			"ComputeDirection(${1:Vector point})$0"
 		],
-		"description": "Return direction from this area to the given point"
+		"description": "Return direction from this area to the given point."
 	},
 	"bool ComputeUpdateInterval()": {
 		"prefix": "ComputeUpdateInterval",
@@ -847,19 +889,19 @@
 		],
 		"description": "Recomputes the component update interval"
 	},
-	"void ConnectOutput(string, string)": {
+	"void ConnectOutput(string output, string function)": {
 		"prefix": "ConnectOutput",
 		"body": [
-			"ConnectOutput(${1:string}, ${2:string})$0"
+			"ConnectOutput(${1:string output}, ${2:string function})$0"
 		],
-		"description": "Adds an I/O connection that will call the named function when the specified output fires"
+		"description": "Adds an I/O connection that will call the named function when the specified output fires."
 	},
 	"void ConnectTo(handle area, int dir)": {
 		"prefix": "ConnectTo",
 		"body": [
 			"ConnectTo(${1:handle area}, ${2:int dir})$0"
 		],
-		"description": "Connect this area to given area in given direction"
+		"description": "Connect this area to given area in given direction."
 	},
 	"ConstantNamingConvention": {
 		"prefix": "ConstantNamingConvention",
@@ -868,19 +910,26 @@
 		],
 		"description": "Constants are named as follows: F -> flags, E -> enums, (nothing) -> random values/constants"
 	},
+	"Constants": {
+		"prefix": "Constants",
+		"body": [
+			"Constants$0"
+		],
+		"description": "Enumerations for various function arguments or netprops."
+	},
 	"bool Contains(handle area)": {
 		"prefix": "Contains",
 		"body": [
 			"Contains(${1:handle area})$0"
 		],
-		"description": "Return true if other area is on or above this area, but no others"
+		"description": "Return true if other area is on or above this area, but no others."
 	},
 	"bool ContainsOrigin(Vector point)": {
 		"prefix": "ContainsOrigin",
 		"body": [
 			"ContainsOrigin(${1:Vector point})$0"
 		],
-		"description": "Return true if given point is on or above this area, but no others"
+		"description": "Return true if given point is on or above this area, but no others."
 	},
 	"handle CreateByClassname(string classname)": {
 		"prefix": "CreateByClassname",
@@ -889,17 +938,17 @@
 		],
 		"description": "Creates an entity by classname"
 	},
-	"handle CreateProp(string, Vector, string, int)": {
+	"handle CreateProp(string classname, Vector origin, string model_name, int activity)": {
 		"prefix": "CreateProp",
 		"body": [
-			"CreateProp(${1:string}, ${2:Vector}, ${3:string}, ${4:int})$0"
+			"CreateProp(${1:string classname}, ${2:Vector origin}, ${3:string model_name}, ${4:int activity})$0"
 		],
-		"description": "Create a physics prop"
+		"description": "Create a prop"
 	},
-	"handle CreateSceneEntity(string)": {
+	"handle CreateSceneEntity(string scene)": {
 		"prefix": "CreateSceneEntity",
 		"body": [
-			"CreateSceneEntity(${1:string})$0"
+			"CreateSceneEntity(${1:string scene})$0"
 		],
 		"description": "Create a scene entity to play the specified scene."
 	},
@@ -916,6 +965,13 @@
 			"DISABLE_DODGE$0"
 		],
 		"description": "16"
+	},
+	"DIST_EPSILON": {
+		"prefix": "DIST_EPSILON",
+		"body": [
+			"DIST_EPSILON$0"
+		],
+		"description": "0.03125"
 	},
 	"DMG_ACID": {
 		"prefix": "DMG_ACID",
@@ -1176,12 +1232,12 @@
 		],
 		"description": "Try to clear all the debug overlay info."
 	},
-	"void DebugDrawFilled(int, int, int, int, float, bool, float)": {
+	"void DebugDrawFilled(int r, int g, int b, int a, float duration, bool noDepthTest, float margin)": {
 		"prefix": "DebugDrawFilled",
 		"body": [
-			"DebugDrawFilled(${1:int}, ${2:int}, ${3:int}, ${4:int}, ${5:float}, ${6:bool}, ${7:float})$0"
+			"DebugDrawFilled(${1:int r}, ${2:int g}, ${3:int b}, ${4:int a}, ${5:float duration}, ${6:bool noDepthTest}, ${7:float margin})$0"
 		],
-		"description": "Draw area as a filled rect of the given color"
+		"description": "Draw area as a filled rect of the given color."
 	},
 	"void DebugDrawLine(Vector start, Vector end, int red, int green, int blue', bool zTest, float time)": {
 		"prefix": "DebugDrawLine",
@@ -1211,26 +1267,26 @@
 		],
 		"description": "Draw text on the screen, starting on the position of origin."
 	},
-	"void DelayedThreatNotice(handle, float)": {
+	"void DelayedThreatNotice(handle threat, float delay)": {
 		"prefix": "DelayedThreatNotice",
 		"body": [
-			"DelayedThreatNotice(${1:handle}, ${2:float})$0"
+			"DelayedThreatNotice(${1:handle threat}, ${2:float delay})$0"
 		],
-		"description": ""
+		"description": "Notice the threat after a delay in seconds"
 	},
 	"void Destroy()": {
 		"prefix": "Destroy",
 		"body": [
 			"Destroy()$0"
 		],
-		"description": ""
+		"description": "Removes the entity. Simply calls UTIL_Remove."
 	},
 	"void DisableDraw()": {
 		"prefix": "DisableDraw",
 		"body": [
 			"DisableDraw()$0"
 		],
-		"description": "Enable drawing (removes EF_NODRAW)"
+		"description": "Disable drawing and transmitting the entity to clients. (adds EF_NODRAW)"
 	},
 	"void DisbandCurrentSquad()": {
 		"prefix": "DisbandCurrentSquad",
@@ -1244,7 +1300,7 @@
 		"body": [
 			"Disconnect(${1:handle area})$0"
 		],
-		"description": "Disconnect this area from given area"
+		"description": "Disconnect this area from given area."
 	},
 	"void DisconnectOutput(string, string)": {
 		"prefix": "DisconnectOutput",
@@ -1253,17 +1309,17 @@
 		],
 		"description": "Removes a connected script function from an I/O event."
 	},
-	"void DispatchAnimEvents(handle)": {
+	"void DispatchAnimEvents(handle entity)": {
 		"prefix": "DispatchAnimEvents",
 		"body": [
-			"DispatchAnimEvents(${1:handle})$0"
+			"DispatchAnimEvents(${1:handle entity})$0"
 		],
 		"description": "Dispatch animation events to a CBaseAnimating"
 	},
-	"void DispatchParticleEffect(string, Vector, Vector)": {
+	"void DispatchParticleEffect(string name, Vector origin, Vector angles)": {
 		"prefix": "DispatchParticleEffect",
 		"body": [
-			"DispatchParticleEffect(${1:string}, ${2:Vector}, ${3:Vector})$0"
+			"DispatchParticleEffect(${1:string name}, ${2:Vector origin}, ${3:Vector angles})$0"
 		],
 		"description": "Dispatches a one-off particle system"
 	},
@@ -1272,7 +1328,7 @@
 		"body": [
 			"DispatchSpawn(${1:handle entity})$0"
 		],
-		"description": "Dispatches spawn of an entity!"
+		"description": "Dispatches spawn of an entity! Use this on entities created via CreateByClassname to actually spawn them into the world."
 	},
 	"void DoEntFire(string target, string action, string value, float delay, handle activator, handle caller)": {
 		"prefix": "DoEntFire",
@@ -1288,6 +1344,13 @@
 		],
 		"description": "Execute a script. and put all its content for the argument passed to thescopeparameter. (internal)"
 	},
+	"void DoAttackTaunt()": {
+		"prefix": "DoAttackTaunt",
+		"body": [
+			"DoAttackTaunt()$0"
+		],
+		"description": "Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (taunt attack name attribute)"
+	},
 	"string DoUniqueString(string input)": {
 		"prefix": "DoUniqueString",
 		"body": [
@@ -1302,6 +1365,13 @@
 		],
 		"description": ""
 	},
+	"Documentation": {
+		"prefix": "Documentation",
+		"body": [
+			"Documentation$0"
+		],
+		"description": "Contains the printed strings from the script_help command."
+	},
 	"float Dot(Quaternion factor)": {
 		"prefix": "Dot",
 		"body": [
@@ -1309,24 +1379,24 @@
 		],
 		"description": "The 4D scalar product of two quaternions. represents the angle between the quaternions in the range [1, 0]."
 	},
-	"void DriveTo(Vector)": {
+	"void DriveTo(Vector pos)": {
 		"prefix": "DriveTo",
 		"body": [
-			"DriveTo(${1:Vector})$0"
+			"DriveTo(${1:Vector pos})$0"
 		],
 		"description": "Move the bot to the precise given position immediately, updating internal state"
 	},
-	"void DropFlag(bool)": {
+	"void DropFlag(bool silent)": {
 		"prefix": "DropFlag",
 		"body": [
-			"DropFlag(${1:bool})$0"
+			"DropFlag(${1:bool silent})$0"
 		],
 		"description": "Force player to drop the flag."
 	},
-	"void DropRune(bool, int)": {
+	"void DropRune(bool apply_force, int team)": {
 		"prefix": "DropRune",
 		"body": [
-			"DropRune(${1:bool}, ${2:int})$0"
+			"DropRune(${1:bool apply_force}, ${2:int team})$0"
 		],
 		"description": "Force player to drop the rune."
 	},
@@ -1678,7 +1748,7 @@
 		"body": [
 			"EmitAmbientSoundOn(${1:string soundName}, ${2:float volume}, ${3:int soundlevel}, ${4:int pitch}, ${5:handle entity})$0"
 		],
-		"description": "Play named sound on an entity using configurations similar to ambient_generic."
+		"description": "Play named sound on an entity using configurations similar to ambient_generic. Soundlevel is in decibels."
 	},
 	"void EmitSound(string)": {
 		"prefix": "EmitSound",
@@ -1687,26 +1757,33 @@
 		],
 		"description": "Plays a sound from this entity."
 	},
+	"void EmitSoundEx(handle table)": {
+		"prefix": "EmitSoundEx",
+		"body": [
+			"EmitSoundEx(${1:handle table})$0"
+		],
+		"description": "Play a sound. Takes in a script table of params: sound_name, channel, volume, sound_level, flags, pitch, special_dsp, origin, delay, sound_time, entity, speaker_entity, filter_type, filter_param. All parameters are optional except sound_name. See the main page for more details."
+	},
 	"void EmitSoundOn(string soundScript, handle entity)": {
 		"prefix": "EmitSoundOn",
 		"body": [
 			"EmitSoundOn(${1:string soundScript}, ${2:handle entity})$0"
 		],
-		"description": "Play named sound on an entity."
+		"description": "Play named sound on an entity. Legacy only, use EmitSoundEx"
 	},
 	"void EmitSoundOnClient(string soundScript, handle player)": {
 		"prefix": "EmitSoundOnClient",
 		"body": [
 			"EmitSoundOnClient(${1:string soundScript}, ${2:handle player})$0"
 		],
-		"description": "Play named sound only on the client for the specified player."
+		"description": "Play named sound only on the client for the specified player. NOTE: This only supports soundscripts. Legacy only, use EmitSoundEx."
 	},
 	"void EnableDraw()": {
 		"prefix": "EnableDraw",
 		"body": [
 			"EnableDraw()$0"
 		],
-		"description": "Disable drawing (sets EF_NODRAW)"
+		"description": "Enable drawing and transmitting the entity to clients. (removes EF_NODRAW)"
 	},
 	"End()": {
 		"prefix": "End",
@@ -1715,7 +1792,14 @@
 		],
 		"description": ""
 	},
-	"EndScriptDebug()": {
+	"void EndLongTaunt()": {
+		"prefix": "EndLongTaunt",
+		"body": [
+			"EndLongTaunt()$0"
+		],
+		"description": "Stops a looping taunt (obeys minimum time rules and plays outro animation if available)"
+	},
+	"void EndScriptDebug()": {
 		"prefix": "EndScriptDebug",
 		"body": [
 			"EndScriptDebug()$0"
@@ -1727,12 +1811,12 @@
 		"body": [
 			"EntFire(${1:string target}, ${2:string action}, ${3:string value = null}, ${4:float delay = 0}, ${5:handle activator = null})$0"
 		],
-		"description": "Wrapper for DoEntFire() that setsactivator to null, but has nocallerparam."
+		"description": "Wrapper for DoEntFire() that setsactivator to null, but has no caller param."
 	},
-	"void EntFireByHandle(handle, string, string, float, handle, handle)": {
+	"void EntFireByHandle(handle entity, string action, string value, float delay, handle activator, handle caller)": {
 		"prefix": "EntFireByHandle",
 		"body": [
-			"EntFireByHandle(${1:handle}, ${2:string}, ${3:string}, ${4:float}, ${5:handle}, ${6:handle})$0"
+			"EntFireByHandle(${1:handle entity}, ${2:string action}, ${3:string value}, ${4:float delay}, ${5:handle activator}, ${6:handle caller})$0"
 		],
 		"description": "Generate and entity i/o event. First parameter is an entity instance."
 	},
@@ -1749,6 +1833,13 @@
 			"Epsilon$0"
 		],
 		"description": "1.19209e-07"
+	},
+	"void EquipWearableViewModel(handle ent)": {
+		"prefix": "EquipWearableViewModel",
+		"body": [
+			"EquipWearableViewModel(${1:handle ent})$0"
+		],
+		"description": "Equips a wearble on the viewmodel. Intended to be used with tf_wearable_vm entities."
 	},
 	"EstablishDelegation()": {
 		"prefix": "EstablishDelegation",
@@ -1776,14 +1867,14 @@
 		"body": [
 			"EyeAngles()$0"
 		],
-		"description": "Returns the entity's eye angles"
+		"description": "Returns the entity's eye angles. Acts like GetAbsAngles if the entity does not support it."
 	},
 	"Vector EyePosition()": {
 		"prefix": "EyePosition",
 		"body": [
 			"EyePosition()$0"
 		],
-		"description": "Get vector to eye position - absolute coords"
+		"description": "Get vector to eye position - absolute coords. Acts like GetOrigin if the entity does not support it."
 	},
 	"FIRE_IMMUNE": {
 		"prefix": "FIRE_IMMUNE",
@@ -2100,10 +2191,10 @@
 		],
 		"description": "32"
 	},
-	"void FaceTowards(Vector)": {
+	"void FaceTowards(Vector target)": {
 		"prefix": "FaceTowards",
 		"body": [
-			"FaceTowards(${1:Vector})$0"
+			"FaceTowards(${1:Vector target})$0"
 		],
 		"description": "Rotate body to face towards target"
 	},
@@ -2112,28 +2203,28 @@
 		"body": [
 			"FileToString(${1:string file})$0"
 		],
-		"description": "Reads a string from file. Returns the string from the file, null if no file or file is greater than 16384 bytes. The game will crash to desktop if the file is exactly 16384 bytes."
+		"description": "Reads a string from file located in the game's scriptdata folder. Returns the string from the file, null if no file or file is greater than 16384 bytes."
 	},
-	"int FindBodygroupByName(string)": {
+	"int FindBodygroupByName(string name)": {
 		"prefix": "FindBodygroupByName",
 		"body": [
-			"FindBodygroupByName(${1:string})$0"
+			"FindBodygroupByName(${1:string name})$0"
 		],
-		"description": "Find a bodygroup id by name"
+		"description": "Find a bodygroup ID by name. Returns -1 if the bodygroup does not exist."
 	},
 	"handle FindByClassname(handle previous, string classname)": {
 		"prefix": "FindByClassname",
 		"body": [
 			"FindByClassname(${1:handle previous}, ${2:string classname})$0"
 		],
-		"description": "Find entities by the value of their classname keyvalue. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search. Note: the classname keyvalue of an entity can be manipulated and does not necessarily reflect its code class. There might be entities that have a different classname than the one they are created with."
+		"description": "Find entities by the string of their classname keyvalue. Pass 'null' value to start an iteration, or reference to a previously found entity to continue a search"
 	},
 	"handle FindByClassnameNearest(string classname, Vector center, float radius)": {
 		"prefix": "FindByClassnameNearest",
 		"body": [
 			"FindByClassnameNearest(${1:string classname}, ${2:Vector center}, ${3:float radius})$0"
 		],
-		"description": "Find entities by classname nearest to a point."
+		"description": "Find entities by classname nearest to a point within a radius."
 	},
 	"handle FindByClassnameWithin(handle previous, string classname, Vector center, float radius)": {
 		"prefix": "FindByClassnameWithin",
@@ -2161,7 +2252,7 @@
 		"body": [
 			"FindByNameNearest(${1:string targetname}, ${2:Vector center}, ${3:float radius})$0"
 		],
-		"description": "Find entities by targetname nearest to a point."
+		"description": "Find entities by targetname nearest to a point within a radius."
 	},
 	"handle FindByNameWithin(handle previous, string targetname, Vector center, float radius)": {
 		"prefix": "FindByNameWithin",
@@ -2205,10 +2296,10 @@
 		],
 		"description": "Find a sub key by the key name."
 	},
-	"handle FindNamedEntity(string)": {
+	"handle FindNamedEntity(string reference)": {
 		"prefix": "FindNamedEntity",
 		"body": [
-			"FindNamedEntity(${1:string})$0"
+			"FindNamedEntity(${1:string reference})$0"
 		],
 		"description": "given an entity reference, such as !target, get actual entity from scene object"
 	},
@@ -2224,19 +2315,19 @@
 		"body": [
 			"FindRandomSpot()$0"
 		],
-		"description": "Get random origin within extent of area"
+		"description": "Get random origin within extent of area."
 	},
-	"handle FindVantagePoint(float)": {
+	"handle FindVantagePoint(float max_distance)": {
 		"prefix": "FindVantagePoint",
 		"body": [
-			"FindVantagePoint(${1:float})$0"
+			"FindVantagePoint(${1:float max_distance})$0"
 		],
 		"description": "Get the nav area of the closest vantage point (within distance)"
 	},
-	"bool FireGameEvent(string, handle)": {
+	"bool FireGameEvent(string name, handle table)": {
 		"prefix": "FireGameEvent",
 		"body": [
-			"FireGameEvent(${1:string}, ${2:handle})$0"
+			"FireGameEvent(${1:string name}, ${2:handle table})$0"
 		],
 		"description": "Fire a game event to a listening callback function in script. Parameters are passed in a squirrel table."
 	},
@@ -2247,12 +2338,12 @@
 		],
 		"description": "Wrapper for __RunEventCallbacks()"
 	},
-	"bool FireScriptHook(string, handle)": {
+	"bool FireScriptHook(string name, handle table)": {
 		"prefix": "FireScriptHook",
 		"body": [
-			"FireScriptHook(${1:string}, ${2:handle})$0"
+			"FireScriptHook(${1:string name}, ${2:handle table})$0"
 		],
-		"description": "Fire a script hook to a listening callback function in script. Parameters are passed in a squirrel table."
+		"description": "Fire a script hoook to a listening callback function in script. Parameters are passed in a squirrel table."
 	},
 	"void FiringTalk()": {
 		"prefix": "FiringTalk",
@@ -2268,17 +2359,17 @@
 		],
 		"description": "Begin an iteration over the list of entities"
 	},
-	"FirstMoveChild()": {
+	"handle FirstMoveChild()": {
 		"prefix": "FirstMoveChild",
 		"body": [
 			"FirstMoveChild()$0"
 		],
-		"description": ""
+		"description": "Returns the most-recent entity parented to this one."
 	},
-	"void FlagForUpdate(bool)": {
+	"void FlagForUpdate(bool toggle)": {
 		"prefix": "FlagForUpdate",
 		"body": [
-			"FlagForUpdate(${1:bool})$0"
+			"FlagForUpdate(${1:bool toggle})$0"
 		],
 		"description": "Flag this bot for update"
 	},
@@ -2289,61 +2380,61 @@
 		],
 		"description": "May a flag be captured?"
 	},
-	"void ForceChangeTeam(int, bool)": {
+	"void ForceChangeTeam(int team, bool full_team_switch)": {
 		"prefix": "ForceChangeTeam",
 		"body": [
-			"ForceChangeTeam(${1:int}, ${2:bool})$0"
+			"ForceChangeTeam(${1:int team}, ${2:bool full_team_switch})$0"
 		],
-		"description": "Force player to change their team."
+		"description": "Force player to change their team. Setting the bool to true will not remove nemesis relationships or reset the player's class, as well as not slaying the player."
 	},
-	"void ForceEnableUpgrades(int)": {
+	"void ForceEnableUpgrades(int state)": {
 		"prefix": "ForceEnableUpgrades",
 		"body": [
-			"ForceEnableUpgrades(${1:int})$0"
+			"ForceEnableUpgrades(${1:int state})$0"
 		],
 		"description": "Whether to force on MvM-styled upgrades on/off. 0 -> default, 1 -> force off, 2 -> force on"
 	},
-	"void ForceEscortPushLogic(int)": {
+	"void ForceEscortPushLogic(int state)": {
 		"prefix": "ForceEscortPushLogic",
 		"body": [
-			"ForceEscortPushLogic(${1:int})$0"
+			"ForceEscortPushLogic(${1:int state})$0"
 		],
 		"description": "Forces payload pushing logic. 0 -> default, 1 -> force off, 2 -> force on"
 	},
-	"void ForceRegenerateAndRespawn(int, bool)": {
+	"void ForceRegenerateAndRespawn()": {
 		"prefix": "ForceRegenerateAndRespawn",
 		"body": [
-			"ForceRegenerateAndRespawn(${1:int}, ${2:bool})$0"
+			"ForceRegenerateAndRespawn()$0"
 		],
 		"description": "Force regenerates and respawns the player"
 	},
-	"void ForceRespawn(int)": {
+	"void ForceRespawn()": {
 		"prefix": "ForceRespawn",
 		"body": [
-			"ForceRespawn(${1:int})$0"
+			"ForceRespawn()$0"
 		],
 		"description": "Force respawns the player"
 	},
-	"Forward()": {
+	"Vector Forward()": {
 		"prefix": "Forward",
 		"body": [
 			"Forward()$0"
 		],
-		"description": ""
+		"description": "Returns the Forward Vector of the angles."
 	},
-	"float FractionPotentialGap(Vector, Vector)": {
+	"float FractionPotentialGap(Vector from, Vector to)": {
 		"prefix": "FractionPotentialGap",
 		"body": [
-			"FractionPotentialGap(${1:Vector}, ${2:Vector})$0"
+			"FractionPotentialGap(${1:Vector from}, ${2:Vector to})$0"
 		],
 		"description": "If the locomotor cannot jump over the gap, returns the fraction of the jumpable ray"
 	},
-	"float FractionPotentiallyTraversable(Vector, Vector, bool)": {
+	"float FractionPotentiallyTraversable(Vector from, Vector to, bool immediately)": {
 		"prefix": "FractionPotentiallyTraversable",
 		"body": [
-			"FractionPotentiallyTraversable(${1:Vector}, ${2:Vector}, ${3:bool})$0"
+			"FractionPotentiallyTraversable(${1:Vector from}, ${2:Vector to}, ${3:bool immediately})$0"
 		],
-		"description": "If the locomotor could not move along the line given, returns the fraction of the walkable ray."
+		"description": "If the locomotor could not move along the line given, returns the fraction of the walkable ray. If immediately is true, breakables are considered non-traverseable"
 	},
 	"float FrameTime()": {
 		"prefix": "FrameTime",
@@ -2422,6 +2513,20 @@
 		],
 		"description": "11"
 	},
+	"GR_STATE_BETWEEN_RNDS": {
+		"prefix": "GR_STATE_BETWEEN_RNDS",
+		"body": [
+			"GR_STATE_BETWEEN_RNDS$0"
+		],
+		"description": "10"
+	},
+	"GR_STATE_BONUS": {
+		"prefix": "GR_STATE_BONUS",
+		"body": [
+			"GR_STATE_BONUS$0"
+		],
+		"description": "9"
+	},
 	"GR_STATE_GAME_OVER": {
 		"prefix": "GR_STATE_GAME_OVER",
 		"body": [
@@ -2485,6 +2590,13 @@
 		],
 		"description": "5"
 	},
+	"GameEventCallbacks": {
+		"prefix": "GameEventCallbacks",
+		"body": [
+			"GameEventCallbacks$0"
+		],
+		"description": "Table of registered game event callbacks."
+	},
 	"bool GameModeUsesCurrency()": {
 		"prefix": "GameModeUsesCurrency",
 		"body": [
@@ -2506,10 +2618,10 @@
 		],
 		"description": "Does the current gamemode have upgrades?"
 	},
-	"void GenerateAndWearItem(string)": {
+	"void GenerateAndWearItem(string item_name)": {
 		"prefix": "GenerateAndWearItem",
 		"body": [
-			"GenerateAndWearItem(${1:string})$0"
+			"GenerateAndWearItem(${1:string item_name})$0"
 		],
 		"description": "Give me an item!"
 	},
@@ -2539,21 +2651,21 @@
 		"body": [
 			"GetAdjacentArea(${1:int dir}, ${2:int n})$0"
 		],
-		"description": "Return the n'th adjacent area in the given direction"
+		"description": "Return the n'th adjacent area in the given direction."
 	},
 	"void GetAdjacentAreas(int dir, handle table)": {
 		"prefix": "GetAdjacentAreas",
 		"body": [
 			"GetAdjacentAreas(${1:int dir}, ${2:handle table})$0"
 		],
-		"description": "Fills a passed in table with all adjacent areas in the given direction"
+		"description": "Fills a passed in table with all adjacent areas in the given direction."
 	},
 	"int GetAdjacentCount(int dir)": {
 		"prefix": "GetAdjacentCount",
 		"body": [
 			"GetAdjacentCount(${1:int dir})$0"
 		],
-		"description": "Get the number of adjacent areas in the given direction"
+		"description": "Get the number of adjacent areas in the given direction."
 	},
 	"void GetAllAreas(handle table)": {
 		"prefix": "GetAllAreas",
@@ -2567,14 +2679,14 @@
 		"body": [
 			"GetAngles()$0"
 		],
-		"description": "Get entity pitch, yaw, roll as a vector"
+		"description": "Get entity pitch, yaw, roll as a Vector"
 	},
 	"Vector GetAngularVelocity()": {
 		"prefix": "GetAngularVelocity",
 		"body": [
 			"GetAngularVelocity()$0"
 		],
-		"description": "Get the local angular velocity - returns a vector of pitch,yaw,roll"
+		"description": "Get the local angular velocity - returns a vector of pitch, yaw, and roll"
 	},
 	"void GetAreasWithAttributes(int bits, handle table)": {
 		"prefix": "GetAreasWithAttributes",
@@ -2583,40 +2695,40 @@
 		],
 		"description": "fills a passed in table of all nav areas that have the specified attributes"
 	},
-	"QAngle GetAttachmentAngles(int)": {
+	"QAngle GetAttachmentAngles(int ID)": {
 		"prefix": "GetAttachmentAngles",
 		"body": [
-			"GetAttachmentAngles(${1:int})$0"
+			"GetAttachmentAngles(${1:int ID})$0"
 		],
-		"description": "Get the attachement id's angles as a p,y,r vector"
+		"description": "Get an attachment's angles as a QAngle, by ID."
 	},
-	"int GetAttachmentBone(int)": {
+	"int GetAttachmentBone(int ID)": {
 		"prefix": "GetAttachmentBone",
 		"body": [
-			"GetAttachmentBone(${1:int})$0"
+			"GetAttachmentBone(${1:int ID})$0"
 		],
-		"description": "Get the named attachement's parent bone index"
+		"description": "Get an attachment's parent bone index by ID."
 	},
-	"Vector GetAttachmentOrigin(int)": {
+	"Vector GetAttachmentOrigin(int ID)": {
 		"prefix": "GetAttachmentOrigin",
 		"body": [
-			"GetAttachmentOrigin(${1:int})$0"
+			"GetAttachmentOrigin(${1:int ID})$0"
 		],
-		"description": "Get the attachement id's origin vector"
+		"description": "Get an attachment's origin as a Vector, by ID."
 	},
 	"int GetAttributes()": {
 		"prefix": "GetAttributes",
 		"body": [
 			"GetAttributes()$0"
 		],
-		"description": "Get area attribute bits"
+		"description": "Get area attribute bits."
 	},
 	"float GetAvoidanceObstacleHeight()": {
 		"prefix": "GetAvoidanceObstacleHeight",
 		"body": [
 			"GetAvoidanceObstacleHeight()$0"
 		],
-		"description": "Returns the maximum height of the obstruction above the ground"
+		"description": "Returns the maximum height of the obstruction above the ground."
 	},
 	"int GetBackstabs()": {
 		"prefix": "GetBackstabs",
@@ -2632,47 +2744,47 @@
 		],
 		"description": "Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like enttrigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects."
 	},
-	"handle GetBodyInterface()": {
+	"INextBotComponent GetBodyInterface()": {
 		"prefix": "GetBodyInterface",
 		"body": [
 			"GetBodyInterface()$0"
 		],
 		"description": "Get this bot's body interface"
 	},
-	"int GetBodygroup(int)": {
+	"int GetBodygroup(int ID)": {
 		"prefix": "GetBodygroup",
 		"body": [
-			"GetBodygroup(${1:int})$0"
+			"GetBodygroup(${1:int ID})$0"
 		],
-		"description": "Get a bodygroup by id"
+		"description": "Get the bodygroup value by bodygroup ID."
 	},
-	"string GetBodygroupName(int)": {
+	"string GetBodygroupName(int ID)": {
 		"prefix": "GetBodygroupName",
 		"body": [
-			"GetBodygroupName(${1:int})$0"
+			"GetBodygroupName(${1:int ID})$0"
 		],
-		"description": "Get the bodygroup id's name"
+		"description": "Get the bodygroup's name by ID."
 	},
-	"string GetBodygroupPartName(int, int)": {
+	"string GetBodygroupPartName(int group, int part)": {
 		"prefix": "GetBodygroupPartName",
 		"body": [
-			"GetBodygroupPartName(${1:int}, ${2:int})$0"
+			"GetBodygroupPartName(${1:int group}, ${2:int part})$0"
 		],
-		"description": "Get name by group and part"
+		"description": "Get the bodygroup's name by group and part."
 	},
-	"QAngle GetBoneAngles(int)": {
+	"QAngle GetBoneAngles(int ID)": {
 		"prefix": "GetBoneAngles",
 		"body": [
-			"GetBoneAngles(${1:int})$0"
+			"GetBoneAngles(${1:int ID})$0"
 		],
-		"description": "Get the bone id's angles as a p,y,r vector"
+		"description": "Get the bone's angles as a QAngle, by ID."
 	},
-	"Vector GetBoneOrigin(int)": {
+	"Vector GetBoneOrigin(int ID)": {
 		"prefix": "GetBoneOrigin",
 		"body": [
-			"GetBoneOrigin(${1:int})$0"
+			"GetBoneOrigin(${1:int ID})$0"
 		],
-		"description": "Get the bone id's origin vector"
+		"description": "Get the bone's origin Vector by ID."
 	},
 	"int GetBonusPoints()": {
 		"prefix": "GetBonusPoints",
@@ -2694,6 +2806,13 @@
 			"GetBotId()$0"
 		],
 		"description": "Get this bot's id"
+	},
+	"int GetBotType()": {
+		"prefix": "GetBotType",
+		"body": [
+			"GetBotType()$0"
+		],
+		"description": ""
 	},
 	"Vector GetBoundingMaxs()": {
 		"prefix": "GetBoundingMaxs",
@@ -2742,7 +2861,7 @@
 		"body": [
 			"GetCenter()$0"
 		],
-		"description": "Get center origin of area"
+		"description": "Get center origin of area."
 	},
 	"Vector GetClassEyeHeight()": {
 		"prefix": "GetClassEyeHeight",
@@ -2751,10 +2870,10 @@
 		],
 		"description": "Gets the eye height of the player"
 	},
-	"int GetClassLimit(int)": {
+	"int GetClassLimit(int class)": {
 		"prefix": "GetClassLimit",
 		"body": [
-			"GetClassLimit(${1:int})$0"
+			"GetClassLimit(${1:int class})$0"
 		],
 		"description": "Get class limit for class. See Constants.ETFClass"
 	},
@@ -2777,21 +2896,21 @@
 		"body": [
 			"GetCollisionGroup()$0"
 		],
-		"description": ""
+		"description": "Gets the current collision group of the entity."
 	},
 	"float GetCondDuration(ETFCond cond)": {
 		"prefix": "GetCondDuration",
 		"body": [
 			"GetCondDuration(${1:ETFCond cond})$0"
 		],
-		"description": ""
+		"description": "Returns duration of the condition. Returns 0 if the cond is not applied. Returns -1 if the cond is infinite."
 	},
 	"Vector GetCorner(int dir)": {
 		"prefix": "GetCorner",
 		"body": [
 			"GetCorner(${1:int dir})$0"
 		],
-		"description": "Get corner origin of area"
+		"description": "Get corner origin of area."
 	},
 	"int GetCurrency()": {
 		"prefix": "GetCurrency",
@@ -2812,7 +2931,7 @@
 		"body": [
 			"GetCycle()$0"
 		],
-		"description": "Gets the models current cycle"
+		"description": "Gets the model's current animation cycle rate."
 	},
 	"float GetDeathDropHeight()": {
 		"prefix": "GetDeathDropHeight",
@@ -2856,7 +2975,7 @@
 		],
 		"description": "Gets the level of 'developer'"
 	},
-	"int GetDifficulty()": {
+	"ETFBotDifficultyType GetDifficulty()": {
 		"prefix": "GetDifficulty",
 		"body": [
 			"GetDifficulty()$0"
@@ -2889,7 +3008,7 @@
 		"body": [
 			"GetDistanceSquaredToPoint(${1:Vector pos})$0"
 		],
-		"description": "Return shortest distance between point and this area"
+		"description": "Return shortest distance between point and this area."
 	},
 	"int GetDominations()": {
 		"prefix": "GetDominations",
@@ -2903,7 +3022,7 @@
 		"body": [
 			"GetDoor()$0"
 		],
-		"description": "Returns the door entity above the area"
+		"description": "Returns the door entity above the area."
 	},
 	"int GetEFlags()": {
 		"prefix": "GetEFlags",
@@ -2917,14 +3036,14 @@
 		"body": [
 			"GetElevator()$0"
 		],
-		"description": "Returns the elevator if in an elevator's path"
+		"description": "Returns the elevator if in an elevator's path."
 	},
 	"void GetElevatorAreas(handle table)": {
 		"prefix": "GetElevatorAreas",
 		"body": [
 			"GetElevatorAreas(${1:handle table})$0"
 		],
-		"description": "Fills table with a collection of areas reachable via elevator from this area"
+		"description": "Fills table with a collection of areas reachable via elevator from this area."
 	},
 	"GetEntityHandle()": {
 		"prefix": "GetEntityHandle",
@@ -2973,7 +3092,7 @@
 		"body": [
 			"GetForceLocalDraw()$0"
 		],
-		"description": "Gets the state of whether the player is being forced by SetForceLocalDraw to be drawn"
+		"description": "Whether the player is being forced by SetForceLocalDraw to be drawn."
 	},
 	"Vector GetForwardVector()": {
 		"prefix": "GetForwardVector",
@@ -2996,19 +3115,19 @@
 		],
 		"description": "Returns the Friction on a player entity, meaningless if not a player"
 	},
-	"GetFunctionSignature()": {
+	"string GetFunctionSignature(function func, string prefix)": {
 		"prefix": "GetFunctionSignature",
 		"body": [
-			"GetFunctionSignature()$0"
+			"GetFunctionSignature(${1:function func}, ${2:string prefix})$0"
 		],
 		"description": ""
 	},
-	"Vector GetFuturePosition(float, float)": {
+	"Vector GetFuturePosition(float x, float speed)": {
 		"prefix": "GetFuturePosition",
 		"body": [
-			"GetFuturePosition(${1:float}, ${2:float})$0"
+			"GetFuturePosition(${1:float x}, ${2:float speed})$0"
 		],
-		"description": "Get a position on the track x seconds in the future"
+		"description": "Get a position on the track X seconds in the future."
 	},
 	"handle GetGrapplingHookTarget()": {
 		"prefix": "GetGrapplingHookTarget",
@@ -3092,7 +3211,14 @@
 		"body": [
 			"GetHomeArea()$0"
 		],
-		"description": "Sets the home nav area of the bot"
+		"description": "Gets the home nav area of the bot"
+	},
+	"int GetHudHideFlags()": {
+		"prefix": "GetHudHideFlags",
+		"body": [
+			"GetHudHideFlags()$0"
+		],
+		"description": ""
 	},
 	"int GetID()": {
 		"prefix": "GetID",
@@ -3120,7 +3246,7 @@
 		"body": [
 			"GetIncomingConnections(${1:int dir}, ${2:handle table})$0"
 		],
-		"description": "Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them)"
+		"description": "Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them)."
 	},
 	"int GetInt(string name)": {
 		"prefix": "GetInt",
@@ -3129,7 +3255,7 @@
 		],
 		"description": "Returns the convar as an int. May return null if no such convar."
 	},
-	"handle GetIntentionInterface()": {
+	"INextBotComponent GetIntentionInterface()": {
 		"prefix": "GetIntentionInterface",
 		"body": [
 			"GetIntentionInterface()$0"
@@ -3183,7 +3309,7 @@
 		"body": [
 			"GetLastKnownArea()$0"
 		],
-		"description": "Return the last nav area occupied - NULL if unknown"
+		"description": "Return the last nav area occupied, NULL if unknown. See CTFNavArea."
 	},
 	"GetLastWeapon()": {
 		"prefix": "GetLastWeapon",
@@ -3227,7 +3353,7 @@
 		],
 		"description": "Get Entity relative velocity"
 	},
-	"handle GetLocomotionInterface()": {
+	"ILocomotion GetLocomotionInterface()": {
 		"prefix": "GetLocomotionInterface",
 		"body": [
 			"GetLocomotionInterface()$0"
@@ -3323,7 +3449,7 @@
 		"body": [
 			"GetModelScale()$0"
 		],
-		"description": ""
+		"description": "Get the model's scale."
 	},
 	"Vector GetMotionVector()": {
 		"prefix": "GetMotionVector",
@@ -3374,10 +3500,10 @@
 		],
 		"description": "return total number of nav areas"
 	},
-	"bool GetNavAreasFromBuildPath(CTFNavArea startArea, CTFNavArea endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers, handle table)": {
+	"bool GetNavAreasFromBuildPath(handle startArea, handle endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers, handle table)": {
 		"prefix": "GetNavAreasFromBuildPath",
 		"body": [
-			"GetNavAreasFromBuildPath(${1:CTFNavArea startArea}, ${2:CTFNavArea endArea}, ${3:Vector goalPos}, ${4:float flMaxPathLength}, ${5:int teamID}, ${6:bool ignoreNavBlockers}, ${7:handle table})$0"
+			"GetNavAreasFromBuildPath(${1:handle startArea}, ${2:handle endArea}, ${3:Vector goalPos}, ${4:float flMaxPathLength}, ${5:int teamID}, ${6:bool ignoreNavBlockers}, ${7:handle table})$0"
 		],
 		"description": "Fills the table with areas from a path. Returns whether a path was found. If 'endArea' is NULL, will compute a path as close as possible to 'goalPos'."
 	},
@@ -3484,42 +3610,42 @@
 		"body": [
 			"GetParent()$0"
 		],
-		"description": "Returns the area just prior to this one in the search path"
+		"description": "Returns the area just prior to this one in the search path."
 	},
 	"int GetParentHow()": {
 		"prefix": "GetParentHow",
 		"body": [
 			"GetParentHow()$0"
 		],
-		"description": "Returns how we get from parent to us"
+		"description": "Returns how we get from parent to us."
 	},
 	"Vector GetPhysAngularVelocity(handle entity)": {
 		"prefix": "GetPhysAngularVelocity",
 		"body": [
 			"GetPhysAngularVelocity(${1:handle entity})$0"
 		],
-		"description": "Returns the Angular velocity of the entity."
+		"description": "Returns the Angular velocity of the entity. Deprecated, use the GetPhysAngularVelocity method on the entity instead."
 	},
 	"Vector GetPhysVelocity(handle entity)": {
 		"prefix": "GetPhysVelocity",
 		"body": [
 			"GetPhysVelocity(${1:handle entity})$0"
 		],
-		"description": "Returns the velocity of the entity."
+		"description": "Returns the velocity of the entity. Deprecated, use the GetPhysVelocity method on the entity instead."
 	},
 	"string GetPlaceName()": {
 		"prefix": "GetPlaceName",
 		"body": [
 			"GetPlaceName()$0"
 		],
-		"description": "Get place name"
+		"description": "Get place name if it exists, null otherwise."
 	},
 	"float GetPlaybackRate()": {
 		"prefix": "GetPlaybackRate",
 		"body": [
 			"GetPlaybackRate()$0"
 		],
-		"description": "Set the current playback rate."
+		"description": "Get the current animation's playback rate."
 	},
 	"int GetPlayerClass()": {
 		"prefix": "GetPlayerClass",
@@ -3533,12 +3659,12 @@
 		"body": [
 			"GetPlayerCount(${1:int team})$0"
 		],
-		"description": "Return number of players of given team currently within this area (team of zero means any/all)"
+		"description": "Return number of players of given team currently within this area (team of zero means any/all)."
 	},
-	"handle GetPlayerFromUserID(int ID)": {
+	"handle GetPlayerFromUserID(int userid)": {
 		"prefix": "GetPlayerFromUserID",
 		"body": [
-			"GetPlayerFromUserID(${1:int ID})$0"
+			"GetPlayerFromUserID(${1:int userid})$0"
 		],
 		"description": "Given a user id, return the entity, or null."
 	},
@@ -3547,19 +3673,19 @@
 		"body": [
 			"GetPlayerMaxs()$0"
 		],
-		"description": ""
+		"description": "Get a vector containing max bounds of the player in local space. The player's model scale will affect the result."
 	},
 	"Vector GetPlayerMins()": {
 		"prefix": "GetPlayerMins",
 		"body": [
 			"GetPlayerMins()$0"
 		],
-		"description": ""
+		"description": "Get a vector containing min bounds of the player in local space. The player's model scale will affect the result."
 	},
-	"float GetPlayerSpeechDuration(int)": {
+	"float GetPlayerSpeechDuration(int playerIndex)": {
 		"prefix": "GetPlayerSpeechDuration",
 		"body": [
-			"GetPlayerSpeechDuration(${1:int})$0"
+			"GetPlayerSpeechDuration(${1:int playerIndex})$0"
 		],
 		"description": "Returns the number of seconds the player has been continuously speaking."
 	},
@@ -3715,7 +3841,7 @@
 		"body": [
 			"GetRandomAdjacentArea(${1:int dir})$0"
 		],
-		"description": "Return a random adjacent area in the given direction"
+		"description": "Return a random adjacent area in the given direction."
 	},
 	"int GetResupplyPoints()": {
 		"prefix": "GetResupplyPoints",
@@ -3778,7 +3904,7 @@
 		"body": [
 			"GetScriptOverlayMaterial()$0"
 		],
-		"description": "Gets the current view overlay material"
+		"description": "Gets the current overlay material set by SetScriptOverlayMaterial."
 	},
 	"handle GetScriptScope()": {
 		"prefix": "GetScriptScope",
@@ -3813,42 +3939,42 @@
 		"body": [
 			"GetSequence()$0"
 		],
-		"description": "Get the current sequence id"
+		"description": "Get the current-playing sequence's ID."
 	},
-	"string GetSequenceActivityName(int)": {
+	"string GetSequenceActivityName(int ID)": {
 		"prefix": "GetSequenceActivityName",
 		"body": [
-			"GetSequenceActivityName(${1:int})$0"
+			"GetSequenceActivityName(${1:int ID})$0"
 		],
-		"description": "Get the activity name for a sequence by id"
+		"description": "Get the activity name for a sequence by sequence ID."
 	},
-	"float GetSequenceDuration(int)": {
+	"float GetSequenceDuration(int ID)": {
 		"prefix": "GetSequenceDuration",
 		"body": [
-			"GetSequenceDuration(${1:int})$0"
+			"GetSequenceDuration(${1:int ID})$0"
 		],
-		"description": "Get a sequence duration by id"
+		"description": "Get a sequence duration in seconds by sequence ID."
 	},
-	"string GetSequenceName(int)": {
+	"string GetSequenceName(int ID)": {
 		"prefix": "GetSequenceName",
 		"body": [
-			"GetSequenceName(${1:int})$0"
+			"GetSequenceName(${1:int ID})$0"
 		],
-		"description": "Get a sequence name by id"
+		"description": "Get a sequence name by sequence ID."
 	},
 	"float GetSizeX()": {
 		"prefix": "GetSizeX",
 		"body": [
 			"GetSizeX()$0"
 		],
-		"description": "Return the area size along the X axis"
+		"description": "Return the area size along the X axis."
 	},
 	"float GetSizeY()": {
 		"prefix": "GetSizeY",
 		"body": [
 			"GetSizeY()$0"
 		],
-		"description": "Return the area size along the Y axis"
+		"description": "Return the area size along the Y axis."
 	},
 	"int GetSkin()": {
 		"prefix": "GetSkin",
@@ -3871,12 +3997,12 @@
 		],
 		"description": ""
 	},
-	"float GetSoundDuration(string soundname, string actormodel)": {
+	"float GetSoundDuration(string soundname, string actormodelname)": {
 		"prefix": "GetSoundDuration",
 		"body": [
-			"GetSoundDuration(${1:string soundname}, ${2:string actormodel})$0"
+			"GetSoundDuration(${1:string soundname}, ${2:string actormodelname})$0"
 		],
-		"description": "Returns float dur"
+		"description": "Returns float duration of the sound. Actor model name is optional and can be left null."
 	},
 	"handle GetSpawnArea()": {
 		"prefix": "GetSpawnArea",
@@ -3918,7 +4044,7 @@
 		"body": [
 			"GetStepHeight()$0"
 		],
-		"description": "If delta Z is greater than this, we have to jump to get up"
+		"description": "If delta Z is lower than this, we can step up the surface (like a stair step), but if delta Z is greater than this, we have to jump to get up."
 	},
 	"int GetStopWatchState()": {
 		"prefix": "GetStopWatchState",
@@ -3955,6 +4081,20 @@
 		],
 		"description": "Fills in a passed table with all props of a specified type for the provided entity (set iPropType to 0 for SendTable or 1 for DataMap)"
 	},
+	"float GetTauntAttackTime()": {
+		"prefix": "GetTauntAttackTime",
+		"body": [
+			"GetTauntAttackTime()$0"
+		],
+		"description": "Timestamp until a taunt attack \"lasts\". 0 if unavailable"
+	},
+	"float GetTauntRemoveTime()": {
+		"prefix": "GetTauntRemoveTime",
+		"body": [
+			"GetTauntRemoveTime()$0"
+		],
+		"description": "Timestamp until taunt is stopped"
+	},
 	"int GetTeam()": {
 		"prefix": "GetTeam",
 		"body": [
@@ -3988,7 +4128,7 @@
 		"body": [
 			"GetTravelDistanceToBombTarget()$0"
 		],
-		"description": "Gets the travel distance to the MvM bomb target"
+		"description": "Gets the travel distance to the MvM bomb target."
 	},
 	"float GetTraversableSlopeLimit()": {
 		"prefix": "GetTraversableSlopeLimit",
@@ -4004,12 +4144,19 @@
 		],
 		"description": "Get the up vector of the entity"
 	},
-	"float GetUpdateInterval()": {
+	"GetUpdateInterval()": {
 		"prefix": "GetUpdateInterval",
 		"body": [
 			"GetUpdateInterval()$0"
 		],
-		"description": "Returns the component update interval"
+		"description": "Returns time between updates"
+	},
+	"float GetVehicleReverseTime()": {
+		"prefix": "GetVehicleReverseTime",
+		"body": [
+			"GetVehicleReverseTime()$0"
+		],
+		"description": "Timestamp when kart was reversed"
 	},
 	"Vector GetVelocity()": {
 		"prefix": "GetVelocity",
@@ -4018,7 +4165,7 @@
 		],
 		"description": "Return current world space velocity"
 	},
-	"handle GetVisionInterface()": {
+	"INextBotComponent GetVisionInterface()": {
 		"prefix": "GetVisionInterface",
 		"body": [
 			"GetVisionInterface()$0"
@@ -4037,14 +4184,14 @@
 		"body": [
 			"GetWaterLevel()$0"
 		],
-		"description": ""
+		"description": "This function tells you how much of the entity is underwater. It returns a value of 0 if not underwater, 1 if the feet are (touching water brush), 2 if the waist is (center of the hull of the entity), and 3 if the head is (eyes position)."
 	},
 	"int GetWaterType()": {
 		"prefix": "GetWaterType",
 		"body": [
 			"GetWaterType()$0"
 		],
-		"description": ""
+		"description": "It returns the type of water the entity is currently submerged in. 32 for water and 16 for slime."
 	},
 	"int GetWeaponFlags()": {
 		"prefix": "GetWeaponFlags",
@@ -4081,6 +4228,13 @@
 		],
 		"description": "1.61803"
 	},
+	"void GrantOrRemoveAllUpgrades(bool remove, bool refund)": {
+		"prefix": "GrantOrRemoveAllUpgrades",
+		"body": [
+			"GrantOrRemoveAllUpgrades(${1:bool remove}, ${2:bool refund})$0"
+		],
+		"description": ""
+	},
 	"HARD": {
 		"prefix": "HARD",
 		"body": [
@@ -4100,7 +4254,7 @@
 		"body": [
 			"HIDEHUD_BITCOUNT$0"
 		],
-		"description": "12"
+		"description": "17"
 	},
 	"HIDEHUD_BONUS_PROGRESS": {
 		"prefix": "HIDEHUD_BONUS_PROGRESS",
@@ -4109,12 +4263,26 @@
 		],
 		"description": "2048"
 	},
+	"HIDEHUD_BUILDING_STATUS": {
+		"prefix": "HIDEHUD_BUILDING_STATUS",
+		"body": [
+			"HIDEHUD_BUILDING_STATUS$0"
+		],
+		"description": "4096"
+	},
 	"HIDEHUD_CHAT": {
 		"prefix": "HIDEHUD_CHAT",
 		"body": [
 			"HIDEHUD_CHAT$0"
 		],
 		"description": "128"
+	},
+	"HIDEHUD_CLOAK_AND_FEIGN": {
+		"prefix": "HIDEHUD_CLOAK_AND_FEIGN",
+		"body": [
+			"HIDEHUD_CLOAK_AND_FEIGN$0"
+		],
+		"description": "8192"
 	},
 	"HIDEHUD_CROSSHAIR": {
 		"prefix": "HIDEHUD_CROSSHAIR",
@@ -4144,6 +4312,13 @@
 		],
 		"description": "1024"
 	},
+	"HIDEHUD_METAL": {
+		"prefix": "HIDEHUD_METAL",
+		"body": [
+			"HIDEHUD_METAL$0"
+		],
+		"description": "32768"
+	},
 	"HIDEHUD_MISCSTATUS": {
 		"prefix": "HIDEHUD_MISCSTATUS",
 		"body": [
@@ -4158,12 +4333,26 @@
 		],
 		"description": "32"
 	},
+	"HIDEHUD_PIPES_AND_CHARGE": {
+		"prefix": "HIDEHUD_PIPES_AND_CHARGE",
+		"body": [
+			"HIDEHUD_PIPES_AND_CHARGE$0"
+		],
+		"description": "16384"
+	},
 	"HIDEHUD_PLAYERDEAD": {
 		"prefix": "HIDEHUD_PLAYERDEAD",
 		"body": [
 			"HIDEHUD_PLAYERDEAD$0"
 		],
 		"description": "16"
+	},
+	"HIDEHUD_TARGET_ID": {
+		"prefix": "HIDEHUD_TARGET_ID",
+		"body": [
+			"HIDEHUD_TARGET_ID$0"
+		],
+		"description": "65536"
 	},
 	"HIDEHUD_VEHICLE_CROSSHAIR": {
 		"prefix": "HIDEHUD_VEHICLE_CROSSHAIR",
@@ -4291,19 +4480,19 @@
 		],
 		"description": "Do we have any ammo?"
 	},
-	"bool HasAttributeTF(int)": {
+	"bool HasAttributeTF(int bits)": {
 		"prefix": "HasAttributeTF",
 		"body": [
-			"HasAttributeTF(${1:int})$0"
+			"HasAttributeTF(${1:int bits})$0"
 		],
-		"description": "Has TF-specific area attribute bits"
+		"description": "Has TF-specific area attribute bits of the given ones."
 	},
-	"bool HasAttributes(int)": {
+	"bool HasAttributes(int bits)": {
 		"prefix": "HasAttributes",
 		"body": [
-			"HasAttributes(${1:int})$0"
+			"HasAttributes(${1:int bits})$0"
 		],
-		"description": "Has area attribute bits"
+		"description": "Has area attribute bits of the given ones."
 	},
 	"bool HasAvoidanceObstacle(float maxheight)": {
 		"prefix": "HasAvoidanceObstacle",
@@ -4312,17 +4501,17 @@
 		],
 		"description": "Returns true if there's a large, immobile object obstructing this area"
 	},
-	"bool HasBotAttribute(int)": {
+	"bool HasBotAttribute(int attribute)": {
 		"prefix": "HasBotAttribute",
 		"body": [
-			"HasBotAttribute(${1:int})$0"
+			"HasBotAttribute(${1:int attribute})$0"
 		],
 		"description": "Checks if this TFBot has the given attributes"
 	},
-	"bool HasBotTag(string)": {
+	"bool HasBotTag(string tag)": {
 		"prefix": "HasBotTag",
 		"body": [
-			"HasBotTag(${1:string})$0"
+			"HasBotTag(${1:string tag})$0"
 		],
 		"description": "Checks if this TFBot has the given bot tag"
 	},
@@ -4340,12 +4529,12 @@
 		],
 		"description": "Returns true if the output exists."
 	},
-	"float HasPotentialGap(Vector, Vector)": {
+	"float HasPotentialGap(Vector from, Vector to)": {
 		"prefix": "HasPotentialGap",
 		"body": [
-			"HasPotentialGap(${1:Vector}, ${2:Vector})$0"
+			"HasPotentialGap(${1:Vector from}, ${2:Vector to})$0"
 		],
-		"description": "Return true if there is a possible gap that will need to be jumped over"
+		"description": "Checks if there is a possible gap that will need to be jumped over. Returns fraction of ray from 0 to 1."
 	},
 	"bool HasPrimaryAmmo()": {
 		"prefix": "HasPrimaryAmmo",
@@ -4368,10 +4557,10 @@
 		],
 		"description": "Do we have any secondary ammo?"
 	},
-	"bool HasWeaponRestriction(int)": {
+	"bool HasWeaponRestriction(int flags)": {
 		"prefix": "HasWeaponRestriction",
 		"body": [
-			"HasWeaponRestriction(${1:int})$0"
+			"HasWeaponRestriction(${1:int flags})$0"
 		],
 		"description": "Checks if this TFBot has the given weapon restriction flags"
 	},
@@ -4625,7 +4814,7 @@
 		"body": [
 			"InMatchStartCountdown()$0"
 		],
-		"description": "Are we in the pre-match state?"
+		"description": "Are we in the pre-match/setup state?"
 	},
 	"bool InOvertime()": {
 		"prefix": "InOvertime",
@@ -4641,12 +4830,12 @@
 		],
 		"description": "Wrapper for DoIncludeScript"
 	},
-	"bool Input[InputName]()": {
-		"prefix": "Input[InputName]",
+	"bool Input<name>()": {
+		"prefix": "Input<name>",
 		"body": [
-			"Input[InputName]()$0"
+			"Input<name>()$0"
 		],
-		"description": "Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to beInputfollowed by the name of the input with the same casing (PascalCase). E.g. for the FireUser1 input, it would beInputFireUser1. When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variablesactivatorandcaller. The function needs to return a boolean value; Returningtrueprocesses the input, whilefalsecancels it."
+		"description": "Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to be Input followed by the name of the input. E.g. for the FireUser1 input, it would be InputFireUser1 When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variables activator and caller. The function needs to return a boolean value; Returning true processes the input, while false cancels it."
 	},
 	"Quaternion Invert()": {
 		"prefix": "Invert",
@@ -4676,6 +4865,13 @@
 		],
 		"description": ""
 	},
+	"bool IsAllowedToRemoveTaunt()": {
+		"prefix": "IsAllowedToRemoveTaunt",
+		"body": [
+			"IsAllowedToRemoveTaunt()$0"
+		],
+		"description": "Returns true if the taunt will be stopped"
+	},
 	"bool IsAllowedToSwitch()": {
 		"prefix": "IsAllowedToSwitch",
 		"body": [
@@ -4704,10 +4900,10 @@
 		],
 		"description": ""
 	},
-	"bool IsAreaTraversable(handle)": {
+	"bool IsAreaTraversable(handle area)": {
 		"prefix": "IsAreaTraversable",
 		"body": [
-			"IsAreaTraversable(${1:handle})$0"
+			"IsAreaTraversable(${1:handle area})$0"
 		],
 		"description": "Return true if given area can be used for navigation"
 	},
@@ -4732,10 +4928,10 @@
 		],
 		"description": "Is our attention focused right now?"
 	},
-	"bool IsAttentionFocusedOn(handle)": {
+	"bool IsAttentionFocusedOn(handle entity)": {
 		"prefix": "IsAttentionFocusedOn",
 		"body": [
-			"IsAttentionFocusedOn(${1:handle})$0"
+			"IsAttentionFocusedOn(${1:handle entity})$0"
 		],
 		"description": "Is our attention focused on this entity"
 	},
@@ -4746,19 +4942,26 @@
 		],
 		"description": "Are we in birthday mode?"
 	},
-	"bool IsBlocked(int team, bool)": {
+	"bool IsBlocked(int team, bool affectsFlow)": {
 		"prefix": "IsBlocked",
 		"body": [
-			"IsBlocked(${1:int team}, ${2:bool})$0"
+			"IsBlocked(${1:int team}, ${2:bool affectsFlow})$0"
 		],
-		"description": "Return true if team is blocked in this area"
+		"description": "Return true if team is blocked in this area."
+	},
+	"bool IsBotOfType(int type)": {
+		"prefix": "IsBotOfType",
+		"body": [
+			"IsBotOfType(${1:int type})$0"
+		],
+		"description": ""
 	},
 	"bool IsBottleneck()": {
 		"prefix": "IsBottleneck",
 		"body": [
 			"IsBottleneck()$0"
 		],
-		"description": "Returns true if area is a bottleneck"
+		"description": "Returns true if area is a bottleneck. (tiny narrow areas with only one path)"
 	},
 	"bool IsCallingForMedic()": {
 		"prefix": "IsCallingForMedic",
@@ -4800,7 +5003,7 @@
 		"body": [
 			"IsCompletelyVisibleToTeam(${1:int team})$0"
 		],
-		"description": "Return true if given area is completely visible from somewhere in this area by someone on the team"
+		"description": "Return true if given area is completely visible from somewhere in this area by someone on the team."
 	},
 	"bool IsConVarOnAllowList(string name)": {
 		"prefix": "IsConVarOnAllowList",
@@ -4814,7 +5017,7 @@
 		"body": [
 			"IsConnected(${1:handle area}, ${2:int dir})$0"
 		],
-		"description": "Return true if given area is connected in given direction"
+		"description": "Return true if this area is connected to other area in given direction. (If you set direction to -1 or 4, it will automatically check all directions for a connection)."
 	},
 	"bool IsControlStunned()": {
 		"prefix": "IsControlStunned",
@@ -4842,7 +5045,7 @@
 		"body": [
 			"IsDamaging()$0"
 		],
-		"description": "Return true if continuous damage (ie: fire) is in this area"
+		"description": "Return true if this area is marked to have continuous damage."
 	},
 	"bool IsDedicatedServer()": {
 		"prefix": "IsDedicatedServer",
@@ -4863,42 +5066,49 @@
 		"body": [
 			"IsDegenerate()$0"
 		],
-		"description": "Return true if this area is badly formed"
+		"description": "Return true if this area is badly formed."
 	},
-	"bool IsDifficulty(int)": {
+	"bool IsDifficulty(int difficulty)": {
 		"prefix": "IsDifficulty",
 		"body": [
-			"IsDifficulty(${1:int})$0"
+			"IsDifficulty(${1:int difficulty})$0"
 		],
 		"description": "Returns true/false if the bot's difficulty level matches."
 	},
-	"bool IsEFlagSet(int)": {
+	"bool IsEFlagSet(int eflag)": {
 		"prefix": "IsEFlagSet",
 		"body": [
-			"IsEFlagSet(${1:int})$0"
+			"IsEFlagSet(${1:int eflag})$0"
 		],
 		"description": ""
 	},
-	"bool IsEdge(int dir)": {
+	"bool IsEdge(ENavDirType dir)": {
 		"prefix": "IsEdge",
 		"body": [
-			"IsEdge(${1:int dir})$0"
+			"IsEdge(${1:ENavDirType dir})$0"
 		],
-		"description": "Return true if there are no bi-directional links on the given side"
+		"description": "Return true if there are no bi-directional links on the given side."
 	},
-	"bool IsEnemy(handle)": {
+	"bool IsEnemy(handle entity)": {
 		"prefix": "IsEnemy",
 		"body": [
-			"IsEnemy(${1:handle})$0"
+			"IsEnemy(${1:handle entity})$0"
 		],
 		"description": "Return true if given entity is our enemy"
 	},
-	"bool IsEntityTraversable(handle, bool)": {
+	"bool IsEntityTraversable(handle entity, bool immediately)": {
 		"prefix": "IsEntityTraversable",
 		"body": [
-			"IsEntityTraversable(${1:handle}, ${2:bool})$0"
+			"IsEntityTraversable(${1:handle entity}, ${2:bool immediately})$0"
 		],
-		"description": "Return true if the entity handle is traversable"
+		"description": "Return true if the entity handle is traversable. If immediately is true, breakables are considered non-traverseable"
+	},
+	"bool IsFakeClient()": {
+		"prefix": "IsFakeClient",
+		"body": [
+			"IsFakeClient()$0"
+		],
+		"description": ""
 	},
 	"bool IsFireproof()": {
 		"prefix": "IsFireproof",
@@ -4919,12 +5129,12 @@
 		"body": [
 			"IsFlat()$0"
 		],
-		"description": "Return true if this area is approximately flat"
+		"description": "Return true if this area is approximately flat."
 	},
-	"bool IsFriend(handle)": {
+	"bool IsFriend(handle entity)": {
 		"prefix": "IsFriend",
 		"body": [
-			"IsFriend(${1:handle})$0"
+			"IsFriend(${1:handle entity})$0"
 		],
 		"description": "Return true if given entity is our friend"
 	},
@@ -4935,12 +5145,12 @@
 		],
 		"description": ""
 	},
-	"bool IsGap(Vector, Vector)": {
+	"bool IsGap(Vector pos, Vector forward)": {
 		"prefix": "IsGap",
 		"body": [
-			"IsGap(${1:Vector}, ${2:Vector})$0"
+			"IsGap(${1:Vector pos}, ${2:Vector forward})$0"
 		],
-		"description": "Return true if there is a gap here when moving in the given direction"
+		"description": "Return true if there is a gap at this position."
 	},
 	"bool IsHolidayActive(int holiday)": {
 		"prefix": "IsHolidayActive",
@@ -5115,14 +5325,14 @@
 		"body": [
 			"IsOverlapping(${1:handle area})$0"
 		],
-		"description": "Return true if 'area' overlaps our 2D extents"
+		"description": "Return true if 'area' overlaps our 2D extents."
 	},
 	"bool IsOverlappingOrigin(Vector pos, float tolerance)": {
 		"prefix": "IsOverlappingOrigin",
 		"body": [
 			"IsOverlappingOrigin(${1:Vector pos}, ${2:float tolerance})$0"
 		],
-		"description": "Return true if 'pos' is within 2D extents of area"
+		"description": "Return true if 'pos' is within 2D extents of area."
 	},
 	"bool IsPVEModeActive()": {
 		"prefix": "IsPVEModeActive",
@@ -5159,12 +5369,12 @@
 		],
 		"description": "Returns true if we placed a sapper in the last few moments"
 	},
-	"IsPlayer()": {
+	"bool IsPlayer()": {
 		"prefix": "IsPlayer",
 		"body": [
 			"IsPlayer()$0"
 		],
-		"description": ""
+		"description": "Checks whether the entity is a player or not."
 	},
 	"bool IsPlayerABot(handle player)": {
 		"prefix": "IsPlayerABot",
@@ -5173,10 +5383,10 @@
 		],
 		"description": "Is this player/entity a bot."
 	},
-	"bool IsPlayerSpeaking(int)": {
+	"bool IsPlayerSpeaking(int playerIndex)": {
 		"prefix": "IsPlayerSpeaking",
 		"body": [
-			"IsPlayerSpeaking(${1:int})$0"
+			"IsPlayerSpeaking(${1:int playerIndex})$0"
 		],
 		"description": "Returns whether the player specified is speaking."
 	},
@@ -5187,19 +5397,19 @@
 		],
 		"description": "If this scene is currently playing."
 	},
-	"float IsPotentiallyTraversable(Vector, Vector, bool)": {
+	"float IsPotentiallyTraversable(Vector from, Vector to, bool immediately)": {
 		"prefix": "IsPotentiallyTraversable",
 		"body": [
-			"IsPotentiallyTraversable(${1:Vector}, ${2:Vector}, ${3:bool})$0"
+			"IsPotentiallyTraversable(${1:Vector from}, ${2:Vector to}, ${3:bool immediately})$0"
 		],
-		"description": "Return true if this locomotor could potentially move along the line given."
+		"description": "Checks if this locomotor could potentially move along the line given. Returns fraction of trace result (1 = clear). If immediately is true, breakables are considered non-traverseable"
 	},
 	"bool IsPotentiallyVisibleToTeam(int team)": {
 		"prefix": "IsPotentiallyVisibleToTeam",
 		"body": [
 			"IsPotentiallyVisibleToTeam(${1:int team})$0"
 		],
-		"description": "Return true if any portion of this area is visible to anyone on the given team"
+		"description": "Return true if any portion of this area is visible to anyone on the given team."
 	},
 	"bool IsPowerupMode()": {
 		"prefix": "IsPowerupMode",
@@ -5222,10 +5432,10 @@
 		],
 		"description": ""
 	},
-	"bool IsReachableByTeam(int)": {
+	"bool IsReachableByTeam(int team)": {
 		"prefix": "IsReachableByTeam",
 		"body": [
-			"IsReachableByTeam(${1:int})$0"
+			"IsReachableByTeam(${1:int team})$0"
 		],
 		"description": "Is this area reachable by the given team?"
 	},
@@ -5241,7 +5451,7 @@
 		"body": [
 			"IsRoughlySquare()$0"
 		],
-		"description": "Return true if this area is approximately square"
+		"description": "Return true if this area is approximately square."
 	},
 	"bool IsRunning()": {
 		"prefix": "IsRunning",
@@ -5285,10 +5495,10 @@
 		],
 		"description": ""
 	},
-	"bool IsSolidFlagSet(int)": {
+	"bool IsSolidFlagSet(int solidflag)": {
 		"prefix": "IsSolidFlagSet",
 		"body": [
-			"IsSolidFlagSet(${1:int})$0"
+			"IsSolidFlagSet(${1:int solidflag})$0"
 		],
 		"description": ""
 	},
@@ -5320,6 +5530,13 @@
 		],
 		"description": "Is this nav area marked with the current marking scope?"
 	},
+	"bool IsTaunting()": {
+		"prefix": "IsTaunting",
+		"body": [
+			"IsTaunting()$0"
+		],
+		"description": ""
+	},
 	"bool IsTruceActive()": {
 		"prefix": "IsTruceActive",
 		"body": [
@@ -5332,7 +5549,7 @@
 		"body": [
 			"IsUnderwater()$0"
 		],
-		"description": "Return true if area is underwater"
+		"description": "Return true if area is underwater."
 	},
 	"bool IsUsingActionSlot()": {
 		"prefix": "IsUsingActionSlot",
@@ -5355,19 +5572,19 @@
 		],
 		"description": ""
 	},
-	"IsValid()": {
+	"bool IsValid()": {
 		"prefix": "IsValid",
 		"body": [
 			"IsValid()$0"
 		],
-		"description": ""
+		"description": "Whether the handle belongs to a valid key."
 	},
 	"bool IsValidForWanderingPopulation()": {
 		"prefix": "IsValidForWanderingPopulation",
 		"body": [
 			"IsValidForWanderingPopulation()$0"
 		],
-		"description": "Returns true if area is valid for wandering population"
+		"description": "Returns true if area is valid for wandering population."
 	},
 	"bool IsViewingCYOAPDA()": {
 		"prefix": "IsViewingCYOAPDA",
@@ -5381,7 +5598,7 @@
 		"body": [
 			"IsVisible(${1:Vector point})$0"
 		],
-		"description": "Return true if area is visible from the given eyepoint"
+		"description": "Return true if area is visible from the given eyepoint."
 	},
 	"bool IsWeakref()": {
 		"prefix": "IsWeakref",
@@ -5390,10 +5607,10 @@
 		],
 		"description": ""
 	},
-	"bool IsWeaponRestricted(handle)": {
+	"bool IsWeaponRestricted(handle weapon)": {
 		"prefix": "IsWeaponRestricted",
 		"body": [
-			"IsWeaponRestricted(${1:handle})$0"
+			"IsWeaponRestricted(${1:handle weapon})$0"
 		],
 		"description": "Checks if the given weapon is restricted for use on the bot"
 	},
@@ -5404,38 +5621,38 @@
 		],
 		"description": "Initiate a simple undirected jump in the air"
 	},
-	"void JumpAcrossGap(Vector, Vector)": {
+	"void JumpAcrossGap(Vector goalPos, Vector goalForward)": {
 		"prefix": "JumpAcrossGap",
 		"body": [
-			"JumpAcrossGap(${1:Vector}, ${2:Vector})$0"
+			"JumpAcrossGap(${1:Vector goalPos}, ${2:Vector goalForward})$0"
 		],
 		"description": "Initiate a jump across an empty volume of space to far side"
 	},
-	"bool KeyValueFromFloat(string, float)": {
+	"bool KeyValueFromFloat(string key, float value)": {
 		"prefix": "KeyValueFromFloat",
 		"body": [
-			"KeyValueFromFloat(${1:string}, ${2:float})$0"
+			"KeyValueFromFloat(${1:string key}, ${2:float value})$0"
 		],
 		"description": "Executes KeyValue with a float"
 	},
-	"bool KeyValueFromInt(string, int)": {
+	"bool KeyValueFromInt(string key, int value)": {
 		"prefix": "KeyValueFromInt",
 		"body": [
-			"KeyValueFromInt(${1:string}, ${2:int})$0"
+			"KeyValueFromInt(${1:string key}, ${2:int value})$0"
 		],
 		"description": "Executes KeyValue with an int"
 	},
-	"bool KeyValueFromString(string, string)": {
+	"bool KeyValueFromString(string key, string value)": {
 		"prefix": "KeyValueFromString",
 		"body": [
-			"KeyValueFromString(${1:string}, ${2:string})$0"
+			"KeyValueFromString(${1:string key}, ${2:string value})$0"
 		],
 		"description": "Executes KeyValue with a string"
 	},
-	"bool KeyValueFromVector(string, Vector)": {
+	"bool KeyValueFromVector(string key, Vector value)": {
 		"prefix": "KeyValueFromVector",
 		"body": [
-			"KeyValueFromVector(${1:string}, ${2:Vector})$0"
+			"KeyValueFromVector(${1:string key}, ${2:Vector value})$0"
 		],
 		"description": "Executes KeyValue with a vector"
 	},
@@ -5444,7 +5661,7 @@
 		"body": [
 			"Kill()$0"
 		],
-		"description": ""
+		"description": "Removes the entity. Equivalent of firing the Kill I/O input, but instantaneous."
 	},
 	"LAST_SHARED_COLLISION_GROUP": {
 		"prefix": "LAST_SHARED_COLLISION_GROUP",
@@ -5474,12 +5691,12 @@
 		],
 		"description": "Makes us leave the current squad (if any)"
 	},
-	"Left()": {
+	"Vector Left()": {
 		"prefix": "Left",
 		"body": [
 			"Left()$0"
 		],
-		"description": ""
+		"description": "Returns the left Vector of the angles."
 	},
 	"float Length()": {
 		"prefix": "Length",
@@ -5509,10 +5726,10 @@
 		],
 		"description": "The magnitude of the vector squared. Faster than the above method."
 	},
-	"bool LoadSceneFromString(string, string)": {
+	"bool LoadSceneFromString(string sceneName, string scene)": {
 		"prefix": "LoadSceneFromString",
 		"body": [
-			"LoadSceneFromString(${1:string}, ${2:string})$0"
+			"LoadSceneFromString(${1:string sceneName}, ${2:string scene})$0"
 		],
 		"description": "given a dummy scene name and a vcd string, load the scene"
 	},
@@ -5523,54 +5740,47 @@
 		],
 		"description": "Returns the entity's local eye angles"
 	},
-	"void LocalTime(table)": {
+	"void LocalTime(table out)": {
 		"prefix": "LocalTime",
 		"body": [
-			"LocalTime(${1:table})$0"
+			"LocalTime(${1:table out})$0"
 		],
 		"description": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)"
 	},
-	"Log()": {
-		"prefix": "Log",
-		"body": [
-			"Log()$0"
-		],
-		"description": ""
-	},
-	"int LookupActivity(string)": {
+	"int LookupActivity(string activity)": {
 		"prefix": "LookupActivity",
 		"body": [
-			"LookupActivity(${1:string})$0"
+			"LookupActivity(${1:string activity})$0"
 		],
-		"description": "Get the named activity index"
+		"description": "Get the named activity index. Returns -1 if the activity does not exist."
 	},
-	"int LookupAttachment(string)": {
+	"int LookupAttachment(string name)": {
 		"prefix": "LookupAttachment",
 		"body": [
-			"LookupAttachment(${1:string})$0"
+			"LookupAttachment(${1:string name})$0"
 		],
-		"description": "Get the named attachement id"
+		"description": "Get the named attachment index. Returns 0 if the attachment does not exist."
 	},
-	"int LookupBone(string)": {
+	"int LookupBone(string bone)": {
 		"prefix": "LookupBone",
 		"body": [
-			"LookupBone(${1:string})$0"
+			"LookupBone(${1:string bone})$0"
 		],
-		"description": "Get the named bone index"
+		"description": "Get the named bone index. Returns -1 if the bone does not exist."
 	},
-	"int LookupPoseParameter(string)": {
+	"int LookupPoseParameter(string name)": {
 		"prefix": "LookupPoseParameter",
 		"body": [
-			"LookupPoseParameter(${1:string})$0"
+			"LookupPoseParameter(${1:string name})$0"
 		],
-		"description": "Looks up a pose parameter index by name"
+		"description": "Gets the pose parameter's index. Returns -1 if the pose parameter does not exist."
 	},
-	"int LookupSequence(string)": {
+	"int LookupSequence(string name)": {
 		"prefix": "LookupSequence",
 		"body": [
-			"LookupSequence(${1:string})$0"
+			"LookupSequence(${1:string name})$0"
 		],
-		"description": "Looks up a sequence by sequence name or activity name"
+		"description": "Looks up a sequence by names of sequences or activities. Returns -1 if the sequence does not exist."
 	},
 	"MAX_EDICTS": {
 		"prefix": "MAX_EDICTS",
@@ -5584,7 +5794,7 @@
 		"body": [
 			"MAX_PLAYERS$0"
 		],
-		"description": "33"
+		"description": "101"
 	},
 	"MINIBOSS": {
 		"prefix": "MINIBOSS",
@@ -5726,7 +5936,7 @@
 		],
 		"description": "2"
 	},
-	"MakeNamespace()": {
+	"void MakeNamespace()": {
 		"prefix": "MakeNamespace",
 		"body": [
 			"MakeNamespace()$0"
@@ -5745,21 +5955,21 @@
 		"body": [
 			"MarkAsBlocked(${1:int team})$0"
 		],
-		"description": "Mark this area as blocked for team"
+		"description": "Mark this area as blocked for team."
 	},
 	"void MarkAsDamaging(float duration)": {
 		"prefix": "MarkAsDamaging",
 		"body": [
 			"MarkAsDamaging(${1:float duration})$0"
 		],
-		"description": "Mark this area is damaging for the next 'duration' seconds"
+		"description": "Mark this area is damaging for the next 'duration' seconds."
 	},
 	"void MarkObstacleToAvoid(float height)": {
 		"prefix": "MarkObstacleToAvoid",
 		"body": [
 			"MarkObstacleToAvoid(${1:float height})$0"
 		],
-		"description": "Marks the obstructed status of the nav area"
+		"description": "Marks the obstructed status of the nav area."
 	},
 	"bool MatchmakingShouldUseStopwatchMode()": {
 		"prefix": "MatchmakingShouldUseStopwatchMode",
@@ -5767,6 +5977,13 @@
 			"MatchmakingShouldUseStopwatchMode()$0"
 		],
 		"description": ""
+	},
+	"float MaxClients()": {
+		"prefix": "MaxClients",
+		"body": [
+			"MaxClients()$0"
+		],
+		"description": "Get the current number of max clients set by the maxplayers command."
 	},
 	"void Msg(string message)": {
 		"prefix": "Msg",
@@ -5999,17 +6216,17 @@
 		],
 		"description": "9"
 	},
-	"bool NavAreaBuildPath(CTFNavArea startArea, CTFNavArea endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers)": {
+	"bool NavAreaBuildPath(handle startArea, handle endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers)": {
 		"prefix": "NavAreaBuildPath",
 		"body": [
-			"NavAreaBuildPath(${1:CTFNavArea startArea}, ${2:CTFNavArea endArea}, ${3:Vector goalPos}, ${4:float flMaxPathLength}, ${5:int teamID}, ${6:bool ignoreNavBlockers})$0"
+			"NavAreaBuildPath(${1:handle startArea}, ${2:handle endArea}, ${3:Vector goalPos}, ${4:float flMaxPathLength}, ${5:int teamID}, ${6:bool ignoreNavBlockers})$0"
 		],
 		"description": "returns true if a path exists"
 	},
-	"float NavAreaTravelDistance(TFNavArea startArea, CTFNavArea endArea, float flMaxPathLength)": {
+	"float NavAreaTravelDistance(handle startArea, handle endArea, float flMaxPathLength)": {
 		"prefix": "NavAreaTravelDistance",
 		"body": [
-			"NavAreaTravelDistance(${1:TFNavArea startArea}, ${2:CTFNavArea endArea}, ${3:float flMaxPathLength})$0"
+			"NavAreaTravelDistance(${1:handle startArea}, ${2:handle endArea}, ${3:float flMaxPathLength})$0"
 		],
 		"description": "compute distance between two areas. Return -1 if can't reach 'endArea' from 'startArea'"
 	},
@@ -6025,9 +6242,9 @@
 		"body": [
 			"NextMovePeer()$0"
 		],
-		"description": ""
+		"description": "Returns the next entity parented with the entity. Intended for iteration use with FirstMoveChild()."
 	},
-	"Quaternion Norm()": {
+	"float Norm()": {
 		"prefix": "Norm",
 		"body": [
 			"Norm()$0"
@@ -6090,17 +6307,24 @@
 		],
 		"description": "7"
 	},
-	"void OnLandOnGround(handle)": {
+	"void OnGameEvent_<name>(table params)": {
+		"prefix": "OnGameEvent_<name>",
+		"body": [
+			"OnGameEvent_<name>(${1:table params})$0"
+		],
+		"description": "Called each time a game event with the specified name occurs. The name of the function needs to be OnGameEvent_ followed by the name of the game event. E.g. for the player_spawn input, it would be OnGameEvent_player_spawn."
+	},
+	"void OnLandOnGround(handle ground)": {
 		"prefix": "OnLandOnGround",
 		"body": [
-			"OnLandOnGround(${1:handle})$0"
+			"OnLandOnGround(${1:handle ground})$0"
 		],
 		"description": "Manually run the OnLandOnGround callback. Typically invoked when bot lands on the ground after being in the air"
 	},
-	"void OnLeaveGround(handle)": {
+	"void OnLeaveGround(handle ground)": {
 		"prefix": "OnLeaveGround",
 		"body": [
-			"OnLeaveGround(${1:handle})$0"
+			"OnLeaveGround(${1:handle ground})$0"
 		],
 		"description": "Manually run the OnLeaveGround callback. Typically invoked when bot leaves ground for any reason"
 	},
@@ -6137,7 +6361,7 @@
 		"body": [
 			"PI$0"
 		],
-		"description": ""
+		"description": "3.14158"
 	},
 	"PLAYER_FLAG_BITS": {
 		"prefix": "PLAYER_FLAG_BITS",
@@ -6195,19 +6419,19 @@
 		],
 		"description": "Object from world is put into the \"Held\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level."
 	},
-	"Pitch()": {
+	"float Pitch()": {
 		"prefix": "Pitch",
 		"body": [
 			"Pitch()$0"
 		],
-		"description": ""
+		"description": "Returns the pitch angle in degrees."
 	},
-	"float PlayScene(string, float)": {
+	"float PlayScene(string scene_file, float delay)": {
 		"prefix": "PlayScene",
 		"body": [
-			"PlayScene(${1:string}, ${2:float})$0"
+			"PlayScene(${1:string scene_file}, ${2:float delay})$0"
 		],
-		"description": "Play the specified .vcd file."
+		"description": "Play the specified .vcd file, causing the related characters to speak and subtitles to play."
 	},
 	"CBasePlayer PlayerInstanceFromIndex(int index)": {
 		"prefix": "PlayerInstanceFromIndex",
@@ -6216,10 +6440,10 @@
 		],
 		"description": "Get a script handle of a player using the player index."
 	},
-	"bool PlayerReadyStatus_ArePlayersOnTeamReady(int)": {
+	"bool PlayerReadyStatus_ArePlayersOnTeamReady(int team)": {
 		"prefix": "PlayerReadyStatus_ArePlayersOnTeamReady",
 		"body": [
-			"PlayerReadyStatus_ArePlayersOnTeamReady(${1:int})$0"
+			"PlayerReadyStatus_ArePlayersOnTeamReady(${1:int team})$0"
 		],
 		"description": ""
 	},
@@ -6251,12 +6475,12 @@
 		],
 		"description": "Are points able to be captured?"
 	},
-	"PostScriptExecute()": {
+	"void PostScriptExecute()": {
 		"prefix": "PostScriptExecute",
 		"body": [
 			"PostScriptExecute()$0"
 		],
-		"description": ""
+		"description": "Begin searching for all non-native functions with matching prefixes, then push them into the chain array."
 	},
 	"void PostSpawn(table entities)": {
 		"prefix": "PostSpawn",
@@ -6284,7 +6508,7 @@
 		"body": [
 			"PrecacheEntityFromTable(${1:table keyvalues})$0"
 		],
-		"description": "Precache an entity from KeyValues in a table; useful for entenv_shake."
+		"description": "Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly."
 	},
 	"int PrecacheModel(string filename)": {
 		"prefix": "PrecacheModel",
@@ -6293,45 +6517,45 @@
 		],
 		"description": "Precache a model and return index of the model."
 	},
-	"void PrecacheScriptSound(string)": {
+	"bool PrecacheScriptSound(string soundName)": {
 		"prefix": "PrecacheScriptSound",
 		"body": [
-			"PrecacheScriptSound(${1:string})$0"
+			"PrecacheScriptSound(${1:string soundName})$0"
 		],
-		"description": ""
+		"description": "Preache a soundscript."
 	},
 	"void PrecacheSound(string soundName)": {
 		"prefix": "PrecacheSound",
 		"body": [
 			"PrecacheSound(${1:string soundName})$0"
 		],
-		"description": "Precache a sound."
+		"description": "Precache a raw sound."
 	},
-	"void PrecacheSoundScript(string)": {
+	"void PrecacheSoundScript(string soundscript)": {
 		"prefix": "PrecacheSoundScript",
 		"body": [
-			"PrecacheSoundScript(${1:string})$0"
+			"PrecacheSoundScript(${1:string soundscript})$0"
 		],
-		"description": "Precache a sound for later playing."
+		"description": "Precache a sound script. Same as PrecacheScriptSound."
 	},
-	"void PressAltFireButton(float)": {
+	"void PressAltFireButton(float duration)": {
 		"prefix": "PressAltFireButton",
 		"body": [
-			"PressAltFireButton(${1:float})$0"
+			"PressAltFireButton(${1:float duration})$0"
 		],
 		"description": ""
 	},
-	"void PressFireButton(float)": {
+	"void PressFireButton(float duration)": {
 		"prefix": "PressFireButton",
 		"body": [
-			"PressFireButton(${1:float})$0"
+			"PressFireButton(${1:float duration})$0"
 		],
 		"description": ""
 	},
-	"void PressSpecialFireButton(float)": {
+	"void PressSpecialFireButton(float duration)": {
 		"prefix": "PressSpecialFireButton",
 		"body": [
-			"PressSpecialFireButton(${1:float})$0"
+			"PressSpecialFireButton(${1:float duration})$0"
 		],
 		"description": ""
 	},
@@ -6347,7 +6571,14 @@
 		"body": [
 			"PrintHelp()$0"
 		],
-		"description": ""
+		"description": "Equivalent to running script_help command."
+	},
+	"QAngle(float pitch = 0, float yaw = 0, float roll = 0)": {
+		"prefix": "QAngle",
+		"body": [
+			"QAngle(${1:float pitch = 0}, ${2:float yaw = 0}, ${3:float roll = 0})$0"
+		],
+		"description": "Creates a new QAngle."
 	},
 	"QUOTA_MANANGED": {
 		"prefix": "QUOTA_MANANGED",
@@ -6361,14 +6592,63 @@
 		"body": [
 			"Quaternion(${1:float x}, ${2:float y}, ${3:float z}, ${4:float w})$0"
 		],
-		"description": "Creates a new quaternion of the form w + x i + y j + z k."
+		"description": "Creates a new quaternion of the form w + xi + yj + zk."
 	},
 	"RAND_MAX": {
 		"prefix": "RAND_MAX",
 		"body": [
 			"RAND_MAX$0"
 		],
-		"description": ""
+		"description": "32767"
+	},
+	"RECIPIENT_FILTER_DEFAULT": {
+		"prefix": "RECIPIENT_FILTER_DEFAULT",
+		"body": [
+			"RECIPIENT_FILTER_DEFAULT$0"
+		],
+		"description": "0"
+	},
+	"RECIPIENT_FILTER_GLOBAL": {
+		"prefix": "RECIPIENT_FILTER_GLOBAL",
+		"body": [
+			"RECIPIENT_FILTER_GLOBAL$0"
+		],
+		"description": "5"
+	},
+	"RECIPIENT_FILTER_PAS": {
+		"prefix": "RECIPIENT_FILTER_PAS",
+		"body": [
+			"RECIPIENT_FILTER_PAS$0"
+		],
+		"description": "2"
+	},
+	"RECIPIENT_FILTER_PAS_ATTENUATION": {
+		"prefix": "RECIPIENT_FILTER_PAS_ATTENUATION",
+		"body": [
+			"RECIPIENT_FILTER_PAS_ATTENUATION$0"
+		],
+		"description": "1"
+	},
+	"RECIPIENT_FILTER_PVS": {
+		"prefix": "RECIPIENT_FILTER_PVS",
+		"body": [
+			"RECIPIENT_FILTER_PVS$0"
+		],
+		"description": "3"
+	},
+	"RECIPIENT_FILTER_SINGLE_PLAYER": {
+		"prefix": "RECIPIENT_FILTER_SINGLE_PLAYER",
+		"body": [
+			"RECIPIENT_FILTER_SINGLE_PLAYER$0"
+		],
+		"description": "4"
+	},
+	"RECIPIENT_FILTER_TEAM": {
+		"prefix": "RECIPIENT_FILTER_TEAM",
+		"body": [
+			"RECIPIENT_FILTER_TEAM$0"
+		],
+		"description": "6"
 	},
 	"REMOVE_ON_DEATH": {
 		"prefix": "REMOVE_ON_DEATH",
@@ -6412,10 +6692,10 @@
 		],
 		"description": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player"
 	},
-	"void Regenerate(bool)": {
+	"void Regenerate(bool refill_health_ammo)": {
 		"prefix": "Regenerate",
 		"body": [
-			"Regenerate(${1:bool})$0"
+			"Regenerate(${1:bool refill_health_ammo})$0"
 		],
 		"description": "Resupplies a player. If regen health/ammo is set, clears negative conds, gives back player health/ammo"
 	},
@@ -6440,10 +6720,10 @@
 		],
 		"description": "Register as a listener for a game event from script. It's what __CollectGameEventCallbacks() uses to register event callbacks to the C++ code."
 	},
-	"void RegisterScriptHookListener(string)": {
+	"void RegisterScriptHookListener(string name)": {
 		"prefix": "RegisterScriptHookListener",
 		"body": [
-			"RegisterScriptHookListener(${1:string})$0"
+			"RegisterScriptHookListener(${1:string name})$0"
 		],
 		"description": "Register as a listener for a script hook from script."
 	},
@@ -6454,52 +6734,52 @@
 		],
 		"description": "Releases the contents of the instance."
 	},
-	"void RemoveAllItems(bool)": {
+	"void RemoveAllItems(bool unused)": {
 		"prefix": "RemoveAllItems",
 		"body": [
-			"RemoveAllItems(${1:bool})$0"
+			"RemoveAllItems(${1:bool unused})$0"
 		],
 		"description": ""
 	},
-	"void RemoveAllObjects(bool)": {
+	"void RemoveAllObjects(bool explode)": {
 		"prefix": "RemoveAllObjects",
 		"body": [
-			"RemoveAllObjects(${1:bool})$0"
+			"RemoveAllObjects(${1:bool explode})$0"
 		],
 		"description": "Remove all player objects. Eg. dispensers/sentries."
 	},
-	"void RemoveAttribute(string)": {
+	"void RemoveAttribute(string name)": {
 		"prefix": "RemoveAttribute",
 		"body": [
-			"RemoveAttribute(${1:string})$0"
+			"RemoveAttribute(${1:string name})$0"
 		],
 		"description": "Remove an attribute to the entity"
 	},
-	"void RemoveAttributes(int)": {
+	"void RemoveAttributes(int bits)": {
 		"prefix": "RemoveAttributes",
 		"body": [
-			"RemoveAttributes(${1:int})$0"
+			"RemoveAttributes(${1:int bits})$0"
 		],
-		"description": "Removes area attribute bits"
+		"description": "Removes area attribute bits."
 	},
-	"void RemoveBotAttribute(int)": {
+	"void RemoveBotAttribute(int attribute)": {
 		"prefix": "RemoveBotAttribute",
 		"body": [
-			"RemoveBotAttribute(${1:int})$0"
+			"RemoveBotAttribute(${1:int attribute})$0"
 		],
 		"description": "Removes attribute flags on this TFBot"
 	},
-	"void RemoveBotTag(string)": {
+	"void RemoveBotTag(string tag)": {
 		"prefix": "RemoveBotTag",
 		"body": [
-			"RemoveBotTag(${1:string})$0"
+			"RemoveBotTag(${1:string tag})$0"
 		],
 		"description": "Removes a bot tag"
 	},
-	"void RemoveBroadcastTeamTarget(int)": {
+	"void RemoveBroadcastTeamTarget(int index)": {
 		"prefix": "RemoveBroadcastTeamTarget",
 		"body": [
-			"RemoveBroadcastTeamTarget(${1:int})$0"
+			"RemoveBroadcastTeamTarget(${1:int index})$0"
 		],
 		"description": "Removes a team (by index) from the broadcast list"
 	},
@@ -6517,17 +6797,17 @@
 		],
 		"description": ""
 	},
-	"void RemoveCurrency(int)": {
+	"void RemoveCurrency(int amount)": {
 		"prefix": "RemoveCurrency",
 		"body": [
-			"RemoveCurrency(${1:int})$0"
+			"RemoveCurrency(${1:int amount})$0"
 		],
 		"description": "Take away money from a player for reasons such as ie. spending."
 	},
-	"void RemoveCustomAttribute(string)": {
+	"void RemoveCustomAttribute(string name)": {
 		"prefix": "RemoveCustomAttribute",
 		"body": [
-			"RemoveCustomAttribute(${1:string})$0"
+			"RemoveCustomAttribute(${1:string name})$0"
 		],
 		"description": "Remove a custom attribute to the player"
 	},
@@ -6545,19 +6825,26 @@
 		],
 		"description": "Undisguise a spy."
 	},
-	"void RemoveEFlags(int)": {
+	"void RemoveEFlags(int eflags)": {
 		"prefix": "RemoveEFlags",
 		"body": [
-			"RemoveEFlags(${1:int})$0"
+			"RemoveEFlags(${1:int eflags})$0"
 		],
 		"description": ""
 	},
-	"void RemoveFlag(int)": {
+	"void RemoveFlag(int flags)": {
 		"prefix": "RemoveFlag",
 		"body": [
-			"RemoveFlag(${1:int})$0"
+			"RemoveFlag(${1:int flags})$0"
 		],
 		"description": ""
+	},
+	"void RemoveHudHideFlags(int flags)": {
+		"prefix": "RemoveHudHideFlags",
+		"body": [
+			"RemoveHudHideFlags(${1:int flags})$0"
+		],
+		"description": "Unhides a hud element based on Constants.FHideHUD"
 	},
 	"void RemoveInvisibility()": {
 		"prefix": "RemoveInvisibility",
@@ -6566,12 +6853,12 @@
 		],
 		"description": "Un-invisible a spy."
 	},
-	"void RemoveOrthogonalConnections(int dir)": {
+	"void RemoveOrthogonalConnections(ENavDirType dir)": {
 		"prefix": "RemoveOrthogonalConnections",
 		"body": [
-			"RemoveOrthogonalConnections(${1:int dir})$0"
+			"RemoveOrthogonalConnections(${1:ENavDirType dir})$0"
 		],
-		"description": "Removes all connections in directions to left and right of specified direction"
+		"description": "Removes all connections in directions to left and right of specified direction."
 	},
 	"void RemoveOutput(handle entity, string outputName, string targetName, string inputName, string parameter)": {
 		"prefix": "RemoveOutput",
@@ -6580,10 +6867,10 @@
 		],
 		"description": "Removes an output from the entity."
 	},
-	"void RemoveSolidFlags(int)": {
+	"void RemoveSolidFlags(int solidflags)": {
 		"prefix": "RemoveSolidFlags",
 		"body": [
-			"RemoveSolidFlags(${1:int})$0"
+			"RemoveSolidFlags(${1:int solidflags})$0"
 		],
 		"description": ""
 	},
@@ -6594,19 +6881,19 @@
 		],
 		"description": ""
 	},
-	"void RemoveWeaponRestriction(int)": {
+	"void RemoveWeaponRestriction(int flags)": {
 		"prefix": "RemoveWeaponRestriction",
 		"body": [
-			"RemoveWeaponRestriction(${1:int})$0"
+			"RemoveWeaponRestriction(${1:int flags})$0"
 		],
 		"description": "Removes weapon restriction flags"
 	},
-	"void Reset()": {
+	"Reset()": {
 		"prefix": "Reset",
 		"body": [
 			"Reset()$0"
 		],
-		"description": "Resets the internal update state"
+		"description": "Resets motion, stuck state, etc"
 	},
 	"void ResetScores()": {
 		"prefix": "ResetScores",
@@ -6615,12 +6902,12 @@
 		],
 		"description": ""
 	},
-	"void ResetSequence(int)": {
+	"void ResetSequence(int ID)": {
 		"prefix": "ResetSequence",
 		"body": [
-			"ResetSequence(${1:int})$0"
+			"ResetSequence(${1:int ID})$0"
 		],
-		"description": "Reset a sequence by id. If the id is different than the current sequence, switch to the new sequence"
+		"description": "Reset a sequence by sequence ID. If the ID is different than the current sequence, switch to the new sequence."
 	},
 	"Resolve()": {
 		"prefix": "Resolve",
@@ -6629,19 +6916,19 @@
 		],
 		"description": ""
 	},
-	"RetrieveNativeSignature()": {
+	"string RetrieveNativeSignature(function func)": {
 		"prefix": "RetrieveNativeSignature",
 		"body": [
-			"RetrieveNativeSignature()$0"
+			"RetrieveNativeSignature(${1:function func})$0"
 		],
 		"description": ""
 	},
-	"Roll()": {
+	"float Roll()": {
 		"prefix": "Roll",
 		"body": [
 			"Roll()$0"
 		],
-		"description": ""
+		"description": "Returns the roll angle in degrees."
 	},
 	"void RollRareSpell()": {
 		"prefix": "RollRareSpell",
@@ -6914,7 +7201,7 @@
 		"body": [
 			"ScreenFade(${1:handle player}, ${2:int red}, ${3:int green}, ${4:int blue}, ${5:int alpha}, ${6:float fadeTime}, ${7:float fadeHold}, ${8:int flags})$0"
 		],
-		"description": "Start a customisable screenfade."
+		"description": "Start a customisable screenfade. If no player is specified, the fade will apply to all players."
 	},
 	"void ScreenShake(Vector vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int eCommand, bool bAirShake)": {
 		"prefix": "ScreenShake",
@@ -7147,6 +7434,20 @@
 		],
 		"description": ""
 	},
+	"ScriptEventCallbacks": {
+		"prefix": "ScriptEventCallbacks",
+		"body": [
+			"ScriptEventCallbacks$0"
+		],
+		"description": "Table of registered script event callbacks."
+	},
+	"ScriptHookCallbacks": {
+		"prefix": "ScriptHookCallbacks",
+		"body": [
+			"ScriptHookCallbacks$0"
+		],
+		"description": "Table of registered script hook callbacks."
+	},
 	"bool ScriptHooksEnabled()": {
 		"prefix": "ScriptHooksEnabled",
 		"body": [
@@ -7161,10 +7462,10 @@
 		],
 		"description": "Force a secondary attack"
 	},
-	"bool SendGlobalGameEvent(string, handle)": {
+	"bool SendGlobalGameEvent(string event_name, handle params)": {
 		"prefix": "SendGlobalGameEvent",
 		"body": [
-			"SendGlobalGameEvent(${1:string}, ${2:handle})$0"
+			"SendGlobalGameEvent(${1:string event_name}, ${2:handle params})$0"
 		],
 		"description": "Sends a real game event to everything. Parameters are passed in a squirrel table."
 	},
@@ -7173,7 +7474,7 @@
 		"body": [
 			"SendToConsole(${1:string command})$0"
 		],
-		"description": "Send a string to the console as a command. Note: this obeys the behavior of the sv_allow_point_servercommand convar. By default, this command will do nothing unless the server has this command to set to \"always\""
+		"description": "Issues a command to the local client, as if they typed in the command in their console. Does nothing on dedicated servers."
 	},
 	"void SendToConsoleServer(string command)": {
 		"prefix": "SendToConsoleServer",
@@ -7187,77 +7488,77 @@
 		"body": [
 			"SendToServerConsole(${1:string command})$0"
 		],
-		"description": "Send a string that gets executed on the server as a ServerCommand."
+		"description": "Issues a command to the server, as if typed in the console."
 	},
-	"void SetAbsAngles(QAngle)": {
+	"void SetAbsAngles(QAngle angles)": {
 		"prefix": "SetAbsAngles",
 		"body": [
-			"SetAbsAngles(${1:QAngle})$0"
+			"SetAbsAngles(${1:QAngle angles})$0"
 		],
 		"description": "Set entity pitch, yaw, roll as QAngles"
 	},
-	"void SetAbsOrigin(Vector)": {
+	"void SetAbsOrigin(Vector origin)": {
 		"prefix": "SetAbsOrigin",
 		"body": [
-			"SetAbsOrigin(${1:Vector})$0"
+			"SetAbsOrigin(${1:Vector origin})$0"
 		],
-		"description": "SetAbsOrigin"
+		"description": "Sets the absolute origin of the entity."
 	},
 	"void SetAbsVelocity(Vector)": {
 		"prefix": "SetAbsVelocity",
 		"body": [
 			"SetAbsVelocity(${1:Vector})$0"
 		],
-		"description": "Sets the current absolute velocity of the entity"
+		"description": "Sets the current absolute velocity velocity of the entity"
 	},
-	"void SetAngles(float, float, float)": {
+	"void SetAngles(float pitch, float yaw, float roll)": {
 		"prefix": "SetAngles",
 		"body": [
-			"SetAngles(${1:float}, ${2:float}, ${3:float})$0"
+			"SetAngles(${1:float pitch}, ${2:float yaw}, ${3:float roll})$0"
 		],
-		"description": "Set entity pitch, yaw, roll."
+		"description": "Set entity angles."
 	},
-	"void SetAngularVelocity(float, float, float)": {
+	"void SetAngularVelocity(float pitch, float yaw, float roll)": {
 		"prefix": "SetAngularVelocity",
 		"body": [
-			"SetAngularVelocity(${1:float}, ${2:float}, ${3:float})$0"
+			"SetAngularVelocity(${1:float pitch}, ${2:float yaw}, ${3:float roll})$0"
 		],
-		"description": "Set the local angular velocity - takes float pitch,yaw,roll velocities"
+		"description": "Set the local angular velocity."
 	},
-	"void SetAttentionFocus(handle)": {
+	"void SetAttentionFocus(handle entity)": {
 		"prefix": "SetAttentionFocus",
 		"body": [
-			"SetAttentionFocus(${1:handle})$0"
+			"SetAttentionFocus(${1:handle entity})$0"
 		],
 		"description": "Sets our current attention focus to this entity"
 	},
-	"void SetAttributeTF(int)": {
+	"void SetAttributeTF(int bits)": {
 		"prefix": "SetAttributeTF",
 		"body": [
-			"SetAttributeTF(${1:int})$0"
+			"SetAttributeTF(${1:int bits})$0"
 		],
-		"description": "Set TF-specific area attributes"
+		"description": "Set TF-specific area attributes."
 	},
-	"void SetAttributes(int)": {
+	"void SetAttributes(int bits)": {
 		"prefix": "SetAttributes",
 		"body": [
-			"SetAttributes(${1:int})$0"
+			"SetAttributes(${1:int bits})$0"
 		],
-		"description": "Set area attribute bits"
+		"description": "Set area attribute bits."
 	},
-	"void SetAutoJump(float, float)": {
+	"void SetAutoJump(float minTime, float maxTime)": {
 		"prefix": "SetAutoJump",
 		"body": [
-			"SetAutoJump(${1:float}, ${2:float})$0"
+			"SetAutoJump(${1:float minTime}, ${2:float maxTime})$0"
 		],
 		"description": "Sets if the bot should automatically jump"
 	},
-	"void SetBodygroup(int, int)": {
+	"void SetBodygroup(int ID, int value)": {
 		"prefix": "SetBodygroup",
 		"body": [
-			"SetBodygroup(${1:int}, ${2:int})$0"
+			"SetBodygroup(${1:int ID}, ${2:int value})$0"
 		],
-		"description": "Sets a bodygroup"
+		"description": "Set the bodygroup by ID."
 	},
 	"void SetClip1(int)": {
 		"prefix": "SetClip1",
@@ -7273,12 +7574,12 @@
 		],
 		"description": "Set current ammo in clip2"
 	},
-	"void SetCollisionGroup(int)": {
+	"void SetCollisionGroup(int collision_group)": {
 		"prefix": "SetCollisionGroup",
 		"body": [
-			"SetCollisionGroup(${1:int})$0"
+			"SetCollisionGroup(${1:int collision_group})$0"
 		],
-		"description": ""
+		"description": "Set the current collision group of the entity. See Constants.ECollisionGroup"
 	},
 	"void SetCondDuration(ETFCond cond, float duration)": {
 		"prefix": "SetCondDuration",
@@ -7287,82 +7588,82 @@
 		],
 		"description": ""
 	},
-	"void SetCurrency(int)": {
+	"void SetCurrency(int amount)": {
 		"prefix": "SetCurrency",
 		"body": [
-			"SetCurrency(${1:int})$0"
+			"SetCurrency(${1:int amount})$0"
 		],
 		"description": "Set player's cash for game modes with upgrades, ie. MvM"
 	},
-	"void SetCurrentTauntMoveSpeed(float)": {
+	"void SetCurrentTauntMoveSpeed(float speed)": {
 		"prefix": "SetCurrentTauntMoveSpeed",
 		"body": [
-			"SetCurrentTauntMoveSpeed(${1:float})$0"
+			"SetCurrentTauntMoveSpeed(${1:float speed})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModel(string)": {
+	"void SetCustomModel(string model_name)": {
 		"prefix": "SetCustomModel",
 		"body": [
-			"SetCustomModel(${1:string})$0"
+			"SetCustomModel(${1:string model_name})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModelOffset(Vector)": {
+	"void SetCustomModelOffset(Vector offset)": {
 		"prefix": "SetCustomModelOffset",
 		"body": [
-			"SetCustomModelOffset(${1:Vector})$0"
+			"SetCustomModelOffset(${1:Vector offset})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModelRotates(bool)": {
+	"void SetCustomModelRotates(bool toggle)": {
 		"prefix": "SetCustomModelRotates",
 		"body": [
-			"SetCustomModelRotates(${1:bool})$0"
+			"SetCustomModelRotates(${1:bool toggle})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModelRotation(QAngle)": {
+	"void SetCustomModelRotation(QAngle angles)": {
 		"prefix": "SetCustomModelRotation",
 		"body": [
-			"SetCustomModelRotation(${1:QAngle})$0"
+			"SetCustomModelRotation(${1:QAngle angles})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModelVisibleToSelf(bool)": {
+	"void SetCustomModelVisibleToSelf(bool toggle)": {
 		"prefix": "SetCustomModelVisibleToSelf",
 		"body": [
-			"SetCustomModelVisibleToSelf(${1:bool})$0"
+			"SetCustomModelVisibleToSelf(${1:bool toggle})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomModelWithClassAnimations(string)": {
+	"void SetCustomModelWithClassAnimations(string model_name)": {
 		"prefix": "SetCustomModelWithClassAnimations",
 		"body": [
-			"SetCustomModelWithClassAnimations(${1:string})$0"
+			"SetCustomModelWithClassAnimations(${1:string model_name})$0"
 		],
 		"description": ""
 	},
-	"void SetCustomViewModel(string)": {
+	"void SetCustomViewModel(string model_name)": {
 		"prefix": "SetCustomViewModel",
 		"body": [
-			"SetCustomViewModel(${1:string})$0"
+			"SetCustomViewModel(${1:string model_name})$0"
 		],
 		"description": "Sets a custom view model for this weapon by model name"
 	},
-	"void SetCustomViewModelModelIndex(int)": {
+	"void SetCustomViewModelModelIndex(int model_index)": {
 		"prefix": "SetCustomViewModelModelIndex",
 		"body": [
-			"SetCustomViewModelModelIndex(${1:int})$0"
+			"SetCustomViewModelModelIndex(${1:int model_index})$0"
 		],
 		"description": "Sets a custom view model for this weapon by modelindex"
 	},
-	"void SetCycle(float)": {
+	"void SetCycle(float cycle)": {
 		"prefix": "SetCycle",
 		"body": [
-			"SetCycle(${1:float})$0"
+			"SetCycle(${1:float cycle})$0"
 		],
-		"description": "Sets the models current cycle"
+		"description": "Sets the model's current animation cycle from 0 to 1."
 	},
 	"void SetDesiredSpeed(float)": {
 		"prefix": "SetDesiredSpeed",
@@ -7371,31 +7672,31 @@
 		],
 		"description": "Set desired speed for locomotor movement"
 	},
-	"void SetDifficulty(int)": {
+	"void SetDifficulty(int difficulty)": {
 		"prefix": "SetDifficulty",
 		"body": [
-			"SetDifficulty(${1:int})$0"
+			"SetDifficulty(${1:int difficulty})$0"
 		],
 		"description": "Sets the bots difficulty level"
 	},
-	"void SetDisguiseAmmoCount(int)": {
+	"void SetDisguiseAmmoCount(int count)": {
 		"prefix": "SetDisguiseAmmoCount",
 		"body": [
-			"SetDisguiseAmmoCount(${1:int})$0"
+			"SetDisguiseAmmoCount(${1:int count})$0"
 		],
 		"description": ""
 	},
-	"void SetDrawEnabled(bool)": {
+	"void SetDrawEnabled(bool toggle)": {
 		"prefix": "SetDrawEnabled",
 		"body": [
-			"SetDrawEnabled(${1:bool})$0"
+			"SetDrawEnabled(${1:bool toggle})$0"
 		],
 		"description": "Enables drawing if you pass true, disables drawing if you pass false."
 	},
-	"void SetEFlags(int)": {
+	"void SetEFlags(int eflags)": {
 		"prefix": "SetEFlags",
 		"body": [
-			"SetEFlags(${1:int})$0"
+			"SetEFlags(${1:int eflags})$0"
 		],
 		"description": ""
 	},
@@ -7406,45 +7707,45 @@
 		],
 		"description": "Sets a USERINFO client ConVar for a fakeclient."
 	},
-	"void SetForceLocalDraw(bool)": {
+	"void SetForceLocalDraw(bool forceDraw)": {
 		"prefix": "SetForceLocalDraw",
 		"body": [
-			"SetForceLocalDraw(${1:bool})$0"
+			"SetForceLocalDraw(${1:bool forceDraw})$0"
 		],
-		"description": "Forces the player to be drawn as if they are third person"
+		"description": "Forces the player to be drawn as if they were in thirdperson."
 	},
-	"void SetForcedTauntCam(int)": {
+	"void SetForcedTauntCam(int toggle)": {
 		"prefix": "SetForcedTauntCam",
 		"body": [
-			"SetForcedTauntCam(${1:int})$0"
+			"SetForcedTauntCam(${1:int toggle})$0"
 		],
 		"description": ""
 	},
-	"void SetForwardVector(Vector)": {
+	"void SetForwardVector(Vector forward)": {
 		"prefix": "SetForwardVector",
 		"body": [
-			"SetForwardVector(${1:Vector})$0"
+			"SetForwardVector(${1:Vector forward})$0"
 		],
 		"description": "Set the orientation of the entity to have this forward vector"
 	},
-	"void SetFriction(float)": {
+	"void SetFriction(float friction)": {
 		"prefix": "SetFriction",
 		"body": [
-			"SetFriction(${1:float})$0"
+			"SetFriction(${1:float friction})$0"
 		],
 		"description": ""
 	},
-	"void SetGrapplingHookTarget(handle, bool)": {
+	"void SetGrapplingHookTarget(handle entity, bool bleed)": {
 		"prefix": "SetGrapplingHookTarget",
 		"body": [
-			"SetGrapplingHookTarget(${1:handle}, ${2:bool})$0"
+			"SetGrapplingHookTarget(${1:handle entity}, ${2:bool bleed})$0"
 		],
 		"description": "Set the player's target grapple entity"
 	},
-	"void SetGravity(float)": {
+	"void SetGravity(float gravity)": {
 		"prefix": "SetGravity",
 		"body": [
-			"SetGravity(${1:float})$0"
+			"SetGravity(${1:float gravity})$0"
 		],
 		"description": ""
 	},
@@ -7455,45 +7756,52 @@
 		],
 		"description": ""
 	},
-	"void SetGroupSpawnTables(handle, handle)": {
+	"void SetGroupSpawnTables(table)": {
 		"prefix": "SetGroupSpawnTables",
 		"body": [
-			"SetGroupSpawnTables(${1:handle}, ${2:handle})$0"
+			"SetGroupSpawnTables(${1:table})$0"
 		],
 		"description": "Cache the group spawn tables"
 	},
-	"void SetHealth(int)": {
+	"void SetHealth(int health)": {
 		"prefix": "SetHealth",
 		"body": [
-			"SetHealth(${1:int})$0"
+			"SetHealth(${1:int health})$0"
 		],
 		"description": ""
 	},
-	"void SetHomeArea(handle)": {
+	"void SetHomeArea(handle area)": {
 		"prefix": "SetHomeArea",
 		"body": [
-			"SetHomeArea(${1:handle})$0"
+			"SetHomeArea(${1:handle area})$0"
 		],
-		"description": "Returns the home nav area of the bot -- may be nil."
+		"description": "Set the home nav area of the bot, may be null."
 	},
-	"void SetIsMiniBoss(bool)": {
+	"void SetHudHideFlags(int flags)": {
+		"prefix": "SetHudHideFlags",
+		"body": [
+			"SetHudHideFlags(${1:int flags})$0"
+		],
+		"description": "Force hud hide flags to a value based on Constants.FHideHUD"
+	},
+	"void SetIsMiniBoss(bool toggle)": {
 		"prefix": "SetIsMiniBoss",
 		"body": [
-			"SetIsMiniBoss(${1:bool})$0"
+			"SetIsMiniBoss(${1:bool toggle})$0"
 		],
 		"description": "Make this player an MvM mini-boss."
 	},
-	"void SetLocalAngles(QAngle)": {
+	"void SetLocalAngles(QAngle angles)": {
 		"prefix": "SetLocalAngles",
 		"body": [
-			"SetLocalAngles(${1:QAngle})$0"
+			"SetLocalAngles(${1:QAngle angles})$0"
 		],
 		"description": ""
 	},
-	"void SetLocalOrigin(Vector)": {
+	"void SetLocalOrigin(Vector origin)": {
 		"prefix": "SetLocalOrigin",
 		"body": [
-			"SetLocalOrigin(${1:Vector})$0"
+			"SetLocalOrigin(${1:Vector origin})$0"
 		],
 		"description": ""
 	},
@@ -7504,38 +7812,38 @@
 		],
 		"description": ""
 	},
-	"void SetMaxHealth(int)": {
+	"void SetMaxHealth(int health)": {
 		"prefix": "SetMaxHealth",
 		"body": [
-			"SetMaxHealth(${1:int})$0"
+			"SetMaxHealth(${1:int health})$0"
 		],
-		"description": ""
+		"description": "Sets the maximum health this entity can have. Does not update the current health, so SetHealth should be used afterwards."
 	},
-	"void SetMaxVisionRangeOverride(float)": {
+	"void SetMaxVisionRangeOverride(float range)": {
 		"prefix": "SetMaxVisionRangeOverride",
 		"body": [
-			"SetMaxVisionRangeOverride(${1:float})$0"
+			"SetMaxVisionRangeOverride(${1:float range})$0"
 		],
 		"description": "Sets max vision range override for the bot"
 	},
-	"void SetModel(string)": {
+	"void SetModel(string model_name)": {
 		"prefix": "SetModel",
 		"body": [
-			"SetModel(${1:string})$0"
+			"SetModel(${1:string model_name})$0"
 		],
 		"description": "Set a model for this entity"
 	},
-	"void SetModelScale(float, float)": {
+	"void SetModelScale(float scale, float change_duration)": {
 		"prefix": "SetModelScale",
 		"body": [
-			"SetModelScale(${1:float}, ${2:float})$0"
+			"SetModelScale(${1:float scale}, ${2:float change_duration})$0"
 		],
-		"description": "(scale, change_duration) Changes a model's scale over time"
+		"description": "Changes a model's scale over time. Set the change duration to 0.0 to change the scale instantly."
 	},
-	"void SetModelSimple(string)": {
+	"void SetModelSimple(string model_name)": {
 		"prefix": "SetModelSimple",
 		"body": [
-			"SetModelSimple(${1:string})$0"
+			"SetModelSimple(${1:string model_name})$0"
 		],
 		"description": "Set a model for this entity. Matches easier behaviour of the SetModel input, automatically precaches, maintains sequence/cycle if possible."
 	},
@@ -7546,31 +7854,31 @@
 		],
 		"description": ""
 	},
-	"void SetNextChangeClassTime(float)": {
+	"void SetNextChangeClassTime(float time)": {
 		"prefix": "SetNextChangeClassTime",
 		"body": [
-			"SetNextChangeClassTime(${1:float})$0"
+			"SetNextChangeClassTime(${1:float time})$0"
 		],
 		"description": "Set next change class time."
 	},
-	"void SetNextChangeTeamTime(float)": {
+	"void SetNextChangeTeamTime(float time)": {
 		"prefix": "SetNextChangeTeamTime",
 		"body": [
-			"SetNextChangeTeamTime(${1:float})$0"
+			"SetNextChangeTeamTime(${1:float time})$0"
 		],
 		"description": "Set next change team time."
 	},
-	"void SetNextRegenTime(float)": {
+	"void SetNextRegenTime(float time)": {
 		"prefix": "SetNextRegenTime",
 		"body": [
-			"SetNextRegenTime(${1:float})$0"
+			"SetNextRegenTime(${1:float time})$0"
 		],
-		"description": "Set next health regen time."
+		"description": "Set next available resupply time."
 	},
-	"void SetOrigin(Vector)": {
+	"void SetOrigin(Vector origin)": {
 		"prefix": "SetOrigin",
 		"body": [
-			"SetOrigin(${1:Vector})$0"
+			"SetOrigin(${1:Vector origin})$0"
 		],
 		"description": ""
 	},
@@ -7581,24 +7889,24 @@
 		],
 		"description": ""
 	},
-	"void SetOwner(handle)": {
+	"void SetOwner(handle entity)": {
 		"prefix": "SetOwner",
 		"body": [
-			"SetOwner(${1:handle})$0"
+			"SetOwner(${1:handle entity})$0"
 		],
 		"description": "Sets this entity's owner"
 	},
-	"void SetPhysAngularVelocity(Vector)": {
+	"void SetPhysAngularVelocity(Vector angular_velocity)": {
 		"prefix": "SetPhysAngularVelocity",
 		"body": [
-			"SetPhysAngularVelocity(${1:Vector})$0"
+			"SetPhysAngularVelocity(${1:Vector angular_velocity})$0"
 		],
 		"description": ""
 	},
-	"void SetPhysVelocity(Vector)": {
+	"void SetPhysVelocity(Vector velocity)": {
 		"prefix": "SetPhysVelocity",
 		"body": [
-			"SetPhysVelocity(${1:Vector})$0"
+			"SetPhysVelocity(${1:Vector velocity})$0"
 		],
 		"description": ""
 	},
@@ -7614,21 +7922,21 @@
 		"body": [
 			"SetPlaceName(${1:string name})$0"
 		],
-		"description": "Set place name"
+		"description": "Set place name. If you pass null, the place name will be set to nothing."
 	},
-	"void SetPlaybackRate(float)": {
+	"void SetPlaybackRate(float rate)": {
 		"prefix": "SetPlaybackRate",
 		"body": [
-			"SetPlaybackRate(${1:float})$0"
+			"SetPlaybackRate(${1:float rate})$0"
 		],
-		"description": "Set the current playback rate."
+		"description": "Set the current animation's playback rate."
 	},
-	"void SetPlayerClass(int)": {
+	"void SetPlayerClass(int class)": {
 		"prefix": "SetPlayerClass",
 		"body": [
-			"SetPlayerClass(${1:int})$0"
+			"SetPlayerClass(${1:int class})$0"
 		],
-		"description": ""
+		"description": "Sets the player class. Updates the player's visuals and model."
 	},
 	"void SetPlayersInHell(bool state)": {
 		"prefix": "SetPlayersInHell",
@@ -7637,12 +7945,12 @@
 		],
 		"description": ""
 	},
-	"float SetPoseParameter(int, float)": {
+	"float SetPoseParameter(int ID, float value)": {
 		"prefix": "SetPoseParameter",
 		"body": [
-			"SetPoseParameter(${1:int}, ${2:float})$0"
+			"SetPoseParameter(${1:int ID}, ${2:float value})$0"
 		],
-		"description": "(id, value) Sets a pose parameter value"
+		"description": "Sets a pose parameter value. Returns the effective value after clamping or looping."
 	},
 	"void SetPropBool(handle entity, string propertyName, bool value)": {
 		"prefix": "SetPropBool",
@@ -7728,80 +8036,87 @@
 		],
 		"description": "Sets a netprop from an array to the specified vector."
 	},
-	"void SetRageMeter(float)": {
+	"void SetRPSResult(int result)": {
+		"prefix": "SetRPSResult",
+		"body": [
+			"SetRPSResult(${1:int result})$0"
+		],
+		"description": "Rig the result of Rock-Paper-Scissors (0 - rock, 1 - paper, 2 - scissors)"
+	},
+	"void SetRageMeter(float percent)": {
 		"prefix": "SetRageMeter",
 		"body": [
-			"SetRageMeter(${1:float})$0"
+			"SetRageMeter(${1:float percent})$0"
 		],
-		"description": ""
+		"description": "Sets rage meter from 0 - 100."
 	},
-	"void SetScaleOverride(float)": {
+	"void SetScaleOverride(float scale)": {
 		"prefix": "SetScaleOverride",
 		"body": [
-			"SetScaleOverride(${1:float})$0"
+			"SetScaleOverride(${1:float scale})$0"
 		],
 		"description": "Sets the scale override for the bot"
 	},
-	"void SetScoutHypeMeter(float)": {
+	"void SetScoutHypeMeter(float percent)": {
 		"prefix": "SetScoutHypeMeter",
 		"body": [
-			"SetScoutHypeMeter(${1:float})$0"
+			"SetScoutHypeMeter(${1:float percent})$0"
 		],
-		"description": ""
+		"description": "Sets hype meter from 0 - 100."
 	},
-	"void SetScriptOverlayMaterial(string)": {
+	"void SetScriptOverlayMaterial(string material)": {
 		"prefix": "SetScriptOverlayMaterial",
 		"body": [
-			"SetScriptOverlayMaterial(${1:string})$0"
+			"SetScriptOverlayMaterial(${1:string material})$0"
 		],
-		"description": " Sets a view overlay material"
+		"description": "Sets the overlay material that can't be overriden by other overlays. E.g. Jarate."
 	},
-	"void SetSequence(int)": {
+	"void SetSequence(int ID)": {
 		"prefix": "SetSequence",
 		"body": [
-			"SetSequence(${1:int})$0"
+			"SetSequence(${1:int ID})$0"
 		],
-		"description": "Set a sequence by id"
+		"description": "Plays a sequence by sequence ID."
 	},
-	"void SetShouldQuickBuild(bool)": {
+	"void SetShouldQuickBuild(bool toggle)": {
 		"prefix": "SetShouldQuickBuild",
 		"body": [
-			"SetShouldQuickBuild(${1:bool})$0"
+			"SetShouldQuickBuild(${1:bool toggle})$0"
 		],
 		"description": "Sets if the bot should build instantly"
 	},
-	"void SetSize(Vector, Vector)": {
+	"void SetSize(Vector mins, Vector maxs)": {
 		"prefix": "SetSize",
 		"body": [
-			"SetSize(${1:Vector}, ${2:Vector})$0"
+			"SetSize(${1:Vector mins}, ${2:Vector maxs})$0"
 		],
-		"description": ""
+		"description": "Sets the bounding box's scale for this entity."
 	},
-	"void SetSkin(int)": {
+	"void SetSkin(int index)": {
 		"prefix": "SetSkin",
 		"body": [
-			"SetSkin(${1:int})$0"
+			"SetSkin(${1:int index})$0"
 		],
-		"description": "Sets the skin."
+		"description": "Sets the model's skin."
 	},
-	"void SetSkyboxTexture(string)": {
+	"void SetSkyboxTexture(string texture)": {
 		"prefix": "SetSkyboxTexture",
 		"body": [
-			"SetSkyboxTexture(${1:string})$0"
+			"SetSkyboxTexture(${1:string texture})$0"
 		],
-		"description": "Sets the current skybox texture"
+		"description": "Sets the current skybox texture. The path is relative to \"materials/skybox/\". Only the main name of a skybox texture is needed, for example \"sky_gravel_01\"."
 	},
-	"SetSolid(int)": {
+	"SetSolid(int solid)": {
 		"prefix": "SetSolid",
 		"body": [
-			"SetSolid(${1:int})$0"
+			"SetSolid(${1:int solid})$0"
 		],
 		"description": ""
 	},
-	"SetSolidFlags(int)": {
-		"prefix": "SetSolidFlags",
+	"SetSolidFlags solid_flags(int)": {
+		"prefix": "solid_flags",
 		"body": [
-			"SetSolidFlags(${1:int})$0"
+			"solid_flags(${1:int})$0"
 		],
 		"description": ""
 	},
@@ -7812,38 +8127,38 @@
 		],
 		"description": "Set maximum speed bot can reach, regardless of desired speed"
 	},
-	"void SetSpyCloakMeter(float)": {
+	"void SetSpyCloakMeter(float percent)": {
 		"prefix": "SetSpyCloakMeter",
 		"body": [
-			"SetSpyCloakMeter(${1:float})$0"
+			"SetSpyCloakMeter(${1:float percent})$0"
 		],
-		"description": ""
+		"description": "Sets cloak meter from 0 - 100."
 	},
-	"void SetSquadFormationError(float)": {
+	"void SetSquadFormationError(float coefficient)": {
 		"prefix": "SetSquadFormationError",
 		"body": [
-			"SetSquadFormationError(${1:float})$0"
+			"SetSquadFormationError(${1:float coefficient})$0"
 		],
 		"description": "Sets our formation error coefficient."
 	},
-	"void SetSubType(int)": {
+	"void SetSubType(int subtype)": {
 		"prefix": "SetSubType",
 		"body": [
-			"SetSubType(${1:int})$0"
+			"SetSubType(${1:int subtype})$0"
 		],
 		"description": "Set the weapon subtype"
 	},
-	"void SetTeam(int)": {
+	"void SetTeam(int team)": {
 		"prefix": "SetTeam",
 		"body": [
-			"SetTeam(${1:int})$0"
+			"SetTeam(${1:int team})$0"
 		],
-		"description": ""
+		"description": "Sets entity team."
 	},
-	"void SetUseBossHealthBar(bool)": {
+	"void SetUseBossHealthBar(bool toggle)": {
 		"prefix": "SetUseBossHealthBar",
 		"body": [
-			"SetUseBossHealthBar(${1:bool})$0"
+			"SetUseBossHealthBar(${1:bool toggle})$0"
 		],
 		"description": ""
 	},
@@ -7861,26 +8176,33 @@
 		],
 		"description": "Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Supported types are bool, int, float, string."
 	},
-	"void SetVelocity(Vector)": {
+	"void SetVehicleReverseTime(float time)": {
+		"prefix": "SetVehicleReverseTime",
+		"body": [
+			"SetVehicleReverseTime(${1:float time})$0"
+		],
+		"description": "Set the timestamp when kart was reversed"
+	},
+	"void SetVelocity(Vector velocity)": {
 		"prefix": "SetVelocity",
 		"body": [
-			"SetVelocity(${1:Vector})$0"
+			"SetVelocity(${1:Vector velocity})$0"
 		],
 		"description": ""
 	},
-	"SetWaterLevel(int)": {
+	"SetWaterLevel(int water_level)": {
 		"prefix": "SetWaterLevel",
 		"body": [
-			"SetWaterLevel(${1:int})$0"
+			"SetWaterLevel(${1:int water_level})$0"
 		],
-		"description": ""
+		"description": "This sets how much of the entity is underwater. Setting it to 0 means it is not underwater, 1 if the feet are (touching water brush), 2 if the waist is (center of the hull of the entity), and 3 if the head is (eyes position)."
 	},
-	"SetWaterType(int)": {
+	"SetWaterType(int water_type)": {
 		"prefix": "SetWaterType",
 		"body": [
-			"SetWaterType(${1:int})$0"
+			"SetWaterType(${1:int water_type})$0"
 		],
-		"description": ""
+		"description": "Set the type of water the entity is currently submerged in. Generic values to use are 32 for water and 16 for slime."
 	},
 	"bool ShouldAutoJump()": {
 		"prefix": "ShouldAutoJump",
@@ -7903,10 +8225,10 @@
 		],
 		"description": "Print a hud message on all clients"
 	},
-	"void SnapEyeAngles(QAngle)": {
+	"void SnapEyeAngles(QAngle angles)": {
 		"prefix": "SnapEyeAngles",
 		"body": [
-			"SnapEyeAngles(${1:QAngle})$0"
+			"SnapEyeAngles(${1:QAngle angles})$0"
 		],
 		"description": "Snap the player's eye angles to this."
 	},
@@ -7917,26 +8239,26 @@
 		],
 		"description": "Create an entity at the location of the maker"
 	},
-	"void SpawnEntityAtEntityOrigin(handle)": {
+	"void SpawnEntityAtEntityOrigin(handle entity)": {
 		"prefix": "SpawnEntityAtEntityOrigin",
 		"body": [
-			"SpawnEntityAtEntityOrigin(${1:handle})$0"
+			"SpawnEntityAtEntityOrigin(${1:handle entity})$0"
 		],
 		"description": "Create an entity at the location of a specified entity instance"
 	},
-	"void SpawnEntityAtLocation(Vector, Vector)": {
+	"void SpawnEntityAtLocation(Vector origin, Vector orientation)": {
 		"prefix": "SpawnEntityAtLocation",
 		"body": [
-			"SpawnEntityAtLocation(${1:Vector}, ${2:Vector})$0"
+			"SpawnEntityAtLocation(${1:Vector origin}, ${2:Vector orientation})$0"
 		],
 		"description": "Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)"
 	},
-	"void SpawnEntityAtNamedEntityOrigin(string)": {
+	"void SpawnEntityAtNamedEntityOrigin(string targetname)": {
 		"prefix": "SpawnEntityAtNamedEntityOrigin",
 		"body": [
-			"SpawnEntityAtNamedEntityOrigin(${1:string})$0"
+			"SpawnEntityAtNamedEntityOrigin(${1:string targetname})$0"
 		],
-		"description": "Create an entity at the location of a named entity"
+		"description": "Create an entity at the location of a named entity. If multiple entities have the same name, only the one with the lowest entity index will be targeted."
 	},
 	"handle SpawnEntityFromTable(string name, handle keyvalues)": {
 		"prefix": "SpawnEntityFromTable",
@@ -7945,12 +8267,12 @@
 		],
 		"description": "Spawn entity from KeyValues in table - 'name' is entity name, rest are KeyValues for spawn."
 	},
-	"bool SpawnEntityGroupFromTable(handle entityGroup)": {
+	"bool SpawnEntityGroupFromTable(handle groups)": {
 		"prefix": "SpawnEntityGroupFromTable",
 		"body": [
-			"SpawnEntityGroupFromTable(${1:handle entityGroup})$0"
+			"SpawnEntityGroupFromTable(${1:handle groups})$0"
 		],
-		"description": "Hierarchically spawn an entity group from a set of spawn tables. See L4D2_EMS/Appendix:_Spawning."
+		"description": "Hierarchically spawn an entity group from a set of spawn tables. This computes a spawn order for entities so that parenting is resolved correctly."
 	},
 	"Sqrt2": {
 		"prefix": "Sqrt2",
@@ -7987,10 +8309,10 @@
 		],
 		"description": "Stop the current animation (same as SetPlaybackRate 0.0)"
 	},
-	"void StopSound(string)": {
+	"void StopSound(string sound_name)": {
 		"prefix": "StopSound",
 		"body": [
-			"StopSound(${1:string})$0"
+			"StopSound(${1:string sound_name})$0"
 		],
 		"description": "Stops a sound on this entity."
 	},
@@ -8001,12 +8323,19 @@
 		],
 		"description": "Stop named sound on an entity."
 	},
+	"void StopTaunt(bool remove_prop)": {
+		"prefix": "StopTaunt",
+		"body": [
+			"StopTaunt(${1:bool remove_prop})$0"
+		],
+		"description": "Stops current taunt. If remove_prop is true, the taunt prop will be immediately deleted instead of potentially delaying"
+	},
 	"void StringToFile(string file, string string)": {
 		"prefix": "StringToFile",
 		"body": [
 			"StringToFile(${1:string file}, ${2:string string})$0"
 		],
-		"description": "Stores a string as a file."
+		"description": "Stores a string as a file, located in the game's scriptdata folder."
 	},
 	"void StudioFrameAdvance()": {
 		"prefix": "StudioFrameAdvance",
@@ -8015,19 +8344,54 @@
 		],
 		"description": "Advance animation frame to some time in the future with an automatically calculated interval"
 	},
-	"void StudioFrameAdvanceManual(float)": {
+	"void StudioFrameAdvanceManual(float dt)": {
 		"prefix": "StudioFrameAdvanceManual",
 		"body": [
-			"StudioFrameAdvanceManual(${1:float})$0"
+			"StudioFrameAdvanceManual(${1:float dt})$0"
 		],
 		"description": "Advance animation frame to some time in the future with a manual interval"
+	},
+	"TAUNT_BASE_WEAPON": {
+		"prefix": "TAUNT_BASE_WEAPON",
+		"body": [
+			"TAUNT_BASE_WEAPON$0"
+		],
+		"description": "0"
+	},
+	"TAUNT_LONG": {
+		"prefix": "TAUNT_LONG",
+		"body": [
+			"TAUNT_LONG$0"
+		],
+		"description": "3"
+	},
+	"TAUNT_MISC_ITEM": {
+		"prefix": "TAUNT_MISC_ITEM",
+		"body": [
+			"TAUNT_MISC_ITEM$0"
+		],
+		"description": "1"
+	},
+	"TAUNT_SHOW_ITEM": {
+		"prefix": "TAUNT_SHOW_ITEM",
+		"body": [
+			"TAUNT_SHOW_ITEM$0"
+		],
+		"description": "2"
+	},
+	"TAUNT_SPECIAL": {
+		"prefix": "TAUNT_SPECIAL",
+		"body": [
+			"TAUNT_SPECIAL$0"
+		],
+		"description": "4"
 	},
 	"TEAM_ANY": {
 		"prefix": "TEAM_ANY",
 		"body": [
 			"TEAM_ANY$0"
 		],
-		"description": "-1"
+		"description": "-2"
 	},
 	"TEAM_INVALID": {
 		"prefix": "TEAM_INVALID",
@@ -8063,6 +8427,13 @@
 			"TFMark()$0"
 		],
 		"description": "Mark this nav area with the current marking scope."
+	},
+	"TF_BOT_TYPE": {
+		"prefix": "TF_BOT_TYPE",
+		"body": [
+			"TF_BOT_TYPE$0"
+		],
+		"description": "1337"
 	},
 	"TF_CLASS_CIVILIAN": {
 		"prefix": "TF_CLASS_CIVILIAN",
@@ -8567,6 +8938,13 @@
 			"TF_COND_HEALTH_OVERHEALED$0"
 		],
 		"description": "23"
+	},
+	"TF_COND_IMMUNE_TO_PUSHBACK": {
+		"prefix": "TF_COND_IMMUNE_TO_PUSHBACK",
+		"body": [
+			"TF_COND_IMMUNE_TO_PUSHBACK$0"
+		],
+		"description": "130"
 	},
 	"TF_COND_INVALID": {
 		"prefix": "TF_COND_INVALID",
@@ -9784,7 +10162,7 @@
 		"body": [
 			"TF_NAV_PERSISTENT_ATTRIBUTES$0"
 		],
-		"description": "1988098048"
+		"description": "198809804"
 	},
 	"TF_NAV_RED_ONE_WAY_DOOR": {
 		"prefix": "TF_NAV_RED_ONE_WAY_DOOR",
@@ -9931,21 +10309,21 @@
 		"body": [
 			"TakeDamage(${1:float flDamage}, ${2:int nDamageType}, ${3:handle hAttacker})$0"
 		],
-		"description": ""
+		"description": "Deals damage to the entity."
 	},
-	"void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, int nCustomDamageType)": {
+	"void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, Constants.ETFDmgCustom nCustomDamageType)": {
 		"prefix": "TakeDamageCustom",
 		"body": [
-			"TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType}, ${8:int nCustomDamageType})$0"
+			"TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType}, ${8:Constants.ETFDmgCustom nCustomDamageType})$0"
 		],
-		"description": ""
+		"description": "Extended version of TakeDamageEx that can apply a custom damage type."
 	},
 	"void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)": {
 		"prefix": "TakeDamageEx",
 		"body": [
 			"TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType})$0"
 		],
-		"description": ""
+		"description": "Extended version of TakeDamage."
 	},
 	"Tau": {
 		"prefix": "Tau",
@@ -9954,12 +10332,19 @@
 		],
 		"description": "6.28319"
 	},
-	"void Teleport(bool, Vector, bool, QAngle, bool, Vector)": {
+	"void Taunt(int taunt_index, int taunt_concept)": {
+		"prefix": "Taunt",
+		"body": [
+			"Taunt(${1:int taunt_index}, ${2:int taunt_concept})$0"
+		],
+		"description": "Performs a taunt if allowed. For taunt index, see Constants.FTaunts. For concepts, see MP_CONCEPT List. Concept is the \"voiceline\" index to use with the taunt. For TAUNT_SHOW_ITEM and TAUNT_BASE_WEAPON this is set automatically. TAUNT_LONG is not supported."
+	},
+	"void Teleport(bool use_origin, Vector origin, bool use_angles, QAngle angles, bool use_velocity, Vector velocity)": {
 		"prefix": "Teleport",
 		"body": [
-			"Teleport(${1:bool}, ${2:Vector}, ${3:bool}, ${4:QAngle}, ${5:bool}, ${6:Vector})$0"
+			"Teleport(${1:bool use_origin}, ${2:Vector origin}, ${3:bool use_angles}, ${4:QAngle angles}, ${5:bool use_velocity}, ${6:Vector velocity})$0"
 		],
-		"description": "Teleports this entity"
+		"description": "Teleports this entity. For this function, set the bools to false if you want that entity's property unchanged. (do not use null arguments!)"
 	},
 	"void TerminateScriptScope()": {
 		"prefix": "TerminateScriptScope",
@@ -9989,17 +10374,17 @@
 		],
 		"description": "Returns the angles resulting from the rotation."
 	},
-	"ToQuat()": {
+	"Quaternion ToQuat()": {
 		"prefix": "ToQuat",
 		"body": [
 			"ToQuat()$0"
 		],
-		"description": ""
+		"description": "Returns a quaternion representation of the orientation."
 	},
-	"ToggleFlag(int)": {
+	"ToggleFlag(int flags)": {
 		"prefix": "ToggleFlag",
 		"body": [
-			"ToggleFlag(${1:int})$0"
+			"ToggleFlag(${1:int flags})$0"
 		],
 		"description": ""
 	},
@@ -10008,21 +10393,21 @@
 		"body": [
 			"TraceHull(${1:table traceTable})$0"
 		],
-		"description": "Input Table: start, end, hullmin, hullmax, mask, ignore. Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props"
+		"description": "Input Table: start, end, hullmin, hullmax, mask (optional), ignore (optional). Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props. Returns false if start, end, hullmin or hullmax is not specified."
 	},
-	"float TraceLine(Vector, Vector, handle)": {
+	"float TraceLine(Vector start, Vector end, handle ignore)": {
 		"prefix": "TraceLine",
 		"body": [
-			"TraceLine(${1:Vector}, ${2:Vector}, ${3:handle})$0"
+			"TraceLine(${1:Vector start}, ${2:Vector end}, ${3:handle ignore})$0"
 		],
-		"description": "given 2 points & ent to ignore, return fraction along line that hits world or models"
+		"description": "Return fraction along line that hits world or models"
 	},
 	"bool TraceLineEx(table traceTable)": {
 		"prefix": "TraceLineEx",
 		"body": [
 			"TraceLineEx(${1:table traceTable})$0"
 		],
-		"description": "Input Table: start, end, mask, ignore. Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props"
+		"description": "Input Table: start, end, mask (optional), ignore (optional). Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props. Returns false if start or end is not specified."
 	},
 	"float TraceLinePlayersIncluded(Vector, Vector, handle)": {
 		"prefix": "TraceLinePlayersIncluded",
@@ -10064,7 +10449,7 @@
 		"body": [
 			"UnblockArea()$0"
 		],
-		"description": "Unblocks this area"
+		"description": "Unblocks this area."
 	},
 	"UnhookRootMetamethod()": {
 		"prefix": "UnhookRootMetamethod",
@@ -10087,17 +10472,24 @@
 		],
 		"description": "unregisters avoidance obstacle"
 	},
-	"Up()": {
+	"Vector Up()": {
 		"prefix": "Up",
 		"body": [
 			"Up()$0"
 		],
-		"description": ""
+		"description": "Returns the Up Vector of the angles."
 	},
 	"void UpdateDelayedThreatNotices()": {
 		"prefix": "UpdateDelayedThreatNotices",
 		"body": [
 			"UpdateDelayedThreatNotices()$0"
+		],
+		"description": ""
+	},
+	"void UpdateSkin(int skin)": {
+		"prefix": "UpdateSkin",
+		"body": [
+			"UpdateSkin(${1:int skin})$0"
 		],
 		"description": ""
 	},
@@ -10157,33 +10549,40 @@
 		],
 		"description": "Ensure that an entity's script scope has been created"
 	},
-	"Vector2D(float, float)": {
+	"Vector(float x = 0, float y = 0, float z = 0)": {
+		"prefix": "Vector",
+		"body": [
+			"Vector(${1:float x = 0}, ${2:float y = 0}, ${3:float z = 0})$0"
+		],
+		"description": "Creates a new vector with the specified Cartesian coordiantes."
+	},
+	"Vector2D(float x, float y)": {
 		"prefix": "Vector2D",
 		"body": [
-			"Vector2D(${1:float}, ${2:float})$0"
+			"Vector2D(${1:float x}, ${2:float y})$0"
 		],
 		"description": "Creates a new 2D vector with the specified Cartesian coordiantes."
 	},
-	"Vector4D(float, float, float, float)": {
+	"Vector4D(float x, float y, float z, float w)": {
 		"prefix": "Vector4D",
 		"body": [
-			"Vector4D(${1:float}, ${2:float}, ${3:float}, ${4:float})$0"
+			"Vector4D(${1:float x}, ${2:float y}, ${3:float z}, ${4:float w})$0"
 		],
 		"description": "Creates a new 4D vector with the specified Cartesian coordiantes."
 	},
-	"void ViewPunch(QAngle)": {
+	"void ViewPunch(QAngle angleOffset)": {
 		"prefix": "ViewPunch",
 		"body": [
-			"ViewPunch(${1:QAngle})$0"
+			"ViewPunch(${1:QAngle angleOffset})$0"
 		],
 		"description": "Ow! Punches the player's view"
 	},
-	"void ViewPunchReset(float)": {
+	"void ViewPunchReset(float tolerance)": {
 		"prefix": "ViewPunchReset",
 		"body": [
-			"ViewPunchReset(${1:float})$0"
+			"ViewPunchReset(${1:float tolerance})$0"
 		],
-		"description": "Reset's the player's view punch"
+		"description": "Reset's the player's view punch if the offset stays below the given tolerance."
 	},
 	"bool VisibleInWeaponSelection()": {
 		"prefix": "VisibleInWeaponSelection",
@@ -10225,14 +10624,14 @@
 		"body": [
 			"Weapon_Drop(${1:handle weapon})$0"
 		],
-		"description": ""
+		"description": "Does nothing!"
 	},
 	"void Weapon_Drop(handle weapon, Vector target, Vector velocity)": {
 		"prefix": "Weapon_Drop",
 		"body": [
 			"Weapon_Drop(${1:handle weapon}, ${2:Vector target}, ${3:Vector velocity})$0"
 		],
-		"description": ""
+		"description": "Does nothing!"
 	},
 	"void Weapon_Equip(handle weapon)": {
 		"prefix": "Weapon_Equip",
@@ -10262,12 +10661,12 @@
 		],
 		"description": ""
 	},
-	"Yaw()": {
+	"float Yaw()": {
 		"prefix": "Yaw",
 		"body": [
 			"Yaw()$0"
 		],
-		"description": ""
+		"description": "Returns the yaw angle in degrees."
 	},
 	"Zero": {
 		"prefix": "Zero",
@@ -10276,6 +10675,13 @@
 		],
 		"description": "0"
 	},
+	"_PublishedHelp": {
+		"prefix": "_PublishedHelp",
+		"body": [
+			"_PublishedHelp$0"
+		],
+		"description": ""
+	},
 	"void __CollectEventCallbacks(scope, prefix, globalTableName, regFunc)": {
 		"prefix": "__CollectEventCallbacks",
 		"body": [
@@ -10283,10 +10689,10 @@
 		],
 		"description": "Overloaded function. Its only used for this: __CollectEventCallbacks(scope, \"OnGameEvent_\", \"GameEventCallbacks\", ::RegisterScriptGameEventListener)"
 	},
-	"void __CollectGameEventCallbacks(scope)": {
+	"void __CollectGameEventCallbacks(table scope)": {
 		"prefix": "__CollectGameEventCallbacks",
 		"body": [
-			"__CollectGameEventCallbacks(${1:scope})$0"
+			"__CollectGameEventCallbacks(${1:table scope})$0"
 		],
 		"description": "Wrapper that registers callbacks for both OnGameEvent_x and OnScriptEvent_ functions. Done using the __CollectEventCallbacks function."
 	},
@@ -10295,35 +10701,49 @@
 		"body": [
 			"__DumpScope(${1:int indentation}, ${2:handle scope})$0"
 		],
-		"description": "Dumps contents of everything in the scope."
+		"description": "Dumps a scope's contents and expands all tables and arrays; this is what the ent_script_dump command uses."
 	},
-	"__KeyValueFromFloat(string, float)": {
+	"__FILE__": {
+		"prefix": "__FILE__",
+		"body": [
+			"__FILE__$0"
+		],
+		"description": "File name of the currently executing script"
+	},
+	"bool __KeyValueFromFloat(string key, float value)": {
 		"prefix": "__KeyValueFromFloat",
 		"body": [
-			"__KeyValueFromFloat(${1:string}, ${2:float})$0"
+			"__KeyValueFromFloat(${1:string key}, ${2:float value})$0"
 		],
-		"description": ""
+		"description": "Behaves the same as KeyValueFromFloat, use that instead."
 	},
-	"__KeyValueFromInt(string, int)": {
+	"bool __KeyValueFromInt(string key, int value)": {
 		"prefix": "__KeyValueFromInt",
 		"body": [
-			"__KeyValueFromInt(${1:string}, ${2:int})$0"
+			"__KeyValueFromInt(${1:string key}, ${2:int value})$0"
 		],
-		"description": ""
+		"description": "Behaves the same as KeyValueFromInt, use that instead."
 	},
-	"__KeyValueFromString(string, string)": {
+	"bool __KeyValueFromString(string key, string value)": {
 		"prefix": "__KeyValueFromString",
 		"body": [
-			"__KeyValueFromString(${1:string}, ${2:string})$0"
+			"__KeyValueFromString(${1:string key}, ${2:string value})$0"
 		],
-		"description": ""
+		"description": "Behaves the same as KeyValueFromString, use that instead."
 	},
-	"__KeyValueFromVector(string, Vector)": {
+	"bool __KeyValueFromVector(string key, Vector value)": {
 		"prefix": "__KeyValueFromVector",
 		"body": [
-			"__KeyValueFromVector(${1:string}, ${2:Vector})$0"
+			"__KeyValueFromVector(${1:string key}, ${2:Vector value})$0"
 		],
-		"description": ""
+		"description": "Behaves the same as KeyValueFromVector, use that instead."
+	},
+	"__LINE__": {
+		"prefix": "__LINE__",
+		"body": [
+			"__LINE__$0"
+		],
+		"description": "Line number of the currently executing code"
 	},
 	"void __ReplaceClosures(script, scope)": {
 		"prefix": "__ReplaceClosures",
@@ -10365,42 +10785,42 @@
 		"body": [
 			"_charsize_$0"
 		],
-		"description": ""
+		"description": "1"
 	},
 	"_floatsize_": {
 		"prefix": "_floatsize_",
 		"body": [
 			"_floatsize_$0"
 		],
-		"description": ""
+		"description": "4"
 	},
 	"_intsize_": {
 		"prefix": "_intsize_",
 		"body": [
 			"_intsize_$0"
 		],
-		"description": ""
+		"description": "4"
 	},
 	"_version_": {
 		"prefix": "_version_",
 		"body": [
 			"_version_$0"
 		],
-		"description": ""
+		"description": "\"Squirrel 3.2 stable\""
 	},
 	"_versionnumber_": {
 		"prefix": "_versionnumber_",
 		"body": [
 			"_versionnumber_$0"
 		],
-		"description": ""
+		"description": "320"
 	},
 	"abs(num x)": {
 		"prefix": "abs",
 		"body": [
 			"abs(${1:num x})$0"
 		],
-		"description": "Returns x as integer unlike fabs()"
+		"description": "Returns |x| as integer unlike fabs()"
 	},
 	"acos(num x)": {
 		"prefix": "acos",
@@ -10442,7 +10862,7 @@
 		"body": [
 			"atan2(${1:num y}, ${2:num x) (!})$0"
 		],
-		"description": "Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (âˆ’PI, PI]. Note the order of the parameters x and y!"
+		"description": "Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (-PI, PI). Note the order of the parameters x and y!"
 	},
 	"blob(int initSize = 0)": {
 		"prefix": "blob",
@@ -10458,12 +10878,26 @@
 		],
 		"description": "Returns the currently running closure."
 	},
-	"table capture(str, start)": {
+	"table capture(str, [start])": {
 		"prefix": "capture",
 		"body": [
-			"capture(${1:str}, ${2:start})$0"
+			"capture(${1:str}, ${2:[start]})$0"
 		],
 		"description": "Returns an array of tables containing two indexes (\"begin\" and \"end\") of the first match of the regular expression in the string str. An array entry is created for each captured sub expressions. If no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
+	},
+	"int castf2i(float value)": {
+		"prefix": "castf2i",
+		"body": [
+			"castf2i(${1:float value})$0"
+		],
+		"description": "Interprets the float's bytes as if it were a 32-bit integer representation"
+	},
+	"float casti2f(int value)": {
+		"prefix": "casti2f",
+		"body": [
+			"casti2f(${1:int value})$0"
+		],
+		"description": "Interprets the integer's bytes as if it were a floating-point encoding"
 	},
 	"ceil(num x)": {
 		"prefix": "ceil",
@@ -10472,19 +10906,19 @@
 		],
 		"description": "Returns the smallest integer that is >= x"
 	},
-	"chain()": {
+	"chain": {
 		"prefix": "chain",
 		"body": [
-			"chain()$0"
+			"chain$0"
 		],
-		"description": ""
+		"description": "All functions to be called by the Call() method."
 	},
-	"chains()": {
+	"chains": {
 		"prefix": "chains",
 		"body": [
-			"chains()$0"
+			"chains$0"
 		],
-		"description": ""
+		"description": "Contains names of unprefixed functions, each with an array of functions to call."
 	},
 	"int collectgarbage()": {
 		"prefix": "collectgarbage",
@@ -10499,13 +10933,6 @@
 			"compilestring(${1:string string}, ${2:string buffername = null})$0"
 		],
 		"description": "Compiles a string containing a squirrel script into a function and returns it."
-	},
-	"constructor()": {
-		"prefix": "constructor",
-		"body": [
-			"constructor()$0"
-		],
-		"description": ""
 	},
 	"cos(num x)": {
 		"prefix": "cos",
@@ -10535,12 +10962,19 @@
 		],
 		"description": "Enable/disable the debug line information generation at compile time. enable != null enables . enable == null disables."
 	},
+	"bool endswith(string str, string cmp)": {
+		"prefix": "endswith",
+		"body": [
+			"endswith(${1:string str}, ${2:string cmp})$0"
+		],
+		"description": "Returns true if the end of the string matches the comparison string."
+	},
 	"int entindex()": {
 		"prefix": "entindex",
 		"body": [
 			"entindex()$0"
 		],
-		"description": ""
+		"description": "Returns the entity index."
 	},
 	"int eos()": {
 		"prefix": "eos",
@@ -10556,6 +10990,20 @@
 		],
 		"description": "Prints x in the standard error output ."
 	},
+	"string escape(string str)": {
+		"prefix": "escape",
+		"body": [
+			"escape(${1:string str})$0"
+		],
+		"description": "Returns a string with backslashes before characters that need to be escaped: “ a b t n v f r \\ ” ’ 0 xNN"
+	},
+	"exactMatch": {
+		"prefix": "exactMatch",
+		"body": [
+			"exactMatch$0"
+		],
+		"description": "If set, names of non-native functions and prefix must be an exact match. Set by the constructor."
+	},
 	"exp(num x)": {
 		"prefix": "exp",
 		"body": [
@@ -10568,14 +11016,21 @@
 		"body": [
 			"fabs(${1:num x})$0"
 		],
-		"description": "Returns x as float unlike abs()"
+		"description": "Returns |x| as float unlike abs()"
+	},
+	"int find(string searchString, int startIndex = null)": {
+		"prefix": "find",
+		"body": [
+			"find(${1:string searchString}, ${2:int startIndex = null})$0"
+		],
+		"description": "Looks for the sub-string passed as its first parameter, starting at either the beginning of the string or at a specific character index if one is provided as a second parameter. If the sub-string is found, returns the index at which it first occurs, otherwise returns null."
 	},
 	"floor(num x)": {
 		"prefix": "floor",
 		"body": [
 			"floor(${1:num x})$0"
 		],
-		"description": "Returns the largest integer that is x"
+		"description": "Returns the largest integer that is <= x"
 	},
 	"flush()": {
 		"prefix": "flush",
@@ -10584,12 +11039,12 @@
 		],
 		"description": ""
 	},
-	"format(string, args...)": {
+	"format(string format, args...)": {
 		"prefix": "format",
 		"body": [
-			"format(${1:string}, ${2:args...})$0"
+			"format(${1:string format}, ${2:args...})$0"
 		],
-		"description": "Returns a formatted string"
+		"description": "Returns a formatted string. Same rules as the standard C functions (except * is not supported)."
 	},
 	"table getconsttable()": {
 		"prefix": "getconsttable",
@@ -10617,7 +11072,7 @@
 		"body": [
 			"kHolidayCount$0"
 		],
-		"description": "13"
+		"description": "14"
 	},
 	"kHoliday_AprilFools": {
 		"prefix": "kHoliday_AprilFools",
@@ -10695,6 +11150,13 @@
 			"kHoliday_Soldier$0"
 		],
 		"description": "12"
+	},
+	"kHoliday_Summer": {
+		"prefix": "kHoliday_Summer",
+		"body": [
+			"kHoliday_Summer$0"
+		],
+		"description": "13"
 	},
 	"kHoliday_TFBirthday": {
 		"prefix": "kHoliday_TFBirthday",
@@ -10981,7 +11443,7 @@
 		"body": [
 			"len()$0"
 		],
-		"description": ""
+		"description": "Returns the length of the string, ie. the number of characters it comprises."
 	},
 	"log(num x)": {
 		"prefix": "log",
@@ -10997,31 +11459,45 @@
 		],
 		"description": "Returns log_10(x)"
 	},
-	"lstrip(string)": {
+	"lstrip(string str)": {
 		"prefix": "lstrip",
 		"body": [
-			"lstrip(${1:string})$0"
+			"lstrip(${1:string str})$0"
 		],
 		"description": "Removes whitespace at the beginning of the given string"
 	},
-	"m_bindNamesStack()": {
+	"m_bindNamesStack": {
 		"prefix": "m_bindNamesStack",
 		"body": [
-			"m_bindNamesStack()$0"
+			"m_bindNamesStack$0"
 		],
 		"description": ""
 	},
-	"m_fixupSet()": {
+	"m_fixupSet": {
 		"prefix": "m_fixupSet",
 		"body": [
-			"m_fixupSet()$0"
+			"m_fixupSet$0"
 		],
 		"description": ""
 	},
-	"m_targetTable()": {
+	"m_log": {
+		"prefix": "m_log",
+		"body": [
+			"m_log$0"
+		],
+		"description": ""
+	},
+	"m_logIndent": {
+		"prefix": "m_logIndent",
+		"body": [
+			"m_logIndent$0"
+		],
+		"description": ""
+	},
+	"m_targetTable": {
 		"prefix": "m_targetTable",
 		"body": [
-			"m_targetTable()$0"
+			"m_targetTable$0"
 		],
 		"description": ""
 	},
@@ -11044,14 +11520,14 @@
 		"body": [
 			"pow(${1:num x}, ${2:num y})$0"
 		],
-		"description": "Returns x_y"
+		"description": "Returns x^y"
 	},
-	"prefix()": {
+	"prefix": {
 		"prefix": "prefix",
 		"body": [
-			"prefix()$0"
+			"prefix$0"
 		],
-		"description": ""
+		"description": "Prefix that functions should have to be added into the chain array. Set by the constructor."
 	},
 	"print(string message)": {
 		"prefix": "print",
@@ -11059,6 +11535,20 @@
 			"print(${1:string message})$0"
 		],
 		"description": "Prints the given parameter but with no newline unlike printl()"
+	},
+	"print_indent": {
+		"prefix": "print_indent",
+		"body": [
+			"print_indent$0"
+		],
+		"description": "0. Spaces to indent prints by, except ones from realPrint."
+	},
+	"void printf(string format, args...)": {
+		"prefix": "printf",
+		"body": [
+			"printf(${1:string format}, ${2:args...})$0"
+		],
+		"description": "Prints message to console with C style formatting. The line feed is not included."
 	},
 	"void printl(string message)": {
 		"prefix": "printl",
@@ -11116,24 +11606,24 @@
 		],
 		"description": "Runs the garbage collector and returns an array containing all unreachable object found. If no unreachable object is found, null is returned instead. This function is meant to help debugging reference cycles. This function only works on garbage collector builds."
 	},
-	"rstrip(string)": {
+	"rstrip(string str)": {
 		"prefix": "rstrip",
 		"body": [
-			"rstrip(${1:string})$0"
+			"rstrip(${1:string str})$0"
 		],
 		"description": "Removes whitespace at the end of the given string"
 	},
-	"scope()": {
+	"scope": {
 		"prefix": "scope",
 		"body": [
-			"scope()$0"
+			"scope$0"
 		],
-		"description": ""
+		"description": "If set, seek functions in this scope instead. Set by the constructor."
 	},
-	"table search(str, start)": {
+	"table search(str, [start])": {
 		"prefix": "search",
 		"body": [
-			"search(${1:str}, ${2:start})$0"
+			"search(${1:str}, ${2:[start]})$0"
 		],
 		"description": "Returns a table containing two indexes (\"begin\" and \"end\") of the first match of the regular expression in the string st, otherwise if no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
 	},
@@ -11163,7 +11653,7 @@
 		"body": [
 			"seterrorhandler(${1:function func})$0"
 		],
-		"description": "Sets the runtime error handler ."
+		"description": "Sets the runtime error handler."
 	},
 	"table setroottable(table roottable)": {
 		"prefix": "setroottable",
@@ -11179,12 +11669,19 @@
 		],
 		"description": "Returns sin(x)"
 	},
-	"string split(string str, string separator')": {
+	"string slice(int startIndex, int endIndex = null)": {
+		"prefix": "slice",
+		"body": [
+			"slice(${1:int startIndex}, ${2:int endIndex = null})$0"
+		],
+		"description": "Creates a sub-string from a string. Copies characters from startIndex to endIndex. If endIndex is not specified, copies until the last character. If the provided end index is beyond the string, an exception is thrown."
+	},
+	"string split(string str, string separator, bool skipempty = false)": {
 		"prefix": "split",
 		"body": [
-			"split(${1:string str}, ${2:string separator'})$0"
+			"split(${1:string str}, ${2:string separator}, ${3:bool skipempty = false})$0"
 		],
-		"description": "Returns an array of strings split at each point where a separator character occurs in str. The separator is not returned as part of any array element. the parameter separators is a string that specifies the characters as to be used for the splitting."
+		"description": "Returns an array of strings split at each point where a separator character occurs in str. The separator is not returned as part of any array element. the parameter separators is a string that specifies the characters as to be used for the splitting. If skipempty is true, empty strings are not added to array."
 	},
 	"sqrt(num x)": {
 		"prefix": "sqrt",
@@ -11200,10 +11697,17 @@
 		],
 		"description": "Sets the starting point for generating a series of pseudorandom integers"
 	},
-	"strip(string)": {
+	"bool startswith(string str, string cmp)": {
+		"prefix": "startswith",
+		"body": [
+			"startswith(${1:string str}, ${2:string cmp})$0"
+		],
+		"description": "Returns true if the beginning of the string matches the comparison string."
+	},
+	"strip(string str)": {
 		"prefix": "strip",
 		"body": [
-			"strip(${1:string})$0"
+			"strip(${1:string str})$0"
 		],
 		"description": "Removes whitespace at the beginning and end of the given string"
 	},
@@ -11256,12 +11760,40 @@
 		],
 		"description": ""
 	},
+	"float tofloat()": {
+		"prefix": "tofloat",
+		"body": [
+			"tofloat()$0"
+		],
+		"description": "Returns float value represented by the string. Must only contain numeric characters and/or plus and minus symbols. An exception is thrown otherwise."
+	},
+	"int tointeger()": {
+		"prefix": "tointeger",
+		"body": [
+			"tointeger()$0"
+		],
+		"description": "Returns integer value represented by the string. Must only contain numeric characters. An exception is thrown otherwise. Hexadecimal notation is supported (i.e. 0xFF). If a hexadecimal string contains more than 10 characters, including the 0x, returns -1."
+	},
+	"string tolower()": {
+		"prefix": "tolower",
+		"body": [
+			"tolower()$0"
+		],
+		"description": "Returns a new string with all upper-case characters converted to lower-case."
+	},
 	"string tostring()": {
 		"prefix": "tostring",
 		"body": [
 			"tostring()$0"
 		],
 		"description": "Returns a human-readable string."
+	},
+	"string toupper()": {
+		"prefix": "toupper",
+		"body": [
+			"toupper()$0"
+		],
+		"description": "Returns a new string with all lower-case characters converted to upper-case."
 	},
 	"type(var)": {
 		"prefix": "type",
@@ -11271,7 +11803,7 @@
 		"description": "Returns var._typeof(), i.e. the type of the given parameter as a string"
 	},
 	"void writeblob (blob blob)": {
-		"prefix": "writeblob",
+		"prefix": "",
 		"body": [
 			"(${1:blob blob})$0"
 		],

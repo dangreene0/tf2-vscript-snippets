@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-defs = open("defs.txt", "r")
+defs = open("defs.txt", "r", 1, "utf-8")
 lines = defs.readlines()
 functions = {}
 i = 0
@@ -17,7 +17,8 @@ for line in lines:
                 functions[mostRecentFunction]["signature"] = text
         case "description":
             if (functions[mostRecentFunction]["description"] == ""):
-                functions[mostRecentFunction]["description"] = text.replace("\"", "\\\"")
+                functions[mostRecentFunction]["description"] = text.replace("\\", "\\\\")
+                functions[mostRecentFunction]["description"] = functions[mostRecentFunction]["description"].replace("\"", "\\\"")
 
     i += 1
 defs.close()
@@ -49,3 +50,6 @@ for key in sortedKeys:
     outputString += ("\t\"" + baseSignature + "\": {\n\t\t\"prefix\": \"" + prefix + "\",\n\t\t\"body\": [\n\t\t\t\"" + body + "\"\n\t\t],\n\t\t\"description\": \"" + functions[key]["description"] + "\"\n\t},\n")
 outputString = outputString[:len(outputString)-2] + "\n\t///// END TF2 VScript Snippets /////\n}"
 print(outputString, end="")
+
+outputFile = open("squirrel.json", "w")
+outputFile.write(outputString)
