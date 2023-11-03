@@ -7693,10 +7693,10 @@
 		],
 		"description": "Sets a netprop to the specified integer."
 	},
-	"void SetPropInt(handle entity, string propertyName, int value, int arrayElement)": {
-		"prefix": "SetPropInt",
+	"void SetPropIntArray(handle entity, string propertyName, int value, int arrayElement)": {
+		"prefix": "SetPropIntArray",
 		"body": [
-			"SetPropInt(${1:handle entity}, ${2:string propertyName}, ${3:int value}, ${4:int arrayElement})$0"
+			"SetPropIntArray(${1:handle entity}, ${2:string propertyName}, ${3:int value}, ${4:int arrayElement})$0"
 		],
 		"description": "Sets a netprop from an array to the specified integer."
 	},
