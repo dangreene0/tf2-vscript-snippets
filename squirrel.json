@@ -10995,7 +10995,7 @@
 		"body": [
 			"escape(${1:string str})$0"
 		],
-		"description": "Returns a string with backslashes before characters that need to be escaped: “ a b t n v f r \\ ” ’ 0 xNN"
+		"description": "Returns a string with backslashes before characters that need to be escaped: â€œ a b t n v f r \\ â€ â€™ 0 xNN"
 	},
 	"exactMatch": {
 		"prefix": "exactMatch",
