@@ -8003,9 +8003,9 @@
                         "details": "Sets a netprop to the specified integer."
                 },
                 {
-                        "trigger": "SetPropInt",
-                        "annotation": "void SetPropInt(handle entity, string propertyName, int value, int arrayElement)",
-                        "contents": "SetPropInt(${1:handle entity}, ${2:string propertyName}, ${3:int value}, ${4:int arrayElement})$0",
+                        "trigger": "SetPropIntArray",
+                        "annotation": "void SetPropIntArray(handle entity, string propertyName, int value, int arrayElement)",
+                        "contents": "SetPropIntArray(${1:handle entity}, ${2:string propertyName}, ${3:int value}, ${4:int arrayElement})$0",
                         "kind": "keyword",
                         "details": "Sets a netprop from an array to the specified integer."
                 },

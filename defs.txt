@@ -2223,7 +2223,7 @@ void SetPropInt(handle entity, string propertyName, int value)
 Sets a netprop to the specified integer.
 
 SetPropIntArray
-void SetPropInt(handle entity, string propertyName, int value, int arrayElement)
+void SetPropIntArray(handle entity, string propertyName, int value, int arrayElement)
 Sets a netprop from an array to the specified integer.
 
 SetPropString

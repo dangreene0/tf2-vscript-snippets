@@ -18,3 +18,4 @@ Sublime Text support exists in this repo, but should be considered unmaintained.
 - Zachary Talis
 - treacherousfiend
 - Chillax
+- talascio
