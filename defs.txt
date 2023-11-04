@@ -1,3 +1,39 @@
+__FILE__
+__FILE__
+File name of the currently executing script
+
+__LINE__
+__LINE__
+Line number of the currently executing code
+
+Constants
+Constants
+Enumerations for various function arguments or netprops.
+
+Documentation
+Documentation
+Contains the printed strings from the script_help command.
+
+GameEventCallbacks
+GameEventCallbacks
+Table of registered game event callbacks.
+
+print_indent
+print_indent
+0. Spaces to indent prints by, except ones from realPrint.
+
+_PublishedHelp
+_PublishedHelp
+
+
+ScriptEventCallbacks
+ScriptEventCallbacks
+Table of registered script event callbacks.
+
+ScriptHookCallbacks
+ScriptHookCallbacks
+Table of registered script hook callbacks.
+
 ScriptDebugDefaultWatchColor
 ScriptDebugDefaultWatchColor
 
@@ -40,91 +76,91 @@ ScriptDebugWatches
 
 _charsize_
 _charsize_
-
+1
 
 _floatsize_
 _floatsize_
-
+4
 
 _intsize_
 _intsize_
-
+4
 
 _version_
 _version_
-
+"Squirrel 3.2 stable"
 
 _versionnumber_
 _versionnumber_
-
+320
 
 RAND_MAX
 RAND_MAX
-
+32767
 
 PI
 PI
-
+3.14158
 
 __KeyValueFromFloat
-__KeyValueFromFloat(string, float)
-
+bool __KeyValueFromFloat(string key, float value)
+Behaves the same as KeyValueFromFloat, use that instead.
 
 __KeyValueFromInt
-__KeyValueFromInt(string, int)
-
+bool __KeyValueFromInt(string key, int value)
+Behaves the same as KeyValueFromInt, use that instead.
 
 __KeyValueFromString
-__KeyValueFromString(string, string)
-
+bool __KeyValueFromString(string key, string value)
+Behaves the same as KeyValueFromString, use that instead.
 
 __KeyValueFromVector
-__KeyValueFromVector(string, Vector)
-
+bool __KeyValueFromVector(string key, Vector value)
+Behaves the same as KeyValueFromVector, use that instead.
 
 AddEFlags
-AddEFlags(int)
-
+void AddEFlags(int flags)
+Adds the supplied flags to the Entity Flags in the entity. (m_iEFlags datamap). See Constants.FEntityEFlags.
 
 AddFlag
-AddFlag(int)
-
+void AddFlag(int flags)
+Adds the supplied flags to another separate player-related entity flags system in the entity. (m_fFlags datamap). See Constants.FPlayer.
 
 AddSolidFlags
-AddSolidFlags(int)
-
+void AddSolidFlags(int flags)
+Adds the supplied flags to the Solid Flags in the entity. (m_Collision.m_usSolidFlags datamap). See Constants.FSolid.
 
 ApplyAbsVelocityImpulse
-void ApplyAbsVelocityImpulse(Vector)
-Apply a Velocity Impulse
+void ApplyAbsVelocityImpulse(Vector impulse)
+Apply a Velocity Impulse as a world space impulse vector. Works for most physics-based objects including dropped weapons and even dropped Sandviches.
 
 ApplyLocalAngularVelocityImpulse
-void ApplyLocalAngularVelocityImpulse(Vector)
-Apply an Ang Velocity Impulse
+void ApplyLocalAngularVelocityImpulse(Vector impulse)
+Apply an Angular Velocity Impulse in entity local space. The direction of the input vector is the rotation axis, and the length is the magnitude of the impulse.
 
 BecomeRagdollOnClient
-bool BecomeRagdollOnClient(Vector)
-Becomes a ragdoll with a force
+bool BecomeRagdollOnClient(Vector impulse)
+Acts like the BecomeRagdoll input, with the required impulse value applied as a force on the ragdoll. Does NOT spawn a prop_ragdoll or any other entity.
 
 ClearFlags
-ClearFlags()
-
+void ClearFlags()
+Sets the player-related entity flags to 0 on an entity, clearing them.
 
 ClearSolidFlags
-ClearSolidFlags()
-
+void ClearSolidFlags()
+Sets Solid Flags to 0 on an entity, clearing them.
 
 ConnectOutput
-void ConnectOutput(string, string)
-Adds an I/O connection that will call the named function when the specified output fires
+void ConnectOutput(string output, string function)
+Adds an I/O connection that will call the named function when the specified output fires.
 
 Destroy
 void Destroy()
-
+Removes the entity. Simply calls UTIL_Remove.
 
 DisableDraw
 void DisableDraw()
-Enable drawing (removes EF_NODRAW)
+Disable drawing and transmitting the entity to clients. (adds EF_NODRAW)
 
 DisconnectOutput
 void DisconnectOutput(string, string)
@@ -140,23 +176,23 @@ Plays a sound from this entity.
 
 EnableDraw
 void EnableDraw()
-Disable drawing (sets EF_NODRAW)
+Enable drawing and transmitting the entity to clients. (removes EF_NODRAW)
 
 entindex
 int entindex()
-
+Returns the entity index.
 
 EyeAngles
 QAngle EyeAngles()
-Returns the entity's eye angles
+Returns the entity's eye angles. Acts like GetAbsAngles if the entity does not support it.
 
 EyePosition
 Vector EyePosition()
-Get vector to eye position - absolute coords
+Get vector to eye position - absolute coords. Acts like GetOrigin if the entity does not support it.
 
 FirstMoveChild
 handle FirstMoveChild()
-
+Returns the most-recent entity parented to this one.
 
 GetAbsAngles
 QAngle GetAbsAngles()
@@ -168,11 +204,11 @@ Returns the current absolute velocity of the entity
 
 GetAngles
 Vector GetAngles()
-Get entity pitch, yaw, roll as a vector
+Get entity pitch, yaw, roll as a Vector
 
 GetAngularVelocity
 Vector GetAngularVelocity()
-Get the local angular velocity - returns a vector of pitch,yaw,roll
+Get the local angular velocity - returns a vector of pitch, yaw, and roll
 
 GetBaseVelocity
 Vector GetBaseVelocity()
@@ -204,7 +240,7 @@ string GetClassname()
 
 GetCollisionGroup
 GetCollisionGroup()
-
+Gets the current collision group of the entity.
 
 GetEFlags
 int GetEFlags()
@@ -323,8 +359,8 @@ int GetSolid()
 
 
 GetSoundDuration
-float GetSoundDuration(string, string)
-Returns float duration of the sound. Takes soundname and optional actormodelname.
+float GetSoundDuration(string soundname, string actormodelname)
+Returns float duration of the sound. Actor model name is optional and can be left null.
 
 GetTeam
 int GetTeam()
@@ -340,51 +376,51 @@ Vector GetVelocity()
 
 GetWaterLevel
 int GetWaterLevel()
-
+This function tells you how much of the entity is underwater. It returns a value of 0 if not underwater, 1 if the feet are (touching water brush), 2 if the waist is (center of the hull of the entity), and 3 if the head is (eyes position).
 
 GetWaterType
 int GetWaterType()
-
+It returns the type of water the entity is currently submerged in. 32 for water and 16 for slime.
 
 IsEFlagSet
-bool IsEFlagSet(int)
+bool IsEFlagSet(int eflag)
 
 
 IsPlayer
 bool IsPlayer()
-
+Checks whether the entity is a player or not.
 
 IsSolid
 bool IsSolid()
 
 
 IsSolidFlagSet
-bool IsSolidFlagSet(int)
+bool IsSolidFlagSet(int solidflag)
 
 
 IsValid
 bool IsValid()
-
+Checks whether the entity still exists. Useful when storing entity handles and needing to check if the entity was not deleted.
 
 KeyValueFromFloat
-bool KeyValueFromFloat(string, float)
+bool KeyValueFromFloat(string key, float value)
 Executes KeyValue with a float
 
 KeyValueFromInt
-bool KeyValueFromInt(string, int)
+bool KeyValueFromInt(string key, int value)
 Executes KeyValue with an int
 
 KeyValueFromString
-bool KeyValueFromString(string, string)
+bool KeyValueFromString(string key, string value)
 Executes KeyValue with a string
 
 KeyValueFromVector
-bool KeyValueFromVector(string, Vector)
+bool KeyValueFromVector(string key, Vector value)
 Executes KeyValue with a vector
 
 Kill
 void Kill()
-
+Removes the entity. Equivalent of firing the Kill I/O input, but instantaneous.
 
 LocalEyeAngles
 handle LocalEyeAngles()
@@ -392,183 +428,183 @@ Returns the entity's local eye angles
 
 NextMovePeer
 handle NextMovePeer()
-
+Returns the next entity parented with the entity. Intended for iteration use with FirstMoveChild().
 
 PrecacheModel
-void PrecacheModel(string)
-
+void PrecacheModel(string modelname)
+Precache a model
 
 PrecacheScriptSound
-void PrecacheScriptSound(string)
-
+void PrecacheScriptSound(string soundscript)
+Precache a sound script. Same as PrecacheSoundScript.
 
 PrecacheSoundScript
-void PrecacheSoundScript(string)
-Precache a sound for later playing.
+void PrecacheSoundScript(string soundscript)
+Precache a sound script. Same as PrecacheScriptSound.
 
 RemoveEFlags
-void RemoveEFlags(int)
+void RemoveEFlags(int eflags)
 
 
 RemoveFlag
-void RemoveFlag(int)
+void RemoveFlag(int flags)
 
 
 RemoveSolidFlags
-void RemoveSolidFlags(int)
+void RemoveSolidFlags(int solidflags)
 
 
 SetAbsAngles
-void SetAbsAngles(QAngle)
+void SetAbsAngles(QAngle angles)
 Set entity pitch, yaw, roll as QAngles
 
 SetAbsVelocity
 void SetAbsVelocity(Vector)
-Sets the current absolute velocity of the entity
+Sets the current absolute velocity velocity of the entity
 
 SetAbsOrigin
-void SetAbsOrigin(Vector)
-SetAbsOrigin
+void SetAbsOrigin(Vector origin)
+Sets the absolute origin of the entity.
 
 SetAngles
-void SetAngles(float, float, float)
-Set entity pitch, yaw, roll.
+void SetAngles(float pitch, float yaw, float roll)
+Set entity angles.
 
 SetAngularVelocity
-void SetAngularVelocity(float, float, float)
-Set the local angular velocity - takes float pitch,yaw,roll velocities
+void SetAngularVelocity(float pitch, float yaw, float roll)
+Set the local angular velocity.
 
 SetCollisionGroup
-void SetCollisionGroup(int)
-
+void SetCollisionGroup(int collision_group)
+Set the current collision group of the entity. See Constants.ECollisionGroup
 
 SetDrawEnabled
-void SetDrawEnabled(bool)
+void SetDrawEnabled(bool toggle)
 Enables drawing if you pass true, disables drawing if you pass false.
 
 SetEFlags
-void SetEFlags(int)
+void SetEFlags(int eflags)
 
 
 SetForwardVector
-void SetForwardVector(Vector)
+void SetForwardVector(Vector forward)
 Set the orientation of the entity to have this forward vector
 
 SetFriction
-void SetFriction(float)
+void SetFriction(float friction)
 
 
 SetGravity
-void SetGravity(float)
+void SetGravity(float gravity)
 
 
 SetHealth
-void SetHealth(int)
+void SetHealth(int health)
 
 
 SetLocalAngles
-void SetLocalAngles(QAngle)
+void SetLocalAngles(QAngle angles)
 
 
 SetLocalOrigin
-void SetLocalOrigin(Vector)
+void SetLocalOrigin(Vector origin)
 
 
 SetMaxHealth
-void SetMaxHealth(int)
-
+void SetMaxHealth(int health)
+Sets the maximum health this entity can have. Does not update the current health, so SetHealth should be used afterwards.
 
 SetModel
-void SetModel(string)
+void SetModel(string model_name)
 Set a model for this entity
 
 SetMoveType
 void SetMoveType(EMoveType movetype, EMoveCollide movecollide)
 
 
-SetModelSimple
-void SetModelSimple(string)
-Set a model for this entity. Matches easier behaviour of the SetModel input, automatically precaches, maintains sequence/cycle if possible.
-
 SetOrigin
-void SetOrigin(Vector)
+void SetOrigin(Vector origin)
 
 
 SetOwner
-void SetOwner(handle)
+void SetOwner(handle entity)
 Sets this entity's owner
 
 SetPhysAngularVelocity
-void SetPhysAngularVelocity(Vector)
+void SetPhysAngularVelocity(Vector angular_velocity)
 
 
 SetPhysVelocity
-void SetPhysVelocity(Vector)
+void SetPhysVelocity(Vector velocity)
 
 
 SetSize
-void SetSize(Vector, Vector)
-
+void SetSize(Vector mins, Vector maxs)
+Sets the bounding box's scale for this entity.
 
 SetSolid
-SetSolid(int)
+SetSolid(int solid)
 
 
 SetSolidFlags
-SetSolidFlags(int)
+SetSolidFlags solid_flags(int)
 
 
 SetTeam
-void SetTeam(int)
-
+void SetTeam(int team)
+Sets entity team.
 
 SetVelocity
-void SetVelocity(Vector)
+void SetVelocity(Vector velocity)
 
 
 SetWaterLevel
-SetWaterLevel(int)
-
+SetWaterLevel(int water_level)
+This sets how much of the entity is underwater. Setting it to 0 means it is not underwater, 1 if the feet are (touching water brush), 2 if the waist is (center of the hull of the entity), and 3 if the head is (eyes position).
 
 SetWaterType
-SetWaterType(int)
-
+SetWaterType(int water_type)
+Set the type of water the entity is currently submerged in. Generic values to use are 32 for water and 16 for slime.
 
 StopSound
-void StopSound(string)
+void StopSound(string sound_name)
 Stops a sound on this entity.
 
 TakeDamage
 void TakeDamage(float flDamage, int nDamageType, handle hAttacker)
+Deals damage to the entity.
 
+TakeDamageEx
+void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)
+Extended version of TakeDamage.
+
+TakeDamageCustom
+void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, Constants.ETFDmgCustom nCustomDamageType)
+Extended version of TakeDamageEx that can apply a custom damage type.
 
 Teleport
-void Teleport(bool, Vector, bool, QAngle, bool, Vector)
-Teleports this entity
+void Teleport(bool use_origin, Vector origin, bool use_angles, QAngle angles, bool use_velocity, Vector velocity)
+Teleports this entity. For this function, set the bools to false if you want that entity's property unchanged. (do not use null arguments!)
 
 TerminateScriptScope
 void TerminateScriptScope()
 Clear the current script scope for this entity
 
 ToggleFlag
-ToggleFlag(int)
-
-
-TakeDamageEx
-void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)
-
-
-TakeDamageCustom
-void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, int nCustomDamageType)
+ToggleFlag(int flags)
 
 
 ValidateScriptScope
 bool ValidateScriptScope()
 Ensure that an entity's script scope has been created
 
-Input[InputName]
-bool Input[InputName]()
-Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to beInputfollowed by the name of the input with the same casing (PascalCase). E.g. for the FireUser1 input, it would beInputFireUser1. When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variablesactivatorandcaller. The function needs to return a boolean value; Returningtrueprocesses the input, whilefalsecancels it.
+Input<name>
+bool Input<name>()
+Called when the entity receives an input from the I/O system that matches the function's name. The name of the function needs to be Input followed by the name of the input. E.g. for the FireUser1 input, it would be InputFireUser1 When the function is called, Script Handles of the activator and caller entities are accessible to the function under the variables activator and caller. The function needs to return a boolean value; Returning true processes the input, while false cancels it.
+
+OnGameEvent_<name>
+void OnGameEvent_<name>(table params)
+Called each time a game event with the specified name occurs. The name of the function needs to be OnGameEvent_ followed by the name of the game event. E.g. for the player_spawn input, it would be OnGameEvent_player_spawn.
 
 OnPostSpawn
 void OnPostSpawn()
@@ -583,72 +619,72 @@ void OnTakeDamage(handle params)
 Called each time an entity takes damage. The script can modify the table entries not suffixed with const, and these will be sent back to the game code
 
 DispatchAnimEvents
-void DispatchAnimEvents(handle)
+void DispatchAnimEvents(handle entity)
 Dispatch animation events to a CBaseAnimating
 
 FindBodygroupByName
-int FindBodygroupByName(string)
-Find a bodygroup id by name
+int FindBodygroupByName(string name)
+Find a bodygroup ID by name. Returns -1 if the bodygroup does not exist.
 
 GetAttachmentAngles
-QAngle GetAttachmentAngles(int)
-Get the attachement id's angles as a p,y,r vector
+QAngle GetAttachmentAngles(int ID)
+Get an attachment's angles as a QAngle, by ID.
 
 GetAttachmentBone
-int GetAttachmentBone(int)
-Get the named attachement's parent bone index
+int GetAttachmentBone(int ID)
+Get an attachment's parent bone index by ID.
 
 GetAttachmentOrigin
-Vector GetAttachmentOrigin(int)
-Get the attachement id's origin vector
+Vector GetAttachmentOrigin(int ID)
+Get an attachment's origin as a Vector, by ID.
 
 GetBodygroup
-int GetBodygroup(int)
-Get a bodygroup by id
+int GetBodygroup(int ID)
+Get the bodygroup value by bodygroup ID.
 
 GetBodygroupName
-string GetBodygroupName(int)
-Get the bodygroup id's name
+string GetBodygroupName(int ID)
+Get the bodygroup's name by ID.
 
 GetBodygroupPartName
-string GetBodygroupPartName(int, int)
-Get name by group and part
+string GetBodygroupPartName(int group, int part)
+Get the bodygroup's name by group and part.
 
 GetBoneAngles
-QAngle GetBoneAngles(int)
-Get the bone id's angles as a p,y,r vector
+QAngle GetBoneAngles(int ID)
+Get the bone's angles as a QAngle, by ID.
 
 GetBoneOrigin
-Vector GetBoneOrigin(int)
-Get the bone id's origin vector
+Vector GetBoneOrigin(int ID)
+Get the bone's origin Vector by ID.
 
 GetCycle
 float GetCycle()
-Gets the models current cycle
+Gets the model's current animation cycle rate.
 
 GetModelScale
 float GetModelScale()
-
+Get the model's scale.
 
 GetPlaybackRate
 float GetPlaybackRate()
-Set the current playback rate.
+Get the current animation's playback rate.
 
 GetSequence
 int GetSequence()
-Get the current sequence id
+Get the current-playing sequence's ID.
 
 GetSequenceActivityName
-string GetSequenceActivityName(int)
-Get the activity name for a sequence by id
+string GetSequenceActivityName(int ID)
+Get the activity name for a sequence by sequence ID.
 
 GetSequenceDuration
-float GetSequenceDuration(int)
-Get a sequence duration by id
+float GetSequenceDuration(int ID)
+Get a sequence duration in seconds by sequence ID.
 
 GetSequenceName
-string GetSequenceName(int)
-Get a sequence name by id
+string GetSequenceName(int ID)
+Get a sequence name by sequence ID.
 
 GetSkin
 int GetSkin()
@@ -659,56 +695,60 @@ bool IsSequenceFinished()
 Ask whether the main sequence is done playing
 
 LookupActivity
-int LookupActivity(string)
-Get the named activity index
+int LookupActivity(string activity)
+Get the named activity index. Returns -1 if the activity does not exist.
 
 LookupAttachment
-int LookupAttachment(string)
-Get the named attachement id
+int LookupAttachment(string name)
+Get the named attachment index. Returns 0 if the attachment does not exist.
 
 LookupBone
-int LookupBone(string)
-Get the named bone index
+int LookupBone(string bone)
+Get the named bone index. Returns -1 if the bone does not exist.
 
 LookupPoseParameter
-int LookupPoseParameter(string)
-Looks up a pose parameter index by name
+int LookupPoseParameter(string name)
+Gets the pose parameter's index. Returns -1 if the pose parameter does not exist.
 
 LookupSequence
-int LookupSequence(string)
-Looks up a sequence by sequence name or activity name
+int LookupSequence(string name)
+Looks up a sequence by names of sequences or activities. Returns -1 if the sequence does not exist.
 
 ResetSequence
-void ResetSequence(int)
-Reset a sequence by id. If the id is different than the current sequence, switch to the new sequence
+void ResetSequence(int ID)
+Reset a sequence by sequence ID. If the ID is different than the current sequence, switch to the new sequence.
 
 SetBodygroup
-void SetBodygroup(int, int)
-Sets a bodygroup
+void SetBodygroup(int ID, int value)
+Set the bodygroup by ID.
 
 SetCycle
-void SetCycle(float)
-Sets the models current cycle
+void SetCycle(float cycle)
+Sets the model's current animation cycle from 0 to 1.
+
+SetModelSimple
+void SetModelSimple(string model_name)
+Set a model for this entity. Matches easier behaviour of the SetModel input, automatically precaches, maintains sequence/cycle if possible.
 
 SetModelScale
-void SetModelScale(float, float)
-(scale, change_duration) Changes a model's scale over time
+void SetModelScale(float scale, float change_duration)
+Changes a model's scale over time. Set the change duration to 0.0 to change the scale instantly.
 
 SetPlaybackRate
-void SetPlaybackRate(float)
-Set the current playback rate.
+void SetPlaybackRate(float rate)
+Set the current animation's playback rate.
 
 SetPoseParameter
-float SetPoseParameter(int, float)
-(id, value) Sets a pose parameter value
+float SetPoseParameter(int ID, float value)
+Sets a pose parameter value. Returns the effective value after clamping or looping.
 
 SetSequence
-void SetSequence(int)
-Set a sequence by id
+void SetSequence(int ID)
+Plays a sequence by sequence ID.
 
 SetSkin
-void SetSkin(int)
-Sets the skin.
+void SetSkin(int index)
+Sets the model's skin.
 
 StopAnimation
 void StopAnimation()
@@ -719,7 +759,7 @@ void StudioFrameAdvance()
 Advance animation frame to some time in the future with an automatically calculated interval
 
 StudioFrameAdvanceManual
-void StudioFrameAdvanceManual(float)
+void StudioFrameAdvanceManual(float dt)
 Advance animation frame to some time in the future with a manual interval
 
 CanBeSelected
@@ -831,15 +871,15 @@ void SetClip2(int)
 Set current ammo in clip2
 
 SetCustomViewModel
-void SetCustomViewModel(string)
+void SetCustomViewModel(string model_name)
 Sets a custom view model for this weapon by model name
 
 SetCustomViewModelModelIndex
-void SetCustomViewModelModelIndex(int)
+void SetCustomViewModelModelIndex(int model_index)
 Sets a custom view model for this weapon by modelindex
 
 SetSubType
-void SetSubType(int)
+void SetSubType(int subtype)
 Set the weapon subtype
 
 UsesClipsForAmmo1
@@ -863,59 +903,59 @@ bool VisibleInWeaponSelection()
 Is this weapon visible in weapon selection
 
 PlayScene
-float PlayScene(string, float)
-Play the specified .vcd file.
+float PlayScene(string scene_file, float delay)
+Play the specified .vcd file, causing the related characters to speak and subtitles to play.
 
 GetLastKnownArea
 handle GetLastKnownArea()
-Return the last nav area occupied - NULL if unknown
+Return the last nav area occupied, NULL if unknown. See CTFNavArea.
 
 GetForceLocalDraw
 bool GetForceLocalDraw()
-Gets the state of whether the player is being forced by SetForceLocalDraw to be drawn
+Whether the player is being forced by SetForceLocalDraw to be drawn.
 
 GetPlayerMaxs
 Vector GetPlayerMaxs()
-
+Get a vector containing max bounds of the player in local space. The player's model scale will affect the result.
 
 GetPlayerMins
 Vector GetPlayerMins()
-
+Get a vector containing min bounds of the player in local space. The player's model scale will affect the result.
 
 GetScriptOverlayMaterial
 string GetScriptOverlayMaterial()
-Gets the current view overlay material
+Gets the current overlay material set by SetScriptOverlayMaterial.
 
 IsNoclipping
 bool IsNoclipping()
 Returns true if the player is in noclip mode.
 
 SetForceLocalDraw
-void SetForceLocalDraw(bool)
-Forces the player to be drawn as if they are third person
+void SetForceLocalDraw(bool forceDraw)
+Forces the player to be drawn as if they were in thirdperson.
 
 SetScriptOverlayMaterial
-void SetScriptOverlayMaterial(string)
- Sets a view overlay material
+void SetScriptOverlayMaterial(string material)
+Sets the overlay material that can't be overriden by other overlays. E.g. Jarate.
 
 SnapEyeAngles
-void SnapEyeAngles(QAngle)
+void SnapEyeAngles(QAngle angles)
 Snap the player's eye angles to this.
 
 ViewPunch
-void ViewPunch(QAngle)
+void ViewPunch(QAngle angleOffset)
 Ow! Punches the player's view
 
 ViewPunchReset
-void ViewPunchReset(float)
-Reset's the player's view punch
+void ViewPunchReset(float tolerance)
+Reset's the player's view punch if the offset stays below the given tolerance.
 
 AddAttribute
-void AddAttribute(string, float, float)
-Add an attribute to the entity
+void AddAttribute(string name, float value, float duration)
+Add an attribute to the entity. Set duration to -1 for the attribute to be applied forever.
 
 RemoveAttribute
-void RemoveAttribute(string)
+void RemoveAttribute(string name)
 Remove an attribute to the entity
 
 ReapplyProvision
@@ -930,25 +970,37 @@ AddCondEx
 void AddCondEx(ETFCond cond, float duration, handle provider)
 
 
+AddCurrency
+void AddCurrency(int amount)
+Kaching! Give the player some cash for game modes with upgrades, ie. MvM
+
 AddCustomAttribute
-void AddCustomAttribute(string, float, float)
-Add a custom attribute to the player
+void AddCustomAttribute(string name, float value, float duration)
+Add a custom attribute to the player. Set duration to -1 for the attribute to be applied forever.
+
+AddHudHideFlags
+void AddHudHideFlags(int flags)
+Hides a hud element based on Constants.FHideHUD
 
 ApplyPunchImpulseX
-bool ApplyPunchImpulseX(float)
-
+bool ApplyPunchImpulseX(float impulse)
+Apply a view punch along the pitch angle. Used to flinch players when hit. If the player is a fully charged scoped-in sniper and the weapon has the aiming_no_flinch attribute, the punch will not apply. Returns true if the punch was applied.
 
 BleedPlayer
-void BleedPlayer(float)
-
+void BleedPlayer(float duration)
+Make a player bleed for a set duration of time.
 
 BleedPlayerEx
-void BleedPlayerEx(float, int, bool, int)
+void BleedPlayerEx(float duration, int damage, bool endless, int nCustomDamageType)
+Make a player bleed for a set duration of time, or forever, with specific damage per tick and damage_custom index.
 
+CancelTaunt
+void CancelTaunt()
+Cancels any taunt in progress
 
 CanAirDash
 bool CanAirDash()
-
+Can the player air dash/double jump?
 
 CanBeDebuffed
 bool CanBeDebuffed()
@@ -964,7 +1016,7 @@ Can the player duck?
 
 CanGetWet
 bool CanGetWet()
-
+Can the player get wet by jarate/milk?
 
 CanJump
 bool CanJump()
@@ -978,17 +1030,33 @@ ClearSpells
 void ClearSpells()
 
 
+ClearTauntAttack
+void ClearTauntAttack()
+Stops active taunt from damaging or cancels Rock-Paper-Scissors result
+
 CanPlayerMove
 bool CanPlayerMove()
 Can the player move?
 
+DoTauntAttack
+void DoAttackTaunt()
+Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (taunt attack name attribute)
+
 DropFlag
-void DropFlag(bool)
+void DropFlag(bool silent)
 Force player to drop the flag.
 
 DropRune
-void DropRune(bool, int)
+void DropRune(bool apply_force, int team)
 Force player to drop the rune.
+
+EndLongTaunt
+void EndLongTaunt()
+Stops a looping taunt (obeys minimum time rules and plays outro animation if available)
+
+EquipWearableViewModel
+void EquipWearableViewModel(handle ent)
+Equips a wearble on the viewmodel. Intended to be used with tf_wearable_vm entities.
 
 ExtinguishPlayerBurning
 void ExtinguishPlayerBurning()
@@ -998,20 +1066,16 @@ FiringTalk
 void FiringTalk()
 Makes eg. a heavy go AAAAAAAAAAaAaa like they are firing their minigun.
 
-FirstMoveChild
-FirstMoveChild()
-
-
 ForceChangeTeam
-void ForceChangeTeam(int, bool)
-Force player to change their team.
+void ForceChangeTeam(int team, bool full_team_switch)
+Force player to change their team. Setting the bool to true will not remove nemesis relationships or reset the player's class, as well as not slaying the player.
 
 ForceRegenerateAndRespawn
-void ForceRegenerateAndRespawn(int, bool)
+void ForceRegenerateAndRespawn()
 Force regenerates and respawns the player
 
 ForceRespawn
-void ForceRespawn(int)
+void ForceRespawn()
 Force respawns the player
 
 GetActiveWeapon
@@ -1024,6 +1088,10 @@ int GetBackstabs()
 
 GetBonusPoints
 int GetBonusPoints()
+
+
+GetBotType
+int GetBotType()
 
 
 GetBuildingsDestroyed
@@ -1040,7 +1108,7 @@ Gets the eye height of the player
 
 GetCondDuration
 float GetCondDuration(ETFCond cond)
-
+Returns duration of the condition. Returns 0 if the cond is not applied. Returns -1 if the cond is infinite.
 
 GetCurrency
 int GetCurrency()
@@ -1085,6 +1153,10 @@ int GetHealPoints()
 GetHealTarget
 handle GetHealTarget()
 Who is the medic healing?
+
+GetHudHideFlags
+int GetHudHideFlags()
+
 
 GetInvulns
 int GetInvulns()
@@ -1138,9 +1210,25 @@ GetTeleports
 int GetTeleports()
 
 
+GetTauntAttackTime
+float GetTauntAttackTime()
+Timestamp until a taunt attack "lasts". 0 if unavailable
+
+GetTauntRemoveTime
+float GetTauntRemoveTime()
+Timestamp until taunt is stopped
+
+GetVehicleReverseTime
+float GetVehicleReverseTime()
+Timestamp when kart was reversed
+
 GetTimeSinceCalledForMedic
 float GetTimeSinceCalledForMedic()
 When did the player last call medic
+
+GrantOrRemoveAllUpgrades
+void GrantOrRemoveAllUpgrades(bool remove, bool refund)
+
 
 HasItem
 bool HasItem()
@@ -1166,8 +1254,16 @@ IsAirDashing
 bool IsAirDashing()
 
 
+IsAllowedToRemoveTaunt
+bool IsAllowedToRemoveTaunt()
+Returns true if the taunt will be stopped
+
 IsAllowedToTaunt
 bool IsAllowedToTaunt()
+
+
+IsBotOfType
+bool IsBotOfType(int type)
 
 
 IsCallingForMedic
@@ -1184,6 +1280,10 @@ bool IsControlStunned()
 
 IsCritBoosted
 bool IsCritBoosted()
+
+
+IsFakeClient
+bool IsFakeClient()
 
 
 IsFireproof
@@ -1226,10 +1326,6 @@ IsPlacingSapper
 bool IsPlacingSapper()
 Returns true if we placed a sapper in the last few moments
 
-IsPlayer
-IsPlayer()
-
-
 IsRageDraining
 bool IsRageDraining()
 
@@ -1250,6 +1346,10 @@ IsStealthed
 bool IsStealthed()
 
 
+IsTaunting()
+bool IsTaunting()
+
+
 IsUsingActionSlot
 bool IsUsingActionSlot()
 
@@ -1259,15 +1359,15 @@ bool IsViewingCYOAPDA()
 
 
 Regenerate
-void Regenerate(bool)
+void Regenerate(bool refill_health_ammo)
 Resupplies a player. If regen health/ammo is set, clears negative conds, gives back player health/ammo
 
 RemoveAllItems
-void RemoveAllItems(bool)
+void RemoveAllItems(bool unused)
 
 
 RemoveAllObjects
-void RemoveAllObjects(bool)
+void RemoveAllObjects(bool explode)
 Remove all player objects. Eg. dispensers/sentries.
 
 RemoveCond
@@ -1279,16 +1379,20 @@ void RemoveCondEx(ETFCond cond, bool ignoreDuration)
 
 
 RemoveCurrency
-void RemoveCurrency(int)
+void RemoveCurrency(int amount)
 Take away money from a player for reasons such as ie. spending.
 
 RemoveCustomAttribute
-void RemoveCustomAttribute(string)
+void RemoveCustomAttribute(string name)
 Remove a custom attribute to the player
 
 RemoveDisguise
 void RemoveDisguise()
 Undisguise a spy.
+
+RemoveHudHideFlags
+void RemoveHudHideFlags(int flags)
+Unhides a hud element based on Constants.FHideHUD
 
 RemoveInvisibility
 void RemoveInvisibility()
@@ -1311,88 +1415,112 @@ void SetCondDuration(ETFCond cond, float duration)
 
 
 SetCurrency
-void SetCurrency(int)
+void SetCurrency(int amount)
 Set player's cash for game modes with upgrades, ie. MvM
 
 SetCurrentTauntMoveSpeed
-void SetCurrentTauntMoveSpeed(float)
+void SetCurrentTauntMoveSpeed(float speed)
 
 
 SetCustomModel
-void SetCustomModel(string)
+void SetCustomModel(string model_name)
 
 
 SetCustomModelOffset
-void SetCustomModelOffset(Vector)
+void SetCustomModelOffset(Vector offset)
 
 
 SetCustomModelRotates
-void SetCustomModelRotates(bool)
+void SetCustomModelRotates(bool toggle)
 
 
 SetCustomModelRotation
-void SetCustomModelRotation(QAngle)
+void SetCustomModelRotation(QAngle angles)
 
 
 SetCustomModelVisibleToSelf
-void SetCustomModelVisibleToSelf(bool)
+void SetCustomModelVisibleToSelf(bool toggle)
 
 
 SetCustomModelWithClassAnimations
-void SetCustomModelWithClassAnimations(string)
+void SetCustomModelWithClassAnimations(string model_name)
 
 
 SetDisguiseAmmoCount
-void SetDisguiseAmmoCount(int)
+void SetDisguiseAmmoCount(int count)
 
 
 SetForcedTauntCam
-void SetForcedTauntCam(int)
+void SetForcedTauntCam(int toggle)
 
 
 SetGrapplingHookTarget
-void SetGrapplingHookTarget(handle, bool)
+void SetGrapplingHookTarget(handle entity, bool bleed)
 Set the player's target grapple entity
 
+SetHudHideFlags
+void SetHudHideFlags(int flags)
+Force hud hide flags to a value based on Constants.FHideHUD
+
 SetIsMiniBoss
-void SetIsMiniBoss(bool)
+void SetIsMiniBoss(bool toggle)
 Make this player an MvM mini-boss.
 
 SetNextChangeClassTime
-void SetNextChangeClassTime(float)
+void SetNextChangeClassTime(float time)
 Set next change class time.
 
 SetNextChangeTeamTime
-void SetNextChangeTeamTime(float)
+void SetNextChangeTeamTime(float time)
 Set next change team time.
 
 SetNextRegenTime
-void SetNextRegenTime(float)
-Set next health regen time.
+void SetNextRegenTime(float time)
+Set next available resupply time.
 
 SetPlayerClass
-void SetPlayerClass(int)
-
+void SetPlayerClass(int class)
+Sets the player class. Updates the player's visuals and model.
 
 SetRageMeter
-void SetRageMeter(float)
+void SetRageMeter(float percent)
+Sets rage meter from 0 - 100.
 
+SetRPSResult
+void SetRPSResult(int result)
+Rig the result of Rock-Paper-Scissors (0 - rock, 1 - paper, 2 - scissors)
 
 SetScoutHypeMeter
-void SetScoutHypeMeter(float)
-
+void SetScoutHypeMeter(float percent)
+Sets hype meter from 0 - 100.
 
 SetSpyCloakMeter
-void SetSpyCloakMeter(float)
+void SetSpyCloakMeter(float percent)
+Sets cloak meter from 0 - 100.
 
+SetVehicleReverseTime
+void SetVehicleReverseTime(float time)
+Set the timestamp when kart was reversed
 
 SetUseBossHealthBar
-void SetUseBossHealthBar(bool)
+void SetUseBossHealthBar(bool toggle)
 
+
+StopTaunt
+void StopTaunt(bool remove_prop)
+Stops current taunt. If remove_prop is true, the taunt prop will be immediately deleted instead of potentially delaying
+
+Taunt
+void Taunt(int taunt_index, int taunt_concept)
+Performs a taunt if allowed. For taunt index, see Constants.FTaunts. For concepts, see MP_CONCEPT List. Concept is the "voiceline" index to use with the taunt. For TAUNT_SHOW_ITEM and TAUNT_BASE_WEAPON this is set automatically. TAUNT_LONG is not supported.
 
 TryToPickupBuilding
 bool TryToPickupBuilding()
 Make the player attempt to pick up a building in front of them
+
+UpdateSkin
+void UpdateSkin(int skin)
+
 
 WasInCond
 bool WasInCond(ETFCond cond)
@@ -1404,11 +1532,11 @@ bool Weapon_CanUse(handle weapon)
 
 Weapon_Drop
 void Weapon_Drop(handle weapon)
-
+Does nothing!
 
 Weapon_DropEx
 void Weapon_Drop(handle weapon, Vector target, Vector velocity)
-
+Does nothing!
 
 Weapon_Equip
 void Weapon_Equip(handle weapon)
@@ -1427,15 +1555,15 @@ void Weapon_Switch(handle weapon)
 
 
 AddBotAttribute
-void AddBotAttribute(int)
+void AddBotAttribute(int attribute)
 Sets attribute flags on this TFBot
 
 AddBotTag
-void AddBotTag(string)
+void AddBotTag(string tag)
 Adds a bot tag
 
 AddWeaponRestriction
-void AddWeaponRestriction(int)
+void AddWeaponRestriction(int flags)
 Adds weapon restriction flags
 
 ClearAllBotAttributes
@@ -1455,27 +1583,27 @@ void ClearAttentionFocus()
 Clear current focus
 
 DelayedThreatNotice
-void DelayedThreatNotice(handle, float)
-
+void DelayedThreatNotice(handle threat, float delay)
+Notice the threat after a delay in seconds
 
 DisbandCurrentSquad
 void DisbandCurrentSquad()
 Forces the current squad to be entirely disbanded by everyone
 
 FindVantagePoint
-handle FindVantagePoint(float)
+handle FindVantagePoint(float max_distance)
 Get the nav area of the closest vantage point (within distance)
 
 GenerateAndWearItem
-void GenerateAndWearItem(string)
+void GenerateAndWearItem(string item_name)
 Give me an item!
 
 GetHomeArea
 handle GetHomeArea()
-Sets the home nav area of the bot
+Gets the home nav area of the bot
 
 GetDifficulty
-int GetDifficulty()
+ETFBotDifficultyType GetDifficulty()
 Returns the bot's difficulty level
 
 GetMaxVisionRangeOverride
@@ -1495,15 +1623,15 @@ float GetSquadFormationError()
 Gets our formation error coefficient.
 
 HasBotAttribute
-bool HasBotAttribute(int)
+bool HasBotAttribute(int attribute)
 Checks if this TFBot has the given attributes
 
 HasBotTag
-bool HasBotTag(string)
+bool HasBotTag(string tag)
 Checks if this TFBot has the given bot tag
 
 HasWeaponRestriction
-bool HasWeaponRestriction(int)
+bool HasWeaponRestriction(int flags)
 Checks if this TFBot has the given weapon restriction flags
 
 IsAmmoFull
@@ -1519,11 +1647,11 @@ bool IsAttentionFocused()
 Is our attention focused right now?
 
 IsAttentionFocusedOn
-bool IsAttentionFocusedOn(handle)
+bool IsAttentionFocusedOn(handle entity)
 Is our attention focused on this entity
 
 IsDifficulty
-bool IsDifficulty(int)
+bool IsDifficulty(int difficulty)
 Returns true/false if the bot's difficulty level matches.
 
 IsInASquad
@@ -1531,7 +1659,7 @@ bool IsInASquad()
 Checks if we are in a squad
 
 IsWeaponRestricted
-bool IsWeaponRestricted(handle)
+bool IsWeaponRestricted(handle weapon)
 Checks if the given weapon is restricted for use on the bot
 
 LeaveSquad
@@ -1539,59 +1667,59 @@ void LeaveSquad()
 Makes us leave the current squad (if any)
 
 PressAltFireButton
-void PressAltFireButton(float)
+void PressAltFireButton(float duration)
 
 
 PressFireButton
-void PressFireButton(float)
+void PressFireButton(float duration)
 
 
 PressSpecialFireButton
-void PressSpecialFireButton(float)
+void PressSpecialFireButton(float duration)
 
 
 RemoveBotAttribute
-void RemoveBotAttribute(int)
+void RemoveBotAttribute(int attribute)
 Removes attribute flags on this TFBot
 
 RemoveBotTag
-void RemoveBotTag(string)
+void RemoveBotTag(string tag)
 Removes a bot tag
 
 RemoveWeaponRestriction
-void RemoveWeaponRestriction(int)
+void RemoveWeaponRestriction(int flags)
 Removes weapon restriction flags
 
 SetAttentionFocus
-void SetAttentionFocus(handle)
+void SetAttentionFocus(handle entity)
 Sets our current attention focus to this entity
 
 SetAutoJump
-void SetAutoJump(float, float)
+void SetAutoJump(float minTime, float maxTime)
 Sets if the bot should automatically jump
 
 SetDifficulty
-void SetDifficulty(int)
+void SetDifficulty(int difficulty)
 Sets the bots difficulty level
 
 SetHomeArea
-void SetHomeArea(handle)
-Returns the home nav area of the bot -- may be nil.
+void SetHomeArea(handle area)
+Set the home nav area of the bot, may be null.
 
 SetMaxVisionRangeOverride
-void SetMaxVisionRangeOverride(float)
+void SetMaxVisionRangeOverride(float range)
 Sets max vision range override for the bot
 
 SetScaleOverride
-void SetScaleOverride(float)
+void SetScaleOverride(float scale)
 Sets the scale override for the bot
 
 SetShouldQuickBuild
-void SetShouldQuickBuild(bool)
+void SetShouldQuickBuild(bool toggle)
 Sets if the bot should build instantly
 
 SetSquadFormationError
-void SetSquadFormationError(float)
+void SetSquadFormationError(float coefficient)
 Sets our formation error coefficient.
 
 ShouldAutoJump
@@ -1640,15 +1768,15 @@ Creates an entity by classname
 
 DispatchSpawn
 void DispatchSpawn(handle entity)
-Dispatches spawn of an entity!
+Dispatches spawn of an entity! Use this on entities created via CreateByClassname to actually spawn them into the world.
 
 FindByClassname
 handle FindByClassname(handle previous, string classname)
-Find entities by the value of their classname keyvalue. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search. Note: the classname keyvalue of an entity can be manipulated and does not necessarily reflect its code class. There might be entities that have a different classname than the one they are created with.
+Find entities by the string of their classname keyvalue. Pass 'null' value to start an iteration, or reference to a previously found entity to continue a search
 
 FindByClassnameNearest
 handle FindByClassnameNearest(string classname, Vector center, float radius)
-Find entities by classname nearest to a point.
+Find entities by classname nearest to a point within a radius.
 
 FindByClassnameWithin
 handle FindByClassnameWithin(handle previous, string classname, Vector center, float radius)
@@ -1664,7 +1792,7 @@ Find entities by the value of their enttargetname keyvalue. Pass 'null' to start
 
 FindByNameNearest
 handle FindByNameNearest(string targetname, Vector center, float radius)
-Find entities by targetname nearest to a point.
+Find entities by targetname nearest to a point within a radius.
 
 FindByNameWithin
 handle FindByNameWithin(handle previous, string targetname, Vector center, float radius)
@@ -1691,84 +1819,84 @@ void AddIncomingConnection(handle area, int dir)
 Add areas that connect TO this area by a ONE-WAY link
 
 ClearAttributeTF
-void ClearAttributeTF(int)
-Clear TF-specific area attribute bits
+void ClearAttributeTF(int bits)
+Clear TF-specific area attribute bits.
 
 ComputeClosestPointInPortal
-Vector ComputeClosestPointInPortal(handle, int, Vector)
+Vector ComputeClosestPointInPortal(handle to, ENavDirType dir, Vector closePos)
 Compute closest point within the portal between to adjacent areas.
 
 ComputeDirection
 int ComputeDirection(Vector point)
-Return direction from this area to the given point
+Return direction from this area to the given point.
 
 ConnectTo
 void ConnectTo(handle area, int dir)
-Connect this area to given area in given direction
+Connect this area to given area in given direction.
 
 Contains
 bool Contains(handle area)
-Return true if other area is on or above this area, but no others
+Return true if other area is on or above this area, but no others.
 
 ContainsOrigin
 bool ContainsOrigin(Vector point)
-Return true if given point is on or above this area, but no others
+Return true if given point is on or above this area, but no others.
 
 DebugDrawFilled
-void DebugDrawFilled(int, int, int, int, float, bool, float)
-Draw area as a filled rect of the given color
+void DebugDrawFilled(int r, int g, int b, int a, float duration, bool noDepthTest, float margin)
+Draw area as a filled rect of the given color.
 
 Disconnect
 void Disconnect(handle area)
-Disconnect this area from given area
+Disconnect this area from given area.
 
 FindRandomSpot
 Vector FindRandomSpot()
-Get random origin within extent of area
+Get random origin within extent of area.
 
 GetAdjacentArea
 handle GetAdjacentArea(int dir, int n)
-Return the n'th adjacent area in the given direction
+Return the n'th adjacent area in the given direction.
 
 GetAdjacentAreas
 void GetAdjacentAreas(int dir, handle table)
-Fills a passed in table with all adjacent areas in the given direction
+Fills a passed in table with all adjacent areas in the given direction.
 
 GetAdjacentCount
 int GetAdjacentCount(int dir)
-Get the number of adjacent areas in the given direction
+Get the number of adjacent areas in the given direction.
 
 GetAttributes
 int GetAttributes()
-Get area attribute bits
+Get area attribute bits.
 
 GetAvoidanceObstacleHeight
 float GetAvoidanceObstacleHeight()
-Returns the maximum height of the obstruction above the ground
+Returns the maximum height of the obstruction above the ground.
 
 GetCenter
 Vector GetCenter()
-Get center origin of area
+Get center origin of area.
 
 GetCorner
 Vector GetCorner(int dir)
-Get corner origin of area
+Get corner origin of area.
 
 GetDistanceSquaredToPoint
 float GetDistanceSquaredToPoint(Vector pos)
-Return shortest distance between point and this area
+Return shortest distance between point and this area.
 
 GetDoor
 handle GetDoor()
-Returns the door entity above the area
+Returns the door entity above the area.
 
 GetElevator
 handle GetElevator()
-Returns the elevator if in an elevator's path
+Returns the elevator if in an elevator's path.
 
 GetElevatorAreas
 void GetElevatorAreas(handle table)
-Fills table with a collection of areas reachable via elevator from this area
+Fills table with a collection of areas reachable via elevator from this area.
 
 GetID
 int GetID()
@@ -1776,71 +1904,71 @@ Get area ID.
 
 GetIncomingConnections
 void GetIncomingConnections(int dir, handle table)
-Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them)
+Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them).
 
 GetParent
 handle GetParent()
-Returns the area just prior to this one in the search path
+Returns the area just prior to this one in the search path.
 
 GetParentHow
 int GetParentHow()
-Returns how we get from parent to us
+Returns how we get from parent to us.
 
 GetPlaceName
 string GetPlaceName()
-Get place name
+Get place name if it exists, null otherwise.
 
 GetPlayerCount
 int GetPlayerCount(int team)
-Return number of players of given team currently within this area (team of zero means any/all)
+Return number of players of given team currently within this area (team of zero means any/all).
 
 GetRandomAdjacentArea
 handle GetRandomAdjacentArea(int dir)
-Return a random adjacent area in the given direction
+Return a random adjacent area in the given direction.
 
 GetSizeX
 float GetSizeX()
-Return the area size along the X axis
+Return the area size along the X axis.
 
 GetSizeY
 float GetSizeY()
-Return the area size along the Y axis
+Return the area size along the Y axis.
 
 GetTravelDistanceToBombTarget
 float GetTravelDistanceToBombTarget()
-Gets the travel distance to the MvM bomb target
+Gets the travel distance to the MvM bomb target.
 
 GetZ
 float GetZ(Vector pos)
 Return Z of area at (x,y) of 'pos'
 
 HasAttributeTF
-bool HasAttributeTF(int)
-Has TF-specific area attribute bits
+bool HasAttributeTF(int bits)
+Has TF-specific area attribute bits of the given ones.
 
 HasAttributes
-bool HasAttributes(int)
-Has area attribute bits
+bool HasAttributes(int bits)
+Has area attribute bits of the given ones.
 
 HasAvoidanceObstacle
 bool HasAvoidanceObstacle(float maxheight)
 Returns true if there's a large, immobile object obstructing this area
 
 IsBlocked
-bool IsBlocked(int team, bool)
-Return true if team is blocked in this area
+bool IsBlocked(int team, bool affectsFlow)
+Return true if team is blocked in this area.
 
 IsBottleneck
 bool IsBottleneck()
-Returns true if area is a bottleneck
+Returns true if area is a bottleneck. (tiny narrow areas with only one path)
 
 IsCompletelyVisibleToTeam
 bool IsCompletelyVisibleToTeam(int team)
-Return true if given area is completely visible from somewhere in this area by someone on the team
+Return true if given area is completely visible from somewhere in this area by someone on the team.
 
 IsConnected
 bool IsConnected(handle area, int dir)
-Return true if given area is connected in given direction
+Return true if this area is connected to other area in given direction. (If you set direction to -1 or 4, it will automatically check all directions for a connection).
 
 IsCoplanar
 bool IsCoplanar(handle area)
@@ -1848,39 +1976,39 @@ Return true if this area and given area are approximately co-planar
 
 IsDamaging
 bool IsDamaging()
-Return true if continuous damage (ie: fire) is in this area
+Return true if this area is marked to have continuous damage.
 
 IsDegenerate
 bool IsDegenerate()
-Return true if this area is badly formed
+Return true if this area is badly formed.
 
 IsEdge
-bool IsEdge(int dir)
-Return true if there are no bi-directional links on the given side
+bool IsEdge(ENavDirType dir)
+Return true if there are no bi-directional links on the given side.
 
 IsFlat
 bool IsFlat()
-Return true if this area is approximately flat
+Return true if this area is approximately flat.
 
 IsOverlapping
 bool IsOverlapping(handle area)
-Return true if 'area' overlaps our 2D extents
+Return true if 'area' overlaps our 2D extents.
 
 IsOverlappingOrigin
 bool IsOverlappingOrigin(Vector pos, float tolerance)
-Return true if 'pos' is within 2D extents of area
+Return true if 'pos' is within 2D extents of area.
 
 IsPotentiallyVisibleToTeam
 bool IsPotentiallyVisibleToTeam(int team)
-Return true if any portion of this area is visible to anyone on the given team
+Return true if any portion of this area is visible to anyone on the given team.
 
 IsReachableByTeam
-bool IsReachableByTeam(int)
+bool IsReachableByTeam(int team)
 Is this area reachable by the given team?
 
 IsRoughlySquare
 bool IsRoughlySquare()
-Return true if this area is approximately square
+Return true if this area is approximately square.
 
 IsTFMarked
 bool IsTFMarked()
@@ -1888,47 +2016,47 @@ Is this nav area marked with the current marking scope?
 
 IsUnderwater
 bool IsUnderwater()
-Return true if area is underwater
+Return true if area is underwater.
 
 IsValidForWanderingPopulation
 bool IsValidForWanderingPopulation()
-Returns true if area is valid for wandering population
+Returns true if area is valid for wandering population.
 
 IsVisible
 bool IsVisible(Vector point)
-Return true if area is visible from the given eyepoint
+Return true if area is visible from the given eyepoint.
 
 MarkAsBlocked
 void MarkAsBlocked(int team)
-Mark this area as blocked for team
+Mark this area as blocked for team.
 
 MarkAsDamaging
 void MarkAsDamaging(float duration)
-Mark this area is damaging for the next 'duration' seconds
+Mark this area is damaging for the next 'duration' seconds.
 
 MarkObstacleToAvoid
 void MarkObstacleToAvoid(float height)
-Marks the obstructed status of the nav area
+Marks the obstructed status of the nav area.
 
 RemoveAttributes
-void RemoveAttributes(int)
-Removes area attribute bits
+void RemoveAttributes(int bits)
+Removes area attribute bits.
 
 RemoveOrthogonalConnections
-void RemoveOrthogonalConnections(int dir)
-Removes all connections in directions to left and right of specified direction
+void RemoveOrthogonalConnections(ENavDirType dir)
+Removes all connections in directions to left and right of specified direction.
 
 SetAttributeTF
-void SetAttributeTF(int)
-Set TF-specific area attributes
+void SetAttributeTF(int bits)
+Set TF-specific area attributes.
 
 SetAttributes
-void SetAttributes(int)
-Set area attribute bits
+void SetAttributes(int bits)
+Set area attribute bits.
 
 SetPlaceName
 void SetPlaceName(string name)
-Set place name
+Set place name. If you pass null, the place name will be set to nothing.
 
 TFMark
 void TFMark()
@@ -1936,7 +2064,7 @@ Mark this nav area with the current marking scope.
 
 UnblockArea
 void UnblockArea()
-Unblocks this area
+Unblocks this area.
 
 FindNavAreaAlongRay
 handle FindNavAreaAlongRay(Vector startpos, Vector endpos, handle ignoreAreaID)
@@ -1963,7 +2091,7 @@ int GetNavAreaCount()
 return total number of nav areas
 
 GetNavAreasFromBuildPath
-bool GetNavAreasFromBuildPath(CTFNavArea startArea, CTFNavArea endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers, handle table)
+bool GetNavAreasFromBuildPath(handle startArea, handle endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers, handle table)
 Fills the table with areas from a path. Returns whether a path was found. If 'endArea' is NULL, will compute a path as close as possible to 'goalPos'.
 
 GetNavAreasInRadius
@@ -1983,11 +2111,11 @@ void GetObstructingEntities(handle table)
 fills a passed in table of all obstructing entities
 
 NavAreaBuildPath
-bool NavAreaBuildPath(CTFNavArea startArea, CTFNavArea endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers)
+bool NavAreaBuildPath(handle startArea, handle endArea, Vector goalPos, float flMaxPathLength, int teamID, bool ignoreNavBlockers)
 returns true if a path exists
 
 NavAreaTravelDistance
-float NavAreaTravelDistance(TFNavArea startArea, CTFNavArea endArea, float flMaxPathLength)
+float NavAreaTravelDistance(handle startArea, handle endArea, float flMaxPathLength)
 compute distance between two areas. Return -1 if can't reach 'endArea' from 'startArea'
 
 RegisterAvoidanceObstacle
@@ -2179,11 +2307,11 @@ void ReleaseKeyValues()
 Releases the contents of the instance.
 
 GetPlayerSpeechDuration
-float GetPlayerSpeechDuration(int)
+float GetPlayerSpeechDuration(int playerIndex)
 Returns the number of seconds the player has been continuously speaking.
 
 IsPlayerSpeaking
-bool IsPlayerSpeaking(int)
+bool IsPlayerSpeaking(int playerIndex)
 Returns whether the player specified is speaking.
 
 SpawnEntity
@@ -2191,16 +2319,16 @@ void SpawnEntity()
 Create an entity at the location of the maker
 
 SpawnEntityAtEntityOrigin
-void SpawnEntityAtEntityOrigin(handle)
+void SpawnEntityAtEntityOrigin(handle entity)
 Create an entity at the location of a specified entity instance
 
 SpawnEntityAtLocation
-void SpawnEntityAtLocation(Vector, Vector)
+void SpawnEntityAtLocation(Vector origin, Vector orientation)
 Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)
 
 SpawnEntityAtNamedEntityOrigin
-void SpawnEntityAtNamedEntityOrigin(string)
-Create an entity at the location of a named entity
+void SpawnEntityAtNamedEntityOrigin(string targetname)
+Create an entity at the location of a named entity. If multiple entities have the same name, only the one with the lowest entity index will be targeted.
 
 PreSpawnInstance
 table PreSpawnInstance(string entityClass, string entityName)
@@ -2211,19 +2339,19 @@ void PostSpawn(table entities)
 Called after the entities are spawned. A table with the handles of the spawned entities indexed by name is passed to the function. Could use this to connect outputs or do whatever needs to be done after the entity was created.
 
 GetFuturePosition
-Vector GetFuturePosition(float, float)
-Get a position on the track x seconds in the future
+Vector GetFuturePosition(float x, float speed)
+Get a position on the track X seconds in the future.
 
 AddTemplate
-void AddTemplate(string, handle)
+void AddTemplate(string, table)
 Add an entity to the template spawner
 
 SetGroupSpawnTables
-void SetGroupSpawnTables(handle, handle)
+void SetGroupSpawnTables(table)
 Cache the group spawn tables
 
 AddBroadcastTeamTarget
-void AddBroadcastTeamTarget(int)
+void AddBroadcastTeamTarget(int index)
 Adds a team (by index) to the broadcast list
 
 EstimateLength
@@ -2231,7 +2359,7 @@ float EstimateLength()
 Returns length of this scene in seconds.
 
 FindNamedEntity
-handle FindNamedEntity(string)
+handle FindNamedEntity(string reference)
 given an entity reference, such as !target, get actual entity from scene object
 
 IsPaused
@@ -2243,63 +2371,75 @@ bool IsPlayingBack()
 If this scene is currently playing.
 
 LoadSceneFromString
-bool LoadSceneFromString(string, string)
+bool LoadSceneFromString(string sceneName, string scene)
 given a dummy scene name and a vcd string, load the scene
 
 RemoveBroadcastTeamTarget
-void RemoveBroadcastTeamTarget(int)
+void RemoveBroadcastTeamTarget(int index)
 Removes a team (by index) from the broadcast list
 
-Call
-Call()
-
-
-chain
-chain()
-
+CCallChainer
+CCallChainer(string functionPrefix, table scope = null)
+Creates a CCallChainer object that'll collect functions that have a matching prefix in the given scope.
 
 PostScriptExecute
-PostScriptExecute()
-
-
-prefix
-prefix()
-
-
-scope
-scope()
-
+void PostScriptExecute()
+Search for all non-native functions with matching prefixes, then push them into the chains table.
 
 Call
-Call()
-
+bool Call(string event, any ...)
+Find an unprefixed function name in the chains table and call it with the given arguments.
 
 chains
-chains()
-
-
-PostScriptExecute
-PostScriptExecute()
-
+chains
+Contains names of unprefixed functions, each with an array of functions to call.
 
 prefix
-prefix()
-
+prefix
+Prefix that functions should have to be added into the chains table. Set by the constructor.
 
 scope
-scope()
+scope
+If set, seek functions in this scope instead. Set by the constructor.
 
+CSimpleCallChainer
+CSimpleCallChainer(string functionPrefix, table scope = null, exactMatch = false)
+Creates a CSimpleCallChainer object that'll collect functions that have a matching prefix in the given scope, unless it seek for an exact name match.
+
+PostScriptExecute
+void PostScriptExecute()
+Begin searching for all non-native functions with matching prefixes, then push them into the chain array.
+
+Call
+bool Call(any ...)
+Call all functions inside the chain array with the given arguments.
+
+chain
+chain
+All functions to be called by the Call() method.
+
+exactMatch
+exactMatch
+If set, names of non-native functions and prefix must be an exact match. Set by the constructor.
+
+prefix
+prefix
+Prefix that functions should have to be added into the chain array. Set by the constructor.
+
+scope
+scope
+If set, seek functions in this scope instead. Set by the constructor.
 
 ClearImmobileStatus
 void ClearImmobileStatus()
 Clear immobile status
 
 FlagForUpdate
-void FlagForUpdate(bool)
+void FlagForUpdate(bool toggle)
 Flag this bot for update
 
 GetBodyInterface
-handle GetBodyInterface()
+INextBotComponent GetBodyInterface()
 Get this bot's body interface
 
 GetBotId
@@ -2315,11 +2455,11 @@ float GetImmobileSpeedThreshold()
 Return units/second below which this actor is considered immobile
 
 GetIntentionInterface
-handle GetIntentionInterface()
+INextBotComponent GetIntentionInterface()
 Get this bot's intention interface
 
 GetLocomotionInterface
-handle GetLocomotionInterface()
+ILocomotion GetLocomotionInterface()
 Get this bot's locomotion interface
 
 GetTickLastUpdate
@@ -2327,11 +2467,11 @@ int GetTickLastUpdate()
 Get last update tick
 
 GetVisionInterface
-handle GetVisionInterface()
+INextBotComponent GetVisionInterface()
 Get this bot's vision interface
 
 IsEnemy
-bool IsEnemy(handle)
+bool IsEnemy(handle entity)
 Return true if given entity is our enemy
 
 IsFlaggedForUpdate
@@ -2339,44 +2479,52 @@ bool IsFlaggedForUpdate()
 Is this bot flagged for update
 
 IsFriend
-bool IsFriend(handle)
+bool IsFriend(handle entity)
 Return true if given entity is our friend
 
 IsImmobile
 bool IsImmobile()
 Return true if we haven't moved in awhile
 
+ComputeUpdateInterval
+bool ComputeUpdateInterval()
+Recomputes the component update interval
+
+GetUpdateInterval
+float GetUpdateInterval()
+Returns the component update interval
+
+Reset
+void Reset()
+Resets the internal update state
+
 Approach
-void Approach(Vector, float)
-The primary locomotive method. Sets the goal destination for the bot
+void Approach(Vector goal, float goalWeight)
+The primary locomotive method. Goal determines the destination position to move towards. goalWeight determines the priority of this path, you can set this to 1.0 generally speaking.
 
 ClearStuckStatus
-void ClearStuckStatus(string)
-Reset stuck status to un-stuck
+void ClearStuckStatus(string reason)
+Reset stuck status to un-stuck. Reason message is shown when debugging nextbots.
 
 ClimbUpToLedge
-bool ClimbUpToLedge(Vector, Vector, handle)
+bool ClimbUpToLedge(Vector goalPos, vector goalForward, handle obstacle)
 Initiate a jump to an adjacent high ledge, return false if climb can't start
 
-ComputeUpdateInterval
-ComputeUpdateInterval()
-
-
 DriveTo
-void DriveTo(Vector)
+void DriveTo(Vector pos)
 Move the bot to the precise given position immediately, updating internal state
 
 FaceTowards
-void FaceTowards(Vector)
+void FaceTowards(Vector target)
 Rotate body to face towards target
 
 FractionPotentialGap
-float FractionPotentialGap(Vector, Vector)
+float FractionPotentialGap(Vector from, Vector to)
 If the locomotor cannot jump over the gap, returns the fraction of the jumpable ray
 
 FractionPotentiallyTraversable
-float FractionPotentiallyTraversable(Vector, Vector, bool)
-If the locomotor could not move along the line given, returns the fraction of the walkable ray.
+float FractionPotentiallyTraversable(Vector from, Vector to, bool immediately)
+If the locomotor could not move along the line given, returns the fraction of the walkable ray. If immediately is true, breakables are considered non-traverseable
 
 GetDeathDropHeight
 float GetDeathDropHeight()
@@ -2436,7 +2584,7 @@ Get maximum speed bot can reach, regardless of desired speed
 
 GetStepHeight
 float GetStepHeight()
-If delta Z is greater than this, we have to jump to get up
+If delta Z is lower than this, we can step up the surface (like a stair step), but if delta Z is greater than this, we have to jump to get up.
 
 GetStuckDuration
 float GetStuckDuration()
@@ -2448,7 +2596,7 @@ Return Z component of unit normal of steepest traversable slope
 
 GetUpdateInterval
 GetUpdateInterval()
-
+Returns time between updates
 
 GetVelocity
 Vector GetVelocity()
@@ -2459,8 +2607,8 @@ float GetWalkSpeed()
 Get maximum walking speed
 
 HasPotentialGap
-float HasPotentialGap(Vector, Vector)
-Return true if there is a possible gap that will need to be jumped over
+float HasPotentialGap(Vector from, Vector to)
+Checks if there is a possible gap that will need to be jumped over. Returns fraction of ray from 0 to 1.
 
 IsAbleToClimb
 bool IsAbleToClimb()
@@ -2471,7 +2619,7 @@ bool IsAbleToJumpAcrossGaps()
 Return true if this bot can jump across gaps in its path
 
 IsAreaTraversable
-bool IsAreaTraversable(handle)
+bool IsAreaTraversable(handle area)
 Return true if given area can be used for navigation
 
 IsAttemptingToMove
@@ -2487,12 +2635,12 @@ bool IsClimbingUpToLedge()
 Is climbing up to a high ledge
 
 IsEntityTraversable
-bool IsEntityTraversable(handle, bool)
-Return true if the entity handle is traversable
+bool IsEntityTraversable(handle entity, bool immediately)
+Return true if the entity handle is traversable. If immediately is true, breakables are considered non-traverseable
 
 IsGap
-bool IsGap(Vector, Vector)
-Return true if there is a gap here when moving in the given direction
+bool IsGap(Vector pos, Vector forward)
+Return true if there is a gap at this position.
 
 IsJumpingAcrossGap
 bool IsJumpingAcrossGap()
@@ -2503,8 +2651,8 @@ bool IsOnGround()
 Return true if standing on something
 
 IsPotentiallyTraversable
-float IsPotentiallyTraversable(Vector, Vector, bool)
-Return true if this locomotor could potentially move along the line given.
+float IsPotentiallyTraversable(Vector from, Vector to, bool immediately)
+Checks if this locomotor could potentially move along the line given. Returns fraction of trace result (1 = clear). If immediately is true, breakables are considered non-traverseable
 
 IsRunning
 bool IsRunning()
@@ -2518,29 +2666,25 @@ IsStuck
 bool IsStuck()
 Return true if bot is stuck. If the locomotor cannot make progress, it becomes stuck and can only leave this stuck state by successfully movingand becoming un-stuck.
 
-IsValid
-IsValid()
-
-
 Jump
 void Jump()
 Initiate a simple undirected jump in the air
 
 JumpAcrossGap
-void JumpAcrossGap(Vector, Vector)
+void JumpAcrossGap(Vector goalPos, Vector goalForward)
 Initiate a jump across an empty volume of space to far side
 
 OnLandOnGround
-void OnLandOnGround(handle)
+void OnLandOnGround(handle ground)
 Manually run the OnLandOnGround callback. Typically invoked when bot lands on the ground after being in the air
 
 OnLeaveGround
-void OnLeaveGround(handle)
+void OnLeaveGround(handle ground)
 Manually run the OnLeaveGround callback. Typically invoked when bot leaves ground for any reason
 
 Reset
 Reset()
-
+Resets motion, stuck state, etc
 
 Run
 void Run()
@@ -2562,22 +2706,6 @@ Walk
 void Walk()
 Set desired movement speed to walking
 
-ComputeUpdateInterval
-bool ComputeUpdateInterval()
-Recomputes the component update interval
-
-GetUpdateInterval
-float GetUpdateInterval()
-Returns the component update interval
-
-IsValid
-IsValid()
-
-
-Reset
-void Reset()
-Resets the internal update state
-
 Begin
 Begin()
 
@@ -2594,20 +2722,8 @@ HookRootMetamethod
 HookRootMetamethod()
 
 
-Log
-Log()
-
-
-m_bindNamesStack
-m_bindNamesStack()
-
-
-m_fixupSet
-m_fixupSet()
-
-
-m_targetTable
-m_targetTable()
+UnhookRootMetamethod
+UnhookRootMetamethod()
 
 
 RemoveDelegation
@@ -2618,8 +2734,24 @@ Resolve
 Resolve()
 
 
-UnhookRootMetamethod
-UnhookRootMetamethod()
+m_bindNamesStack
+m_bindNamesStack
+
+
+m_fixupSet
+m_fixupSet
+
+
+m_log
+m_log
+
+
+m_logIndent
+m_logIndent
+
+
+m_targetTable
+m_targetTable
 
 
 regexp
@@ -2627,7 +2759,7 @@ regexp()
 
 
 capture
-table capture(str, start)
+table capture(str, [start])
 Returns an array of tables containing two indexes ("begin" and "end") of the first match of the regular expression in the string str. An array entry is created for each captured sub expressions. If no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string.
 
 match
@@ -2635,12 +2767,16 @@ bool match(str)
 Returns a true if the regular expression matches the string str, otherwise returns false.
 
 search
-table search(str, start)
+table search(str, [start])
 Returns a table containing two indexes ("begin" and "end") of the first match of the regular expression in the string st, otherwise if no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string.
 
 subexpcount
 subexpcount()
 
+
+Vector
+Vector(float x = 0, float y = 0, float z = 0)
+Creates a new vector with the specified Cartesian coordiantes.
 
 Cross
 float Cross(Vector factor)
@@ -2682,52 +2818,52 @@ tostring
 string tostring()
 Returns a human-readable string.
 
-constructor
-constructor()
-
+QAngle
+QAngle(float pitch = 0, float yaw = 0, float roll = 0)
+Creates a new QAngle.
 
 Forward
-Forward()
-
+Vector Forward()
+Returns the Forward Vector of the angles.
 
 Left
-Left()
-
+Vector Left()
+Returns the left Vector of the angles.
 
 Pitch
-Pitch()
-
+float Pitch()
+Returns the pitch angle in degrees.
 
 Roll
-Roll()
-
+float Roll()
+Returns the roll angle in degrees.
 
 ToKVString
-ToKVString()
-
+string ToKVString()
+Returns a string with the values separated by one space.
 
 ToQuat
-ToQuat()
-
+Quaternion ToQuat()
+Returns a quaternion representation of the orientation.
 
 Up
-Up()
-
+Vector Up()
+Returns the Up Vector of the angles.
 
 Yaw
-Yaw()
-
+float Yaw()
+Returns the yaw angle in degrees.
 
 Vector2D
-Vector2D(float, float)
+Vector2D(float x, float y)
 Creates a new 2D vector with the specified Cartesian coordiantes.
 
 Vector4D
-Vector4D(float, float, float, float)
+Vector4D(float x, float y, float z, float w)
 Creates a new 4D vector with the specified Cartesian coordiantes.
 
 Dot
-float Dot(Vector)
+float Dot(VectorXD factor)
 The scalar product of two vectors.
 
 Length
@@ -2752,7 +2888,7 @@ Creates a new identity quaternion.
 
 Quaternion
 Quaternion(float x, float y, float z, float w)
-Creates a new quaternion of the form w + x i + y j + z k.
+Creates a new quaternion of the form w + xi + yj + zk.
 
 Dot
 float Dot(Quaternion factor)
@@ -2763,7 +2899,7 @@ Quaternion Invert()
 Returns a quaternion with the complimentary rotation.
 
 Norm
-Quaternion Norm()
+float Norm()
 Normalizes the 4D vector length.
 
 SetPitchYawRoll
@@ -2780,7 +2916,7 @@ Returns the angles resulting from the rotation.
 
 AddThinkToEnt
 void AddThinkToEnt(handle entity, string FuncName)
-Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function.
+Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function
 
 AddToScriptHelp
 AddToScriptHelp()
@@ -2795,23 +2931,19 @@ bool ArePlayersInHell()
 
 
 Assert
-void Assert(bool value, string optional message)
+void Assert(bool value, string optional_message)
 Test value and if not true, throws exception, optionally with message.
-
-BeginScriptDebug
-BeginScriptDebug()
-
 
 ClearGameEventCallbacks
 void ClearGameEventCallbacks()
 Empties the tables of game event callback functions.
 
 CreateProp
-handle CreateProp(string, Vector, string, int)
-Create a physics prop
+handle CreateProp(string classname, Vector origin, string model_name, int activity)
+Create a prop
 
 CreateSceneEntity
-handle CreateSceneEntity(string)
+handle CreateSceneEntity(string scene)
 Create a scene entity to play the specified scene.
 
 developer
@@ -2819,7 +2951,7 @@ int developer()
 The current level of the developer console variable.
 
 DispatchParticleEffect
-void DispatchParticleEffect(string, Vector, Vector)
+void DispatchParticleEffect(string name, Vector origin, Vector angles)
 Dispatches a one-off particle system
 
 Document
@@ -2840,15 +2972,19 @@ Wrapper for DoIncludeScript
 
 EmitAmbientSoundOn
 void EmitAmbientSoundOn(string soundName, float volume, int soundlevel, int pitch, handle entity)
-Play named sound on an entity using configurations similar to ambient_generic.
+Play named sound on an entity using configurations similar to ambient_generic. Soundlevel is in decibels.
 
 StopAmbientSoundOn
 void StopAmbientSoundOn(string soundName, handle entity)
 Stop named sound on an entity using configurations similar to ambient_generic.
 
+EmitSoundEx
+void EmitSoundEx(handle table)
+Play a sound. Takes in a script table of params: sound_name, channel, volume, sound_level, flags, pitch, special_dsp, origin, delay, sound_time, entity, speaker_entity, filter_type, filter_param. All parameters are optional except sound_name. See the main page for more details.
+
 EmitSoundOn
 void EmitSoundOn(string soundScript, handle entity)
-Play named sound on an entity.
+Play named sound on an entity. Legacy only, use EmitSoundEx
 
 StopSoundOn
 void StopSoundOn(string soundScript, handle entity)
@@ -2856,18 +2992,14 @@ Stop named sound on an entity.
 
 EmitSoundOnClient
 void EmitSoundOnClient(string soundScript, handle player)
-Play named sound only on the client for the specified player.
-
-EndScriptDebug
-EndScriptDebug()
-
+Play named sound only on the client for the specified player. NOTE: This only supports soundscripts. Legacy only, use EmitSoundEx.
 
 EntFire
 void EntFire(string target, string action, string value = null, float delay = 0, handle activator = null)
-Wrapper for DoEntFire() that setsactivator to null, but has nocallerparam.
+Wrapper for DoEntFire() that setsactivator to null, but has no caller param.
 
 EntFireByHandle
-void EntFireByHandle(handle, string, string, float, handle, handle)
+void EntFireByHandle(handle entity, string action, string value, float delay, handle activator, handle caller)
 Generate and entity i/o event. First parameter is an entity instance.
 
 EntIndexToHScript
@@ -2876,7 +3008,7 @@ Turn an entity index integer to an HScript representing that entity's script ins
 
 FileToString
 string FileToString(string file)
-Reads a string from file. Returns the string from the file, null if no file or file is greater than 16384 bytes. The game will crash to desktop if the file is exactly 16384 bytes.
+Reads a string from file located in the game's scriptdata folder. Returns the string from the file, null if no file or file is greater than 16384 bytes.
 
 FindCircularReference
 FindCircularReference()
@@ -2887,11 +3019,11 @@ FindCircularReferences()
 
 
 FireGameEvent
-bool FireGameEvent(string, handle)
+bool FireGameEvent(string name, handle table)
 Fire a game event to a listening callback function in script. Parameters are passed in a squirrel table.
 
 FireScriptHook
-bool FireScriptHook(string, handle)
+bool FireScriptHook(string name, handle table)
 Fire a script hoook to a listening callback function in script. Parameters are passed in a squirrel table.
 
 FireScriptEvent
@@ -2899,11 +3031,11 @@ void FireScriptEvent(string event, table params)
 Wrapper for __RunEventCallbacks()
 
 ForceEnableUpgrades
-void ForceEnableUpgrades(int)
+void ForceEnableUpgrades(int state)
 Whether to force on MvM-styled upgrades on/off. 0 -> default, 1 -> force off, 2 -> force on
 
 ForceEscortPushLogic
-void ForceEscortPushLogic(int)
+void ForceEscortPushLogic(int state)
 Forces payload pushing logic. 0 -> default, 1 -> force off, 2 -> force on
 
 FlagsMayBeCapped
@@ -2927,7 +3059,7 @@ bool GameModeUsesUpgrades()
 Does the current gamemode have upgrades?
 
 GetClassLimit
-int GetClassLimit(int)
+int GetClassLimit(int class)
 Get class limit for class. See Constants.ETFClass
 
 GetDeveloperLevel
@@ -2943,7 +3075,7 @@ float GetFriction(handle player)
 Returns the Friction on a player entity, meaningless if not a player
 
 GetFunctionSignature
-GetFunctionSignature()
+string GetFunctionSignature(function func, string prefix)
 
 
 GetGravityMultiplier
@@ -2972,14 +3104,14 @@ bool GetOvertimeAllowedForCTF()
 
 GetPhysAngularVelocity
 Vector GetPhysAngularVelocity(handle entity)
-Returns the Angular velocity of the entity.
+Returns the Angular velocity of the entity. Deprecated, use the GetPhysAngularVelocity method on the entity instead.
 
 GetPhysVelocity
 Vector GetPhysVelocity(handle entity)
-Returns the velocity of the entity.
+Returns the velocity of the entity. Deprecated, use the GetPhysVelocity method on the entity instead.
 
 GetPlayerFromUserID
-handle GetPlayerFromUserID(int ID)
+handle GetPlayerFromUserID(int userid)
 Given a user id, return the entity, or null.
 
 GetRoundState
@@ -2987,8 +3119,8 @@ int GetRoundState()
 Get current round state. See Constants.ERoundState
 
 GetSoundDuration
-float GetSoundDuration(string soundname, string actormodel)
-Returns float dur
+float GetSoundDuration(string soundname, string actormodelname)
+Returns float duration of the sound. Actor model name is optional and can be left null.
 
 GetStopWatchState
 int GetStopWatchState()
@@ -3004,7 +3136,7 @@ bool HaveStopWatchWinner()
 
 InMatchStartCountdown
 bool InMatchStartCountdown()
-Are we in the pre-match state?
+Are we in the pre-match/setup state?
 
 InOvertime
 bool InOvertime()
@@ -3115,11 +3247,11 @@ bool IsWeakref()
 
 
 LocalTime
-void LocalTime(table)
+void LocalTime(table out)
 Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)
 
 MakeNamespace
-MakeNamespace()
+void MakeNamespace()
 
 
 MapHasMatchSummaryStage
@@ -3130,6 +3262,10 @@ MatchmakingShouldUseStopwatchMode
 bool MatchmakingShouldUseStopwatchMode()
 
 
+MaxClients
+float MaxClients()
+Get the current number of max clients set by the maxplayers command.
+
 PickupObject
 void PickupObject(handle player, handle entity)
 Object from world is put into the "Held" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level.
@@ -3139,7 +3275,7 @@ CBasePlayer PlayerInstanceFromIndex(int index)
 Get a script handle of a player using the player index.
 
 PlayerReadyStatus_ArePlayersOnTeamReady
-bool PlayerReadyStatus_ArePlayersOnTeamReady(int)
+bool PlayerReadyStatus_ArePlayersOnTeamReady(int team)
 
 
 PlayerReadyStatus_HaveMinPlayersToEnable
@@ -3160,19 +3296,23 @@ Are points able to be captured?
 
 PrecacheEntityFromTable
 bool PrecacheEntityFromTable(table keyvalues)
-Precache an entity from KeyValues in a table; useful for entenv_shake.
+Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly.
 
 PrecacheModel
 int PrecacheModel(string filename)
 Precache a model and return index of the model.
 
+PrecacheScriptSound
+bool PrecacheScriptSound(string soundName)
+Preache a soundscript.
+
 PrecacheSound
 void PrecacheSound(string soundName)
-Precache a sound.
+Precache a raw sound.
 
 PrintHelp
 PrintHelp()
-
+Equivalent to running script_help command.
 
 RandomFloat
 float RandomFloat(float min, float max)
@@ -3191,11 +3331,11 @@ void RegisterScriptGameEventListener(string eventName)
 Register as a listener for a game event from script. It's what __CollectGameEventCallbacks() uses to register event callbacks to the C++ code.
 
 RegisterScriptHookListener
-void RegisterScriptHookListener(string)
+void RegisterScriptHookListener(string name)
 Register as a listener for a script hook from script.
 
 RetrieveNativeSignature
-RetrieveNativeSignature()
+string RetrieveNativeSignature(function func)
 
 
 RotateOrientation
@@ -3208,7 +3348,7 @@ Rotate the input Vector around an origin.
 
 ScreenFade
 void ScreenFade(handle player, int red, int green, int blue, int alpha, float fadeTime, float fadeHold, int flags)
-Start a customisable screenfade.
+Start a customisable screenfade. If no player is specified, the fade will apply to all players.
 
 ScreenShake
 void ScreenShake(Vector vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int eCommand, bool bAirShake)
@@ -3219,16 +3359,16 @@ bool ScriptHooksEnabled()
 Returns whether script hooks are currently enabled.
 
 SendGlobalGameEvent
-bool SendGlobalGameEvent(string, handle)
+bool SendGlobalGameEvent(string event_name, handle params)
 Sends a real game event to everything. Parameters are passed in a squirrel table.
 
 SendToConsole
 void SendToConsole(string command)
-Send a string to the console as a command. Note: this obeys the behavior of the sv_allow_point_servercommand convar. By default, this command will do nothing unless the server has this command to set to "always"
+Issues a command to the local client, as if they typed in the command in their console. Does nothing on dedicated servers.
 
 SendToServerConsole
 void SendToServerConsole(string command)
-Send a string that gets executed on the server as a ServerCommand.
+Issues a command to the server, as if typed in the console.
 
 SendToConsoleServer
 void SendToConsoleServer(string command)
@@ -3255,8 +3395,8 @@ void SetPlayersInHell(bool state)
 
 
 SetSkyboxTexture
-void SetSkyboxTexture(string)
-Sets the current skybox texture
+void SetSkyboxTexture(string texture)
+Sets the current skybox texture. The path is relative to "materials/skybox/". Only the main name of a skybox texture is needed, for example "sky_gravel_01".
 
 SetUsingSpells
 void SetUsingSpells(bool state)
@@ -3267,24 +3407,24 @@ handle SpawnEntityFromTable(string name, handle keyvalues)
 Spawn entity from KeyValues in table - 'name' is entity name, rest are KeyValues for spawn.
 
 SpawnEntityGroupFromTable
-bool SpawnEntityGroupFromTable(handle entityGroup)
-Hierarchically spawn an entity group from a set of spawn tables. See L4D2_EMS/Appendix:_Spawning.
+bool SpawnEntityGroupFromTable(handle groups)
+Hierarchically spawn an entity group from a set of spawn tables. This computes a spawn order for entities so that parenting is resolved correctly.
 
 StringToFile
 void StringToFile(string file, string string)
-Stores a string as a file.
+Stores a string as a file, located in the game's scriptdata folder.
 
 Time
 float Time()
 Get the current server time
 
 TraceLine
-float TraceLine(Vector, Vector, handle)
-given 2 points & ent to ignore, return fraction along line that hits world or models
+float TraceLine(Vector start, Vector end, handle ignore)
+Return fraction along line that hits world or models
 
 TraceLineEx
 bool TraceLineEx(table traceTable)
-Input Table: start, end, mask, ignore. Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props
+Input Table: start, end, mask (optional), ignore (optional). Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props. Returns false if start or end is not specified.
 
 TraceLinePlayersIncluded
 float TraceLinePlayersIncluded(Vector, Vector, handle)
@@ -3292,7 +3432,7 @@ given 2 points & ent to ignore, return fraction along line that hits world, mode
 
 TraceHull
 bool TraceHull(table traceTable)
-Input Table: start, end, hullmin, hullmax, mask, ignore. Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props
+Input Table: start, end, hullmin, hullmax, mask (optional), ignore (optional). Output Table: pos, fraction, hit, enthit, allsolid, startpos, endpos, startsolid, plane_normal, plane_dist, surface_name, surface_flags, surface_props. Returns false if start, end, hullmin or hullmax is not specified.
 
 UniqueString
 string UniqueString(string input)
@@ -3319,7 +3459,7 @@ void __CollectEventCallbacks(scope, prefix, globalTableName, regFunc)
 Overloaded function. Its only used for this: __CollectEventCallbacks(scope, "OnGameEvent_", "GameEventCallbacks", ::RegisterScriptGameEventListener)
 
 __CollectGameEventCallbacks
-void __CollectGameEventCallbacks(scope)
+void __CollectGameEventCallbacks(table scope)
 Wrapper that registers callbacks for both OnGameEvent_x and OnScriptEvent_ functions. Done using the __CollectEventCallbacks function.
 
 __ReplaceClosures
@@ -3339,8 +3479,8 @@ void __RunScriptHookCallbacks()
 
 
 ClientPrint
-void ClientPrint(CBasePlayer player, int destination, string message)
-Print a client message. If you pass null instead of a valid player, the message will be sent to all clients.
+void ClientPrint(CBasePlayer player, EHudNotify destination, string message)
+Print a client message. If you pass null instead of a valid player, the message will be sent to all clients. When printing to chat (HUD_PRINTTALK), the color of the text can be changed by inserting this sequence: \x07RRGGBB where RR GG BB is the hexadecimal format of the color. Transparency can be specified by a different sequence: \x08RRGGBBAA, where RR GG BB AA is the hexadecimal format of the color + alpha. All text following this sequence will be colored. Multiple sequences can be used in combination. If using color sequences, there MUST be a color sequence at the beginning of the string, or color codes won't work!.
 
 DebugDrawBox
 void DebugDrawBox(Vector origin, vector min, vector max, int r, int g, int b, int alpha, float duration)
@@ -3380,7 +3520,7 @@ Draw text on the screen, starting on the position of origin.
 
 __DumpScope
 void __DumpScope(int indentation, handle scope)
-Dumps contents of everything in the scope.
+Dumps a scope's contents and expands all tables and arrays; this is what the ent_script_dump command uses.
 
 DumpObject
 void DumpObject(handle object)
@@ -3389,6 +3529,10 @@ Dumps information about a class or instance.
 Msg
 void Msg(string message)
 Prints message to console without any line feed after.
+
+printf
+void printf(string format, args...)
+Prints message to console with C style formatting. The line feed is not included.
 
 printl
 void printl(string message)
@@ -3417,6 +3561,14 @@ Throws an assertion error if the given expression evaluates to false (i.e. the v
 callee
 function callee()
 Returns the currently running closure.
+
+castf2i
+int castf2i(float value)
+Interprets the float's bytes as if it were a 32-bit integer representation
+
+casti2f
+float casti2f(int value)
+Interprets the integer's bytes as if it were a floating-point encoding
 
 collectgarbage
 int collectgarbage()
@@ -3472,7 +3624,7 @@ Sets the debug hook.
 
 seterrorhandler
 void seterrorhandler(function func)
-Sets the runtime error handler .
+Sets the runtime error handler.
 
 setroottable
 table setroottable(table roottable)
@@ -3552,7 +3704,7 @@ void writen(num value, char dataType)
 
 abs
 abs(num x)
-Returns x as integer unlike fabs()
+Returns |x| as integer unlike fabs()
 
 acos
 acos(num x)
@@ -3568,7 +3720,7 @@ Returns tan^-1(x)
 
 atan2
 atan2(num y, num x) (!)
-Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (−PI, PI]. Note the order of the parameters x and y!
+Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (-PI, PI). Note the order of the parameters x and y!
 
 ceil
 ceil(num x)
@@ -3584,11 +3736,11 @@ Returns exp(x) = e^x
 
 fabs
 fabs(num x)
-Returns x as float unlike abs()
+Returns |x| as float unlike abs()
 
 floor
 floor(num x)
-Returns the largest integer that is x
+Returns the largest integer that is <= x
 
 log
 log(num x)
@@ -3600,7 +3752,7 @@ Returns log_10(x)
 
 pow
 pow(num x, num y)
-Returns x_y
+Returns x^y
 
 rand
 rand()
@@ -3622,25 +3774,73 @@ tan
 tan(num x)
 Returns tan(x)
 
+find
+int find(string searchString, int startIndex = null)
+Looks for the sub-string passed as its first parameter, starting at either the beginning of the string or at a specific character index if one is provided as a second parameter. If the sub-string is found, returns the index at which it first occurs, otherwise returns null.
+
+len
+int len()
+Returns the length of the string, ie. the number of characters it comprises.
+
+slice
+string slice(int startIndex, int endIndex = null)
+Creates a sub-string from a string. Copies characters from startIndex to endIndex. If endIndex is not specified, copies until the last character. If the provided end index is beyond the string, an exception is thrown.
+
+tofloat
+float tofloat()
+Returns float value represented by the string. Must only contain numeric characters and/or plus and minus symbols. An exception is thrown otherwise.
+
+tointeger
+int tointeger()
+Returns integer value represented by the string. Must only contain numeric characters. An exception is thrown otherwise. Hexadecimal notation is supported (i.e. 0xFF). If a hexadecimal string contains more than 10 characters, including the 0x, returns -1.
+
+tolower
+string tolower()
+Returns a new string with all upper-case characters converted to lower-case.
+
+toupper
+string toupper()
+Returns a new string with all lower-case characters converted to upper-case.
+
+endswith
+bool endswith(string str, string cmp)
+Returns true if the end of the string matches the comparison string.
+
+escape
+string escape(string str)
+Returns a string with backslashes before characters that need to be escaped: “ a b t n v f r \ ” ’ 0 xNN
+
 format
-format(string, args...)
-Returns a formatted string
+format(string format, args...)
+Returns a formatted string. Same rules as the standard C functions (except * is not supported).
 
 lstrip
-lstrip(string)
+lstrip(string str)
 Removes whitespace at the beginning of the given string
 
 rstrip
-rstrip(string)
+rstrip(string str)
 Removes whitespace at the end of the given string
 
 split
-string split(string str, string separator')
-Returns an array of strings split at each point where a separator character occurs in str. The separator is not returned as part of any array element. the parameter separators is a string that specifies the characters as to be used for the splitting.
+string split(string str, string separator, bool skipempty = false)
+Returns an array of strings split at each point where a separator character occurs in str. The separator is not returned as part of any array element. the parameter separators is a string that specifies the characters as to be used for the splitting. If skipempty is true, empty strings are not added to array.
+
+startswith
+bool startswith(string str, string cmp)
+Returns true if the beginning of the string matches the comparison string.
 
 strip
-strip(string)
+strip(string str)
 Removes whitespace at the beginning and end of the given string
+
+BeginScriptDebug
+void BeginScriptDebug()
+
+
+EndScriptDebug
+void EndScriptDebug()
+
 
 ScriptDebugAddTextFilter
 void ScriptDebugAddTextFilter()
@@ -3745,6 +3945,10 @@ void ScriptDebugWatches()
 __VScriptServerDebugHook
 __VScriptServerDebugHook()
 
+
+TF_BOT_TYPE
+TF_BOT_TYPE
+1337
 
 COLLISION_GROUP_NONE
 COLLISION_GROUP_NONE
@@ -3930,9 +4134,13 @@ kHoliday_Soldier
 kHoliday_Soldier
 12
 
-kHolidayCount
-kHolidayCount
+kHoliday_Summer
+kHoliday_Summer
 13
+
+kHolidayCount
+kHolidayCount
+14
 
 HUD_PRINTNOTIFY
 HUD_PRINTNOTIFY
@@ -4322,9 +4530,45 @@ GR_STATE_GAME_OVER
 GR_STATE_GAME_OVER
 8
 
+GR_STATE_BONUS
+GR_STATE_BONUS
+9
+
+GR_STATE_BETWEEN_RNDS
+GR_STATE_BETWEEN_RNDS
+10
+
 GR_NUM_ROUND_STATES
 GR_NUM_ROUND_STATES
 11
+
+RECIPIENT_FILTER_DEFAULT
+RECIPIENT_FILTER_DEFAULT
+0
+
+RECIPIENT_FILTER_PAS_ATTENUATION
+RECIPIENT_FILTER_PAS_ATTENUATION
+1
+
+RECIPIENT_FILTER_PAS
+RECIPIENT_FILTER_PAS
+2
+
+RECIPIENT_FILTER_PVS
+RECIPIENT_FILTER_PVS
+3
+
+RECIPIENT_FILTER_SINGLE_PLAYER
+RECIPIENT_FILTER_SINGLE_PLAYER
+4
+
+RECIPIENT_FILTER_GLOBAL
+RECIPIENT_FILTER_GLOBAL
+5
+
+RECIPIENT_FILTER_TEAM
+RECIPIENT_FILTER_TEAM
+6
 
 SOLID_NONE
 SOLID_NONE
@@ -5002,6 +5246,10 @@ TF_COND_POWERUPMODE_DOMINANT
 TF_COND_POWERUPMODE_DOMINANT
 129
 
+TF_COND_IMMUNE_TO_PUSHBACK
+TF_COND_IMMUNE_TO_PUSHBACK
+130
+
 TF_COND_INVALID
 TF_COND_INVALID
 -1
@@ -5380,7 +5628,7 @@ TF_TEAM_PVE_INVADERS_GIANTS
 
 TEAM_ANY
 TEAM_ANY
--1
+-2
 
 TEAM_INVALID
 TEAM_INVALID
@@ -5426,9 +5674,13 @@ ConstantNamingConvention
 ConstantNamingConvention
 Constants are named as follows: F -> flags, E -> enums, (nothing) -> random values/constants
 
+DIST_EPSILON
+DIST_EPSILON
+0.03125
+
 MAX_PLAYERS
 MAX_PLAYERS
-33
+101
 
 MAX_EDICTS
 MAX_EDICTS
@@ -5990,13 +6242,13 @@ HIDEHUD_HEALTH
 HIDEHUD_HEALTH
 8
 
-HIDEHUD_BITCOUNT
-HIDEHUD_BITCOUNT
-12
-
 HIDEHUD_PLAYERDEAD
 HIDEHUD_PLAYERDEAD
 16
+
+HIDEHUD_BITCOUNT
+HIDEHUD_BITCOUNT
+17
 
 HIDEHUD_NEEDSUIT
 HIDEHUD_NEEDSUIT
@@ -6025,6 +6277,26 @@ HIDEHUD_INVEHICLE
 HIDEHUD_BONUS_PROGRESS
 HIDEHUD_BONUS_PROGRESS
 2048
+
+HIDEHUD_BUILDING_STATUS
+HIDEHUD_BUILDING_STATUS
+4096
+
+HIDEHUD_CLOAK_AND_FEIGN
+HIDEHUD_CLOAK_AND_FEIGN
+8192
+
+HIDEHUD_PIPES_AND_CHARGE
+HIDEHUD_PIPES_AND_CHARGE
+16384
+
+HIDEHUD_METAL
+HIDEHUD_METAL
+32768
+
+HIDEHUD_TARGET_ID
+HIDEHUD_TARGET_ID
+65536
 
 NAV_MESH_INVALID
 NAV_MESH_INVALID
@@ -6353,6 +6625,26 @@ SURF_NOCHOP
 SURF_HITBOX
 SURF_HITBOX
 32768
+
+TAUNT_BASE_WEAPON
+TAUNT_BASE_WEAPON
+0
+
+TAUNT_MISC_ITEM
+TAUNT_MISC_ITEM
+1
+
+TAUNT_SHOW_ITEM
+TAUNT_SHOW_ITEM
+2
+
+TAUNT_LONG
+TAUNT_LONG
+3
+
+TAUNT_SPECIAL
+TAUNT_SPECIAL
+4
 
 REMOVE_ON_DEATH
 REMOVE_ON_DEATH
