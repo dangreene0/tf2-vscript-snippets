@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+
+# TODO add logic for OnGameEvent so that the end result is "OnGameEvent_${1:name}(${2:table params})$0"
 defs = open("defs.txt", "r", encoding="utf-8")
 lines = defs.readlines()
 defs.close()

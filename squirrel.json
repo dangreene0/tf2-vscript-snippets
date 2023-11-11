@@ -6310,7 +6310,7 @@
 	"void OnGameEvent_<name>(table params)": {
 		"prefix": "OnGameEvent_<name>",
 		"body": [
-			"OnGameEvent_<name>(${1:table params})$0"
+			"OnGameEvent_${1:name}(${2:table params})$0"
 		],
 		"description": "Called each time a game event with the specified name occurs. The name of the function needs to be OnGameEvent_ followed by the name of the game event. E.g. for the player_spawn input, it would be OnGameEvent_player_spawn."
 	},
