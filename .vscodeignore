@@ -2,7 +2,6 @@
 .gitignore
 *.py
 defs.txt
-LICENSE
 node_modules
 tf2-snippets.sublime-completions
 README.md
