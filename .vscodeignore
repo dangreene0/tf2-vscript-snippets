@@ -1,0 +1,7 @@
+.vscode/**
+.gitignore
+*.py
+defs.txt
+node_modules
+tf2-snippets.sublime-completions
+README.md
