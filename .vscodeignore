@@ -1,0 +1,14 @@
+.vscode/**
+.gitignore
+.yarnrc
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+node_modules
+*.py
+defs.txt
+LICENSE
+*.png
+tf2-snippets.sublime-completions
+yarn-error.log
+README.md

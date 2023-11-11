@@ -12,7 +12,7 @@
 	"engines": {
 		"vscode": "^1.84.1"
 	},
-	"categories": 
+	"categories": [
 		"Snippets"
 	],
   "repository": {
