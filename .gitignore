@@ -1,3 +1,4 @@
+.vscode
 *.nut
 .DS_Store
 node_modules
