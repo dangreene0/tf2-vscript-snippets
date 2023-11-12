@@ -2,8 +2,7 @@
 from json import dump, load
 
 def main():
-    # TODO add logic for OnGameEvent so that the end result is "OnGameEvent_${1:name}(${2:table params})$0"
-    # Change data management to dicts and json
+    
     try:
         with open("defs.txt", "r", encoding="utf-8") as defs_file:
             defs_data = defs_file.readlines()
@@ -33,7 +32,7 @@ def parse_defs(defs_data: str) -> dict:
     quad_defs_entry = 0
     most_recent_function = ""
     for line in defs_data:
-        text = line[0:-1] # necessary because ".readlines() injects newlines"
+        text = line[0:-1] # necessary because ".readlines()" injects newlines
 
         match ["function", "signature", "description", "space"][quad_defs_entry % 4]:
             case "function":
