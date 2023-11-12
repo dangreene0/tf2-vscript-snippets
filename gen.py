@@ -5,17 +5,17 @@ def main():
     
     try:
         with open("defs.txt", "r", encoding="utf-8") as defs_file:
-            defs_data = defs_file.readlines()
+            defs_data = defs_file.read().split('\n')
     except IOError:
         print("Unable to locate defs file")
         quit()
-
+        
     functions = parse_defs(defs_data)
     sorted_keys = sorted(list(functions.keys()))# Good for comparing diffs
     function_registry = generate_snippet_format(sorted_keys, functions)
 
-    with open("squirrel.json", "w", encoding="utf-8") as json_test:
-        dump(function_registry, json_test, indent=2)
+    with open("squirrel.json", "w", encoding="utf-8") as squirrel_json:
+        dump(function_registry, squirrel_json, indent=2)
 
 def parse_defs(defs_data: str) -> dict:
     '''
@@ -31,28 +31,26 @@ def parse_defs(defs_data: str) -> dict:
     functions = {}
     quad_defs_entry = 0
     most_recent_function = ""
+
     for line in defs_data:
-        text = line[0:-1] # necessary because ".readlines()" injects newlines
 
         match ["function", "signature", "description", "space"][quad_defs_entry % 4]:
             case "function":
-                most_recent_function = text
+                most_recent_function = line 
                 functions[most_recent_function] = {
-                    "function": text,
+                    "function": line,
                     "signature": "",
                     "description": "",
                 }
             case "signature":
                 if functions[most_recent_function]["signature"] == "":
-                    functions[most_recent_function]["signature"] = text
+                    functions[most_recent_function]["signature"] = line
             case "description":
                 if functions[most_recent_function]["description"] == "":
-                    functions[most_recent_function]["description"] = text.replace(
+                    functions[most_recent_function]["description"] = line.replace(
                         "\\", "\\\\"
                     )
-                    functions[most_recent_function]["description"] = functions[
-                        most_recent_function
-                    ]["description"].replace('"', '\\"')
+                    functions[most_recent_function]["description"] = functions[most_recent_function]["description"].replace('"', '\\"')
 
         quad_defs_entry += 1
     return functions
@@ -74,11 +72,13 @@ def generate_snippet_format(sorted_keys: list[str], functions: dict) -> dict:
     for key in sorted_keys:
         prefix, body = "", ""
         base_signature = functions[key]["signature"]
-        paren_index = base_signature.find("(")
-        if paren_index >= 0:
-            prefix = base_signature[0:paren_index].split(" ")[-1]
+
+        parentheses_index = base_signature.find("(")
+
+        if parentheses_index >= 0:
+            prefix = base_signature[0:parentheses_index].split(" ")[-1]
             # We need to parse params
-            params = base_signature[paren_index + 1 : -1].split(", ")
+            params = base_signature[parentheses_index + 1 : -1].split(", ")
             body = prefix + "("
             quad_defs_entry = 1
             if params[0] != "":
@@ -102,6 +102,7 @@ def generate_snippet_format(sorted_keys: list[str], functions: dict) -> dict:
             }
         }
         function_registry.update(function_entry)
+    
     return  function_registry
 
 if __name__ == "__main__":
