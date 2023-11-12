@@ -1,5 +1,4 @@
 {
-	///// BEGIN TF2 VScript Snippets /////
 	"AGGRESSIVE": {
 		"prefix": "AGGRESSIVE",
 		"body": [
@@ -11816,5 +11815,4 @@
 		],
 		"description": ""
 	}
-	///// END TF2 VScript Snippets /////
 }

@@ -14,7 +14,7 @@ def main():
     sorted_keys = sorted(list(functions.keys()))# Good for comparing diffs
     function_registry = generate_snippet_format(sorted_keys, functions)
 
-    with open("squirrel.json", "w") as json_test:
+    with open("squirrel.json", "w", encoding="utf-8") as json_test:
         dump(function_registry, json_test, indent=2)
 
 def parse_defs(defs_data: str) -> dict:

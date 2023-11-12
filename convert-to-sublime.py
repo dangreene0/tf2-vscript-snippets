@@ -1,27 +1,34 @@
 #!/usr/bin/env python3
 
-import json, re
+from json import load, dump
 
-original = open("squirrel.json", "r")
-unparsed = original.read()
-original.close()
+def main():
+    try:
+        with open("squirrel.json", "r", encoding="utf-8") as vsc_file:
+            vsc_data = load(vsc_file)
+    except IOError:
+        print("Unable to local \".json\" file")
+        quit()
 
-unparsed = re.sub("\n\t///// BEGIN TF2 VScript Snippets /////", "", unparsed)
-unparsed = re.sub("\n\t///// END TF2 VScript Snippets /////", "", unparsed)
+    snippets = []
 
-parsed = json.loads(unparsed)
+    for annotation in vsc_data:
+        snippet = {
+            "trigger": vsc_data[annotation]["prefix"],
+            "annotation": annotation,
+            "contents": vsc_data[annotation]["body"][0],
+            "kind": "keyword",
+            "details": vsc_data[annotation]["description"]
+        }
+        snippets.append(snippet)
+        
+    snippets_registry = {
+        "scope": "source.nut",
+        "completions": snippets
+    }
 
-i = 1
-print("{\n\t\"scope\": \"source.nut\",\n\t\"completions\": [")
-for annotation in parsed:
-    trigger = parsed[annotation]["prefix"]
-    contents = parsed[annotation]["body"][0]
-    details = parsed[annotation]["description"]
-    details = re.sub("\"", "\\\"", details)
-    print("\t\t{")
-    print(f"\t\t\t\"trigger\": \"{trigger}\",\n\t\t\t\"annotation\": \"{annotation}\",\n\t\t\t\"contents\": \"{contents}\",\n\t\t\t\"kind\": \"keyword\",\n\t\t\t\"details\": \"{details}\"")
-    print("\t\t}", end="")
-    if (i < len(parsed)):
-        print(",")
-    i += 1
-print("\n\t]\n}", end="")
+    with open("tf2-snippets.sublime-completions", "w", encoding="utf-8") as sublime_json:
+        dump(snippets_registry, sublime_json, indent=2)
+    
+if __name__ == "__main__":
+    main()
