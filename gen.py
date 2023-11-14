@@ -1,21 +1,51 @@
 #!/usr/bin/env python3
 from json import dump, load
+from os import listdir, path
 
 def main():
-    
+
     try:
         with open("defs.txt", "r", encoding="utf-8") as defs_file:
             defs_data = defs_file.read().split('\n')
     except IOError:
         print("Unable to locate defs file")
         quit()
-        
+
     functions = parse_defs(defs_data)
     sorted_keys = sorted(list(functions.keys()))# Good for comparing diffs
     function_registry = generate_snippet_format(sorted_keys, functions)
 
+    addendum_json = update_registry_addendum()
+    function_registry.update(addendum_json)
+
     with open("squirrel.json", "w", encoding="utf-8") as squirrel_json:
         dump(function_registry, squirrel_json, indent=2)
+
+def update_registry_addendum() -> dict:
+    '''
+    ### Summary
+    Returns a dict of all additional `.json` files from addendum folder. These additional files may include community suggestions or contributions. They are not generated from the 'defs.txt' file.
+    ### Parameters
+    `None`
+    ### Returns
+    1. dict
+            - Dict of all the additional `.json` files in VSCode Snippet format.
+    '''
+    addendum_json = {}
+    directory = "addendum"
+
+    for file in listdir(directory):
+        if (file.endswith('.json')):
+            file_dir = path.join(directory, file)
+            try:
+                with open(file_dir, "r", encoding="utf-8") as additional_json:
+                    current_json = load(additional_json)
+                addendum_json.update(current_json)
+
+            except IOError:
+                print("Unable to locate additional file.")
+
+    return addendum_json
 
 def parse_defs(defs_data: str) -> dict:
     '''
@@ -36,7 +66,7 @@ def parse_defs(defs_data: str) -> dict:
 
         match ["function", "signature", "description", "space"][quad_defs_entry % 4]:
             case "function":
-                most_recent_function = line 
+                most_recent_function = line
                 functions[most_recent_function] = {
                     "function": line,
                     "signature": "",
@@ -58,7 +88,7 @@ def parse_defs(defs_data: str) -> dict:
 def generate_snippet_format(sorted_keys: list[str], functions: dict) -> dict:
     '''
     ### Summary
-    Takes the sorted keys of the functions dict and formats where unset variables exist in the function body.  
+    Takes the sorted keys of the functions dict and formats where unset variables exist in the function body.
     ### Parameters
     1. sorted_keys : list[str]
             - A sorted list of the names of all of the functions.
@@ -91,7 +121,7 @@ def generate_snippet_format(sorted_keys: list[str], functions: dict) -> dict:
         else:
             # This is a constant
             prefix, body = base_signature, base_signature + "$0"
-        
+
         function_entry = {
             base_signature: {
                 "prefix": prefix,
@@ -102,7 +132,7 @@ def generate_snippet_format(sorted_keys: list[str], functions: dict) -> dict:
             }
         }
         function_registry.update(function_entry)
-    
+
     return  function_registry
 
 if __name__ == "__main__":

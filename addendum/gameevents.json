@@ -1,0 +1,2648 @@
+{
+	"void OnGameEvent_achievement_earned()": {
+		"prefix": "OnGameEvent_achievement_earned",
+		"body": [
+			"OnGameEvent_achievement_earned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_achievement_earned_local()": {
+		"prefix": "OnGameEvent_achievement_earned_local",
+		"body": [
+			"OnGameEvent_achievement_earned_local(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_achievement_event()": {
+		"prefix": "OnGameEvent_achievement_event",
+		"body": [
+			"OnGameEvent_achievement_event(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_achievement_increment()": {
+		"prefix": "OnGameEvent_achievement_increment",
+		"body": [
+			"OnGameEvent_achievement_increment(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_air_dash()": {
+		"prefix": "OnGameEvent_air_dash",
+		"body": [
+			"OnGameEvent_air_dash(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_arena_match_maxstreak()": {
+		"prefix": "OnGameEvent_arena_match_maxstreak",
+		"body": [
+			"OnGameEvent_arena_match_maxstreak(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_arena_player_notification()": {
+		"prefix": "OnGameEvent_arena_player_notification",
+		"body": [
+			"OnGameEvent_arena_player_notification(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_arena_round_start()": {
+		"prefix": "OnGameEvent_arena_round_start",
+		"body": [
+			"OnGameEvent_arena_round_start(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_arena_win_panel()": {
+		"prefix": "OnGameEvent_arena_win_panel",
+		"body": [
+			"OnGameEvent_arena_win_panel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_arrow_impact()": {
+		"prefix": "OnGameEvent_arrow_impact",
+		"body": [
+			"OnGameEvent_arrow_impact(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_base_player_teleported()": {
+		"prefix": "OnGameEvent_base_player_teleported",
+		"body": [
+			"OnGameEvent_base_player_teleported(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_begin_xp_lerp()": {
+		"prefix": "OnGameEvent_begin_xp_lerp",
+		"body": [
+			"OnGameEvent_begin_xp_lerp(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_bonus_updated()": {
+		"prefix": "OnGameEvent_bonus_updated",
+		"body": [
+			"OnGameEvent_bonus_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_break_breakable()": {
+		"prefix": "OnGameEvent_break_breakable",
+		"body": [
+			"OnGameEvent_break_breakable(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_break_prop()": {
+		"prefix": "OnGameEvent_break_prop",
+		"body": [
+			"OnGameEvent_break_prop(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_browse_replays()": {
+		"prefix": "OnGameEvent_browse_replays",
+		"body": [
+			"OnGameEvent_browse_replays(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_building_healed()": {
+		"prefix": "OnGameEvent_building_healed",
+		"body": [
+			"OnGameEvent_building_healed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_building_info_changed()": {
+		"prefix": "OnGameEvent_building_info_changed",
+		"body": [
+			"OnGameEvent_building_info_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_capper_killed()": {
+		"prefix": "OnGameEvent_capper_killed",
+		"body": [
+			"OnGameEvent_capper_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_cart_updated()": {
+		"prefix": "OnGameEvent_cart_updated",
+		"body": [
+			"OnGameEvent_cart_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_christmas_gift_grab()": {
+		"prefix": "OnGameEvent_christmas_gift_grab",
+		"body": [
+			"OnGameEvent_christmas_gift_grab(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_cl_drawline()": {
+		"prefix": "OnGameEvent_cl_drawline",
+		"body": [
+			"OnGameEvent_cl_drawline(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_competitive_state_changed()": {
+		"prefix": "OnGameEvent_competitive_state_changed",
+		"body": [
+			"OnGameEvent_competitive_state_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_competitive_stats_update()": {
+		"prefix": "OnGameEvent_competitive_stats_update",
+		"body": [
+			"OnGameEvent_competitive_stats_update(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_competitive_victory()": {
+		"prefix": "OnGameEvent_competitive_victory",
+		"body": [
+			"OnGameEvent_competitive_victory(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_conga_kill()": {
+		"prefix": "OnGameEvent_conga_kill",
+		"body": [
+			"OnGameEvent_conga_kill(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_endtouch()": {
+		"prefix": "OnGameEvent_controlpoint_endtouch",
+		"body": [
+			"OnGameEvent_controlpoint_endtouch(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_fake_capture()": {
+		"prefix": "OnGameEvent_controlpoint_fake_capture",
+		"body": [
+			"OnGameEvent_controlpoint_fake_capture(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_fake_capture_mult()": {
+		"prefix": "OnGameEvent_controlpoint_fake_capture_mult",
+		"body": [
+			"OnGameEvent_controlpoint_fake_capture_mult(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_initialized()": {
+		"prefix": "OnGameEvent_controlpoint_initialized",
+		"body": [
+			"OnGameEvent_controlpoint_initialized(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_pulse_element()": {
+		"prefix": "OnGameEvent_controlpoint_pulse_element",
+		"body": [
+			"OnGameEvent_controlpoint_pulse_element(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_starttouch()": {
+		"prefix": "OnGameEvent_controlpoint_starttouch",
+		"body": [
+			"OnGameEvent_controlpoint_starttouch(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_timer_updated()": {
+		"prefix": "OnGameEvent_controlpoint_timer_updated",
+		"body": [
+			"OnGameEvent_controlpoint_timer_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_unlock_updated()": {
+		"prefix": "OnGameEvent_controlpoint_unlock_updated",
+		"body": [
+			"OnGameEvent_controlpoint_unlock_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_updatecapping()": {
+		"prefix": "OnGameEvent_controlpoint_updatecapping",
+		"body": [
+			"OnGameEvent_controlpoint_updatecapping(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_updateimages()": {
+		"prefix": "OnGameEvent_controlpoint_updateimages",
+		"body": [
+			"OnGameEvent_controlpoint_updateimages(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_updatelayout()": {
+		"prefix": "OnGameEvent_controlpoint_updatelayout",
+		"body": [
+			"OnGameEvent_controlpoint_updatelayout(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_controlpoint_updateowner()": {
+		"prefix": "OnGameEvent_controlpoint_updateowner",
+		"body": [
+			"OnGameEvent_controlpoint_updateowner(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_cross_spectral_bridge()": {
+		"prefix": "OnGameEvent_cross_spectral_bridge",
+		"body": [
+			"OnGameEvent_cross_spectral_bridge(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_crossbow_heal()": {
+		"prefix": "OnGameEvent_crossbow_heal",
+		"body": [
+			"OnGameEvent_crossbow_heal(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_ctf_flag_captured()": {
+		"prefix": "OnGameEvent_ctf_flag_captured",
+		"body": [
+			"OnGameEvent_ctf_flag_captured(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_damage_mitigated()": {
+		"prefix": "OnGameEvent_damage_mitigated",
+		"body": [
+			"OnGameEvent_damage_mitigated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_damage_prevented()": {
+		"prefix": "OnGameEvent_damage_prevented",
+		"body": [
+			"OnGameEvent_damage_prevented(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_damage_resisted()": {
+		"prefix": "OnGameEvent_damage_resisted",
+		"body": [
+			"OnGameEvent_damage_resisted(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_deadringer_cheat_death()": {
+		"prefix": "OnGameEvent_deadringer_cheat_death",
+		"body": [
+			"OnGameEvent_deadringer_cheat_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_demoman_det_stickies()": {
+		"prefix": "OnGameEvent_demoman_det_stickies",
+		"body": [
+			"OnGameEvent_demoman_det_stickies(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_deploy_buff_banner()": {
+		"prefix": "OnGameEvent_deploy_buff_banner",
+		"body": [
+			"OnGameEvent_deploy_buff_banner(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_doomsday_rocket_open()": {
+		"prefix": "OnGameEvent_doomsday_rocket_open",
+		"body": [
+			"OnGameEvent_doomsday_rocket_open(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_ds_screenshot()": {
+		"prefix": "OnGameEvent_ds_screenshot",
+		"body": [
+			"OnGameEvent_ds_screenshot(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_ds_stop()": {
+		"prefix": "OnGameEvent_ds_stop",
+		"body": [
+			"OnGameEvent_ds_stop(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_duck_xp_level_up()": {
+		"prefix": "OnGameEvent_duck_xp_level_up",
+		"body": [
+			"OnGameEvent_duck_xp_level_up(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_duel_status()": {
+		"prefix": "OnGameEvent_duel_status",
+		"body": [
+			"OnGameEvent_duel_status(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_entered_performance_mode()": {
+		"prefix": "OnGameEvent_entered_performance_mode",
+		"body": [
+			"OnGameEvent_entered_performance_mode(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_entity_killed()": {
+		"prefix": "OnGameEvent_entity_killed",
+		"body": [
+			"OnGameEvent_entity_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_environmental_death()": {
+		"prefix": "OnGameEvent_environmental_death",
+		"body": [
+			"OnGameEvent_environmental_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_escaped_hell()": {
+		"prefix": "OnGameEvent_escaped_hell",
+		"body": [
+			"OnGameEvent_escaped_hell(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_escaped_loot_island()": {
+		"prefix": "OnGameEvent_escaped_loot_island",
+		"body": [
+			"OnGameEvent_escaped_loot_island(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_escort_progress()": {
+		"prefix": "OnGameEvent_escort_progress",
+		"body": [
+			"OnGameEvent_escort_progress(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_escort_recede()": {
+		"prefix": "OnGameEvent_escort_recede",
+		"body": [
+			"OnGameEvent_escort_recede(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_escort_speed()": {
+		"prefix": "OnGameEvent_escort_speed",
+		"body": [
+			"OnGameEvent_escort_speed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_experience_changed()": {
+		"prefix": "OnGameEvent_experience_changed",
+		"body": [
+			"OnGameEvent_experience_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_escape_imminent()": {
+		"prefix": "OnGameEvent_eyeball_boss_escape_imminent",
+		"body": [
+			"OnGameEvent_eyeball_boss_escape_imminent(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_escaped()": {
+		"prefix": "OnGameEvent_eyeball_boss_escaped",
+		"body": [
+			"OnGameEvent_eyeball_boss_escaped(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_killed()": {
+		"prefix": "OnGameEvent_eyeball_boss_killed",
+		"body": [
+			"OnGameEvent_eyeball_boss_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_killer()": {
+		"prefix": "OnGameEvent_eyeball_boss_killer",
+		"body": [
+			"OnGameEvent_eyeball_boss_killer(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_stunned()": {
+		"prefix": "OnGameEvent_eyeball_boss_stunned",
+		"body": [
+			"OnGameEvent_eyeball_boss_stunned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_eyeball_boss_summoned()": {
+		"prefix": "OnGameEvent_eyeball_boss_summoned",
+		"body": [
+			"OnGameEvent_eyeball_boss_summoned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_fish_notice()": {
+		"prefix": "OnGameEvent_fish_notice",
+		"body": [
+			"OnGameEvent_fish_notice(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_fish_notice__arm()": {
+		"prefix": "OnGameEvent_fish_notice__arm",
+		"body": [
+			"OnGameEvent_fish_notice__arm(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_flag_carried_in_detection_zone()": {
+		"prefix": "OnGameEvent_flag_carried_in_detection_zone",
+		"body": [
+			"OnGameEvent_flag_carried_in_detection_zone(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_flagstatus_update()": {
+		"prefix": "OnGameEvent_flagstatus_update",
+		"body": [
+			"OnGameEvent_flagstatus_update(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_flare_ignite_npc()": {
+		"prefix": "OnGameEvent_flare_ignite_npc",
+		"body": [
+			"OnGameEvent_flare_ignite_npc(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_freezecam_started()": {
+		"prefix": "OnGameEvent_freezecam_started",
+		"body": [
+			"OnGameEvent_freezecam_started(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_game_end()": {
+		"prefix": "OnGameEvent_game_end",
+		"body": [
+			"OnGameEvent_game_end(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_game_init()": {
+		"prefix": "OnGameEvent_game_init",
+		"body": [
+			"OnGameEvent_game_init(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_game_message()": {
+		"prefix": "OnGameEvent_game_message",
+		"body": [
+			"OnGameEvent_game_message(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_game_newmap()": {
+		"prefix": "OnGameEvent_game_newmap",
+		"body": [
+			"OnGameEvent_game_newmap(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_game_start()": {
+		"prefix": "OnGameEvent_game_start",
+		"body": [
+			"OnGameEvent_game_start(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_gameui_activated()": {
+		"prefix": "OnGameEvent_gameui_activated",
+		"body": [
+			"OnGameEvent_gameui_activated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_gameui_hidden()": {
+		"prefix": "OnGameEvent_gameui_hidden",
+		"body": [
+			"OnGameEvent_gameui_hidden(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_gas_doused_player_ignited()": {
+		"prefix": "OnGameEvent_gas_doused_player_ignited",
+		"body": [
+			"OnGameEvent_gas_doused_player_ignited(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_gc_connected()": {
+		"prefix": "OnGameEvent_gc_connected",
+		"body": [
+			"OnGameEvent_gc_connected(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_global_war_data_updated()": {
+		"prefix": "OnGameEvent_global_war_data_updated",
+		"body": [
+			"OnGameEvent_global_war_data_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_halloween_boss_killed()": {
+		"prefix": "OnGameEvent_halloween_boss_killed",
+		"body": [
+			"OnGameEvent_halloween_boss_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_halloween_duck_collected()": {
+		"prefix": "OnGameEvent_halloween_duck_collected",
+		"body": [
+			"OnGameEvent_halloween_duck_collected(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_halloween_pumpkin_grab()": {
+		"prefix": "OnGameEvent_halloween_pumpkin_grab",
+		"body": [
+			"OnGameEvent_halloween_pumpkin_grab(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_halloween_skeleton_killed()": {
+		"prefix": "OnGameEvent_halloween_skeleton_killed",
+		"body": [
+			"OnGameEvent_halloween_skeleton_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_halloween_soul_collected()": {
+		"prefix": "OnGameEvent_halloween_soul_collected",
+		"body": [
+			"OnGameEvent_halloween_soul_collected(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_helicopter_grenade_punt_miss()": {
+		"prefix": "OnGameEvent_helicopter_grenade_punt_miss",
+		"body": [
+			"OnGameEvent_helicopter_grenade_punt_miss(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_hide_annotation()": {
+		"prefix": "OnGameEvent_hide_annotation",
+		"body": [
+			"OnGameEvent_hide_annotation(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_hide_freezepanel()": {
+		"prefix": "OnGameEvent_hide_freezepanel",
+		"body": [
+			"OnGameEvent_hide_freezepanel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_hltv_changed_mode()": {
+		"prefix": "OnGameEvent_hltv_changed_mode",
+		"body": [
+			"OnGameEvent_hltv_changed_mode(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_hltv_changed_target()": {
+		"prefix": "OnGameEvent_hltv_changed_target",
+		"body": [
+			"OnGameEvent_hltv_changed_target(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_intro_finish()": {
+		"prefix": "OnGameEvent_intro_finish",
+		"body": [
+			"OnGameEvent_intro_finish(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_intro_nextcamera()": {
+		"prefix": "OnGameEvent_intro_nextcamera",
+		"body": [
+			"OnGameEvent_intro_nextcamera(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_inventory_updated()": {
+		"prefix": "OnGameEvent_inventory_updated",
+		"body": [
+			"OnGameEvent_inventory_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_item_found()": {
+		"prefix": "OnGameEvent_item_found",
+		"body": [
+			"OnGameEvent_item_found(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_item_pickup()": {
+		"prefix": "OnGameEvent_item_pickup",
+		"body": [
+			"OnGameEvent_item_pickup(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_item_schema_initialized()": {
+		"prefix": "OnGameEvent_item_schema_initialized",
+		"body": [
+			"OnGameEvent_item_schema_initialized(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_items_acknowledged()": {
+		"prefix": "OnGameEvent_items_acknowledged",
+		"body": [
+			"OnGameEvent_items_acknowledged(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_kill_in_hell()": {
+		"prefix": "OnGameEvent_kill_in_hell",
+		"body": [
+			"OnGameEvent_kill_in_hell(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_kill_refills_meter()": {
+		"prefix": "OnGameEvent_kill_refills_meter",
+		"body": [
+			"OnGameEvent_kill_refills_meter(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_killed_capping_player()": {
+		"prefix": "OnGameEvent_killed_capping_player",
+		"body": [
+			"OnGameEvent_killed_capping_player(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_landed()": {
+		"prefix": "OnGameEvent_landed",
+		"body": [
+			"OnGameEvent_landed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_lobby_updated()": {
+		"prefix": "OnGameEvent_lobby_updated",
+		"body": [
+			"OnGameEvent_lobby_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_becameobserver()": {
+		"prefix": "OnGameEvent_localplayer_becameobserver",
+		"body": [
+			"OnGameEvent_localplayer_becameobserver(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_changeclass()": {
+		"prefix": "OnGameEvent_localplayer_changeclass",
+		"body": [
+			"OnGameEvent_localplayer_changeclass(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_changedisguise()": {
+		"prefix": "OnGameEvent_localplayer_changedisguise",
+		"body": [
+			"OnGameEvent_localplayer_changedisguise(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_changeteam()": {
+		"prefix": "OnGameEvent_localplayer_changeteam",
+		"body": [
+			"OnGameEvent_localplayer_changeteam(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_chargeready()": {
+		"prefix": "OnGameEvent_localplayer_chargeready",
+		"body": [
+			"OnGameEvent_localplayer_chargeready(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_healed()": {
+		"prefix": "OnGameEvent_localplayer_healed",
+		"body": [
+			"OnGameEvent_localplayer_healed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_pickup_weapon()": {
+		"prefix": "OnGameEvent_localplayer_pickup_weapon",
+		"body": [
+			"OnGameEvent_localplayer_pickup_weapon(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_respawn()": {
+		"prefix": "OnGameEvent_localplayer_respawn",
+		"body": [
+			"OnGameEvent_localplayer_respawn(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_score_changed()": {
+		"prefix": "OnGameEvent_localplayer_score_changed",
+		"body": [
+			"OnGameEvent_localplayer_score_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_winddown()": {
+		"prefix": "OnGameEvent_localplayer_winddown",
+		"body": [
+			"OnGameEvent_localplayer_winddown(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mainmenu_stabilized()": {
+		"prefix": "OnGameEvent_mainmenu_stabilized",
+		"body": [
+			"OnGameEvent_mainmenu_stabilized(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_match_invites_updated()": {
+		"prefix": "OnGameEvent_match_invites_updated",
+		"body": [
+			"OnGameEvent_match_invites_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_matchmaker_stats_updated()": {
+		"prefix": "OnGameEvent_matchmaker_stats_updated",
+		"body": [
+			"OnGameEvent_matchmaker_stats_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_medic_death()": {
+		"prefix": "OnGameEvent_medic_death",
+		"body": [
+			"OnGameEvent_medic_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_medic_defended()": {
+		"prefix": "OnGameEvent_medic_defended",
+		"body": [
+			"OnGameEvent_medic_defended(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_medigun_shield_blocked_damage()": {
+		"prefix": "OnGameEvent_medigun_shield_blocked_damage",
+		"body": [
+			"OnGameEvent_medigun_shield_blocked_damage(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_escape_warning()": {
+		"prefix": "OnGameEvent_merasmus_escape_warning",
+		"body": [
+			"OnGameEvent_merasmus_escape_warning(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_escaped()": {
+		"prefix": "OnGameEvent_merasmus_escaped",
+		"body": [
+			"OnGameEvent_merasmus_escaped(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_killed()": {
+		"prefix": "OnGameEvent_merasmus_killed",
+		"body": [
+			"OnGameEvent_merasmus_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_prop_found()": {
+		"prefix": "OnGameEvent_merasmus_prop_found",
+		"body": [
+			"OnGameEvent_merasmus_prop_found(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_stunned()": {
+		"prefix": "OnGameEvent_merasmus_stunned",
+		"body": [
+			"OnGameEvent_merasmus_stunned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_merasmus_summoned()": {
+		"prefix": "OnGameEvent_merasmus_summoned",
+		"body": [
+			"OnGameEvent_merasmus_summoned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_minigame_win()": {
+		"prefix": "OnGameEvent_minigame_win",
+		"body": [
+			"OnGameEvent_minigame_win(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_minigame_won()": {
+		"prefix": "OnGameEvent_minigame_won",
+		"body": [
+			"OnGameEvent_minigame_won(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_adv_wave_complete_no_gates()": {
+		"prefix": "OnGameEvent_mvm_adv_wave_complete_no_gates",
+		"body": [
+			"OnGameEvent_mvm_adv_wave_complete_no_gates(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_adv_wave_killed_stun_radio()": {
+		"prefix": "OnGameEvent_mvm_adv_wave_killed_stun_radio",
+		"body": [
+			"OnGameEvent_mvm_adv_wave_killed_stun_radio(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_begin_wave()": {
+		"prefix": "OnGameEvent_mvm_begin_wave",
+		"body": [
+			"OnGameEvent_mvm_begin_wave(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_bomb_alarm_triggered()": {
+		"prefix": "OnGameEvent_mvm_bomb_alarm_triggered",
+		"body": [
+			"OnGameEvent_mvm_bomb_alarm_triggered(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_bomb_carrier_killed()": {
+		"prefix": "OnGameEvent_mvm_bomb_carrier_killed",
+		"body": [
+			"OnGameEvent_mvm_bomb_carrier_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_bomb_deploy_reset_by_player()": {
+		"prefix": "OnGameEvent_mvm_bomb_deploy_reset_by_player",
+		"body": [
+			"OnGameEvent_mvm_bomb_deploy_reset_by_player(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_bomb_reset_by_player()": {
+		"prefix": "OnGameEvent_mvm_bomb_reset_by_player",
+		"body": [
+			"OnGameEvent_mvm_bomb_reset_by_player(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_creditbonus_all()": {
+		"prefix": "OnGameEvent_mvm_creditbonus_all",
+		"body": [
+			"OnGameEvent_mvm_creditbonus_all(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_creditbonus_all_advanced()": {
+		"prefix": "OnGameEvent_mvm_creditbonus_all_advanced",
+		"body": [
+			"OnGameEvent_mvm_creditbonus_all_advanced(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_creditbonus_wave()": {
+		"prefix": "OnGameEvent_mvm_creditbonus_wave",
+		"body": [
+			"OnGameEvent_mvm_creditbonus_wave(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_kill_robot_delivering_bomb()": {
+		"prefix": "OnGameEvent_mvm_kill_robot_delivering_bomb",
+		"body": [
+			"OnGameEvent_mvm_kill_robot_delivering_bomb(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_mannhattan_pit()": {
+		"prefix": "OnGameEvent_mvm_mannhattan_pit",
+		"body": [
+			"OnGameEvent_mvm_mannhattan_pit(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_medic_powerup_shared()": {
+		"prefix": "OnGameEvent_mvm_medic_powerup_shared",
+		"body": [
+			"OnGameEvent_mvm_medic_powerup_shared(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_mission_complete()": {
+		"prefix": "OnGameEvent_mvm_mission_complete",
+		"body": [
+			"OnGameEvent_mvm_mission_complete(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_mission_update()": {
+		"prefix": "OnGameEvent_mvm_mission_update",
+		"body": [
+			"OnGameEvent_mvm_mission_update(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_pickup_currency()": {
+		"prefix": "OnGameEvent_mvm_pickup_currency",
+		"body": [
+			"OnGameEvent_mvm_pickup_currency(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_quick_sentry_upgrade()": {
+		"prefix": "OnGameEvent_mvm_quick_sentry_upgrade",
+		"body": [
+			"OnGameEvent_mvm_quick_sentry_upgrade(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_reset_stats()": {
+		"prefix": "OnGameEvent_mvm_reset_stats",
+		"body": [
+			"OnGameEvent_mvm_reset_stats(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_scout_marked_for_death()": {
+		"prefix": "OnGameEvent_mvm_scout_marked_for_death",
+		"body": [
+			"OnGameEvent_mvm_scout_marked_for_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_sentrybuster_detonate()": {
+		"prefix": "OnGameEvent_mvm_sentrybuster_detonate",
+		"body": [
+			"OnGameEvent_mvm_sentrybuster_detonate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_sentrybuster_killed()": {
+		"prefix": "OnGameEvent_mvm_sentrybuster_killed",
+		"body": [
+			"OnGameEvent_mvm_sentrybuster_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_sniper_headshot_currency()": {
+		"prefix": "OnGameEvent_mvm_sniper_headshot_currency",
+		"body": [
+			"OnGameEvent_mvm_sniper_headshot_currency(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_tank_destroyed_by_players()": {
+		"prefix": "OnGameEvent_mvm_tank_destroyed_by_players",
+		"body": [
+			"OnGameEvent_mvm_tank_destroyed_by_players(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_wave_complete()": {
+		"prefix": "OnGameEvent_mvm_wave_complete",
+		"body": [
+			"OnGameEvent_mvm_wave_complete(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_mvm_wave_failed()": {
+		"prefix": "OnGameEvent_mvm_wave_failed",
+		"body": [
+			"OnGameEvent_mvm_wave_failed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_nav_blocked()": {
+		"prefix": "OnGameEvent_nav_blocked",
+		"body": [
+			"OnGameEvent_nav_blocked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_npc_hurt()": {
+		"prefix": "OnGameEvent_npc_hurt",
+		"body": [
+			"OnGameEvent_npc_hurt(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_num_cappers_changed()": {
+		"prefix": "OnGameEvent_num_cappers_changed",
+		"body": [
+			"OnGameEvent_num_cappers_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_object_deflected()": {
+		"prefix": "OnGameEvent_object_deflected",
+		"body": [
+			"OnGameEvent_object_deflected(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_object_destroyed()": {
+		"prefix": "OnGameEvent_object_destroyed",
+		"body": [
+			"OnGameEvent_object_destroyed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_object_detonated()": {
+		"prefix": "OnGameEvent_object_detonated",
+		"body": [
+			"OnGameEvent_object_detonated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_object_removed()": {
+		"prefix": "OnGameEvent_object_removed",
+		"body": [
+			"OnGameEvent_object_removed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_overtime_nag()": {
+		"prefix": "OnGameEvent_overtime_nag",
+		"body": [
+			"OnGameEvent_overtime_nag(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_parachute_deploy()": {
+		"prefix": "OnGameEvent_parachute_deploy",
+		"body": [
+			"OnGameEvent_parachute_deploy(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_parachute_holster()": {
+		"prefix": "OnGameEvent_parachute_holster",
+		"body": [
+			"OnGameEvent_parachute_holster(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_chat()": {
+		"prefix": "OnGameEvent_party_chat",
+		"body": [
+			"OnGameEvent_party_chat(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_criteria_changed()": {
+		"prefix": "OnGameEvent_party_criteria_changed",
+		"body": [
+			"OnGameEvent_party_criteria_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_invites_changed()": {
+		"prefix": "OnGameEvent_party_invites_changed",
+		"body": [
+			"OnGameEvent_party_invites_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_member_join()": {
+		"prefix": "OnGameEvent_party_member_join",
+		"body": [
+			"OnGameEvent_party_member_join(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_member_leave()": {
+		"prefix": "OnGameEvent_party_member_leave",
+		"body": [
+			"OnGameEvent_party_member_leave(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_pref_changed()": {
+		"prefix": "OnGameEvent_party_pref_changed",
+		"body": [
+			"OnGameEvent_party_pref_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_queue_state_changed()": {
+		"prefix": "OnGameEvent_party_queue_state_changed",
+		"body": [
+			"OnGameEvent_party_queue_state_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_party_updated()": {
+		"prefix": "OnGameEvent_party_updated",
+		"body": [
+			"OnGameEvent_party_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_ball_blocked()": {
+		"prefix": "OnGameEvent_pass_ball_blocked",
+		"body": [
+			"OnGameEvent_pass_ball_blocked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_ball_stolen()": {
+		"prefix": "OnGameEvent_pass_ball_stolen",
+		"body": [
+			"OnGameEvent_pass_ball_stolen(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_free()": {
+		"prefix": "OnGameEvent_pass_free",
+		"body": [
+			"OnGameEvent_pass_free(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_get()": {
+		"prefix": "OnGameEvent_pass_get",
+		"body": [
+			"OnGameEvent_pass_get(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_pass_caught()": {
+		"prefix": "OnGameEvent_pass_pass_caught",
+		"body": [
+			"OnGameEvent_pass_pass_caught(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pass_score()": {
+		"prefix": "OnGameEvent_pass_score",
+		"body": [
+			"OnGameEvent_pass_score(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_path_track_passed()": {
+		"prefix": "OnGameEvent_path_track_passed",
+		"body": [
+			"OnGameEvent_path_track_passed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_payload_pushed()": {
+		"prefix": "OnGameEvent_payload_pushed",
+		"body": [
+			"OnGameEvent_payload_pushed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_physgun_pickup()": {
+		"prefix": "OnGameEvent_physgun_pickup",
+		"body": [
+			"OnGameEvent_physgun_pickup(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_ping_updated()": {
+		"prefix": "OnGameEvent_ping_updated",
+		"body": [
+			"OnGameEvent_ping_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_abandoned_match()": {
+		"prefix": "OnGameEvent_player_abandoned_match",
+		"body": [
+			"OnGameEvent_player_abandoned_match(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_account_changed()": {
+		"prefix": "OnGameEvent_player_account_changed",
+		"body": [
+			"OnGameEvent_player_account_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_activate()": {
+		"prefix": "OnGameEvent_player_activate",
+		"body": [
+			"OnGameEvent_player_activate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_askedforball()": {
+		"prefix": "OnGameEvent_player_askedforball",
+		"body": [
+			"OnGameEvent_player_askedforball(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_bonuspoints()": {
+		"prefix": "OnGameEvent_player_bonuspoints",
+		"body": [
+			"OnGameEvent_player_bonuspoints(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_buff()": {
+		"prefix": "OnGameEvent_player_buff",
+		"body": [
+			"OnGameEvent_player_buff(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_builtobject()": {
+		"prefix": "OnGameEvent_player_builtobject",
+		"body": [
+			"OnGameEvent_player_builtobject(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_buyback()": {
+		"prefix": "OnGameEvent_player_buyback",
+		"body": [
+			"OnGameEvent_player_buyback(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_calledformedic()": {
+		"prefix": "OnGameEvent_player_calledformedic",
+		"body": [
+			"OnGameEvent_player_calledformedic(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_carryobject()": {
+		"prefix": "OnGameEvent_player_carryobject",
+		"body": [
+			"OnGameEvent_player_carryobject(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_changeclass()": {
+		"prefix": "OnGameEvent_player_changeclass",
+		"body": [
+			"OnGameEvent_player_changeclass(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_changename()": {
+		"prefix": "OnGameEvent_player_changename",
+		"body": [
+			"OnGameEvent_player_changename(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_chargedeployed()": {
+		"prefix": "OnGameEvent_player_chargedeployed",
+		"body": [
+			"OnGameEvent_player_chargedeployed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_chat()": {
+		"prefix": "OnGameEvent_player_chat",
+		"body": [
+			"OnGameEvent_player_chat(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_class()": {
+		"prefix": "OnGameEvent_player_class",
+		"body": [
+			"OnGameEvent_player_class(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_connect()": {
+		"prefix": "OnGameEvent_player_connect",
+		"body": [
+			"OnGameEvent_player_connect(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_connect_client()": {
+		"prefix": "OnGameEvent_player_connect_client",
+		"body": [
+			"OnGameEvent_player_connect_client(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_currency_changed()": {
+		"prefix": "OnGameEvent_player_currency_changed",
+		"body": [
+			"OnGameEvent_player_currency_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_damage_dodged()": {
+		"prefix": "OnGameEvent_player_damage_dodged",
+		"body": [
+			"OnGameEvent_player_damage_dodged(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_damaged()": {
+		"prefix": "OnGameEvent_player_damaged",
+		"body": [
+			"OnGameEvent_player_damaged(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_death()": {
+		"prefix": "OnGameEvent_player_death",
+		"body": [
+			"OnGameEvent_player_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_destroyed_pipebomb()": {
+		"prefix": "OnGameEvent_player_destroyed_pipebomb",
+		"body": [
+			"OnGameEvent_player_destroyed_pipebomb(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_directhit_stun()": {
+		"prefix": "OnGameEvent_player_directhit_stun",
+		"body": [
+			"OnGameEvent_player_directhit_stun(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_disconnect()": {
+		"prefix": "OnGameEvent_player_disconnect",
+		"body": [
+			"OnGameEvent_player_disconnect(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_domination()": {
+		"prefix": "OnGameEvent_player_domination",
+		"body": [
+			"OnGameEvent_player_domination(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_dropobject()": {
+		"prefix": "OnGameEvent_player_dropobject",
+		"body": [
+			"OnGameEvent_player_dropobject(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_escort_score()": {
+		"prefix": "OnGameEvent_player_escort_score",
+		"body": [
+			"OnGameEvent_player_escort_score(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_extinguished()": {
+		"prefix": "OnGameEvent_player_extinguished",
+		"body": [
+			"OnGameEvent_player_extinguished(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_healed()": {
+		"prefix": "OnGameEvent_player_healed",
+		"body": [
+			"OnGameEvent_player_healed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_healedbymedic()": {
+		"prefix": "OnGameEvent_player_healedbymedic",
+		"body": [
+			"OnGameEvent_player_healedbymedic(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_healedmediccall()": {
+		"prefix": "OnGameEvent_player_healedmediccall",
+		"body": [
+			"OnGameEvent_player_healedmediccall(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_healonhit()": {
+		"prefix": "OnGameEvent_player_healonhit",
+		"body": [
+			"OnGameEvent_player_healonhit(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_highfive_cancel()": {
+		"prefix": "OnGameEvent_player_highfive_cancel",
+		"body": [
+			"OnGameEvent_player_highfive_cancel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_highfive_start()": {
+		"prefix": "OnGameEvent_player_highfive_start",
+		"body": [
+			"OnGameEvent_player_highfive_start(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_highfive_success()": {
+		"prefix": "OnGameEvent_player_highfive_success",
+		"body": [
+			"OnGameEvent_player_highfive_success(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_hintmessage()": {
+		"prefix": "OnGameEvent_player_hintmessage",
+		"body": [
+			"OnGameEvent_player_hintmessage(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_hurt()": {
+		"prefix": "OnGameEvent_player_hurt",
+		"body": [
+			"OnGameEvent_player_hurt(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_ignited()": {
+		"prefix": "OnGameEvent_player_ignited",
+		"body": [
+			"OnGameEvent_player_ignited(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_ignited_inv()": {
+		"prefix": "OnGameEvent_player_ignited_inv",
+		"body": [
+			"OnGameEvent_player_ignited_inv(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_info()": {
+		"prefix": "OnGameEvent_player_info",
+		"body": [
+			"OnGameEvent_player_info(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_initial_spawn()": {
+		"prefix": "OnGameEvent_player_initial_spawn",
+		"body": [
+			"OnGameEvent_player_initial_spawn(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_invulned()": {
+		"prefix": "OnGameEvent_player_invulned",
+		"body": [
+			"OnGameEvent_player_invulned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_jarated()": {
+		"prefix": "OnGameEvent_player_jarated",
+		"body": [
+			"OnGameEvent_player_jarated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_jarated_fade()": {
+		"prefix": "OnGameEvent_player_jarated_fade",
+		"body": [
+			"OnGameEvent_player_jarated_fade(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_killed_achievement_zone()": {
+		"prefix": "OnGameEvent_player_killed_achievement_zone",
+		"body": [
+			"OnGameEvent_player_killed_achievement_zone(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_mvp()": {
+		"prefix": "OnGameEvent_player_mvp",
+		"body": [
+			"OnGameEvent_player_mvp(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_next_map_vote_change()": {
+		"prefix": "OnGameEvent_player_next_map_vote_change",
+		"body": [
+			"OnGameEvent_player_next_map_vote_change(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_pinned()": {
+		"prefix": "OnGameEvent_player_pinned",
+		"body": [
+			"OnGameEvent_player_pinned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_regenerate()": {
+		"prefix": "OnGameEvent_player_regenerate",
+		"body": [
+			"OnGameEvent_player_regenerate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_rematch_change()": {
+		"prefix": "OnGameEvent_player_rematch_change",
+		"body": [
+			"OnGameEvent_player_rematch_change(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_rocketpack_pushed()": {
+		"prefix": "OnGameEvent_player_rocketpack_pushed",
+		"body": [
+			"OnGameEvent_player_rocketpack_pushed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_sapped_object()": {
+		"prefix": "OnGameEvent_player_sapped_object",
+		"body": [
+			"OnGameEvent_player_sapped_object(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_say()": {
+		"prefix": "OnGameEvent_player_say",
+		"body": [
+			"OnGameEvent_player_say(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_score()": {
+		"prefix": "OnGameEvent_player_score",
+		"body": [
+			"OnGameEvent_player_score(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_score_changed()": {
+		"prefix": "OnGameEvent_player_score_changed",
+		"body": [
+			"OnGameEvent_player_score_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_shield_blocked()": {
+		"prefix": "OnGameEvent_player_shield_blocked",
+		"body": [
+			"OnGameEvent_player_shield_blocked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_shoot()": {
+		"prefix": "OnGameEvent_player_shoot",
+		"body": [
+			"OnGameEvent_player_shoot(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_spawn()": {
+		"prefix": "OnGameEvent_player_spawn",
+		"body": [
+			"OnGameEvent_player_spawn(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_stats_updated()": {
+		"prefix": "OnGameEvent_player_stats_updated",
+		"body": [
+			"OnGameEvent_player_stats_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_stealsandvich()": {
+		"prefix": "OnGameEvent_player_stealsandvich",
+		"body": [
+			"OnGameEvent_player_stealsandvich(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_stunned()": {
+		"prefix": "OnGameEvent_player_stunned",
+		"body": [
+			"OnGameEvent_player_stunned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_team()": {
+		"prefix": "OnGameEvent_player_team",
+		"body": [
+			"OnGameEvent_player_team(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_teleported()": {
+		"prefix": "OnGameEvent_player_teleported",
+		"body": [
+			"OnGameEvent_player_teleported(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_turned_to_ghost()": {
+		"prefix": "OnGameEvent_player_turned_to_ghost",
+		"body": [
+			"OnGameEvent_player_turned_to_ghost(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_upgraded()": {
+		"prefix": "OnGameEvent_player_upgraded",
+		"body": [
+			"OnGameEvent_player_upgraded(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_upgradedobject()": {
+		"prefix": "OnGameEvent_player_upgradedobject",
+		"body": [
+			"OnGameEvent_player_upgradedobject(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_use()": {
+		"prefix": "OnGameEvent_player_use",
+		"body": [
+			"OnGameEvent_player_use(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_player_used_powerup_bottle()": {
+		"prefix": "OnGameEvent_player_used_powerup_bottle",
+		"body": [
+			"OnGameEvent_player_used_powerup_bottle(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_playing_commentary()": {
+		"prefix": "OnGameEvent_playing_commentary",
+		"body": [
+			"OnGameEvent_playing_commentary(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_post_inventory_application()": {
+		"prefix": "OnGameEvent_post_inventory_application",
+		"body": [
+			"OnGameEvent_post_inventory_application(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_projectile_direct_hit()": {
+		"prefix": "OnGameEvent_projectile_direct_hit",
+		"body": [
+			"OnGameEvent_projectile_direct_hit(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_projectile_removed()": {
+		"prefix": "OnGameEvent_projectile_removed",
+		"body": [
+			"OnGameEvent_projectile_removed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_proto_def_changed()": {
+		"prefix": "OnGameEvent_proto_def_changed",
+		"body": [
+			"OnGameEvent_proto_def_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pumpkin_lord_killed()": {
+		"prefix": "OnGameEvent_pumpkin_lord_killed",
+		"body": [
+			"OnGameEvent_pumpkin_lord_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pumpkin_lord_summoned()": {
+		"prefix": "OnGameEvent_pumpkin_lord_summoned",
+		"body": [
+			"OnGameEvent_pumpkin_lord_summoned(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_pve_win_panel()": {
+		"prefix": "OnGameEvent_pve_win_panel",
+		"body": [
+			"OnGameEvent_pve_win_panel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_map_data_changed()": {
+		"prefix": "OnGameEvent_quest_map_data_changed",
+		"body": [
+			"OnGameEvent_quest_map_data_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_objective_completed()": {
+		"prefix": "OnGameEvent_quest_objective_completed",
+		"body": [
+			"OnGameEvent_quest_objective_completed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_progress()": {
+		"prefix": "OnGameEvent_quest_progress",
+		"body": [
+			"OnGameEvent_quest_progress(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_request()": {
+		"prefix": "OnGameEvent_quest_request",
+		"body": [
+			"OnGameEvent_quest_request(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_response()": {
+		"prefix": "OnGameEvent_quest_response",
+		"body": [
+			"OnGameEvent_quest_response(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_quest_turn_in_state()": {
+		"prefix": "OnGameEvent_quest_turn_in_state",
+		"body": [
+			"OnGameEvent_quest_turn_in_state(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_questlog_opened()": {
+		"prefix": "OnGameEvent_questlog_opened",
+		"body": [
+			"OnGameEvent_questlog_opened(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_ragdoll_dissolved()": {
+		"prefix": "OnGameEvent_ragdoll_dissolved",
+		"body": [
+			"OnGameEvent_ragdoll_dissolved(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_raid_spawn_mob()": {
+		"prefix": "OnGameEvent_raid_spawn_mob",
+		"body": [
+			"OnGameEvent_raid_spawn_mob(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_raid_spawn_squad()": {
+		"prefix": "OnGameEvent_raid_spawn_squad",
+		"body": [
+			"OnGameEvent_raid_spawn_squad(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rd_player_score_points()": {
+		"prefix": "OnGameEvent_rd_player_score_points",
+		"body": [
+			"OnGameEvent_rd_player_score_points(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rd_robot_impact()": {
+		"prefix": "OnGameEvent_rd_robot_impact",
+		"body": [
+			"OnGameEvent_rd_robot_impact(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rd_robot_killed()": {
+		"prefix": "OnGameEvent_rd_robot_killed",
+		"body": [
+			"OnGameEvent_rd_robot_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rd_rules_state_changed()": {
+		"prefix": "OnGameEvent_rd_rules_state_changed",
+		"body": [
+			"OnGameEvent_rd_rules_state_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rd_team_points_changed()": {
+		"prefix": "OnGameEvent_rd_team_points_changed",
+		"body": [
+			"OnGameEvent_rd_team_points_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_recalculate_holidays()": {
+		"prefix": "OnGameEvent_recalculate_holidays",
+		"body": [
+			"OnGameEvent_recalculate_holidays(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_recalculate_truce()": {
+		"prefix": "OnGameEvent_recalculate_truce",
+		"body": [
+			"OnGameEvent_recalculate_truce(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rematch_failed_to_create()": {
+		"prefix": "OnGameEvent_rematch_failed_to_create",
+		"body": [
+			"OnGameEvent_rematch_failed_to_create(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rematch_vote_period_over()": {
+		"prefix": "OnGameEvent_rematch_vote_period_over",
+		"body": [
+			"OnGameEvent_rematch_vote_period_over(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_remove_nemesis_relationships()": {
+		"prefix": "OnGameEvent_remove_nemesis_relationships",
+		"body": [
+			"OnGameEvent_remove_nemesis_relationships(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_replay_saved()": {
+		"prefix": "OnGameEvent_replay_saved",
+		"body": [
+			"OnGameEvent_replay_saved(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_replay_youtube_stats()": {
+		"prefix": "OnGameEvent_replay_youtube_stats",
+		"body": [
+			"OnGameEvent_replay_youtube_stats(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_respawn_ghost()": {
+		"prefix": "OnGameEvent_respawn_ghost",
+		"body": [
+			"OnGameEvent_respawn_ghost(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_restart_timer_time()": {
+		"prefix": "OnGameEvent_restart_timer_time",
+		"body": [
+			"OnGameEvent_restart_timer_time(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_revive_player_complete()": {
+		"prefix": "OnGameEvent_revive_player_complete",
+		"body": [
+			"OnGameEvent_revive_player_complete(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_revive_player_notify()": {
+		"prefix": "OnGameEvent_revive_player_notify",
+		"body": [
+			"OnGameEvent_revive_player_notify(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_revive_player_stopped()": {
+		"prefix": "OnGameEvent_revive_player_stopped",
+		"body": [
+			"OnGameEvent_revive_player_stopped(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rocket_jump()": {
+		"prefix": "OnGameEvent_rocket_jump",
+		"body": [
+			"OnGameEvent_rocket_jump(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rocket_jump_landed()": {
+		"prefix": "OnGameEvent_rocket_jump_landed",
+		"body": [
+			"OnGameEvent_rocket_jump_landed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rocketpack_landed()": {
+		"prefix": "OnGameEvent_rocketpack_landed",
+		"body": [
+			"OnGameEvent_rocketpack_landed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rocketpack_launch()": {
+		"prefix": "OnGameEvent_rocketpack_launch",
+		"body": [
+			"OnGameEvent_rocketpack_launch(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_round_end()": {
+		"prefix": "OnGameEvent_round_end",
+		"body": [
+			"OnGameEvent_round_end(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_round_start()": {
+		"prefix": "OnGameEvent_round_start",
+		"body": [
+			"OnGameEvent_round_start(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_rps_taunt_event()": {
+		"prefix": "OnGameEvent_rps_taunt_event",
+		"body": [
+			"OnGameEvent_rps_taunt_event(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_schema_updated()": {
+		"prefix": "OnGameEvent_schema_updated",
+		"body": [
+			"OnGameEvent_schema_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_scorestats_accumulated_reset()": {
+		"prefix": "OnGameEvent_scorestats_accumulated_reset",
+		"body": [
+			"OnGameEvent_scorestats_accumulated_reset(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_scorestats_accumulated_update()": {
+		"prefix": "OnGameEvent_scorestats_accumulated_update",
+		"body": [
+			"OnGameEvent_scorestats_accumulated_update(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_scout_grand_slam()": {
+		"prefix": "OnGameEvent_scout_grand_slam",
+		"body": [
+			"OnGameEvent_scout_grand_slam(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_scout_slamdoll_landed()": {
+		"prefix": "OnGameEvent_scout_slamdoll_landed",
+		"body": [
+			"OnGameEvent_scout_slamdoll_landed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_sentry_on_go_active()": {
+		"prefix": "OnGameEvent_sentry_on_go_active",
+		"body": [
+			"OnGameEvent_sentry_on_go_active(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_addban()": {
+		"prefix": "OnGameEvent_server_addban",
+		"body": [
+			"OnGameEvent_server_addban(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_cvar()": {
+		"prefix": "OnGameEvent_server_cvar",
+		"body": [
+			"OnGameEvent_server_cvar(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_message()": {
+		"prefix": "OnGameEvent_server_message",
+		"body": [
+			"OnGameEvent_server_message(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_removeban()": {
+		"prefix": "OnGameEvent_server_removeban",
+		"body": [
+			"OnGameEvent_server_removeban(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_shutdown()": {
+		"prefix": "OnGameEvent_server_shutdown",
+		"body": [
+			"OnGameEvent_server_shutdown(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_server_spawn()": {
+		"prefix": "OnGameEvent_server_spawn",
+		"body": [
+			"OnGameEvent_server_spawn(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_show_annotation()": {
+		"prefix": "OnGameEvent_show_annotation",
+		"body": [
+			"OnGameEvent_show_annotation(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_show_class_layout()": {
+		"prefix": "OnGameEvent_show_class_layout",
+		"body": [
+			"OnGameEvent_show_class_layout(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_show_freezepanel()": {
+		"prefix": "OnGameEvent_show_freezepanel",
+		"body": [
+			"OnGameEvent_show_freezepanel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_show_match_summary()": {
+		"prefix": "OnGameEvent_show_match_summary",
+		"body": [
+			"OnGameEvent_show_match_summary(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_show_vs_panel()": {
+		"prefix": "OnGameEvent_show_vs_panel",
+		"body": [
+			"OnGameEvent_show_vs_panel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_slap_notice()": {
+		"prefix": "OnGameEvent_slap_notice",
+		"body": [
+			"OnGameEvent_slap_notice(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_spec_target_updated()": {
+		"prefix": "OnGameEvent_spec_target_updated",
+		"body": [
+			"OnGameEvent_spec_target_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_special_score()": {
+		"prefix": "OnGameEvent_special_score",
+		"body": [
+			"OnGameEvent_special_score(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_spy_pda_reset()": {
+		"prefix": "OnGameEvent_spy_pda_reset",
+		"body": [
+			"OnGameEvent_spy_pda_reset(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_stats_resetround()": {
+		"prefix": "OnGameEvent_stats_resetround",
+		"body": [
+			"OnGameEvent_stats_resetround(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_sticky_jump()": {
+		"prefix": "OnGameEvent_sticky_jump",
+		"body": [
+			"OnGameEvent_sticky_jump(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_sticky_jump_landed()": {
+		"prefix": "OnGameEvent_sticky_jump_landed",
+		"body": [
+			"OnGameEvent_sticky_jump_landed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_stop_watch_changed()": {
+		"prefix": "OnGameEvent_stop_watch_changed",
+		"body": [
+			"OnGameEvent_stop_watch_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_store_pricesheet_updated()": {
+		"prefix": "OnGameEvent_store_pricesheet_updated",
+		"body": [
+			"OnGameEvent_store_pricesheet_updated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_tagged_player_as_it()": {
+		"prefix": "OnGameEvent_tagged_player_as_it",
+		"body": [
+			"OnGameEvent_tagged_player_as_it(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_team_info()": {
+		"prefix": "OnGameEvent_team_info",
+		"body": [
+			"OnGameEvent_team_info(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_team_leader_killed()": {
+		"prefix": "OnGameEvent_team_leader_killed",
+		"body": [
+			"OnGameEvent_team_leader_killed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_team_score()": {
+		"prefix": "OnGameEvent_team_score",
+		"body": [
+			"OnGameEvent_team_score(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_alert()": {
+		"prefix": "OnGameEvent_teamplay_alert",
+		"body": [
+			"OnGameEvent_teamplay_alert(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_broadcast_audio()": {
+		"prefix": "OnGameEvent_teamplay_broadcast_audio",
+		"body": [
+			"OnGameEvent_teamplay_broadcast_audio(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_capture_blocked()": {
+		"prefix": "OnGameEvent_teamplay_capture_blocked",
+		"body": [
+			"OnGameEvent_teamplay_capture_blocked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_capture_broken()": {
+		"prefix": "OnGameEvent_teamplay_capture_broken",
+		"body": [
+			"OnGameEvent_teamplay_capture_broken(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_flag_event()": {
+		"prefix": "OnGameEvent_teamplay_flag_event",
+		"body": [
+			"OnGameEvent_teamplay_flag_event(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_game_over()": {
+		"prefix": "OnGameEvent_teamplay_game_over",
+		"body": [
+			"OnGameEvent_teamplay_game_over(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_map_time_remaining()": {
+		"prefix": "OnGameEvent_teamplay_map_time_remaining",
+		"body": [
+			"OnGameEvent_teamplay_map_time_remaining(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_overtime_begin()": {
+		"prefix": "OnGameEvent_teamplay_overtime_begin",
+		"body": [
+			"OnGameEvent_teamplay_overtime_begin(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_overtime_end()": {
+		"prefix": "OnGameEvent_teamplay_overtime_end",
+		"body": [
+			"OnGameEvent_teamplay_overtime_end(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_point_captured()": {
+		"prefix": "OnGameEvent_teamplay_point_captured",
+		"body": [
+			"OnGameEvent_teamplay_point_captured(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_point_locked()": {
+		"prefix": "OnGameEvent_teamplay_point_locked",
+		"body": [
+			"OnGameEvent_teamplay_point_locked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_point_startcapture()": {
+		"prefix": "OnGameEvent_teamplay_point_startcapture",
+		"body": [
+			"OnGameEvent_teamplay_point_startcapture(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_point_unlocked()": {
+		"prefix": "OnGameEvent_teamplay_point_unlocked",
+		"body": [
+			"OnGameEvent_teamplay_point_unlocked(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_pre_round_time_left()": {
+		"prefix": "OnGameEvent_teamplay_pre_round_time_left",
+		"body": [
+			"OnGameEvent_teamplay_pre_round_time_left(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_ready_restart()": {
+		"prefix": "OnGameEvent_teamplay_ready_restart",
+		"body": [
+			"OnGameEvent_teamplay_ready_restart(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_restart_round()": {
+		"prefix": "OnGameEvent_teamplay_restart_round",
+		"body": [
+			"OnGameEvent_teamplay_restart_round(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_active()": {
+		"prefix": "OnGameEvent_teamplay_round_active",
+		"body": [
+			"OnGameEvent_teamplay_round_active(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_restart_seconds()": {
+		"prefix": "OnGameEvent_teamplay_round_restart_seconds",
+		"body": [
+			"OnGameEvent_teamplay_round_restart_seconds(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_selected()": {
+		"prefix": "OnGameEvent_teamplay_round_selected",
+		"body": [
+			"OnGameEvent_teamplay_round_selected(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_stalemate()": {
+		"prefix": "OnGameEvent_teamplay_round_stalemate",
+		"body": [
+			"OnGameEvent_teamplay_round_stalemate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_start()": {
+		"prefix": "OnGameEvent_teamplay_round_start",
+		"body": [
+			"OnGameEvent_teamplay_round_start(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_round_win()": {
+		"prefix": "OnGameEvent_teamplay_round_win",
+		"body": [
+			"OnGameEvent_teamplay_round_win(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_setup_finished()": {
+		"prefix": "OnGameEvent_teamplay_setup_finished",
+		"body": [
+			"OnGameEvent_teamplay_setup_finished(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_suddendeath_begin()": {
+		"prefix": "OnGameEvent_teamplay_suddendeath_begin",
+		"body": [
+			"OnGameEvent_teamplay_suddendeath_begin(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_suddendeath_end()": {
+		"prefix": "OnGameEvent_teamplay_suddendeath_end",
+		"body": [
+			"OnGameEvent_teamplay_suddendeath_end(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_team_ready()": {
+		"prefix": "OnGameEvent_teamplay_team_ready",
+		"body": [
+			"OnGameEvent_teamplay_team_ready(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_teambalanced_player()": {
+		"prefix": "OnGameEvent_teamplay_teambalanced_player",
+		"body": [
+			"OnGameEvent_teamplay_teambalanced_player(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_timer_flash()": {
+		"prefix": "OnGameEvent_teamplay_timer_flash",
+		"body": [
+			"OnGameEvent_teamplay_timer_flash(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_timer_time_added()": {
+		"prefix": "OnGameEvent_teamplay_timer_time_added",
+		"body": [
+			"OnGameEvent_teamplay_timer_time_added(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_update_timer()": {
+		"prefix": "OnGameEvent_teamplay_update_timer",
+		"body": [
+			"OnGameEvent_teamplay_update_timer(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_waiting_abouttoend()": {
+		"prefix": "OnGameEvent_teamplay_waiting_abouttoend",
+		"body": [
+			"OnGameEvent_teamplay_waiting_abouttoend(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_waiting_begins()": {
+		"prefix": "OnGameEvent_teamplay_waiting_begins",
+		"body": [
+			"OnGameEvent_teamplay_waiting_begins(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_waiting_ends()": {
+		"prefix": "OnGameEvent_teamplay_waiting_ends",
+		"body": [
+			"OnGameEvent_teamplay_waiting_ends(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teamplay_win_panel()": {
+		"prefix": "OnGameEvent_teamplay_win_panel",
+		"body": [
+			"OnGameEvent_teamplay_win_panel(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_teams_changed()": {
+		"prefix": "OnGameEvent_teams_changed",
+		"body": [
+			"OnGameEvent_teams_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_tf_game_over()": {
+		"prefix": "OnGameEvent_tf_game_over",
+		"body": [
+			"OnGameEvent_tf_game_over(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_tf_map_time_remaining()": {
+		"prefix": "OnGameEvent_tf_map_time_remaining",
+		"body": [
+			"OnGameEvent_tf_map_time_remaining(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_throwable_hit()": {
+		"prefix": "OnGameEvent_throwable_hit",
+		"body": [
+			"OnGameEvent_throwable_hit(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_top_streams_request_finished()": {
+		"prefix": "OnGameEvent_top_streams_request_finished",
+		"body": [
+			"OnGameEvent_top_streams_request_finished(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_tournament_enablecountdown()": {
+		"prefix": "OnGameEvent_tournament_enablecountdown",
+		"body": [
+			"OnGameEvent_tournament_enablecountdown(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_tournament_stateupdate()": {
+		"prefix": "OnGameEvent_tournament_stateupdate",
+		"body": [
+			"OnGameEvent_tournament_stateupdate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_training_complete()": {
+		"prefix": "OnGameEvent_training_complete",
+		"body": [
+			"OnGameEvent_training_complete(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_update_status_item()": {
+		"prefix": "OnGameEvent_update_status_item",
+		"body": [
+			"OnGameEvent_update_status_item(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_upgrades_file_changed()": {
+		"prefix": "OnGameEvent_upgrades_file_changed",
+		"body": [
+			"OnGameEvent_upgrades_file_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_user_data_downloaded()": {
+		"prefix": "OnGameEvent_user_data_downloaded",
+		"body": [
+			"OnGameEvent_user_data_downloaded(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_cast()": {
+		"prefix": "OnGameEvent_vote_cast",
+		"body": [
+			"OnGameEvent_vote_cast(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_changed()": {
+		"prefix": "OnGameEvent_vote_changed",
+		"body": [
+			"OnGameEvent_vote_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_ended()": {
+		"prefix": "OnGameEvent_vote_ended",
+		"body": [
+			"OnGameEvent_vote_ended(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_failed()": {
+		"prefix": "OnGameEvent_vote_failed",
+		"body": [
+			"OnGameEvent_vote_failed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_maps_changed()": {
+		"prefix": "OnGameEvent_vote_maps_changed",
+		"body": [
+			"OnGameEvent_vote_maps_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_options()": {
+		"prefix": "OnGameEvent_vote_options",
+		"body": [
+			"OnGameEvent_vote_options(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_passed()": {
+		"prefix": "OnGameEvent_vote_passed",
+		"body": [
+			"OnGameEvent_vote_passed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_vote_started()": {
+		"prefix": "OnGameEvent_vote_started",
+		"body": [
+			"OnGameEvent_vote_started(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_winlimit_changed()": {
+		"prefix": "OnGameEvent_winlimit_changed",
+		"body": [
+			"OnGameEvent_winlimit_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_winpanel_show_scores()": {
+		"prefix": "OnGameEvent_winpanel_show_scores",
+		"body": [
+			"OnGameEvent_winpanel_show_scores(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_world_status_changed()": {
+		"prefix": "OnGameEvent_world_status_changed",
+		"body": [
+			"OnGameEvent_world_status_changed(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	}
+}

@@ -28,3 +28,4 @@ Source pages: [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script
 - Chillax
 - talascio
 - Sour Dani
+- WereTech

@@ -846,7 +846,7 @@
       "annotation": "void ClientPrint(CBasePlayer player, EHudNotify destination, string message)",
       "contents": "ClientPrint(${1:CBasePlayer player}, ${2:EHudNotify destination}, ${3:string message})$0",
       "kind": "keyword",
-      "details": "Print a client message. If you pass null instead of a valid player, the message will be sent to all clients. When printing to chat (HUD_PRINTTALK), the color of the text can be changed by inserting this sequence: \\x07RRGGBB where RR GG BB is the hexadecimal format of the color. Transparency can be specified by a different sequence: \\x08RRGGBBAA, where RR GG BB AA is the hexadecimal format of the color + alpha. All text following this sequence will be colored. Multiple sequences can be used in combination. If using color sequences, there MUST be a color sequence at the beginning of the string, or color codes won't work!."
+      "details": "Print a client message. If you pass null instead of a valid player, the message will be sent to all clients. When printing to chat (HUD_PRINTTALK), the color of the text can be changed by inserting this sequence: \\\\x07RRGGBB where RR GG BB is the hexadecimal format of the color. Transparency can be specified by a different sequence: \\\\x08RRGGBBAA, where RR GG BB AA is the hexadecimal format of the color + alpha. All text following this sequence will be colored. Multiple sequences can be used in combination. If using color sequences, there MUST be a color sequence at the beginning of the string, or color codes won't work!."
     },
     {
       "trigger": "ClimbUpToLedge",
@@ -4087,7 +4087,7 @@
       "annotation": "float GetTauntAttackTime()",
       "contents": "GetTauntAttackTime()$0",
       "kind": "keyword",
-      "details": "Timestamp until a taunt attack \"lasts\". 0 if unavailable"
+      "details": "Timestamp until a taunt attack \\\"lasts\\\". 0 if unavailable"
     },
     {
       "trigger": "GetTauntRemoveTime",
@@ -6311,7 +6311,7 @@
     {
       "trigger": "OnGameEvent_<name>",
       "annotation": "void OnGameEvent_<name>(table params)",
-      "contents": "OnGameEvent_${1:name}(${2:table params})$0",
+      "contents": "OnGameEvent_<name>(${1:table params})$0",
       "kind": "keyword",
       "details": "Called each time a game event with the specified name occurs. The name of the function needs to be OnGameEvent_ followed by the name of the game event. E.g. for the player_spawn input, it would be OnGameEvent_player_spawn."
     },
@@ -6418,7 +6418,7 @@
       "annotation": "void PickupObject(handle player, handle entity)",
       "contents": "PickupObject(${1:handle player}, ${2:handle entity})$0",
       "kind": "keyword",
-      "details": "Object from world is put into the \"Held\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level."
+      "details": "Object from world is put into the \\\"Held\\\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level."
     },
     {
       "trigger": "Pitch",
@@ -8105,7 +8105,7 @@
       "annotation": "void SetSkyboxTexture(string texture)",
       "contents": "SetSkyboxTexture(${1:string texture})$0",
       "kind": "keyword",
-      "details": "Sets the current skybox texture. The path is relative to \"materials/skybox/\". Only the main name of a skybox texture is needed, for example \"sky_gravel_01\"."
+      "details": "Sets the current skybox texture. The path is relative to \\\"materials/skybox/\\\". Only the main name of a skybox texture is needed, for example \\\"sky_gravel_01\\\"."
     },
     {
       "trigger": "SetSolid",
@@ -10163,7 +10163,7 @@
       "annotation": "TF_NAV_PERSISTENT_ATTRIBUTES",
       "contents": "TF_NAV_PERSISTENT_ATTRIBUTES$0",
       "kind": "keyword",
-      "details": "198809804"
+      "details": "1988098048"
     },
     {
       "trigger": "TF_NAV_RED_ONE_WAY_DOOR",
@@ -10338,7 +10338,7 @@
       "annotation": "void Taunt(int taunt_index, int taunt_concept)",
       "contents": "Taunt(${1:int taunt_index}, ${2:int taunt_concept})$0",
       "kind": "keyword",
-      "details": "Performs a taunt if allowed. For taunt index, see Constants.FTaunts. For concepts, see MP_CONCEPT List. Concept is the \"voiceline\" index to use with the taunt. For TAUNT_SHOW_ITEM and TAUNT_BASE_WEAPON this is set automatically. TAUNT_LONG is not supported."
+      "details": "Performs a taunt if allowed. For taunt index, see Constants.FTaunts. For concepts, see MP_CONCEPT List. Concept is the \\\"voiceline\\\" index to use with the taunt. For TAUNT_SHOW_ITEM and TAUNT_BASE_WEAPON this is set automatically. TAUNT_LONG is not supported."
     },
     {
       "trigger": "Teleport",
@@ -10688,7 +10688,7 @@
       "annotation": "void __CollectEventCallbacks(scope, prefix, globalTableName, regFunc)",
       "contents": "__CollectEventCallbacks(${1:scope}, ${2:prefix}, ${3:globalTableName}, ${4:regFunc})$0",
       "kind": "keyword",
-      "details": "Overloaded function. Its only used for this: __CollectEventCallbacks(scope, \"OnGameEvent_\", \"GameEventCallbacks\", ::RegisterScriptGameEventListener)"
+      "details": "Overloaded function. Its only used for this: __CollectEventCallbacks(scope, \\\"OnGameEvent_\\\", \\\"GameEventCallbacks\\\", ::RegisterScriptGameEventListener)"
     },
     {
       "trigger": "__CollectGameEventCallbacks",
@@ -10807,7 +10807,7 @@
       "annotation": "_version_",
       "contents": "_version_$0",
       "kind": "keyword",
-      "details": "\"Squirrel 3.2 stable\""
+      "details": "\\\"Squirrel 3.2 stable\\\""
     },
     {
       "trigger": "_versionnumber_",
@@ -10884,7 +10884,7 @@
       "annotation": "table capture(str, [start])",
       "contents": "capture(${1:str}, ${2:[start]})$0",
       "kind": "keyword",
-      "details": "Returns an array of tables containing two indexes (\"begin\" and \"end\") of the first match of the regular expression in the string str. An array entry is created for each captured sub expressions. If no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
+      "details": "Returns an array of tables containing two indexes (\\\"begin\\\" and \\\"end\\\") of the first match of the regular expression in the string str. An array entry is created for each captured sub expressions. If no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
     },
     {
       "trigger": "castf2i",
@@ -10996,7 +10996,7 @@
       "annotation": "string escape(string str)",
       "contents": "escape(${1:string str})$0",
       "kind": "keyword",
-      "details": "Returns a string with backslashes before characters that need to be escaped: \u201c a b t n v f r \\ \u201d \u2019 0 xNN"
+      "details": "Returns a string with backslashes before characters that need to be escaped: \u201c a b t n v f r \\\\ \u201d \u2019 0 xNN"
     },
     {
       "trigger": "exactMatch",
@@ -11626,7 +11626,7 @@
       "annotation": "table search(str, [start])",
       "contents": "search(${1:str}, ${2:[start]})$0",
       "kind": "keyword",
-      "details": "Returns a table containing two indexes (\"begin\" and \"end\") of the first match of the regular expression in the string st, otherwise if no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
+      "details": "Returns a table containing two indexes (\\\"begin\\\" and \\\"end\\\") of the first match of the regular expression in the string st, otherwise if no match occurs returns null. The search starts from the index start of the string, if start is omitted the search starts from the beginning of the string."
     },
     {
       "trigger": "seek",
@@ -11816,6 +11816,2659 @@
       "contents": "writen(${1:num value}, ${2:char dataType})$0",
       "kind": "keyword",
       "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_achievement_earned",
+      "annotation": "void OnGameEvent_achievement_earned()",
+      "contents": "OnGameEvent_achievement_earned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_achievement_earned_local",
+      "annotation": "void OnGameEvent_achievement_earned_local()",
+      "contents": "OnGameEvent_achievement_earned_local(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_achievement_event",
+      "annotation": "void OnGameEvent_achievement_event()",
+      "contents": "OnGameEvent_achievement_event(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_achievement_increment",
+      "annotation": "void OnGameEvent_achievement_increment()",
+      "contents": "OnGameEvent_achievement_increment(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_air_dash",
+      "annotation": "void OnGameEvent_air_dash()",
+      "contents": "OnGameEvent_air_dash(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_arena_match_maxstreak",
+      "annotation": "void OnGameEvent_arena_match_maxstreak()",
+      "contents": "OnGameEvent_arena_match_maxstreak(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_arena_player_notification",
+      "annotation": "void OnGameEvent_arena_player_notification()",
+      "contents": "OnGameEvent_arena_player_notification(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_arena_round_start",
+      "annotation": "void OnGameEvent_arena_round_start()",
+      "contents": "OnGameEvent_arena_round_start(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_arena_win_panel",
+      "annotation": "void OnGameEvent_arena_win_panel()",
+      "contents": "OnGameEvent_arena_win_panel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_arrow_impact",
+      "annotation": "void OnGameEvent_arrow_impact()",
+      "contents": "OnGameEvent_arrow_impact(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_base_player_teleported",
+      "annotation": "void OnGameEvent_base_player_teleported()",
+      "contents": "OnGameEvent_base_player_teleported(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_begin_xp_lerp",
+      "annotation": "void OnGameEvent_begin_xp_lerp()",
+      "contents": "OnGameEvent_begin_xp_lerp(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_bonus_updated",
+      "annotation": "void OnGameEvent_bonus_updated()",
+      "contents": "OnGameEvent_bonus_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_break_breakable",
+      "annotation": "void OnGameEvent_break_breakable()",
+      "contents": "OnGameEvent_break_breakable(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_break_prop",
+      "annotation": "void OnGameEvent_break_prop()",
+      "contents": "OnGameEvent_break_prop(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_browse_replays",
+      "annotation": "void OnGameEvent_browse_replays()",
+      "contents": "OnGameEvent_browse_replays(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_building_healed",
+      "annotation": "void OnGameEvent_building_healed()",
+      "contents": "OnGameEvent_building_healed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_building_info_changed",
+      "annotation": "void OnGameEvent_building_info_changed()",
+      "contents": "OnGameEvent_building_info_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_capper_killed",
+      "annotation": "void OnGameEvent_capper_killed()",
+      "contents": "OnGameEvent_capper_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_cart_updated",
+      "annotation": "void OnGameEvent_cart_updated()",
+      "contents": "OnGameEvent_cart_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_christmas_gift_grab",
+      "annotation": "void OnGameEvent_christmas_gift_grab()",
+      "contents": "OnGameEvent_christmas_gift_grab(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_cl_drawline",
+      "annotation": "void OnGameEvent_cl_drawline()",
+      "contents": "OnGameEvent_cl_drawline(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_competitive_state_changed",
+      "annotation": "void OnGameEvent_competitive_state_changed()",
+      "contents": "OnGameEvent_competitive_state_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_competitive_stats_update",
+      "annotation": "void OnGameEvent_competitive_stats_update()",
+      "contents": "OnGameEvent_competitive_stats_update(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_competitive_victory",
+      "annotation": "void OnGameEvent_competitive_victory()",
+      "contents": "OnGameEvent_competitive_victory(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_conga_kill",
+      "annotation": "void OnGameEvent_conga_kill()",
+      "contents": "OnGameEvent_conga_kill(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_endtouch",
+      "annotation": "void OnGameEvent_controlpoint_endtouch()",
+      "contents": "OnGameEvent_controlpoint_endtouch(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_fake_capture",
+      "annotation": "void OnGameEvent_controlpoint_fake_capture()",
+      "contents": "OnGameEvent_controlpoint_fake_capture(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_fake_capture_mult",
+      "annotation": "void OnGameEvent_controlpoint_fake_capture_mult()",
+      "contents": "OnGameEvent_controlpoint_fake_capture_mult(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_initialized",
+      "annotation": "void OnGameEvent_controlpoint_initialized()",
+      "contents": "OnGameEvent_controlpoint_initialized(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_pulse_element",
+      "annotation": "void OnGameEvent_controlpoint_pulse_element()",
+      "contents": "OnGameEvent_controlpoint_pulse_element(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_starttouch",
+      "annotation": "void OnGameEvent_controlpoint_starttouch()",
+      "contents": "OnGameEvent_controlpoint_starttouch(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_timer_updated",
+      "annotation": "void OnGameEvent_controlpoint_timer_updated()",
+      "contents": "OnGameEvent_controlpoint_timer_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_unlock_updated",
+      "annotation": "void OnGameEvent_controlpoint_unlock_updated()",
+      "contents": "OnGameEvent_controlpoint_unlock_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_updatecapping",
+      "annotation": "void OnGameEvent_controlpoint_updatecapping()",
+      "contents": "OnGameEvent_controlpoint_updatecapping(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_updateimages",
+      "annotation": "void OnGameEvent_controlpoint_updateimages()",
+      "contents": "OnGameEvent_controlpoint_updateimages(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_updatelayout",
+      "annotation": "void OnGameEvent_controlpoint_updatelayout()",
+      "contents": "OnGameEvent_controlpoint_updatelayout(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_controlpoint_updateowner",
+      "annotation": "void OnGameEvent_controlpoint_updateowner()",
+      "contents": "OnGameEvent_controlpoint_updateowner(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_cross_spectral_bridge",
+      "annotation": "void OnGameEvent_cross_spectral_bridge()",
+      "contents": "OnGameEvent_cross_spectral_bridge(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_crossbow_heal",
+      "annotation": "void OnGameEvent_crossbow_heal()",
+      "contents": "OnGameEvent_crossbow_heal(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ctf_flag_captured",
+      "annotation": "void OnGameEvent_ctf_flag_captured()",
+      "contents": "OnGameEvent_ctf_flag_captured(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_damage_mitigated",
+      "annotation": "void OnGameEvent_damage_mitigated()",
+      "contents": "OnGameEvent_damage_mitigated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_damage_prevented",
+      "annotation": "void OnGameEvent_damage_prevented()",
+      "contents": "OnGameEvent_damage_prevented(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_damage_resisted",
+      "annotation": "void OnGameEvent_damage_resisted()",
+      "contents": "OnGameEvent_damage_resisted(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_deadringer_cheat_death",
+      "annotation": "void OnGameEvent_deadringer_cheat_death()",
+      "contents": "OnGameEvent_deadringer_cheat_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_demoman_det_stickies",
+      "annotation": "void OnGameEvent_demoman_det_stickies()",
+      "contents": "OnGameEvent_demoman_det_stickies(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_deploy_buff_banner",
+      "annotation": "void OnGameEvent_deploy_buff_banner()",
+      "contents": "OnGameEvent_deploy_buff_banner(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_doomsday_rocket_open",
+      "annotation": "void OnGameEvent_doomsday_rocket_open()",
+      "contents": "OnGameEvent_doomsday_rocket_open(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ds_screenshot",
+      "annotation": "void OnGameEvent_ds_screenshot()",
+      "contents": "OnGameEvent_ds_screenshot(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ds_stop",
+      "annotation": "void OnGameEvent_ds_stop()",
+      "contents": "OnGameEvent_ds_stop(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_duck_xp_level_up",
+      "annotation": "void OnGameEvent_duck_xp_level_up()",
+      "contents": "OnGameEvent_duck_xp_level_up(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_duel_status",
+      "annotation": "void OnGameEvent_duel_status()",
+      "contents": "OnGameEvent_duel_status(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_entered_performance_mode",
+      "annotation": "void OnGameEvent_entered_performance_mode()",
+      "contents": "OnGameEvent_entered_performance_mode(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_entity_killed",
+      "annotation": "void OnGameEvent_entity_killed()",
+      "contents": "OnGameEvent_entity_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_environmental_death",
+      "annotation": "void OnGameEvent_environmental_death()",
+      "contents": "OnGameEvent_environmental_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_escaped_hell",
+      "annotation": "void OnGameEvent_escaped_hell()",
+      "contents": "OnGameEvent_escaped_hell(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_escaped_loot_island",
+      "annotation": "void OnGameEvent_escaped_loot_island()",
+      "contents": "OnGameEvent_escaped_loot_island(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_escort_progress",
+      "annotation": "void OnGameEvent_escort_progress()",
+      "contents": "OnGameEvent_escort_progress(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_escort_recede",
+      "annotation": "void OnGameEvent_escort_recede()",
+      "contents": "OnGameEvent_escort_recede(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_escort_speed",
+      "annotation": "void OnGameEvent_escort_speed()",
+      "contents": "OnGameEvent_escort_speed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_experience_changed",
+      "annotation": "void OnGameEvent_experience_changed()",
+      "contents": "OnGameEvent_experience_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_escape_imminent",
+      "annotation": "void OnGameEvent_eyeball_boss_escape_imminent()",
+      "contents": "OnGameEvent_eyeball_boss_escape_imminent(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_escaped",
+      "annotation": "void OnGameEvent_eyeball_boss_escaped()",
+      "contents": "OnGameEvent_eyeball_boss_escaped(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_killed",
+      "annotation": "void OnGameEvent_eyeball_boss_killed()",
+      "contents": "OnGameEvent_eyeball_boss_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_killer",
+      "annotation": "void OnGameEvent_eyeball_boss_killer()",
+      "contents": "OnGameEvent_eyeball_boss_killer(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_stunned",
+      "annotation": "void OnGameEvent_eyeball_boss_stunned()",
+      "contents": "OnGameEvent_eyeball_boss_stunned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_eyeball_boss_summoned",
+      "annotation": "void OnGameEvent_eyeball_boss_summoned()",
+      "contents": "OnGameEvent_eyeball_boss_summoned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_fish_notice",
+      "annotation": "void OnGameEvent_fish_notice()",
+      "contents": "OnGameEvent_fish_notice(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_fish_notice__arm",
+      "annotation": "void OnGameEvent_fish_notice__arm()",
+      "contents": "OnGameEvent_fish_notice__arm(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_flag_carried_in_detection_zone",
+      "annotation": "void OnGameEvent_flag_carried_in_detection_zone()",
+      "contents": "OnGameEvent_flag_carried_in_detection_zone(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_flagstatus_update",
+      "annotation": "void OnGameEvent_flagstatus_update()",
+      "contents": "OnGameEvent_flagstatus_update(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_flare_ignite_npc",
+      "annotation": "void OnGameEvent_flare_ignite_npc()",
+      "contents": "OnGameEvent_flare_ignite_npc(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_freezecam_started",
+      "annotation": "void OnGameEvent_freezecam_started()",
+      "contents": "OnGameEvent_freezecam_started(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_game_end",
+      "annotation": "void OnGameEvent_game_end()",
+      "contents": "OnGameEvent_game_end(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_game_init",
+      "annotation": "void OnGameEvent_game_init()",
+      "contents": "OnGameEvent_game_init(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_game_message",
+      "annotation": "void OnGameEvent_game_message()",
+      "contents": "OnGameEvent_game_message(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_game_newmap",
+      "annotation": "void OnGameEvent_game_newmap()",
+      "contents": "OnGameEvent_game_newmap(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_game_start",
+      "annotation": "void OnGameEvent_game_start()",
+      "contents": "OnGameEvent_game_start(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_gameui_activated",
+      "annotation": "void OnGameEvent_gameui_activated()",
+      "contents": "OnGameEvent_gameui_activated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_gameui_hidden",
+      "annotation": "void OnGameEvent_gameui_hidden()",
+      "contents": "OnGameEvent_gameui_hidden(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_gas_doused_player_ignited",
+      "annotation": "void OnGameEvent_gas_doused_player_ignited()",
+      "contents": "OnGameEvent_gas_doused_player_ignited(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_gc_connected",
+      "annotation": "void OnGameEvent_gc_connected()",
+      "contents": "OnGameEvent_gc_connected(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_global_war_data_updated",
+      "annotation": "void OnGameEvent_global_war_data_updated()",
+      "contents": "OnGameEvent_global_war_data_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_halloween_boss_killed",
+      "annotation": "void OnGameEvent_halloween_boss_killed()",
+      "contents": "OnGameEvent_halloween_boss_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_halloween_duck_collected",
+      "annotation": "void OnGameEvent_halloween_duck_collected()",
+      "contents": "OnGameEvent_halloween_duck_collected(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_halloween_pumpkin_grab",
+      "annotation": "void OnGameEvent_halloween_pumpkin_grab()",
+      "contents": "OnGameEvent_halloween_pumpkin_grab(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_halloween_skeleton_killed",
+      "annotation": "void OnGameEvent_halloween_skeleton_killed()",
+      "contents": "OnGameEvent_halloween_skeleton_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_halloween_soul_collected",
+      "annotation": "void OnGameEvent_halloween_soul_collected()",
+      "contents": "OnGameEvent_halloween_soul_collected(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_helicopter_grenade_punt_miss",
+      "annotation": "void OnGameEvent_helicopter_grenade_punt_miss()",
+      "contents": "OnGameEvent_helicopter_grenade_punt_miss(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_hide_annotation",
+      "annotation": "void OnGameEvent_hide_annotation()",
+      "contents": "OnGameEvent_hide_annotation(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_hide_freezepanel",
+      "annotation": "void OnGameEvent_hide_freezepanel()",
+      "contents": "OnGameEvent_hide_freezepanel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_hltv_changed_mode",
+      "annotation": "void OnGameEvent_hltv_changed_mode()",
+      "contents": "OnGameEvent_hltv_changed_mode(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_hltv_changed_target",
+      "annotation": "void OnGameEvent_hltv_changed_target()",
+      "contents": "OnGameEvent_hltv_changed_target(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_intro_finish",
+      "annotation": "void OnGameEvent_intro_finish()",
+      "contents": "OnGameEvent_intro_finish(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_intro_nextcamera",
+      "annotation": "void OnGameEvent_intro_nextcamera()",
+      "contents": "OnGameEvent_intro_nextcamera(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_inventory_updated",
+      "annotation": "void OnGameEvent_inventory_updated()",
+      "contents": "OnGameEvent_inventory_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_item_found",
+      "annotation": "void OnGameEvent_item_found()",
+      "contents": "OnGameEvent_item_found(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_item_pickup",
+      "annotation": "void OnGameEvent_item_pickup()",
+      "contents": "OnGameEvent_item_pickup(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_item_schema_initialized",
+      "annotation": "void OnGameEvent_item_schema_initialized()",
+      "contents": "OnGameEvent_item_schema_initialized(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_items_acknowledged",
+      "annotation": "void OnGameEvent_items_acknowledged()",
+      "contents": "OnGameEvent_items_acknowledged(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_kill_in_hell",
+      "annotation": "void OnGameEvent_kill_in_hell()",
+      "contents": "OnGameEvent_kill_in_hell(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_kill_refills_meter",
+      "annotation": "void OnGameEvent_kill_refills_meter()",
+      "contents": "OnGameEvent_kill_refills_meter(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_killed_capping_player",
+      "annotation": "void OnGameEvent_killed_capping_player()",
+      "contents": "OnGameEvent_killed_capping_player(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_landed",
+      "annotation": "void OnGameEvent_landed()",
+      "contents": "OnGameEvent_landed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_lobby_updated",
+      "annotation": "void OnGameEvent_lobby_updated()",
+      "contents": "OnGameEvent_lobby_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_becameobserver",
+      "annotation": "void OnGameEvent_localplayer_becameobserver()",
+      "contents": "OnGameEvent_localplayer_becameobserver(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_changeclass",
+      "annotation": "void OnGameEvent_localplayer_changeclass()",
+      "contents": "OnGameEvent_localplayer_changeclass(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_changedisguise",
+      "annotation": "void OnGameEvent_localplayer_changedisguise()",
+      "contents": "OnGameEvent_localplayer_changedisguise(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_changeteam",
+      "annotation": "void OnGameEvent_localplayer_changeteam()",
+      "contents": "OnGameEvent_localplayer_changeteam(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_chargeready",
+      "annotation": "void OnGameEvent_localplayer_chargeready()",
+      "contents": "OnGameEvent_localplayer_chargeready(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_healed",
+      "annotation": "void OnGameEvent_localplayer_healed()",
+      "contents": "OnGameEvent_localplayer_healed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_pickup_weapon",
+      "annotation": "void OnGameEvent_localplayer_pickup_weapon()",
+      "contents": "OnGameEvent_localplayer_pickup_weapon(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_respawn",
+      "annotation": "void OnGameEvent_localplayer_respawn()",
+      "contents": "OnGameEvent_localplayer_respawn(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_score_changed",
+      "annotation": "void OnGameEvent_localplayer_score_changed()",
+      "contents": "OnGameEvent_localplayer_score_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_winddown",
+      "annotation": "void OnGameEvent_localplayer_winddown()",
+      "contents": "OnGameEvent_localplayer_winddown(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mainmenu_stabilized",
+      "annotation": "void OnGameEvent_mainmenu_stabilized()",
+      "contents": "OnGameEvent_mainmenu_stabilized(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_match_invites_updated",
+      "annotation": "void OnGameEvent_match_invites_updated()",
+      "contents": "OnGameEvent_match_invites_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_matchmaker_stats_updated",
+      "annotation": "void OnGameEvent_matchmaker_stats_updated()",
+      "contents": "OnGameEvent_matchmaker_stats_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_medic_death",
+      "annotation": "void OnGameEvent_medic_death()",
+      "contents": "OnGameEvent_medic_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_medic_defended",
+      "annotation": "void OnGameEvent_medic_defended()",
+      "contents": "OnGameEvent_medic_defended(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_medigun_shield_blocked_damage",
+      "annotation": "void OnGameEvent_medigun_shield_blocked_damage()",
+      "contents": "OnGameEvent_medigun_shield_blocked_damage(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_escape_warning",
+      "annotation": "void OnGameEvent_merasmus_escape_warning()",
+      "contents": "OnGameEvent_merasmus_escape_warning(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_escaped",
+      "annotation": "void OnGameEvent_merasmus_escaped()",
+      "contents": "OnGameEvent_merasmus_escaped(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_killed",
+      "annotation": "void OnGameEvent_merasmus_killed()",
+      "contents": "OnGameEvent_merasmus_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_prop_found",
+      "annotation": "void OnGameEvent_merasmus_prop_found()",
+      "contents": "OnGameEvent_merasmus_prop_found(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_stunned",
+      "annotation": "void OnGameEvent_merasmus_stunned()",
+      "contents": "OnGameEvent_merasmus_stunned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_merasmus_summoned",
+      "annotation": "void OnGameEvent_merasmus_summoned()",
+      "contents": "OnGameEvent_merasmus_summoned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_minigame_win",
+      "annotation": "void OnGameEvent_minigame_win()",
+      "contents": "OnGameEvent_minigame_win(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_minigame_won",
+      "annotation": "void OnGameEvent_minigame_won()",
+      "contents": "OnGameEvent_minigame_won(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_adv_wave_complete_no_gates",
+      "annotation": "void OnGameEvent_mvm_adv_wave_complete_no_gates()",
+      "contents": "OnGameEvent_mvm_adv_wave_complete_no_gates(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_adv_wave_killed_stun_radio",
+      "annotation": "void OnGameEvent_mvm_adv_wave_killed_stun_radio()",
+      "contents": "OnGameEvent_mvm_adv_wave_killed_stun_radio(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_begin_wave",
+      "annotation": "void OnGameEvent_mvm_begin_wave()",
+      "contents": "OnGameEvent_mvm_begin_wave(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_bomb_alarm_triggered",
+      "annotation": "void OnGameEvent_mvm_bomb_alarm_triggered()",
+      "contents": "OnGameEvent_mvm_bomb_alarm_triggered(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_bomb_carrier_killed",
+      "annotation": "void OnGameEvent_mvm_bomb_carrier_killed()",
+      "contents": "OnGameEvent_mvm_bomb_carrier_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_bomb_deploy_reset_by_player",
+      "annotation": "void OnGameEvent_mvm_bomb_deploy_reset_by_player()",
+      "contents": "OnGameEvent_mvm_bomb_deploy_reset_by_player(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_bomb_reset_by_player",
+      "annotation": "void OnGameEvent_mvm_bomb_reset_by_player()",
+      "contents": "OnGameEvent_mvm_bomb_reset_by_player(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_creditbonus_all",
+      "annotation": "void OnGameEvent_mvm_creditbonus_all()",
+      "contents": "OnGameEvent_mvm_creditbonus_all(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_creditbonus_all_advanced",
+      "annotation": "void OnGameEvent_mvm_creditbonus_all_advanced()",
+      "contents": "OnGameEvent_mvm_creditbonus_all_advanced(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_creditbonus_wave",
+      "annotation": "void OnGameEvent_mvm_creditbonus_wave()",
+      "contents": "OnGameEvent_mvm_creditbonus_wave(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_kill_robot_delivering_bomb",
+      "annotation": "void OnGameEvent_mvm_kill_robot_delivering_bomb()",
+      "contents": "OnGameEvent_mvm_kill_robot_delivering_bomb(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_mannhattan_pit",
+      "annotation": "void OnGameEvent_mvm_mannhattan_pit()",
+      "contents": "OnGameEvent_mvm_mannhattan_pit(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_medic_powerup_shared",
+      "annotation": "void OnGameEvent_mvm_medic_powerup_shared()",
+      "contents": "OnGameEvent_mvm_medic_powerup_shared(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_mission_complete",
+      "annotation": "void OnGameEvent_mvm_mission_complete()",
+      "contents": "OnGameEvent_mvm_mission_complete(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_mission_update",
+      "annotation": "void OnGameEvent_mvm_mission_update()",
+      "contents": "OnGameEvent_mvm_mission_update(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_pickup_currency",
+      "annotation": "void OnGameEvent_mvm_pickup_currency()",
+      "contents": "OnGameEvent_mvm_pickup_currency(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_quick_sentry_upgrade",
+      "annotation": "void OnGameEvent_mvm_quick_sentry_upgrade()",
+      "contents": "OnGameEvent_mvm_quick_sentry_upgrade(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_reset_stats",
+      "annotation": "void OnGameEvent_mvm_reset_stats()",
+      "contents": "OnGameEvent_mvm_reset_stats(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_scout_marked_for_death",
+      "annotation": "void OnGameEvent_mvm_scout_marked_for_death()",
+      "contents": "OnGameEvent_mvm_scout_marked_for_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_sentrybuster_detonate",
+      "annotation": "void OnGameEvent_mvm_sentrybuster_detonate()",
+      "contents": "OnGameEvent_mvm_sentrybuster_detonate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_sentrybuster_killed",
+      "annotation": "void OnGameEvent_mvm_sentrybuster_killed()",
+      "contents": "OnGameEvent_mvm_sentrybuster_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_sniper_headshot_currency",
+      "annotation": "void OnGameEvent_mvm_sniper_headshot_currency()",
+      "contents": "OnGameEvent_mvm_sniper_headshot_currency(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_tank_destroyed_by_players",
+      "annotation": "void OnGameEvent_mvm_tank_destroyed_by_players()",
+      "contents": "OnGameEvent_mvm_tank_destroyed_by_players(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_wave_complete",
+      "annotation": "void OnGameEvent_mvm_wave_complete()",
+      "contents": "OnGameEvent_mvm_wave_complete(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_mvm_wave_failed",
+      "annotation": "void OnGameEvent_mvm_wave_failed()",
+      "contents": "OnGameEvent_mvm_wave_failed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_nav_blocked",
+      "annotation": "void OnGameEvent_nav_blocked()",
+      "contents": "OnGameEvent_nav_blocked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_npc_hurt",
+      "annotation": "void OnGameEvent_npc_hurt()",
+      "contents": "OnGameEvent_npc_hurt(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_num_cappers_changed",
+      "annotation": "void OnGameEvent_num_cappers_changed()",
+      "contents": "OnGameEvent_num_cappers_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_object_deflected",
+      "annotation": "void OnGameEvent_object_deflected()",
+      "contents": "OnGameEvent_object_deflected(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_object_destroyed",
+      "annotation": "void OnGameEvent_object_destroyed()",
+      "contents": "OnGameEvent_object_destroyed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_object_detonated",
+      "annotation": "void OnGameEvent_object_detonated()",
+      "contents": "OnGameEvent_object_detonated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_object_removed",
+      "annotation": "void OnGameEvent_object_removed()",
+      "contents": "OnGameEvent_object_removed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_overtime_nag",
+      "annotation": "void OnGameEvent_overtime_nag()",
+      "contents": "OnGameEvent_overtime_nag(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_parachute_deploy",
+      "annotation": "void OnGameEvent_parachute_deploy()",
+      "contents": "OnGameEvent_parachute_deploy(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_parachute_holster",
+      "annotation": "void OnGameEvent_parachute_holster()",
+      "contents": "OnGameEvent_parachute_holster(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_chat",
+      "annotation": "void OnGameEvent_party_chat()",
+      "contents": "OnGameEvent_party_chat(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_criteria_changed",
+      "annotation": "void OnGameEvent_party_criteria_changed()",
+      "contents": "OnGameEvent_party_criteria_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_invites_changed",
+      "annotation": "void OnGameEvent_party_invites_changed()",
+      "contents": "OnGameEvent_party_invites_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_member_join",
+      "annotation": "void OnGameEvent_party_member_join()",
+      "contents": "OnGameEvent_party_member_join(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_member_leave",
+      "annotation": "void OnGameEvent_party_member_leave()",
+      "contents": "OnGameEvent_party_member_leave(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_pref_changed",
+      "annotation": "void OnGameEvent_party_pref_changed()",
+      "contents": "OnGameEvent_party_pref_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_queue_state_changed",
+      "annotation": "void OnGameEvent_party_queue_state_changed()",
+      "contents": "OnGameEvent_party_queue_state_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_party_updated",
+      "annotation": "void OnGameEvent_party_updated()",
+      "contents": "OnGameEvent_party_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_ball_blocked",
+      "annotation": "void OnGameEvent_pass_ball_blocked()",
+      "contents": "OnGameEvent_pass_ball_blocked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_ball_stolen",
+      "annotation": "void OnGameEvent_pass_ball_stolen()",
+      "contents": "OnGameEvent_pass_ball_stolen(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_free",
+      "annotation": "void OnGameEvent_pass_free()",
+      "contents": "OnGameEvent_pass_free(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_get",
+      "annotation": "void OnGameEvent_pass_get()",
+      "contents": "OnGameEvent_pass_get(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_pass_caught",
+      "annotation": "void OnGameEvent_pass_pass_caught()",
+      "contents": "OnGameEvent_pass_pass_caught(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pass_score",
+      "annotation": "void OnGameEvent_pass_score()",
+      "contents": "OnGameEvent_pass_score(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_path_track_passed",
+      "annotation": "void OnGameEvent_path_track_passed()",
+      "contents": "OnGameEvent_path_track_passed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_payload_pushed",
+      "annotation": "void OnGameEvent_payload_pushed()",
+      "contents": "OnGameEvent_payload_pushed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_physgun_pickup",
+      "annotation": "void OnGameEvent_physgun_pickup()",
+      "contents": "OnGameEvent_physgun_pickup(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ping_updated",
+      "annotation": "void OnGameEvent_ping_updated()",
+      "contents": "OnGameEvent_ping_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_abandoned_match",
+      "annotation": "void OnGameEvent_player_abandoned_match()",
+      "contents": "OnGameEvent_player_abandoned_match(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_account_changed",
+      "annotation": "void OnGameEvent_player_account_changed()",
+      "contents": "OnGameEvent_player_account_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_activate",
+      "annotation": "void OnGameEvent_player_activate()",
+      "contents": "OnGameEvent_player_activate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_askedforball",
+      "annotation": "void OnGameEvent_player_askedforball()",
+      "contents": "OnGameEvent_player_askedforball(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_bonuspoints",
+      "annotation": "void OnGameEvent_player_bonuspoints()",
+      "contents": "OnGameEvent_player_bonuspoints(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_buff",
+      "annotation": "void OnGameEvent_player_buff()",
+      "contents": "OnGameEvent_player_buff(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_builtobject",
+      "annotation": "void OnGameEvent_player_builtobject()",
+      "contents": "OnGameEvent_player_builtobject(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_buyback",
+      "annotation": "void OnGameEvent_player_buyback()",
+      "contents": "OnGameEvent_player_buyback(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_calledformedic",
+      "annotation": "void OnGameEvent_player_calledformedic()",
+      "contents": "OnGameEvent_player_calledformedic(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_carryobject",
+      "annotation": "void OnGameEvent_player_carryobject()",
+      "contents": "OnGameEvent_player_carryobject(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_changeclass",
+      "annotation": "void OnGameEvent_player_changeclass()",
+      "contents": "OnGameEvent_player_changeclass(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_changename",
+      "annotation": "void OnGameEvent_player_changename()",
+      "contents": "OnGameEvent_player_changename(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_chargedeployed",
+      "annotation": "void OnGameEvent_player_chargedeployed()",
+      "contents": "OnGameEvent_player_chargedeployed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_chat",
+      "annotation": "void OnGameEvent_player_chat()",
+      "contents": "OnGameEvent_player_chat(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_class",
+      "annotation": "void OnGameEvent_player_class()",
+      "contents": "OnGameEvent_player_class(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_connect",
+      "annotation": "void OnGameEvent_player_connect()",
+      "contents": "OnGameEvent_player_connect(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_connect_client",
+      "annotation": "void OnGameEvent_player_connect_client()",
+      "contents": "OnGameEvent_player_connect_client(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_currency_changed",
+      "annotation": "void OnGameEvent_player_currency_changed()",
+      "contents": "OnGameEvent_player_currency_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_damage_dodged",
+      "annotation": "void OnGameEvent_player_damage_dodged()",
+      "contents": "OnGameEvent_player_damage_dodged(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_damaged",
+      "annotation": "void OnGameEvent_player_damaged()",
+      "contents": "OnGameEvent_player_damaged(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_death",
+      "annotation": "void OnGameEvent_player_death()",
+      "contents": "OnGameEvent_player_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_destroyed_pipebomb",
+      "annotation": "void OnGameEvent_player_destroyed_pipebomb()",
+      "contents": "OnGameEvent_player_destroyed_pipebomb(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_directhit_stun",
+      "annotation": "void OnGameEvent_player_directhit_stun()",
+      "contents": "OnGameEvent_player_directhit_stun(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_disconnect",
+      "annotation": "void OnGameEvent_player_disconnect()",
+      "contents": "OnGameEvent_player_disconnect(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_domination",
+      "annotation": "void OnGameEvent_player_domination()",
+      "contents": "OnGameEvent_player_domination(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_dropobject",
+      "annotation": "void OnGameEvent_player_dropobject()",
+      "contents": "OnGameEvent_player_dropobject(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_escort_score",
+      "annotation": "void OnGameEvent_player_escort_score()",
+      "contents": "OnGameEvent_player_escort_score(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_extinguished",
+      "annotation": "void OnGameEvent_player_extinguished()",
+      "contents": "OnGameEvent_player_extinguished(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_healed",
+      "annotation": "void OnGameEvent_player_healed()",
+      "contents": "OnGameEvent_player_healed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_healedbymedic",
+      "annotation": "void OnGameEvent_player_healedbymedic()",
+      "contents": "OnGameEvent_player_healedbymedic(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_healedmediccall",
+      "annotation": "void OnGameEvent_player_healedmediccall()",
+      "contents": "OnGameEvent_player_healedmediccall(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_healonhit",
+      "annotation": "void OnGameEvent_player_healonhit()",
+      "contents": "OnGameEvent_player_healonhit(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_highfive_cancel",
+      "annotation": "void OnGameEvent_player_highfive_cancel()",
+      "contents": "OnGameEvent_player_highfive_cancel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_highfive_start",
+      "annotation": "void OnGameEvent_player_highfive_start()",
+      "contents": "OnGameEvent_player_highfive_start(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_highfive_success",
+      "annotation": "void OnGameEvent_player_highfive_success()",
+      "contents": "OnGameEvent_player_highfive_success(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_hintmessage",
+      "annotation": "void OnGameEvent_player_hintmessage()",
+      "contents": "OnGameEvent_player_hintmessage(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_hurt",
+      "annotation": "void OnGameEvent_player_hurt()",
+      "contents": "OnGameEvent_player_hurt(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_ignited",
+      "annotation": "void OnGameEvent_player_ignited()",
+      "contents": "OnGameEvent_player_ignited(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_ignited_inv",
+      "annotation": "void OnGameEvent_player_ignited_inv()",
+      "contents": "OnGameEvent_player_ignited_inv(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_info",
+      "annotation": "void OnGameEvent_player_info()",
+      "contents": "OnGameEvent_player_info(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_initial_spawn",
+      "annotation": "void OnGameEvent_player_initial_spawn()",
+      "contents": "OnGameEvent_player_initial_spawn(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_invulned",
+      "annotation": "void OnGameEvent_player_invulned()",
+      "contents": "OnGameEvent_player_invulned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_jarated",
+      "annotation": "void OnGameEvent_player_jarated()",
+      "contents": "OnGameEvent_player_jarated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_jarated_fade",
+      "annotation": "void OnGameEvent_player_jarated_fade()",
+      "contents": "OnGameEvent_player_jarated_fade(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_killed_achievement_zone",
+      "annotation": "void OnGameEvent_player_killed_achievement_zone()",
+      "contents": "OnGameEvent_player_killed_achievement_zone(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_mvp",
+      "annotation": "void OnGameEvent_player_mvp()",
+      "contents": "OnGameEvent_player_mvp(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_next_map_vote_change",
+      "annotation": "void OnGameEvent_player_next_map_vote_change()",
+      "contents": "OnGameEvent_player_next_map_vote_change(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_pinned",
+      "annotation": "void OnGameEvent_player_pinned()",
+      "contents": "OnGameEvent_player_pinned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_regenerate",
+      "annotation": "void OnGameEvent_player_regenerate()",
+      "contents": "OnGameEvent_player_regenerate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_rematch_change",
+      "annotation": "void OnGameEvent_player_rematch_change()",
+      "contents": "OnGameEvent_player_rematch_change(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_rocketpack_pushed",
+      "annotation": "void OnGameEvent_player_rocketpack_pushed()",
+      "contents": "OnGameEvent_player_rocketpack_pushed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_sapped_object",
+      "annotation": "void OnGameEvent_player_sapped_object()",
+      "contents": "OnGameEvent_player_sapped_object(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_say",
+      "annotation": "void OnGameEvent_player_say()",
+      "contents": "OnGameEvent_player_say(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_score",
+      "annotation": "void OnGameEvent_player_score()",
+      "contents": "OnGameEvent_player_score(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_score_changed",
+      "annotation": "void OnGameEvent_player_score_changed()",
+      "contents": "OnGameEvent_player_score_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_shield_blocked",
+      "annotation": "void OnGameEvent_player_shield_blocked()",
+      "contents": "OnGameEvent_player_shield_blocked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_shoot",
+      "annotation": "void OnGameEvent_player_shoot()",
+      "contents": "OnGameEvent_player_shoot(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_spawn",
+      "annotation": "void OnGameEvent_player_spawn()",
+      "contents": "OnGameEvent_player_spawn(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_stats_updated",
+      "annotation": "void OnGameEvent_player_stats_updated()",
+      "contents": "OnGameEvent_player_stats_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_stealsandvich",
+      "annotation": "void OnGameEvent_player_stealsandvich()",
+      "contents": "OnGameEvent_player_stealsandvich(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_stunned",
+      "annotation": "void OnGameEvent_player_stunned()",
+      "contents": "OnGameEvent_player_stunned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_team",
+      "annotation": "void OnGameEvent_player_team()",
+      "contents": "OnGameEvent_player_team(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_teleported",
+      "annotation": "void OnGameEvent_player_teleported()",
+      "contents": "OnGameEvent_player_teleported(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_turned_to_ghost",
+      "annotation": "void OnGameEvent_player_turned_to_ghost()",
+      "contents": "OnGameEvent_player_turned_to_ghost(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_upgraded",
+      "annotation": "void OnGameEvent_player_upgraded()",
+      "contents": "OnGameEvent_player_upgraded(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_upgradedobject",
+      "annotation": "void OnGameEvent_player_upgradedobject()",
+      "contents": "OnGameEvent_player_upgradedobject(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_use",
+      "annotation": "void OnGameEvent_player_use()",
+      "contents": "OnGameEvent_player_use(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_player_used_powerup_bottle",
+      "annotation": "void OnGameEvent_player_used_powerup_bottle()",
+      "contents": "OnGameEvent_player_used_powerup_bottle(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_playing_commentary",
+      "annotation": "void OnGameEvent_playing_commentary()",
+      "contents": "OnGameEvent_playing_commentary(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_post_inventory_application",
+      "annotation": "void OnGameEvent_post_inventory_application()",
+      "contents": "OnGameEvent_post_inventory_application(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_projectile_direct_hit",
+      "annotation": "void OnGameEvent_projectile_direct_hit()",
+      "contents": "OnGameEvent_projectile_direct_hit(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_projectile_removed",
+      "annotation": "void OnGameEvent_projectile_removed()",
+      "contents": "OnGameEvent_projectile_removed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_proto_def_changed",
+      "annotation": "void OnGameEvent_proto_def_changed()",
+      "contents": "OnGameEvent_proto_def_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pumpkin_lord_killed",
+      "annotation": "void OnGameEvent_pumpkin_lord_killed()",
+      "contents": "OnGameEvent_pumpkin_lord_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pumpkin_lord_summoned",
+      "annotation": "void OnGameEvent_pumpkin_lord_summoned()",
+      "contents": "OnGameEvent_pumpkin_lord_summoned(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_pve_win_panel",
+      "annotation": "void OnGameEvent_pve_win_panel()",
+      "contents": "OnGameEvent_pve_win_panel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_map_data_changed",
+      "annotation": "void OnGameEvent_quest_map_data_changed()",
+      "contents": "OnGameEvent_quest_map_data_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_objective_completed",
+      "annotation": "void OnGameEvent_quest_objective_completed()",
+      "contents": "OnGameEvent_quest_objective_completed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_progress",
+      "annotation": "void OnGameEvent_quest_progress()",
+      "contents": "OnGameEvent_quest_progress(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_request",
+      "annotation": "void OnGameEvent_quest_request()",
+      "contents": "OnGameEvent_quest_request(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_response",
+      "annotation": "void OnGameEvent_quest_response()",
+      "contents": "OnGameEvent_quest_response(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_quest_turn_in_state",
+      "annotation": "void OnGameEvent_quest_turn_in_state()",
+      "contents": "OnGameEvent_quest_turn_in_state(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_questlog_opened",
+      "annotation": "void OnGameEvent_questlog_opened()",
+      "contents": "OnGameEvent_questlog_opened(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ragdoll_dissolved",
+      "annotation": "void OnGameEvent_ragdoll_dissolved()",
+      "contents": "OnGameEvent_ragdoll_dissolved(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_raid_spawn_mob",
+      "annotation": "void OnGameEvent_raid_spawn_mob()",
+      "contents": "OnGameEvent_raid_spawn_mob(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_raid_spawn_squad",
+      "annotation": "void OnGameEvent_raid_spawn_squad()",
+      "contents": "OnGameEvent_raid_spawn_squad(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rd_player_score_points",
+      "annotation": "void OnGameEvent_rd_player_score_points()",
+      "contents": "OnGameEvent_rd_player_score_points(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rd_robot_impact",
+      "annotation": "void OnGameEvent_rd_robot_impact()",
+      "contents": "OnGameEvent_rd_robot_impact(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rd_robot_killed",
+      "annotation": "void OnGameEvent_rd_robot_killed()",
+      "contents": "OnGameEvent_rd_robot_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rd_rules_state_changed",
+      "annotation": "void OnGameEvent_rd_rules_state_changed()",
+      "contents": "OnGameEvent_rd_rules_state_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rd_team_points_changed",
+      "annotation": "void OnGameEvent_rd_team_points_changed()",
+      "contents": "OnGameEvent_rd_team_points_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_recalculate_holidays",
+      "annotation": "void OnGameEvent_recalculate_holidays()",
+      "contents": "OnGameEvent_recalculate_holidays(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_recalculate_truce",
+      "annotation": "void OnGameEvent_recalculate_truce()",
+      "contents": "OnGameEvent_recalculate_truce(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rematch_failed_to_create",
+      "annotation": "void OnGameEvent_rematch_failed_to_create()",
+      "contents": "OnGameEvent_rematch_failed_to_create(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rematch_vote_period_over",
+      "annotation": "void OnGameEvent_rematch_vote_period_over()",
+      "contents": "OnGameEvent_rematch_vote_period_over(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_remove_nemesis_relationships",
+      "annotation": "void OnGameEvent_remove_nemesis_relationships()",
+      "contents": "OnGameEvent_remove_nemesis_relationships(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_replay_saved",
+      "annotation": "void OnGameEvent_replay_saved()",
+      "contents": "OnGameEvent_replay_saved(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_replay_youtube_stats",
+      "annotation": "void OnGameEvent_replay_youtube_stats()",
+      "contents": "OnGameEvent_replay_youtube_stats(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_respawn_ghost",
+      "annotation": "void OnGameEvent_respawn_ghost()",
+      "contents": "OnGameEvent_respawn_ghost(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_restart_timer_time",
+      "annotation": "void OnGameEvent_restart_timer_time()",
+      "contents": "OnGameEvent_restart_timer_time(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_revive_player_complete",
+      "annotation": "void OnGameEvent_revive_player_complete()",
+      "contents": "OnGameEvent_revive_player_complete(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_revive_player_notify",
+      "annotation": "void OnGameEvent_revive_player_notify()",
+      "contents": "OnGameEvent_revive_player_notify(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_revive_player_stopped",
+      "annotation": "void OnGameEvent_revive_player_stopped()",
+      "contents": "OnGameEvent_revive_player_stopped(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rocket_jump",
+      "annotation": "void OnGameEvent_rocket_jump()",
+      "contents": "OnGameEvent_rocket_jump(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rocket_jump_landed",
+      "annotation": "void OnGameEvent_rocket_jump_landed()",
+      "contents": "OnGameEvent_rocket_jump_landed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rocketpack_landed",
+      "annotation": "void OnGameEvent_rocketpack_landed()",
+      "contents": "OnGameEvent_rocketpack_landed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rocketpack_launch",
+      "annotation": "void OnGameEvent_rocketpack_launch()",
+      "contents": "OnGameEvent_rocketpack_launch(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_round_end",
+      "annotation": "void OnGameEvent_round_end()",
+      "contents": "OnGameEvent_round_end(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_round_start",
+      "annotation": "void OnGameEvent_round_start()",
+      "contents": "OnGameEvent_round_start(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_rps_taunt_event",
+      "annotation": "void OnGameEvent_rps_taunt_event()",
+      "contents": "OnGameEvent_rps_taunt_event(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_schema_updated",
+      "annotation": "void OnGameEvent_schema_updated()",
+      "contents": "OnGameEvent_schema_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_scorestats_accumulated_reset",
+      "annotation": "void OnGameEvent_scorestats_accumulated_reset()",
+      "contents": "OnGameEvent_scorestats_accumulated_reset(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_scorestats_accumulated_update",
+      "annotation": "void OnGameEvent_scorestats_accumulated_update()",
+      "contents": "OnGameEvent_scorestats_accumulated_update(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_scout_grand_slam",
+      "annotation": "void OnGameEvent_scout_grand_slam()",
+      "contents": "OnGameEvent_scout_grand_slam(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_scout_slamdoll_landed",
+      "annotation": "void OnGameEvent_scout_slamdoll_landed()",
+      "contents": "OnGameEvent_scout_slamdoll_landed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_sentry_on_go_active",
+      "annotation": "void OnGameEvent_sentry_on_go_active()",
+      "contents": "OnGameEvent_sentry_on_go_active(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_addban",
+      "annotation": "void OnGameEvent_server_addban()",
+      "contents": "OnGameEvent_server_addban(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_cvar",
+      "annotation": "void OnGameEvent_server_cvar()",
+      "contents": "OnGameEvent_server_cvar(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_message",
+      "annotation": "void OnGameEvent_server_message()",
+      "contents": "OnGameEvent_server_message(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_removeban",
+      "annotation": "void OnGameEvent_server_removeban()",
+      "contents": "OnGameEvent_server_removeban(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_shutdown",
+      "annotation": "void OnGameEvent_server_shutdown()",
+      "contents": "OnGameEvent_server_shutdown(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_server_spawn",
+      "annotation": "void OnGameEvent_server_spawn()",
+      "contents": "OnGameEvent_server_spawn(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_show_annotation",
+      "annotation": "void OnGameEvent_show_annotation()",
+      "contents": "OnGameEvent_show_annotation(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_show_class_layout",
+      "annotation": "void OnGameEvent_show_class_layout()",
+      "contents": "OnGameEvent_show_class_layout(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_show_freezepanel",
+      "annotation": "void OnGameEvent_show_freezepanel()",
+      "contents": "OnGameEvent_show_freezepanel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_show_match_summary",
+      "annotation": "void OnGameEvent_show_match_summary()",
+      "contents": "OnGameEvent_show_match_summary(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_show_vs_panel",
+      "annotation": "void OnGameEvent_show_vs_panel()",
+      "contents": "OnGameEvent_show_vs_panel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_slap_notice",
+      "annotation": "void OnGameEvent_slap_notice()",
+      "contents": "OnGameEvent_slap_notice(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_spec_target_updated",
+      "annotation": "void OnGameEvent_spec_target_updated()",
+      "contents": "OnGameEvent_spec_target_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_special_score",
+      "annotation": "void OnGameEvent_special_score()",
+      "contents": "OnGameEvent_special_score(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_spy_pda_reset",
+      "annotation": "void OnGameEvent_spy_pda_reset()",
+      "contents": "OnGameEvent_spy_pda_reset(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_stats_resetround",
+      "annotation": "void OnGameEvent_stats_resetround()",
+      "contents": "OnGameEvent_stats_resetround(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_sticky_jump",
+      "annotation": "void OnGameEvent_sticky_jump()",
+      "contents": "OnGameEvent_sticky_jump(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_sticky_jump_landed",
+      "annotation": "void OnGameEvent_sticky_jump_landed()",
+      "contents": "OnGameEvent_sticky_jump_landed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_stop_watch_changed",
+      "annotation": "void OnGameEvent_stop_watch_changed()",
+      "contents": "OnGameEvent_stop_watch_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_store_pricesheet_updated",
+      "annotation": "void OnGameEvent_store_pricesheet_updated()",
+      "contents": "OnGameEvent_store_pricesheet_updated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_tagged_player_as_it",
+      "annotation": "void OnGameEvent_tagged_player_as_it()",
+      "contents": "OnGameEvent_tagged_player_as_it(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_team_info",
+      "annotation": "void OnGameEvent_team_info()",
+      "contents": "OnGameEvent_team_info(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_team_leader_killed",
+      "annotation": "void OnGameEvent_team_leader_killed()",
+      "contents": "OnGameEvent_team_leader_killed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_team_score",
+      "annotation": "void OnGameEvent_team_score()",
+      "contents": "OnGameEvent_team_score(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_alert",
+      "annotation": "void OnGameEvent_teamplay_alert()",
+      "contents": "OnGameEvent_teamplay_alert(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_broadcast_audio",
+      "annotation": "void OnGameEvent_teamplay_broadcast_audio()",
+      "contents": "OnGameEvent_teamplay_broadcast_audio(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_capture_blocked",
+      "annotation": "void OnGameEvent_teamplay_capture_blocked()",
+      "contents": "OnGameEvent_teamplay_capture_blocked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_capture_broken",
+      "annotation": "void OnGameEvent_teamplay_capture_broken()",
+      "contents": "OnGameEvent_teamplay_capture_broken(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_flag_event",
+      "annotation": "void OnGameEvent_teamplay_flag_event()",
+      "contents": "OnGameEvent_teamplay_flag_event(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_game_over",
+      "annotation": "void OnGameEvent_teamplay_game_over()",
+      "contents": "OnGameEvent_teamplay_game_over(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_map_time_remaining",
+      "annotation": "void OnGameEvent_teamplay_map_time_remaining()",
+      "contents": "OnGameEvent_teamplay_map_time_remaining(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_overtime_begin",
+      "annotation": "void OnGameEvent_teamplay_overtime_begin()",
+      "contents": "OnGameEvent_teamplay_overtime_begin(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_overtime_end",
+      "annotation": "void OnGameEvent_teamplay_overtime_end()",
+      "contents": "OnGameEvent_teamplay_overtime_end(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_point_captured",
+      "annotation": "void OnGameEvent_teamplay_point_captured()",
+      "contents": "OnGameEvent_teamplay_point_captured(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_point_locked",
+      "annotation": "void OnGameEvent_teamplay_point_locked()",
+      "contents": "OnGameEvent_teamplay_point_locked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_point_startcapture",
+      "annotation": "void OnGameEvent_teamplay_point_startcapture()",
+      "contents": "OnGameEvent_teamplay_point_startcapture(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_point_unlocked",
+      "annotation": "void OnGameEvent_teamplay_point_unlocked()",
+      "contents": "OnGameEvent_teamplay_point_unlocked(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_pre_round_time_left",
+      "annotation": "void OnGameEvent_teamplay_pre_round_time_left()",
+      "contents": "OnGameEvent_teamplay_pre_round_time_left(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_ready_restart",
+      "annotation": "void OnGameEvent_teamplay_ready_restart()",
+      "contents": "OnGameEvent_teamplay_ready_restart(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_restart_round",
+      "annotation": "void OnGameEvent_teamplay_restart_round()",
+      "contents": "OnGameEvent_teamplay_restart_round(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_active",
+      "annotation": "void OnGameEvent_teamplay_round_active()",
+      "contents": "OnGameEvent_teamplay_round_active(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_restart_seconds",
+      "annotation": "void OnGameEvent_teamplay_round_restart_seconds()",
+      "contents": "OnGameEvent_teamplay_round_restart_seconds(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_selected",
+      "annotation": "void OnGameEvent_teamplay_round_selected()",
+      "contents": "OnGameEvent_teamplay_round_selected(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_stalemate",
+      "annotation": "void OnGameEvent_teamplay_round_stalemate()",
+      "contents": "OnGameEvent_teamplay_round_stalemate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_start",
+      "annotation": "void OnGameEvent_teamplay_round_start()",
+      "contents": "OnGameEvent_teamplay_round_start(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_round_win",
+      "annotation": "void OnGameEvent_teamplay_round_win()",
+      "contents": "OnGameEvent_teamplay_round_win(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_setup_finished",
+      "annotation": "void OnGameEvent_teamplay_setup_finished()",
+      "contents": "OnGameEvent_teamplay_setup_finished(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_suddendeath_begin",
+      "annotation": "void OnGameEvent_teamplay_suddendeath_begin()",
+      "contents": "OnGameEvent_teamplay_suddendeath_begin(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_suddendeath_end",
+      "annotation": "void OnGameEvent_teamplay_suddendeath_end()",
+      "contents": "OnGameEvent_teamplay_suddendeath_end(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_team_ready",
+      "annotation": "void OnGameEvent_teamplay_team_ready()",
+      "contents": "OnGameEvent_teamplay_team_ready(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_teambalanced_player",
+      "annotation": "void OnGameEvent_teamplay_teambalanced_player()",
+      "contents": "OnGameEvent_teamplay_teambalanced_player(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_timer_flash",
+      "annotation": "void OnGameEvent_teamplay_timer_flash()",
+      "contents": "OnGameEvent_teamplay_timer_flash(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_timer_time_added",
+      "annotation": "void OnGameEvent_teamplay_timer_time_added()",
+      "contents": "OnGameEvent_teamplay_timer_time_added(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_update_timer",
+      "annotation": "void OnGameEvent_teamplay_update_timer()",
+      "contents": "OnGameEvent_teamplay_update_timer(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_waiting_abouttoend",
+      "annotation": "void OnGameEvent_teamplay_waiting_abouttoend()",
+      "contents": "OnGameEvent_teamplay_waiting_abouttoend(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_waiting_begins",
+      "annotation": "void OnGameEvent_teamplay_waiting_begins()",
+      "contents": "OnGameEvent_teamplay_waiting_begins(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_waiting_ends",
+      "annotation": "void OnGameEvent_teamplay_waiting_ends()",
+      "contents": "OnGameEvent_teamplay_waiting_ends(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teamplay_win_panel",
+      "annotation": "void OnGameEvent_teamplay_win_panel()",
+      "contents": "OnGameEvent_teamplay_win_panel(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_teams_changed",
+      "annotation": "void OnGameEvent_teams_changed()",
+      "contents": "OnGameEvent_teams_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_tf_game_over",
+      "annotation": "void OnGameEvent_tf_game_over()",
+      "contents": "OnGameEvent_tf_game_over(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_tf_map_time_remaining",
+      "annotation": "void OnGameEvent_tf_map_time_remaining()",
+      "contents": "OnGameEvent_tf_map_time_remaining(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_throwable_hit",
+      "annotation": "void OnGameEvent_throwable_hit()",
+      "contents": "OnGameEvent_throwable_hit(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_top_streams_request_finished",
+      "annotation": "void OnGameEvent_top_streams_request_finished()",
+      "contents": "OnGameEvent_top_streams_request_finished(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_tournament_enablecountdown",
+      "annotation": "void OnGameEvent_tournament_enablecountdown()",
+      "contents": "OnGameEvent_tournament_enablecountdown(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_tournament_stateupdate",
+      "annotation": "void OnGameEvent_tournament_stateupdate()",
+      "contents": "OnGameEvent_tournament_stateupdate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_training_complete",
+      "annotation": "void OnGameEvent_training_complete()",
+      "contents": "OnGameEvent_training_complete(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_update_status_item",
+      "annotation": "void OnGameEvent_update_status_item()",
+      "contents": "OnGameEvent_update_status_item(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_upgrades_file_changed",
+      "annotation": "void OnGameEvent_upgrades_file_changed()",
+      "contents": "OnGameEvent_upgrades_file_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_user_data_downloaded",
+      "annotation": "void OnGameEvent_user_data_downloaded()",
+      "contents": "OnGameEvent_user_data_downloaded(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_cast",
+      "annotation": "void OnGameEvent_vote_cast()",
+      "contents": "OnGameEvent_vote_cast(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_changed",
+      "annotation": "void OnGameEvent_vote_changed()",
+      "contents": "OnGameEvent_vote_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_ended",
+      "annotation": "void OnGameEvent_vote_ended()",
+      "contents": "OnGameEvent_vote_ended(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_failed",
+      "annotation": "void OnGameEvent_vote_failed()",
+      "contents": "OnGameEvent_vote_failed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_maps_changed",
+      "annotation": "void OnGameEvent_vote_maps_changed()",
+      "contents": "OnGameEvent_vote_maps_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_options",
+      "annotation": "void OnGameEvent_vote_options()",
+      "contents": "OnGameEvent_vote_options(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_passed",
+      "annotation": "void OnGameEvent_vote_passed()",
+      "contents": "OnGameEvent_vote_passed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_vote_started",
+      "annotation": "void OnGameEvent_vote_started()",
+      "contents": "OnGameEvent_vote_started(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_winlimit_changed",
+      "annotation": "void OnGameEvent_winlimit_changed()",
+      "contents": "OnGameEvent_winlimit_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_winpanel_show_scores",
+      "annotation": "void OnGameEvent_winpanel_show_scores()",
+      "contents": "OnGameEvent_winpanel_show_scores(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_world_status_changed",
+      "annotation": "void OnGameEvent_world_status_changed()",
+      "contents": "OnGameEvent_world_status_changed(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "ent.m_iHealth",
+      "annotation": "ent.m_iHealth",
+      "contents": "NetProps.GetPropInt(ent, 'm_iHealth')",
+      "kind": "keyword",
+      "details": "Gathers the health of a player."
     }
   ]
 }

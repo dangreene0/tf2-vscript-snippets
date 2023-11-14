@@ -1,0 +1,9 @@
+{
+    "ent.m_iHealth": {
+      "prefix": "ent.m_iHealth",
+      "body": [
+        "NetProps.GetPropInt(ent, 'm_iHealth')"
+      ],
+      "description": "Gathers the health of a player."
+    }
+}
