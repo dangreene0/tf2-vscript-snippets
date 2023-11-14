@@ -10,17 +10,18 @@ Source pages: [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script
 ## How to install for VSCode in editor
 1. Browse Extensions
 2. Search for `TF2 VScript Snippets`
+3. Click Install
 
-## How to manually install snippets from VSCode
+## How to manually install snippets into VSCode
 1. `Ctrl+Shift+P` to open command palette. Run `Snippets: Configure User Snippets`.
 2. Select the `squirrel` option.
 3. Replace the new document's text with the text of this repo's `squirrel.json`.
 
-## How to install snippets into Sublime Text from Repo (unmaintained)
-1. [Visit source code repo.](https://github.com/dangreene0/tf2-vscript-snippets)
-1. `Ctrl+Shift+P` to open command palette. Run `Preferences: Browse Packages`.
-2. In `User`, make a new folder called `tf2-snippets` containing the empty document `tf2-snippets.sublime-completions`.
-3. Replace the new document's text with the text of this repo's `tf2-snippets.sublime-completions`.
+## How to manually install snippets into Sublime
+1. [Visit source code repo.](https://github.com/dangreene0/tf2-vscript-snippets) and download `tf2-snippets.sublime-completions`.
+2. `Ctrl+Shift+P` to open command palette. Run `Preferences: Browse Packages`.
+3. In `User`, make a new folder called `tf2-snippets` containing the empty document `tf2-snippets.sublime-completions`.
+4. Replace the new document's text with the text of this repo's `tf2-snippets.sublime-completions`.
 
 ## Contributors
 - Zachary Talis
