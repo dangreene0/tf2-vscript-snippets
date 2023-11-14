@@ -11815,6 +11815,13 @@
     ],
     "description": ""
   },
+  "ent.m_iHealth": {
+    "prefix": "ent.m_iHealth",
+    "body": [
+      "NetProps.GetPropInt(ent, \"m_iHealth\")"
+    ],
+    "description": "Gathers the health of a player."
+  },
   "void OnGameEvent_achievement_earned()": {
     "prefix": "OnGameEvent_achievement_earned",
     "body": [
@@ -14460,12 +14467,5 @@
       "OnGameEvent_world_status_changed(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
-  },
-  "ent.m_iHealth": {
-    "prefix": "ent.m_iHealth",
-    "body": [
-      "NetProps.GetPropInt(ent, 'm_iHealth')"
-    ],
-    "description": "Gathers the health of a player."
   }
 }
