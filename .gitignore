@@ -4,4 +4,3 @@
 node_modules
 yarn-error.log
 *.vsix
-package-lock.json
