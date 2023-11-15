@@ -27,7 +27,7 @@
 			}
 		]
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@vscode/vsce": "^2.22.0"
 	},
 	"scripts": {
