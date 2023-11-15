@@ -1,0 +1,12 @@
+on: 
+  workflow_dispatch:
+
+jobs:
+  publish_extension:
+    name: Publish Extension
+    runs-on: [ubuntu-latest] 
+    steps:
+      - name: Publish
+        run: npm run deploy
+        env:
+          VSCE_PAT: ${{ secrets.MARKETPLACEAUTH }}

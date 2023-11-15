@@ -6,3 +6,4 @@ node_modules
 tf2-snippets.sublime-completions
 todo.md
 addendum
+package-lock.json
