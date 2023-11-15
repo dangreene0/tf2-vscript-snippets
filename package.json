@@ -31,6 +31,8 @@
 		"@vscode/vsce": "^2.22.0"
 	},
 	"scripts": {
-		"deploy": "vsce publish --yarn"
+		"build": "vsce package",
+		"deploy": "vsce publish"
+
 	}
 }

@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: 16.x
       - run: npm install
-      - name: Publish
+      - name: Build Package
+      run: npm run build
+      - name: Publish Package
         run: npm run deploy
         env:
           VSCE_PAT: ${{ secrets.MARKETPLACEAUTH }}
