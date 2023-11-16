@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 from json import dump, load
 from os import listdir, path
+from urllib.request import urlretrieve
 
 def main():
 
     try:
-        with open("defs.txt", "r", encoding="utf-8") as defs_file:
+        with open("data/defs.txt", "r", encoding="utf-8") as defs_file:
             defs_data = defs_file.read().split('\n')
     except IOError:
         print("Unable to locate defs file")
@@ -14,13 +15,53 @@ def main():
     functions = parse_defs(defs_data)
     sorted_keys = sorted(list(functions.keys()))# Good for comparing diffs
     function_registry = generate_snippet_format(sorted_keys, functions)
-
+    
+    netprops_json = get_netprops()
+    
     addendum_json = update_registry_addendum()
+    
     function_registry.update(addendum_json)
+    function_registry.update(netprops_json)
 
     with open("squirrel.json", "w", encoding="utf-8") as squirrel_json:
         dump(function_registry, squirrel_json, indent=2)
+def generate_netprop_snippets(netprops: list[str]) -> dict:
+    netprops_registry = {}
+    
+    for netprop in netprops:
+        netprop_entry = {
+            f"ent.{netprop}": {
+                "prefix": netprop,
+                "body": [
+                    f"NetProps.GetPropInt(ent, \"{netprop}\")"
+                ],
+                "description" : ""
+            }
+        }
+        
+        netprops_registry.update(netprop_entry)
+    return 
 
+def parse_datamaps():
+    print()
+    ## all the logic for going thru the datamaps txt.
+
+def get_netprops() -> dict:
+    netprops_url = "https://invalidvertex.com/tf2dump/netprops.txt"
+    datamaps_url = "https://invalidvertex.com/tf2dump/datamaps.txt"
+    
+    netprops = []
+
+    urlretrieve(netprops_url, "data/netprops.txt")
+    urlretrieve(datamaps_url, "data/datamaps.txt")
+    
+    parse_datamaps()
+    
+    generate_netprop_snippets(netprops)
+    
+    
+    return netprops
+    
 def update_registry_addendum() -> dict:
     '''
     ### Summary
