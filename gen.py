@@ -15,53 +15,115 @@ def main():
     functions = parse_defs(defs_data)
     sorted_keys = sorted(list(functions.keys()))# Good for comparing diffs
     function_registry = generate_snippet_format(sorted_keys, functions)
-    
-    netprops_json = get_netprops()
-    
+
+    get_ents()
+
     addendum_json = update_registry_addendum()
-    
+
     function_registry.update(addendum_json)
-    function_registry.update(netprops_json)
+    ## TODO sort the keys again
 
     with open("squirrel.json", "w", encoding="utf-8") as squirrel_json:
         dump(function_registry, squirrel_json, indent=2)
-def generate_netprop_snippets(netprops: list[str]) -> dict:
+
+def generate_netprop_snippets(netprops: list[dict]) -> dict:
     netprops_registry = {}
-    
+
     for netprop in netprops:
+        ent_name = netprop["ent"]
         netprop_entry = {
-            f"ent.{netprop}": {
-                "prefix": netprop,
+            f"ent.{ent_name}": {
+                "prefix": ent_name ,
                 "body": [
-                    f"NetProps.GetPropInt(ent, \"{netprop}\")"
+                    f"NetProps.GetPropInt(ent, \"{ent_name}\")"
                 ],
                 "description" : ""
             }
         }
-        
         netprops_registry.update(netprop_entry)
-    return 
+    return netprops_registry
 
-def parse_datamaps():
-    print()
-    ## all the logic for going thru the datamaps txt.
+def parse_netprops() -> tuple[list[str], dict]:
 
-def get_netprops() -> dict:
+    netprops_registry = []
+    try:
+        with open("data/netprops.txt", "r", encoding="utf-8") as ent_file:
+                netprops_data = ent_file.read().split('\n')
+    except IOError:
+        print("Unable to locate defs file")
+        quit()
+
+    for line in netprops_data:
+
+        supported_types = ["integer", "float", "vector", "string"] # shrug emoji
+        ent = ""
+        type = ""
+        existing_ents = []
+
+        line = line.split()
+        for word in line:
+            if word.startswith("m_") or word.startswith("move"):
+                if word[-1] != ")":
+                    ent = word
+            if ent in existing_ents:
+                continue
+            if "(type" == word and ent != "":
+                type_index = line.index(word) + 1
+                type = line[type_index][:-1]
+
+            if ent != "" and type != "":
+                netprop = {
+                    "ent": ent,
+                    "type": type
+                }
+                existing_ents.append(ent)
+                netprops_registry.append(netprop)
+
+    return existing_ents, netprops_registry
+
+def parse_datamaps(existing_ents: list[str]) -> dict:
+    '''
+    I don't know what types these are supposed to be. So they're integers by default.
+    '''
+    try:
+        with open("data/datamaps.txt", "r", encoding="utf-8") as ent_file:
+                datamaps_data = ent_file.read().split('\n')
+    except IOError:
+        print("Unable to locate defs file")
+        quit()
+
+    datamaps_registry = []
+
+    for line in datamaps_data:
+        line = line.split()
+        for word in line:
+            if word.startswith("m_"):
+                if word not in existing_ents:
+                    datamap = {
+                        "ent": word,
+                        "type": "integer"
+                    }
+                    existing_ents.append(word)
+                    datamaps_registry.append(datamap)
+
+    return datamaps_registry
+
+def get_ents() -> dict:
     netprops_url = "https://invalidvertex.com/tf2dump/netprops.txt"
     datamaps_url = "https://invalidvertex.com/tf2dump/datamaps.txt"
-    
-    netprops = []
 
+    netprops_snippets = []
     urlretrieve(netprops_url, "data/netprops.txt")
     urlretrieve(datamaps_url, "data/datamaps.txt")
-    
-    parse_datamaps()
-    
-    generate_netprop_snippets(netprops)
-    
-    
-    return netprops
-    
+
+    netprops_ents, netprops_registry = parse_netprops()
+    netprops_registry.extend(parse_datamaps(netprops_ents))
+
+    netprops_snippets = generate_netprop_snippets(netprops_registry)
+
+    with open("addendum/netprops.json", "w", encoding="utf-8") as netprops_json:
+            dump(netprops_snippets, netprops_json, indent=2)
+
 def update_registry_addendum() -> dict:
     '''
     ### Summary
