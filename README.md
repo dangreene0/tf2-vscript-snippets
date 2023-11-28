@@ -1,27 +1,13 @@
-# tf2-vscript-snippets
+# TF2 VScript Snippets
+Converts TF2 VScript function definitions into VSCode Compatible and Sublime Snippets.
 
-Converts TF2 VScript function definitions into VSCode Code Snippets.
-Source pages: [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script_Functions) and [here](https://developer.valvesoftware.com/wiki/List_of_TF2_Script_Functions/Constants).
+For more information, visit the Valve Developer Wiki on TF2's [Functions](https://developer.valvesoftware.com/wiki/List_of_TF2_Script_Functions) and [Constants](https://developer.valvesoftware.com/wiki/List_of_TF2_Script_Functions/Constants).
 
-## How to install for VSCode from Marketplace
-1. [Visit Extension page](https://marketplace.visualstudio.com/items?itemName=SourDani.tf2-vscript-snippets)
-2. Click Install
+## TODO List
+[Please check the TODO list](https://github.com/dangreene0/tf2-vscript-snippets/wiki/TODO) *before* leaving [issues.](https://github.com/dangreene0/tf2-vscript-snippets/issues)
 
-## How to install for VSCode in editor
-1. Browse Extensions
-2. Search for `TF2 VScript Snippets`
-3. Click Install
-
-## How to manually install snippets into VSCode
-1. `Ctrl+Shift+P` to open command palette. Run `Snippets: Configure User Snippets`.
-2. Select the `squirrel` option.
-3. Replace the new document's text with the text of this repo's `squirrel.json`.
-
-## How to manually install snippets into Sublime
-1. [Visit source code repo.](https://github.com/dangreene0/tf2-vscript-snippets) and download `tf2-snippets.sublime-completions`.
-2. `Ctrl+Shift+P` to open command palette. Run `Preferences: Browse Packages`.
-3. In `User`, make a new folder called `tf2-snippets` containing the empty document `tf2-snippets.sublime-completions`.
-4. Replace the new document's text with the text of this repo's `tf2-snippets.sublime-completions`.
+## Installation instructions
+[Visit the Wiki](https://github.com/dangreene0/tf2-vscript-snippets/wiki/install)  for more information on how to install in various editors.
 
 ## Contributors
 - Zachary Talis

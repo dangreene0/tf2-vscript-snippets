@@ -1,0 +1,4 @@
+## Downloads
+- [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=SourDani.tf2-vscript-snippets)
+- [Open VSX](https://open-vsx.org/extension/SourDani/tf2-vscript-snippets)
+## Changelog
