@@ -5,10 +5,10 @@ on:
 jobs:
   publish_extension:
     name: Publish Extension
-    runs-on: [ubuntu-latest] 
+    runs-on: [ubuntu-latest]
     permissions:
       contents: write
-  
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,18 +19,20 @@ jobs:
           node-version: 16.x
       - run: npm install
 
-      - name: Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
-        id: publishToOpenVSX
-        with:
-          pat: ${{ secrets.VSXAUTH }}
+      - name: Build Package
+        run: npm run build
+      # - name: Publish to Open VSX Registry
+      #   uses: HaaLeo/publish-vscode-extension@v1
+      #   id: publishToOpenVSX
+      #   with:
+      #     pat: ${{ secrets.VSXAUTH }}
 
-      - name: Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.MARKETPLACEAUTH}}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+      # - name: Publish to Visual Studio Marketplace
+      #   uses: HaaLeo/publish-vscode-extension@v1
+      #   with:
+      #     pat: ${{ secrets.MARKETPLACEAUTH}}
+      #     registryUrl: https://marketplace.visualstudio.com
+      #     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 
       - name: Get package info
         id: package
@@ -42,11 +44,6 @@ jobs:
           draft: true
           name: Extension Release ${{ steps.package.outputs.version }}
           tag_name: ${{ steps.package.outputs.version }}
-          body_path: https://raw.githubusercontent.com/wiki/dangreene0/tf2-vscript-snippets/releasetemplate.md
-          repository: dangreene0/tf2-vscript-snippets
-          token: ${{ secrets.GITHUBAUTH}}
-          files: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
-        env:
-          GITHUB_REPOSITORY: dangreene0/tf2-vscript-snippets
-          GITHUB_TOKEN: ${{ secrets.GITHUBAUTH}}
-      
+          body_path: .github/release.txt
+          files: SourDani.tf2-vscript-snippets-1.0.4.vsix
+
