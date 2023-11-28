@@ -6,6 +6,9 @@ jobs:
   publish_extension:
     name: Publish Extension
     runs-on: [ubuntu-latest] 
+    permissions:
+      contents: write
+  
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,3 +31,22 @@ jobs:
           pat: ${{ secrets.MARKETPLACEAUTH}}
           registryUrl: https://marketplace.visualstudio.com
           extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+
+      - name: Get package info
+          id: package
+          uses: codex-team/action-nodejs-package-info@v1.1
+
+      - name: Publish Release
+          uses: softprops/action-gh-release@v1
+          with:
+            draft: true
+            name: Extension Release ${{ steps.package.outputs.version }}
+            tag_name: ${{ steps.package.outputs.version }}
+            body_path: https://raw.githubusercontent.com/wiki/dangreene0/tf2-vscript-snippets/releasetemplate.md
+            repository: dangreene0/tf2-vscript-snippets
+            token: ${{ secrets.GITHUBAUTH}}
+            files: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+          env:
+            GITHUB_REPOSITORY: dangreene0/tf2-vscript-snippets
+            GITHUB_TOKEN: ${{ secrets.GITHUBAUTH}}
+        
