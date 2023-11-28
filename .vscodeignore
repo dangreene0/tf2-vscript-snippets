@@ -1,9 +1,10 @@
-.vscode/**
+.vscode
+.github
+node_modules
+addendum
+
 .gitignore
 *.py
 defs.txt
-node_modules
 tf2-snippets.sublime-completions
-todo.md
-addendum
 package-lock.json

@@ -1,6 +1,8 @@
 .vscode
+node_modules
+
 *.nut
 .DS_Store
-node_modules
 yarn-error.log
 *.vsix
+package-lock.json
