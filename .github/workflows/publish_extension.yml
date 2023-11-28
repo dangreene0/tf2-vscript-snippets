@@ -33,20 +33,20 @@ jobs:
           extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 
       - name: Get package info
-          id: package
-          uses: codex-team/action-nodejs-package-info@v1.1
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1.1
 
       - name: Publish Release
-          uses: softprops/action-gh-release@v1
-          with:
-            draft: true
-            name: Extension Release ${{ steps.package.outputs.version }}
-            tag_name: ${{ steps.package.outputs.version }}
-            body_path: https://raw.githubusercontent.com/wiki/dangreene0/tf2-vscript-snippets/releasetemplate.md
-            repository: dangreene0/tf2-vscript-snippets
-            token: ${{ secrets.GITHUBAUTH}}
-            files: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
-          env:
-            GITHUB_REPOSITORY: dangreene0/tf2-vscript-snippets
-            GITHUB_TOKEN: ${{ secrets.GITHUBAUTH}}
-        
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          name: Extension Release ${{ steps.package.outputs.version }}
+          tag_name: ${{ steps.package.outputs.version }}
+          body_path: https://raw.githubusercontent.com/wiki/dangreene0/tf2-vscript-snippets/releasetemplate.md
+          repository: dangreene0/tf2-vscript-snippets
+          token: ${{ secrets.GITHUBAUTH}}
+          files: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+        env:
+          GITHUB_REPOSITORY: dangreene0/tf2-vscript-snippets
+          GITHUB_TOKEN: ${{ secrets.GITHUBAUTH}}
+      
