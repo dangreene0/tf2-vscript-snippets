@@ -17,22 +17,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - run: npm install
+      - run: npm ci
 
-      - name: Build Package
-        run: npm run build
-      # - name: Publish to Open VSX Registry
-      #   uses: HaaLeo/publish-vscode-extension@v1
-      #   id: publishToOpenVSX
-      #   with:
-      #     pat: ${{ secrets.VSXAUTH }}
+      - name: Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v1
+        id: publishToOpenVSX
+        with:
+          pat: ${{ secrets.VSXAUTH }}
 
-      # - name: Publish to Visual Studio Marketplace
-      #   uses: HaaLeo/publish-vscode-extension@v1
-      #   with:
-      #     pat: ${{ secrets.MARKETPLACEAUTH}}
-      #     registryUrl: https://marketplace.visualstudio.com
-      #     extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.MARKETPLACEAUTH}}
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
 
       - name: Get package info
         id: package
@@ -45,5 +43,4 @@ jobs:
           name: Extension Release ${{ steps.package.outputs.version }}
           tag_name: ${{ steps.package.outputs.version }}
           body_path: .github/release.txt
-          files: SourDani.tf2-vscript-snippets-1.0.4.vsix
-
+          files: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
