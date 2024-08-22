@@ -44,6 +44,13 @@
       "details": "262144"
     },
     {
+      "trigger": "AcceptInput",
+      "annotation": "bool AcceptInput(string input, string param, handle activator, handle caller)",
+      "contents": "AcceptInput(${1:string input}, ${2:string param}, ${3:handle activator}, ${4:handle caller})$0",
+      "kind": "keyword",
+      "details": "caller) \tGenerate a synchronous I/O event. Unlike EntFireByHandle, this is processed immediately. Returns false if input is a null/empty string, or if the input wasn't handled."
+    },
+    {
       "trigger": "AddAttribute",
       "annotation": "void AddAttribute(string name, float value, float duration)",
       "contents": "AddAttribute(${1:string name}, ${2:float value}, ${3:float duration})$0",
@@ -90,7 +97,7 @@
       "annotation": "void AddCurrency(int amount)",
       "contents": "AddCurrency(${1:int amount})$0",
       "kind": "keyword",
-      "details": "Kaching! Give the player some cash for game modes with upgrades, ie. MvM"
+      "details": "Kaching! Give the player some cash for game modes with upgrades, ie. MvM. The new value is bounded between 0-30000."
     },
     {
       "trigger": "AddCustomAttribute",
@@ -122,8 +129,8 @@
     },
     {
       "trigger": "AddIncomingConnection",
-      "annotation": "void AddIncomingConnection(handle area, int dir)",
-      "contents": "AddIncomingConnection(${1:handle area}, ${2:int dir})$0",
+      "annotation": "void AddIncomingConnection(handle area, ENavDirType dir)",
+      "contents": "AddIncomingConnection(${1:handle area}, ${2:ENavDirType dir})$0",
       "kind": "keyword",
       "details": "Add areas that connect TO this area by a ONE-WAY link"
     },
@@ -143,17 +150,17 @@
     },
     {
       "trigger": "AddTemplate",
-      "annotation": "void AddTemplate(string, table)",
-      "contents": "AddTemplate(${1:string}, ${2:table})$0",
+      "annotation": "void AddTemplate(string classname, table keyvalues)",
+      "contents": "AddTemplate(${1:string classname}, ${2:table keyvalues})$0",
       "kind": "keyword",
-      "details": "Add an entity to the template spawner"
+      "details": "Add an entity with the given keyvalues to the template spawner, similar to SpawnEntityFromTable. The number of templates allowed is unlimited."
     },
     {
       "trigger": "AddThinkToEnt",
       "annotation": "void AddThinkToEnt(handle entity, string FuncName)",
       "contents": "AddThinkToEnt(${1:handle entity}, ${2:string FuncName})$0",
       "kind": "keyword",
-      "details": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function"
+      "details": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function. TF2 runs at 66 ticks per second, so the lowest possible interval is 0.015 seconds. Set to -1 to think every tick."
     },
     {
       "trigger": "AddToScriptHelp",
@@ -786,6 +793,13 @@
       "details": "Clear TF-specific area attribute bits."
     },
     {
+      "trigger": "ClearBehaviorFlag",
+      "annotation": "void ClearBehaviorFlag(int flags)",
+      "contents": "ClearBehaviorFlag(${1:int flags})$0",
+      "kind": "keyword",
+      "details": "clear the given behavior flag(s) for this bot. Does not work."
+    },
+    {
       "trigger": "ClearCustomModelRotation",
       "annotation": "void ClearCustomModelRotation()",
       "contents": "ClearCustomModelRotation()$0",
@@ -898,9 +912,16 @@
       "details": "Adds an I/O connection that will call the named function when the specified output fires."
     },
     {
+      "trigger": "ConnectOutputs",
+      "annotation": "void ConnectOutputs(handle scope)",
+      "contents": "ConnectOutputs(${1:handle scope})$0",
+      "kind": "keyword",
+      "details": "Global function called after an entity with an script assigned spawns (i.e. vscripts keyvalue is not blank). Unlike OnPostSpawn, this is called immediately and therefore on map respawn, some entities may not exist during this point."
+    },
+    {
       "trigger": "ConnectTo",
-      "annotation": "void ConnectTo(handle area, int dir)",
-      "contents": "ConnectTo(${1:handle area}, ${2:int dir})$0",
+      "annotation": "void ConnectTo(handle area, ENavDirType dir)",
+      "contents": "ConnectTo(${1:handle area}, ${2:ENavDirType dir})$0",
       "kind": "keyword",
       "details": "Connect this area to given area in given direction."
     },
@@ -979,7 +1000,7 @@
       "annotation": "DMG_ACID",
       "contents": "DMG_ACID$0",
       "kind": "keyword",
-      "details": "1048576"
+      "details": "1048576, Crit damage."
     },
     {
       "trigger": "DMG_AIRBOAT",
@@ -1091,14 +1112,14 @@
       "annotation": "DMG_GENERIC",
       "contents": "DMG_GENERIC$0",
       "kind": "keyword",
-      "details": "0"
+      "details": "null, This is supposed to be 0."
     },
     {
       "trigger": "DMG_NERVEGAS",
       "annotation": "DMG_NERVEGAS",
       "contents": "DMG_NERVEGAS$0",
       "kind": "keyword",
-      "details": "65536"
+      "details": "65536, Sawblade damage."
     },
     {
       "trigger": "DMG_NEVERGIB",
@@ -1175,7 +1196,7 @@
       "annotation": "DMG_SLOWBURN",
       "contents": "DMG_SLOWBURN$0",
       "kind": "keyword",
-      "details": "2097152"
+      "details": "2097152, Bullet falloff damage."
     },
     {
       "trigger": "DMG_SONIC",
@@ -1189,7 +1210,7 @@
       "annotation": "DMG_VEHICLE",
       "contents": "DMG_VEHICLE$0",
       "kind": "keyword",
-      "details": "16"
+      "details": "16, Train damage."
     },
     {
       "trigger": "DOWN",
@@ -1242,8 +1263,8 @@
     },
     {
       "trigger": "DebugDrawLine",
-      "annotation": "void DebugDrawLine(Vector start, Vector end, int red, int green, int blue', bool zTest, float time)",
-      "contents": "DebugDrawLine(${1:Vector start}, ${2:Vector end}, ${3:int red}, ${4:int green}, ${5:int blue'}, ${6:bool zTest}, ${7:float time})$0",
+      "annotation": "void DebugDrawLine(Vector start, Vector end, int red, int green, int blue, bool zTest, float time)",
+      "contents": "DebugDrawLine(${1:Vector start}, ${2:Vector end}, ${3:int red}, ${4:int green}, ${5:int blue}, ${6:bool zTest}, ${7:float time})$0",
       "kind": "keyword",
       "details": "Draw a debug overlay line."
     },
@@ -1305,8 +1326,8 @@
     },
     {
       "trigger": "DisconnectOutput",
-      "annotation": "void DisconnectOutput(string, string)",
-      "contents": "DisconnectOutput(${1:string}, ${2:string})$0",
+      "annotation": "void DisconnectOutput(string output, string function)",
+      "contents": "DisconnectOutput(${1:string output}, ${2:string function})$0",
       "kind": "keyword",
       "details": "Removes a connected script function from an I/O event."
     },
@@ -1315,14 +1336,14 @@
       "annotation": "void DispatchAnimEvents(handle entity)",
       "contents": "DispatchAnimEvents(${1:handle entity})$0",
       "kind": "keyword",
-      "details": "Dispatch animation events to a CBaseAnimating"
+      "details": "Dispatch animation events to a CBaseAnimating entity."
     },
     {
       "trigger": "DispatchParticleEffect",
       "annotation": "void DispatchParticleEffect(string name, Vector origin, Vector angles)",
       "contents": "DispatchParticleEffect(${1:string name}, ${2:Vector origin}, ${3:Vector angles})$0",
       "kind": "keyword",
-      "details": "Dispatches a one-off particle system"
+      "details": "Dispatches a one-off particle system. To pass angles into this, use the .Forward() method on a QAngle."
     },
     {
       "trigger": "DispatchSpawn",
@@ -1350,7 +1371,7 @@
       "annotation": "void DoAttackTaunt()",
       "contents": "DoAttackTaunt()$0",
       "kind": "keyword",
-      "details": "Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (taunt attack name attribute)"
+      "details": "Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (\\\"taunt attack name\\\" attribute)"
     },
     {
       "trigger": "DoUniqueString",
@@ -1753,8 +1774,8 @@
     },
     {
       "trigger": "EmitSound",
-      "annotation": "void EmitSound(string)",
-      "contents": "EmitSound(${1:string})$0",
+      "annotation": "void EmitSound(string soundname)",
+      "contents": "EmitSound(${1:string soundname})$0",
       "kind": "keyword",
       "details": "Plays a sound from this entity."
     },
@@ -1812,14 +1833,14 @@
       "annotation": "void EntFire(string target, string action, string value = null, float delay = 0, handle activator = null)",
       "contents": "EntFire(${1:string target}, ${2:string action}, ${3:string value = null}, ${4:float delay = 0}, ${5:handle activator = null})$0",
       "kind": "keyword",
-      "details": "Wrapper for DoEntFire() that setsactivator to null, but has no caller param."
+      "details": "Wrapper for DoEntFire() that setsactivator to null, but has nocallerparam. Negative delays are clamped to 0."
     },
     {
       "trigger": "EntFireByHandle",
       "annotation": "void EntFireByHandle(handle entity, string action, string value, float delay, handle activator, handle caller)",
       "contents": "EntFireByHandle(${1:handle entity}, ${2:string action}, ${3:string value}, ${4:float delay}, ${5:handle activator}, ${6:handle caller})$0",
       "kind": "keyword",
-      "details": "Generate and entity i/o event. First parameter is an entity instance."
+      "details": "Generate an entity I/O event. First parameter is an entity instance. Negative delays are clamped to 0."
     },
     {
       "trigger": "EntIndexToHScript",
@@ -2442,7 +2463,7 @@
       "annotation": "float FrameTime()",
       "contents": "FrameTime()$0",
       "kind": "keyword",
-      "details": "Get the time spent on the server in the last frame"
+      "details": "Get the time spent on the server in the last frame. Usually this will be 0.015 (the default tickrate)"
     },
     {
       "trigger": "GO_EAST",
@@ -2519,14 +2540,14 @@
       "annotation": "GR_STATE_BETWEEN_RNDS",
       "contents": "GR_STATE_BETWEEN_RNDS$0",
       "kind": "keyword",
-      "details": "10"
+      "details": "10, This constant entry is missing!"
     },
     {
       "trigger": "GR_STATE_BONUS",
       "annotation": "GR_STATE_BONUS",
       "contents": "GR_STATE_BONUS$0",
       "kind": "keyword",
-      "details": "9"
+      "details": "9, This constant entry is missing!"
     },
     {
       "trigger": "GR_STATE_GAME_OVER",
@@ -2641,6 +2662,13 @@
       "details": "Returns the current absolute velocity of the entity"
     },
     {
+      "trigger": "GetActionPoint",
+      "annotation": "handle GetActionPoint()",
+      "contents": "GetActionPoint()$0",
+      "kind": "keyword",
+      "details": "Get the given action point for this bot"
+    },
+    {
       "trigger": "GetActiveWeapon",
       "annotation": "handle GetActiveWeapon()",
       "contents": "GetActiveWeapon()$0",
@@ -2649,22 +2677,22 @@
     },
     {
       "trigger": "GetAdjacentArea",
-      "annotation": "handle GetAdjacentArea(int dir, int n)",
-      "contents": "GetAdjacentArea(${1:int dir}, ${2:int n})$0",
+      "annotation": "handle GetAdjacentArea(ENavDirType dir, int n)",
+      "contents": "GetAdjacentArea(${1:ENavDirType dir}, ${2:int n})$0",
       "kind": "keyword",
       "details": "Return the n'th adjacent area in the given direction."
     },
     {
       "trigger": "GetAdjacentAreas",
-      "annotation": "void GetAdjacentAreas(int dir, handle table)",
-      "contents": "GetAdjacentAreas(${1:int dir}, ${2:handle table})$0",
+      "annotation": "void GetAdjacentAreas(ENavDirType dir, handle table)",
+      "contents": "GetAdjacentAreas(${1:ENavDirType dir}, ${2:handle table})$0",
       "kind": "keyword",
       "details": "Fills a passed in table with all adjacent areas in the given direction."
     },
     {
       "trigger": "GetAdjacentCount",
-      "annotation": "int GetAdjacentCount(int dir)",
-      "contents": "GetAdjacentCount(${1:int dir})$0",
+      "annotation": "int GetAdjacentCount(ENavDirType dir)",
+      "contents": "GetAdjacentCount(${1:ENavDirType dir})$0",
       "kind": "keyword",
       "details": "Get the number of adjacent areas in the given direction."
     },
@@ -2674,6 +2702,13 @@
       "contents": "GetAllAreas(${1:handle table})$0",
       "kind": "keyword",
       "details": "fills a passed in table of all nav areas"
+    },
+    {
+      "trigger": "GetAllBotTags",
+      "annotation": "void GetAllBotTags(handle table)",
+      "contents": "GetAllBotTags(${1:handle table})$0",
+      "kind": "keyword",
+      "details": "Get all bot tags. The key is the index, and the value is the tag"
     },
     {
       "trigger": "GetAngles",
@@ -2718,6 +2753,13 @@
       "details": "Get an attachment's origin as a Vector, by ID."
     },
     {
+      "trigger": "GetAttribute",
+      "annotation": "float GetAttribute(string name, float default_value)",
+      "contents": "GetAttribute(${1:string name}, ${2:float default_value})$0",
+      "kind": "keyword",
+      "details": "Get an attribute float from the entity. If the attribute does not exist, returns default_value."
+    },
+    {
       "trigger": "GetAttributes",
       "annotation": "int GetAttributes()",
       "contents": "GetAttributes()$0",
@@ -2743,7 +2785,7 @@
       "annotation": "Vector GetBaseVelocity()",
       "contents": "GetBaseVelocity()$0",
       "kind": "keyword",
-      "details": "Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like enttrigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects."
+      "details": "Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like trigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects."
     },
     {
       "trigger": "GetBodyInterface",
@@ -3219,7 +3261,7 @@
       "annotation": "int GetHudHideFlags()",
       "contents": "GetHudHideFlags()$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Gets current hidden hud elements"
     },
     {
       "trigger": "GetID",
@@ -3244,8 +3286,8 @@
     },
     {
       "trigger": "GetIncomingConnections",
-      "annotation": "void GetIncomingConnections(int dir, handle table)",
-      "contents": "GetIncomingConnections(${1:int dir}, ${2:handle table})$0",
+      "annotation": "void GetIncomingConnections(ENavDirType dir, handle table)",
+      "contents": "GetIncomingConnections(${1:ENavDirType dir}, ${2:handle table})$0",
       "kind": "keyword",
       "details": "Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them)."
     },
@@ -3314,7 +3356,7 @@
     },
     {
       "trigger": "GetLastWeapon",
-      "annotation": "GetLastWeapon()",
+      "annotation": "handle GetLastWeapon()",
       "contents": "GetLastWeapon()$0",
       "kind": "keyword",
       "details": ""
@@ -3331,7 +3373,7 @@
       "annotation": "handle GetListenServerHost()",
       "contents": "GetListenServerHost()$0",
       "kind": "keyword",
-      "details": "Get the local player on a listen server."
+      "details": "Get the local player on a listen server. Returns null on dedicated servers."
     },
     {
       "trigger": "GetLocalAngles",
@@ -3425,6 +3467,20 @@
       "details": "Gets the max vision range override for the bot"
     },
     {
+      "trigger": "GetMission",
+      "annotation": "int GetMission()",
+      "contents": "GetMission()$0",
+      "kind": "keyword",
+      "details": "Get this bot's current mission. Does not work."
+    },
+    {
+      "trigger": "GetMissionTarget",
+      "annotation": "handle GetMissionTarget()",
+      "contents": "GetMissionTarget()$0",
+      "kind": "keyword",
+      "details": "Get this bot's current mission target"
+    },
+    {
       "trigger": "GetModelIndex",
       "annotation": "int GetModelIndex(string filename)",
       "contents": "GetModelIndex(${1:string filename})$0",
@@ -3478,7 +3534,7 @@
       "annotation": "string GetName()",
       "contents": "GetName()$0",
       "kind": "keyword",
-      "details": "Gets the weapon's name"
+      "details": "Gets the weapon's internal name (not the targetname!)"
     },
     {
       "trigger": "GetNavArea",
@@ -3705,6 +3761,13 @@
       "details": "Get the entity name stripped of template unique decoration"
     },
     {
+      "trigger": "GetPrevMission",
+      "annotation": "int GetPrevMission()",
+      "contents": "GetPrevMission()$0",
+      "kind": "keyword",
+      "details": "Get's this bot's previous mission. Does not work."
+    },
+    {
       "trigger": "GetPrimaryAmmoCount",
       "annotation": "int GetPrimaryAmmoCount()",
       "contents": "GetPrimaryAmmoCount()$0",
@@ -3839,8 +3902,8 @@
     },
     {
       "trigger": "GetRandomAdjacentArea",
-      "annotation": "handle GetRandomAdjacentArea(int dir)",
-      "contents": "GetRandomAdjacentArea(${1:int dir})$0",
+      "annotation": "handle GetRandomAdjacentArea(ENavDirType dir)",
+      "contents": "GetRandomAdjacentArea(${1:ENavDirType dir})$0",
       "kind": "keyword",
       "details": "Return a random adjacent area in the given direction."
     },
@@ -3961,7 +4024,7 @@
       "annotation": "string GetSequenceName(int ID)",
       "contents": "GetSequenceName(${1:int ID})$0",
       "kind": "keyword",
-      "details": "Get a sequence name by sequence ID."
+      "details": "Get a sequence name by sequence ID. Returns \\\"Not Found!\\\" if ID is -1, \\\"Unknown\\\" if the sequence doesn't exist or \\\"No model!\\\" if no model is assigned."
     },
     {
       "trigger": "GetSizeX",
@@ -4468,6 +4531,13 @@
       "details": "3"
     },
     {
+      "trigger": "HandleTauntCommand",
+      "annotation": "void HandleTauntCommand(int taunt_slot)",
+      "contents": "HandleTauntCommand(${1:int taunt_slot})$0",
+      "kind": "keyword",
+      "details": "Spootfs a taunt command from the player, as if they selected this taunt."
+    },
+    {
       "trigger": "HasAction",
       "annotation": "bool HasAction(handle entity, string outputName)",
       "contents": "HasAction(${1:handle entity}, ${2:string outputName})$0",
@@ -4522,6 +4592,13 @@
       "contents": "HasItem()$0",
       "kind": "keyword",
       "details": "Currently holding an item? Eg. capture flag"
+    },
+    {
+      "trigger": "HasMission",
+      "annotation": "bool HasMission(int mission)",
+      "contents": "HasMission(${1:int mission})$0",
+      "kind": "keyword",
+      "details": "Return true if the given mission is this bot's current mission. Does not work."
     },
     {
       "trigger": "HasOutput",
@@ -4787,7 +4864,7 @@
       "annotation": "void IgnitePlayer()",
       "contents": "IgnitePlayer()$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Supposed to set the player on fire, but... does nothing except play on-fire sound and voicelines."
     },
     {
       "trigger": "InAirDueToExplosion",
@@ -4937,6 +5014,13 @@
       "details": "Is our attention focused on this entity"
     },
     {
+      "trigger": "IsBehaviorFlagSet",
+      "annotation": "bool IsBehaviorFlagSet(int flags)",
+      "contents": "IsBehaviorFlagSet(${1:int flags})$0",
+      "kind": "keyword",
+      "details": "Return true if the given behavior flag(s) are set for this bot. Does not work."
+    },
+    {
       "trigger": "IsBirthday",
       "annotation": "bool IsBirthday()",
       "contents": "IsBirthday()$0",
@@ -4955,7 +5039,7 @@
       "annotation": "bool IsBotOfType(int type)",
       "contents": "IsBotOfType(${1:int type})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Returns true if the player matches this bot type. Only one type of bot exists which is reserved for AI bots (not puppet bots): TF_BOT_TYPE. 0 is used for real players or puppet bots. Use IsFakeClient to check for a puppet bot instead."
     },
     {
       "trigger": "IsBottleneck",
@@ -5015,8 +5099,8 @@
     },
     {
       "trigger": "IsConnected",
-      "annotation": "bool IsConnected(handle area, int dir)",
-      "contents": "IsConnected(${1:handle area}, ${2:int dir})$0",
+      "annotation": "bool IsConnected(handle area, ENavDirType dir)",
+      "contents": "IsConnected(${1:handle area}, ${2:ENavDirType dir})$0",
       "kind": "keyword",
       "details": "Return true if this area is connected to other area in given direction. (If you set direction to -1 or 4, it will automatically check all directions for a connection)."
     },
@@ -5109,7 +5193,7 @@
       "annotation": "bool IsFakeClient()",
       "contents": "IsFakeClient()$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Returns true if the player is a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead."
     },
     {
       "trigger": "IsFireproof",
@@ -5151,7 +5235,7 @@
       "annotation": "bool IsGap(Vector pos, Vector forward)",
       "contents": "IsGap(${1:Vector pos}, ${2:Vector forward})$0",
       "kind": "keyword",
-      "details": "Return true if there is a gap at this position."
+      "details": "Return true if there is a gap at this position. forward is unused."
     },
     {
       "trigger": "IsHolidayActive",
@@ -5315,6 +5399,13 @@
       "details": "Returns true if the player is in noclip mode."
     },
     {
+      "trigger": "IsOnAnyMission",
+      "annotation": "bool IsOnAnyMission()",
+      "contents": "IsOnAnyMission()$0",
+      "kind": "keyword",
+      "details": "Return true if this bot has a current mission"
+    },
+    {
       "trigger": "IsOnGround",
       "annotation": "bool IsOnGround()",
       "contents": "IsOnGround()$0",
@@ -5382,7 +5473,7 @@
       "annotation": "bool IsPlayerABot(handle player)",
       "contents": "IsPlayerABot(${1:handle player})$0",
       "kind": "keyword",
-      "details": "Is this player/entity a bot."
+      "details": "Is this player/entity a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead."
     },
     {
       "trigger": "IsPlayerSpeaking",
@@ -5627,7 +5718,7 @@
       "annotation": "void JumpAcrossGap(Vector goalPos, Vector goalForward)",
       "contents": "JumpAcrossGap(${1:Vector goalPos}, ${2:Vector goalForward})$0",
       "kind": "keyword",
-      "details": "Initiate a jump across an empty volume of space to far side"
+      "details": "Initiate a jump across an empty volume of space to far side. goalForward is unused."
     },
     {
       "trigger": "KeyValueFromFloat",
@@ -5746,7 +5837,7 @@
       "annotation": "void LocalTime(table out)",
       "contents": "LocalTime(${1:table out})$0",
       "kind": "keyword",
-      "details": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)"
+      "details": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings). This mirrors the tm structure in C++"
     },
     {
       "trigger": "LookupActivity",
@@ -6362,7 +6453,7 @@
       "annotation": "PI",
       "contents": "PI$0",
       "kind": "keyword",
-      "details": "3.14158"
+      "details": "3.14159"
     },
     {
       "trigger": "PLAYER_FLAG_BITS",
@@ -6418,7 +6509,7 @@
       "annotation": "void PickupObject(handle player, handle entity)",
       "contents": "PickupObject(${1:handle player}, ${2:handle entity})$0",
       "kind": "keyword",
-      "details": "Object from world is put into the \\\"Held\\\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level."
+      "details": "Object from world is put into the \\\"Held\\\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level. Does nothing in Team Fortress 2 as the code is not implemented"
     },
     {
       "trigger": "Pitch",
@@ -6509,28 +6600,28 @@
       "annotation": "bool PrecacheEntityFromTable(table keyvalues)",
       "contents": "PrecacheEntityFromTable(${1:table keyvalues})$0",
       "kind": "keyword",
-      "details": "Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly."
+      "details": "Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly. Returns false if the table has no classname key, if the value of classname is null or empty, or if the entity failed to be created."
     },
     {
       "trigger": "PrecacheModel",
       "annotation": "int PrecacheModel(string filename)",
       "contents": "PrecacheModel(${1:string filename})$0",
       "kind": "keyword",
-      "details": "Precache a model and return index of the model."
+      "details": "Precache a model and return index of the model. Returns -1 if null or empty filename is passed in. Missing models will still return a new index."
     },
     {
       "trigger": "PrecacheScriptSound",
       "annotation": "bool PrecacheScriptSound(string soundName)",
       "contents": "PrecacheScriptSound(${1:string soundName})$0",
       "kind": "keyword",
-      "details": "Preache a soundscript."
+      "details": "Preache a soundscript. Returns false if soundscript is missing, or if a null or empty sound name is passed in."
     },
     {
       "trigger": "PrecacheSound",
       "annotation": "void PrecacheSound(string soundName)",
       "contents": "PrecacheSound(${1:string soundName})$0",
       "kind": "keyword",
-      "details": "Precache a raw sound."
+      "details": "Precache a raw sound. Returns false if a null or empty sound name is passed in."
     },
     {
       "trigger": "PrecacheSoundScript",
@@ -6600,7 +6691,7 @@
       "annotation": "RAND_MAX",
       "contents": "RAND_MAX$0",
       "kind": "keyword",
-      "details": "32767"
+      "details": "Windows: 32768, Linux: 2147483647"
     },
     {
       "trigger": "RECIPIENT_FILTER_DEFAULT",
@@ -6691,7 +6782,7 @@
       "annotation": "void ReapplyProvision()",
       "contents": "ReapplyProvision()$0",
       "kind": "keyword",
-      "details": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player"
+      "details": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player."
     },
     {
       "trigger": "Regenerate",
@@ -6740,7 +6831,7 @@
       "annotation": "void RemoveAllItems(bool unused)",
       "contents": "RemoveAllItems(${1:bool unused})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "This does not actually remove all items. It only drops the passtime ball, intelligence, disables radius healing, and hides the Spy invis watch."
     },
     {
       "trigger": "RemoveAllObjects",
@@ -6754,7 +6845,7 @@
       "annotation": "void RemoveAttribute(string name)",
       "contents": "RemoveAttribute(${1:string name})$0",
       "kind": "keyword",
-      "details": "Remove an attribute to the entity"
+      "details": "Remove an attribute to the entity."
     },
     {
       "trigger": "RemoveAttributes",
@@ -6789,21 +6880,21 @@
       "annotation": "void RemoveCond(ETFCond cond)",
       "contents": "RemoveCond(${1:ETFCond cond})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Removes a condition. Does not remove a condition if the minimum duration has not passed. Does nothing if the condition isn't added (interally does InCond check)."
     },
     {
       "trigger": "RemoveCondEx",
       "annotation": "void RemoveCondEx(ETFCond cond, bool ignoreDuration)",
       "contents": "RemoveCondEx(${1:ETFCond cond}, ${2:bool ignoreDuration})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Extended version of RemoveCond. Allows forcefully removing the condition even if minimum duration is not met."
     },
     {
       "trigger": "RemoveCurrency",
       "annotation": "void RemoveCurrency(int amount)",
       "contents": "RemoveCurrency(${1:int amount})$0",
       "kind": "keyword",
-      "details": "Take away money from a player for reasons such as ie. spending."
+      "details": "Take away money from a player for reasons such as ie. spending. Lower bounded to 0."
     },
     {
       "trigger": "RemoveCustomAttribute",
@@ -7202,14 +7293,14 @@
       "annotation": "void ScreenFade(handle player, int red, int green, int blue, int alpha, float fadeTime, float fadeHold, int flags)",
       "contents": "ScreenFade(${1:handle player}, ${2:int red}, ${3:int green}, ${4:int blue}, ${5:int alpha}, ${6:float fadeTime}, ${7:float fadeHold}, ${8:int flags})$0",
       "kind": "keyword",
-      "details": "Start a customisable screenfade. If no player is specified, the fade will apply to all players."
+      "details": "Start a customisable screenfade. If no player is specified, the fade will apply to all players. For a list of flags, see FFADE constants."
     },
     {
       "trigger": "ScreenShake",
       "annotation": "void ScreenShake(Vector vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int eCommand, bool bAirShake)",
       "contents": "ScreenShake(${1:Vector vecCenter}, ${2:float flAmplitude}, ${3:float flFrequency}, ${4:float flDuration}, ${5:float flRadius}, ${6:int eCommand}, ${7:bool bAirShake})$0",
       "kind": "keyword",
-      "details": "Start a customisable screenshake; eCommand( SHAKE_START = 0, SHAKE_STOP = 1 )."
+      "details": "Start a customisable screenshake. Set eCommand to 0 to start a shake, or 1 to stop an existing shake."
     },
     {
       "trigger": "ScriptDebugAddTextFilter",
@@ -7279,7 +7370,7 @@
       "annotation": "ScriptDebugDrawTextEnabled",
       "contents": "ScriptDebugDrawTextEnabled$0",
       "kind": "keyword",
-      "details": ""
+      "details": "true"
     },
     {
       "trigger": "ScriptDebugDrawWatches",
@@ -7293,7 +7384,7 @@
       "annotation": "ScriptDebugDrawWatchesEnabled",
       "contents": "ScriptDebugDrawWatchesEnabled$0",
       "kind": "keyword",
-      "details": ""
+      "details": "true"
     },
     {
       "trigger": "ScriptDebugDumpKeys",
@@ -7314,7 +7405,7 @@
       "annotation": "ScriptDebugInDebugDraw",
       "contents": "ScriptDebugInDebugDraw$0",
       "kind": "keyword",
-      "details": ""
+      "details": "false"
     },
     {
       "trigger": "ScriptDebugIterateKeys",
@@ -7391,7 +7482,7 @@
       "annotation": "ScriptDebugTextIndent",
       "contents": "ScriptDebugTextIndent$0",
       "kind": "keyword",
-      "details": ""
+      "details": "0"
     },
     {
       "trigger": "ScriptDebugTextPrint",
@@ -7419,7 +7510,7 @@
       "annotation": "ScriptDebugTraceAllOn",
       "contents": "ScriptDebugTraceAllOn$0",
       "kind": "keyword",
-      "details": ""
+      "details": "false"
     },
     {
       "trigger": "ScriptDebugTraces",
@@ -7507,17 +7598,24 @@
     },
     {
       "trigger": "SetAbsVelocity",
-      "annotation": "void SetAbsVelocity(Vector)",
-      "contents": "SetAbsVelocity(${1:Vector})$0",
+      "annotation": "void SetAbsVelocity(Vector velocity)",
+      "contents": "SetAbsVelocity(${1:Vector velocity})$0",
       "kind": "keyword",
-      "details": "Sets the current absolute velocity velocity of the entity"
+      "details": "Sets the current absolute velocity of the entity"
+    },
+    {
+      "trigger": "SetActionPoint",
+      "annotation": "void SetActionPoint(handle entity)",
+      "contents": "SetActionPoint(${1:handle entity})$0",
+      "kind": "keyword",
+      "details": "Set the given action point for this bot"
     },
     {
       "trigger": "SetAngles",
       "annotation": "void SetAngles(float pitch, float yaw, float roll)",
       "contents": "SetAngles(${1:float pitch}, ${2:float yaw}, ${3:float roll})$0",
       "kind": "keyword",
-      "details": "Set entity angles."
+      "details": "Set entity angles. Deprecated, use SetAbsAngles instead."
     },
     {
       "trigger": "SetAngularVelocity",
@@ -7553,6 +7651,13 @@
       "contents": "SetAutoJump(${1:float minTime}, ${2:float maxTime})$0",
       "kind": "keyword",
       "details": "Sets if the bot should automatically jump"
+    },
+    {
+      "trigger": "SetBehaviorFlag",
+      "annotation": "void SetBehaviorFlag(int flags)",
+      "contents": "SetBehaviorFlag(${1:int flags})$0",
+      "kind": "keyword",
+      "details": "Set the given behavior flag(s) for this bot. Does not work."
     },
     {
       "trigger": "SetBodygroup",
@@ -7594,7 +7699,7 @@
       "annotation": "void SetCurrency(int amount)",
       "contents": "SetCurrency(${1:int amount})$0",
       "kind": "keyword",
-      "details": "Set player's cash for game modes with upgrades, ie. MvM"
+      "details": "Set player's cash for game modes with upgrades, ie. MvM. Does not have any bounds checking."
     },
     {
       "trigger": "SetCurrentTauntMoveSpeed",
@@ -7608,7 +7713,7 @@
       "annotation": "void SetCustomModel(string model_name)",
       "contents": "SetCustomModel(${1:string model_name})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Sets a custom player model without animations (model will T-pose). To enable animations, use SetCustomModelWithClassAnimations instead."
     },
     {
       "trigger": "SetCustomModelOffset",
@@ -7643,7 +7748,7 @@
       "annotation": "void SetCustomModelWithClassAnimations(string model_name)",
       "contents": "SetCustomModelWithClassAnimations(${1:string model_name})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Sets a custom player model with full animations."
     },
     {
       "trigger": "SetCustomViewModel",
@@ -7759,10 +7864,10 @@
     },
     {
       "trigger": "SetGroupSpawnTables",
-      "annotation": "void SetGroupSpawnTables(table)",
-      "contents": "SetGroupSpawnTables(${1:table})$0",
+      "annotation": "void SetGroupSpawnTables(table group, table spawn)",
+      "contents": "SetGroupSpawnTables(${1:table group}, ${2:table spawn})$0",
       "kind": "keyword",
-      "details": "Cache the group spawn tables"
+      "details": "Unused. This only stores a reference to the two tables which is removed when the point_script_template is deleted."
     },
     {
       "trigger": "SetHealth",
@@ -7828,6 +7933,20 @@
       "details": "Sets max vision range override for the bot"
     },
     {
+      "trigger": "SetMission",
+      "annotation": "void SetMission(int mission, bool reset_behavior)",
+      "contents": "SetMission(${1:int mission}, ${2:bool reset_behavior})$0",
+      "kind": "keyword",
+      "details": "Set this bot's current mission to the given mission. Does not work."
+    },
+    {
+      "trigger": "SetMissionTarget",
+      "annotation": "void SetMissionTarget(handle entity)",
+      "contents": "SetMissionTarget(${1:handle entity})$0",
+      "kind": "keyword",
+      "details": "Set the bot's mission target to this given entity"
+    },
+    {
       "trigger": "SetModel",
       "annotation": "void SetModel(string model_name)",
       "contents": "SetModel(${1:string model_name})$0",
@@ -7881,7 +8000,7 @@
       "annotation": "void SetOrigin(Vector origin)",
       "contents": "SetOrigin(${1:Vector origin})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Deprecated, use SetAbsOrigin instead."
     },
     {
       "trigger": "SetOvertimeAllowedForCTF",
@@ -7952,6 +8071,13 @@
       "contents": "SetPoseParameter(${1:int ID}, ${2:float value})$0",
       "kind": "keyword",
       "details": "Sets a pose parameter value. Returns the effective value after clamping or looping."
+    },
+    {
+      "trigger": "SetPrevMission",
+      "annotation": "void SetPrevMission(int mission)",
+      "contents": "SetPrevMission(${1:int mission})$0",
+      "kind": "keyword",
+      "details": "Set this bot's previous mission to the given mission. Does not work."
     },
     {
       "trigger": "SetPropBool",
@@ -8175,7 +8301,7 @@
       "annotation": "void SetValue(string name, value)",
       "contents": "SetValue(${1:string name}, ${2:value})$0",
       "kind": "keyword",
-      "details": "Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Supported types are bool, int, float, string."
+      "details": "Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Convars marked as dev-only (i.e. not visible in console) can also be set. Supported types are bool, int, float, string. The original value of the convar is saved and is reset on map change, in other words convar changes will not persist across maps."
     },
     {
       "trigger": "SetVehicleReverseTime",
@@ -8189,7 +8315,7 @@
       "annotation": "void SetVelocity(Vector velocity)",
       "contents": "SetVelocity(${1:Vector velocity})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Deprecated, use SetAbsVelocity instead."
     },
     {
       "trigger": "SetWaterLevel",
@@ -8224,7 +8350,7 @@
       "annotation": "void ShowMessage(string message)",
       "contents": "ShowMessage(${1:string message})$0",
       "kind": "keyword",
-      "details": "Print a hud message on all clients"
+      "details": "Print a hud message on all clients. Non-functional."
     },
     {
       "trigger": "SnapEyeAngles",
@@ -8353,6 +8479,13 @@
       "details": "Advance animation frame to some time in the future with a manual interval"
     },
     {
+      "trigger": "StunPlayer",
+      "annotation": "void StunPlayer(float duration, float move_speed_reduction, int flags, handle attacker)",
+      "contents": "StunPlayer(${1:float duration}, ${2:float move_speed_reduction}, ${3:int flags}, ${4:handle attacker})$0",
+      "kind": "keyword",
+      "details": "Stuns the player for a specified duration. Move speed reduction is a fraction (0 = no reduction. 1 = total reduction, no movement). Flag combinations control the stun type and behavior, see the constants page."
+    },
+    {
       "trigger": "TAUNT_BASE_WEAPON",
       "annotation": "TAUNT_BASE_WEAPON",
       "contents": "TAUNT_BASE_WEAPON$0",
@@ -8413,7 +8546,7 @@
       "annotation": "TEAM_UNASSIGNED",
       "contents": "TEAM_UNASSIGNED$0",
       "kind": "keyword",
-      "details": "0"
+      "details": "null, This is supposed to be 0."
     },
     {
       "trigger": "TELEPORT_TO_HINT",
@@ -9610,7 +9743,7 @@
       "annotation": "TF_DMG_CUSTOM_END",
       "contents": "TF_DMG_CUSTOM_END$0",
       "kind": "keyword",
-      "details": "84"
+      "details": "86"
     },
     {
       "trigger": "TF_DMG_CUSTOM_EYEBALL_ROCKET",
@@ -9681,6 +9814,20 @@
       "contents": "TF_DMG_CUSTOM_KART$0",
       "kind": "keyword",
       "details": "75"
+    },
+    {
+      "trigger": "TF_DMG_CUSTOM_KRAMPUS_MELEE",
+      "annotation": "TF_DMG_CUSTOM_KRAMPUS_MELEE",
+      "contents": "TF_DMG_CUSTOM_KRAMPUS_MELEE$0",
+      "kind": "keyword",
+      "details": "84"
+    },
+    {
+      "trigger": "TF_DMG_CUSTOM_KRAMPUS_RANGED",
+      "annotation": "TF_DMG_CUSTOM_KRAMPUS_RANGED",
+      "contents": "TF_DMG_CUSTOM_KRAMPUS_RANGED$0",
+      "kind": "keyword",
+      "details": "85"
     },
     {
       "trigger": "TF_DMG_CUSTOM_MERASMUS_DECAPITATION",
@@ -10307,22 +10454,22 @@
     },
     {
       "trigger": "TakeDamage",
-      "annotation": "void TakeDamage(float flDamage, int nDamageType, handle hAttacker)",
-      "contents": "TakeDamage(${1:float flDamage}, ${2:int nDamageType}, ${3:handle hAttacker})$0",
+      "annotation": "void TakeDamage(float flDamage, Constants.FDmgType nDamageType, handle hAttacker)",
+      "contents": "TakeDamage(${1:float flDamage}, ${2:Constants.FDmgType nDamageType}, ${3:handle hAttacker})$0",
       "kind": "keyword",
       "details": "Deals damage to the entity."
     },
     {
       "trigger": "TakeDamageCustom",
-      "annotation": "void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, Constants.ETFDmgCustom nCustomDamageType)",
-      "contents": "TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType}, ${8:Constants.ETFDmgCustom nCustomDamageType})$0",
+      "annotation": "void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType, Constants.ETFDmgCustom nCustomDamageType)",
+      "contents": "TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:Constants.FDmgType nDamageType}, ${8:Constants.ETFDmgCustom nCustomDamageType})$0",
       "kind": "keyword",
       "details": "Extended version of TakeDamageEx that can apply a custom damage type."
     },
     {
       "trigger": "TakeDamageEx",
-      "annotation": "void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)",
-      "contents": "TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType})$0",
+      "annotation": "void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType)",
+      "contents": "TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:Constants.FDmgType nDamageType})$0",
       "kind": "keyword",
       "details": "Extended version of TakeDamage."
     },
@@ -10359,7 +10506,7 @@
       "annotation": "float Time()",
       "contents": "Time()$0",
       "kind": "keyword",
-      "details": "Get the current server time"
+      "details": "Get the current server time in seconds"
     },
     {
       "trigger": "ToKVString",
@@ -10548,7 +10695,7 @@
       "annotation": "bool ValidateScriptScope()",
       "contents": "ValidateScriptScope()$0",
       "kind": "keyword",
-      "details": "Ensure that an entity's script scope has been created"
+      "details": "Ensure that an entity's script scope has been created. In practice, this always returns true unless the script VM is disabled in launch options."
     },
     {
       "trigger": "Vector",
@@ -10639,7 +10786,7 @@
       "annotation": "void Weapon_Equip(handle weapon)",
       "contents": "Weapon_Equip(${1:handle weapon})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Equips a weapon in the player. This places it inside the m_hMyWeapons array."
     },
     {
       "trigger": "Weapon_SetLast",
@@ -10660,7 +10807,7 @@
       "annotation": "void Weapon_Switch(handle weapon)",
       "contents": "Weapon_Switch(${1:handle weapon})$0",
       "kind": "keyword",
-      "details": ""
+      "details": "Attempts a switch to the given weapon, if present in the player's inventory (m_hMyWeapons array)."
     },
     {
       "trigger": "Yaw",
@@ -10800,7 +10947,7 @@
       "annotation": "_intsize_",
       "contents": "_intsize_$0",
       "kind": "keyword",
-      "details": "4"
+      "details": "32-bit: 4, 64-bit: 8"
     },
     {
       "trigger": "_version_",
@@ -10860,8 +11007,8 @@
     },
     {
       "trigger": "atan2",
-      "annotation": "atan2(num y, num x) (!)",
-      "contents": "atan2(${1:num y}, ${2:num x) (!})$0",
+      "annotation": "atan2(num y, num x)",
+      "contents": "atan2(${1:num y}, ${2:num x})$0",
       "kind": "keyword",
       "details": "Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (-PI, PI). Note the order of the parameters x and y!"
     },
@@ -11563,7 +11710,7 @@
       "annotation": "rand()",
       "contents": "rand()$0",
       "kind": "keyword",
-      "details": "Returns a random integer with 0 <= rand() <= RAND_MAX"
+      "details": "Returns a random integer with 0 <= rand() <= RAND_MAX. The value of RAND_MAX is 32768 on Windows, but 2147483647 on Linux. This can cause undeterministic behavior between a server running on Windows vs Linux. Instead, use RandomInt or RandomFloat."
     },
     {
       "trigger": "readblob",
@@ -11849,6 +11996,13 @@
       "trigger": "OnGameEvent_air_dash",
       "annotation": "void OnGameEvent_air_dash()",
       "contents": "OnGameEvent_air_dash(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_ammo_pickup",
+      "annotation": "void OnGameEvent_ammo_pickup()",
+      "contents": "OnGameEvent_ammo_pickup(${1:params}){\r\n\t$0\n}",
       "kind": "keyword",
       "details": ""
     },
@@ -12182,6 +12336,13 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_enter_vehicle",
+      "annotation": "void OnGameEvent_enter_vehicle()",
+      "contents": "OnGameEvent_enter_vehicle(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_entered_performance_mode",
       "annotation": "void OnGameEvent_entered_performance_mode()",
       "contents": "OnGameEvent_entered_performance_mode(${1:params}){\r\n\t$0\n}",
@@ -12364,9 +12525,23 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_gameui_activate",
+      "annotation": "void OnGameEvent_gameui_activate()",
+      "contents": "OnGameEvent_gameui_activate(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_gameui_activated",
       "annotation": "void OnGameEvent_gameui_activated()",
       "contents": "OnGameEvent_gameui_activated(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_gameui_hide",
+      "annotation": "void OnGameEvent_gameui_hide()",
+      "contents": "OnGameEvent_gameui_hide(${1:params}){\r\n\t$0\n}",
       "kind": "keyword",
       "details": ""
     },
@@ -12532,6 +12707,13 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_killed_ball_carrier",
+      "annotation": "void OnGameEvent_killed_ball_carrier()",
+      "contents": "OnGameEvent_killed_ball_carrier(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_killed_capping_player",
       "annotation": "void OnGameEvent_killed_capping_player()",
       "contents": "OnGameEvent_killed_capping_player(${1:params}){\r\n\t$0\n}",
@@ -12546,6 +12728,13 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_leave_vehicle",
+      "annotation": "void OnGameEvent_leave_vehicle()",
+      "contents": "OnGameEvent_leave_vehicle(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_lobby_updated",
       "annotation": "void OnGameEvent_lobby_updated()",
       "contents": "OnGameEvent_lobby_updated(${1:params}){\r\n\t$0\n}",
@@ -12556,6 +12745,13 @@
       "trigger": "OnGameEvent_localplayer_becameobserver",
       "annotation": "void OnGameEvent_localplayer_becameobserver()",
       "contents": "OnGameEvent_localplayer_becameobserver(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_localplayer_builtobject",
+      "annotation": "void OnGameEvent_localplayer_builtobject()",
+      "contents": "OnGameEvent_localplayer_builtobject(${1:params}){\r\n\t$0\n}",
       "kind": "keyword",
       "details": ""
     },
@@ -13981,6 +14177,13 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_single_player_death",
+      "annotation": "void OnGameEvent_single_player_death()",
+      "contents": "OnGameEvent_single_player_death(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_slap_notice",
       "annotation": "void OnGameEvent_slap_notice()",
       "contents": "OnGameEvent_slap_notice(${1:params}){\r\n\t$0\n}",
@@ -14047,6 +14250,20 @@
       "trigger": "OnGameEvent_tagged_player_as_it",
       "annotation": "void OnGameEvent_tagged_player_as_it()",
       "contents": "OnGameEvent_tagged_player_as_it(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_take_armor",
+      "annotation": "void OnGameEvent_take_armor()",
+      "contents": "OnGameEvent_take_armor(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
+      "trigger": "OnGameEvent_take_health",
+      "annotation": "void OnGameEvent_take_health()",
+      "contents": "OnGameEvent_take_health(${1:params}){\r\n\t$0\n}",
       "kind": "keyword",
       "details": ""
     },
@@ -14443,6 +14660,13 @@
       "details": ""
     },
     {
+      "trigger": "OnGameEvent_weapon_equipped",
+      "annotation": "void OnGameEvent_weapon_equipped()",
+      "contents": "OnGameEvent_weapon_equipped(${1:params}){\r\n\t$0\n}",
+      "kind": "keyword",
+      "details": ""
+    },
+    {
       "trigger": "OnGameEvent_winlimit_changed",
       "annotation": "void OnGameEvent_winlimit_changed()",
       "contents": "OnGameEvent_winlimit_changed(${1:params}){\r\n\t$0\n}",
@@ -14466,7 +14690,7 @@
     {
       "trigger": "ent.m_iHealth",
       "annotation": "ent.m_iHealth",
-      "contents": "NetProps.GetPropInt(ent, 'm_iHealth')",
+      "contents": "NetProps.GetPropInt(ent, \"m_iHealth\")",
       "kind": "keyword",
       "details": "Gathers the health of a player."
     }
