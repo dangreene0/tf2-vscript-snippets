@@ -41,6 +41,13 @@
     ],
     "description": "262144"
   },
+  "bool AcceptInput(string input, string param, handle activator, handle caller)": {
+    "prefix": "AcceptInput",
+    "body": [
+      "AcceptInput(${1:string input}, ${2:string param}, ${3:handle activator}, ${4:handle caller})$0"
+    ],
+    "description": "caller) \tGenerate a synchronous I/O event. Unlike EntFireByHandle, this is processed immediately. Returns false if input is a null/empty string, or if the input wasn't handled."
+  },
   "void AddAttribute(string name, float value, float duration)": {
     "prefix": "AddAttribute",
     "body": [
@@ -88,7 +95,7 @@
     "body": [
       "AddCurrency(${1:int amount})$0"
     ],
-    "description": "Kaching! Give the player some cash for game modes with upgrades, ie. MvM"
+    "description": "Kaching! Give the player some cash for game modes with upgrades, ie. MvM. The new value is bounded between 0-30000."
   },
   "void AddCustomAttribute(string name, float value, float duration)": {
     "prefix": "AddCustomAttribute",
@@ -118,10 +125,10 @@
     ],
     "description": "Hides a hud element based on Constants.FHideHUD"
   },
-  "void AddIncomingConnection(handle area, int dir)": {
+  "void AddIncomingConnection(handle area, ENavDirType dir)": {
     "prefix": "AddIncomingConnection",
     "body": [
-      "AddIncomingConnection(${1:handle area}, ${2:int dir})$0"
+      "AddIncomingConnection(${1:handle area}, ${2:ENavDirType dir})$0"
     ],
     "description": "Add areas that connect TO this area by a ONE-WAY link"
   },
@@ -139,19 +146,19 @@
     ],
     "description": "Adds the supplied flags to the Solid Flags in the entity. (m_Collision.m_usSolidFlags datamap). See Constants.FSolid."
   },
-  "void AddTemplate(string, table)": {
+  "void AddTemplate(string classname, table keyvalues)": {
     "prefix": "AddTemplate",
     "body": [
-      "AddTemplate(${1:string}, ${2:table})$0"
+      "AddTemplate(${1:string classname}, ${2:table keyvalues})$0"
     ],
-    "description": "Add an entity to the template spawner"
+    "description": "Add an entity with the given keyvalues to the template spawner, similar to SpawnEntityFromTable. The number of templates allowed is unlimited."
   },
   "void AddThinkToEnt(handle entity, string FuncName)": {
     "prefix": "AddThinkToEnt",
     "body": [
       "AddThinkToEnt(${1:handle entity}, ${2:string FuncName})$0"
     ],
-    "description": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function"
+    "description": "Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function. TF2 runs at 66 ticks per second, so the lowest possible interval is 0.015 seconds. Set to -1 to think every tick."
   },
   "AddToScriptHelp()": {
     "prefix": "AddToScriptHelp",
@@ -783,6 +790,13 @@
     ],
     "description": "Clear TF-specific area attribute bits."
   },
+  "void ClearBehaviorFlag(int flags)": {
+    "prefix": "ClearBehaviorFlag",
+    "body": [
+      "ClearBehaviorFlag(${1:int flags})$0"
+    ],
+    "description": "clear the given behavior flag(s) for this bot. Does not work."
+  },
   "void ClearCustomModelRotation()": {
     "prefix": "ClearCustomModelRotation",
     "body": [
@@ -895,10 +909,17 @@
     ],
     "description": "Adds an I/O connection that will call the named function when the specified output fires."
   },
-  "void ConnectTo(handle area, int dir)": {
+  "void ConnectOutputs(handle scope)": {
+    "prefix": "ConnectOutputs",
+    "body": [
+      "ConnectOutputs(${1:handle scope})$0"
+    ],
+    "description": "Global function called after an entity with an script assigned spawns (i.e. vscripts keyvalue is not blank). Unlike OnPostSpawn, this is called immediately and therefore on map respawn, some entities may not exist during this point."
+  },
+  "void ConnectTo(handle area, ENavDirType dir)": {
     "prefix": "ConnectTo",
     "body": [
-      "ConnectTo(${1:handle area}, ${2:int dir})$0"
+      "ConnectTo(${1:handle area}, ${2:ENavDirType dir})$0"
     ],
     "description": "Connect this area to given area in given direction."
   },
@@ -977,7 +998,7 @@
     "body": [
       "DMG_ACID$0"
     ],
-    "description": "1048576"
+    "description": "1048576, Crit damage."
   },
   "DMG_AIRBOAT": {
     "prefix": "DMG_AIRBOAT",
@@ -1089,14 +1110,14 @@
     "body": [
       "DMG_GENERIC$0"
     ],
-    "description": "0"
+    "description": "null, This is supposed to be 0."
   },
   "DMG_NERVEGAS": {
     "prefix": "DMG_NERVEGAS",
     "body": [
       "DMG_NERVEGAS$0"
     ],
-    "description": "65536"
+    "description": "65536, Sawblade damage."
   },
   "DMG_NEVERGIB": {
     "prefix": "DMG_NEVERGIB",
@@ -1173,7 +1194,7 @@
     "body": [
       "DMG_SLOWBURN$0"
     ],
-    "description": "2097152"
+    "description": "2097152, Bullet falloff damage."
   },
   "DMG_SONIC": {
     "prefix": "DMG_SONIC",
@@ -1187,7 +1208,7 @@
     "body": [
       "DMG_VEHICLE$0"
     ],
-    "description": "16"
+    "description": "16, Train damage."
   },
   "DOWN": {
     "prefix": "DOWN",
@@ -1238,10 +1259,10 @@
     ],
     "description": "Draw area as a filled rect of the given color."
   },
-  "void DebugDrawLine(Vector start, Vector end, int red, int green, int blue', bool zTest, float time)": {
+  "void DebugDrawLine(Vector start, Vector end, int red, int green, int blue, bool zTest, float time)": {
     "prefix": "DebugDrawLine",
     "body": [
-      "DebugDrawLine(${1:Vector start}, ${2:Vector end}, ${3:int red}, ${4:int green}, ${5:int blue'}, ${6:bool zTest}, ${7:float time})$0"
+      "DebugDrawLine(${1:Vector start}, ${2:Vector end}, ${3:int red}, ${4:int green}, ${5:int blue}, ${6:bool zTest}, ${7:float time})$0"
     ],
     "description": "Draw a debug overlay line."
   },
@@ -1301,10 +1322,10 @@
     ],
     "description": "Disconnect this area from given area."
   },
-  "void DisconnectOutput(string, string)": {
+  "void DisconnectOutput(string output, string function)": {
     "prefix": "DisconnectOutput",
     "body": [
-      "DisconnectOutput(${1:string}, ${2:string})$0"
+      "DisconnectOutput(${1:string output}, ${2:string function})$0"
     ],
     "description": "Removes a connected script function from an I/O event."
   },
@@ -1313,14 +1334,14 @@
     "body": [
       "DispatchAnimEvents(${1:handle entity})$0"
     ],
-    "description": "Dispatch animation events to a CBaseAnimating"
+    "description": "Dispatch animation events to a CBaseAnimating entity."
   },
   "void DispatchParticleEffect(string name, Vector origin, Vector angles)": {
     "prefix": "DispatchParticleEffect",
     "body": [
       "DispatchParticleEffect(${1:string name}, ${2:Vector origin}, ${3:Vector angles})$0"
     ],
-    "description": "Dispatches a one-off particle system"
+    "description": "Dispatches a one-off particle system. To pass angles into this, use the .Forward() method on a QAngle."
   },
   "void DispatchSpawn(handle entity)": {
     "prefix": "DispatchSpawn",
@@ -1348,7 +1369,7 @@
     "body": [
       "DoAttackTaunt()$0"
     ],
-    "description": "Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (taunt attack name attribute)"
+    "description": "Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (\\\"taunt attack name\\\" attribute)"
   },
   "string DoUniqueString(string input)": {
     "prefix": "DoUniqueString",
@@ -1749,10 +1770,10 @@
     ],
     "description": "Play named sound on an entity using configurations similar to ambient_generic. Soundlevel is in decibels."
   },
-  "void EmitSound(string)": {
+  "void EmitSound(string soundname)": {
     "prefix": "EmitSound",
     "body": [
-      "EmitSound(${1:string})$0"
+      "EmitSound(${1:string soundname})$0"
     ],
     "description": "Plays a sound from this entity."
   },
@@ -1810,14 +1831,14 @@
     "body": [
       "EntFire(${1:string target}, ${2:string action}, ${3:string value = null}, ${4:float delay = 0}, ${5:handle activator = null})$0"
     ],
-    "description": "Wrapper for DoEntFire() that setsactivator to null, but has no caller param."
+    "description": "Wrapper for DoEntFire() that setsactivator to null, but has nocallerparam. Negative delays are clamped to 0."
   },
   "void EntFireByHandle(handle entity, string action, string value, float delay, handle activator, handle caller)": {
     "prefix": "EntFireByHandle",
     "body": [
       "EntFireByHandle(${1:handle entity}, ${2:string action}, ${3:string value}, ${4:float delay}, ${5:handle activator}, ${6:handle caller})$0"
     ],
-    "description": "Generate and entity i/o event. First parameter is an entity instance."
+    "description": "Generate an entity I/O event. First parameter is an entity instance. Negative delays are clamped to 0."
   },
   "handle EntIndexToHScript(int entIndex)": {
     "prefix": "EntIndexToHScript",
@@ -2440,7 +2461,7 @@
     "body": [
       "FrameTime()$0"
     ],
-    "description": "Get the time spent on the server in the last frame"
+    "description": "Get the time spent on the server in the last frame. Usually this will be 0.015 (the default tickrate)"
   },
   "GO_EAST": {
     "prefix": "GO_EAST",
@@ -2517,14 +2538,14 @@
     "body": [
       "GR_STATE_BETWEEN_RNDS$0"
     ],
-    "description": "10"
+    "description": "10, This constant entry is missing!"
   },
   "GR_STATE_BONUS": {
     "prefix": "GR_STATE_BONUS",
     "body": [
       "GR_STATE_BONUS$0"
     ],
-    "description": "9"
+    "description": "9, This constant entry is missing!"
   },
   "GR_STATE_GAME_OVER": {
     "prefix": "GR_STATE_GAME_OVER",
@@ -2638,6 +2659,13 @@
     ],
     "description": "Returns the current absolute velocity of the entity"
   },
+  "handle GetActionPoint()": {
+    "prefix": "GetActionPoint",
+    "body": [
+      "GetActionPoint()$0"
+    ],
+    "description": "Get the given action point for this bot"
+  },
   "handle GetActiveWeapon()": {
     "prefix": "GetActiveWeapon",
     "body": [
@@ -2645,24 +2673,24 @@
     ],
     "description": "Get the player's current weapon"
   },
-  "handle GetAdjacentArea(int dir, int n)": {
+  "handle GetAdjacentArea(ENavDirType dir, int n)": {
     "prefix": "GetAdjacentArea",
     "body": [
-      "GetAdjacentArea(${1:int dir}, ${2:int n})$0"
+      "GetAdjacentArea(${1:ENavDirType dir}, ${2:int n})$0"
     ],
     "description": "Return the n'th adjacent area in the given direction."
   },
-  "void GetAdjacentAreas(int dir, handle table)": {
+  "void GetAdjacentAreas(ENavDirType dir, handle table)": {
     "prefix": "GetAdjacentAreas",
     "body": [
-      "GetAdjacentAreas(${1:int dir}, ${2:handle table})$0"
+      "GetAdjacentAreas(${1:ENavDirType dir}, ${2:handle table})$0"
     ],
     "description": "Fills a passed in table with all adjacent areas in the given direction."
   },
-  "int GetAdjacentCount(int dir)": {
+  "int GetAdjacentCount(ENavDirType dir)": {
     "prefix": "GetAdjacentCount",
     "body": [
-      "GetAdjacentCount(${1:int dir})$0"
+      "GetAdjacentCount(${1:ENavDirType dir})$0"
     ],
     "description": "Get the number of adjacent areas in the given direction."
   },
@@ -2672,6 +2700,13 @@
       "GetAllAreas(${1:handle table})$0"
     ],
     "description": "fills a passed in table of all nav areas"
+  },
+  "void GetAllBotTags(handle table)": {
+    "prefix": "GetAllBotTags",
+    "body": [
+      "GetAllBotTags(${1:handle table})$0"
+    ],
+    "description": "Get all bot tags. The key is the index, and the value is the tag"
   },
   "Vector GetAngles()": {
     "prefix": "GetAngles",
@@ -2715,6 +2750,13 @@
     ],
     "description": "Get an attachment's origin as a Vector, by ID."
   },
+  "float GetAttribute(string name, float default_value)": {
+    "prefix": "GetAttribute",
+    "body": [
+      "GetAttribute(${1:string name}, ${2:float default_value})$0"
+    ],
+    "description": "Get an attribute float from the entity. If the attribute does not exist, returns default_value."
+  },
   "int GetAttributes()": {
     "prefix": "GetAttributes",
     "body": [
@@ -2741,7 +2783,7 @@
     "body": [
       "GetBaseVelocity()$0"
     ],
-    "description": "Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like enttrigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects."
+    "description": "Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like trigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects."
   },
   "INextBotComponent GetBodyInterface()": {
     "prefix": "GetBodyInterface",
@@ -3217,7 +3259,7 @@
     "body": [
       "GetHudHideFlags()$0"
     ],
-    "description": ""
+    "description": "Gets current hidden hud elements"
   },
   "int GetID()": {
     "prefix": "GetID",
@@ -3240,10 +3282,10 @@
     ],
     "description": "Return units/second below which this actor is considered immobile"
   },
-  "void GetIncomingConnections(int dir, handle table)": {
+  "void GetIncomingConnections(ENavDirType dir, handle table)": {
     "prefix": "GetIncomingConnections",
     "body": [
-      "GetIncomingConnections(${1:int dir}, ${2:handle table})$0"
+      "GetIncomingConnections(${1:ENavDirType dir}, ${2:handle table})$0"
     ],
     "description": "Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them)."
   },
@@ -3310,7 +3352,7 @@
     ],
     "description": "Return the last nav area occupied, NULL if unknown. See CTFNavArea."
   },
-  "GetLastWeapon()": {
+  "handle GetLastWeapon()": {
     "prefix": "GetLastWeapon",
     "body": [
       "GetLastWeapon()$0"
@@ -3329,7 +3371,7 @@
     "body": [
       "GetListenServerHost()$0"
     ],
-    "description": "Get the local player on a listen server."
+    "description": "Get the local player on a listen server. Returns null on dedicated servers."
   },
   "QAngle GetLocalAngles()": {
     "prefix": "GetLocalAngles",
@@ -3422,6 +3464,20 @@
     ],
     "description": "Gets the max vision range override for the bot"
   },
+  "int GetMission()": {
+    "prefix": "GetMission",
+    "body": [
+      "GetMission()$0"
+    ],
+    "description": "Get this bot's current mission. Does not work."
+  },
+  "handle GetMissionTarget()": {
+    "prefix": "GetMissionTarget",
+    "body": [
+      "GetMissionTarget()$0"
+    ],
+    "description": "Get this bot's current mission target"
+  },
   "int GetModelIndex(string filename)": {
     "prefix": "GetModelIndex",
     "body": [
@@ -3476,7 +3532,7 @@
     "body": [
       "GetName()$0"
     ],
-    "description": "Gets the weapon's name"
+    "description": "Gets the weapon's internal name (not the targetname!)"
   },
   "handle GetNavArea(Vector origin, float flBeneath)": {
     "prefix": "GetNavArea",
@@ -3702,6 +3758,13 @@
     ],
     "description": "Get the entity name stripped of template unique decoration"
   },
+  "int GetPrevMission()": {
+    "prefix": "GetPrevMission",
+    "body": [
+      "GetPrevMission()$0"
+    ],
+    "description": "Get's this bot's previous mission. Does not work."
+  },
   "int GetPrimaryAmmoCount()": {
     "prefix": "GetPrimaryAmmoCount",
     "body": [
@@ -3835,10 +3898,10 @@
     ],
     "description": ""
   },
-  "handle GetRandomAdjacentArea(int dir)": {
+  "handle GetRandomAdjacentArea(ENavDirType dir)": {
     "prefix": "GetRandomAdjacentArea",
     "body": [
-      "GetRandomAdjacentArea(${1:int dir})$0"
+      "GetRandomAdjacentArea(${1:ENavDirType dir})$0"
     ],
     "description": "Return a random adjacent area in the given direction."
   },
@@ -3959,7 +4022,7 @@
     "body": [
       "GetSequenceName(${1:int ID})$0"
     ],
-    "description": "Get a sequence name by sequence ID."
+    "description": "Get a sequence name by sequence ID. Returns \\\"Not Found!\\\" if ID is -1, \\\"Unknown\\\" if the sequence doesn't exist or \\\"No model!\\\" if no model is assigned."
   },
   "float GetSizeX()": {
     "prefix": "GetSizeX",
@@ -4465,6 +4528,13 @@
     ],
     "description": "3"
   },
+  "void HandleTauntCommand(int taunt_slot)": {
+    "prefix": "HandleTauntCommand",
+    "body": [
+      "HandleTauntCommand(${1:int taunt_slot})$0"
+    ],
+    "description": "Spootfs a taunt command from the player, as if they selected this taunt."
+  },
   "bool HasAction(handle entity, string outputName)": {
     "prefix": "HasAction",
     "body": [
@@ -4520,6 +4590,13 @@
       "HasItem()$0"
     ],
     "description": "Currently holding an item? Eg. capture flag"
+  },
+  "bool HasMission(int mission)": {
+    "prefix": "HasMission",
+    "body": [
+      "HasMission(${1:int mission})$0"
+    ],
+    "description": "Return true if the given mission is this bot's current mission. Does not work."
   },
   "bool HasOutput(handle entity, string outputName)": {
     "prefix": "HasOutput",
@@ -4785,7 +4862,7 @@
     "body": [
       "IgnitePlayer()$0"
     ],
-    "description": ""
+    "description": "Supposed to set the player on fire, but... does nothing except play on-fire sound and voicelines."
   },
   "bool InAirDueToExplosion()": {
     "prefix": "InAirDueToExplosion",
@@ -4934,6 +5011,13 @@
     ],
     "description": "Is our attention focused on this entity"
   },
+  "bool IsBehaviorFlagSet(int flags)": {
+    "prefix": "IsBehaviorFlagSet",
+    "body": [
+      "IsBehaviorFlagSet(${1:int flags})$0"
+    ],
+    "description": "Return true if the given behavior flag(s) are set for this bot. Does not work."
+  },
   "bool IsBirthday()": {
     "prefix": "IsBirthday",
     "body": [
@@ -4953,7 +5037,7 @@
     "body": [
       "IsBotOfType(${1:int type})$0"
     ],
-    "description": ""
+    "description": "Returns true if the player matches this bot type. Only one type of bot exists which is reserved for AI bots (not puppet bots): TF_BOT_TYPE. 0 is used for real players or puppet bots. Use IsFakeClient to check for a puppet bot instead."
   },
   "bool IsBottleneck()": {
     "prefix": "IsBottleneck",
@@ -5011,10 +5095,10 @@
     ],
     "description": "Checks if the convar is allowed to be used and is in cfg/vscript_convar_allowlist.txt. Please be nice with this and use it for *compatibility* if you need check support and NOT to force server owners to allow hostname to be set... or else this will simply lie and return true in future. ;-) You have been warned!"
   },
-  "bool IsConnected(handle area, int dir)": {
+  "bool IsConnected(handle area, ENavDirType dir)": {
     "prefix": "IsConnected",
     "body": [
-      "IsConnected(${1:handle area}, ${2:int dir})$0"
+      "IsConnected(${1:handle area}, ${2:ENavDirType dir})$0"
     ],
     "description": "Return true if this area is connected to other area in given direction. (If you set direction to -1 or 4, it will automatically check all directions for a connection)."
   },
@@ -5107,7 +5191,7 @@
     "body": [
       "IsFakeClient()$0"
     ],
-    "description": ""
+    "description": "Returns true if the player is a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead."
   },
   "bool IsFireproof()": {
     "prefix": "IsFireproof",
@@ -5149,7 +5233,7 @@
     "body": [
       "IsGap(${1:Vector pos}, ${2:Vector forward})$0"
     ],
-    "description": "Return true if there is a gap at this position."
+    "description": "Return true if there is a gap at this position. forward is unused."
   },
   "bool IsHolidayActive(int holiday)": {
     "prefix": "IsHolidayActive",
@@ -5312,6 +5396,13 @@
     ],
     "description": "Returns true if the player is in noclip mode."
   },
+  "bool IsOnAnyMission()": {
+    "prefix": "IsOnAnyMission",
+    "body": [
+      "IsOnAnyMission()$0"
+    ],
+    "description": "Return true if this bot has a current mission"
+  },
   "bool IsOnGround()": {
     "prefix": "IsOnGround",
     "body": [
@@ -5380,7 +5471,7 @@
     "body": [
       "IsPlayerABot(${1:handle player})$0"
     ],
-    "description": "Is this player/entity a bot."
+    "description": "Is this player/entity a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead."
   },
   "bool IsPlayerSpeaking(int playerIndex)": {
     "prefix": "IsPlayerSpeaking",
@@ -5625,7 +5716,7 @@
     "body": [
       "JumpAcrossGap(${1:Vector goalPos}, ${2:Vector goalForward})$0"
     ],
-    "description": "Initiate a jump across an empty volume of space to far side"
+    "description": "Initiate a jump across an empty volume of space to far side. goalForward is unused."
   },
   "bool KeyValueFromFloat(string key, float value)": {
     "prefix": "KeyValueFromFloat",
@@ -5744,7 +5835,7 @@
     "body": [
       "LocalTime(${1:table out})$0"
     ],
-    "description": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)"
+    "description": "Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings). This mirrors the tm structure in C++"
   },
   "int LookupActivity(string activity)": {
     "prefix": "LookupActivity",
@@ -6360,7 +6451,7 @@
     "body": [
       "PI$0"
     ],
-    "description": "3.14158"
+    "description": "3.14159"
   },
   "PLAYER_FLAG_BITS": {
     "prefix": "PLAYER_FLAG_BITS",
@@ -6416,7 +6507,7 @@
     "body": [
       "PickupObject(${1:handle player}, ${2:handle entity})$0"
     ],
-    "description": "Object from world is put into the \\\"Held\\\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level."
+    "description": "Object from world is put into the \\\"Held\\\" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level. Does nothing in Team Fortress 2 as the code is not implemented"
   },
   "float Pitch()": {
     "prefix": "Pitch",
@@ -6507,28 +6598,28 @@
     "body": [
       "PrecacheEntityFromTable(${1:table keyvalues})$0"
     ],
-    "description": "Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly."
+    "description": "Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly. Returns false if the table has no classname key, if the value of classname is null or empty, or if the entity failed to be created."
   },
   "int PrecacheModel(string filename)": {
     "prefix": "PrecacheModel",
     "body": [
       "PrecacheModel(${1:string filename})$0"
     ],
-    "description": "Precache a model and return index of the model."
+    "description": "Precache a model and return index of the model. Returns -1 if null or empty filename is passed in. Missing models will still return a new index."
   },
   "bool PrecacheScriptSound(string soundName)": {
     "prefix": "PrecacheScriptSound",
     "body": [
       "PrecacheScriptSound(${1:string soundName})$0"
     ],
-    "description": "Preache a soundscript."
+    "description": "Preache a soundscript. Returns false if soundscript is missing, or if a null or empty sound name is passed in."
   },
   "void PrecacheSound(string soundName)": {
     "prefix": "PrecacheSound",
     "body": [
       "PrecacheSound(${1:string soundName})$0"
     ],
-    "description": "Precache a raw sound."
+    "description": "Precache a raw sound. Returns false if a null or empty sound name is passed in."
   },
   "void PrecacheSoundScript(string soundscript)": {
     "prefix": "PrecacheSoundScript",
@@ -6598,7 +6689,7 @@
     "body": [
       "RAND_MAX$0"
     ],
-    "description": "32767"
+    "description": "Windows: 32768, Linux: 2147483647"
   },
   "RECIPIENT_FILTER_DEFAULT": {
     "prefix": "RECIPIENT_FILTER_DEFAULT",
@@ -6689,7 +6780,7 @@
     "body": [
       "ReapplyProvision()$0"
     ],
-    "description": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player"
+    "description": "Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player."
   },
   "void Regenerate(bool refill_health_ammo)": {
     "prefix": "Regenerate",
@@ -6738,7 +6829,7 @@
     "body": [
       "RemoveAllItems(${1:bool unused})$0"
     ],
-    "description": ""
+    "description": "This does not actually remove all items. It only drops the passtime ball, intelligence, disables radius healing, and hides the Spy invis watch."
   },
   "void RemoveAllObjects(bool explode)": {
     "prefix": "RemoveAllObjects",
@@ -6752,7 +6843,7 @@
     "body": [
       "RemoveAttribute(${1:string name})$0"
     ],
-    "description": "Remove an attribute to the entity"
+    "description": "Remove an attribute to the entity."
   },
   "void RemoveAttributes(int bits)": {
     "prefix": "RemoveAttributes",
@@ -6787,21 +6878,21 @@
     "body": [
       "RemoveCond(${1:ETFCond cond})$0"
     ],
-    "description": ""
+    "description": "Removes a condition. Does not remove a condition if the minimum duration has not passed. Does nothing if the condition isn't added (interally does InCond check)."
   },
   "void RemoveCondEx(ETFCond cond, bool ignoreDuration)": {
     "prefix": "RemoveCondEx",
     "body": [
       "RemoveCondEx(${1:ETFCond cond}, ${2:bool ignoreDuration})$0"
     ],
-    "description": ""
+    "description": "Extended version of RemoveCond. Allows forcefully removing the condition even if minimum duration is not met."
   },
   "void RemoveCurrency(int amount)": {
     "prefix": "RemoveCurrency",
     "body": [
       "RemoveCurrency(${1:int amount})$0"
     ],
-    "description": "Take away money from a player for reasons such as ie. spending."
+    "description": "Take away money from a player for reasons such as ie. spending. Lower bounded to 0."
   },
   "void RemoveCustomAttribute(string name)": {
     "prefix": "RemoveCustomAttribute",
@@ -7200,14 +7291,14 @@
     "body": [
       "ScreenFade(${1:handle player}, ${2:int red}, ${3:int green}, ${4:int blue}, ${5:int alpha}, ${6:float fadeTime}, ${7:float fadeHold}, ${8:int flags})$0"
     ],
-    "description": "Start a customisable screenfade. If no player is specified, the fade will apply to all players."
+    "description": "Start a customisable screenfade. If no player is specified, the fade will apply to all players. For a list of flags, see FFADE constants."
   },
   "void ScreenShake(Vector vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int eCommand, bool bAirShake)": {
     "prefix": "ScreenShake",
     "body": [
       "ScreenShake(${1:Vector vecCenter}, ${2:float flAmplitude}, ${3:float flFrequency}, ${4:float flDuration}, ${5:float flRadius}, ${6:int eCommand}, ${7:bool bAirShake})$0"
     ],
-    "description": "Start a customisable screenshake; eCommand( SHAKE_START = 0, SHAKE_STOP = 1 )."
+    "description": "Start a customisable screenshake. Set eCommand to 0 to start a shake, or 1 to stop an existing shake."
   },
   "void ScriptDebugAddTextFilter()": {
     "prefix": "ScriptDebugAddTextFilter",
@@ -7277,7 +7368,7 @@
     "body": [
       "ScriptDebugDrawTextEnabled$0"
     ],
-    "description": ""
+    "description": "true"
   },
   "void ScriptDebugDrawWatches()": {
     "prefix": "ScriptDebugDrawWatches",
@@ -7291,7 +7382,7 @@
     "body": [
       "ScriptDebugDrawWatchesEnabled$0"
     ],
-    "description": ""
+    "description": "true"
   },
   "void ScriptDebugDumpKeys()": {
     "prefix": "ScriptDebugDumpKeys",
@@ -7312,7 +7403,7 @@
     "body": [
       "ScriptDebugInDebugDraw$0"
     ],
-    "description": ""
+    "description": "false"
   },
   "void ScriptDebugIterateKeys()": {
     "prefix": "ScriptDebugIterateKeys",
@@ -7389,7 +7480,7 @@
     "body": [
       "ScriptDebugTextIndent$0"
     ],
-    "description": ""
+    "description": "0"
   },
   "void ScriptDebugTextPrint()": {
     "prefix": "ScriptDebugTextPrint",
@@ -7417,7 +7508,7 @@
     "body": [
       "ScriptDebugTraceAllOn$0"
     ],
-    "description": ""
+    "description": "false"
   },
   "ScriptDebugTraces": {
     "prefix": "ScriptDebugTraces",
@@ -7503,19 +7594,26 @@
     ],
     "description": "Sets the absolute origin of the entity."
   },
-  "void SetAbsVelocity(Vector)": {
+  "void SetAbsVelocity(Vector velocity)": {
     "prefix": "SetAbsVelocity",
     "body": [
-      "SetAbsVelocity(${1:Vector})$0"
+      "SetAbsVelocity(${1:Vector velocity})$0"
     ],
-    "description": "Sets the current absolute velocity velocity of the entity"
+    "description": "Sets the current absolute velocity of the entity"
+  },
+  "void SetActionPoint(handle entity)": {
+    "prefix": "SetActionPoint",
+    "body": [
+      "SetActionPoint(${1:handle entity})$0"
+    ],
+    "description": "Set the given action point for this bot"
   },
   "void SetAngles(float pitch, float yaw, float roll)": {
     "prefix": "SetAngles",
     "body": [
       "SetAngles(${1:float pitch}, ${2:float yaw}, ${3:float roll})$0"
     ],
-    "description": "Set entity angles."
+    "description": "Set entity angles. Deprecated, use SetAbsAngles instead."
   },
   "void SetAngularVelocity(float pitch, float yaw, float roll)": {
     "prefix": "SetAngularVelocity",
@@ -7551,6 +7649,13 @@
       "SetAutoJump(${1:float minTime}, ${2:float maxTime})$0"
     ],
     "description": "Sets if the bot should automatically jump"
+  },
+  "void SetBehaviorFlag(int flags)": {
+    "prefix": "SetBehaviorFlag",
+    "body": [
+      "SetBehaviorFlag(${1:int flags})$0"
+    ],
+    "description": "Set the given behavior flag(s) for this bot. Does not work."
   },
   "void SetBodygroup(int ID, int value)": {
     "prefix": "SetBodygroup",
@@ -7592,7 +7697,7 @@
     "body": [
       "SetCurrency(${1:int amount})$0"
     ],
-    "description": "Set player's cash for game modes with upgrades, ie. MvM"
+    "description": "Set player's cash for game modes with upgrades, ie. MvM. Does not have any bounds checking."
   },
   "void SetCurrentTauntMoveSpeed(float speed)": {
     "prefix": "SetCurrentTauntMoveSpeed",
@@ -7606,7 +7711,7 @@
     "body": [
       "SetCustomModel(${1:string model_name})$0"
     ],
-    "description": ""
+    "description": "Sets a custom player model without animations (model will T-pose). To enable animations, use SetCustomModelWithClassAnimations instead."
   },
   "void SetCustomModelOffset(Vector offset)": {
     "prefix": "SetCustomModelOffset",
@@ -7641,7 +7746,7 @@
     "body": [
       "SetCustomModelWithClassAnimations(${1:string model_name})$0"
     ],
-    "description": ""
+    "description": "Sets a custom player model with full animations."
   },
   "void SetCustomViewModel(string model_name)": {
     "prefix": "SetCustomViewModel",
@@ -7755,12 +7860,12 @@
     ],
     "description": ""
   },
-  "void SetGroupSpawnTables(table)": {
+  "void SetGroupSpawnTables(table group, table spawn)": {
     "prefix": "SetGroupSpawnTables",
     "body": [
-      "SetGroupSpawnTables(${1:table})$0"
+      "SetGroupSpawnTables(${1:table group}, ${2:table spawn})$0"
     ],
-    "description": "Cache the group spawn tables"
+    "description": "Unused. This only stores a reference to the two tables which is removed when the point_script_template is deleted."
   },
   "void SetHealth(int health)": {
     "prefix": "SetHealth",
@@ -7825,6 +7930,20 @@
     ],
     "description": "Sets max vision range override for the bot"
   },
+  "void SetMission(int mission, bool reset_behavior)": {
+    "prefix": "SetMission",
+    "body": [
+      "SetMission(${1:int mission}, ${2:bool reset_behavior})$0"
+    ],
+    "description": "Set this bot's current mission to the given mission. Does not work."
+  },
+  "void SetMissionTarget(handle entity)": {
+    "prefix": "SetMissionTarget",
+    "body": [
+      "SetMissionTarget(${1:handle entity})$0"
+    ],
+    "description": "Set the bot's mission target to this given entity"
+  },
   "void SetModel(string model_name)": {
     "prefix": "SetModel",
     "body": [
@@ -7879,7 +7998,7 @@
     "body": [
       "SetOrigin(${1:Vector origin})$0"
     ],
-    "description": ""
+    "description": "Deprecated, use SetAbsOrigin instead."
   },
   "void SetOvertimeAllowedForCTF(bool state)": {
     "prefix": "SetOvertimeAllowedForCTF",
@@ -7950,6 +8069,13 @@
       "SetPoseParameter(${1:int ID}, ${2:float value})$0"
     ],
     "description": "Sets a pose parameter value. Returns the effective value after clamping or looping."
+  },
+  "void SetPrevMission(int mission)": {
+    "prefix": "SetPrevMission",
+    "body": [
+      "SetPrevMission(${1:int mission})$0"
+    ],
+    "description": "Set this bot's previous mission to the given mission. Does not work."
   },
   "void SetPropBool(handle entity, string propertyName, bool value)": {
     "prefix": "SetPropBool",
@@ -8173,7 +8299,7 @@
     "body": [
       "SetValue(${1:string name}, ${2:value})$0"
     ],
-    "description": "Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Supported types are bool, int, float, string."
+    "description": "Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Convars marked as dev-only (i.e. not visible in console) can also be set. Supported types are bool, int, float, string. The original value of the convar is saved and is reset on map change, in other words convar changes will not persist across maps."
   },
   "void SetVehicleReverseTime(float time)": {
     "prefix": "SetVehicleReverseTime",
@@ -8187,7 +8313,7 @@
     "body": [
       "SetVelocity(${1:Vector velocity})$0"
     ],
-    "description": ""
+    "description": "Deprecated, use SetAbsVelocity instead."
   },
   "SetWaterLevel(int water_level)": {
     "prefix": "SetWaterLevel",
@@ -8222,7 +8348,7 @@
     "body": [
       "ShowMessage(${1:string message})$0"
     ],
-    "description": "Print a hud message on all clients"
+    "description": "Print a hud message on all clients. Non-functional."
   },
   "void SnapEyeAngles(QAngle angles)": {
     "prefix": "SnapEyeAngles",
@@ -8350,6 +8476,13 @@
     ],
     "description": "Advance animation frame to some time in the future with a manual interval"
   },
+  "void StunPlayer(float duration, float move_speed_reduction, int flags, handle attacker)": {
+    "prefix": "StunPlayer",
+    "body": [
+      "StunPlayer(${1:float duration}, ${2:float move_speed_reduction}, ${3:int flags}, ${4:handle attacker})$0"
+    ],
+    "description": "Stuns the player for a specified duration. Move speed reduction is a fraction (0 = no reduction. 1 = total reduction, no movement). Flag combinations control the stun type and behavior, see the constants page."
+  },
   "TAUNT_BASE_WEAPON": {
     "prefix": "TAUNT_BASE_WEAPON",
     "body": [
@@ -8411,7 +8544,7 @@
     "body": [
       "TEAM_UNASSIGNED$0"
     ],
-    "description": "0"
+    "description": "null, This is supposed to be 0."
   },
   "TELEPORT_TO_HINT": {
     "prefix": "TELEPORT_TO_HINT",
@@ -9608,7 +9741,7 @@
     "body": [
       "TF_DMG_CUSTOM_END$0"
     ],
-    "description": "84"
+    "description": "86"
   },
   "TF_DMG_CUSTOM_EYEBALL_ROCKET": {
     "prefix": "TF_DMG_CUSTOM_EYEBALL_ROCKET",
@@ -9679,6 +9812,20 @@
       "TF_DMG_CUSTOM_KART$0"
     ],
     "description": "75"
+  },
+  "TF_DMG_CUSTOM_KRAMPUS_MELEE": {
+    "prefix": "TF_DMG_CUSTOM_KRAMPUS_MELEE",
+    "body": [
+      "TF_DMG_CUSTOM_KRAMPUS_MELEE$0"
+    ],
+    "description": "84"
+  },
+  "TF_DMG_CUSTOM_KRAMPUS_RANGED": {
+    "prefix": "TF_DMG_CUSTOM_KRAMPUS_RANGED",
+    "body": [
+      "TF_DMG_CUSTOM_KRAMPUS_RANGED$0"
+    ],
+    "description": "85"
   },
   "TF_DMG_CUSTOM_MERASMUS_DECAPITATION": {
     "prefix": "TF_DMG_CUSTOM_MERASMUS_DECAPITATION",
@@ -10303,24 +10450,24 @@
     ],
     "description": "2"
   },
-  "void TakeDamage(float flDamage, int nDamageType, handle hAttacker)": {
+  "void TakeDamage(float flDamage, Constants.FDmgType nDamageType, handle hAttacker)": {
     "prefix": "TakeDamage",
     "body": [
-      "TakeDamage(${1:float flDamage}, ${2:int nDamageType}, ${3:handle hAttacker})$0"
+      "TakeDamage(${1:float flDamage}, ${2:Constants.FDmgType nDamageType}, ${3:handle hAttacker})$0"
     ],
     "description": "Deals damage to the entity."
   },
-  "void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, Constants.ETFDmgCustom nCustomDamageType)": {
+  "void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType, Constants.ETFDmgCustom nCustomDamageType)": {
     "prefix": "TakeDamageCustom",
     "body": [
-      "TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType}, ${8:Constants.ETFDmgCustom nCustomDamageType})$0"
+      "TakeDamageCustom(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:Constants.FDmgType nDamageType}, ${8:Constants.ETFDmgCustom nCustomDamageType})$0"
     ],
     "description": "Extended version of TakeDamageEx that can apply a custom damage type."
   },
-  "void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)": {
+  "void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType)": {
     "prefix": "TakeDamageEx",
     "body": [
-      "TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:int nDamageType})$0"
+      "TakeDamageEx(${1:handle hInflictor}, ${2:handle hAttacker}, ${3:handle hWeapon}, ${4:Vector vecDamageForce}, ${5:Vector vecDamagePosition}, ${6:float flDamage}, ${7:Constants.FDmgType nDamageType})$0"
     ],
     "description": "Extended version of TakeDamage."
   },
@@ -10357,7 +10504,7 @@
     "body": [
       "Time()$0"
     ],
-    "description": "Get the current server time"
+    "description": "Get the current server time in seconds"
   },
   "string ToKVString()": {
     "prefix": "ToKVString",
@@ -10546,7 +10693,7 @@
     "body": [
       "ValidateScriptScope()$0"
     ],
-    "description": "Ensure that an entity's script scope has been created"
+    "description": "Ensure that an entity's script scope has been created. In practice, this always returns true unless the script VM is disabled in launch options."
   },
   "Vector(float x = 0, float y = 0, float z = 0)": {
     "prefix": "Vector",
@@ -10637,7 +10784,7 @@
     "body": [
       "Weapon_Equip(${1:handle weapon})$0"
     ],
-    "description": ""
+    "description": "Equips a weapon in the player. This places it inside the m_hMyWeapons array."
   },
   "void Weapon_SetLast(handle weapon)": {
     "prefix": "Weapon_SetLast",
@@ -10658,7 +10805,7 @@
     "body": [
       "Weapon_Switch(${1:handle weapon})$0"
     ],
-    "description": ""
+    "description": "Attempts a switch to the given weapon, if present in the player's inventory (m_hMyWeapons array)."
   },
   "float Yaw()": {
     "prefix": "Yaw",
@@ -10798,7 +10945,7 @@
     "body": [
       "_intsize_$0"
     ],
-    "description": "4"
+    "description": "32-bit: 4, 64-bit: 8"
   },
   "_version_": {
     "prefix": "_version_",
@@ -10856,10 +11003,10 @@
     ],
     "description": "Returns tan^-1(x)"
   },
-  "atan2(num y, num x) (!)": {
+  "atan2(num y, num x)": {
     "prefix": "atan2",
     "body": [
-      "atan2(${1:num y}, ${2:num x) (!})$0"
+      "atan2(${1:num y}, ${2:num x})$0"
     ],
     "description": "Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (-PI, PI). Note the order of the parameters x and y!"
   },
@@ -11561,7 +11708,7 @@
     "body": [
       "rand()$0"
     ],
-    "description": "Returns a random integer with 0 <= rand() <= RAND_MAX"
+    "description": "Returns a random integer with 0 <= rand() <= RAND_MAX. The value of RAND_MAX is 32768 on Windows, but 2147483647 on Linux. This can cause undeterministic behavior between a server running on Windows vs Linux. Instead, use RandomInt or RandomFloat."
   },
   "blob readblob(int numberOfBytes)": {
     "prefix": "readblob",
@@ -11815,13 +11962,6 @@
     ],
     "description": ""
   },
-  "ent.m_iHealth": {
-    "prefix": "ent.m_iHealth",
-    "body": [
-      "NetProps.GetPropInt(ent, \"m_iHealth\")"
-    ],
-    "description": "Gathers the health of a player."
-  },
   "void OnGameEvent_achievement_earned()": {
     "prefix": "OnGameEvent_achievement_earned",
     "body": [
@@ -11854,6 +11994,13 @@
     "prefix": "OnGameEvent_air_dash",
     "body": [
       "OnGameEvent_air_dash(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "void OnGameEvent_ammo_pickup()": {
+    "prefix": "OnGameEvent_ammo_pickup",
+    "body": [
+      "OnGameEvent_ammo_pickup(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
   },
@@ -12186,6 +12333,13 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_enter_vehicle()": {
+    "prefix": "OnGameEvent_enter_vehicle",
+    "body": [
+      "OnGameEvent_enter_vehicle(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_entered_performance_mode()": {
     "prefix": "OnGameEvent_entered_performance_mode",
     "body": [
@@ -12368,10 +12522,24 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_gameui_activate()": {
+    "prefix": "OnGameEvent_gameui_activate",
+    "body": [
+      "OnGameEvent_gameui_activate(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_gameui_activated()": {
     "prefix": "OnGameEvent_gameui_activated",
     "body": [
       "OnGameEvent_gameui_activated(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "void OnGameEvent_gameui_hide()": {
+    "prefix": "OnGameEvent_gameui_hide",
+    "body": [
+      "OnGameEvent_gameui_hide(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
   },
@@ -12536,6 +12704,13 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_killed_ball_carrier()": {
+    "prefix": "OnGameEvent_killed_ball_carrier",
+    "body": [
+      "OnGameEvent_killed_ball_carrier(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_killed_capping_player()": {
     "prefix": "OnGameEvent_killed_capping_player",
     "body": [
@@ -12550,6 +12725,13 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_leave_vehicle()": {
+    "prefix": "OnGameEvent_leave_vehicle",
+    "body": [
+      "OnGameEvent_leave_vehicle(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_lobby_updated()": {
     "prefix": "OnGameEvent_lobby_updated",
     "body": [
@@ -12561,6 +12743,13 @@
     "prefix": "OnGameEvent_localplayer_becameobserver",
     "body": [
       "OnGameEvent_localplayer_becameobserver(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "void OnGameEvent_localplayer_builtobject()": {
+    "prefix": "OnGameEvent_localplayer_builtobject",
+    "body": [
+      "OnGameEvent_localplayer_builtobject(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
   },
@@ -13985,6 +14174,13 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_single_player_death()": {
+    "prefix": "OnGameEvent_single_player_death",
+    "body": [
+      "OnGameEvent_single_player_death(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_slap_notice()": {
     "prefix": "OnGameEvent_slap_notice",
     "body": [
@@ -14052,6 +14248,20 @@
     "prefix": "OnGameEvent_tagged_player_as_it",
     "body": [
       "OnGameEvent_tagged_player_as_it(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "void OnGameEvent_take_armor()": {
+    "prefix": "OnGameEvent_take_armor",
+    "body": [
+      "OnGameEvent_take_armor(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
+  "void OnGameEvent_take_health()": {
+    "prefix": "OnGameEvent_take_health",
+    "body": [
+      "OnGameEvent_take_health(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
   },
@@ -14447,6 +14657,13 @@
     ],
     "description": ""
   },
+  "void OnGameEvent_weapon_equipped()": {
+    "prefix": "OnGameEvent_weapon_equipped",
+    "body": [
+      "OnGameEvent_weapon_equipped(${1:params}){\r\n\t$0\n}"
+    ],
+    "description": ""
+  },
   "void OnGameEvent_winlimit_changed()": {
     "prefix": "OnGameEvent_winlimit_changed",
     "body": [
@@ -14467,5 +14684,12 @@
       "OnGameEvent_world_status_changed(${1:params}){\r\n\t$0\n}"
     ],
     "description": ""
+  },
+  "ent.m_iHealth": {
+    "prefix": "ent.m_iHealth",
+    "body": [
+      "NetProps.GetPropInt(ent, \"m_iHealth\")"
+    ],
+    "description": "Gathers the health of a player."
   }
 }

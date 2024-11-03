@@ -34,6 +34,13 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_ammo_pickup()": {
+		"prefix": "OnGameEvent_ammo_pickup",
+		"body": [
+			"OnGameEvent_ammo_pickup(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_arena_match_maxstreak()": {
 		"prefix": "OnGameEvent_arena_match_maxstreak",
 		"body": [
@@ -363,6 +370,13 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_enter_vehicle()": {
+		"prefix": "OnGameEvent_enter_vehicle",
+		"body": [
+			"OnGameEvent_enter_vehicle(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_entered_performance_mode()": {
 		"prefix": "OnGameEvent_entered_performance_mode",
 		"body": [
@@ -545,10 +559,24 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_gameui_activate()": {
+		"prefix": "OnGameEvent_gameui_activate",
+		"body": [
+			"OnGameEvent_gameui_activate(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_gameui_activated()": {
 		"prefix": "OnGameEvent_gameui_activated",
 		"body": [
 			"OnGameEvent_gameui_activated(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_gameui_hide()": {
+		"prefix": "OnGameEvent_gameui_hide",
+		"body": [
+			"OnGameEvent_gameui_hide(${1:params}){\r\n\t$0\n}"
 		],
 		"description": ""
 	},
@@ -713,6 +741,13 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_killed_ball_carrier()": {
+		"prefix": "OnGameEvent_killed_ball_carrier",
+		"body": [
+			"OnGameEvent_killed_ball_carrier(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_killed_capping_player()": {
 		"prefix": "OnGameEvent_killed_capping_player",
 		"body": [
@@ -727,6 +762,13 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_leave_vehicle()": {
+		"prefix": "OnGameEvent_leave_vehicle",
+		"body": [
+			"OnGameEvent_leave_vehicle(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_lobby_updated()": {
 		"prefix": "OnGameEvent_lobby_updated",
 		"body": [
@@ -738,6 +780,13 @@
 		"prefix": "OnGameEvent_localplayer_becameobserver",
 		"body": [
 			"OnGameEvent_localplayer_becameobserver(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_localplayer_builtobject()": {
+		"prefix": "OnGameEvent_localplayer_builtobject",
+		"body": [
+			"OnGameEvent_localplayer_builtobject(${1:params}){\r\n\t$0\n}"
 		],
 		"description": ""
 	},
@@ -2162,6 +2211,13 @@
 		],
 		"description": ""
 	},
+	"void OnGameEvent_single_player_death()": {
+		"prefix": "OnGameEvent_single_player_death",
+		"body": [
+			"OnGameEvent_single_player_death(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
 	"void OnGameEvent_slap_notice()": {
 		"prefix": "OnGameEvent_slap_notice",
 		"body": [
@@ -2229,6 +2285,20 @@
 		"prefix": "OnGameEvent_tagged_player_as_it",
 		"body": [
 			"OnGameEvent_tagged_player_as_it(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_take_armor()": {
+		"prefix": "OnGameEvent_take_armor",
+		"body": [
+			"OnGameEvent_take_armor(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_take_health()": {
+		"prefix": "OnGameEvent_take_health",
+		"body": [
+			"OnGameEvent_take_health(${1:params}){\r\n\t$0\n}"
 		],
 		"description": ""
 	},
@@ -2621,6 +2691,13 @@
 		"prefix": "OnGameEvent_vote_started",
 		"body": [
 			"OnGameEvent_vote_started(${1:params}){\r\n\t$0\n}"
+		],
+		"description": ""
+	},
+	"void OnGameEvent_weapon_equipped()": {
+		"prefix": "OnGameEvent_weapon_equipped",
+		"body": [
+			"OnGameEvent_weapon_equipped(${1:params}){\r\n\t$0\n}"
 		],
 		"description": ""
 	},

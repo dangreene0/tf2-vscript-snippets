@@ -36,19 +36,19 @@ Table of registered script hook callbacks.
 
 ScriptDebugDefaultWatchColor
 ScriptDebugDefaultWatchColor
-
+[0, 192, 0]
 
 ScriptDebugDrawTextEnabled
 ScriptDebugDrawTextEnabled
-
+true
 
 ScriptDebugDrawWatchesEnabled
 ScriptDebugDrawWatchesEnabled
-
+true
 
 ScriptDebugInDebugDraw
 ScriptDebugInDebugDraw
-
+false
 
 ScriptDebugText
 ScriptDebugText
@@ -56,7 +56,7 @@ ScriptDebugText
 
 ScriptDebugTextIndent
 ScriptDebugTextIndent
-
+0
 
 ScriptDebugTextFilters
 ScriptDebugTextFilters
@@ -68,7 +68,7 @@ ScriptDebugTraces
 
 ScriptDebugTraceAllOn
 ScriptDebugTraceAllOn
-
+false
 
 ScriptDebugWatches
 ScriptDebugWatches
@@ -84,7 +84,7 @@ _floatsize_
 
 _intsize_
 _intsize_
-4
+32-bit: 4, 64-bit: 8
 
 _version_
 _version_
@@ -96,11 +96,11 @@ _versionnumber_
 
 RAND_MAX
 RAND_MAX
-32767
+Windows: 32768, Linux: 2147483647
 
 PI
 PI
-3.14158
+3.14159
 
 __KeyValueFromFloat
 bool __KeyValueFromFloat(string key, float value)
@@ -117,6 +117,10 @@ Behaves the same as KeyValueFromString, use that instead.
 __KeyValueFromVector
 bool __KeyValueFromVector(string key, Vector value)
 Behaves the same as KeyValueFromVector, use that instead.
+
+AcceptInput
+bool AcceptInput(string input, string param, handle activator, handle caller)
+caller) 	Generate a synchronous I/O event. Unlike EntFireByHandle, this is processed immediately. Returns false if input is a null/empty string, or if the input wasn't handled.
 
 AddEFlags
 void AddEFlags(int flags)
@@ -163,7 +167,7 @@ void DisableDraw()
 Disable drawing and transmitting the entity to clients. (adds EF_NODRAW)
 
 DisconnectOutput
-void DisconnectOutput(string, string)
+void DisconnectOutput(string output, string function)
 Removes a connected script function from an I/O event.
 
 DispatchSpawn
@@ -171,7 +175,7 @@ void DispatchSpawn()
 Alternative dispatch spawn, same as the one in CEntities, for convenience.
 
 EmitSound
-void EmitSound(string)
+void EmitSound(string soundname)
 Plays a sound from this entity.
 
 EnableDraw
@@ -212,7 +216,7 @@ Get the local angular velocity - returns a vector of pitch, yaw, and roll
 
 GetBaseVelocity
 Vector GetBaseVelocity()
-Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like enttrigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects.
+Returns any constant velocity currently being imparted onto the entity. This includes being pushed by effects like trigger_push and players standing on moving geometry like elevators. Should always returns a zero vector if the entity is not affected by any movement effects.
 
 GetBoundingMaxs
 Vector GetBoundingMaxs()
@@ -372,7 +376,7 @@ Get the up vector of the entity
 
 GetVelocity
 Vector GetVelocity()
-
+Deprecated, use GetAbsVelocity isntead.
 
 GetWaterLevel
 int GetWaterLevel()
@@ -459,8 +463,8 @@ void SetAbsAngles(QAngle angles)
 Set entity pitch, yaw, roll as QAngles
 
 SetAbsVelocity
-void SetAbsVelocity(Vector)
-Sets the current absolute velocity velocity of the entity
+void SetAbsVelocity(Vector velocity)
+Sets the current absolute velocity of the entity
 
 SetAbsOrigin
 void SetAbsOrigin(Vector origin)
@@ -468,7 +472,7 @@ Sets the absolute origin of the entity.
 
 SetAngles
 void SetAngles(float pitch, float yaw, float roll)
-Set entity angles.
+Set entity angles. Deprecated, use SetAbsAngles instead.
 
 SetAngularVelocity
 void SetAngularVelocity(float pitch, float yaw, float roll)
@@ -524,7 +528,7 @@ void SetMoveType(EMoveType movetype, EMoveCollide movecollide)
 
 SetOrigin
 void SetOrigin(Vector origin)
-
+Deprecated, use SetAbsOrigin instead.
 
 SetOwner
 void SetOwner(handle entity)
@@ -556,7 +560,7 @@ Sets entity team.
 
 SetVelocity
 void SetVelocity(Vector velocity)
-
+Deprecated, use SetAbsVelocity instead.
 
 SetWaterLevel
 SetWaterLevel(int water_level)
@@ -571,15 +575,15 @@ void StopSound(string sound_name)
 Stops a sound on this entity.
 
 TakeDamage
-void TakeDamage(float flDamage, int nDamageType, handle hAttacker)
+void TakeDamage(float flDamage, Constants.FDmgType nDamageType, handle hAttacker)
 Deals damage to the entity.
 
 TakeDamageEx
-void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType)
+void TakeDamageEx(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType)
 Extended version of TakeDamage.
 
 TakeDamageCustom
-void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, int nDamageType, Constants.ETFDmgCustom nCustomDamageType)
+void TakeDamageCustom(handle hInflictor, handle hAttacker, handle hWeapon, Vector vecDamageForce, Vector vecDamagePosition, float flDamage, Constants.FDmgType nDamageType, Constants.ETFDmgCustom nCustomDamageType)
 Extended version of TakeDamageEx that can apply a custom damage type.
 
 Teleport
@@ -596,7 +600,7 @@ ToggleFlag(int flags)
 
 ValidateScriptScope
 bool ValidateScriptScope()
-Ensure that an entity's script scope has been created
+Ensure that an entity's script scope has been created. In practice, this always returns true unless the script VM is disabled in launch options.
 
 Input<name>
 bool Input<name>()
@@ -606,13 +610,17 @@ OnGameEvent_<name>
 void OnGameEvent_<name>(table params)
 Called each time a game event with the specified name occurs. The name of the function needs to be OnGameEvent_ followed by the name of the game event. E.g. for the player_spawn input, it would be OnGameEvent_player_spawn.
 
-OnPostSpawn
-void OnPostSpawn()
-Called after the entity spawns, which is after scripts and players have loaded. This could be used to have an entity register itself with a master script, or adjusting the entity parameters in a programmatic way.
-
 Precache
 void Precache()
 Called after the script executes. Can be used to call precache functions for models and sounds on map load.
+
+ConnectOutputs
+void ConnectOutputs(handle scope)
+Global function called after an entity with an script assigned spawns (i.e. vscripts keyvalue is not blank). Unlike OnPostSpawn, this is called immediately and therefore on map respawn, some entities may not exist during this point.
+
+OnPostSpawn
+void OnPostSpawn()
+Called after the entity spawns, which is after scripts and players have loaded. This could be used to have an entity register itself with a master script, or adjusting the entity parameters in a programmatic way.
 
 OnTakeDamage
 void OnTakeDamage(handle params)
@@ -620,7 +628,7 @@ Called each time an entity takes damage. The script can modify the table entries
 
 DispatchAnimEvents
 void DispatchAnimEvents(handle entity)
-Dispatch animation events to a CBaseAnimating
+Dispatch animation events to a CBaseAnimating entity.
 
 FindBodygroupByName
 int FindBodygroupByName(string name)
@@ -684,7 +692,7 @@ Get a sequence duration in seconds by sequence ID.
 
 GetSequenceName
 string GetSequenceName(int ID)
-Get a sequence name by sequence ID.
+Get a sequence name by sequence ID. Returns "Not Found!" if ID is -1, "Unknown" if the sequence doesn't exist or "No model!" if no model is assigned.
 
 GetSkin
 int GetSkin()
@@ -792,7 +800,7 @@ Max size of clip2
 
 GetName
 string GetName()
-Gets the weapon's name
+Gets the weapon's internal name (not the targetname!)
 
 GetPosition
 int GetPosition()
@@ -954,13 +962,17 @@ AddAttribute
 void AddAttribute(string name, float value, float duration)
 Add an attribute to the entity. Set duration to -1 for the attribute to be applied forever.
 
+GetAttribute
+float GetAttribute(string name, float default_value)
+Get an attribute float from the entity. If the attribute does not exist, returns default_value.
+
 RemoveAttribute
 void RemoveAttribute(string name)
-Remove an attribute to the entity
+Remove an attribute to the entity.
 
 ReapplyProvision
 void ReapplyProvision()
-Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player
+Relinks attributes to provisioners, e.g. calling this on a weapon will add it's attributes to the player.
 
 AddCond
 void AddCond(ETFCond cond)
@@ -972,7 +984,7 @@ void AddCondEx(ETFCond cond, float duration, handle provider)
 
 AddCurrency
 void AddCurrency(int amount)
-Kaching! Give the player some cash for game modes with upgrades, ie. MvM
+Kaching! Give the player some cash for game modes with upgrades, ie. MvM. The new value is bounded between 0-30000.
 
 AddCustomAttribute
 void AddCustomAttribute(string name, float value, float duration)
@@ -1040,7 +1052,7 @@ Can the player move?
 
 DoTauntAttack
 void DoAttackTaunt()
-Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned (taunt attack name attribute)
+Performs taunts attacks if available. Player must be already taunting and taunt must have a valid attack assigned ("taunt attack name" attribute)
 
 DropFlag
 void DropFlag(bool silent)
@@ -1156,7 +1168,7 @@ Who is the medic healing?
 
 GetHudHideFlags
 int GetHudHideFlags()
-
+Gets current hidden hud elements
 
 GetInvulns
 int GetInvulns()
@@ -1167,7 +1179,7 @@ int GetKillAssists()
 
 
 GetLastWeapon
-GetLastWeapon()
+handle GetLastWeapon()
 
 
 GetNextChangeClassTime
@@ -1234,9 +1246,13 @@ HasItem
 bool HasItem()
 Currently holding an item? Eg. capture flag
 
+HandleTauntCommand
+void HandleTauntCommand(int taunt_slot)
+Spootfs a taunt command from the player, as if they selected this taunt.
+
 IgnitePlayer
 void IgnitePlayer()
-
+Supposed to set the player on fire, but... does nothing except play on-fire sound and voicelines.
 
 InAirDueToExplosion
 bool InAirDueToExplosion()
@@ -1264,7 +1280,7 @@ bool IsAllowedToTaunt()
 
 IsBotOfType
 bool IsBotOfType(int type)
-
+Returns true if the player matches this bot type. Only one type of bot exists which is reserved for AI bots (not puppet bots): TF_BOT_TYPE. 0 is used for real players or puppet bots. Use IsFakeClient to check for a puppet bot instead.
 
 IsCallingForMedic
 bool IsCallingForMedic()
@@ -1284,7 +1300,7 @@ bool IsCritBoosted()
 
 IsFakeClient
 bool IsFakeClient()
-
+Returns true if the player is a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead.
 
 IsFireproof
 bool IsFireproof()
@@ -1364,7 +1380,7 @@ Resupplies a player. If regen health/ammo is set, clears negative conds, gives b
 
 RemoveAllItems
 void RemoveAllItems(bool unused)
-
+This does not actually remove all items. It only drops the passtime ball, intelligence, disables radius healing, and hides the Spy invis watch.
 
 RemoveAllObjects
 void RemoveAllObjects(bool explode)
@@ -1372,15 +1388,15 @@ Remove all player objects. Eg. dispensers/sentries.
 
 RemoveCond
 void RemoveCond(ETFCond cond)
-
+Removes a condition. Does not remove a condition if the minimum duration has not passed. Does nothing if the condition isn't added (interally does InCond check).
 
 RemoveCondEx
 void RemoveCondEx(ETFCond cond, bool ignoreDuration)
-
+Extended version of RemoveCond. Allows forcefully removing the condition even if minimum duration is not met.
 
 RemoveCurrency
 void RemoveCurrency(int amount)
-Take away money from a player for reasons such as ie. spending.
+Take away money from a player for reasons such as ie. spending. Lower bounded to 0.
 
 RemoveCustomAttribute
 void RemoveCustomAttribute(string name)
@@ -1416,7 +1432,7 @@ void SetCondDuration(ETFCond cond, float duration)
 
 SetCurrency
 void SetCurrency(int amount)
-Set player's cash for game modes with upgrades, ie. MvM
+Set player's cash for game modes with upgrades, ie. MvM. Does not have any bounds checking.
 
 SetCurrentTauntMoveSpeed
 void SetCurrentTauntMoveSpeed(float speed)
@@ -1424,7 +1440,7 @@ void SetCurrentTauntMoveSpeed(float speed)
 
 SetCustomModel
 void SetCustomModel(string model_name)
-
+Sets a custom player model without animations (model will T-pose). To enable animations, use SetCustomModelWithClassAnimations instead.
 
 SetCustomModelOffset
 void SetCustomModelOffset(Vector offset)
@@ -1444,7 +1460,7 @@ void SetCustomModelVisibleToSelf(bool toggle)
 
 SetCustomModelWithClassAnimations
 void SetCustomModelWithClassAnimations(string model_name)
-
+Sets a custom player model with full animations.
 
 SetDisguiseAmmoCount
 void SetDisguiseAmmoCount(int count)
@@ -1510,6 +1526,10 @@ StopTaunt
 void StopTaunt(bool remove_prop)
 Stops current taunt. If remove_prop is true, the taunt prop will be immediately deleted instead of potentially delaying
 
+StunPlayer
+void StunPlayer(float duration, float move_speed_reduction, int flags, handle attacker)
+Stuns the player for a specified duration. Move speed reduction is a fraction (0 = no reduction. 1 = total reduction, no movement). Flag combinations control the stun type and behavior, see the constants page.
+
 Taunt
 void Taunt(int taunt_index, int taunt_concept)
 Performs a taunt if allowed. For taunt index, see Constants.FTaunts. For concepts, see MP_CONCEPT List. Concept is the "voiceline" index to use with the taunt. For TAUNT_SHOW_ITEM and TAUNT_BASE_WEAPON this is set automatically. TAUNT_LONG is not supported.
@@ -1540,7 +1560,7 @@ Does nothing!
 
 Weapon_Equip
 void Weapon_Equip(handle weapon)
-
+Equips a weapon in the player. This places it inside the m_hMyWeapons array.
 
 Weapon_SetLast
 void Weapon_SetLast(handle weapon)
@@ -1552,7 +1572,7 @@ vector Weapon_ShootPosition()
 
 Weapon_Switch
 void Weapon_Switch(handle weapon)
-
+Attempts a switch to the given weapon, if present in the player's inventory (m_hMyWeapons array).
 
 AddBotAttribute
 void AddBotAttribute(int attribute)
@@ -1582,6 +1602,10 @@ ClearAttentionFocus
 void ClearAttentionFocus()
 Clear current focus
 
+ClearBehaviorFlag
+void ClearBehaviorFlag(int flags)
+clear the given behavior flag(s) for this bot. Does not work.
+
 DelayedThreatNotice
 void DelayedThreatNotice(handle threat, float delay)
 Notice the threat after a delay in seconds
@@ -1598,6 +1622,14 @@ GenerateAndWearItem
 void GenerateAndWearItem(string item_name)
 Give me an item!
 
+GetActionPoint
+handle GetActionPoint()
+Get the given action point for this bot
+
+GetAllBotTags
+void GetAllBotTags(handle table)
+Get all bot tags. The key is the index, and the value is the tag
+
 GetHomeArea
 handle GetHomeArea()
 Gets the home nav area of the bot
@@ -1610,9 +1642,21 @@ GetMaxVisionRangeOverride
 float GetMaxVisionRangeOverride()
 Gets the max vision range override for the bot
 
+GetMission
+int GetMission()
+Get this bot's current mission. Does not work.
+
+GetMissionTarget
+handle GetMissionTarget()
+Get this bot's current mission target
+
 GetNearestKnownSappableTarget
 handle GetNearestKnownSappableTarget()
 Gets the nearest known sappable target
+
+GetPrevMission
+int GetPrevMission()
+Get's this bot's previous mission. Does not work.
 
 GetSpawnArea
 handle GetSpawnArea()
@@ -1629,6 +1673,10 @@ Checks if this TFBot has the given attributes
 HasBotTag
 bool HasBotTag(string tag)
 Checks if this TFBot has the given bot tag
+
+HasMission
+bool HasMission(int mission)
+Return true if the given mission is this bot's current mission. Does not work.
 
 HasWeaponRestriction
 bool HasWeaponRestriction(int flags)
@@ -1650,6 +1698,10 @@ IsAttentionFocusedOn
 bool IsAttentionFocusedOn(handle entity)
 Is our attention focused on this entity
 
+IsBehaviorFlagSet
+bool IsBehaviorFlagSet(int flags)
+Return true if the given behavior flag(s) are set for this bot. Does not work.
+
 IsDifficulty
 bool IsDifficulty(int difficulty)
 Returns true/false if the bot's difficulty level matches.
@@ -1657,6 +1709,10 @@ Returns true/false if the bot's difficulty level matches.
 IsInASquad
 bool IsInASquad()
 Checks if we are in a squad
+
+IsOnAnyMission()
+bool IsOnAnyMission()
+Return true if this bot has a current mission
 
 IsWeaponRestricted
 bool IsWeaponRestricted(handle weapon)
@@ -1690,6 +1746,10 @@ RemoveWeaponRestriction
 void RemoveWeaponRestriction(int flags)
 Removes weapon restriction flags
 
+SetActionPoint
+void SetActionPoint(handle entity)
+Set the given action point for this bot
+
 SetAttentionFocus
 void SetAttentionFocus(handle entity)
 Sets our current attention focus to this entity
@@ -1697,6 +1757,10 @@ Sets our current attention focus to this entity
 SetAutoJump
 void SetAutoJump(float minTime, float maxTime)
 Sets if the bot should automatically jump
+
+SetBehaviorFlag
+void SetBehaviorFlag(int flags)
+Set the given behavior flag(s) for this bot. Does not work.
 
 SetDifficulty
 void SetDifficulty(int difficulty)
@@ -1709,6 +1773,18 @@ Set the home nav area of the bot, may be null.
 SetMaxVisionRangeOverride
 void SetMaxVisionRangeOverride(float range)
 Sets max vision range override for the bot
+
+SetMission
+void SetMission(int mission, bool reset_behavior)
+Set this bot's current mission to the given mission. Does not work.
+
+SetMissionTarget
+void SetMissionTarget(handle entity)
+Set the bot's mission target to this given entity
+
+SetPrevMission
+void SetPrevMission(int mission)
+Set this bot's previous mission to the given mission. Does not work.
 
 SetScaleOverride
 void SetScaleOverride(float scale)
@@ -1760,7 +1836,7 @@ Checks if the convar is allowed to be used and is in cfg/vscript_convar_allowlis
 
 SetValue
 void SetValue(string name, value)
-Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Supported types are bool, int, float, string.
+Sets the value of the convar. The convar must be in cfg/vscript_convar_allowlist.txt to be set. Convars marked as cheat-only can be set even if sv_cheats is off. Convars marked as dev-only (i.e. not visible in console) can also be set. Supported types are bool, int, float, string. The original value of the convar is saved and is reset on map change, in other words convar changes will not persist across maps.
 
 CreateByClassname
 handle CreateByClassname(string classname)
@@ -1815,7 +1891,7 @@ handle Next(handle previous)
 At the given reference of a previously-found entity, returns the next one after it in the list.
 
 AddIncomingConnection
-void AddIncomingConnection(handle area, int dir)
+void AddIncomingConnection(handle area, ENavDirType dir)
 Add areas that connect TO this area by a ONE-WAY link
 
 ClearAttributeTF
@@ -1831,7 +1907,7 @@ int ComputeDirection(Vector point)
 Return direction from this area to the given point.
 
 ConnectTo
-void ConnectTo(handle area, int dir)
+void ConnectTo(handle area, ENavDirType dir)
 Connect this area to given area in given direction.
 
 Contains
@@ -1855,15 +1931,15 @@ Vector FindRandomSpot()
 Get random origin within extent of area.
 
 GetAdjacentArea
-handle GetAdjacentArea(int dir, int n)
+handle GetAdjacentArea(ENavDirType dir, int n)
 Return the n'th adjacent area in the given direction.
 
 GetAdjacentAreas
-void GetAdjacentAreas(int dir, handle table)
+void GetAdjacentAreas(ENavDirType dir, handle table)
 Fills a passed in table with all adjacent areas in the given direction.
 
 GetAdjacentCount
-int GetAdjacentCount(int dir)
+int GetAdjacentCount(ENavDirType dir)
 Get the number of adjacent areas in the given direction.
 
 GetAttributes
@@ -1903,7 +1979,7 @@ int GetID()
 Get area ID.
 
 GetIncomingConnections
-void GetIncomingConnections(int dir, handle table)
+void GetIncomingConnections(ENavDirType dir, handle table)
 Fills a passed in table with areas connected TO this area by a ONE-WAY link (ie: we have no connection back to them).
 
 GetParent
@@ -1923,7 +1999,7 @@ int GetPlayerCount(int team)
 Return number of players of given team currently within this area (team of zero means any/all).
 
 GetRandomAdjacentArea
-handle GetRandomAdjacentArea(int dir)
+handle GetRandomAdjacentArea(ENavDirType dir)
 Return a random adjacent area in the given direction.
 
 GetSizeX
@@ -1967,7 +2043,7 @@ bool IsCompletelyVisibleToTeam(int team)
 Return true if given area is completely visible from somewhere in this area by someone on the team.
 
 IsConnected
-bool IsConnected(handle area, int dir)
+bool IsConnected(handle area, ENavDirType dir)
 Return true if this area is connected to other area in given direction. (If you set direction to -1 or 4, it will automatically check all directions for a connection).
 
 IsCoplanar
@@ -2343,12 +2419,12 @@ Vector GetFuturePosition(float x, float speed)
 Get a position on the track X seconds in the future.
 
 AddTemplate
-void AddTemplate(string, table)
-Add an entity to the template spawner
+void AddTemplate(string classname, table keyvalues)
+Add an entity with the given keyvalues to the template spawner, similar to SpawnEntityFromTable. The number of templates allowed is unlimited.
 
 SetGroupSpawnTables
-void SetGroupSpawnTables(table)
-Cache the group spawn tables
+void SetGroupSpawnTables(table group, table spawn)
+Unused. This only stores a reference to the two tables which is removed when the point_script_template is deleted.
 
 AddBroadcastTeamTarget
 void AddBroadcastTeamTarget(int index)
@@ -2640,7 +2716,7 @@ Return true if the entity handle is traversable. If immediately is true, breakab
 
 IsGap
 bool IsGap(Vector pos, Vector forward)
-Return true if there is a gap at this position.
+Return true if there is a gap at this position. forward is unused.
 
 IsJumpingAcrossGap
 bool IsJumpingAcrossGap()
@@ -2672,7 +2748,7 @@ Initiate a simple undirected jump in the air
 
 JumpAcrossGap
 void JumpAcrossGap(Vector goalPos, Vector goalForward)
-Initiate a jump across an empty volume of space to far side
+Initiate a jump across an empty volume of space to far side. goalForward is unused.
 
 OnLandOnGround
 void OnLandOnGround(handle ground)
@@ -2916,7 +2992,7 @@ Returns the angles resulting from the rotation.
 
 AddThinkToEnt
 void AddThinkToEnt(handle entity, string FuncName)
-Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function
+Sets a function in the entity's script to rerun by itself constantly. Pass null as the function name to remove a think function. The default think interval is 0.1s, unless overridden by returning a different time interval in seconds in the think function. TF2 runs at 66 ticks per second, so the lowest possible interval is 0.015 seconds. Set to -1 to think every tick.
 
 AddToScriptHelp
 AddToScriptHelp()
@@ -2952,7 +3028,7 @@ The current level of the developer console variable.
 
 DispatchParticleEffect
 void DispatchParticleEffect(string name, Vector origin, Vector angles)
-Dispatches a one-off particle system
+Dispatches a one-off particle system. To pass angles into this, use the .Forward() method on a QAngle.
 
 Document
 void Document(unknown symbolOrTable, unknown itemIfSymbol = null, string descriptionIfSymbol = null)
@@ -2996,11 +3072,11 @@ Play named sound only on the client for the specified player. NOTE: This only su
 
 EntFire
 void EntFire(string target, string action, string value = null, float delay = 0, handle activator = null)
-Wrapper for DoEntFire() that setsactivator to null, but has no caller param.
+Wrapper for DoEntFire() that setsactivator to null, but has nocallerparam. Negative delays are clamped to 0.
 
 EntFireByHandle
 void EntFireByHandle(handle entity, string action, string value, float delay, handle activator, handle caller)
-Generate and entity i/o event. First parameter is an entity instance.
+Generate an entity I/O event. First parameter is an entity instance. Negative delays are clamped to 0.
 
 EntIndexToHScript
 handle EntIndexToHScript(int entIndex)
@@ -3044,7 +3120,7 @@ May a flag be captured?
 
 FrameTime
 float FrameTime()
-Get the time spent on the server in the last frame
+Get the time spent on the server in the last frame. Usually this will be 0.015 (the default tickrate)
 
 GameModeUsesCurrency
 bool GameModeUsesCurrency()
@@ -3084,7 +3160,7 @@ float GetGravityMultiplier()
 
 GetListenServerHost
 handle GetListenServerHost()
-Get the local player on a listen server.
+Get the local player on a listen server. Returns null on dedicated servers.
 
 GetMannVsMachineAlarmStatus
 bool GetMannVsMachineAlarmStatus()
@@ -3216,7 +3292,7 @@ No ball games.
 
 IsPlayerABot
 bool IsPlayerABot(handle player)
-Is this player/entity a bot.
+Is this player/entity a puppet or AI bot. To check if the player is a AI bot (CTFBot) specifically, use IsBotOfType instead.
 
 IsPowerupMode
 bool IsPowerupMode()
@@ -3248,7 +3324,7 @@ bool IsWeakref()
 
 LocalTime
 void LocalTime(table out)
-Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings)
+Fills out a table with the local time (second, minute, hour, day, month, year, dayofweek, dayofyear, daylightsavings). This mirrors the tm structure in C++
 
 MakeNamespace
 void MakeNamespace()
@@ -3268,7 +3344,7 @@ Get the current number of max clients set by the maxplayers command.
 
 PickupObject
 void PickupObject(handle player, handle entity)
-Object from world is put into the "Held" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level.
+Object from world is put into the "Held" slot of the player. Warning: it will smoothly interpolate from where it is to the players hand - which is a bit goofy if it is on other side of level. Does nothing in Team Fortress 2 as the code is not implemented
 
 PlayerInstanceFromIndex
 CBasePlayer PlayerInstanceFromIndex(int index)
@@ -3296,19 +3372,19 @@ Are points able to be captured?
 
 PrecacheEntityFromTable
 bool PrecacheEntityFromTable(table keyvalues)
-Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly.
+Precache an entity from KeyValues in a table. Internally this function creates the entity, fire DispatchSpawn and removes it instantly. Returns false if the table has no classname key, if the value of classname is null or empty, or if the entity failed to be created.
 
 PrecacheModel
 int PrecacheModel(string filename)
-Precache a model and return index of the model.
+Precache a model and return index of the model. Returns -1 if null or empty filename is passed in. Missing models will still return a new index.
 
 PrecacheScriptSound
 bool PrecacheScriptSound(string soundName)
-Preache a soundscript.
+Preache a soundscript. Returns false if soundscript is missing, or if a null or empty sound name is passed in.
 
 PrecacheSound
 void PrecacheSound(string soundName)
-Precache a raw sound.
+Precache a raw sound. Returns false if a null or empty sound name is passed in.
 
 PrintHelp
 PrintHelp()
@@ -3348,11 +3424,11 @@ Rotate the input Vector around an origin.
 
 ScreenFade
 void ScreenFade(handle player, int red, int green, int blue, int alpha, float fadeTime, float fadeHold, int flags)
-Start a customisable screenfade. If no player is specified, the fade will apply to all players.
+Start a customisable screenfade. If no player is specified, the fade will apply to all players. For a list of flags, see FFADE constants.
 
 ScreenShake
 void ScreenShake(Vector vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int eCommand, bool bAirShake)
-Start a customisable screenshake; eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ).
+Start a customisable screenshake. Set eCommand to 0 to start a shake, or 1 to stop an existing shake.
 
 ScriptHooksEnabled
 bool ScriptHooksEnabled()
@@ -3416,7 +3492,7 @@ Stores a string as a file, located in the game's scriptdata folder.
 
 Time
 float Time()
-Get the current server time
+Get the current server time in seconds
 
 TraceLine
 float TraceLine(Vector start, Vector end, handle ignore)
@@ -3503,7 +3579,7 @@ void DebugDrawClear()
 Try to clear all the debug overlay info.
 
 DebugDrawLine
-void DebugDrawLine(Vector start, Vector end, int red, int green, int blue', bool zTest, float time)
+void DebugDrawLine(Vector start, Vector end, int red, int green, int blue, bool zTest, float time)
 Draw a debug overlay line.
 
 DebugDrawLine_vCol
@@ -3548,7 +3624,7 @@ Calling this will have the specified player send the message to chat, either to 
 
 ShowMessage
 void ShowMessage(string message)
-Print a hud message on all clients
+Print a hud message on all clients. Non-functional.
 
 array
 array(int length, any fill = null)
@@ -3719,7 +3795,7 @@ atan(num x)
 Returns tan^-1(x)
 
 atan2
-atan2(num y, num x) (!)
+atan2(num y, num x)
 Returns the angle between the ray from the point (0, 0) through (x, y) and the positive x-axis, confined to (-PI, PI). Note the order of the parameters x and y!
 
 ceil
@@ -3756,7 +3832,7 @@ Returns x^y
 
 rand
 rand()
-Returns a random integer with 0 <= rand() <= RAND_MAX
+Returns a random integer with 0 <= rand() <= RAND_MAX. The value of RAND_MAX is 32768 on Windows, but 2147483647 on Linux. This can cause undeterministic behavior between a server running on Windows vs Linux. Instead, use RandomInt or RandomFloat.
 
 sin
 sin(num x)
@@ -4532,11 +4608,11 @@ GR_STATE_GAME_OVER
 
 GR_STATE_BONUS
 GR_STATE_BONUS
-9
+9, This constant entry is missing!
 
 GR_STATE_BETWEEN_RNDS
 GR_STATE_BETWEEN_RNDS
-10
+10, This constant entry is missing!
 
 GR_NUM_ROUND_STATES
 GR_NUM_ROUND_STATES
@@ -5590,13 +5666,21 @@ TF_DMG_CUSTOM_AXTINGUISHER_BOOSTED
 TF_DMG_CUSTOM_AXTINGUISHER_BOOSTED
 83
 
-TF_DMG_CUSTOM_END
-TF_DMG_CUSTOM_END
+TF_DMG_CUSTOM_KRAMPUS_MELEE
+TF_DMG_CUSTOM_KRAMPUS_MELEE
 84
+
+TF_DMG_CUSTOM_KRAMPUS_RANGED
+TF_DMG_CUSTOM_KRAMPUS_RANGED
+85
+
+TF_DMG_CUSTOM_END
+TF_DMG_CUSTOM_END
+86
 
 TEAM_UNASSIGNED
 TEAM_UNASSIGNED
-0
+null, This is supposed to be 0.
 
 TEAM_SPECTATOR
 TEAM_SPECTATOR
@@ -5928,7 +6012,7 @@ CONTENTS_HITBOX
 
 DMG_GENERIC
 DMG_GENERIC
-0
+null, This is supposed to be 0.
 
 DMG_CRUSH
 DMG_CRUSH
@@ -5948,7 +6032,7 @@ DMG_BURN
 
 DMG_VEHICLE
 DMG_VEHICLE
-16
+16, Train damage.
 
 DMG_FALL
 DMG_FALL
@@ -5996,7 +6080,7 @@ DMG_PARALYZE
 
 DMG_NERVEGAS
 DMG_NERVEGAS
-65536
+65536, Sawblade damage.
 
 DMG_POISON
 DMG_POISON
@@ -6012,11 +6096,11 @@ DMG_DROWNRECOVER
 
 DMG_ACID
 DMG_ACID
-1048576
+1048576, Crit damage.
 
 DMG_SLOWBURN
 DMG_SLOWBURN
-2097152
+2097152, Bullet falloff damage.
 
 DMG_REMOVENORAGDOLL
 DMG_REMOVENORAGDOLL
