@@ -7,7 +7,7 @@
 		"color": "#4b7394",
 		"theme": "dark"
 	},
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"publisher": "SourDani",
 	"engines": {
 		"vscode": "^1.84.1"
