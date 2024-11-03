@@ -23,11 +23,11 @@ jobs:
         id: package
         uses: kylejrp/action-nodejs-package-info@v1.2
 
-      - name: Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
-        id: publishToOpenVSX
-        with:
-          pat: ${{ secrets.VSXAUTH }}
+      # - name: Publish to Open VSX Registry
+      #   uses: HaaLeo/publish-vscode-extension@v1
+      #   id: publishToOpenVSX
+      #   with:
+      #     pat: ${{ secrets.VSXAUTH }}
 
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v1
